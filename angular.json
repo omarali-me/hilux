@@ -66,6 +66,38 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "production-ar": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "outputPath": "dist/ar",
+              "baseHref": "/ar/",
+              "i18nFile": "src/locale/messages.ar.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ar",
+              "i18nMissingTranslation": "error"
+            },
+            "ar": {
+              "aot": true,
+              "baseHref": "/ar/",
+              "outputPath": "dist/ar",
+              "i18nFile": "src/locale/messages.ar.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ar",
+              "i18nMissingTranslation": "error"
             }
           }
         },
@@ -77,6 +109,9 @@
           "configurations": {
             "production": {
               "browserTarget": "hilux:build:production"
+            },
+            "ar": {
+              "browserTarget": "hilux:build:ar"
             }
           }
         },

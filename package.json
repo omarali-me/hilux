@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:language-bundles": "ng run hilux:build:production && ng run hilux:build:ar",
+    "int:extract": "ng xi18n --output-path src/locale"
   },
   "private": true,
   "dependencies": {
