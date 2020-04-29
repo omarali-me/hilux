@@ -36,7 +36,11 @@
               "node_modules/overlayscrollbars/js/jquery.overlayScrollbars.min.js",
               "src/assets/js/adminlte.min.js",
               "src/assets/js/dashboard.js"
-            ]
+            ],
+            "i18nFile": "src/locale/messages.ar.xlf",
+            "i18nFormat": "xlf",
+            "i18nLocale": "ar",
+            "i18nMissingTranslation": "error"
           },
           "configurations": {
             "production": {
@@ -65,7 +69,11 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "i18nFile": "src/locale/messages.ar.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ar",
+              "i18nMissingTranslation": "error"
             },
             "production-ar": {
               "fileReplacements": [

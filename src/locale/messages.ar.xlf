@@ -10,12 +10,40 @@
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="loginEmailhelp" datatype="html">
+        <source>We'll never share your email with anyone else.</source>
+        <target>لن نشارك بريدك الإلكتروني مع أي شخص آخر.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="loginpasswordLabel" datatype="html">
         <source>Password</source>
         <target>كلمه السر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.html</context>
           <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="checkMeOut" datatype="html">
+        <source>Check me out</source>
+        <target>تفقدني</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="submit" datatype="html">
+        <source>Submit</source>
+        <target>إرسال</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
     </body>
