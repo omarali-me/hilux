@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-8">
       <div class="card p-5">
-        <form  class="rtl">
+        <form  class="rtl" (ngSubmit)="login()" #f="ngForm" novalidate>
           <div class="form-group">
             <label for="exampleInputEmail1" i18n="@@loginEmailAddressLabel">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -16,7 +16,7 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1"i18n='@@checkMeOut'>Check me out</label>
           </div>
-          <button type="submit" class="btn btn-primary" i18n='="@@submit'>Submit</button>
+          <button type="submit" class="btn btn-primary" i18n='="@@submit' >Submit</button>
         </form>
       </div>
     </div>

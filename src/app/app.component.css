@@ -1,0 +1,8 @@
+.main-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+.page-content-wrapper {
+  padding-bottom: 283px;
+}
