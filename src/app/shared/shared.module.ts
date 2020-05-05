@@ -3,10 +3,11 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { AuthenticationService } from './authentication.service';
+import { FieldsService } from './fields.service';
 
 @NgModule({
   imports: [],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService, FieldsService],
   declarations: [
     HeaderComponent,
     FooterComponent

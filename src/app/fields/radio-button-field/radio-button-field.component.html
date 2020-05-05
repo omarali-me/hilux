@@ -1,0 +1,20 @@
+<!-- <input class="form-check-input"
+  type="radio"
+  name="radio1"
+  [checked]=""
+  [required]="field.required"
+  [name]="field.fieldName.en"
+  [id]="field.fieldID"
+/> -->
+
+<div class="form-check" *ngFor="let field_detail of field.auxInfo.sourceDetails">
+  <input class="form-check-input"
+    type="radio"
+    name="radio1"
+    [required]="field.required"
+    [name]="field.fieldName.en"
+    [id]="field.fieldID"
+    [value]="field_detail.key"
+  />
+  <label class="form-check-label">{{field_detail.value.en}}</label>
+</div>
