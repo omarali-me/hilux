@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectFieldComponent } from './select-field.component';
+import { CheckboxFieldComponent } from './checkbox-field.component';
 
-describe('SelectFieldComponent', () => {
-  let component: SelectFieldComponent;
-  let fixture: ComponentFixture<SelectFieldComponent>;
+describe('CheckboxFieldComponent', () => {
+  let component: CheckboxFieldComponent;
+  let fixture: ComponentFixture<CheckboxFieldComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SelectFieldComponent ]
+      declarations: [ CheckboxFieldComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SelectFieldComponent);
+    fixture = TestBed.createComponent(CheckboxFieldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

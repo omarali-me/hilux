@@ -1,1 +1,23 @@
-<input type="text" class="form-control" />
+<input
+  type="text"
+  class="form-control"
+  [class]="customClass"
+  [placeholder]="field.placeholder.en"
+  [required]="field.required"
+  [name]="field.fieldName.en"
+  [id]="field.fieldID"
+  [minlength]="field.auxInfo.minLength"
+  [maxlength]="field.auxInfo.maxLength"
+  [(ngModel)]="formData[field.fieldID]"
+  numbersOnly
+  precision="2"
+  #ngModel="ngModel"
+/>
+
+<div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="ngModel.errors.required || ngModel.errors.minlength">
+    {{field.errorMsg.en}}
+  </div>
+</div>

@@ -1,8 +1,25 @@
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text">
-      <i class="far fa-calendar-alt"></i>
-    </span>
+    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
   </div>
-  <input type="text" class="form-control float-right" id="reservation">
+  <input type="text"
+    class="form-control"
+    [class]="customClass"
+    [ngClass]="getControlClass()"
+    [placeholder]="field.placeholder.en || 'DD/MM/YYYY'"
+    [required]="field.required"
+    [name]="field.fieldName.en"
+    [id]="field.fieldID"
+    [minlength]="field.auxInfo.minLength"
+    [maxlength]="field.auxInfo.maxLength"
+    [ngModel]="formData[field.fieldID] | date"
+    #ngModel="ngModel"
+    (ngModelChange)="hello()"
+  >
+</div>
+
+<div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched)" class="alert alert-danger">
+  <div *ngIf="ngModel.errors.required">
+    {{field.errorMsg.en}}
+  </div>
 </div>

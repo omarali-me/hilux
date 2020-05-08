@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthenticationService } from '../shared/authentication.service';
 import { Router } from '@angular/router';
 import { RowField } from '../fields/field_order';
 import { FieldsService } from '../shared/fields.service';
+import { NgForm } from '@angular/forms';
 
 const RESPONSE_DATA = {
   "fields": [
@@ -120,6 +121,106 @@ const RESPONSE_DATA = {
           }
         ]
       }
+    },
+    {
+      "fieldID": "projectCompletionDate",
+      "fieldType": "datetime",
+      "required": "true",
+      "fieldName": {
+        "ar": "تاريخ إنجاز المشروع",
+        "en": "Project completion date"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "terms",
+      "fieldType": "textarea",
+      "required": "true",
+      "fieldName": {
+        "ar": "الشروط الخاصة بين الاطراف",
+        "en": "Terms & Conditions"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": "Terms & Conditions error"
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "emiratesIDNumber",
+      "fieldType": "number",
+      "required": "true",
+      "fieldName": {
+        "ar": "رقم الهوية",
+        "en": "Emirates ID #"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": "Enter number please"
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "projectName",
+      "fieldType": "dropdown",
+      "required": "true",
+      "fieldName": {
+        "ar": "اسم المشروع الرئيسي / البرج",
+        "en": "Project Name"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": "testing plaveolder"
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "localhost/fikra/index.php/it/getDeveloperProjects"
+      }
     }
   ],
   "fieldOrder": [
@@ -139,11 +240,7 @@ const RESPONSE_DATA = {
       "rowFields": [
         {
           "fieldID": "password",
-          "fieldWidth": "six"
-        },
-        {
-          "fieldID": "paymentPla",
-          "fieldWidth": "six"
+          "fieldWidth": "twelve"
         }
       ]
     },
@@ -151,7 +248,43 @@ const RESPONSE_DATA = {
       "row": "row3",
       "rowFields": [
         {
+          "fieldID": "paymentPla",
+          "fieldWidth": "twelve"
+        }
+      ]
+    },
+    {
+      "row": "row4",
+      "rowFields": [
+        {
           "fieldID": "propertyType",
+          "fieldWidth": "twelve"
+        }
+      ]
+    },
+    {
+      "row": "row6",
+      "rowFields": [
+        {
+          "fieldID": "terms",
+          "fieldWidth": "twelve"
+        }
+      ]
+    },
+    {
+      "row": "row7",
+      "rowFields": [
+        {
+          "fieldID": "emiratesIDNumber",
+          "fieldWidth": "twelve"
+        }
+      ]
+    },
+    {
+      "row": "row8",
+      "rowFields": [
+        {
+          "fieldID": "projectName",
           "fieldWidth": "twelve"
         }
       ]
@@ -168,6 +301,7 @@ export class LoginComponent implements OnInit {
   response: any;
   formData: any = {};
 
+  @ViewChild('app-field') field;
   constructor(private authenticationService: AuthenticationService,
     private router: Router,
     private fieldsService: FieldsService

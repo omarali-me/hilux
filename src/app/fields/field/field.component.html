@@ -1,14 +1,19 @@
-<app-input-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="['text', 'password'].includes(getField(rowField.fieldID)?.fieldType)"></app-input-field>
+<ng-container ngModelGroup="app-field">
 
-<app-date-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'date'" ></app-date-field>
+  <app-input-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="['text', 'password'].includes(getField(rowField.fieldID)?.fieldType)"></app-input-field>
 
-<app-number-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'number'" ></app-number-field>
+  <app-date-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'datetime'" ></app-date-field>
 
-<app-select-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'dropdown'" ></app-select-field>
+  <app-number-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'number'" ></app-number-field>
 
-<app-text-area-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'textarea'" ></app-text-area-field>
+  <app-select-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'dropdown'" ></app-select-field>
 
-<app-file-upload [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'fileupload'" ></app-file-upload>
+  <app-text-area-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'textarea'" ></app-text-area-field>
 
-<app-radio-button-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'radio'" ></app-radio-button-field>
+  <app-file-upload [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'fileupload'" ></app-file-upload>
 
+  <app-radio-button-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'radio'" ></app-radio-button-field>
+
+  <app-currency-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'currency'" ></app-currency-field>
+
+</ng-container>

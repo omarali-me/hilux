@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Field } from '../fields/fields';
+import { HttpClient } from '@angular/common/http';
+import { of } from 'rxjs';
 
 @Injectable()
 export class FieldsService {
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   findField(fields: Field[], field_id: string): Field {
     return fields.find(f => f.fieldID === field_id);
@@ -16,6 +18,16 @@ export class FieldsService {
 
   getModelName(field_id: string, formdata: any ) {
     return `${formdata}.${field_id}`
+  }
+
+  getFieldData(field: Field, params: any = {}) {
+    if (field.auxInfo.source == 'api') {
+      return this.http.get('https://jsonplaceholder.typicode.com/todos/1', { params });
+    } else if (field.auxInfo.source == 'list') {
+      return of(field.auxInfo.sourceDetails);
+    } else {
+      of([]);
+    }
   }
 
   private textToNumber(grid_size: string): number {

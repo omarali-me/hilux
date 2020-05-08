@@ -1,10 +1,13 @@
 <div class="custom-file">
-  <input type="file" class="custom-file-input"
+  <input type="file"
+    class="custom-file-input"
     [class]="customClass"
     [accept]="field.auxInfo.acceptedFileTypes"
-    [required]="field.required"
     [name]="field.fieldName.ar"
     [id]="field.fieldID"
-    >
-  <label class="custom-file-label" [for]="field.fieldName.ar">{{ field.placeholder.ar || 'Choose file'}}</label>
+    [multiple]=""
+    [(ngModel)]="formData[field.fieldID]"
+    #ngModel="ngModel"
+    />
+  <label class="custom-file-label" [for]="field.fieldID">choose file</label>
 </div>

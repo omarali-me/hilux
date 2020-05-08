@@ -12,6 +12,7 @@ export interface AuxInfo {
   acceptedFileTypes: string;
   minLength: string;
   maxLength: string;
+  autocomplete?: string;
   type: string;
   source: string;
   apiParams?: string[];

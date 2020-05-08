@@ -7,6 +7,8 @@
 @import "~assets/css/adminlte.min.css";
 @import '~overlayscrollbars/css/OverlayScrollbars.css';
 @import "~daterangepicker/daterangepicker.css";
+@import "~jquery-ui-dist/jquery-ui.min.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
 *{
     direction: rtl !important;
@@ -71,4 +73,9 @@
     .sidebar-open .main-sidebar, .sidebar-open .main-sidebar::before {
         margin-right: 0;
     }
+}
+
+
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+    color: transparent;
 }

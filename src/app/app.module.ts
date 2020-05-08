@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -20,6 +19,10 @@ import { HeadingComponent } from './tags/heading/heading.component';
 import { FieldComponent } from './fields/field/field.component';
 import { FileUploadComponent } from './fields/file-upload/file-upload.component';
 import { RadioButtonFieldComponent } from './fields/radio-button-field/radio-button-field.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { CurrencyFieldComponent } from './fields/currency-field/currency-field.component';
+import { CheckboxFieldComponent } from './fields/checkbox-field/checkbox-field.component';
 
 @NgModule({
   declarations: [
@@ -37,14 +40,17 @@ import { RadioButtonFieldComponent } from './fields/radio-button-field/radio-but
     HeadingComponent,
     FieldComponent,
     FileUploadComponent,
-    RadioButtonFieldComponent
+    RadioButtonFieldComponent,
+    CurrencyFieldComponent,
+    CheckboxFieldComponent
   ],
   imports: [
     FormsModule,
-    CommonModule,
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    HttpClientModule,
+    SharedModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
