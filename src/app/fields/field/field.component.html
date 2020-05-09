@@ -1,6 +1,6 @@
 <ng-container ngModelGroup="app-field">
 
-  <app-input-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="['text', 'password'].includes(getField(rowField.fieldID)?.fieldType)"></app-input-field>
+  <app-input-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" *ngIf="['text', 'password'].includes(getField(rowField.fieldID)?.fieldType)"></app-input-field>
 
   <app-date-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'datetime'" ></app-date-field>
 

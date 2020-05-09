@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CurrencyFieldComponent } from './fields/currency-field/currency-field.component';
 import { CheckboxFieldComponent } from './fields/checkbox-field/checkbox-field.component';
+import { RowComponent } from './row/row.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CheckboxFieldComponent } from './fields/checkbox-field/checkbox-field.c
     FileUploadComponent,
     RadioButtonFieldComponent,
     CurrencyFieldComponent,
-    CheckboxFieldComponent
+    CheckboxFieldComponent,
+    RowComponent
   ],
   imports: [
     FormsModule,

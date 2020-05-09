@@ -16,6 +16,7 @@ export class FieldComponent implements OnInit {
   @Input() rowField: RowField;
   @Input() customClass: string;
   @Input() formData: string;
+  @Input() row: string;
 
   constructor(private service: FieldsService) { }
 

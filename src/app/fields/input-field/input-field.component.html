@@ -4,7 +4,7 @@
   [placeholder]="field.placeholder.en"
   [required]="field.required"
   [name]="field.fieldName.en"
-  [id]="field.fieldID"
+  [id]="getId(field.fieldID)"
   [minlength]="field.auxInfo.minLength"
   [maxlength]="field.auxInfo.maxLength"
   [(ngModel)]="formData[field.fieldID]"

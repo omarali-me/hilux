@@ -16,6 +16,8 @@ export class InputFieldComponent implements OnInit {
   @Input() customClass: string;
 
   @Input() formData: any;
+
+  @Input() row: any;
   
   
   constructor(private service: FieldsService) { }
@@ -26,4 +28,9 @@ export class InputFieldComponent implements OnInit {
   getFieldModelName(field: Field) {
     return this.service.getModelName(field.fieldID, this.formData);
   }
+
+  getId(field_id: string) {
+    return `${this.row}_${field_id}_${Math.random()}`
+  }
+
 }

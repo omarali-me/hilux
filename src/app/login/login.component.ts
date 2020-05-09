@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthenticationService } from '../shared/authentication.service';
 import { Router } from '@angular/router';
 import { RowField } from '../fields/field_order';
@@ -302,6 +302,7 @@ export class LoginComponent implements OnInit {
   formData: any = {};
 
   @ViewChild('app-field') field;
+  @ViewChild('rowReference') rowReference: ElementRef;
   constructor(private authenticationService: AuthenticationService,
     private router: Router,
     private fieldsService: FieldsService
@@ -325,4 +326,25 @@ export class LoginComponent implements OnInit {
     return classname + this.fieldsService.getFieldWidth(field.fieldWidth)
   }
 
+  getFormDatafor(row: any, index?: any) {
+    if (row.allowMultiple) {
+      this.formData[row.row] ? this.formData[row.row] : (this.formData[row.row] = [{}])
+    } else {
+      this.formData[row.row] ? this.formData[row.row] : (this.formData[row.row] = {})
+    }
+    return this.formData[row.row];
+  }
+
+  addRow(row, index) {
+    console.log('add row', row);
+    this.formData[row.row].push({});
+  }
+
+  getrowId(row: any) {
+    return `${row.row}`;
+  }
+
+  getsubrowId(subRow) {
+    // return `${subRow.row}`;
+  }
 }
