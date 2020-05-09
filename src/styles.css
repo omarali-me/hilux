@@ -79,3 +79,18 @@
 .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
     color: transparent;
 }
+
+.form-check {
+    padding-left: 0;
+    padding-right: 1.25rem;
+}
+
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+    padding-left: 50px;
+    padding-right: 10px;
+}
+
+.ng-select .ng-select-container .ng-value-container {
+    padding-left: 0;
+    padding-right: 10px;
+}

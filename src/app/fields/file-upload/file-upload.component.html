@@ -5,9 +5,19 @@
     [accept]="field.auxInfo.acceptedFileTypes"
     [name]="field.fieldName.ar"
     [id]="field.fieldID"
-    [multiple]=""
+    [multiple]="'true'"
+    [required]="field.required"
     [(ngModel)]="formData[field.fieldID]"
+    (change)="updateControlLabel($event)"
     #ngModel="ngModel"
     />
-  <label class="custom-file-label" [for]="field.fieldID">choose file</label>
+  <label class="custom-file-label" [for]="field.fieldID" #labelImport>choose file</label>
+
+  <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched)"
+    class="alert alert-danger">
+
+    <div *ngIf="ngModel.errors.required || ngModel.errors.minlength">
+      {{field.errorMsg.en}}
+    </div>
+  </div>
 </div>

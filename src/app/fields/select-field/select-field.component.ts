@@ -22,7 +22,22 @@ export class SelectFieldComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getFieldData(this.field).subscribe((data)=> {
-      this.dataOptions = data;
+      this.dataOptions = [
+        {
+          "key": "commercial",
+          "value": {
+            "ar": "تجاري",
+            "en": "Commercial"
+          }
+        },
+        {
+          "key": "residential",
+          "value": {
+            "ar": "سكني",
+            "en": "Residential"
+          }
+        }
+      ];
     })
   }
 

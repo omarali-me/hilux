@@ -1,29 +1,24 @@
-<!-- <input class="form-check-input"
-  type="radio"
-  name="radio1"
-  [checked]=""
-  [required]="field.required"
-  [name]="field.fieldName.en"
-  [id]="field.fieldID"
-/> -->
+<div class="form-group">
+  <div class="form-check" *ngFor="let field_detail of dataOptions">
+    <input class="form-check-input"
+      type="radio"
+      [class]="customClass"
+      [ngClass]="field.required ? 'ng-invalid' : ''"
+      [required]="field.required"
+      [value]="field_detail.key"
+      [required]="field.required"
+      [name]="field.fieldName.en"
+      [id]="field.fieldID"
+      [(ngModel)]="formData[field.fieldID]"
+      #ngModel="ngModel"
+    />
+    <label class="form-check-label">{{field_detail.value.en}}</label>
+    <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched)"
+      class="alert alert-danger">
 
-<div class="form-check" *ngFor="let field_detail of dataOptions">
-  <input class="form-check-input"
-    type="radio"
-    [required]="field.required"
-    [value]="field_detail.key"
-    [required]="field.required"
-    [name]="field.fieldName.en"
-    [id]="field.fieldID"
-    [(ngModel)]="formData[field.fieldID]"
-    #ngModel="ngModel"
-  />
-  <label class="form-check-label">{{field_detail.value.en}}</label>
-  <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched)"
-    class="alert alert-danger">
-
-    <div *ngIf="ngModel.errors.required || ngModel.errors.minlength">
-      {{field.errorMsg.en}}
+      <div *ngIf="ngModel.errors.required || ngModel.errors.minlength">
+        {{field.errorMsg.ar}}
+      </div>
     </div>
   </div>
 </div>

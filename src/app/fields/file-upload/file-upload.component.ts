@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { Field } from '../fields';
 import { FieldsService } from 'src/app/shared/fields.service';
 import { ControlContainer, NgForm } from '@angular/forms';
@@ -16,6 +16,8 @@ export class FileUploadComponent implements OnInit {
   @Input() customClass: string;
 
   @Input() formData: any;
+
+  @ViewChild('labelImport') labelImport: ElementRef;
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
@@ -23,5 +25,10 @@ export class FileUploadComponent implements OnInit {
 
   getFieldModelName(field: Field) {
     return this.service.getModelName(field.fieldID, this.formData);
+  }
+
+  updateControlLabel(event: any) {
+    const files = Array.from(event.target.files);
+    this.labelImport.nativeElement.innerText = files.map((t:any) => t.name).join(', ');
   }
 }

@@ -16,4 +16,6 @@
 
   <app-currency-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'currency'" ></app-currency-field>
 
+  <app-checkbox-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" *ngIf="getField(rowField.fieldID)?.fieldType == 'checkbox'" ></app-checkbox-field>
+
 </ng-container>

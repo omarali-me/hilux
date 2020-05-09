@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Field } from '../fields';
 import { FieldsService } from 'src/app/shared/fields.service';
 import { ControlContainer, NgForm } from '@angular/forms';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-radio-button-field',
@@ -30,4 +31,17 @@ export class RadioButtonFieldComponent implements OnInit {
     return this.service.getModelName(field.fieldID, this.formData);
   }
 
+  // handleChange($event) {
+  //   if (!this.formData[this.field.fieldID])
+  //     this.formData[this.field.fieldID] = [];
+
+  //   if ($event.target.checked)
+  //     this.formData[this.field.fieldID][0] = $event.target.value;
+  //   else
+  //     _.remove(this.formData[this.field.fieldID], i => i === $event.target.value);
+  // }
+
+  // optionSelected(val: any) {
+  //   return this.formData[this.field.fieldID] && this.formData[this.field.fieldID].includes(val);
+  // }
 }
