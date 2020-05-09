@@ -46,7 +46,9 @@
                     </div>
                   </div>
                 </div>
-                <button type="button" (click)="addRow(row, i)" class="btn btn-primary" *ngIf="row.allowMultiple && i == 0">add</button>
+                <button type="button" (click)="deleteRow(row, i)" class="btn btn-sm btn-danger" *ngIf="row.allowMultiple && i != 0">Remove</button>
+                <button type="button" (click)="addRow(row, i)" class="btn btn-sm btn-primary" *ngIf="row.allowMultiple && i == 0">add</button>
+                <hr *ngIf="row.allowMultiple">
               </div>
             </div>
             <div class="col-sm-12" *ngIf="!row.allowMultiple">

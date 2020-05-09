@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RowField } from '../fields/field_order';
 import { FieldsService } from '../shared/fields.service';
 import { NgForm } from '@angular/forms';
+import * as _ from 'lodash';
 
 const RESPONSE_DATA = {
   "fields": [
@@ -346,5 +347,11 @@ export class LoginComponent implements OnInit {
 
   getsubrowId(subRow) {
     // return `${subRow.row}`;
+  }
+
+  deleteRow(row, index) {
+    _.remove(this.formData[row.row], function(resource, i) {
+        return index === i;
+    });
   }
 }
