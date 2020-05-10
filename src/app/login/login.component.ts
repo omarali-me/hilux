@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { AuthenticationService } from '../shared/authentication.service';
 import { Router } from '@angular/router';
 import { RowField } from '../fields/field_order';
@@ -231,7 +231,11 @@ const RESPONSE_DATA = {
       "rowFields": [
         {
           "fieldID": "email",
-          "fieldWidth": "twelve"
+          "fieldWidth": "six"
+        },
+        {
+          "fieldID": "projectName",
+          "fieldWidth": "six"
         }
       ]
     },
@@ -306,7 +310,8 @@ export class LoginComponent implements OnInit {
   @ViewChild('rowReference') rowReference: ElementRef;
   constructor(private authenticationService: AuthenticationService,
     private router: Router,
-    private fieldsService: FieldsService
+    private fieldsService: FieldsService,
+    private changeDetector : ChangeDetectorRef
     ) { }
 
   ngOnInit(): void {
@@ -353,5 +358,10 @@ export class LoginComponent implements OnInit {
     _.remove(this.formData[row.row], function(resource, i) {
         return index === i;
     });
+  }
+
+
+  ngAfterViewInit () {
+    this.changeDetector.detectChanges();
   }
 }

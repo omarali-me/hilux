@@ -35,7 +35,7 @@
         <div class="card-body">
           <div class="form-group row" *ngFor="let row of response.fieldOrder; let i = index;">
             <div class="col-sm-12" *ngIf="row.allowMultiple">
-              <div *ngFor="let subRow of getFormDatafor(row); let i = index">
+              <div class="row" *ngFor="let subRow of getFormDatafor(row); let i = index">
                 <div [class]="getClass('col-sm-',field)" #rowReference *ngFor="let field of row.rowFields;">
                   <div class="row">
                     <div class="col-sm-3 col-form-label">
@@ -46,9 +46,11 @@
                     </div>
                   </div>
                 </div>
-                <button type="button" (click)="deleteRow(row, i)" class="btn btn-sm btn-danger" *ngIf="row.allowMultiple && i != 0">Remove</button>
-                <button type="button" (click)="addRow(row, i)" class="btn btn-sm btn-primary" *ngIf="row.allowMultiple && i == 0">add</button>
-                <hr *ngIf="row.allowMultiple">
+                <div class="col-sm-12">
+                  <button type="button" (click)="deleteRow(row, i)" class="btn btn-sm btn-danger" *ngIf="row.allowMultiple && i != 0">Remove</button>
+                  <button type="button" (click)="addRow(row, i)" class="btn btn-sm btn-primary" *ngIf="row.allowMultiple && i == 0">add</button>
+                  <hr *ngIf="row.allowMultiple"/>
+                </div>
               </div>
             </div>
             <div class="col-sm-12" *ngIf="!row.allowMultiple">
