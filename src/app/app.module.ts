@@ -23,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CurrencyFieldComponent } from './fields/currency-field/currency-field.component';
 import { CheckboxFieldComponent } from './fields/checkbox-field/checkbox-field.component';
-import { RowComponent } from './row/row.component';
+import { SubRowComponent } from './sub-row/sub-row.component';
+import { EntitySelectComponent } from './fields/entity-select/entity-select.component';
+import { StepSelectComponent } from './fields/step-select/step-select.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { RowComponent } from './row/row.component';
     RadioButtonFieldComponent,
     CurrencyFieldComponent,
     CheckboxFieldComponent,
-    RowComponent
+    SubRowComponent,
+    EntitySelectComponent,
+    StepSelectComponent
   ],
   imports: [
     FormsModule,

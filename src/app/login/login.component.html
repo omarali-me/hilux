@@ -35,20 +35,23 @@
         <div class="card-body">
           <div class="form-group row" *ngFor="let row of response.fieldOrder; let i = index;">
             <div class="col-sm-12" *ngIf="row.allowMultiple">
-              <div class="row" *ngFor="let subRow of getFormDatafor(row); let i = index">
+              <div class="row" *ngFor="let subRow of getFormDatafor(row); let j = index">
                 <div [class]="getClass('col-sm-',field)" #rowReference *ngFor="let field of row.rowFields;">
                   <div class="row">
                     <div class="col-sm-3 col-form-label">
                       <app-label [rowField]="field" [fields]="response.fields"></app-label>
                     </div>
                     <div class="col-sm-9">
-                      <app-field [rowField]="field" [fields]="response.fields" [row]="row.row" [formData]="subRow"></app-field>
+                      <app-field [rowField]="field" [fields]="response.fields" [index]="j" [row]="row.row" [formData]="subRow"></app-field>
                     </div>
                   </div>
                 </div>
+                <!-- <div class="col-sm-12">
+                  <app-sub-row #rowReference [index]="j" [row]="row" [rowField]="field" [fields]="response.fields" [formData]="subRow" *ngFor="let field of row.rowFields;"></app-sub-row>
+                </div> -->
                 <div class="col-sm-12">
-                  <button type="button" (click)="deleteRow(row, i)" class="btn btn-sm btn-danger" *ngIf="row.allowMultiple && i != 0">Remove</button>
-                  <button type="button" (click)="addRow(row, i)" class="btn btn-sm btn-primary" *ngIf="row.allowMultiple && i == 0">add</button>
+                  <button type="button" (click)="deleteRow(row, i)" class="btn btn-sm btn-danger" *ngIf="row.allowMultiple && j != 0">Remove</button>
+                  <button type="button" (click)="addRow(row, i)" class="btn btn-sm btn-primary" *ngIf="row.allowMultiple && j == 0">add</button>
                   <hr *ngIf="row.allowMultiple"/>
                 </div>
               </div>

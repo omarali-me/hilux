@@ -19,7 +19,7 @@ export class InputFieldComponent implements OnInit {
 
   @Input() row: any;
 
-  @Input() index: any;
+  @Input() index: any = 0;
   
   
   constructor(private service: FieldsService) { }
@@ -32,11 +32,11 @@ export class InputFieldComponent implements OnInit {
   }
 
   getId(field_id: string) {
-    return `${this.row}_${field_id}_${Math.random()}`
+    return `${this.row}_${field_id}_${this.index}`
   }
 
   getName(field_name) {
-    return `${this.row}_${field_name}_${Math.random()}`
+    return `${this.row}_${field_name}_${this.index}`
   }
 
 }

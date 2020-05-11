@@ -17,6 +17,7 @@ export class FieldComponent implements OnInit {
   @Input() customClass: string;
   @Input() formData: string;
   @Input() row: string;
+  @Input() index: string;
 
   constructor(private service: FieldsService) { }
 
