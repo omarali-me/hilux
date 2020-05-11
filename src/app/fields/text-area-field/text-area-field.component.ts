@@ -16,6 +16,8 @@ export class TextAreaFieldComponent implements OnInit {
 
   @Input() formData: any;
 
+  @Input() index: any = 0;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -19,6 +19,8 @@ export class CheckboxFieldComponent implements OnInit {
 
   @Input() formData: any;
 
+  @Input() index: any = 0;
+  
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {

@@ -18,6 +18,8 @@ export class SelectFieldComponent implements OnInit {
 
   @Input() formData: any;
 
+  @Input() index: any = 0;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {

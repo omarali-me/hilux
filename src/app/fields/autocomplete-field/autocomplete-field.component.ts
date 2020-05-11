@@ -10,6 +10,9 @@ import { ControlContainer, NgForm } from '@angular/forms';
 export class AutocompleteFieldComponent implements OnInit {
 
   @Input() field: Field;
+
+  @Input() index: any = 0;
+  
   constructor() { }
 
   ngOnInit(): void {
