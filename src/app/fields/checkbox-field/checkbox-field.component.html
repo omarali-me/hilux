@@ -6,10 +6,10 @@
       [required]="field.required"
       [value]="field_detail.key"
       [required]="field.required"
-      [name]="field.fieldName.en"
+      [name]="field.fieldID"
       [id]="field.fieldID"
+      [(ngModel)]="formData[field.fieldID][field_detail.key]"
     />
     <label class="form-check-label">{{field_detail.value.en}}</label>
   </div>
-  
 </div>

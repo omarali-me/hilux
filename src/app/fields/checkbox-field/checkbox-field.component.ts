@@ -24,6 +24,7 @@ export class CheckboxFieldComponent implements OnInit {
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
+    this.formData[this.field.fieldID] = {};
     this.service.getFieldData(this.field).subscribe((data)=> {
       this.dataOptions = data;
     })

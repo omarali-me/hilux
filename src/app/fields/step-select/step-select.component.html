@@ -11,10 +11,10 @@
       <td class="text-center">
         <div class="form-check">
           <input class="form-check-input m-0"
-            type="checkbox"
+            type="radio"
             [class]="customClass"
             [ngClass]="field.required ? 'ng-invalid' : ''"
-            required="true"
+            [required]="field.required"
             [value]="field_detail.entityID"
             [name]="getFieldName(field.fieldID, i)"
             [id]="field.fieldID"
