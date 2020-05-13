@@ -22,6 +22,8 @@ export class StepSelectComponent implements OnInit {
 
   @Input() index: any = 0;
 
+  @Input() fullFormData: any;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {

@@ -20,7 +20,8 @@ export class InputFieldComponent implements OnInit {
   @Input() row: any;
 
   @Input() index: any = 0;
-  
+
+  @Input() fullFormData: any;
   
   constructor(private service: FieldsService) { }
 

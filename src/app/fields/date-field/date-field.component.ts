@@ -18,6 +18,8 @@ export class DateFieldComponent implements OnInit {
 
   @Input() index: any = 0;
 
+  @Input() fullFormData: any;
+
   constructor() { }
 
   ngOnInit(): void {

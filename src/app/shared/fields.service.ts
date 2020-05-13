@@ -20,9 +20,12 @@ export class FieldsService {
     return `${formdata}.${field_id}`
   }
 
-  getFieldData(field: Field, params: any = {}) {
+  getFieldData(field: Field, formData:any = {}, params: any = {}) {
     if (field.auxInfo.source == 'api') {
-      return this.http.get('https://jsonplaceholder.typicode.com/todos/1', { params });
+      let preparedparams = this.prepaareParams(formData, field.auxInfo.apiParams)
+      let finalParams = Object.assign({}, preparedparams, params);
+      let apiUrl: string = field.auxInfo.sourceDetails
+      return this.http.get<any>(apiUrl, {params: finalParams});
     } else if (field.auxInfo.source == 'list') {
       return of(field.auxInfo.sourceDetails);
     } else {
@@ -57,6 +60,28 @@ export class FieldsService {
       default:
         return 12;
     }
+  }
+
+  private prepaareParams(formData: any, apiParams: any) {
+    let params = {};
+    if (apiParams) {
+      apiParams.forEach(param => {
+        Object.keys(formData).forEach( key => {
+          if (Array.isArray(formData[key])) {
+            formData[key].forEach(element => {
+              if (element.hasOwnProperty(param)) {
+                params[param] = element[param];
+              }
+            })
+          } else {
+            if(formData[key].hasOwnProperty(param)) {
+              params[param] = formData[key][param];
+            }
+          }
+        });
+      });
+    }
+    return params;
   }
 }
 

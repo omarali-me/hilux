@@ -47,7 +47,7 @@
                               <app-label [rowField]="field" [fields]="response.fields"></app-label>
                             </div>
                             <div class="col-sm-9">
-                              <app-field [rowField]="field" [fields]="response.fields" [index]="j" [row]="row.row" [formData]="subRow"></app-field>
+                              <app-field [rowField]="field" [fields]="response.fields" [index]="j" [row]="row.row" [fullFormData]="formData" [formData]="subRow"></app-field>
                             </div>
                           </div>
                         </div>
@@ -68,7 +68,7 @@
                             <app-label [rowField]="field" [fields]="response.fields"></app-label>
                           </div>
                           <div class="col-sm-9">
-                            <app-field [rowField]="field" [fields]="response.fields" [formData]="getFormDatafor(row)"></app-field>
+                            <app-field [rowField]="field" [fields]="response.fields" [fullFormData]="formData" [formData]="getFormDatafor(row)"></app-field>
                           </div>
                         </div>
                       </div>

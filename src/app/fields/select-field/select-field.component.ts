@@ -20,27 +20,12 @@ export class SelectFieldComponent implements OnInit {
 
   @Input() index: any = 0;
 
+  @Input() fullFormData: any;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
-    this.service.getFieldData(this.field).subscribe((data)=> {
-      this.dataOptions = [
-        {
-          "key": "commercial",
-          "value": {
-            "ar": "تجاري",
-            "en": "Commercial"
-          }
-        },
-        {
-          "key": "residential",
-          "value": {
-            "ar": "سكني",
-            "en": "Residential"
-          }
-        }
-      ];
-    })
+    this.dataOptions = this.service.getFieldData(this.field, this.fullFormData);
   }
 
   getFieldModelName(field: Field) {

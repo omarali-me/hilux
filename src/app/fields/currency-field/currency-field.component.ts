@@ -20,6 +20,8 @@ export class CurrencyFieldComponent implements OnInit {
   
   @Input() index: any = 0;
 
+  @Input() fullFormData: any;
+
   ngOnInit(): void {
   }
 

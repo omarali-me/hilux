@@ -18,6 +18,8 @@ export class FileUploadComponent implements OnInit {
   @Input() formData: any;
 
   @Input() index: any = 0;
+
+  @Input() fullFormData: any;
   
   @ViewChild('labelImport') labelImport: ElementRef;
   constructor(private service: FieldsService) { }

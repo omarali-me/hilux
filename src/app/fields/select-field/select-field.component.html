@@ -16,15 +16,15 @@
 
 <ng-select
   class="rtl"
-  [items]="dataOptions"
+  [items]="dataOptions | async"
   [class]="customClass"
   [required]="field.required"
-  [name]="field.fieldName.en"
+  [name]="field.fieldName.ar"
   [id]="field.fieldID"
   [(ngModel)]="formData[field.fieldID]"
-  bindLabel="value.en"
+  bindLabel="value.ar"
   bindValue="key"
-  [placeholder]="field.placeholder.en"
+  [placeholder]="field.placeholder.ar"
   notFoundText="not found"
   #ngModel="ngModel"
 >
@@ -34,6 +34,6 @@
     class="alert alert-danger">
 
   <div *ngIf="ngModel.errors.required || ngModel.errors.minlength">
-    {{field.errorMsg.en}}
+    {{field.errorMsg.ar}}
   </div>
 </div>

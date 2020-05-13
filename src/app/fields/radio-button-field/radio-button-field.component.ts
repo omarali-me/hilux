@@ -21,10 +21,12 @@ export class RadioButtonFieldComponent implements OnInit {
 
   @Input() index: any = 0;
 
+  @Input() fullFormData: any;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
-    this.service.getFieldData(this.field).subscribe((data)=> {
+    this.service.getFieldData(this.field, this.fullFormData).subscribe((data)=> {
       this.dataOptions = data;
     })
   }

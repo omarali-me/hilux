@@ -1,25 +1,27 @@
 <ng-container ngModelGroup="app-field">
 
-  <app-input-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" *ngIf="['text', 'password'].includes(getField(rowField.fieldID)?.fieldType)"></app-input-field>
+  <app-input-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" *ngIf="['text', 'password'].includes(getField(rowField.fieldID)?.fieldType)"></app-input-field>
 
-  <app-date-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" *ngIf="getField(rowField.fieldID)?.fieldType == 'datetime'" ></app-date-field>
+  <app-date-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" [fullFormData]="fullFormData" *ngIf="getField(rowField.fieldID)?.fieldType == 'datetime'" ></app-date-field>
 
-  <app-number-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" *ngIf="getField(rowField.fieldID)?.fieldType == 'number'" ></app-number-field>
+  <app-number-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" [fullFormData]="fullFormData" *ngIf="getField(rowField.fieldID)?.fieldType == 'number'" ></app-number-field>
 
-  <app-select-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" *ngIf="getField(rowField.fieldID)?.fieldType == 'dropdown'" ></app-select-field>
+  <app-select-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" [fullFormData]="fullFormData" *ngIf="getField(rowField.fieldID)?.fieldType == 'dropdown'" ></app-select-field>
 
-  <app-text-area-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" *ngIf="getField(rowField.fieldID)?.fieldType == 'textarea'" ></app-text-area-field>
+  <app-text-area-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" [fullFormData]="fullFormData" *ngIf="getField(rowField.fieldID)?.fieldType == 'textarea'" ></app-text-area-field>
 
-  <app-file-upload [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" *ngIf="getField(rowField.fieldID)?.fieldType == 'fileupload'" ></app-file-upload>
+  <app-file-upload [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" [fullFormData]="fullFormData" *ngIf="getField(rowField.fieldID)?.fieldType == 'fileupload'" ></app-file-upload>
 
-  <app-radio-button-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" *ngIf="getField(rowField.fieldID)?.fieldType == 'radio'" ></app-radio-button-field>
+  <app-radio-button-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" [fullFormData]="fullFormData" *ngIf="getField(rowField.fieldID)?.fieldType == 'radio'" ></app-radio-button-field>
 
-  <app-currency-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" *ngIf="getField(rowField.fieldID)?.fieldType == 'currency'" ></app-currency-field>
+  <app-currency-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" [fullFormData]="fullFormData" *ngIf="getField(rowField.fieldID)?.fieldType == 'currency'" ></app-currency-field>
 
-  <app-checkbox-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" *ngIf="getField(rowField.fieldID)?.fieldType == 'checkbox'" ></app-checkbox-field>
+  <app-checkbox-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [index]="index" [fullFormData]="fullFormData" *ngIf="getField(rowField.fieldID)?.fieldType == 'checkbox'" ></app-checkbox-field>
 
-  <app-entity-select [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" *ngIf="getField(rowField.fieldID)?.fieldType == 'entitySelect'"></app-entity-select>
+  <app-entity-select [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" *ngIf="getField(rowField.fieldID)?.fieldType == 'entitySelect'"></app-entity-select>
 
-  <app-step-select [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" *ngIf="getField(rowField.fieldID)?.fieldType == 'stepSelect'"></app-step-select>
+  <app-step-select [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" *ngIf="getField(rowField.fieldID)?.fieldType == 'stepSelect'"></app-step-select>
+
+  <app-autocomplete-field [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" *ngIf="getField(rowField.fieldID)?.fieldType == 'autocomplete'"></app-autocomplete-field>
 
 </ng-container>

@@ -16,7 +16,7 @@ export interface AuxInfo {
   type: string;
   source: string;
   apiParams?: string[];
-  sourceDetails:  string | SourceSuppliedData[];
+  sourceDetails:  any;
 }
 
 export interface FieldName {
