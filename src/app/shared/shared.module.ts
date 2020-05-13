@@ -7,6 +7,7 @@ import { FieldsService } from './fields.service';
 import { FormsModule } from '@angular/forms';
 import { NumbersOnlyDirective } from './numbers-only.directive';
 import { NumbersformatterDirective } from './numbersformatter.directive';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   imports: [
@@ -19,12 +20,14 @@ import { NumbersformatterDirective } from './numbersformatter.directive';
     FooterComponent,
     NumbersOnlyDirective,
     NumbersformatterDirective,
+    SidebarComponent,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     NumbersOnlyDirective,
-    NumbersformatterDirective
+    NumbersformatterDirective,
+    SidebarComponent
   ]
 })
 export class SharedModule {}

@@ -1,0 +1,15 @@
+<label>{{data.title}}</label>
+<table class="table table-bordered">
+  <thead>                 
+    <tr>
+      <th *ngFor="let header of data.thead">{{header.ar}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let field_detail of data.tbody; let i = index">
+      <td *ngFor="let item of field_detail">
+        {{item.en}}
+      </td>
+    </tr>
+  </tbody>
+</table>

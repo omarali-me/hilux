@@ -1,0 +1,88 @@
+<app-sidebar></app-sidebar>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Another Page</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Another Page</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="card card-primary card-outline">
+          <div class="card-header">
+            <h3 class="card-title">Icons</h3>
+          </div> <!-- /.card-body -->
+          <div class="card-body">
+            <div class="container" *ngIf="response.displayData">
+                <div class="row" *ngFor="let display of response.displayData">
+                  <div class="col-sm-12 mt-3" *ngFor="let item of display | keyvalue">
+                    <app-display-fields [data]="item"></app-display-fields>
+                    <!-- <label class="col-sm-3">{{item.key}}</label>
+                    <div class="col-sm-9">
+                      {{item.value}}
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              <form class="form-horizontal rtl" (ngSubmit)="login(formData)" #f="ngForm" novalidate *ngIf="response.fieldOrder">
+                <div class="card-body">
+                  <div class="form-group row" *ngFor="let row of response.fieldOrder; let i = index;">
+                    <div class="col-sm-12" *ngIf="row.allowMultiple">
+                      <div class="row" *ngFor="let subRow of getFormDatafor(row); let j = index">
+                        <div [class]="getClass('col-sm-',field)" #rowReference *ngFor="let field of row.rowFields;">
+                          <div class="row">
+                            <div class="col-sm-3 col-form-label">
+                              <app-label [rowField]="field" [fields]="response.fields"></app-label>
+                            </div>
+                            <div class="col-sm-9">
+                              <app-field [rowField]="field" [fields]="response.fields" [index]="j" [row]="row.row" [formData]="subRow"></app-field>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div class="col-sm-12">
+                          <app-sub-row #rowReference [index]="j" [row]="row" [rowField]="field" [fields]="response.fields" [formData]="subRow" *ngFor="let field of row.rowFields;"></app-sub-row>
+                        </div> -->
+                        <div class="col-sm-12">
+                          <button type="button" (click)="deleteRow(row, i)" class="btn btn-sm btn-danger" *ngIf="row.allowMultiple && j != 0">Remove</button>
+                          <button type="button" (click)="addRow(row, i)" class="btn btn-sm btn-primary" *ngIf="row.allowMultiple && j == 0">add</button>
+                          <hr *ngIf="row.allowMultiple"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12" *ngIf="!row.allowMultiple">
+                      <div [class]="getClass('col-sm-',field)" #rowReference [id]="getrowId(row)" *ngFor="let field of row.rowFields">
+                        <div class="row">
+                          <div class="col-sm-3 col-form-label">
+                            <app-label [rowField]="field" [fields]="response.fields"></app-label>
+                          </div>
+                          <div class="col-sm-9">
+                            <app-field [rowField]="field" [fields]="response.fields" [formData]="getFormDatafor(row)"></app-field>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-info float-left" [disabled]="f.invalid">Sign in</button>
+                  <button type="submit" class="btn btn-default">Cancel</button>
+                </div>
+              </form>
+          </div><!-- /.card-body -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>

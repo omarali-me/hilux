@@ -1,0 +1,6 @@
+<label>{{data.fieldGroupName.en}}</label>
+<div class="row">
+  <div class="col-sm-3" *ngFor="let field of data.fields">
+    <app-display-field-data [data]="field" [customClass]="'mb3'"></app-display-field-data>
+  </div>
+</div>

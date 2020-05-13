@@ -1,27 +1,27 @@
-import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
-import { AuthenticationService } from '../shared/authentication.service';
-import { Router } from '@angular/router';
-import { RowField } from '../fields/field_order';
-import { FieldsService } from '../shared/fields.service';
-import * as _ from 'lodash';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { RESPONSE_DATA } from '../shared/data';
+import { FieldsService } from '../shared/fields.service';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../shared/authentication.service';
+import { RowField } from '../fields/field_order';
+import * as _ from 'lodash';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-custom-page',
+  templateUrl: './custom-page.component.html',
+  styleUrls: ['./custom-page.component.css']
 })
-export class LoginComponent implements OnInit {
+
+export class CustomPageComponent implements OnInit {
   response: any;
   formData: any = {};
 
-  @ViewChild('app-field') field;
-  @ViewChild('rowReference') rowReference: ElementRef;
-  constructor(private authenticationService: AuthenticationService,
+  constructor(
+    private authenticationService: AuthenticationService,
     private router: Router,
     private fieldsService: FieldsService,
     private changeDetector: ChangeDetectorRef
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.response = RESPONSE_DATA;
@@ -73,4 +73,5 @@ export class LoginComponent implements OnInit {
   ngAfterViewInit () {
     this.changeDetector.detectChanges();
   }
+
 }

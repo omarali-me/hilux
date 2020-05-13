@@ -31,7 +31,18 @@
       <div class="card-header">
         <h3 class="card-title">Login</h3>
       </div>
-      <form class="form-horizontal rtl" (ngSubmit)="login(formData)" #f="ngForm" novalidate>
+      <div class="container" *ngIf="response.displayData">
+        <div class="row" *ngFor="let display of response.displayData">
+          <div class="col-sm-12 mt-3" *ngFor="let item of display | keyvalue">
+            <app-display-fields [data]="item"></app-display-fields>
+            <!-- <label class="col-sm-3">{{item.key}}</label>
+            <div class="col-sm-9">
+              {{item.value}}
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <form class="form-horizontal rtl" (ngSubmit)="login(formData)" #f="ngForm" novalidate *ngIf="response.fieldOrder">
         <div class="card-body">
           <div class="form-group row" *ngFor="let row of response.fieldOrder; let i = index;">
             <div class="col-sm-12" *ngIf="row.allowMultiple">

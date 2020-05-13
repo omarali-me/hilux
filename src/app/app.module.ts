@@ -26,6 +26,15 @@ import { CheckboxFieldComponent } from './fields/checkbox-field/checkbox-field.c
 import { SubRowComponent } from './sub-row/sub-row.component';
 import { EntitySelectComponent } from './fields/entity-select/entity-select.component';
 import { StepSelectComponent } from './fields/step-select/step-select.component';
+import { DisplayFieldsComponent } from './tags/display-fields/display-fields.component';
+import { DisplayImageComponent } from './tags/display-image/display-image.component';
+import { DisplayImageGroupComponent } from './tags/display-image-group/display-image-group.component';
+import { DisplayPdfComponent } from './tags/display-pdf/display-pdf.component';
+import { DisplayPdfGalleryComponent } from './tags/display-pdf-gallery/display-pdf-gallery.component';
+import { DisplayTableComponent } from './tags/display-table/display-table.component';
+import { DisplayFieldDataComponent } from './tags/display-field-data/display-field-data.component';
+import { DisplayFieldGroupComponent } from './tags/display-field-group/display-field-group.component';
+import { CustomPageComponent } from './custom-page/custom-page.component'
 
 @NgModule({
   declarations: [
@@ -48,7 +57,16 @@ import { StepSelectComponent } from './fields/step-select/step-select.component'
     CheckboxFieldComponent,
     SubRowComponent,
     EntitySelectComponent,
-    StepSelectComponent
+    StepSelectComponent,
+    DisplayFieldsComponent,
+    DisplayImageComponent,
+    DisplayImageGroupComponent,
+    DisplayPdfComponent,
+    DisplayPdfGalleryComponent,
+    DisplayTableComponent,
+    DisplayFieldDataComponent,
+    DisplayFieldGroupComponent,
+    CustomPageComponent,
   ],
   imports: [
     FormsModule,

@@ -1,0 +1,14 @@
+
+<app-display-image [data]="data.value" *ngIf="data.key == 'image'"></app-display-image>
+
+<app-display-image-group [data]="data.value" *ngIf="data.key == 'image-gallery'"></app-display-image-group>
+
+<app-display-pdf [data]="data.value" *ngIf="data.key == 'pdf'"></app-display-pdf>
+
+<app-display-pdf-gallery [data]="data.value" *ngIf="data.key == 'pdf-gallery'"></app-display-pdf-gallery>
+
+<app-display-table [data]="data.value" *ngIf="data.key == 'table'"></app-display-table>
+
+<app-display-field-data [data]="data.value" *ngIf="data.key == 'field-data'"></app-display-field-data>
+
+<app-display-field-group [data]="data.value" *ngIf="data.key == 'field-group'"></app-display-field-group>
