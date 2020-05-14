@@ -1,25 +1,75 @@
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+<div *ngIf="field.auxInfo.type == 'date'">
+  <div class="d-flex">
+    <input type="text"
+      class="form-control"
+      [class]="customClass"
+      [placeholder]="field.placeholder.ar || 'DD/MM/YYYY'"
+      [required]="field.required"
+      [name]="field.fieldName.en"
+      [id]="field.fieldID"
+      [minlength]="field.auxInfo.minLength"
+      [maxlength]="field.auxInfo.maxLength"
+      [(ngModel)]="formData[field.fieldID]"
+      #ngModel="ngModel"
+      [owlDateTime]="dt1"
+      [owlDateTimeTrigger]="dt1"
+    >
+    <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
   </div>
-  <input type="text"
-    class="form-control"
-    [class]="customClass"
-    [ngClass]="getControlClass()"
-    [placeholder]="field.placeholder.en || 'DD/MM/YYYY'"
-    [required]="field.required"
-    [name]="field.fieldName.en"
-    [id]="field.fieldID"
-    [minlength]="field.auxInfo.minLength"
-    [maxlength]="field.auxInfo.maxLength"
-    [ngModel]="formData[field.fieldID] | date"
-    #ngModel="ngModel"
-    (ngModelChange)="hello()"
-  >
+  <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched)" class="alert alert-danger">
+    <div *ngIf="ngModel.errors.required">
+      {{field.errorMsg.ar}}
+    </div>
+  </div>
 </div>
 
-<div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched)" class="alert alert-danger">
-  <div *ngIf="ngModel.errors.required">
-    {{field.errorMsg.en}}
+<div *ngIf="field.auxInfo.type == 'datetime'">
+  <div class="d-flex">
+    <input type="text"
+      class="form-control"
+      [class]="customClass"
+      [placeholder]="field.placeholder.ar || 'DD/MM/YYYY'"
+      [required]="field.required"
+      [name]="field.fieldName.en"
+      [id]="field.fieldID"
+      [minlength]="field.auxInfo.minLength"
+      [maxlength]="field.auxInfo.maxLength"
+      [(ngModel)]="formData[field.fieldID]"
+      #ngModel="ngModel"
+      [owlDateTime]="dt2"
+      [owlDateTimeTrigger]="dt2"
+    >
+    <owl-date-time #dt2></owl-date-time>
+  </div>
+  <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched)" class="alert alert-danger">
+    <div *ngIf="ngModel.errors.required">
+      {{field.errorMsg.ar}}
+    </div>
+  </div>
+</div>
+
+<div *ngIf="field.auxInfo.type == 'daterange'">
+  <div class="d-flex">
+    <input type="text"
+      class="form-control"
+      [class]="customClass"
+      [placeholder]="field.placeholder.ar || 'DD/MM/YYYY'"
+      [required]="field.required"
+      [name]="field.fieldName.en"
+      [id]="field.fieldID"
+      [minlength]="field.auxInfo.minLength"
+      [maxlength]="field.auxInfo.maxLength"
+      [(ngModel)]="formData[field.fieldID]"
+      #ngModel="ngModel"
+      [owlDateTime]="dt3"
+      [owlDateTimeTrigger]="dt3"
+      [selectMode]="'range'"
+    >
+    <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+  </div>
+  <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched)" class="alert alert-danger">
+    <div *ngIf="ngModel.errors.required">
+      {{field.errorMsg.ar}}
+    </div>
   </div>
 </div>

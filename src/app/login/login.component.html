@@ -42,7 +42,7 @@
           </div>
         </div>
       </div>
-      <form class="form-horizontal rtl" (ngSubmit)="login(formData)" #f="ngForm" novalidate *ngIf="response.fieldOrder">
+      <form class="form-horizontal rtl" (ngSubmit)="login(formData)" #f="ngForm" enctype='multipart/form-data' novalidate *ngIf="response.fieldOrder">
         <div class="card-body">
           <div class="form-group row" *ngFor="let row of response.fieldOrder; let i = index;">
             <div class="col-sm-12" *ngIf="row.allowMultiple">

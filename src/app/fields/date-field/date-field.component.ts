@@ -42,11 +42,4 @@ export class DateFieldComponent implements OnInit {
     return `#${field_name}`;
   }
 
-  getmedate(event: any) {
-    console.log('date set is', event)
-  }
-
-  hello() {
-    console.log('changed');
-  }
 }

@@ -9,6 +9,7 @@
 @import "~daterangepicker/daterangepicker.css";
 @import "~jquery-ui-dist/jquery-ui.min.css";
 @import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
 
 *{
     direction: rtl !important;
@@ -93,4 +94,29 @@
 .ng-select .ng-select-container .ng-value-container {
     padding-left: 0;
     padding-right: 10px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.rtl .ml-auto, [dir=rtl] .ml-auto {
+    margin-left: auto!important;
+    margin-right: 0!important;
+}
+
+.owl-dt-timer-divider {
+    right: -.3em;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-in-range.owl-dt-calendar-cell-range-from {
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-in-range.owl-dt-calendar-cell-range-to {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 999px;
+    border-bottom-left-radius: 999px;
 }

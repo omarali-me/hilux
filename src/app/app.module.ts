@@ -34,7 +34,10 @@ import { DisplayPdfGalleryComponent } from './tags/display-pdf-gallery/display-p
 import { DisplayTableComponent } from './tags/display-table/display-table.component';
 import { DisplayFieldDataComponent } from './tags/display-field-data/display-field-data.component';
 import { DisplayFieldGroupComponent } from './tags/display-field-group/display-field-group.component';
-import { CustomPageComponent } from './custom-page/custom-page.component'
+import { CustomPageComponent } from './custom-page/custom-page.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations'
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [
@@ -75,9 +78,12 @@ import { CustomPageComponent } from './custom-page/custom-page.component'
     HttpClientModule,
     SharedModule,
     NgSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NoopAnimationsModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule
   ],
-  providers: [],
+  providers: [{provide: OWL_DATE_TIME_LOCALE, useValue: 'ar'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
