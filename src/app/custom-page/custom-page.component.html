@@ -29,53 +29,10 @@
                 <div class="row" *ngFor="let display of response.displayData">
                   <div class="col-sm-12 mt-3" *ngFor="let item of display | keyvalue">
                     <app-display-fields [data]="item"></app-display-fields>
-                    <!-- <label class="col-sm-3">{{item.key}}</label>
-                    <div class="col-sm-9">
-                      {{item.value}}
-                    </div> -->
                   </div>
                 </div>
               </div>
-              <form class="form-horizontal rtl" (ngSubmit)="login(formData)" #f="ngForm" enctype='multipart/form-data' novalidate *ngIf="response.fieldOrder">
-                <div class="card-body">
-                  <div class="form-group row" *ngFor="let row of response.fieldOrder; let i = index;">
-                    <div class="col-sm-12" *ngIf="row.allowMultiple">
-                      <div class="row" *ngFor="let subRow of getFormDatafor(row); let j = index">
-                        <div [class]="getClass('col-sm-',field)" #rowReference *ngFor="let field of row.rowFields;">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <app-label [rowField]="field" [fields]="response.fields"></app-label>
-                              <app-field [rowField]="field" [fields]="response.fields" [index]="j" [row]="row.row" [fullFormData]="formData" [formData]="subRow"></app-field>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- <div class="col-sm-12">
-                          <app-sub-row #rowReference [index]="j" [row]="row" [rowField]="field" [fields]="response.fields" [formData]="subRow" *ngFor="let field of row.rowFields;"></app-sub-row>
-                        </div> -->
-                        <div class="col-sm-12 mt-2">
-                          <button type="button" (click)="deleteRow(row, i)" class="btn btn-sm btn-danger" *ngIf="row.allowMultiple && j != 0">Remove</button>
-                          <button type="button" (click)="addRow(row, i)" class="btn btn-sm btn-primary" *ngIf="row.allowMultiple && j == 0">add</button>
-                          <hr *ngIf="row.allowMultiple"/>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-12" *ngIf="!row.allowMultiple">
-                      <div [class]="getClass('col-sm-',field)" #rowReference [id]="getrowId(row)" *ngFor="let field of row.rowFields">
-                        <div class="row">
-                          <div class="col-sm-12">
-                            <app-label [rowField]="field" [fields]="response.fields"></app-label>
-                            <app-field [rowField]="field" [fields]="response.fields" [fullFormData]="formData" [formData]="getFormDatafor(row)"></app-field>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid">Submit</button>
-                  <button type="submit" class="btn btn-default">Cancel</button>
-                </div>
-              </form>
+              <app-form [response]="response" *ngIf="response.fieldOrder"></app-form>
           </div><!-- /.card-body -->
         </div>
       </div><!-- /.container-fluid -->

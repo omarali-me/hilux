@@ -23,7 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CurrencyFieldComponent } from './fields/currency-field/currency-field.component';
 import { CheckboxFieldComponent } from './fields/checkbox-field/checkbox-field.component';
-import { SubRowComponent } from './sub-row/sub-row.component';
 import { EntitySelectComponent } from './fields/entity-select/entity-select.component';
 import { StepSelectComponent } from './fields/step-select/step-select.component';
 import { DisplayFieldsComponent } from './tags/display-fields/display-fields.component';
@@ -38,6 +37,7 @@ import { CustomPageComponent } from './custom-page/custom-page.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +58,6 @@ import { OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
     RadioButtonFieldComponent,
     CurrencyFieldComponent,
     CheckboxFieldComponent,
-    SubRowComponent,
     EntitySelectComponent,
     StepSelectComponent,
     DisplayFieldsComponent,
@@ -70,6 +69,7 @@ import { OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
     DisplayFieldDataComponent,
     DisplayFieldGroupComponent,
     CustomPageComponent,
+    FormComponent,
   ],
   imports: [
     FormsModule,

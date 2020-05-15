@@ -1,0 +1,37 @@
+<form class="form-horizontal rtl" (ngSubmit)="saveData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+  <div class="card-body">
+    <div class="form-group row" *ngFor="let row of response.fieldOrder; let i = index;">
+      <div class="col-sm-12" *ngIf="row.allowMultiple">
+        <div class="row" *ngFor="let subRow of getFormDatafor(row); let j = index">
+          <div [class]="getClass('col-sm-',field)" #rowReference *ngFor="let field of row.rowFields;">
+            <div class="row">
+              <div class="col-sm-12">
+                <app-label [rowField]="field" [fields]="response.fields"></app-label>
+                <app-field [rowField]="field" [fields]="response.fields" [index]="j" [row]="row.row" [fullFormData]="formData" [formData]="subRow"></app-field>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 mt-2">
+            <button type="button" (click)="deleteRow(row, i)" class="btn btn-sm btn-danger" *ngIf="row.allowMultiple && j != 0">Remove</button>
+            <button type="button" (click)="addRow(row, i)" class="btn btn-sm btn-primary" *ngIf="row.allowMultiple && j == 0">add</button>
+            <hr *ngIf="row.allowMultiple"/>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12" *ngIf="!row.allowMultiple">
+        <div [class]="getClass('col-sm-',field)" #rowReference [id]="getrowId(row)" *ngFor="let field of row.rowFields">
+          <div class="row">
+            <div class="col-sm-12">
+              <app-label [rowField]="field" [fields]="response.fields"></app-label>
+              <app-field [rowField]="field" [fields]="response.fields" [fullFormData]="formData" [formData]="getFormDatafor(row)"></app-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid">Submit</button>
+    <button type="submit" class="btn btn-default">Cancel</button>
+  </div>
+</form>
