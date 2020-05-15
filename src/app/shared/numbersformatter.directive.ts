@@ -8,37 +8,60 @@ export class NumbersformatterDirective {
   @Input("precision") decimals: number = 0;
   currencyChars = new RegExp('[,]', 'g'); // we're going to remove commas and dots
 
-  constructor(public el: ElementRef, public renderer: Renderer2, private decimalPipe: DecimalPipe, private currencyPipe: CurrencyPipe) {}
+  constructor(public el: ElementRef, public renderer: Renderer2, private decimalPipe: DecimalPipe) {}
 
   ngOnInit() {
-    this.format(this.el.nativeElement.value); // format any initial values
+    this.run(this.el.nativeElement.value);
   }
 
-  @HostListener('input', ["$event.target.value"]) onInput(e: string) {
-    this.format(e);
-  };
-
-  @HostListener('paste', ['$event']) onPaste(event: ClipboardEvent) {
-    event.preventDefault();
-    this.format(event.clipboardData.getData('text/plain'));
-  }
-
-  format(val:string) {
-    // 1. test for non-number characters and replace/remove them
-    const numberFormat = String(val).replace(this.currencyChars, '');
-    // console.log(numberFormat); // raw number
-
-    // 2. format the number (add commas)
-    console.log('value here is ', numberFormat);
-
-    if (numberFormat.match(new RegExp('\.$'))) {
-      console.log('end with decimal')
+  private check(value: string) {
+    if (this.decimals <= 0) {
+      return String(value).match(new RegExp(/^\d+$/));
+    } else {
+      var regExpString =
+        "^\\s*((\\d+(\\.\\d{0," +
+        this.decimals +
+        "})?)|((\\d*(\\.\\d{1," +
+        this.decimals +
+        "}))))\\s*$";
+      return String(value).match(new RegExp(regExpString));
     }
-    const usd = this.decimalPipe.transform(numberFormat, `1.0-${this.decimals}`);
-    
-    console.log('value here is ', usd);
-    // 3. replace the input value with formatted numbers
-    this.renderer.setProperty(this.el.nativeElement, 'value', usd);
+  }
+
+  private run(oldValue) {
+    setTimeout(() => {
+      oldValue = String(oldValue).replace(this.currencyChars, '');
+      let currentValue: string = String(this.el.nativeElement.value).replace(this.currencyChars, '');
+      if (currentValue !== '' && !this.check(currentValue)) {
+        this.el.nativeElement.value = this.decimalPipe.transform(oldValue, `1.0-${this.decimals}`);
+      } else {
+        this.el.nativeElement.value = this.addCommas(currentValue);
+      }
+    });
+  }
+
+  private addCommas(nStr) {
+    nStr += '';
+    var comma = /,/g;
+    nStr = nStr.replace(comma,'');
+    let x = nStr.split('.');
+    let x1 = x[0];
+    let x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+      x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
+  }
+
+  @HostListener("keydown", ["$event"])
+  onKeyDown(event: KeyboardEvent) {
+    this.run(this.el.nativeElement.value);
+  }
+
+  @HostListener("paste", ["$event"])
+  onPaste(event: ClipboardEvent) {
+    this.run(this.el.nativeElement.value);
   }
 
 }
