@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { RowField } from '../fields/field_order';
 import { FieldsService } from '../shared/fields.service';
 import * as _ from 'lodash';
-import { RESPONSE_DATA } from '../shared/data';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { RESPONSE_DATA } from '../shared/data';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  response: any;
+  response: Observable<any>;
   formData: any = {};
 
   @ViewChild('app-field') field;
@@ -20,11 +21,12 @@ export class LoginComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService,
     private router: Router,
     private fieldsService: FieldsService,
-    private changeDetector: ChangeDetectorRef
+    private changeDetector: ChangeDetectorRef,
+    private http: HttpClient
     ) { }
 
   ngOnInit(): void {
-    this.response = RESPONSE_DATA;
+    this.response = this.http.get('http://localhost:3000/login');
   }
 
   login(formData: any) {

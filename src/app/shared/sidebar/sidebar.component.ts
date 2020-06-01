@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MENU_DATA } from '../data';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,10 +9,10 @@ import { MENU_DATA } from '../data';
 export class SidebarComponent implements OnInit {
   menuItems: any;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.menuItems = MENU_DATA;
+    this.menuItems = this.http.get('http://localhost:3000/menu');
   }
 
   getServiceProviderItem(data: any) {

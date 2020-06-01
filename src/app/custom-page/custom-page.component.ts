@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RESPONSE_DATA } from '../shared/data';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-custom-page',
@@ -10,11 +10,11 @@ import { RESPONSE_DATA } from '../shared/data';
 export class CustomPageComponent implements OnInit {
   response: any;
 
-  constructor(
+  constructor(private http: HttpClient
   ) { }
 
   ngOnInit(): void {
-    this.response = RESPONSE_DATA;
+    this.response = this.http.get('http://localhost:3000/custom_page');
   }
 
 }

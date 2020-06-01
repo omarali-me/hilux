@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NOTIFICATIONS } from 'src/app/shared/data';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-notifications',
@@ -8,7 +8,7 @@ import { NOTIFICATIONS } from 'src/app/shared/data';
 })
 export class NotificationsComponent implements OnInit {
   notifications: any;
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.loadNotifications();
@@ -16,7 +16,7 @@ export class NotificationsComponent implements OnInit {
 
   loadNotifications() {
     console.log('I am loaded');
-    this.notifications = NOTIFICATIONS;
+    this.notifications = this.http.get('http://localhost:3000/notifications');
 
     // TODO:: HANDLE ERROR CASE AND DON"T MAKE ANY REQUEST AFTER IT
     setTimeout(() => { this.loadNotifications() }, 5 * 1000);

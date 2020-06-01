@@ -38,6 +38,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
 import { FormComponent } from './form/form.component';
+import { RuleGeneratorComponent } from './rule-generator/rule-generator.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { FormComponent } from './form/form.component';
     DisplayFieldGroupComponent,
     CustomPageComponent,
     FormComponent,
+    RuleGeneratorComponent,
   ],
   imports: [
     FormsModule,

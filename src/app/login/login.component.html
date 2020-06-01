@@ -27,7 +27,7 @@
     <div class="login-logo">
       <a href="/"><b>Hilux</b>Login</a>
     </div>
-    <div class="card card-info">
+    <div class="card card-info" *ngIf="response | async as response">
       <div class="card-header">
         <h3 class="card-title">Login</h3>
       </div>
