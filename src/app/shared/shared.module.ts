@@ -8,19 +8,23 @@ import { FormsModule } from '@angular/forms';
 import { NumbersOnlyDirective } from './numbers-only.directive';
 import { NumbersformatterDirective } from './numbersformatter.directive';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { NotificationsComponent } from './layouts/header/notifications/notifications.component';
+import { TimeAgoPipe } from './time-ago.pipe';
 
 @NgModule({
   imports: [
     FormsModule,
     CommonModule
   ],
-  providers: [AuthenticationService, FieldsService, DecimalPipe, CurrencyPipe],
+  providers: [AuthenticationService, FieldsService, DecimalPipe, CurrencyPipe, TimeAgoPipe],
   declarations: [
     HeaderComponent,
     FooterComponent,
     NumbersOnlyDirective,
     NumbersformatterDirective,
     SidebarComponent,
+    NotificationsComponent,
+    TimeAgoPipe,
   ],
   exports: [
     HeaderComponent,

@@ -120,3 +120,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-top-left-radius: 999px;
     border-bottom-left-radius: 999px;
 }
+
+.sidebar-mini.sidebar-collapse .nav-sidebar .nav-link p {
+    width: 200px;
+}
