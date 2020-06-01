@@ -25,7 +25,7 @@ export class FieldsService {
       let preparedparams = this.prepaareParams(formData, field.auxInfo.apiParams)
       let finalParams = Object.assign({}, preparedparams, params);
       let apiUrl: string = field.auxInfo.sourceDetails
-      return this.http.get<any>(apiUrl, {params: finalParams});
+      return this.getUrl(apiUrl, finalParams);
     } else if (field.auxInfo.source == 'list') {
       return of(field.auxInfo.sourceDetails);
     } else {
@@ -82,6 +82,10 @@ export class FieldsService {
       });
     }
     return params;
+  }
+
+  getUrl(url: string, params: any = {}) {
+    return this.http.get<any>(url, {params: params});
   }
 }
 

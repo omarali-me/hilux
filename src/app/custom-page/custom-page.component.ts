@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { FieldsService } from '../shared/fields.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-custom-page',
@@ -8,13 +9,13 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class CustomPageComponent implements OnInit {
-  response: any;
+  response$: Observable<any>;
 
-  constructor(private http: HttpClient
+  constructor(private fieldsService: FieldsService
   ) { }
 
   ngOnInit(): void {
-    this.response = this.http.get('http://localhost:3000/custom_page');
+    this.response$ = this.fieldsService.getUrl('http://localhost:3000/custom_page');
   }
 
 }

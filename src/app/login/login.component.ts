@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { RowField } from '../fields/field_order';
 import { FieldsService } from '../shared/fields.service';
 import * as _ from 'lodash';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -13,7 +12,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  response: Observable<any>;
+  response$: Observable<any>;
   formData: any = {};
 
   @ViewChild('app-field') field;
@@ -21,12 +20,11 @@ export class LoginComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService,
     private router: Router,
     private fieldsService: FieldsService,
-    private changeDetector: ChangeDetectorRef,
-    private http: HttpClient
+    private changeDetector: ChangeDetectorRef
     ) { }
 
   ngOnInit(): void {
-    this.response = this.http.get('http://localhost:3000/login');
+    this.response$ = this.fieldsService.getUrl('http://localhost:3000/login');
   }
 
   login(formData: any) {

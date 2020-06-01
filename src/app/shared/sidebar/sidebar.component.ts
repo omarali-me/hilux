@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { FieldsService } from '../fields.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,12 +8,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  menuItems: any;
+  menuItems$: Observable<any>;
 
-  constructor(private http: HttpClient) { }
+  constructor(private fieldsService: FieldsService) { }
 
   ngOnInit(): void {
-    this.menuItems = this.http.get('http://localhost:3000/menu');
+    this.menuItems$ = this.fieldsService.getUrl('http://localhost:3000/menu');
   }
 
   getServiceProviderItem(data: any) {

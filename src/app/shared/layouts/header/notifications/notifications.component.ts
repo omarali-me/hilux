@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { FieldsService } from 'src/app/shared/fields.service';
 
 @Component({
   selector: 'app-notifications',
@@ -8,15 +8,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NotificationsComponent implements OnInit {
   notifications: any;
-  constructor(private http: HttpClient) { }
+  constructor(private fieldsService: FieldsService) { }
 
   ngOnInit(): void {
     this.loadNotifications();
   }
 
   loadNotifications() {
-    console.log('I am loaded');
-    this.notifications = this.http.get('http://localhost:3000/notifications');
+    this.fieldsService.getUrl('http://localhost:3000/notifications').subscribe(data => {
+      this.notifications = data;
+    })
 
     // TODO:: HANDLE ERROR CASE AND DON"T MAKE ANY REQUEST AFTER IT
     setTimeout(() => { this.loadNotifications() }, 5 * 1000);
