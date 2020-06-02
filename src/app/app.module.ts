@@ -39,6 +39,9 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
 import { FormComponent } from './form/form.component';
 import { RuleGeneratorComponent } from './rule-generator/rule-generator.component';
+import { CommitDataGeneratorComponent } from './rule-generator/commit-data-generator/commit-data-generator.component';
+import { StartCriteriaGeneratorComponent } from './rule-generator/start-criteria-generator/start-criteria-generator.component';
+import { EndCriteriaGeneratorComponent } from './rule-generator/end-criteria-generator/end-criteria-generator.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +75,9 @@ import { RuleGeneratorComponent } from './rule-generator/rule-generator.componen
     CustomPageComponent,
     FormComponent,
     RuleGeneratorComponent,
+    CommitDataGeneratorComponent,
+    StartCriteriaGeneratorComponent,
+    EndCriteriaGeneratorComponent,
   ],
   imports: [
     FormsModule,
