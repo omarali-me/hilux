@@ -40,6 +40,6 @@ export class RuleGeneratorComponent implements OnInit {
   }
 
   blankStep() {
-    return { statusName: { ar: "", en: "" }, commitData: {}}
+    return { statusName: { ar: "", en: "" }, commitData: { values: {} }}
   }
 }

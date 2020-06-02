@@ -7,3 +7,11 @@ export interface Step {
 export interface Steps {
   steps: Step[];
 }
+
+export interface CommitData {
+  commit: string;
+  commitID: string | number;
+  multiple: boolean;
+  entity: string;
+  values: any;
+}

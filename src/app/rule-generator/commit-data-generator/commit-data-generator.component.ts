@@ -46,7 +46,7 @@ export class CommitDataGeneratorComponent implements OnInit {
   }
 
   blankCommitData() {
-    return {}
+    return { values: {} }
   }
 
   isEnumerator(data: any) {

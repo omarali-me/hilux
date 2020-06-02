@@ -1,4 +1,5 @@
 <div class="row" *ngIf="formData.commitData as commitData">
+  <label>Commit Data</label>
   <div class="col-sm-12" *ngIf="isEnumerator(commitData)">
     <div class="row" *ngFor="let commit of commitData; let i = index;">
       <div class="col-sm-12" >
@@ -21,11 +22,14 @@
               <label class="form-check-label">multiple</label>
             </div>
           </div>
-    
-          <div class="form-group row">
+        </div>
 
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <app-values-generator [formData]="commit"></app-values-generator>
           </div>
         </div>
+
       </div>
       <div class="col-sm-12 mt-2">
         <button type="button" (click)="deleteRow(i)" class="btn btn-sm btn-danger" *ngIf="i != 0">Remove</button>
@@ -55,10 +59,14 @@
           <label class="form-check-label">multiple</label>
         </div>
       </div>
+    </div>
 
-      <div class="">
+    <div class="form-group row">
+      <div class="col-sm-12">
+        <app-values-generator [formData]="commitData"></app-values-generator>
       </div>
     </div>
+
     <div class="col-sm-12 mt-2">
       <button type="button" (click)="addRow()" class="btn btn-sm btn-primary">add</button>
       <!-- <hr *ngIf="(formData?.length - 1) !== i"/> -->
