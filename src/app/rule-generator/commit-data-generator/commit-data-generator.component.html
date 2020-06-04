@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-12">
       <label>Commit Data</label>
-      <ng-select class="rtl" [items]="dataOptions" name="commitType" [(ngModel)]="commitType" bindLabel="name" bindValue="id"></ng-select>
+      <ng-select class="rtl" [clearable]="false" [searchable]="false" [items]="dataOptions" name="commitType" [(ngModel)]="commitType" bindLabel="name" bindValue="id"></ng-select>
 
       <button type="button" (click)="addRow()" class="btn btn-sm btn-primary">add</button>
     </div>
