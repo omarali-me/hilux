@@ -11,6 +11,13 @@ import { Step } from '../step';
   viewProviders: [ { provide: ControlContainer, useExisting: NgForm } ]
 })
 export class CommitDataGeneratorComponent implements OnInit {
+  commitType: string = 'commit';
+  dataOptions: any = [
+                  {id: 'commit', name: 'Commit'},
+                  {id: 'insert', name: 'Insert'},
+                  {id: 'update', name: 'Update'},
+                  {id: 'delete', name: 'Delete'},
+                ]
 
   @Input() formData: Step;
 
@@ -20,15 +27,15 @@ export class CommitDataGeneratorComponent implements OnInit {
   }
 
   addRow() {
-    if (!this.isEnumerator(this.formData.commitData)) {
-      this.formData.commitData = [this.formData.commitData];
+    if (this.formData.commitData) {
+      if (!this.isEnumerator(this.formData.commitData)) {
+        this.formData.commitData = [this.formData.commitData];
+      }
+  
+      this.formData.commitData.push(this.blankCommitData());
+    } else {
+      this.formData.commitData = this.blankCommitData();
     }
-
-    this.formData.commitData.push(this.blankCommitData());
-  }
-
-  getrowId(row: any) {
-    return `${row.row}`;
   }
 
   deleteRow(index) {
@@ -46,7 +53,9 @@ export class CommitDataGeneratorComponent implements OnInit {
   }
 
   blankCommitData() {
-    return { values: {} }
+    let data = {};
+    data[this.commitType] = {}
+    return data;
   }
 
   isEnumerator(data: any) {

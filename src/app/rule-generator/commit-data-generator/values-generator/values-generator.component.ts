@@ -11,6 +11,12 @@ import * as _ from 'lodash';
   viewProviders: [ { provide: ControlContainer, useExisting: NgForm } ]
 })
 export class ValuesGeneratorComponent implements OnInit {
+  valueType: string = 'value';
+  dataOptions: any = [
+    {id: 'function_params', name: 'Function + Params'},
+    {id: 'step_field', name: 'Step + Field'},
+    {id: 'value', name: 'Value'}
+  ]
 
   @Input() formData: CommitData;
 
@@ -20,13 +26,17 @@ export class ValuesGeneratorComponent implements OnInit {
   }
 
   addRow() {
-    if (!this.isEnumerator(this.formData.values)) {
-      this.formData.values = [this.formData.values];
+    if (this.formData.values) {
+      if (!this.isEnumerator(this.formData.values)) {
+        console.log('here in sife the add row', this.formData.values);
+        this.formData.values = [this.formData.values];
+      }
+
+      this.formData.values.push(this.blankValues());
+    } else {
+      this.formData.values = this.blankValues();
     }
-
-    this.formData.values.push(this.blankValues());
   }
-
 
   deleteRow(index) {
     _.remove(this.formData.values, function(resource, i) {
@@ -43,11 +53,23 @@ export class ValuesGeneratorComponent implements OnInit {
   }
 
   blankValues() {
-    return { }
+    let data = { column: null };
+    if (this.valueType == 'function_params') {
+      data = Object.assign({}, data, { phpFunction: null, params: null})
+    } else if (this.valueType == 'step_field') {
+      data = Object.assign({}, data, { fieldID: null, step: null})
+    } else {
+      data = Object.assign({}, data, { value: null})
+    }
+
+    return data;
   }
 
   isEnumerator(data: any) {
     return isArray(data);
   }
 
+  hasKey(value: any, inclusion_key: string) {
+    return Object.keys(value).includes(inclusion_key);
+  }
 }
