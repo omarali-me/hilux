@@ -57,10 +57,6 @@ export class AndPredicateGeneratorComponent implements OnInit {
     _.remove(this.formData.value, function(resource, i) {
         return index === i;
     });
-
-    if (this.isEnumerator(this.formData.value) && this.formData.value?.length == 1) {
-      this.formData.value = this.formData.value[0];
-    }
   }
 
   ngAfterViewInit () {
