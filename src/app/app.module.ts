@@ -43,6 +43,9 @@ import { CommitDataGeneratorComponent } from './rule-generator/commit-data-gener
 import { StartCriteriaGeneratorComponent } from './rule-generator/start-criteria-generator/start-criteria-generator.component';
 import { EndCriteriaGeneratorComponent } from './rule-generator/end-criteria-generator/end-criteria-generator.component';
 import { ValuesGeneratorComponent } from './rule-generator/commit-data-generator/values-generator/values-generator.component';
+import { PredicateGeneratorComponent } from './rule-generator/predicate-generator/predicate-generator.component';
+import { OrPredicateGeneratorComponent } from './rule-generator/or-predicate-generator/or-predicate-generator.component';
+import { AndPredicateGeneratorComponent } from './rule-generator/and-predicate-generator/and-predicate-generator.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +83,9 @@ import { ValuesGeneratorComponent } from './rule-generator/commit-data-generator
     StartCriteriaGeneratorComponent,
     EndCriteriaGeneratorComponent,
     ValuesGeneratorComponent,
+    PredicateGeneratorComponent,
+    OrPredicateGeneratorComponent,
+    AndPredicateGeneratorComponent,
   ],
   imports: [
     FormsModule,

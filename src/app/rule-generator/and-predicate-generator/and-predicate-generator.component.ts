@@ -1,0 +1,86 @@
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { isArray } from 'util';
+import { ControlContainer, NgForm } from '@angular/forms';
+import * as _ from 'lodash';
+
+@Component({
+  selector: 'app-and-predicate-generator',
+  templateUrl: './and-predicate-generator.component.html',
+  styleUrls: ['./and-predicate-generator.component.css'],
+  viewProviders: [ { provide: ControlContainer, useExisting: NgForm } ]
+})
+export class AndPredicateGeneratorComponent implements OnInit {
+  predicateType: string = 'condition';
+
+  dataOptions: any = [
+    {id: 'condition', name: 'Condition'},
+    {id: 'or', name: 'Or'},
+    {id: 'and', name: 'And'}
+  ]
+
+  typeOptions: any = [
+    {id: 'in', name: 'in'},
+    {id: '=', name: '='},
+    {id: '!=', name: '!='},
+    {id: '<', name: '<'},
+    {id: '<=', name: '<='},
+    {id: '>', name: '>'},
+    {id: '>=', name: '>='},
+    {id: 'like', name: 'like'}
+  ]
+
+  @Input() formData: any;
+  
+  constructor(private changeDetector: ChangeDetectorRef) { }
+
+  ngOnInit(): void {
+  }
+
+  addRow() {
+    console.log('form data here', this.formData)
+    // if (this.formData.value) {
+    //   this.formData = Object.assign({}, this.formData, this.blankPredicateData());
+    // }
+
+    if (this.formData.value) {
+      if (!this.isEnumerator(this.formData.value)) {
+        this.formData.value = [this.formData.value];
+      }
+  
+      this.formData.value.push(this.blankPredicateData());
+    } else {
+      this.formData.value = this.blankPredicateData();
+    }
+  }
+
+  deleteRow(index) {
+    _.remove(this.formData.value, function(resource, i) {
+        return index === i;
+    });
+
+    if (this.isEnumerator(this.formData.value) && this.formData.value?.length == 1) {
+      this.formData.value = this.formData.value[0];
+    }
+  }
+
+  ngAfterViewInit () {
+    this.changeDetector.detectChanges();
+  }
+
+  blankPredicateData() {
+    let data = {};
+    if (this.predicateType == 'condition') {
+      data = Object.assign({}, data, { condition: { type: '=', data: {} } })
+    } else if(this.predicateType == 'and') {
+      data = Object.assign({}, data, { and: [] })
+    } else {
+      data = Object.assign({}, data, { or: [] })
+    }
+
+    return data;
+  }
+
+  isEnumerator(data: any) {
+    return isArray(data);
+  }
+}
