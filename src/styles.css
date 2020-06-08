@@ -124,3 +124,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .sidebar-mini.sidebar-collapse .nav-sidebar .nav-link p {
     width: 200px;
 }
+
+@media (min-width: 992px) {
+    .sidebar-mini.sidebar-collapse .main-footer {
+        margin-right: 0rem!important;
+        padding-right: 5rem!important;
+    }
+}
+
+.custom-direction {
+    direction: ltr !important;
+}

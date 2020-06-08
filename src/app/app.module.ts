@@ -46,7 +46,13 @@ import { ValuesGeneratorComponent } from './rule-generator/commit-data-generator
 import { PredicateGeneratorComponent } from './rule-generator/predicate-generator/predicate-generator.component';
 import { OrPredicateGeneratorComponent } from './rule-generator/or-predicate-generator/or-predicate-generator.component';
 import { AndPredicateGeneratorComponent } from './rule-generator/and-predicate-generator/and-predicate-generator.component';
-
+import {PrettyJsonModule} from 'angular2-prettyjson';
+import { ValueGeneratorComponent } from './rule-generator/value-generator/value-generator.component';
+import { DataInGeneratorComponent } from './rule-generator/data-in-generator/data-in-generator.component';
+import { FieldsGeneratorComponent } from './rule-generator/data-in-generator/fields-generator/fields-generator.component';
+import { FieldOrderGeneratorComponent } from './rule-generator/data-in-generator/field-order-generator/field-order-generator.component';
+import { RowFieldsComponent } from './rule-generator/data-in-generator/field-order-generator/row-fields/row-fields.component';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,6 +92,11 @@ import { AndPredicateGeneratorComponent } from './rule-generator/and-predicate-g
     PredicateGeneratorComponent,
     OrPredicateGeneratorComponent,
     AndPredicateGeneratorComponent,
+    ValueGeneratorComponent,
+    DataInGeneratorComponent,
+    FieldsGeneratorComponent,
+    FieldOrderGeneratorComponent,
+    RowFieldsComponent,
   ],
   imports: [
     FormsModule,
@@ -97,9 +108,12 @@ import { AndPredicateGeneratorComponent } from './rule-generator/and-predicate-g
     ReactiveFormsModule,
     NoopAnimationsModule,
     OwlDateTimeModule,
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
+    PrettyJsonModule
   ],
-  providers: [{provide: OWL_DATE_TIME_LOCALE, useValue: 'ar'}],
+  providers: [
+    {provide: OWL_DATE_TIME_LOCALE, useValue: 'ar'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

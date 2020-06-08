@@ -1,0 +1,130 @@
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-sm-12">
+      <label>Fields Data</label>
+      <button type="button" (click)="addRow()" class="btn btn-sm btn-primary">add</button>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="formData.fields as fields">
+    <div class="col-sm-12" *ngIf="isEnumerator(fields)">
+      <div class="row" *ngFor="let field of fields; let i = index;">
+        <label>Field {{i + 1}}</label>
+        <div class="col-sm-12" >
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label class="">Field Id</label>
+              <input class="form-control" type="text" placeholder="Enter Field Id" [name]="'fieldID_' + i" [(ngModel)]="field.fieldID"/>
+            </div>
+
+            <div class="col-sm-6">
+              <label class="">Field Type</label>
+              <ng-select class="rtl" [clearable]="false" [searchable]="false" [items]="dataOptions" [name]="'fieldType_' + i" [(ngModel)]="field.fieldType" bindLabel="name" bindValue="id"></ng-select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" [name]="'required_'+ i" [(ngModel)]="field.required"/>
+                <label class="form-check-label">Required</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label class="">Field Name</label>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label class="">Arabic</label>
+                  <input class="form-control" type="text" placeholder="Enter Field Name" [name]="'ar_'+ i" [(ngModel)]="field.fieldName.ar"/>
+                </div>
+                <div class="col-sm-6">
+                  <label class="">English</label>
+                  <input class="form-control" type="text" placeholder="Enter Field Name" [name]="'en_' + i" [(ngModel)]="field.fieldName.en"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label class="">Placeholder</label>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label class="">Arabic</label>
+                  <input class="form-control" type="text" placeholder="Enter Placeholder" [name]="'ar_'+ i" [(ngModel)]="field.placeholder.ar"/>
+                </div>
+                <div class="col-sm-6">
+                  <label class="">English</label>
+                  <input class="form-control" type="text" placeholder="Enter Placeholder" [name]="'en_' + i" [(ngModel)]="field.placeholder.en"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label class="">Error Message</label>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label class="">Arabic</label>
+                  <input class="form-control" type="text" placeholder="Enter Error Message" [name]="'ar_'+ i" [(ngModel)]="field.errorMsg.ar"/>
+                </div>
+                <div class="col-sm-6">
+                  <label class="">English</label>
+                  <input class="form-control" type="text" placeholder="Enter Error Message" [name]="'en_' + i" [(ngModel)]="field.errorMsg.en"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <!-- <app-values-generator [formData]="commit.value"></app-values-generator> -->
+              <div class="row">
+                <div class="col-sm-6">
+                  <label class="">Accepted File Types</label>
+                  <input class="form-control" type="text" placeholder="Enter Accepted File Types" [name]="'acceptedFileTypes_' + i" [(ngModel)]="field.auxInfo.acceptedFileTypes"/>
+                </div>
+                <div class="col-sm-6">
+                  <label class="">Type</label>
+                  <input class="form-control" type="text" placeholder="Enter Type" [name]="'type_' + i" [(ngModel)]="field.auxInfo.type"/>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <label class="">Minimum Length</label>
+                  <input class="form-control" type="text" placeholder="Enter Mininum Length" [name]="'minLength_' + i" [(ngModel)]="field.auxInfo.minLength"/>
+                </div>
+
+                <div class="col-sm-6">
+                  <label class="">Maximum Length</label>
+                  <input class="form-control" type="text" placeholder="Enter Maximum Length" [name]="'maxLength_' + i" [(ngModel)]="field.auxInfo.maxLength"/>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <label class="">Source</label>
+                  <input class="form-control" type="text" placeholder="Enter Source" [name]="'source_' + i" [(ngModel)]="field.auxInfo.source"/>
+                </div>
+                <div class="col-sm-6">
+                  <label class="">Source Details</label>
+                  <input class="form-control" type="text" placeholder="Enter Source Details" [name]="'sourceDetails_' + i" [(ngModel)]="field.auxInfo.sourceDetails"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-12 mt-2">
+          <button type="button" (click)="deleteRow(i)" class="btn btn-sm btn-danger" *ngIf="i != 0">Remove</button>
+          <hr *ngIf="(fields?.length - 1) !== i"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

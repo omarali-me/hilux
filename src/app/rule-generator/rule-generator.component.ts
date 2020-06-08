@@ -42,4 +42,8 @@ export class RuleGeneratorComponent implements OnInit {
   blankStep() {
     return { statusName: { ar: "", en: "" }, startCriteria: { stepsDataLogic: {} }}
   }
+
+  getFormData() {
+    return this.formData.steps;
+  }
 }
