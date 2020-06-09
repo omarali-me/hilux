@@ -13,7 +13,7 @@ export class SidebarComponent implements OnInit {
   constructor(private fieldsService: FieldsService) { }
 
   ngOnInit(): void {
-    this.menuItems$ = this.fieldsService.getUrl('http://localhost:3000/menu');
+    this.menuItems$ = this.fieldsService.getUrl('http://192.168.0.150:3000/menu');
   }
 
   getServiceProviderItem(data: any) {

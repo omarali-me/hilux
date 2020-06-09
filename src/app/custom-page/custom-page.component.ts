@@ -15,7 +15,7 @@ export class CustomPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.response$ = this.fieldsService.getUrl('http://localhost:3000/custom_page');
+    this.response$ = this.fieldsService.getUrl('http://192.168.0.150:3000/custom_page');
   }
 
 }

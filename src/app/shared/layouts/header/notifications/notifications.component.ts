@@ -15,7 +15,7 @@ export class NotificationsComponent implements OnInit {
   }
 
   loadNotifications() {
-    this.fieldsService.getUrl('http://localhost:3000/notifications').subscribe(data => {
+    this.fieldsService.getUrl('http://192.168.0.150:3000/notifications').subscribe(data => {
       this.notifications = data;
     })
 
