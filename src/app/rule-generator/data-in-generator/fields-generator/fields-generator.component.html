@@ -109,12 +109,17 @@
               <div class="row">
                 <div class="col-sm-6">
                   <label class="">Source</label>
-                  <input class="form-control" type="text" placeholder="Enter Source" [name]="'source_' + i" [(ngModel)]="field.auxInfo.source"/>
+                  <ng-select class="rtl" [clearable]="false" [searchable]="false" [items]="sourceTypeOptions" [name]="'source_' + i" [(ngModel)]="field.auxInfo.source" bindLabel="name" bindValue="id"></ng-select>
                 </div>
+
                 <div class="col-sm-6">
+                  <app-dropdown-values [formData]="field.auxInfo"></app-dropdown-values>
+                </div>
+
+                <!-- <div class="col-sm-6" *ngIf="field.auxInfo.source != 'list'">
                   <label class="">Source Details</label>
                   <input class="form-control" type="text" placeholder="Enter Source Details" [name]="'sourceDetails_' + i" [(ngModel)]="field.auxInfo.sourceDetails"/>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>

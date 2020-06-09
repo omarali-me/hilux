@@ -39,8 +39,7 @@
                     </div>
     
                     <div class="col-sm-6">
-                      <label>Value</label>
-                      <input class="form-control" type="text" placeholder="Enter Value" [name]="'value_' + i" [(ngModel)]="commit.value.data.value"/>
+                      <app-value-generator [formData]="commit.value"></app-value-generator>
                     </div>
                   </div>
                 </div>
@@ -84,8 +83,7 @@
                 </div>
 
                 <div class="col-sm-6">
-                  <label>Value</label>
-                  <input class="form-control" type="text" placeholder="Enter Value" name="value" [(ngModel)]="item.value.data.value"/>
+                  <app-value-generator [formData]="item.value"></app-value-generator>
                 </div>
               </div>
             </div>

@@ -40,7 +40,10 @@ export class RuleGeneratorComponent implements OnInit {
   }
 
   blankStep() {
-    return { statusName: { ar: "", en: "" }, startCriteria: { stepsDataLogic: {} }}
+    return { statusName: { ar: "", en: "" },
+              startCriteria: { stepsDataLogic: {} },
+              dataIn: { fieldOrder: [], fields: [] }
+            }
   }
 
   getFormData() {

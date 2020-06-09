@@ -21,6 +21,11 @@ export class FieldsGeneratorComponent implements OnInit {
     {id: 'date', name: 'Date'},
   ]
 
+  sourceTypeOptions:any = [
+    {id: 'api', name: 'API'},
+    {id: 'list', name: 'List'},
+  ]
+
   @Input() formData: any;
 
   constructor(private changeDetector: ChangeDetectorRef) { }
@@ -38,7 +43,7 @@ export class FieldsGeneratorComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit () {
+  ngAfterContentInit () {
     this.changeDetector.detectChanges();
   }
 
@@ -47,7 +52,7 @@ export class FieldsGeneratorComponent implements OnInit {
                   fieldName: {},
                   placeholder: {},
                   errorMsg: {},
-                  auxInfo: {}
+                  auxInfo: { source: 'api' }
                 };
     return data;
   }

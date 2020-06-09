@@ -20,7 +20,7 @@ export class NotificationsComponent implements OnInit {
     })
 
     // TODO:: HANDLE ERROR CASE AND DON"T MAKE ANY REQUEST AFTER IT
-    setTimeout(() => { this.loadNotifications() }, 5 * 1000);
+    setTimeout(() => { this.loadNotifications() }, 30 * 1000);
   }
 
   getStatusClass(notification: any) {

@@ -37,7 +37,6 @@ export class AndPredicateGeneratorComponent implements OnInit {
   }
 
   addRow() {
-    console.log('form data here', this.formData)
     // if (this.formData.value) {
     //   this.formData = Object.assign({}, this.formData, this.blankPredicateData());
     // }
