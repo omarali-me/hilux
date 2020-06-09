@@ -9,6 +9,8 @@ export class DisplayFieldGroupComponent implements OnInit {
 
   @Input() data: any;
 
+  @Input() customClass: string = 'mb3';
+
   constructor() { }
 
   ngOnInit(): void {

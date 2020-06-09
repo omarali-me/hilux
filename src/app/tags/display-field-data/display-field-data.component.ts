@@ -9,6 +9,8 @@ export class DisplayFieldDataComponent implements OnInit {
 
   @Input() data: any;
 
+  @Input() customClass: string;
+
   constructor() { }
 
   ngOnInit(): void {

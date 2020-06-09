@@ -37,4 +37,12 @@ export class StartCriteriaGeneratorComponent implements OnInit {
     return isArray(data);
   }
 
+  addRow(){
+
+  }
+
+  deleteRow(index: any) {
+    
+  }
+
 }
