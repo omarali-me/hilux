@@ -38,19 +38,13 @@ export class PredicateGeneratorComponent implements OnInit {
   }
 
   addRow() {
-    if (this.formData.stepsDataLogic) {
-      this.formData.stepsDataLogic = Object.assign({}, this.formData.stepsDataLogic, this.blankPredicateData());
+    if (this.formData[this.key]) {
+      this.formData[this.key] = Object.assign({}, this.formData[this.key], this.blankPredicateData());
     }
   }
 
-  deleteRow(index) {
-    _.remove(this.formData.stepsDataLogic, function(resource, i) {
-        return index === i;
-    });
-
-    if (this.isEnumerator(this.formData.stepsDataLogic) && this.formData.stepsDataLogic?.length == 1) {
-      this.formData.stepsDataLogic = this.formData.stepsDataLogic[0];
-    }
+  deleteRow(deletekey) {
+    _.unset(this.formData[this.key], deletekey);
   }
 
   ngAfterViewInit () {

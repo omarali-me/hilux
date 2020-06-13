@@ -42,6 +42,7 @@ export class RuleGeneratorComponent implements OnInit {
   blankStep() {
     return { statusName: { ar: "", en: "" },
               startCriteria: { stepsDataLogic: {} },
+              endCriteria: { dataValidation: {} },
               dataIn: { fieldOrder: [], fields: [] }
             }
   }
