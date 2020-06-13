@@ -1,0 +1,44 @@
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-sm-12">
+      <label>Field</label>
+      <button type="button" (click)="addRow()" class="btn btn-sm btn-primary">add</button>
+    </div>
+  </div>
+
+
+  <div class="row" *ngIf="formData[key] as fieldData">
+    <div class="col-sm-12" *ngIf="!isEnumerator(fieldData)">
+      <div class="row" *ngFor="let item of fieldData | keyvalue:nonsort; let i = index;">
+        <div class="col-sm-12">
+          <div class="form-group row">
+            <label>{{item.key}}</label>
+            <div class="col-sm-12">
+              <label class="statusName">Error Message</label>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label class="statusName">Arabic</label>
+                  <input class="form-control" type="text" placeholder="Enter Status Name" [name]="'ar_'+ i" [(ngModel)]="item.value.errorMessage.ar"/>
+                </div>
+                <div class="col-sm-6">
+                  <label class="statusName">English</label>
+                  <input class="form-control" type="text" placeholder="Enter Status Name" [name]="'en_' + i" [(ngModel)]="item.value.errorMessage.en"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <app-predicate-generator [formData]="item.value" [key]="'criteria'"></app-predicate-generator>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 mt-2">
+          <button type="button" (click)="deleteRow(item.key)" class="btn btn-sm btn-danger">Remove</button>
+          <hr *ngIf="(fieldData?.length - 1) !== i"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

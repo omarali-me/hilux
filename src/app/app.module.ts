@@ -53,6 +53,7 @@ import { FieldsGeneratorComponent } from './rule-generator/data-in-generator/fie
 import { FieldOrderGeneratorComponent } from './rule-generator/data-in-generator/field-order-generator/field-order-generator.component';
 import { RowFieldsComponent } from './rule-generator/data-in-generator/field-order-generator/row-fields/row-fields.component';
 import { DropdownValuesComponent } from './rule-generator/data-in-generator/fields-generator/dropdown-values/dropdown-values.component';
+import { FieldGeneratorComponent } from './rule-generator/end-criteria-generator/field-generator/field-generator.component';
  
 @NgModule({
   declarations: [
@@ -99,6 +100,7 @@ import { DropdownValuesComponent } from './rule-generator/data-in-generator/fiel
     FieldOrderGeneratorComponent,
     RowFieldsComponent,
     DropdownValuesComponent,
+    FieldGeneratorComponent,
   ],
   imports: [
     FormsModule,
