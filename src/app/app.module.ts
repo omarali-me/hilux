@@ -54,6 +54,11 @@ import { FieldOrderGeneratorComponent } from './rule-generator/data-in-generator
 import { RowFieldsComponent } from './rule-generator/data-in-generator/field-order-generator/row-fields/row-fields.component';
 import { DropdownValuesComponent } from './rule-generator/data-in-generator/fields-generator/dropdown-values/dropdown-values.component';
 import { FieldGeneratorComponent } from './rule-generator/end-criteria-generator/field-generator/field-generator.component';
+import { DataDisplayGeneratorComponent } from './rule-generator/data-display-generator/data-display-generator.component';
+import { ImageGeneratorComponent } from './rule-generator/data-display-generator/image-generator/image-generator.component';
+import { TableGeneratorComponent } from './rule-generator/data-display-generator/table-generator/table-generator.component';
+import { DisplayFieldGeneratorComponent } from './rule-generator/data-display-generator/display-field-generator/display-field-generator.component';
+import { DisplayKeysGeneratorComponent } from './rule-generator/data-display-generator/display-keys-generator/display-keys-generator.component';
  
 @NgModule({
   declarations: [
@@ -101,6 +106,11 @@ import { FieldGeneratorComponent } from './rule-generator/end-criteria-generator
     RowFieldsComponent,
     DropdownValuesComponent,
     FieldGeneratorComponent,
+    DataDisplayGeneratorComponent,
+    ImageGeneratorComponent,
+    TableGeneratorComponent,
+    DisplayFieldGeneratorComponent,
+    DisplayKeysGeneratorComponent,
   ],
   imports: [
     FormsModule,
