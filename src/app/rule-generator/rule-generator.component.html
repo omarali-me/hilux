@@ -81,16 +81,22 @@
                             <app-start-criteria-generator [formData]="steps[i]"></app-start-criteria-generator>
                           </div>
                         </div>
-  <!-- 
+  
                         <div class="form-group row">
                           <div class="col-sm-12">
-                            <app-end-criteria-generator [formData]="steps[i].endCriteria"></app-end-criteria-generator>
+                            <app-end-criteria-generator [formData]="steps[i]"></app-end-criteria-generator>
                           </div>
-                        </div> -->
+                        </div>
 
                         <div class="form-group row">
                           <div class="col-sm-12">
                             <app-data-in-generator [formData]="steps[i]"></app-data-in-generator>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <app-data-display-generator [formData]="steps[i]"></app-data-display-generator>
                           </div>
                         </div>
 
