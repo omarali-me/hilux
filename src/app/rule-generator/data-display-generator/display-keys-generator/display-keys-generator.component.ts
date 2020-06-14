@@ -30,18 +30,8 @@ export class DisplayKeysGeneratorComponent implements OnInit {
   }
 
   addRow() {
-    // if (this.formData[this.key].value) {
-    //   if (!this.isEnumerator(this.formData[this.key].value)) {
-    //     this.formData[this.key].value = [this.formData[this.key].value];
-    //   }
-  
-    //   this.formData[this.key].value.push(this.blankDisplayData());
-    // } else {
-    //   this.formData[this.key].value = this.blankDisplayData();
-    // }
     if (this.formData[this.key]) {
       this.formData[this.key] = Object.assign({}, this.formData[this.key], this.blankDisplayData());
-      console.log('here in fields', this.formData[this.key]);
     }
   }
 
@@ -87,7 +77,7 @@ export class DisplayKeysGeneratorComponent implements OnInit {
   }
 
   deleteItemRow(deletekey) {
-    _.unset(this.formData[this.key].value, deletekey);
+    _.unset(this.formData[this.key], deletekey);
   }
 }
 
