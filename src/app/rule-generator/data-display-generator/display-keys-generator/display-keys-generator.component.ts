@@ -35,14 +35,8 @@ export class DisplayKeysGeneratorComponent implements OnInit {
     }
   }
 
-  deleteRow(index) {
-    _.remove(this.formData[this.key], function(resource, i) {
-        return index === i;
-    });
-
-    if (this.isEnumerator(this.formData[this.key]) && this.formData[this.key]?.length == 1) {
-      this.formData[this.key] = this.formData[this.key][0];
-    }
+  deleteRow(deletekey) {
+    _.unset(this.formData[this.key], deletekey);
   }
 
   ngAfterViewInit () {
@@ -54,17 +48,17 @@ export class DisplayKeysGeneratorComponent implements OnInit {
     if (this.dataType == 'image') {
       data[this.dataType] = { };
     } else if (this.dataType == 'image-gallery') {
-      data[this.dataType] = { };
+      data[this.dataType] = [];
     } else if (this.dataType == 'pdf') {
       data[this.dataType] = { };
     } else if (this.dataType == 'pdf-gallery') {
-      data[this.dataType] = { };
+      data[this.dataType] = [];
     } else if (this.dataType == 'table') {
       data[this.dataType] = { thead: {}, tbody: {}};
     } else if (this.dataType == 'field-data') {
       data[this.dataType] = { label: {}, value: {}};
     } else if (this.dataType == 'field-group') {
-      data[this.dataType] = { fieldGroupName: {}, fields: {}};
+      data[this.dataType] = { fieldGroupName: {}, fields: [] };
     } else {
       data[this.dataType] = { };
     }
@@ -85,61 +79,3 @@ export class DisplayKeysGeneratorComponent implements OnInit {
   }
 
 }
-
-// "displayData": [{
-//   "image":{"caption":"customer Signature", "src":"https://i.picsum.photos/id/1002/4312/2868.jpg"},
-//   "image-gallery":
-//           [
-//               {"caption":"page 1 of contract", "src":"https://i.picsum.photos/id/1003/1181/1772.jpg"},
-//               {"caption":"page 2 of contract", "src":"https://i.picsum.photos/id/1016/3844/2563.jpg"},
-//               {"caption":"page 3 of contract", "src":"https://i.picsum.photos/id/1018/3914/2935.jpg"},
-//               {"caption":"page 1 of contract", "src":"https://i.picsum.photos/id/1024/1920/1280.jpg"},
-//               {"caption":"page 2 of contract", "src":"https://i.picsum.photos/id/102/4320/3240.jpg"},
-//               {"caption":"page 3 of contract", "src":"https://i.picsum.photos/id/100/2500/1656.jpg"}
-//           ],
-//   "pdf":{"caption":"passport copy","src":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"},
-//   "pdf-gallery":
-//           [
-//               {"caption":"page 1 of power of attorney", "src":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"},
-//               {"caption":"page 2 of power of attorney", "src":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"},
-//               {"caption":"page 3 of power of attorney", "src":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"},
-//               {"caption":"page 4 of power of attorney", "src":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"}
-//           ],
-//   "table":
-//           {
-//             "title":"List of Previous Mortgages",
-//             "thead":
-//                 [
-//                     {"ar":"arabic title of column 1", "en":"english title of column 1"},
-//                     {"ar":"arabic title of column 2", "en":"english title of column 2"},
-//                     {"ar":"arabic title of column 3", "en":"english title of column 3"}
-//                 ],
-//             "tbody":
-//                 [
-//                     [{"ar":"arabic title of column 1", "en":"english title of column 1"},
-//                     {"ar":"arabic title of column 2", "en":"english title of column 2"},
-//                     {"ar":"arabic title of column 3", "en":"english title of column 3"}],
-//                     [{"ar":"arabic title of column 1", "en":"english title of column 1"},
-//                     {"ar":"arabic title of column 2", "en":"english title of column 2"},
-//                     {"ar":"arabic title of column 3", "en":"english title of column 3"}],
-//                     [{"ar":"arabic title of column 1", "en":"english title of column 1"},
-//                     {"ar":"arabic title of column 2", "en":"english title of column 2"},
-//                     {"ar":"arabic title of column 3", "en":"english title of column 3"}],
-//                     [{"ar":"arabic title of column 1", "en":"english title of column 1"},
-//                     {"ar":"arabic title of column 2", "en":"english title of column 2"},
-//                     {"ar":"arabic title of column 3", "en":"english title of column 3"}]
-//                 ]
-//         },
-//         "field-data": { "label":{"ar":"arabic field label","en":"english field label"},
-//                         "value": {"ar":"arabic field value to display", "en":"english field value to display"}},
-//         "field-group":
-//           {
-//               "fieldGroupName":{"ar":"summary of invoice arabic title","en":"summary of invoice"},
-//               "fields":
-//               [
-//                   {"label":{"ar":"arabic label","en":"english label"},"value":{"ar":"arabic value", "en":"english value"}},
-//                   {"label":{"ar":"arabic label","en":"english label"},"value":{"ar":"arabic value", "en":"english value"}},
-//                   {"label":{"ar":"arabic label","en":"english label"},"value":{"ar":"arabic value", "en":"english value"}}
-//               ]
-//           }
-// }],

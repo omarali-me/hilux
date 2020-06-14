@@ -1,1 +1,22 @@
-<p>image-gallery-generator works!</p>
+<div class="col-sm-12">
+  <div class="row" *ngIf="formData[key] as groupData">
+    <div class="col-md-12">
+      <div class="form-group row">
+        <div class="col-sm-12">
+          <div class="row">
+            <button type="button" (click)="addRow()" class="btn btn-sm btn-primary">add</button>
+          </div>
+          <div class="row" *ngFor="let field of groupData; let i = index">
+            <div class="col-sm-12">
+              <app-image-generator [formData]="groupData" [key]="i" ></app-image-generator>
+            </div>
+            <div class="col-sm-12 mt-20">
+              <button type="button" (click)="deleteRow(i)" class="btn btn-sm btn-danger">Remove</button>
+              <hr *ngIf="(groupData?.length - 1) !== i"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -19,11 +19,19 @@
                   <label class="stepName">Image</label>
                   <app-image-generator [formData]="displayData" [key]="'image'"></app-image-generator>
                 </div>
+                <div class="col-sm-12 mt-20">
+                  <button type="button" (click)="deleteRow('image')" class="btn btn-sm btn-danger">Remove</button>
+                  <hr *ngIf="(displayData?.length - 1) !== i"/>
+                </div>
               </div>
               <div class="form-group row" *ngIf="hasKey(displayData, 'image-gallery')">
                 <div class="col-sm-12">
                   <label class="stepName">Image Gallery</label>
-                  <app-image-generator [formData]="displayData" [key]="'image-gallery'"></app-image-generator>
+                  <app-image-gallery-generator [formData]="displayData" [key]="'image-gallery'"></app-image-gallery-generator>
+                </div>
+                <div class="col-sm-12 mt-20">
+                  <button type="button" (click)="deleteRow('image-gallery')" class="btn btn-sm btn-danger">Remove</button>
+                  <hr *ngIf="(displayData?.length - 1) !== i"/>
                 </div>
               </div>
               <div class="form-group row" *ngIf="hasKey(displayData, 'pdf')">
@@ -31,11 +39,19 @@
                   <label class="stepName">PDF</label>
                   <app-image-generator [formData]="displayData" [key]="'pdf'"></app-image-generator>
                 </div>
+                <div class="col-sm-12 mt-20">
+                  <button type="button" (click)="deleteRow('pdf')" class="btn btn-sm btn-danger">Remove</button>
+                  <hr *ngIf="(displayData?.length - 1) !== i"/>
+                </div>
               </div>
               <div class="form-group row" *ngIf="hasKey(displayData, 'pdf-gallery')">
                 <div class="col-sm-12">
                   <label class="stepName">PDF Gallery</label>
-                  <app-image-generator [formData]="displayData" [key]="'pdf-gallery'"></app-image-generator>
+                  <app-image-gallery-generator [formData]="displayData" [key]="'pdf-gallery'"></app-image-gallery-generator>
+                </div>
+                <div class="col-sm-12 mt-20">
+                  <button type="button" (click)="deleteRow('pdf-gallery')" class="btn btn-sm btn-danger">Remove</button>
+                  <hr *ngIf="(displayData?.length - 1) !== i"/>
                 </div>
               </div>
               <div class="form-group row" *ngIf="hasKey(displayData, 'field-data')">
@@ -43,17 +59,29 @@
                   <label class="stepName">Field Data</label>
                   <app-display-field-generator [formData]="displayData" [key]="'field-data'"></app-display-field-generator>
                 </div>
+                <div class="col-sm-12 mt-20">
+                  <button type="button" (click)="deleteRow('field-data')" class="btn btn-sm btn-danger">Remove</button>
+                  <hr *ngIf="(displayData?.length - 1) !== i"/>
+                </div>
               </div>
               <div class="form-group row" *ngIf="hasKey(displayData, 'field-group')">
                 <div class="col-sm-12">
                   <label class="stepName">Field Group</label>
-                  <app-display-field-generator [formData]="displayData" [key]="'field-group'"></app-display-field-generator>
+                  <app-field-group-generator [formData]="displayData" [key]="'field-group'"></app-field-group-generator>
+                </div>
+                <div class="col-sm-12 mt-20">
+                  <button type="button" (click)="deleteRow('field-group')" class="btn btn-sm btn-danger">Remove</button>
+                  <hr *ngIf="(displayData?.length - 1) !== i"/>
                 </div>
               </div>
               <div class="form-group row" *ngIf="hasKey(displayData, 'table')">
                 <div class="col-sm-12">
-                  <label class="stepName">Image</label>
+                  <label class="stepName">Table</label>
                   <app-table-generator [formData]="displayData" [key]="'table'"></app-table-generator>
+                </div>
+                <div class="col-sm-12 mt-20">
+                  <button type="button" (click)="deleteRow('table')" class="btn btn-sm btn-danger">Remove</button>
+                  <hr *ngIf="(displayData?.length - 1) !== i"/>
                 </div>
               </div>
             </div>

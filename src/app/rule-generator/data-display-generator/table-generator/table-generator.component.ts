@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { ControlContainer, NgForm } from '@angular/forms';
 
 @Component({
@@ -9,9 +9,42 @@ import { ControlContainer, NgForm } from '@angular/forms';
 })
 export class TableGeneratorComponent implements OnInit {
 
-  constructor() { }
+  @Input() formData: any;
+
+  @Input() key: any;
+
+  constructor(private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
 
+  
 }
+
+// "displayData": [{
+//   "table":
+//           {
+//             "title":"List of Previous Mortgages",
+//             "thead":
+//                 [
+//                     {"ar":"arabic title of column 1", "en":"english title of column 1"},
+//                     {"ar":"arabic title of column 2", "en":"english title of column 2"},
+//                     {"ar":"arabic title of column 3", "en":"english title of column 3"}
+//                 ],
+//             "tbody":
+//                 [
+//                     [{"ar":"arabic title of column 1", "en":"english title of column 1"},
+//                     {"ar":"arabic title of column 2", "en":"english title of column 2"},
+//                     {"ar":"arabic title of column 3", "en":"english title of column 3"}],
+//                     [{"ar":"arabic title of column 1", "en":"english title of column 1"},
+//                     {"ar":"arabic title of column 2", "en":"english title of column 2"},
+//                     {"ar":"arabic title of column 3", "en":"english title of column 3"}],
+//                     [{"ar":"arabic title of column 1", "en":"english title of column 1"},
+//                     {"ar":"arabic title of column 2", "en":"english title of column 2"},
+//                     {"ar":"arabic title of column 3", "en":"english title of column 3"}],
+//                     [{"ar":"arabic title of column 1", "en":"english title of column 1"},
+//                     {"ar":"arabic title of column 2", "en":"english title of column 2"},
+//                     {"ar":"arabic title of column 3", "en":"english title of column 3"}]
+//                 ]
+//         }
+// }],

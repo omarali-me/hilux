@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { isArray } from 'util';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-field-group-generator',
@@ -7,9 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FieldGroupGeneratorComponent implements OnInit {
 
-  constructor() { }
+  @Input() formData: any;
+
+  @Input() key: any;
+
+  constructor(private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
 
+  addRow() {
+    this.formData[this.key].fields.push(this.blankField());
+  }
+
+  deleteRow(index) {
+    _.remove(this.formData[this.key].fields, function(resource, i) {
+        return index === i;
+    });
+  }
+
+  ngAfterViewInit () {
+    this.changeDetector.detectChanges();
+  }
+
+  blankField() {
+    let data = { label: {}, value: {}};
+    return data;
+  }
+
+  isEnumerator(data: any) {
+    return isArray(data);
+  }
 }
