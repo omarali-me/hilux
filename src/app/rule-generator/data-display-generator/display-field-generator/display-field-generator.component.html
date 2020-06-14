@@ -1,1 +1,37 @@
-<p>display-field-generator works!</p>
+<div class="col-sm-12">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group row">
+        <div class="col-sm-12">
+          <label>Label</label>
+          <div class="row">
+            <div class="col-sm-6">
+              <label class="">Arabic</label>
+              <input class="form-control" type="text" placeholder="Enter Arabic Name" [name]="'ar_'+ key" [(ngModel)]="formData[key].label.ar"/>
+            </div>
+            <div class="col-sm-6">
+              <label class="">English</label>
+              <input class="form-control" type="text" placeholder="Enter English Name" [name]="'en_' + key" [(ngModel)]="formData[key].label.en"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-12">
+          <label>Value</label>
+          <div class="row">
+            <div class="col-sm-6">
+              <label class="">Arabic</label>
+              <input class="form-control" type="text" placeholder="Enter Arabic Name" [name]="'ar_'+ key" [(ngModel)]="formData[key].value.ar"/>
+            </div>
+            <div class="col-sm-6">
+              <label class="">English</label>
+              <input class="form-control" type="text" placeholder="Enter English Name" [name]="'en_' + key" [(ngModel)]="formData[key].value.en"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

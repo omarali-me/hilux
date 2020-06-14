@@ -1,1 +1,12 @@
-<p>image-generator works!</p>
+<div class="col-sm-12">
+  <div class="row">
+    <div class="col-sm-6">
+      <label class="">Caption</label>
+      <input class="form-control" type="text" placeholder="Enter Caption" [name]="key" [(ngModel)]="formData[key].caption"/>
+    </div>
+    <div class="col-sm-6">
+      <label class="">Src</label>
+      <input class="form-control" type="text" placeholder="Enter Src" [name]="key" [(ngModel)]="formData[key].src"/>
+    </div>
+  </div>
+</div>

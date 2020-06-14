@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ControlContainer, NgForm } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,10 @@ import { ControlContainer, NgForm } from '@angular/forms';
   viewProviders: [ { provide: ControlContainer, useExisting: NgForm } ]
 })
 export class DisplayFieldGeneratorComponent implements OnInit {
+
+  @Input() formData: any;
+
+  @Input() key: any;
 
   constructor() { }
 

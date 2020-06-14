@@ -79,6 +79,11 @@ export class DisplayKeysGeneratorComponent implements OnInit {
   deleteItemRow(deletekey) {
     _.unset(this.formData[this.key], deletekey);
   }
+
+  hasKey(value: any, inclusion_key: string) {
+    return Object.keys(value).includes(inclusion_key);
+  }
+
 }
 
 // "displayData": [{

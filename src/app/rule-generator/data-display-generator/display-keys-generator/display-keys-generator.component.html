@@ -12,17 +12,48 @@
             </div>
           </div>
 
-          <div class="row" *ngFor="let item of displayData | keyvalue; let i = index">
+          <div class="row" *ngIf="displayData">
             <div class="col-sm-12">
-              <div class="form-group row">
-                <div class="col-sm-6">
-                  <label class="stepName">Commit Id</label>
-                  <input class="form-control" type="text" placeholder="Enter Commit Id" name="commitID" [(ngModel)]="item.value.commitID"/>
+              <div class="form-group row" *ngIf="hasKey(displayData, 'image')">
+                <div class="col-sm-12">
+                  <label class="stepName">Image</label>
+                  <app-image-generator [formData]="displayData" [key]="'image'"></app-image-generator>
                 </div>
-
-                <div class="col-sm-6">
-                  <label class="">Entity</label>
-                  <input class="form-control" type="text" placeholder="Enter Entity" name="entity" [(ngModel)]="item.value.entity"/>
+              </div>
+              <div class="form-group row" *ngIf="hasKey(displayData, 'image-gallery')">
+                <div class="col-sm-12">
+                  <label class="stepName">Image Gallery</label>
+                  <app-image-generator [formData]="displayData" [key]="'image-gallery'"></app-image-generator>
+                </div>
+              </div>
+              <div class="form-group row" *ngIf="hasKey(displayData, 'pdf')">
+                <div class="col-sm-12">
+                  <label class="stepName">PDF</label>
+                  <app-image-generator [formData]="displayData" [key]="'pdf'"></app-image-generator>
+                </div>
+              </div>
+              <div class="form-group row" *ngIf="hasKey(displayData, 'pdf-gallery')">
+                <div class="col-sm-12">
+                  <label class="stepName">PDF Gallery</label>
+                  <app-image-generator [formData]="displayData" [key]="'pdf-gallery'"></app-image-generator>
+                </div>
+              </div>
+              <div class="form-group row" *ngIf="hasKey(displayData, 'field-data')">
+                <div class="col-sm-12">
+                  <label class="stepName">Field Data</label>
+                  <app-display-field-generator [formData]="displayData" [key]="'field-data'"></app-display-field-generator>
+                </div>
+              </div>
+              <div class="form-group row" *ngIf="hasKey(displayData, 'field-group')">
+                <div class="col-sm-12">
+                  <label class="stepName">Field Group</label>
+                  <app-display-field-generator [formData]="displayData" [key]="'field-group'"></app-display-field-generator>
+                </div>
+              </div>
+              <div class="form-group row" *ngIf="hasKey(displayData, 'table')">
+                <div class="col-sm-12">
+                  <label class="stepName">Image</label>
+                  <app-table-generator [formData]="displayData" [key]="'table'"></app-table-generator>
                 </div>
               </div>
             </div>
