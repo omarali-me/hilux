@@ -54,9 +54,9 @@ export class DisplayKeysGeneratorComponent implements OnInit {
     } else if (this.dataType == 'pdf-gallery') {
       data[this.dataType] = [];
     } else if (this.dataType == 'table') {
-      data[this.dataType] = { thead: {}, tbody: {}};
+      data[this.dataType] = { thead: [], tbody: [] };
     } else if (this.dataType == 'field-data') {
-      data[this.dataType] = { label: {}, value: {}};
+      data[this.dataType] = { label: {}, value: {} };
     } else if (this.dataType == 'field-group') {
       data[this.dataType] = { fieldGroupName: {}, fields: [] };
     } else {

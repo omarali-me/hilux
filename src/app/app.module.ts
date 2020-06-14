@@ -61,6 +61,8 @@ import { DisplayFieldGeneratorComponent } from './rule-generator/data-display-ge
 import { DisplayKeysGeneratorComponent } from './rule-generator/data-display-generator/display-keys-generator/display-keys-generator.component';
 import { ImageGalleryGeneratorComponent } from './rule-generator/data-display-generator/image-gallery-generator/image-gallery-generator.component';
 import { FieldGroupGeneratorComponent } from './rule-generator/data-display-generator/field-group-generator/field-group-generator.component';
+import { HeaderGeneratorComponent } from './rule-generator/data-display-generator/table-generator/header-generator/header-generator.component';
+import { BodyGeneratorComponent } from './rule-generator/data-display-generator/table-generator/body-generator/body-generator.component';
  
 @NgModule({
   declarations: [
@@ -115,6 +117,8 @@ import { FieldGroupGeneratorComponent } from './rule-generator/data-display-gene
     DisplayKeysGeneratorComponent,
     ImageGalleryGeneratorComponent,
     FieldGroupGeneratorComponent,
+    HeaderGeneratorComponent,
+    BodyGeneratorComponent,
   ],
   imports: [
     FormsModule,

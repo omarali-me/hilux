@@ -18,7 +18,10 @@ export class TableGeneratorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  nonsort() {
+    return 0
+  }
+
 }
 
 // "displayData": [{

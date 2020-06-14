@@ -1,0 +1,36 @@
+<div class="col-sm-12">
+  <div class="row" *ngIf="formData[key] as groupData">
+    <div class="col-md-12">
+      <div class="form-group row">
+        <div class="col-sm-12">
+          <div class="row">
+            <label>Body</label>
+            <button type="button" (click)="addRow()" class="btn btn-sm btn-primary">add</button>
+          </div>
+          <div class="row" *ngFor="let row of groupData; let i = index">
+            <div class="col-sm-12">
+              <div class="form-group row" *ngFor="let column of row">
+                <div class="col-sm-12">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <label class="">Arabic</label>
+                      <input class="form-control" type="text" placeholder="Enter Arabic Name" [name]="'ar_' + i" [(ngModel)]="column.ar"/>
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="">English</label>
+                      <input class="form-control" type="text" placeholder="Enter English Name" [name]="'en_' + i" [(ngModel)]="column.en"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 mt-20">
+              <button type="button" (click)="deleteRow(i)" class="btn btn-sm btn-danger">Remove</button>
+              <hr *ngIf="(groupData?.length - 1) !== i"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
