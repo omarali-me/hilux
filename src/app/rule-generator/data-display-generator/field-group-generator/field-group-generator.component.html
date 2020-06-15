@@ -7,11 +7,11 @@
           <div class="row">
             <div class="col-sm-6">
               <label class="">Arabic</label>
-              <input class="form-control" type="text" placeholder="Enter Arabic Name" [name]="ar" [(ngModel)]="groupData.fieldGroupName.ar"/>
+              <input class="form-control" type="text" placeholder="Enter Arabic Name" [name]="'ar_' + key" [(ngModel)]="groupData.fieldGroupName.ar"/>
             </div>
             <div class="col-sm-6">
               <label class="">English</label>
-              <input class="form-control" type="text" placeholder="Enter English Name" [name]="en" [(ngModel)]="groupData.fieldGroupName.en"/>
+              <input class="form-control" type="text" placeholder="Enter English Name" [name]="'en_' + key" [(ngModel)]="groupData.fieldGroupName.en"/>
             </div>
           </div>
         </div>
