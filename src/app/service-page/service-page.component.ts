@@ -4,6 +4,7 @@ import { tap, pluck } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import * as _ from 'lodash';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-service-page',
@@ -13,7 +14,11 @@ import * as _ from 'lodash';
 export class ServicePageComponent implements OnInit {
   response: any;
   serviceId: Observable<any>;
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    private toastr: ToastrService
+    ) { }
 
   ngOnInit(): void {
     this.serviceId = this.route.data.pipe(pluck('serviceId'));
@@ -27,7 +32,8 @@ export class ServicePageComponent implements OnInit {
           if (data.status == 'success') {
             this.response = data.data;
           } else {
-            alert(data.message);
+            this.toastr.error(data.message, 'Error')
+            // alert(data.message);
           }
         }, (err) => {
           alert(err.message);

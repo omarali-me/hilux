@@ -6,6 +6,7 @@ import * as _ from 'lodash';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../shared/authentication.service';
 import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-form',
@@ -22,7 +23,8 @@ export class FormComponent implements OnInit {
     private changeDetector: ChangeDetectorRef,
     private authenticationService: AuthenticationService,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -66,9 +68,12 @@ export class FormComponent implements OnInit {
     this.http.post('https://wfe.ajm.re/AjmanLandProperty/index.php/applications/completeStep', form)
       .subscribe((data: any)=> {
         if (data.status == 'success') {
-          alert(data.message);
+          this.toastr.success(data.message, 'Success')
+          this.router.navigate(['custom_page']);
+          // alert(data.message);
         } else {
-          alert(data.message);
+          this.toastr.error(data.message, 'Error')
+          // alert(data.message);
         }
       })
     // this.authenticationService.signin();

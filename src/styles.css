@@ -10,6 +10,7 @@
 @import "~jquery-ui-dist/jquery-ui.min.css";
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import "~ng-pick-datetime/assets/style/picker.min.css";
+@import '~ngx-toastr/toastr';
 
 *{
     direction: rtl !important;

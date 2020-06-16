@@ -66,7 +66,8 @@ import { BodyGeneratorComponent } from './rule-generator/data-display-generator/
 import { ServicePageComponent } from './service-page/service-page.component';
 import { NotificationPageComponent } from './notification-page/notification-page.component';
 import { AuthInterceptor } from './AuthInterceptor';
- 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -136,7 +137,8 @@ import { AuthInterceptor } from './AuthInterceptor';
     NoopAnimationsModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
-    PrettyJsonModule
+    PrettyJsonModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     {provide: OWL_DATE_TIME_LOCALE, useValue: 'ar'},
