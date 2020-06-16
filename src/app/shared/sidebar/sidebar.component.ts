@@ -27,11 +27,11 @@ export class SidebarComponent implements OnInit {
   }
 
   getServiceProviderItem(data: any) {
-    return data.serviceCategoryName && data.serviceCategoryName.en;
+    return data.serviceCategoryName && data.serviceCategoryName.ar;
   }
 
   getServiceName(data: any) {
-    return data && data.en;
+    return data && data.ar;
   }
 
   hideRoot(data: any) {
