@@ -15,12 +15,12 @@ export class NotificationsComponent implements OnInit {
   }
 
   loadNotifications() {
-    this.fieldsService.getUrl('http://192.168.0.150:3000/notifications').subscribe(data => {
-      this.notifications = data;
-    })
+    // this.fieldsService.getUrl('http://192.168.0.150:3000/notifications').subscribe(data => {
+    //   this.notifications = data;
+    // })
 
     // TODO:: HANDLE ERROR CASE AND DON"T MAKE ANY REQUEST AFTER IT
-    setTimeout(() => { this.loadNotifications() }, 30 * 1000);
+    // setTimeout(() => { this.loadNotifications() }, 30 * 1000);
   }
 
   getStatusClass(notification: any) {
