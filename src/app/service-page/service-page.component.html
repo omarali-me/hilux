@@ -1,0 +1,41 @@
+<app-sidebar></app-sidebar>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Service Page</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active">Service Page</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="card card-primary card-outline">
+        <!-- <div class="card-header">
+          <h3 class="card-title"></h3>
+        </div> -->
+        <div class="card-body" *ngIf="response">
+          <div class="container" *ngIf="response.stepDetails?.dataDisplay && response.stepDetails?.dataDisplay?.length > 0">
+            <div class="row" *ngFor="let display of response.stepDetails.dataDisplay">
+              <div class="col-sm-12 mt-3" *ngFor="let item of display | keyvalue">
+                <app-display-fields [data]="item"></app-display-fields>
+              </div>
+            </div>
+          </div>
+          <app-form [response]="response" *ngIf="response.stepDetails?.dataIn?.fieldOrder"></app-form>
+        </div><!-- /.card-body -->
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>

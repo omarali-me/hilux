@@ -24,7 +24,7 @@
   [(ngModel)]="formData[field.fieldID]"
   bindLabel="value.ar"
   bindValue="key"
-  [placeholder]="field.placeholder.ar"
+  [placeholder]="getText(field, 'placeholder')"
   notFoundText="not found"
   #ngModel="ngModel"
 >
@@ -34,6 +34,6 @@
     class="alert alert-danger">
 
   <div *ngIf="ngModel.errors.required || ngModel.errors.minlength">
-    {{field.errorMsg.ar}}
+    {{getText(field, 'errorMsg')}}
   </div>
 </div>

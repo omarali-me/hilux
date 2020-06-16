@@ -1,12 +1,12 @@
 <input class="form-control"
   [class]="customClass"
   [type]="field.fieldType"
-  [placeholder]="field.placeholder.en"
+  [placeholder]="getText(field, 'placeholder')"
   [required]="field.required"
   [name]="getName(field.fieldName.en)"
   [id]="field.fieldID"
-  [minlength]="field.auxInfo.minLength"
-  [maxlength]="field.auxInfo.maxLength"
+  [minlength]="field.auxInfo?.minLength"
+  [maxlength]="field.auxInfo?.maxLength"
   [(ngModel)]="formData[field.fieldID]"
   #ngModel="ngModel"
 />
@@ -15,6 +15,6 @@
     class="alert alert-danger">
 
   <div *ngIf="ngModel.errors.required || ngModel.errors.minlength">
-    {{field.errorMsg.en}}
+    {{getText(field, 'errorMsg')}}
   </div>
 </div>

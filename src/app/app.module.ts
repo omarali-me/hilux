@@ -19,7 +19,7 @@ import { HeadingComponent } from './tags/heading/heading.component';
 import { FieldComponent } from './fields/field/field.component';
 import { FileUploadComponent } from './fields/file-upload/file-upload.component';
 import { RadioButtonFieldComponent } from './fields/radio-button-field/radio-button-field.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CurrencyFieldComponent } from './fields/currency-field/currency-field.component';
 import { CheckboxFieldComponent } from './fields/checkbox-field/checkbox-field.component';
@@ -63,6 +63,9 @@ import { ImageGalleryGeneratorComponent } from './rule-generator/data-display-ge
 import { FieldGroupGeneratorComponent } from './rule-generator/data-display-generator/field-group-generator/field-group-generator.component';
 import { HeaderGeneratorComponent } from './rule-generator/data-display-generator/table-generator/header-generator/header-generator.component';
 import { BodyGeneratorComponent } from './rule-generator/data-display-generator/table-generator/body-generator/body-generator.component';
+import { ServicePageComponent } from './service-page/service-page.component';
+import { NotificationPageComponent } from './notification-page/notification-page.component';
+import { AuthInterceptor } from './AuthInterceptor';
  
 @NgModule({
   declarations: [
@@ -119,6 +122,8 @@ import { BodyGeneratorComponent } from './rule-generator/data-display-generator/
     FieldGroupGeneratorComponent,
     HeaderGeneratorComponent,
     BodyGeneratorComponent,
+    ServicePageComponent,
+    NotificationPageComponent,
   ],
   imports: [
     FormsModule,
@@ -134,7 +139,8 @@ import { BodyGeneratorComponent } from './rule-generator/data-display-generator/
     PrettyJsonModule
   ],
   providers: [
-    {provide: OWL_DATE_TIME_LOCALE, useValue: 'ar'}
+    {provide: OWL_DATE_TIME_LOCALE, useValue: 'ar'},
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

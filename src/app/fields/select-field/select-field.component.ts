@@ -36,4 +36,7 @@ export class SelectFieldComponent implements OnInit {
     console.log('value changed',value);
   }
 
+  getText(field: any, key: string) {
+    return  this.service.getText(field, key);
+  }
 }

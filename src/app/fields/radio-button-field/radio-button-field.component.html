@@ -17,7 +17,7 @@
       class="alert alert-danger">
 
       <div *ngIf="ngModel.errors.required || ngModel.errors.minlength">
-        {{field.errorMsg.ar}}
+        {{getText(field, 'errorMsg')}}
       </div>
     </div>
   </div>

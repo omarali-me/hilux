@@ -64,4 +64,7 @@ export class AutocompleteFieldComponent implements OnInit {
   );
   }
 
+  getText(field: any, key: string) {
+    return this.service.getText(field, key);
+  }
 }

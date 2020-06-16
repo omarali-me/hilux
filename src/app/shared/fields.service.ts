@@ -87,5 +87,9 @@ export class FieldsService {
   getUrl(url: string, params: any = {}) {
     return this.http.get<any>(url, {params: params});
   }
+
+  getText(field: any, key: string) {
+    return  ((field[key] && field[key].ar) || '');
+  }
 }
 

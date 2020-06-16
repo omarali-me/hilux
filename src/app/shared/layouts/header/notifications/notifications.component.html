@@ -6,7 +6,7 @@
 
   <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right notifications-menu" *ngIf="notifications.length > 0">
     <div class="" *ngFor="let notification of notifications">
-      <a href="#" class="dropdown-item">
+      <a [routerLink]="['/notifications', notification.applicationWorkflowStepID]" class="dropdown-item">
         <div class="media">
           <!-- <img src="assets/images/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle"> -->
           <span class="float-right text-sm mr-3" [ngClass]="getStatusClass(notification)"><i class="fas fa-star"></i></span>

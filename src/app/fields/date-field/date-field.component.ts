@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Field } from '../fields';
 import { ControlContainer, NgForm } from '@angular/forms';
+import { FieldsService } from 'src/app/shared/fields.service';
 
 @Component({
   selector: 'app-date-field',
@@ -20,7 +21,7 @@ export class DateFieldComponent implements OnInit {
 
   @Input() fullFormData: any;
 
-  constructor() { }
+  constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
   }
@@ -42,4 +43,7 @@ export class DateFieldComponent implements OnInit {
     return `#${field_name}`;
   }
 
+  getText(field: any, key: string) {
+    return  this.service.getText(field, key);
+  }
 }

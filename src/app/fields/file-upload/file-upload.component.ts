@@ -35,4 +35,8 @@ export class FileUploadComponent implements OnInit {
     const files = Array.from(event.target.files);
     this.labelImport.nativeElement.innerText = files.map((t:any) => t.name).join(', ');
   }
+
+  getText(field: any, key: string) {
+    return  this.service.getText(field, key);
+  }
 }

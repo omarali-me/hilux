@@ -5,6 +5,7 @@ import { FieldsService } from '../shared/fields.service';
 import * as _ from 'lodash';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../shared/authentication.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-form',
@@ -20,7 +21,8 @@ export class FormComponent implements OnInit {
     private fieldsService: FieldsService,
     private changeDetector: ChangeDetectorRef,
     private authenticationService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -59,8 +61,17 @@ export class FormComponent implements OnInit {
   }
 
   saveData(formData : any) {
-    console.log('formData received is', formData);
-    this.authenticationService.signin();
-    this.router.navigate(['/']);
+    let form = new FormData();
+    form.append('data', JSON.stringify(Object.assign({stepID: this.response.stepID, dataIn: formData})));
+    this.http.post('https://wfe.ajm.re/AjmanLandProperty/index.php/applications/completeStep', form)
+      .subscribe((data: any)=> {
+        if (data.status == 'success') {
+          alert(data.message);
+        } else {
+          alert(data.message);
+        }
+      })
+    // this.authenticationService.signin();
+    // this.router.navigate(['/']);
   }
 }

@@ -1,13 +1,13 @@
 <form class="form-horizontal rtl" (ngSubmit)="saveData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
   <div class="card-body">
-    <div class="form-group row" *ngFor="let row of response.fieldOrder; let i = index;">
+    <div class="form-group row" *ngFor="let row of response.stepDetails?.dataIn?.fieldOrder; let i = index;">
       <div class="col-sm-12" *ngIf="row.allowMultiple">
         <div class="row" *ngFor="let subRow of getFormDatafor(row); let j = index">
           <div [class]="getClass('col-sm-',field)" #rowReference *ngFor="let field of row.rowFields;">
             <div class="row">
               <div class="col-sm-12">
-                <app-label [rowField]="field" [fields]="response.fields"></app-label>
-                <app-field [rowField]="field" [fields]="response.fields" [index]="j" [row]="row.row" [fullFormData]="formData" [formData]="subRow"></app-field>
+                <app-label [rowField]="field" [fields]="response.stepDetails?.dataIn?.fields"></app-label>
+                <app-field [rowField]="field" [fields]="response.stepDetails?.dataIn?.fields" [index]="j" [row]="row.row" [fullFormData]="formData" [formData]="subRow"></app-field>
               </div>
             </div>
           </div>
@@ -22,8 +22,8 @@
         <div [class]="getClass('col-sm-',field)" #rowReference [id]="getrowId(row)" *ngFor="let field of row.rowFields">
           <div class="row">
             <div class="col-sm-12">
-              <app-label [rowField]="field" [fields]="response.fields"></app-label>
-              <app-field [rowField]="field" [fields]="response.fields" [fullFormData]="formData" [formData]="getFormDatafor(row)"></app-field>
+              <app-label [rowField]="field" [fields]="response.stepDetails?.dataIn?.fields"></app-label>
+              <app-field [rowField]="field" [fields]="response.stepDetails?.dataIn?.fields" [fullFormData]="formData" [formData]="getFormDatafor(row)"></app-field>
             </div>
           </div>
         </div>

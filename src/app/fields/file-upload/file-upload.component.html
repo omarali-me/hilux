@@ -2,7 +2,7 @@
   <input type="file"
     class="custom-file-input"
     [class]="customClass"
-    [accept]="field.auxInfo.acceptedFileTypes"
+    [accept]="field.auxInfo?.acceptedFileTypes"
     [name]="field.fieldName.ar"
     [id]="field.fieldID"
     [multiple]="'true'"
@@ -17,7 +17,7 @@
     class="alert alert-danger">
 
     <div *ngIf="ngModel.errors.required || ngModel.errors.minlength">
-      {{field.errorMsg.en}}
+      {{getText(field, 'errorMsg')}}
     </div>
   </div>
 </div>

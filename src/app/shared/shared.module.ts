@@ -10,11 +10,13 @@ import { NumbersformatterDirective } from './numbersformatter.directive';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NotificationsComponent } from './layouts/header/notifications/notifications.component';
 import { TimeAgoPipe } from './time-ago.pipe';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     FormsModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: [AuthenticationService, FieldsService, DecimalPipe, CurrencyPipe, TimeAgoPipe],
   declarations: [

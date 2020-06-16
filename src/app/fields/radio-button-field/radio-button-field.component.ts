@@ -35,6 +35,10 @@ export class RadioButtonFieldComponent implements OnInit {
     return this.service.getModelName(field.fieldID, this.formData);
   }
 
+  getText(field: any, key: string) {
+    return this.service.getText(field, key);
+  }
+
   // handleChange($event) {
   //   if (!this.formData[this.field.fieldID])
   //     this.formData[this.field.fieldID] = [];

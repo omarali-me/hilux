@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Field } from '../fields';
 import { ControlContainer, NgForm } from '@angular/forms';
+import { FieldsService } from '../../shared/fields.service';
 
 @Component({
   selector: 'app-text-area-field',
@@ -20,9 +21,13 @@ export class TextAreaFieldComponent implements OnInit {
 
   @Input() fullFormData: any;
 
-  constructor() { }
+  constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
+  }
+
+  getText(field: any, key: string) {
+    return  this.service.getText(field, key);
   }
 
 }

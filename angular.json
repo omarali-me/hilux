@@ -35,7 +35,7 @@
               "node_modules/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js",
               "node_modules/overlayscrollbars/js/jquery.overlayScrollbars.min.js",
               "node_modules/select2/dist/js/select2.full.min.js",
-              "src/assets/js/adminlte.min.js",
+              "src/assets/js/adminlte.js",
               "src/assets/js/dashboard.js"
             ],
             "i18nFile": "src/locale/messages.ar.xlf",

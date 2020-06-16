@@ -40,4 +40,7 @@ export class InputFieldComponent implements OnInit {
     return `${this.row}_${field_name}_${this.index}`
   }
 
+  getText(field: any, key: string) {
+    return  this.service.getText(field, key);
+  }
 }
