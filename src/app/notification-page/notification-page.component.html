@@ -25,14 +25,14 @@
           <h3 class="card-title"></h3>
         </div> -->
         <div class="card-body" *ngIf="response">
-          <div class="container" *ngIf="response.displayData">
-              <div class="row" *ngFor="let display of response.displayData">
-                <div class="col-sm-12 mt-3" *ngFor="let item of display | keyvalue">
-                  <app-display-fields [data]="item"></app-display-fields>
-                </div>
+          <div class="container" *ngIf="response.stepDetails?.dataDisplay && response.stepDetails?.dataDisplay?.length > 0">
+            <div class="row" *ngFor="let display of response.stepDetails.dataDisplay">
+              <div class="col-sm-12 mt-3" *ngFor="let item of display | keyvalue">
+                <app-display-fields [data]="item"></app-display-fields>
               </div>
             </div>
-            <app-form [response]="response" *ngIf="response.fieldOrder"></app-form>
+          </div>
+          <app-form [response]="response" *ngIf="response.stepDetails?.dataIn?.fieldOrder"></app-form>
         </div><!-- /.card-body -->
       </div>
     </div><!-- /.container-fluid -->

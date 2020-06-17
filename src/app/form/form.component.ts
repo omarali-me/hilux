@@ -69,7 +69,7 @@ export class FormComponent implements OnInit {
       .subscribe((data: any)=> {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success')
-          this.router.navigate(['custom_page']);
+          this.router.navigate(['my_tasks']);
           // alert(data.message);
         } else {
           this.toastr.error(data.message, 'Error')

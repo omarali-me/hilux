@@ -67,6 +67,7 @@ import { ServicePageComponent } from './service-page/service-page.component';
 import { NotificationPageComponent } from './notification-page/notification-page.component';
 import { AuthInterceptor } from './AuthInterceptor';
 import { ToastrModule } from 'ngx-toastr';
+import { MyTasksComponent } from './my-tasks/my-tasks.component';
 
 @NgModule({
   declarations: [
@@ -125,6 +126,7 @@ import { ToastrModule } from 'ngx-toastr';
     BodyGeneratorComponent,
     ServicePageComponent,
     NotificationPageComponent,
+    MyTasksComponent,
   ],
   imports: [
     FormsModule,
