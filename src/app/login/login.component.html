@@ -1,91 +1,34 @@
-<!-- <div class="container mt-3">
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="card p-5">
-        <form  class="rtl" (ngSubmit)="login()" #f="ngForm" novalidate>
-          <div class="form-group">
-            <label for="exampleInputEmail1" i18n="@@loginEmailAddressLabel">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <small id="emailHelp" class="form-text text-muted" i18n='@@loginEmailhelp'>We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1" i18n="@@loginpasswordLabel">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1"i18n='@@checkMeOut'>Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary" i18n='="@@submit' >Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->
 <div class="login-page">
   <div class="login-box rtl">
     <div class="login-logo">
       <a href="/"><b>Hilux</b>Login</a>
     </div>
-    <div class="card card-info" *ngIf="response$ | async as response">
+    <div class="card card-info">
       <div class="card-header">
         <h3 class="card-title">Login</h3>
       </div>
-      <div class="container" *ngIf="response.displayData">
-        <div class="row" *ngFor="let display of response.displayData">
-          <div class="col-sm-12 mt-3" *ngFor="let item of display | keyvalue">
-            <app-display-fields [data]="item"></app-display-fields>
-            <!-- <label class="col-sm-3">{{item.key}}</label>
-            <div class="col-sm-9">
-              {{item.value}}
-            </div> -->
+      <div class="container mt-3">
+        <div class="row">
+          <div class="col-sm-12 p-5">
+            <form  class="rtl" (ngSubmit)="login(formData)" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="exampleInputEmail1" i18n="@@loginEmailAddressLabel">Email address</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="formData.email">
+                <small id="emailHelp" class="form-text text-muted" i18n='@@loginEmailhelp'>We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1" i18n="@@loginpasswordLabel">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="formData.password">
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" name="check" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1"i18n='@@checkMeOut'>Check me out</label>
+              </div>
+              <button type="submit" class="btn btn-primary" i18n='="@@submit' >Submit</button>
+            </form>
           </div>
         </div>
       </div>
-      <form class="form-horizontal rtl" (ngSubmit)="login(formData)" #f="ngForm" enctype='multipart/form-data' novalidate *ngIf="response.fieldOrder">
-        <div class="card-body">
-          <div class="form-group row" *ngFor="let row of response.fieldOrder; let i = index;">
-            <div class="col-sm-12" *ngIf="row.allowMultiple">
-              <div class="row" *ngFor="let subRow of getFormDatafor(row); let j = index">
-                <div [class]="getClass('col-sm-',field)" #rowReference *ngFor="let field of row.rowFields;">
-                  <div class="row">
-                    <div class="col-sm-3 col-form-label">
-                      <app-label [rowField]="field" [fields]="response.fields"></app-label>
-                    </div>
-                    <div class="col-sm-9">
-                      <app-field [rowField]="field" [fields]="response.fields" [index]="j" [row]="row.row" [formData]="subRow"></app-field>
-                    </div>
-                  </div>
-                </div>
-                <!-- <div class="col-sm-12">
-                  <app-sub-row #rowReference [index]="j" [row]="row" [rowField]="field" [fields]="response.fields" [formData]="subRow" *ngFor="let field of row.rowFields;"></app-sub-row>
-                </div> -->
-                <div class="col-sm-12">
-                  <button type="button" (click)="deleteRow(row, i)" class="btn btn-sm btn-danger" *ngIf="row.allowMultiple && j != 0">Remove</button>
-                  <button type="button" (click)="addRow(row, i)" class="btn btn-sm btn-primary" *ngIf="row.allowMultiple && j == 0">add</button>
-                  <hr *ngIf="row.allowMultiple"/>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12" *ngIf="!row.allowMultiple">
-              <div [class]="getClass('col-sm-',field)" #rowReference [id]="getrowId(row)" *ngFor="let field of row.rowFields">
-                <div class="row">
-                  <div class="col-sm-3 col-form-label">
-                    <app-label [rowField]="field" [fields]="response.fields"></app-label>
-                  </div>
-                  <div class="col-sm-9">
-                    <app-field [rowField]="field" [fields]="response.fields" [formData]="getFormDatafor(row)"></app-field>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <button type="submit" class="btn btn-info float-left" [disabled]="f.invalid">Sign in</button>
-          <button type="submit" class="btn btn-default">Cancel</button>
-        </div>
-      </form>
     </div>  
   </div>
 </div>

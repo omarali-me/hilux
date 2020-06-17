@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(formData: any) {
-    console.log('formData received is', formData);
     this.authenticationService.signin();
     this.router.navigate(['/']);
   }

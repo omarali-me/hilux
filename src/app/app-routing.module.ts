@@ -15,7 +15,7 @@ import { MyTasksComponent } from './my-tasks/my-tasks.component';
 const routes: Routes = [
   { path: '',  component: HomePageComponent },
   { path: 'login',  component: LoginComponent },
-  { path: 'signup',  component: SignupComponent },
+  // { path: 'signup',  component: SignupComponent },
   { path: 'custom_page',  component: CustomPageComponent },
   { path: 'my_tasks',  component: MyTasksComponent },
   { path: 'rule_generator',  component: RuleGeneratorComponent },
