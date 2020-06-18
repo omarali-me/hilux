@@ -25,7 +25,7 @@ export class SelectFieldComponent implements OnInit {
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
-    this.dataOptions = this.service.getFieldData(this.field, this.fullFormData);
+    this.loadData();
   }
 
   getFieldModelName(field: Field) {
@@ -38,5 +38,9 @@ export class SelectFieldComponent implements OnInit {
 
   getText(field: any, key: string) {
     return  this.service.getText(field, key);
+  }
+
+  loadData() {
+    this.dataOptions = this.service.getFieldData(this.field, this.fullFormData);
   }
 }

@@ -26,6 +26,7 @@
   bindValue="key"
   [placeholder]="getText(field, 'placeholder')"
   notFoundText="not found"
+  (open)="loadData()"
   #ngModel="ngModel"
 >
 </ng-select>
