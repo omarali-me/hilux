@@ -6,20 +6,20 @@
 
   <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right notifications-menu" *ngIf="notifications.length > 0">
     <div class="" *ngFor="let notification of notifications">
-      <a [routerLink]="['/notifications', notification.applicationWorkflowStepID]" class="dropdown-item">
+      <a (click)="performActionPerStatus(notification)" class="dropdown-item">
         <div class="media">
           <!-- <img src="assets/images/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle"> -->
           <span class="float-right text-sm mr-3" [ngClass]="getStatusClass(notification)"><i class="fas fa-star"></i></span>
           <div class="media-body">
             <div class="d-flex">
               <h3 class="dropdown-item-title">
-                {{notification.applicationWorkflowStepID}}, {{notification.applicationID}}, {{notification.stepNumber}}
+                {{getNotificationText(notification)}}
               </h3>
             </div>
-            <p class="text-sm">{{notification.stepStatus.ar}}</p>
+            <p class="text-sm">{{notification.stepDetails.status}}</p>
             <p class="text-sm text-muted">
               <i class="far fa-clock mr-1"></i>
-              {{notification.timeStampInEffect | timeAgo}}
+              {{getTimeAvailable(notification) | timeAgo}}
             </p>
           </div>
         </div>
