@@ -13,7 +13,7 @@
           <div class="media-body">
             <div class="d-flex">
               <h3 class="dropdown-item-title">
-                {{getNotificationText(notification)}}
+                {{getItemText(notification.serviceDetails, 'serviceName')}}
               </h3>
             </div>
             <p class="text-sm">{{notification.stepDetails.status}}</p>
