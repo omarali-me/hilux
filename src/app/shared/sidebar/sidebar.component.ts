@@ -19,11 +19,6 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItems$ = this.fieldsService.getUrl('https://wfe.ajm.re/AjmanLandProperty/index.php/ServiceCategories/getServices');
-    // $(document).ready(() => {
-    //   $(Selector.DATA_WIDGET).each(function () {
-    //     Treeview._jQueryInterface.call($(this), 'init');
-    //   });
-    // });
   }
 
   getServiceProviderItem(data: any) {
