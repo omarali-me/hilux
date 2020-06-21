@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FieldsService } from 'src/app/shared/fields.service';
 import { Router } from '@angular/router';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-notifications',
@@ -20,7 +21,7 @@ export class NotificationsComponent implements OnInit {
   }
 
   loadNotifications() {
-    this.fieldsService.getUrl('http://192.168.5.113/AjmanLandProperty/index.php/applications/myTasks')
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/myTasks`)
       .subscribe(data => {
         this.notifications = data.filter(d => d.stepDetails.status.toLowerCase() === 'pending');
       })

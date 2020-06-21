@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import * as _ from 'lodash';
 import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from '../shared/fields.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-service-page',
@@ -30,7 +31,7 @@ export class ServicePageComponent implements OnInit {
     this.serviceId.subscribe((service) => {
       let fd = new FormData();
       fd.append('data', JSON.stringify({ channel: 'hilux', serviceID: _.toInteger(service)}));
-      this.http.post(`http://192.168.5.113/AjmanLandProperty/index.php/applications/startService`, fd)
+      this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/applications/startService`, fd)
         .subscribe(async (data: any) => {
           if (data.status == 'success') {
             await this.getServices(service);
@@ -45,7 +46,7 @@ export class ServicePageComponent implements OnInit {
   }
 
   private getServices(serviceId: any) {
-    this.fieldsService.getUrl('http://192.168.5.113/AjmanLandProperty/index.php/ServiceCategories/getServices')
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`)
       .subscribe((data) => {
         let services = {};
         _.values(data).forEach(category => {

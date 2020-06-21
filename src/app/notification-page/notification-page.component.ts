@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { pluck } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-notification-page',
@@ -26,9 +27,7 @@ export class NotificationPageComponent implements OnInit {
     this.stepId.subscribe((service) => {
       let fd = new FormData();
       fd.append('data', JSON.stringify({ stepID: _.toInteger(service)}));
-      // fd.append('data.stepId', service);
-      // fd["data"] = { channel: 'hilux', stepId: _.toInteger(service)}
-      this.http.post(`http://192.168.5.113/AjmanLandProperty/index.php/applications/lockStep`, fd)
+      this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/applications/lockStep`, fd)
         .subscribe((data: any) =>{
           if (data.status == 'success') {
             this.toastr.success(data.message, 'Success')

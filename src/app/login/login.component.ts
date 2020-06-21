@@ -7,6 +7,7 @@ import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
     // this.router.navigate(['/']);
     let fd = new FormData();
     fd.append('data', JSON.stringify(formData));
-    this.http.post(`http://192.168.5.113/AjmanLandProperty/index.php/applications/loginAPI`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/applications/loginAPI`, fd)
     .subscribe((data: any) =>{
       if (data.status == 'success') {
         this.toastr.success(data.message, 'Success');

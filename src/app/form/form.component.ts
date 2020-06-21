@@ -8,6 +8,7 @@ import { AuthenticationService } from '../shared/authentication.service';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { isArray } from 'util';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-form',
@@ -67,7 +68,7 @@ export class FormComponent implements OnInit {
     console.log('form Data', this.prepareJson(formData));
     let form = new FormData();
     form.append('data', JSON.stringify(Object.assign({stepID: this.response.stepID, dataIn: this.prepareJson(formData)})));
-    this.http.post('http://192.168.5.113/AjmanLandProperty/index.php/applications/completeStep', form)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/applications/completeStep`, form)
       .subscribe((data: any)=> {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success')

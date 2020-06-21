@@ -3,6 +3,7 @@ import { FieldsService } from '../fields.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-sidebar',
@@ -18,7 +19,7 @@ export class SidebarComponent implements OnInit {
   constructor(private fieldsService: FieldsService, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.menuItems$ = this.fieldsService.getUrl('http://192.168.5.113/AjmanLandProperty/index.php/ServiceCategories/getServices');
+    this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`);
   }
 
   getServiceProviderItem(data: any) {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FieldsService } from '../shared/fields.service';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-my-tasks',
@@ -16,7 +17,7 @@ export class MyTasksComponent implements OnInit {  response$: Observable<any>;
   ) { }
 
   ngOnInit(): void {
-    this.response$ = this.fieldsService.getUrl('http://192.168.5.113/AjmanLandProperty/index.php/applications/myTasks');
+    this.response$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/myTasks`);
   }
 
   getItemText(field: any, key: any) {
