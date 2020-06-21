@@ -5,6 +5,8 @@ import { RowField } from '../fields/field_order';
 import { FieldsService } from '../shared/fields.service';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -20,16 +22,29 @@ export class LoginComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService,
     private router: Router,
     private fieldsService: FieldsService,
-    private changeDetector: ChangeDetectorRef
+    private changeDetector: ChangeDetectorRef,
+    private http: HttpClient,
+    private toastr: ToastrService
     ) { }
 
   ngOnInit(): void {
-    this.response$ = this.fieldsService.getUrl('http://192.168.0.150:3000/login');
+    // this.response$ = this.fieldsService.getUrl('http://192.168.0.150:3000/login');
   }
 
   login(formData: any) {
-    this.authenticationService.signin();
-    this.router.navigate(['/']);
+    // this.authenticationService.signin();
+    // this.router.navigate(['/']);
+    let fd = new FormData();
+    fd.append('data', JSON.stringify(formData));
+    this.http.post(`http://192.168.5.113/AjmanLandProperty/index.php/applications/loginAPI`, fd)
+    .subscribe((data: any) =>{
+      if (data.status == 'success') {
+        this.toastr.success(data.message, 'Success');
+        // this.response = data.data;
+      } else {
+        this.toastr.error(data.message, 'Error')
+      }
+    })
   }
 
   logout() {

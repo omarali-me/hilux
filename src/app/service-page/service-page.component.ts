@@ -30,7 +30,7 @@ export class ServicePageComponent implements OnInit {
     this.serviceId.subscribe((service) => {
       let fd = new FormData();
       fd.append('data', JSON.stringify({ channel: 'hilux', serviceID: _.toInteger(service)}));
-      this.http.post(`https://wfe.ajm.re/AjmanLandProperty/index.php/applications/startService`, fd)
+      this.http.post(`http://192.168.5.113/AjmanLandProperty/index.php/applications/startService`, fd)
         .subscribe(async (data: any) => {
           if (data.status == 'success') {
             await this.getServices(service);
@@ -45,7 +45,7 @@ export class ServicePageComponent implements OnInit {
   }
 
   private getServices(serviceId: any) {
-    this.fieldsService.getUrl('https://wfe.ajm.re/AjmanLandProperty/index.php/ServiceCategories/getServices')
+    this.fieldsService.getUrl('http://192.168.5.113/AjmanLandProperty/index.php/ServiceCategories/getServices')
       .subscribe((data) => {
         let services = {};
         _.values(data).forEach(category => {

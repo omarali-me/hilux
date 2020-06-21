@@ -28,7 +28,7 @@ export class NotificationPageComponent implements OnInit {
       fd.append('data', JSON.stringify({ stepID: _.toInteger(service)}));
       // fd.append('data.stepId', service);
       // fd["data"] = { channel: 'hilux', stepId: _.toInteger(service)}
-      this.http.post(`https://wfe.ajm.re/AjmanLandProperty/index.php/applications/lockStep`, fd)
+      this.http.post(`http://192.168.5.113/AjmanLandProperty/index.php/applications/lockStep`, fd)
         .subscribe((data: any) =>{
           if (data.status == 'success') {
             this.toastr.success(data.message, 'Success')

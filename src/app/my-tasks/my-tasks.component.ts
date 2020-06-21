@@ -16,7 +16,7 @@ export class MyTasksComponent implements OnInit {  response$: Observable<any>;
   ) { }
 
   ngOnInit(): void {
-    this.response$ = this.fieldsService.getUrl('https://wfe.ajm.re/AjmanLandProperty/index.php/applications/myTasks');
+    this.response$ = this.fieldsService.getUrl('http://192.168.5.113/AjmanLandProperty/index.php/applications/myTasks');
   }
 
   getItemText(field: any, key: any) {

@@ -20,13 +20,13 @@ export class NotificationsComponent implements OnInit {
   }
 
   loadNotifications() {
-    this.fieldsService.getUrl('https://wfe.ajm.re/AjmanLandProperty/index.php/applications/myTasks')
+    this.fieldsService.getUrl('http://192.168.5.113/AjmanLandProperty/index.php/applications/myTasks')
       .subscribe(data => {
         this.notifications = data.filter(d => d.stepDetails.status.toLowerCase() === 'pending');
       })
 
     // TODO:: HANDLE ERROR CASE AND DON"T MAKE ANY REQUEST AFTER IT
-    setTimeout(() => { this.loadNotifications() }, 60 * 1000);
+    setTimeout(() => { this.loadNotifications() }, 2 * 60 * 1000);
   }
 
   getStatusClass(notification: any) {
