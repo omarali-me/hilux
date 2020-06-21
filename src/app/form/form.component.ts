@@ -96,7 +96,7 @@ export class FormComponent implements OnInit {
     return preparedData
   }
 
-  isEnumerator(data: any) {
+  isEnumerator(data: any) { 
     return isArray(data);
   }
 
@@ -105,7 +105,7 @@ export class FormComponent implements OnInit {
     const keys = _.uniq(_.flatMap(row, (o) => _.keys(o)));
 
     for(let key of keys) {
-      nestedObj[key] = _.map(row, (o) => o[key]).filter(o => o);
+      nestedObj[key] = _.map(row, (o) => (o[key] || ''));
     }
 
     return nestedObj
