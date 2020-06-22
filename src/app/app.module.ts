@@ -68,6 +68,9 @@ import { NotificationPageComponent } from './notification-page/notification-page
 import { AuthInterceptor } from './AuthInterceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { MyTasksComponent } from './my-tasks/my-tasks.component';
+import { AjaxButtonComponent } from './fields/ajax-button/ajax-button.component';
+import { DisplayLinkComponent } from './tags/display-link/display-link.component';
+import { DisplayButtonComponent } from './tags/display-button/display-button.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +130,9 @@ import { MyTasksComponent } from './my-tasks/my-tasks.component';
     ServicePageComponent,
     NotificationPageComponent,
     MyTasksComponent,
+    AjaxButtonComponent,
+    DisplayLinkComponent,
+    DisplayButtonComponent,
   ],
   imports: [
     FormsModule,

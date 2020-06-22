@@ -19,6 +19,9 @@ export class FieldsGeneratorComponent implements OnInit {
     {id: 'dropdown', name: 'Dropdown'},
     {id: 'textarea', name: 'Textarea'},
     {id: 'date', name: 'Date'},
+    {id: 'entitySelect', name: 'Entity Select'},
+    {id: 'stepSelect', name: 'Step Select'},
+    {id: 'ajaxButton', name: 'Ajax Button'}
   ]
 
   sourceTypeOptions:any = [

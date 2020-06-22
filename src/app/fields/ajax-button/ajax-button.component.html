@@ -1,0 +1,8 @@
+<div class="custom-direction limit-div">
+  <pre [innerHtml]="getAjaxData() | prettyjson:4">
+  </pre>
+</div>
+<button type="button" class="btn btn-primary"
+  (click)="loadData()">
+  {{ getText(field, 'fieldName') }}
+</button>
