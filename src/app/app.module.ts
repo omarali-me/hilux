@@ -71,6 +71,8 @@ import { MyTasksComponent } from './my-tasks/my-tasks.component';
 import { AjaxButtonComponent } from './fields/ajax-button/ajax-button.component';
 import { DisplayLinkComponent } from './tags/display-link/display-link.component';
 import { DisplayButtonComponent } from './tags/display-button/display-button.component';
+import { DisplayButtonGroupComponent } from './tags/display-button-group/display-button-group.component';
+import { DisplayLinkGroupComponent } from './tags/display-link-group/display-link-group.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +135,8 @@ import { DisplayButtonComponent } from './tags/display-button/display-button.com
     AjaxButtonComponent,
     DisplayLinkComponent,
     DisplayButtonComponent,
+    DisplayButtonGroupComponent,
+    DisplayLinkGroupComponent,
   ],
   imports: [
     FormsModule,
