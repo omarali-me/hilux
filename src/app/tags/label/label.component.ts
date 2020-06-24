@@ -21,4 +21,9 @@ export class LabelComponent implements OnInit {
   getField(field_id: string) {
     return this.service.findField(this.fields, field_id);
   }
+
+  showRequired(field_id: string) {
+    const field = this.getField(field_id);
+    return (field && (field.required == 'true'));
+  }
 }
