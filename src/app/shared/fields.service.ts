@@ -25,6 +25,8 @@ export class FieldsService {
       let preparedparams = this.prepaareParams(formData, field.auxInfo.apiParams)
       let finalParams = Object.assign({}, preparedparams, params);
       let apiUrl: string = field.auxInfo.sourceDetails
+      if (field.auxInfo && field.auxInfo.method && field.auxInfo.method == 'post')
+        return this.postData(apiUrl, finalParams);
       return this.getUrl(apiUrl, finalParams);
     } else if (field.auxInfo.source == 'list') {
       return of(field.auxInfo.sourceDetails);
@@ -90,6 +92,12 @@ export class FieldsService {
 
   getText(field: any, key: string) {
     return  ((field[key] && field[key].ar) || '');
+  }
+
+  postData(url: string, params: any = {}) {
+    let form = new FormData();
+    form.append('data', JSON.stringify(params));
+    return this.http.post<any>(url, form);
   }
 }
 
