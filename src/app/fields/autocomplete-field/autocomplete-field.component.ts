@@ -30,6 +30,8 @@ export class AutocompleteFieldComponent implements OnInit {
 
   @Input() fullFormData: any;
   
+  @Input() formErrors: any;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
@@ -55,7 +57,6 @@ export class AutocompleteFieldComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.dataOptionsLoading = true),
           switchMap(term => {
-            console.log('testing 123', this.formData)
             return this.service.getFieldData(this.field, this.fullFormData, {term}).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.dataOptionsLoading = false)
@@ -66,5 +67,17 @@ export class AutocompleteFieldComponent implements OnInit {
 
   getText(field: any, key: string) {
     return this.service.getText(field, key);
+  }
+
+  getName(field_name) {
+    return this.service.getFieldName(field_name, this.row, this.index);
+  }
+
+  showErrors(field_name: any) {
+    return this.service.showErrors(field_name, this.formErrors);
+  }
+
+  getErrors(field_name: any) {
+    return this.service.getErrors(field_name, this.formErrors);
   }
 }

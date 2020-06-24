@@ -18,9 +18,13 @@ export class SelectFieldComponent implements OnInit {
 
   @Input() formData: any;
 
+  @Input() row: any;
+
   @Input() index: any = 0;
 
   @Input() fullFormData: any;
+
+  @Input() formErrors: any;
 
   constructor(private service: FieldsService) { }
 
@@ -42,5 +46,17 @@ export class SelectFieldComponent implements OnInit {
 
   loadData() {
     this.dataOptions = this.service.getFieldData(this.field, this.fullFormData);
+  }
+
+  showErrors(field_name: any) {
+    return this.service.showErrors(field_name, this.formErrors);
+  }
+
+  getErrors(field_name: any) {
+    return this.service.getErrors(field_name, this.formErrors);
+  }
+
+  getName(field_name) {
+    return this.service.getFieldName(field_name, this.row, this.index)
   }
 }

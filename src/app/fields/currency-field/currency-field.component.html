@@ -8,7 +8,7 @@
     [class]="customClass"
     [placeholder]="getText(field, 'placeholder')"
     [required]="field.required"
-    [name]="field.fieldName.en"
+    [name]="getName(field.fieldName.en)"
     [id]="field.fieldID"
     [minlength]="field.auxInfo?.minLength"
     [maxlength]="field.auxInfo?.maxLength"
@@ -18,10 +18,15 @@
     #ngModel="ngModel"
   />
 </div>
-<div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched)"
+<div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
     class="alert alert-danger">
 
-  <div *ngIf="ngModel.errors.required || ngModel.errors.minlength">
+  <div *ngIf="ngModel.errors?.required || ngModel.errors?.minlength">
     {{getText(field, 'errorMsg')}}
   </div>
+
+  <div *ngIf="showErrors(field.fieldID)">
+    {{getErrors(field.fieldID)}}
+  </div>
+  
 </div>

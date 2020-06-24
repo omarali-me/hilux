@@ -13,3 +13,7 @@
     <label class="form-check-label">{{field_detail.value.en}}</label>
   </div>
 </div>
+
+<div *ngIf="showErrors(field.fieldID)" class="alert alert-danger">
+  {{getErrors(field.fieldID)}}
+</div>

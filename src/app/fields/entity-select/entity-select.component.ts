@@ -24,6 +24,8 @@ export class EntitySelectComponent implements OnInit {
 
   @Input() fullFormData: any;
 
+  @Input() formErrors: any;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
@@ -34,6 +36,14 @@ export class EntitySelectComponent implements OnInit {
   }
 
   getFieldName(name: string, index: any) {
-    return `${name}`;
+    return this.service.getFieldName(name, this.row, this.index) + `_${index}`;
+  }
+
+  showErrors(field_name: any) {
+    return this.service.showErrors(field_name, this.formErrors);
+  }
+
+  getErrors(field_name: any) {
+    return this.service.getErrors(field_name, this.formErrors);
   }
 }

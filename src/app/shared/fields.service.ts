@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Field } from '../fields/fields';
 import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
+import * as _ from 'lodash';
 
 @Injectable()
 export class FieldsService {
+
+  menuItems$: Observable<any>;
 
   constructor(private http: HttpClient) {}
 
@@ -91,13 +94,50 @@ export class FieldsService {
   }
 
   getText(field: any, key: string) {
-    return  ((field[key] && field[key].ar) || '');
+    return  ((field[key] && field[key].en) || '');
   }
 
   postData(url: string, params: any = {}) {
     let form = new FormData();
     form.append('data', JSON.stringify(params));
     return this.http.post<any>(url, form);
+  }
+
+  getFieldName(field_name: string, row: string, index: string) {
+    return `${row}_${field_name}_${index}`
+  }
+
+  getMenuItems() {
+    this.menuItems$ = this.menuItems$ || this.http.get<any>('http://localhost:3000/menu')
+    return this.menuItems$;
+  }
+
+  getErrors(field_name: any, errors: any[]) {
+    let error: any = {};
+    if (errors && (errors.length > 0)) {
+      for(let err of errors) {
+        if (_.has(err, field_name)) {
+          error = err[field_name];
+          break;
+        };
+      }
+      return error.en;
+    }
+  }
+
+  showErrors(field_name: any, errors: any[]) {
+    let found
+    if (errors && (errors.length > 0)) {
+      for(let err of errors) {
+        if (_.includes(_.keys(err), field_name)) {
+          found = true;
+          break;
+        };
+      }
+      return found;
+    } else {
+      return false;
+    }
   }
 }
 

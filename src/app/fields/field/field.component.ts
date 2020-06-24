@@ -19,6 +19,7 @@ export class FieldComponent implements OnInit {
   @Input() row: string;
   @Input() index: string;
   @Input() fullFormData: any;
+  @Input() formErrors: any;
 
   constructor(private service: FieldsService) { }
 

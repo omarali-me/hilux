@@ -23,6 +23,8 @@ export class InputFieldComponent implements OnInit {
 
   @Input() fullFormData: any;
   
+  @Input() formErrors: any;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
@@ -37,10 +39,18 @@ export class InputFieldComponent implements OnInit {
   }
 
   getName(field_name) {
-    return `${this.row}_${field_name}_${this.index}`
+    return this.service.getFieldName(field_name, this.row, this.index)
   }
 
   getText(field: any, key: string) {
     return  this.service.getText(field, key);
+  }
+
+  showErrors(field_name: any) {
+    return this.service.showErrors(field_name, this.formErrors);
+  }
+
+  getErrors(field_name: any) {
+    return this.service.getErrors(field_name, this.formErrors);
   }
 }

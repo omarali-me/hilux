@@ -26,6 +26,8 @@ export class AjaxButtonComponent implements OnInit {
 
   @Input() fullFormData: any;
 
+  @Input() formErrors: any;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
@@ -50,4 +52,11 @@ export class AjaxButtonComponent implements OnInit {
     return this.ajaxData;
   }
 
+  showErrors(field_name: any) {
+    return this.service.showErrors(field_name, this.formErrors);
+  }
+
+  getErrors(field_name: any) {
+    return this.service.getErrors(field_name, this.formErrors);
+  }
 }

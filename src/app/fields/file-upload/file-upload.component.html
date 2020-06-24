@@ -3,7 +3,7 @@
     class="custom-file-input"
     [class]="customClass"
     [accept]="field.auxInfo?.acceptedFileTypes"
-    [name]="field.fieldName.ar"
+    [name]="getName(field.fieldName.en)"
     [id]="field.fieldID"
     [multiple]="'true'"
     [required]="field.required"
@@ -13,11 +13,15 @@
     />
   <label class="custom-file-label" [for]="field.fieldID" #labelImport>choose file</label>
 
-  <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched)"
+  <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
     class="alert alert-danger">
 
-    <div *ngIf="ngModel.errors.required || ngModel.errors.minlength">
+    <div *ngIf="ngModel.errors?.required || ngModel.errors?.minlength">
       {{getText(field, 'errorMsg')}}
     </div>
+
+    <div *ngIf="showErrors(field.fieldID)">
+      {{getErrors(field.fieldID)}}
+    </div>    
   </div>
 </div>

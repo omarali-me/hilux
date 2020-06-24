@@ -6,3 +6,7 @@
   (click)="loadData()">
   {{ getText(field, 'fieldName') }}
 </button>
+
+<div *ngIf="showErrors(field.fieldID)" class="alert alert-danger">
+  {{getErrors(field.fieldID)}}
+</div>

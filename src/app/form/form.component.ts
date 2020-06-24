@@ -17,6 +17,7 @@ import { environment } from '../../environments/environment';
 })
 export class FormComponent implements OnInit {
   formData: any = {};
+  formErrors: any;
 
   @Input() response: PageResponse;
 

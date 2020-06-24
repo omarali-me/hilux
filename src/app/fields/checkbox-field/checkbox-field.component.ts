@@ -19,10 +19,14 @@ export class CheckboxFieldComponent implements OnInit {
 
   @Input() formData: any;
 
+  @Input() row: any;
+
   @Input() index: any = 0;
 
   @Input() fullFormData: any;
   
+  @Input() formErrors: any;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
@@ -51,4 +55,11 @@ export class CheckboxFieldComponent implements OnInit {
     return this.formData[this.field.fieldID] && this.formData[this.field.fieldID].includes(val);
   }
 
+  showErrors(field_name: any) {
+    return this.service.showErrors(field_name, this.formErrors);
+  }
+
+  getErrors(field_name: any) {
+    return this.service.getErrors(field_name, this.formErrors);
+  }
 }

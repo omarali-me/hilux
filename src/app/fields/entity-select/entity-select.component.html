@@ -26,5 +26,7 @@
     </tr>
   </tbody>
 </table>
-<div>
+
+<div *ngIf="showErrors(field.fieldID)" class="alert alert-danger">
+  {{getErrors(field.fieldID)}}
 </div>

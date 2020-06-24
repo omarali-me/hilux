@@ -17,9 +17,13 @@ export class NumberFieldComponent implements OnInit {
 
   @Input() formData: any;
 
+  @Input() row: any;
+
   @Input() index: any = 0;
 
   @Input() fullFormData: any;
+
+  @Input() formErrors: any;
 
   constructor(private service: FieldsService) { }
 
@@ -28,5 +32,17 @@ export class NumberFieldComponent implements OnInit {
 
   getText(field: any, key: string) {
     return this.service.getText(field, key);
+  }
+
+  showErrors(field_name: any) {
+    return this.service.showErrors(field_name, this.formErrors);
+  }
+
+  getErrors(field_name: any) {
+    return this.service.getErrors(field_name, this.formErrors);
+  }
+
+  getName(field_name) {
+    return this.service.getFieldName(field_name, this.row, this.index)
   }
 }
