@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
     .subscribe((data: any) =>{
       if (data.status == 'success') {
         this.toastr.success(data.message, 'Success');
+        this.router.navigate(['my_tasks']);
         // this.response = data.data;
       } else {
         this.toastr.error(data.message, 'Error')

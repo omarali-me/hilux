@@ -94,7 +94,7 @@ export class FieldsService {
   }
 
   getText(field: any, key: string) {
-    return  ((field[key] && field[key].en) || '');
+    return  ((field[key] && field[key].ar) || '');
   }
 
   postData(url: string, params: any = {}) {
