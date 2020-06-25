@@ -112,32 +112,31 @@ export class FieldsService {
     return this.menuItems$;
   }
 
-  getErrors(field_name: any, errors: any[]) {
+  getErrors(field_name: any, errors: any) {
     let error: any = {};
-    if (errors && (errors.length > 0)) {
-      for(let err of errors) {
-        if (_.has(err, field_name)) {
-          error = err[field_name];
-          break;
+    // if (errors && (errors.length > 0)) {
+    //   for(let err of errors) {
+        if (_.has(errors, field_name)) {
+          error = errors[field_name];
+          // break;
         };
-      }
-      return error.en;
-    }
+      // }
+      return error.ar;
+    // }
   }
 
-  showErrors(field_name: any, errors: any[]) {
-    let found
-    if (errors && (errors.length > 0)) {
-      for(let err of errors) {
-        if (_.includes(_.keys(err), field_name)) {
+  showErrors(field_name: any, errors: any) {
+    let found = false;
+    // if (errors && (errors.length > 0)) {
+    //   for(let err of errors) {
+        if (_.includes(_.keys(errors), field_name)) {
           found = true;
-          break;
+          // break;
         };
-      }
-      return found;
-    } else {
-      return false;
-    }
+    //   }
+    // }
+
+    return found;
   }
 }
 

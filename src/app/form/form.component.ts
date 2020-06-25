@@ -66,7 +66,6 @@ export class FormComponent implements OnInit {
   }
 
   saveData(formData : any) {
-    console.log('form Data', this.prepareJson(formData));
     let form = new FormData();
     form.append('data', JSON.stringify(Object.assign({stepID: this.response.stepID, dataIn: this.prepareJson(formData)})));
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/applications/completeStep`, form)
@@ -74,14 +73,12 @@ export class FormComponent implements OnInit {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success')
           this.router.navigate(['my_tasks']);
-          // alert(data.message);
         } else {
           this.toastr.error(data.message, 'Error')
-          // alert(data.message);
+          this.formErrors = data.data;
         }
       })
     // this.authenticationService.signin();
-    // this.router.navigate(['/']);
   }
 
   private prepareJson(formData: any) {
