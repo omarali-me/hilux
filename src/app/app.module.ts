@@ -74,6 +74,7 @@ import { DisplayButtonComponent } from './tags/display-button/display-button.com
 import { DisplayButtonGroupComponent } from './tags/display-button-group/display-button-group.component';
 import { DisplayLinkGroupComponent } from './tags/display-link-group/display-link-group.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { DisplayDataFormGeneratorComponent } from './display-data-form-generator/display-data-form-generator.component';
 
 @NgModule({
   declarations: [
@@ -138,6 +139,7 @@ import { AuthenticationGuard } from './authentication.guard';
     DisplayButtonComponent,
     DisplayButtonGroupComponent,
     DisplayLinkGroupComponent,
+    DisplayDataFormGeneratorComponent,
   ],
   imports: [
     FormsModule,
