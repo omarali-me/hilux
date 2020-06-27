@@ -73,6 +73,7 @@ import { DisplayLinkComponent } from './tags/display-link/display-link.component
 import { DisplayButtonComponent } from './tags/display-button/display-button.component';
 import { DisplayButtonGroupComponent } from './tags/display-button-group/display-button-group.component';
 import { DisplayLinkGroupComponent } from './tags/display-link-group/display-link-group.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 @NgModule({
   declarations: [
@@ -153,6 +154,7 @@ import { DisplayLinkGroupComponent } from './tags/display-link-group/display-lin
     ToastrModule.forRoot()
   ],
   providers: [
+    AuthenticationGuard,
     {provide: OWL_DATE_TIME_LOCALE, useValue: 'ar'},
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],

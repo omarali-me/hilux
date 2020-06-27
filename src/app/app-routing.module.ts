@@ -10,17 +10,18 @@ import { ServicePageComponent } from './service-page/service-page.component';
 import { StepIdResolver } from './stepId.resolver';
 import { NotificationPageComponent } from './notification-page/notification-page.component';
 import { MyTasksComponent } from './my-tasks/my-tasks.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 
 const routes: Routes = [
-  { path: '',  component: HomePageComponent },
+  { path: '',  component: HomePageComponent, canActivate: [AuthenticationGuard] },
   { path: 'login',  component: LoginComponent },
   // { path: 'signup',  component: SignupComponent },
-  { path: 'custom_page',  component: CustomPageComponent },
-  { path: 'my_tasks',  component: MyTasksComponent },
-  { path: 'rule_generator',  component: RuleGeneratorComponent },
-  { path: 'service/:serviceId', component: ServicePageComponent, resolve: { serviceId: ServiceIdResolver}},
-  { path: 'notifications/:stepId', component: NotificationPageComponent, resolve: { stepId: StepIdResolver}},
+  { path: 'custom_page',  component: CustomPageComponent, canActivate: [AuthenticationGuard] },
+  { path: 'my_tasks',  component: MyTasksComponent, canActivate: [AuthenticationGuard] },
+  { path: 'rule_generator',  component: RuleGeneratorComponent, canActivate: [AuthenticationGuard] },
+  { path: 'service/:serviceId', component: ServicePageComponent, resolve: { serviceId: ServiceIdResolver} , canActivate: [AuthenticationGuard]},
+  { path: 'notifications/:stepId', component: NotificationPageComponent, resolve: { stepId: StepIdResolver}, canActivate: [AuthenticationGuard]},
 ];
 
 @NgModule({

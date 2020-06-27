@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 
 @Injectable()
 export class AuthenticationService {
@@ -16,6 +17,15 @@ export class AuthenticationService {
 
   public signout() {
     window.localStorage.removeItem('user');
+  }
+
+  checkAuthentication() {
+    if (true) {
+      // IF COOKIE IS AVALILABLE acess all pages
+      return of(true);
+    } else {
+      return of(false);
+    }
   }
 }
 
