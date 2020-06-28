@@ -32,11 +32,14 @@ export class AutocompleteFieldComponent implements OnInit {
   
   @Input() formErrors: any;
 
+  @Input() defaultValues: any;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
     // this.dataOptions = this.service.getFieldData(this.field, this.formData)
     this.loadData();
+    this.getDefaultValue(this.field.fieldID);
   }
 
   getFieldModelName(field: Field) {
@@ -79,5 +82,9 @@ export class AutocompleteFieldComponent implements OnInit {
 
   getErrors(field_name: any) {
     return this.service.getErrors(field_name, this.formErrors);
+  }
+
+  getDefaultValue(field_name: any) {
+    this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
   }
 }

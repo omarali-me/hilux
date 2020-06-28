@@ -28,9 +28,12 @@ export class AjaxButtonComponent implements OnInit {
 
   @Input() formErrors: any;
 
+  @Input() defaultValues: any;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
+    this.getDefaultValue(this.field.fieldID);
   }
 
   loadData() {
@@ -58,5 +61,9 @@ export class AjaxButtonComponent implements OnInit {
 
   getErrors(field_name: any) {
     return this.service.getErrors(field_name, this.formErrors);
+  }
+
+  getDefaultValue(field_name: any) {
+    this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
   }
 }

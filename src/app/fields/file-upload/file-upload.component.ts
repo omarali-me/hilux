@@ -25,10 +25,13 @@ export class FileUploadComponent implements OnInit {
   
   @Input() formErrors: any;
 
+  @Input() defaultValues: any;
+
   @ViewChild('labelImport') labelImport: ElementRef;
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
+    this.getDefaultValue(this.field.fieldID);
   }
 
   getFieldModelName(field: Field) {
@@ -54,5 +57,9 @@ export class FileUploadComponent implements OnInit {
 
   getName(field_name) {
     return this.service.getFieldName(field_name, this.row, this.index)
+  }
+
+  getDefaultValue(field_name: any) {
+    this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
   }
 }

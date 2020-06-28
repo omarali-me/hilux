@@ -26,6 +26,8 @@ export class StepSelectComponent implements OnInit {
 
   @Input() formErrors: any;
 
+  @Input() defaultValues: any;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
@@ -33,6 +35,7 @@ export class StepSelectComponent implements OnInit {
     this.service.getFieldData(this.field).subscribe((data)=> {
       this.dataOptions = data;
     })
+    this.getDefaultValue(this.field.fieldID);
   }
 
   getFieldName(name: string, index: any) {
@@ -45,5 +48,9 @@ export class StepSelectComponent implements OnInit {
 
   getErrors(field_name: any) {
     return this.service.getErrors(field_name, this.formErrors);
+  }
+
+  getDefaultValue(field_name: any) {
+    this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
   }
 }

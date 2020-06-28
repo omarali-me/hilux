@@ -25,9 +25,12 @@ export class TextAreaFieldComponent implements OnInit {
 
   @Input() formErrors: any;
 
+  @Input() defaultValues: any;
+
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
+    this.getDefaultValue(this.field.fieldID);
   }
 
   getText(field: any, key: string) {
@@ -44,5 +47,9 @@ export class TextAreaFieldComponent implements OnInit {
 
   getName(field_name) {
     return this.service.getFieldName(field_name, this.row, this.index)
+  }
+
+  getDefaultValue(field_name: any) {
+    this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
   }
 }

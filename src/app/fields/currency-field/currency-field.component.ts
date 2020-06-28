@@ -27,7 +27,10 @@ export class CurrencyFieldComponent implements OnInit {
 
   @Input() formErrors: any;
 
+  @Input() defaultValues: any;
+
   ngOnInit(): void {
+    this.getDefaultValue(this.field.fieldID);
   }
 
   getText(field: any, key: string) {
@@ -46,4 +49,7 @@ export class CurrencyFieldComponent implements OnInit {
     return this.service.getFieldName(field_name, this.row, this.index)
   }
 
+  getDefaultValue(field_name: any) {
+    this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
+  }
 }

@@ -8,7 +8,15 @@
             <div class="row">
               <div class="col-sm-12">
                 <app-label [rowField]="field" [fields]="response.stepDetails?.dataIn?.fields"></app-label>
-                <app-field [rowField]="field" [fields]="response.stepDetails?.dataIn?.fields" [index]="j" [row]="row.row" [fullFormData]="formData" [formData]="subRow" [formErrors]="formErrors"></app-field>
+                <app-field [rowField]="field"
+                           [fields]="response.stepDetails?.dataIn?.fields"
+                           [index]="j"
+                           [row]="row.row"
+                           [fullFormData]="formData"
+                           [formData]="subRow"
+                           [formErrors]="formErrors"
+                           [defaultValues]="response.stepDetails?.dataIn?.defaultValues"
+                ></app-field>
               </div>
             </div>
           </div>
@@ -24,7 +32,13 @@
           <div class="row">
             <div class="col-sm-12">
               <app-label [rowField]="field" [fields]="response.stepDetails?.dataIn?.fields"></app-label>
-              <app-field [rowField]="field" [fields]="response.stepDetails?.dataIn?.fields" [fullFormData]="formData" [formData]="getFormDatafor(row)" [formErrors]="formErrors"></app-field>
+              <app-field [rowField]="field"
+                         [fields]="response.stepDetails?.dataIn?.fields"
+                         [fullFormData]="formData"
+                         [formData]="getFormDatafor(row)"
+                         [formErrors]="formErrors"
+                         [defaultValues]="response.stepDetails?.dataIn?.defaultValues"
+              ></app-field>
             </div>
           </div>
         </div>

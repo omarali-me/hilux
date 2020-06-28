@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Field } from '../fields/fields';
 import { HttpClient } from '@angular/common/http';
-import { of, Observable } from 'rxjs';
+import { of } from 'rxjs';
 import * as _ from 'lodash';
+import { environment } from '../../environments/environment';
+import { isArray } from 'util';
 
 @Injectable()
 export class FieldsService {
 
-  menuItems$: Observable<any>;
+  menuItems: any = {};
 
   constructor(private http: HttpClient) {}
 
@@ -107,9 +109,16 @@ export class FieldsService {
     return `${row}_${field_name}_${index}`
   }
 
-  getMenuItems() {
-    this.menuItems$ = this.menuItems$ || this.http.get<any>('http://localhost:3000/menu')
-    return this.menuItems$;
+  async getMenuItems() {
+    if (_.size(this.menuItems) > 0) {
+      return this.menuItems
+    } else {
+      return this.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`)
+      .subscribe((data) => {
+        this.menuItems
+      })
+      return this.menuItems
+    }
   }
 
   getErrors(field_name: any, errors: any) {
@@ -138,5 +147,22 @@ export class FieldsService {
 
     return found;
   }
-}
 
+  getDefaultValue(field_name: any, defaultValues: any, index?: any) {
+    const defaultValue = _.find(defaultValues, (o) => { return o.fieldID == field_name });
+    if (defaultValue) {
+      return this.defaultValuesByIndex(defaultValue.defaultValue, index)
+    } else {
+      return defaultValue;
+    }
+  }
+
+  private defaultValuesByIndex(value: any, index?: any) {
+    console.log('vakue here is', value, index)
+    if (isArray(value)) {
+      return value[index];
+    } else {
+      return value
+    }
+  }
+}
