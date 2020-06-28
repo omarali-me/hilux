@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { of, Observable, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { FieldsService } from './fields.service';
+import { environment } from '../../environments/environment';
+import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class AuthenticationService {
 
-  constructor() {}
+  isLoggedIn$ = new Subject<boolean>();
+
+  constructor(private fieldsService: FieldsService) {}
 
   public isLoggedIn() {
-    const user = JSON.parse(window.localStorage.getItem('user'))
-    return user && user.logged_in || false;
+    return this.isLoggedIn$;
   }
 
   public signin() {
@@ -16,16 +21,15 @@ export class AuthenticationService {
   }
 
   public signout() {
-    window.localStorage.removeItem('user');
+    return this.fieldsService.getUrl(`${environment.apiHost}/applications/logOut`)
   }
 
   checkAuthentication() {
-    if (true) {
-      // IF COOKIE IS AVALILABLE acess all pages
-      return of(true);
-    } else {
-      return of(false);
-    }
+    return this.fieldsService.getUrl(`${environment.apiHost}/applications/isLoggedIn`)
+    .pipe(tap(p => {
+      this.isLoggedIn$.next(p.status == 'success')
+    }))
   }
+
 }
 
