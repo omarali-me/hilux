@@ -21,7 +21,7 @@ export class AuthenticationService {
   }
 
   public signout() {
-    return this.fieldsService.getUrl(`${environment.apiHost}/applications/logOut`)
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/logOut`)
   }
 
   checkAuthentication() {
