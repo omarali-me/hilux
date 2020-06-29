@@ -12,7 +12,7 @@ export class FooterComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.userloggedIn = this.authenticationService.isLoggedIn();
+    // this.userloggedIn = this.authenticationService.isLoggedIn();
   }
 
 }
