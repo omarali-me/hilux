@@ -67,6 +67,9 @@ export class DateFieldComponent implements OnInit {
   }
 
   getDefaultValue(field_name: any) {
-    this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
+    const value = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
+    if (value) {
+      this.formData[this.field.fieldID] = new Date(value);
+    }
   }
 }

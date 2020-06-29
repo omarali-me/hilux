@@ -75,6 +75,7 @@ import { DisplayButtonGroupComponent } from './tags/display-button-group/display
 import { DisplayLinkGroupComponent } from './tags/display-link-group/display-link-group.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { DisplayDataFormGeneratorComponent } from './display-data-form-generator/display-data-form-generator.component';
+import { HiddenFieldComponent } from './fields/hidden-field/hidden-field.component';
 
 @NgModule({
   declarations: [
@@ -140,6 +141,7 @@ import { DisplayDataFormGeneratorComponent } from './display-data-form-generator
     DisplayButtonGroupComponent,
     DisplayLinkGroupComponent,
     DisplayDataFormGeneratorComponent,
+    HiddenFieldComponent,
   ],
   imports: [
     FormsModule,

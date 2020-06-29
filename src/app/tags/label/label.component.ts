@@ -26,4 +26,9 @@ export class LabelComponent implements OnInit {
     const field = this.getField(field_id);
     return (field && (field.required == 'true'));
   }
+
+  notHiddenField(field_id: string) {
+    const field = this.getField(field_id);
+    return (field && (field.fieldType !== 'hidden'));
+  }
 }

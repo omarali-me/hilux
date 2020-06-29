@@ -26,4 +26,6 @@
 
   <app-ajax-button [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'ajaxButton'"></app-ajax-button>
 
+  <app-hidden-field [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'hidden'"></app-hidden-field>
+
 </ng-container>
