@@ -32,12 +32,10 @@ export class CheckboxFieldComponent implements OnInit {
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
-    this.formData[this.field.fieldID] = {};
     this.service.getFieldData(this.field, this.fullFormData).subscribe((data)=> {
       this.dataOptions = data;
+      this.getDefaultValue(this.field.fieldID);
     })
-
-    this.getDefaultValue(this.field.fieldID);
   }
 
   getFieldModelName(field: Field) {
@@ -48,11 +46,14 @@ export class CheckboxFieldComponent implements OnInit {
     if (!this.formData[this.field.fieldID])
       this.formData[this.field.fieldID] = [];
 
-    if ($event.target.checked)
+    if ($event.target.checked) {
       this.formData[this.field.fieldID].push($event.target.value);
-      
-    else
+    } else {
       _.remove(this.formData[this.field.fieldID], i => i === $event.target.value);
+      if (this.formData[this.field.fieldID].length == 0) {
+        this.formData[this.field.fieldID] = undefined;
+      }
+    }
   }
 
   optionSelected(val: any) {
@@ -68,6 +69,28 @@ export class CheckboxFieldComponent implements OnInit {
   }
 
   getDefaultValue(field_name: any) {
-    this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
+    this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, (this.index || 0));
   }
+
+  getText(field: any, key: string) {
+    return this.service.getText(field, key);
+  }
+
+  isChecked(option: any) {
+    return this.formData[this.field.fieldID] && this.formData[this.field.fieldID].includes(option.toString());
+  }
+
+  hasErrors() {
+    let errors = false;
+    if (this.field.required == 'true') {
+      errors = this.formData[this.field.fieldID] == undefined;
+    }
+
+    return errors;
+  }
+
+  getName(field_name) {
+    return this.service.getFieldName(field_name, this.row, this.index);
+  }
+
 }

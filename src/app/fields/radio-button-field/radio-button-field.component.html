@@ -6,13 +6,12 @@
       [ngClass]="field.required ? 'ng-invalid' : ''"
       [required]="field.required"
       [value]="field_detail.key"
-      [required]="field.required"
       [name]="field.fieldName.en"
       [id]="field.fieldID"
       [(ngModel)]="formData[field.fieldID]"
       #ngModel="ngModel"
     />
-    <label class="form-check-label">{{field_detail.value.en}}</label>
+    <label class="form-check-label">{{ getText(field_detail, 'value') }}</label>
     <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
       class="alert alert-danger">
 
@@ -26,4 +25,3 @@
     </div>
   </div>
 </div>
-

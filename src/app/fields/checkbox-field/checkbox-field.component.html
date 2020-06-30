@@ -3,17 +3,23 @@
     <input class="form-check-input"
       type="checkbox"
       [class]="customClass"
-      [required]="field.required"
       [value]="field_detail.key"
-      [required]="field.required"
-      [name]="field.fieldID"
-      [id]="field.fieldID"
-      [(ngModel)]="formData[field.fieldID][field_detail.key]"
+      [name]="field_detail.value.en"
+      (change)="handleChange($event)"
+      [checked]="isChecked(field_detail.key)"
     />
-    <label class="form-check-label">{{field_detail.value.en}}</label>
+    <label class="form-check-label">{{ getText(field_detail, 'value') }}</label>
   </div>
-</div>
+  <input type="hidden" [name]="getName(field.fieldName.en)" [required]="field.required" #ngModel="ngModel" [(ngModel)]="formData[field.fieldID]">
 
-<div *ngIf="showErrors(field.fieldID)" class="alert alert-danger">
-  {{getErrors(field.fieldID)}}
+  <div *ngIf="hasErrors() || showErrors(field.fieldID)" class="alert alert-danger">
+
+    <div *ngIf="hasErrors()">
+      {{getText(field, 'errorMsg')}}
+    </div>
+
+    <div *ngIf="showErrors(field.fieldID)">
+      {{getErrors(field.fieldID)}}
+    </div>
+  </div>
 </div>

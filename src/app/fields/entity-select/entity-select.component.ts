@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Field } from '../fields';
 import { FieldsService } from 'src/app/shared/fields.service';
 import { ControlContainer, NgForm } from '@angular/forms';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-entity-select',
@@ -31,12 +32,10 @@ export class EntitySelectComponent implements OnInit {
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
-    this.formData[this.field.fieldID] = {};
     this.service.getFieldData(this.field).subscribe((data)=> {
       this.dataOptions = data;
+      this.getDefaultValue(this.field.fieldID);
     })
-
-    this.getDefaultValue(this.field.fieldID);
   }
 
   getFieldName(name: string, index: any) {
@@ -52,6 +51,43 @@ export class EntitySelectComponent implements OnInit {
   }
 
   getDefaultValue(field_name: any) {
-    this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
+    let defaultVlaue = this.service.getDefaultValue(field_name, this.defaultValues, (this.index || 0));
+    this.formData[this.field.fieldID] = (defaultVlaue ? defaultVlaue.map(d => d.toString()) : defaultVlaue);
   }
+
+  getName(field_name) {
+    return this.service.getFieldName(field_name, this.row, this.index);
+  }
+
+  isChecked(option: any) {
+    return this.formData[this.field.fieldID] && this.formData[this.field.fieldID].includes(option.toString());
+  }
+
+  handleChange($event) {
+    if (!this.formData[this.field.fieldID])
+      this.formData[this.field.fieldID] = [];
+
+    if ($event.target.checked) {
+      this.formData[this.field.fieldID].push($event.target.value);
+    } else {
+      _.remove(this.formData[this.field.fieldID], i => i === $event.target.value);
+      if (this.formData[this.field.fieldID].length == 0) {
+        this.formData[this.field.fieldID] = undefined;
+      }
+    }
+  }
+
+  getText(field: any, key: string) {
+    return this.service.getText(field, key);
+  }
+
+  hasErrors() {
+    let errors = false;
+    if (this.field.required == 'true') {
+      errors = errors = this.formData[this.field.fieldID] == undefined;
+    }
+
+    return errors;
+  }
+
 }

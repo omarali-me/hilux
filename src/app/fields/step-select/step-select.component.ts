@@ -34,8 +34,8 @@ export class StepSelectComponent implements OnInit {
     this.formData[this.field.fieldID] = {};
     this.service.getFieldData(this.field).subscribe((data)=> {
       this.dataOptions = data;
+      this.getDefaultValue(this.field.fieldID);
     })
-    this.getDefaultValue(this.field.fieldID);
   }
 
   getFieldName(name: string, index: any) {

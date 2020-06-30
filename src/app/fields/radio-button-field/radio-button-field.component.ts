@@ -34,8 +34,8 @@ export class RadioButtonFieldComponent implements OnInit {
   ngOnInit(): void {
     this.service.getFieldData(this.field, this.fullFormData).subscribe((data)=> {
       this.dataOptions = data;
+      this.getDefaultValue(this.field.fieldID);
     })
-    this.getDefaultValue(this.field.fieldID);
   }
 
   getFieldModelName(field: Field) {
@@ -45,20 +45,6 @@ export class RadioButtonFieldComponent implements OnInit {
   getText(field: any, key: string) {
     return this.service.getText(field, key);
   }
-
-  // handleChange($event) {
-  //   if (!this.formData[this.field.fieldID])
-  //     this.formData[this.field.fieldID] = [];
-
-  //   if ($event.target.checked)
-  //     this.formData[this.field.fieldID][0] = $event.target.value;
-  //   else
-  //     _.remove(this.formData[this.field.fieldID], i => i === $event.target.value);
-  // }
-
-  // optionSelected(val: any) {
-  //   return this.formData[this.field.fieldID] && this.formData[this.field.fieldID].includes(val);
-  // }
 
   showErrors(field_name: any) {
     return this.service.showErrors(field_name, this.formErrors);
