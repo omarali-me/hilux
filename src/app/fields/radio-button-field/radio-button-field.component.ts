@@ -57,4 +57,37 @@ export class RadioButtonFieldComponent implements OnInit {
   getDefaultValue(field_name: any) {
     this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
   }
+
+  getValue(value: any) {
+    return value.toString();
+  }
+
+  getName(field_name) {
+    return this.service.getFieldName(field_name, this.row, this.index);
+  }
+
+  handleChange($event) {
+    if (!this.formData[this.field.fieldID])
+      this.formData[this.field.fieldID] = undefined;
+
+    if ($event.target.checked) {
+      this.formData[this.field.fieldID] = $event.target.value;
+    } else {
+      this.formData[this.field.fieldID] = undefined;
+    }
+  }
+
+  isChecked(option: any) {
+    return this.formData[this.field.fieldID] == (option.toString());
+  }
+
+  hasErrors() {
+    let errors = false;
+    if (this.field.required == 'true') {
+      errors = this.formData[this.field.fieldID] == undefined;
+    }
+
+    return errors;
+  }
+
 }

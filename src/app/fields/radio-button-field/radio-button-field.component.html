@@ -3,25 +3,25 @@
     <input class="form-check-input"
       type="radio"
       [class]="customClass"
-      [ngClass]="field.required ? 'ng-invalid' : ''"
-      [required]="field.required"
-      [value]="field_detail.key"
+      [value]="getValue(field_detail.key)"
       [name]="field.fieldName.en"
-      [id]="field.fieldID"
-      [(ngModel)]="formData[field.fieldID]"
-      #ngModel="ngModel"
+      (change)="handleChange($event)"
+      [checked]="isChecked(field_detail.key)"
     />
     <label class="form-check-label">{{ getText(field_detail, 'value') }}</label>
-    <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
-      class="alert alert-danger">
+  </div>
 
-      <div *ngIf="ngModel.errors?.required || ngModel.errors?.minlength">
-        {{getText(field, 'errorMsg')}}
-      </div>
+  <input type="hidden" [name]="getName(field.fieldName.en)" [required]="field.required" #ngModel="ngModel" [(ngModel)]="formData[field.fieldID]">
 
-      <div *ngIf="showErrors(field.fieldID)">
-        {{getErrors(field.fieldID)}}
-      </div>
+  <div *ngIf="hasErrors() || showErrors(field.fieldID)"
+    class="alert alert-danger">
+
+    <div *ngIf="hasErrors()">
+      {{getText(field, 'errorMsg')}}
+    </div>
+
+    <div *ngIf="showErrors(field.fieldID)">
+      {{getErrors(field.fieldID)}}
     </div>
   </div>
 </div>
