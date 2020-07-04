@@ -109,4 +109,8 @@ export class FormComponent implements OnInit {
 
     return nestedObj
   }
+
+  backToMytask() {
+    this.router.navigate(['my_tasks']);
+  }
 }

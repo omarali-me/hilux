@@ -47,6 +47,6 @@
   </div>
   <div class="card-footer">
     <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid" i18n="@@formSubmitLabel">Submit</button>
-    <button type="button" class="btn btn-default" i18n="@@formCancelLabel">Cancel</button>
+    <button type="button" class="btn btn-default" i18n="@@formCancelLabel" (click)="backToMytask()">Cancel</button>
   </div>
 </form>
