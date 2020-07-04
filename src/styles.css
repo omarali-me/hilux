@@ -141,3 +141,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     text-align: right;
     direction: rtl;
 }
+
+.dropdown-menu-lg {
+    max-width: 500px;
+}

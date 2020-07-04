@@ -1,10 +1,10 @@
 <li class="nav-item dropdown" *ngIf="notifications">
   <a class="nav-link" data-toggle="dropdown" href="#">
     <i class="far fa-bell"></i>
-    <span class="badge badge-danger navbar-badge">{{notifications.length}}</span>
+    <span class="badge badge-danger navbar-badge" *ngIf="notifications?.length >0">{{notifications.length}}</span>
   </a>
 
-  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right notifications-menu" *ngIf="notifications.length > 0">
+  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right notifications-menu" *ngIf="notifications?.length > 0">
     <div class="" *ngFor="let notification of notifications">
       <a (click)="performActionPerStatus(notification)" class="dropdown-item">
         <div class="media">
@@ -26,5 +26,20 @@
       </a>
       <div class="dropdown-divider"></div>
     </div>
+  </div>
+  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right notifications-menu" *ngIf="notifications?.length == 0">
+      <a class="dropdown-item">
+        <div class="media">
+          <!-- <span class="float-right text-sm mr-3" [ngClass]="getStatusClass(notification)"><i class="fas fa-star"></i></span> -->
+          <div class="media-body">
+            <div class="d-flex">
+              <h3 class="dropdown-item-title">
+                No Notifications Available
+              </h3>
+            </div>
+          </div>
+        </div>
+      </a>
+      <div class="dropdown-divider"></div>
   </div>
 </li>
