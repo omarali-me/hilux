@@ -145,3 +145,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .dropdown-menu-lg {
     max-width: 500px;
 }
+
+.card-header>.card-tools {
+    float: left;
+    margin-left: -.625rem;
+    margin-right: 0;
+}
+

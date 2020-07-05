@@ -1,27 +1,41 @@
-<div class="custom-file">
-  <input type="file"
-    class="custom-file-input"
-    [class]="customClass"
-    [accept]="field.auxInfo?.acceptedFileTypes"
-    [name]="getName(field.fieldName.en)"
-    [id]="field.fieldID"
-    [multiple]="'true'"
-    [required]="field.required"
-    [(ngModel)]="formData[field.fieldID]"
-    (change)="updateControlLabel($event)"
-    #ngModel="ngModel"
-    />
-  <label class="custom-file-label" [for]="field.fieldID" #labelImport>choose file</label>
-
-  <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
-    class="alert alert-danger">
-
-    <div *ngIf="ngModel.errors?.required || ngModel.errors?.minlength">
-      {{getText(field, 'errorMsg')}}
+<div class="col-sm-12">
+  <div class="row">
+    <div class="col-sm-12 form-group">
+      <div class="image-preview m-2 d-inline-block" *ngFor="let item of formData[field.fieldID]; let i = index;">
+        <span class="close-button" title="Remove" (click)="removeFile(i)">X</span>
+        <img class="inherit-height" [src]="item" />
+      </div>
     </div>
+  </div>
 
-    <div *ngIf="showErrors(field.fieldID)">
-      {{getErrors(field.fieldID)}}
-    </div>    
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="custom-file">
+        <input type="file"
+          class="custom-file-input"
+          [class]="customClass"
+          [accept]="field.auxInfo?.acceptedFileTypes"
+          [name]="getName(field.fieldName.en)"
+          [id]="field.fieldID"
+          [multiple]="true"
+          (change)="updateControlLabel($event)"
+          />
+        <label class="custom-file-label" [for]="field.fieldID" #labelImport>choose file</label>
+
+        <input type="hidden" [name]="getName(field.fieldName.en)" [required]="field.required" #ngModel="ngModel" [(ngModel)]="formData[field.fieldID]">
+
+        <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
+          class="alert alert-danger">
+
+          <div *ngIf="ngModel.errors?.required || ngModel.errors?.minlength">
+            {{getText(field, 'errorMsg')}}
+          </div>
+
+          <div *ngIf="showErrors(field.fieldID)">
+            {{getErrors(field.fieldID)}}
+          </div>    
+        </div>
+      </div>
+    </div>
   </div>
 </div>

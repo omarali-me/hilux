@@ -1,0 +1,17 @@
+.image-preview {
+    height: 150px;
+    width: 150px;
+}
+
+.inherit-height {
+    height: inherit;
+    width: inherit;
+}
+
+.close-button {
+    position: absolute;
+    background: rgb(255,255,255,0.6);
+    color: grey;
+    cursor: pointer;
+    padding: 3px;
+}
