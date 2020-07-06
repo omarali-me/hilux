@@ -32,7 +32,7 @@ export class EntitySelectComponent implements OnInit {
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
-    this.service.getFieldData(this.field).subscribe((data)=> {
+    this.service.getFieldData(this.field, this.fullFormData).subscribe((data)=> {
       this.dataOptions = data;
       this.getDefaultValue(this.field.fieldID);
     })

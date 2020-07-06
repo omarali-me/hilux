@@ -32,7 +32,7 @@ export class StepSelectComponent implements OnInit {
 
   ngOnInit(): void {
     this.formData[this.field.fieldID] = {};
-    this.service.getFieldData(this.field).subscribe((data)=> {
+    this.service.getFieldData(this.field, this.fullFormData).subscribe((data)=> {
       this.dataOptions = data;
       this.getDefaultValue(this.field.fieldID);
     })
