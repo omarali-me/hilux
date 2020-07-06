@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import {
   HttpEvent, HttpInterceptor, HttpHandler, HttpRequest
 } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 import { Observable } from 'rxjs';
 
@@ -23,7 +24,7 @@ export class AuthInterceptor implements HttpInterceptor {
     }
     else {
       req = req.clone({
-        headers: req.headers.set('Authorization', 'Bearer sy3rHBHVD3U7VxMs6vuSLU32')
+        headers: req.headers.set('Authorization', 'Bearer ' + environment.token)
       });
     }
 
