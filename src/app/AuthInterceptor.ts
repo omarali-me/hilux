@@ -21,6 +21,11 @@ export class AuthInterceptor implements HttpInterceptor {
         withCredentials: true
       });
     }
+    else {
+      req = req.clone({
+        headers: req.headers.set('Authorization', 'Bearer sy3rHBHVD3U7VxMs6vuSLU32')
+      });
+    }
 
     return next.handle(req);
   }
