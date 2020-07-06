@@ -31,6 +31,7 @@ export class FormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.rearrangeFieldOrder()
   }
 
   getClass(classname: string, field: RowField) {
@@ -112,5 +113,21 @@ export class FormComponent implements OnInit {
 
   backToMytask() {
     this.router.navigate(['my_tasks']);
+  }
+
+  rearrangeFieldOrder() {
+    let orders = this.response.stepDetails.dataIn.fieldOrder;
+    const index = _.findIndex(orders, function(o) { return o.row == 'hiddenRow'; });
+    let deletedResource = undefined;
+    if (index != -1) {
+      _.remove(orders, function(resource, i) {
+        deletedResource = resource
+        return index === i;
+      });
+
+      orders.unshift(deletedResource);
+    }
+
+    this.response.stepDetails.dataIn.fieldOrder = orders;
   }
 }
