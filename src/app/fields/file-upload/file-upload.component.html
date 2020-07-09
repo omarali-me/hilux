@@ -26,6 +26,13 @@
           />
         <label class="custom-file-label" [for]="field.fieldID" #labelImport>choose file</label>
 
+        <div class="progress mt-2 d-none" #progressBarWrapper>
+          <div class="progress-bar bg-primary progress-bar-striped" role="progressbar"
+              aria-valuemin="0" aria-valuemax="100" #progressBar>
+            <span class="sr-only"></span>
+          </div>
+        </div>
+
         <input type="hidden" [name]="getName(field.fieldName.en)" [required]="field.required" #ngModel="ngModel" [(ngModel)]="formData[field.fieldID]">
 
         <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"

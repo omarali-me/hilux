@@ -34,6 +34,8 @@ export class FileUploadComponent implements OnInit {
   @Input() defaultValues: any;
 
   @ViewChild('labelImport') labelImport: ElementRef;
+  @ViewChild('progressBar') progressBar: ElementRef;
+  @ViewChild('progressBarWrapper') progressBarWrapper: ElementRef;
   constructor(
     private service: FieldsService,
     private http: HttpClient,
@@ -50,9 +52,13 @@ export class FileUploadComponent implements OnInit {
   }
 
   async updateControlLabel(event: any) {
+    this.progressBarWrapper.nativeElement.classList.remove('d-none')
     const files = Array.from(event.target.files);
     this.labelImport.nativeElement.innerText = files.map((t:any) => t.name).join(', ').slice(0, 75);
     const values = await this.uploadFiles(files);
+    setTimeout(()=> {
+      this.progressBarWrapper.nativeElement.classList.add('d-none')
+    }, 2000);
   }
 
   getText(field: any, key: string) {
@@ -79,12 +85,14 @@ export class FileUploadComponent implements OnInit {
 
   async uploadFiles(files: any[]) {
     const fieldId = this.field.fieldID;
+    let percentage = 0;
     for (let i = 0; i < files.length; i++) {
-      await this.uploadFile(files[i], fieldId)
+      percentage = 100/(files.length - i);
+      await this.uploadFile(files[i], fieldId, percentage);
     }
   }
 
-  private async uploadFile(file: any, fieldId: any) {
+  private async uploadFile(file: any, fieldId: any, percentage: any) {
     let form = new FormData();
     let values = (this.formData[fieldId] || [])
     form.append(`${fieldId}`, file);
@@ -93,12 +101,15 @@ export class FileUploadComponent implements OnInit {
           // Add value to formData
           values.push(data.data[fieldId]);
           this.setValues(values, fieldId);
+          this.progressBar.nativeElement.style.width = `${percentage}%`;
         } else {
           this.appendIfValid(data.data, fieldId);
           // this.toastr.error(data.message, 'Error');
+          this.progressBar.nativeElement.style.width = `${percentage}%`;
         }
       }, (error) => {
         console.log('error', error)
+        this.progressBar.nativeElement.style.width = `${percentage}%`;
       })
   }
 
