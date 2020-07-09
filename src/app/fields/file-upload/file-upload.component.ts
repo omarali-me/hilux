@@ -131,4 +131,34 @@ export class FileUploadComponent implements OnInit {
       }
     }
   }
+
+  notImage(item: any) {
+    const ext = item.split('.');
+    const index = ext.length;
+    return ['pdf', 'ods', 'csv', 'xlsx', 'xls', 'ppt', 'pptx', 'doc', 'docx'].includes(ext[index - 1]);
+  }
+
+  getIconClass(item: any) {
+    const ext = item.split('.');
+    const index = ext.length;
+
+    switch (ext[index -1]) {
+      case 'pdf':
+        return 'file-pdf';
+      case 'ods':
+      case 'xlsx':
+      case 'xls':
+        return 'file-excel';
+      case 'doc':
+      case 'docx':
+          return 'file-word';
+      case 'ppt':
+      case 'pptx':
+        return 'file-powerpoint';
+      case 'csv':
+        return 'file-alt';
+      default:
+        return 'file';
+    }
+  }
 }
