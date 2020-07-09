@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Field } from '../fields';
 import { FieldsService } from 'src/app/shared/fields.service';
 import { ControlContainer, NgForm } from '@angular/forms';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-select-field',
@@ -28,7 +29,12 @@ export class SelectFieldComponent implements OnInit {
 
   @Input() defaultValues: any;
 
-  constructor(private service: FieldsService) { }
+  constructor(private service: FieldsService) {
+    this.service.fieldValueChanged$.subscribe(()=> {
+      this.loadData()
+      this.resetFieldData();
+    })
+  }
 
   ngOnInit(): void {
     this.loadData();
@@ -65,5 +71,19 @@ export class SelectFieldComponent implements OnInit {
 
   getDefaultValue(field_name: any) {
     this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
+  }
+
+  resetFieldData() {
+    if (this.field.auxInfo && this.field.auxInfo.source == 'fieldValues') {
+      this.service.getFieldData(this.field, this.fullFormData).subscribe((data)=> {
+        const value = this.formData[this.field.fieldID];
+        const exists = _.find(data, function(o) { return o.key == value; });
+        if (exists) {
+          // Option exists
+        } else {
+          this.formData[this.field.fieldID] = undefined;
+        }
+      })
+    }
   }
 }

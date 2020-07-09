@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Field } from '../fields/fields';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
@@ -10,6 +10,8 @@ import { isArray } from 'util';
 export class FieldsService {
 
   menuItems: any = {};
+
+  public fieldValueChanged$ = new EventEmitter<any>();
 
   constructor(private http: HttpClient) {}
 
@@ -27,7 +29,7 @@ export class FieldsService {
 
   getFieldData(field: Field, formData:any = {}, params: any = {}) {
     if (field.auxInfo.source == 'api') {
-      let preparedparams = this.prepaareParams(formData, field.auxInfo.apiParams)
+      let preparedparams = this.prepareParams(formData, field.auxInfo.apiParams)
       let finalParams = Object.assign({}, preparedparams, params);
       let apiUrl: string = field.auxInfo.sourceDetails
       if (field.auxInfo && field.auxInfo.method && field.auxInfo.method == 'post')
@@ -35,6 +37,8 @@ export class FieldsService {
       return this.getUrl(apiUrl, finalParams);
     } else if (field.auxInfo.source == 'list') {
       return of(field.auxInfo.sourceDetails);
+    } else if (field.auxInfo.source = 'fieldValues') {
+      return this.prepareOptionsForField(formData, field.auxInfo.sourceDetails)
     } else {
       of([]);
     }
@@ -69,7 +73,7 @@ export class FieldsService {
     }
   }
 
-  private prepaareParams(formData: any, apiParams: any) {
+  private prepareParams(formData: any, apiParams: any) {
     let params = {};
     if (apiParams) {
       apiParams.forEach(param => {
@@ -158,11 +162,34 @@ export class FieldsService {
   }
 
   private defaultValuesByIndex(value: any, index?: any) {
-    console.log('vakue here is', value, index)
     if (isArray(value)) {
       return value[index];
     } else {
       return value
+    }
+  }
+
+  private prepareOptionsForField(formData: any, source: any) {
+    let options = []
+    if (source) {
+      _.keys(formData).forEach( key => {
+        if (Array.isArray(formData[key])) {
+          formData[key].forEach(element => {
+            if (element.hasOwnProperty(source)) {
+              if (element[source])
+                options.push(this.prepareObj(element, source));
+            }
+          })
+        }
+      });
+    }
+
+    return of(options);
+  }
+
+  private prepareObj(element, source) {
+    return { key: element[source],
+      value: { "ar": element[source] }
     }
   }
 }

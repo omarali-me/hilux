@@ -48,7 +48,6 @@ export class FormComponent implements OnInit {
   }
 
   addRow(row, index) {
-    console.log('add row', row);
     this.formData[row.row].push({});
   }
 
@@ -60,6 +59,7 @@ export class FormComponent implements OnInit {
     _.remove(this.formData[row.row], function(resource, i) {
         return index === i;
     });
+    this.emitRowsChanged();
   }
 
   ngAfterViewInit () {
@@ -129,5 +129,9 @@ export class FormComponent implements OnInit {
     }
 
     this.response.stepDetails.dataIn.fieldOrder = orders;
+  }
+
+  emitRowsChanged() {
+    this.fieldsService.fieldValueChanged$.emit();
   }
 }
