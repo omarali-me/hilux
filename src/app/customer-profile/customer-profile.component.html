@@ -1,0 +1,451 @@
+<app-sidebar></app-sidebar>
+<div class="content-wrapper">
+  <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <!-- <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">User Profile</li>
+            </ol>
+          </div> -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- /.col -->
+          <div class="col-md-12">
+            <div class="card">
+              <section class="content" *ngIf="formData">
+                <div class="container-fluid">
+                  <div class="card-body">
+                    <form class="form-horizontal rtl" (ngSubmit)="saveData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+                      <div class="row mb-4">
+                        <div class="col-sm-10 d-flex align-items-center rtl">
+                          <h3>Profile</h3>
+                        </div>
+                        <div class="text-center col-sm-2">
+                          <img class="profile-user-img img-fluid img-circle"
+                              src="assets/images/user4-128x128.jpg"
+                              alt="User profile picture">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="offset-sm-2 col-sm-10 placeholder">
+                            <div class="form-check float-right">
+                              <input name="isDead" type="checkbox" class="form-check-input" [(ngModel)]="formData.isDead">
+                              <label class="form-check-label">Deceased</label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Customer ID</label>
+                            <div class="col-sm-9">
+                              <input name="customerId" type="text" class="form-control disabled" numbersOnly precision="0" [(ngModel)]="formData.id" readonly="true">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Name in English</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="nameEn" required="true" class="form-control" [(ngModel)]="formData.nameEn" #nameEn="ngModel">
+                              <div *ngIf="nameEn.invalid && (nameEn.dirty || nameEn.touched)" class="alert alert-danger">
+                                <div *ngIf="nameEn.errors?.required">
+                                  Name in English can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Name In Arabic</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="nameAr" required="true" class="form-control" [(ngModel)]="formData.nameAr" #nameAr="ngModel">
+                              <div *ngIf="nameAr.invalid && (nameAr.dirty || nameAr.touched)" class="alert alert-danger">
+                                <div *ngIf="nameAr.errors?.required">
+                                  Name in Arabic can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Emirates ID</label>
+                            <div class="col-sm-9">
+                              <input name="emiratesId" type="text" class="form-control" [(ngModel)]="formData.emiratesId">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Emirates ID expiry date</label>
+                            <div class="col-sm-9">
+                              <input type="text"
+                                name="emiratesIdExpiryDate"
+                                class="form-control"
+                                [(ngModel)]="formData.emiratesIdExpiryDate"
+                                [owlDateTime]="dt4"
+                                [owlDateTimeTrigger]="dt4"
+                              >
+                              <owl-date-time [pickerType]="'calendar'" #dt4></owl-date-time>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Emirates ID issuance date</label>
+                            <div class="col-sm-9">
+                              <input type="text"
+                              name="emiratesIdIssueDate"
+                              class="form-control"
+                              [(ngModel)]="formData.emiratesIdIssueDate"
+                              [owlDateTime]="dt6"
+                              [owlDateTimeTrigger]="dt6"
+                            >
+                            <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Passport number</label>
+                            <div class="col-sm-9">
+                              <input name="passportNumber" type="text" class="form-control" [(ngModel)]="formData.passportNumber">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Passport number expiry date</label>
+                            <div class="col-sm-9">
+                              <input type="text"
+                                class="form-control"
+                                name="passportExpiryDate"
+                                [(ngModel)]="formData.passportExpiryDate"
+                                [owlDateTime]="dt3"
+                                [owlDateTimeTrigger]="dt3"
+                              >
+                              <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Passport number issuance date</label>
+                            <div class="col-sm-9">
+                              <input type="text"
+                                class="form-control"
+                                name="passportIssueDate"
+                                [(ngModel)]="formData.passportIssueDate"
+                                [owlDateTime]="dt5"
+                                [owlDateTimeTrigger]="dt5"
+                              >
+                              <owl-date-time [pickerType]="'calendar'" #dt5></owl-date-time>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Other (document type)</label>
+                            <div class="col-sm-9">
+                              <input name="otherIdTypeId" type="text" class="form-control" [(ngModel)]="formData.otherIdTypeId">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Other (decrees ..)</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="otherId" class="form-control" [(ngModel)]="formData.otherId">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Date of Birth</label>
+                            <div class="col-sm-9">
+                              <input type="text"
+                                class="form-control"
+                                name="dateOfBirth"
+                                [(ngModel)]="formData.dateOfBirth"
+                                required="true"
+                                [owlDateTime]="dt1"
+                                [owlDateTimeTrigger]="dt1"
+                                #dateOfBirth="ngModel"
+                              >
+                              <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                              <div *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)" class="alert alert-danger">
+                                <div *ngIf="dateOfBirth.errors?.required">
+                                  Date of Birth can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Mobile Number</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="mobileNumber" required="true" class="form-control" [(ngModel)]="formData.phone" #mobileNumber="ngModel">
+                              <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)" class="alert alert-danger">
+                                <div *ngIf="mobileNumber.errors?.required">
+                                  Mobile Number can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nationality</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="nationality" required="true" class="form-control" [(ngModel)]="formData.nationalityCode" #nationality="ngModel">
+                              <div *ngIf="nationality.invalid && (nationality.dirty || nationality.touched)" class="alert alert-danger">
+                                <div *ngIf="nationality.errors?.required">
+                                  Nationality can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Gender</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="gender" #gender="ngModel" required="true" class="form-control" [(ngModel)]="formData.gender">
+                              <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="alert alert-danger">
+                                <div *ngIf="gender.errors?.required">
+                                  Gender can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Type of Disability</label>
+                            <div class="col-sm-9">
+                              <input name="passportExpiryDate" type="text" class="form-control" [(ngModel)]="formData.passportExpiryDate">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Customer category</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="customerCategory" #customerCategory="ngModel" required="true" class="form-control" [(ngModel)]="formData.customerCategoryId">
+                              <div *ngIf="customerCategory.invalid && (customerCategory.dirty || customerCategory.touched)" class="alert alert-danger">
+                                <div *ngIf="customerCategory.errors?.required">
+                                  Customer category can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Do you have a tax number?</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="hasTaxNumber" required="true" class="form-control" [(ngModel)]="formData.hasTrx" #hasTaxNumber="ngModel">
+                              <div *ngIf="hasTaxNumber.invalid && (hasTaxNumber.dirty || hasTaxNumber.touched)" class="alert alert-danger">
+                                <div *ngIf="hasTaxNumber.errors?.required">
+                                  Can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Emirate</label>
+                            <div class="col-sm-9">
+                              <input name="trxEmirateId" type="text" class="form-control" [(ngModel)]="formData.trxEmirateId">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Tax Number</label>
+                            <div class="col-sm-9">
+                              <input name="trxId" type="text" class="form-control" [(ngModel)]="formData.trxId">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                          
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">General Notes</label>
+                            <div class="col-sm-9">
+                              <textarea
+                                name="remarks"
+                                class="form-control"
+                                rows="3"
+                                [(ngModel)]="formData.remarks"
+                              ></textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Home Address</label>
+                            <div class="col-sm-9">
+                              <textarea
+                                name="address"
+                                class="form-control"
+                                rows="3"
+                                [(ngModel)]="formData.address"
+                              ></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Mobile Number 2</label>
+                            <div class="col-sm-9">
+                              <input name="phone2" type="text" class="form-control" [(ngModel)]="formData.phone2">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                              <input name="email" type="text" class="form-control" [(ngModel)]="formData.email">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Preferred way to communicate</label>
+                            <div class="col-sm-9">
+                              <input name="contactPreferencesTypeId" type="text" class="form-control" [(ngModel)]="formData.contactPreferencesTypeId">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Preferred time to communicate</label>
+                            <div class="col-sm-9">
+                              <input name="timeToContactPreferencesId" type="text" class="form-control" [(ngModel)]="formData.timeToContactPreferencesId">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Job Title</label>
+                            <div class="col-sm-9">
+                              <input name="jobTitle" type="text" class="form-control" [(ngModel)]="formData.jobTitle">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Employer</label>
+                            <div class="col-sm-9">
+                              <input name="employer" type="text" class="form-control" [(ngModel)]="formData.employer">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">City of residence in UAE</label>
+                            <div class="col-sm-9">
+                              <input name="emirateId" type="text" class="form-control" [(ngModel)]="formData.emirateId">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Country of residence</label>
+                            <div class="col-sm-9">
+                              <input name="countryOfResidence" type="text" class="form-control" [(ngModel)]="formData.countryOfResidence">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Signature</label>
+                            <div class="col-sm-9">
+                              <input name="signature" type="text" class="form-control" [(ngModel)]="formData.signature">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>

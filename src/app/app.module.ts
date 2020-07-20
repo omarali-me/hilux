@@ -76,6 +76,7 @@ import { DisplayLinkGroupComponent } from './tags/display-link-group/display-lin
 import { AuthenticationGuard } from './authentication.guard';
 import { DisplayDataFormGeneratorComponent } from './display-data-form-generator/display-data-form-generator.component';
 import { HiddenFieldComponent } from './fields/hidden-field/hidden-field.component';
+import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 
 @NgModule({
   declarations: [
@@ -142,6 +143,7 @@ import { HiddenFieldComponent } from './fields/hidden-field/hidden-field.compone
     DisplayLinkGroupComponent,
     DisplayDataFormGeneratorComponent,
     HiddenFieldComponent,
+    CustomerProfileComponent,
   ],
   imports: [
     FormsModule,

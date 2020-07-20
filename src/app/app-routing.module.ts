@@ -11,6 +11,8 @@ import { StepIdResolver } from './stepId.resolver';
 import { NotificationPageComponent } from './notification-page/notification-page.component';
 import { MyTasksComponent } from './my-tasks/my-tasks.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
+import { ProfileIdResolver } from './profileId.resolver';
 
 
 const routes: Routes = [
@@ -22,11 +24,12 @@ const routes: Routes = [
   { path: 'rule_generator',  component: RuleGeneratorComponent, canActivate: [AuthenticationGuard] },
   { path: 'service/:serviceId', component: ServicePageComponent, resolve: { serviceId: ServiceIdResolver} , canActivate: [AuthenticationGuard]},
   { path: 'notifications/:stepId', component: NotificationPageComponent, resolve: { stepId: StepIdResolver}, canActivate: [AuthenticationGuard]},
+  { path: 'profile/:profileId', component: CustomerProfileComponent, resolve: { profileId: ProfileIdResolver}, canActivate: [AuthenticationGuard]},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [StepIdResolver, ServiceIdResolver]
+  providers: [StepIdResolver, ServiceIdResolver, ProfileIdResolver]
 })
 export class AppRoutingModule { }
