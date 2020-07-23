@@ -155,3 +155,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .veryLargeFont {
     font-size: 70px;
 }
+
+.ngx-gallery { display: inline-block; margin-bottom: 20px; }
+
+.gallery-wrapper {
+    min-height: 150px;
+    max-width: 150px;
+}
+.ngx-gallery-thumbnail.ngx-gallery-active.ngx-gallery-clickable {  
+    border-color: none !important;
+    border: none !important;
+}
+
+ngx-gallery-thumbnails {
+    margin-top: 0px !important;
+}
+

@@ -11,12 +11,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { NotificationsComponent } from './layouts/header/notifications/notifications.component';
 import { TimeAgoPipe } from './time-ago.pipe';
 import { RouterModule } from '@angular/router';
+import {NgxGalleryModule} from '@kolkov/ngx-gallery';
+import { MediaGalleryComponent } from './media-gallery/media-gallery.component';
 
 @NgModule({
   imports: [
     FormsModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    NgxGalleryModule,
   ],
   providers: [AuthenticationService, FieldsService, DecimalPipe, CurrencyPipe, TimeAgoPipe],
   declarations: [
@@ -27,13 +30,15 @@ import { RouterModule } from '@angular/router';
     SidebarComponent,
     NotificationsComponent,
     TimeAgoPipe,
+    MediaGalleryComponent,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     NumbersOnlyDirective,
     NumbersformatterDirective,
-    SidebarComponent
+    SidebarComponent,
+    MediaGalleryComponent
   ]
 })
 export class SharedModule {}

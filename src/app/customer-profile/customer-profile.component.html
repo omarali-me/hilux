@@ -28,10 +28,11 @@
                         <div class="col-sm-10 d-flex align-items-center rtl">
                           <h3>Profile</h3>
                         </div>
-                        <div class="text-center col-sm-2">
-                          <img class="profile-user-img img-fluid img-circle"
+                        <div class="text-center col-sm-2 gallery-wrapper profile-user-img img-fluid img-circle">
+                          <app-media-gallery [medias]="getAttachments()"></app-media-gallery>
+                          <!-- <img class="profile-user-img img-fluid img-circle"
                               src="assets/images/user4-128x128.jpg"
-                              alt="User profile picture">
+                              alt="User profile picture"> -->
                         </div>
                       </div>
                       <div class="form-group row">
@@ -221,7 +222,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Mobile Number</label>
                             <div class="col-sm-9">
-                              <input type="text" name="mobileNumber" required="true" class="form-control" [(ngModel)]="formData.phone" #mobileNumber="ngModel">
+                              <input type="text" name="mobileNumber" required="true" class="form-control" [(ngModel)]="formData.phone" #mobileNumber="ngModel" numbersOnly precision="0">
                               <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)" class="alert alert-danger">
                                 <div *ngIf="mobileNumber.errors?.required">
                                   Mobile Number can not be blank
@@ -237,7 +238,18 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Nationality</label>
                             <div class="col-sm-9">
-                              <input type="text" name="nationality" required="true" class="form-control" [(ngModel)]="formData.nationalityCode" #nationality="ngModel">
+                              <ng-select
+                                class="rtl"
+                                required="true"
+                                [items]="nationalitiesOptions | async"
+                                name="nationality"
+                                [(ngModel)]="formData.nationalityCode"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="not found"
+                                #nationality="ngModel"
+                              >
+                              </ng-select>
                               <div *ngIf="nationality.invalid && (nationality.dirty || nationality.touched)" class="alert alert-danger">
                                 <div *ngIf="nationality.errors?.required">
                                   Nationality can not be blank
@@ -274,7 +286,18 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Customer category</label>
                             <div class="col-sm-9">
-                              <input type="text" name="customerCategory" #customerCategory="ngModel" required="true" class="form-control" [(ngModel)]="formData.customerCategoryId">
+                              <ng-select
+                                class="rtl"
+                                required="true"
+                                [items]="customerCategoryOptions | async"
+                                name="customerCategory"
+                                [(ngModel)]="formData.customerCategoryId"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="not found"
+                                #customerCategory="ngModel"
+                              >
+                              </ng-select>
                               <div *ngIf="customerCategory.invalid && (customerCategory.dirty || customerCategory.touched)" class="alert alert-danger">
                                 <div *ngIf="customerCategory.errors?.required">
                                   Customer category can not be blank
@@ -356,7 +379,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Mobile Number 2</label>
                             <div class="col-sm-9">
-                              <input name="phone2" type="text" class="form-control" [(ngModel)]="formData.phone2">
+                              <input name="phone2" type="text" class="form-control" [(ngModel)]="formData.phone2" numbersOnly precision="0">
                             </div>
                           </div>
                         </div>
@@ -375,7 +398,16 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Preferred way to communicate</label>
                             <div class="col-sm-9">
-                              <input name="contactPreferencesTypeId" type="text" class="form-control" [(ngModel)]="formData.contactPreferencesTypeId">
+                              <ng-select
+                                class="rtl"
+                                [items]="contactPerferencesOptions | async"
+                                name="contactPreferencesTypeId"
+                                [(ngModel)]="formData.contactPreferencesTypeId"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="not found"
+                              >
+                              </ng-select>
                             </div>
                           </div>
                         </div>
@@ -383,7 +415,16 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Preferred time to communicate</label>
                             <div class="col-sm-9">
-                              <input name="timeToContactPreferencesId" type="text" class="form-control" [(ngModel)]="formData.timeToContactPreferencesId">
+                              <ng-select
+                                class="rtl"
+                                [items]="timeToContactOptions | async"
+                                name="timeToContactPreferencesId"
+                                [(ngModel)]="formData.timeToContactPreferencesId"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="not found"
+                              >
+                              </ng-select>
                             </div>
                           </div>
                         </div>
@@ -413,7 +454,16 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">City of residence in UAE</label>
                             <div class="col-sm-9">
-                              <input name="emirateId" type="text" class="form-control" [(ngModel)]="formData.emirateId">
+                              <ng-select
+                                class="rtl"
+                                [items]="emiratesOptions | async"
+                                name="emirateId"
+                                [(ngModel)]="formData.emirateId"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="not found"
+                              >
+                              </ng-select>
                             </div>
                           </div>
                         </div>
