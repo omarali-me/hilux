@@ -77,6 +77,7 @@ import { AuthenticationGuard } from './authentication.guard';
 import { DisplayDataFormGeneratorComponent } from './display-data-form-generator/display-data-form-generator.component';
 import { HiddenFieldComponent } from './fields/hidden-field/hidden-field.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
+import { CustomerDetailsComponent } from './customer-profile/customer-details/customer-details.component';
 
 @NgModule({
   declarations: [
@@ -144,6 +145,7 @@ import { CustomerProfileComponent } from './customer-profile/customer-profile.co
     DisplayDataFormGeneratorComponent,
     HiddenFieldComponent,
     CustomerProfileComponent,
+    CustomerDetailsComponent
   ],
   imports: [
     FormsModule,

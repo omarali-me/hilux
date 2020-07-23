@@ -13,6 +13,7 @@ import { MyTasksComponent } from './my-tasks/my-tasks.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { ProfileIdResolver } from './profileId.resolver';
+import { CustomerDetailsComponent } from './customer-profile/customer-details/customer-details.component';
 
 
 const routes: Routes = [
@@ -24,11 +25,19 @@ const routes: Routes = [
   { path: 'rule_generator',  component: RuleGeneratorComponent, canActivate: [AuthenticationGuard] },
   { path: 'service/:serviceId', component: ServicePageComponent, resolve: { serviceId: ServiceIdResolver} , canActivate: [AuthenticationGuard]},
   { path: 'notifications/:stepId', component: NotificationPageComponent, resolve: { stepId: StepIdResolver}, canActivate: [AuthenticationGuard]},
-  { path: 'profile/:profileId', component: CustomerProfileComponent, resolve: { profileId: ProfileIdResolver}, canActivate: [AuthenticationGuard]},
+  { path: 'customer/new', component: CustomerProfileComponent, resolve: { profile: ProfileIdResolver} },
+  { path: 'customer/profile/:profileId', component: CustomerProfileComponent,
+    resolve: { profile: ProfileIdResolver},
+    canActivate: [AuthenticationGuard],
+    children: [
+      { path: '', redirectTo: 'edit', pathMatch: 'full' },
+      { path: 'edit', component: CustomerDetailsComponent }
+    ]
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { paramsInheritanceStrategy: 'always' })],
   exports: [RouterModule],
   providers: [StepIdResolver, ServiceIdResolver, ProfileIdResolver]
 })

@@ -1,0 +1,530 @@
+<section class="content" *ngIf="profile$ | async as profile">
+  <div class="container-fluid">
+    <form class="form-horizontal rtl" (ngSubmit)="updateData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+      <div class="card-body">
+        <div class="row mb-4">
+          <div class="col-sm-10 d-flex align-items-center rtl">
+            <h3>Profile</h3>
+          </div>
+          <div class="text-center col-sm-2 gallery-wrapper profile-user-img img-fluid img-circle">
+            <app-media-gallery [medias]="getAttachments()"></app-media-gallery>
+            <!-- <img class="profile-user-img img-fluid img-circle"
+                src="assets/images/user4-128x128.jpg"
+                alt="User profile picture"> -->
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="offset-sm-2 col-sm-10 placeholder">
+              <div class="form-check float-right">
+                <input name="isDead" type="checkbox" class="form-check-input" [(ngModel)]="formData.isDead">
+                <label class="form-check-label">Deceased</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Customer ID</label>
+              <div class="col-sm-9">
+                <input name="customerId" type="text" class="form-control disabled" numbersOnly precision="0" [(ngModel)]="formData.id" readonly="true">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row" *ngIf="formData.isDead">
+          <div class="col-sm-6">
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Date of Death</label>
+              <div class="col-sm-9">
+                <input type="text"
+                  class="form-control"
+                  name="dateOfDeath"
+                  [(ngModel)]="formData.dateOfDeath"
+                  required="true"
+                  [min]="minDate"
+                  [owlDateTime]="dt7"
+                  [owlDateTimeTrigger]="dt7"
+                  #dateOfDeath="ngModel"
+                >
+                <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+                <div *ngIf="dateOfDeath.invalid && (dateOfDeath.dirty || dateOfDeath.touched)" class="alert alert-danger">
+                  <div *ngIf="dateOfDeath.errors?.required">
+                    Date of Death can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Name in English</label>
+              <div class="col-sm-9">
+                <input type="text" name="nameEn" required="true" class="form-control" [(ngModel)]="formData.nameEn" #nameEn="ngModel">
+                <div *ngIf="nameEn.invalid && (nameEn.dirty || nameEn.touched)" class="alert alert-danger">
+                  <div *ngIf="nameEn.errors?.required">
+                    Name in English can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Name In Arabic</label>
+              <div class="col-sm-9">
+                <input type="text" name="nameAr" required="true" class="form-control" [(ngModel)]="formData.nameAr" #nameAr="ngModel">
+                <div *ngIf="nameAr.invalid && (nameAr.dirty || nameAr.touched)" class="alert alert-danger">
+                  <div *ngIf="nameAr.errors?.required">
+                    Name in Arabic can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Emirates ID</label>
+              <div class="col-sm-9">
+                <input name="emiratesId" type="text" [minlength]="15" class="form-control" [(ngModel)]="formData.emiratesId" pattern="^784[0-9]*" #emiratesId="ngModel">
+                <div *ngIf="emiratesId.invalid && (emiratesId.dirty || emiratesId.touched)" class="alert alert-danger">
+                  <div *ngIf="emiratesId.errors?.pattern || emiratesId.errors?.minlength">
+                    Enter valid Emirates Id
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row" *ngIf="formData.emiratesId">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Emirates ID expiry date</label>
+              <div class="col-sm-9">
+                <input type="text"
+                  name="emiratesIdExpiryDate"
+                  class="form-control"
+                  [(ngModel)]="formData.emiratesIdExpiryDate"
+                  [min]="minDate"
+                  [owlDateTime]="dt4"
+                  [owlDateTimeTrigger]="dt4"
+                >
+                <owl-date-time [pickerType]="'calendar'" #dt4></owl-date-time>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Emirates ID issuance date</label>
+              <div class="col-sm-9">
+                <input type="text"
+                name="emiratesIdIssueDate"
+                class="form-control"
+                [(ngModel)]="formData.emiratesIdIssueDate"
+                [max]="minDate"
+                [owlDateTime]="dt6"
+                [owlDateTimeTrigger]="dt6"
+              >
+              <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Passport number</label>
+              <div class="col-sm-9">
+                <input name="passportNumber" type="text" class="form-control" [(ngModel)]="formData.passportNumber">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row" *ngIf="formData.passportNumber">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Passport number expiry date</label>
+              <div class="col-sm-9">
+                <input type="text"
+                  class="form-control"
+                  name="passportExpiryDate"
+                  [(ngModel)]="formData.passportExpiryDate"
+                  [min]="minDate"
+                  [owlDateTime]="dt3"
+                  [owlDateTimeTrigger]="dt3"
+                >
+                <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Passport number issuance date</label>
+              <div class="col-sm-9">
+                <input type="text"
+                  class="form-control"
+                  name="passportIssueDate"
+                  [(ngModel)]="formData.passportIssueDate"
+                  [max]="minDate"
+                  [owlDateTime]="dt5"
+                  [owlDateTimeTrigger]="dt5"
+                >
+                <owl-date-time [pickerType]="'calendar'" #dt5></owl-date-time>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row" *ngIf="formData.otherId">
+              <label class="col-sm-3 col-form-label">Other (document type)</label>
+              <div class="col-sm-9">
+                <input name="otherIdTypeId" type="text" class="form-control" [(ngModel)]="formData.otherIdTypeId">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Other (decrees ..)</label>
+              <div class="col-sm-9">
+                <input type="text" name="otherId" class="form-control" [(ngModel)]="formData.otherId">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Date of Birth</label>
+              <div class="col-sm-9">
+                <input type="text"
+                  class="form-control"
+                  name="dateOfBirth"
+                  [(ngModel)]="formData.dateOfBirth"
+                  required="true"
+                  [max]="minDate"
+                  [owlDateTime]="dt1"
+                  [owlDateTimeTrigger]="dt1"
+                  #dateOfBirth="ngModel"
+                >
+                <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                <div *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)" class="alert alert-danger">
+                  <div *ngIf="dateOfBirth.errors?.required">
+                    Date of Birth can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Mobile Number</label>
+              <div class="col-sm-9">
+                <input type="text" name="mobileNumber" required="true" class="form-control" [(ngModel)]="formData.phone" #mobileNumber="ngModel" numbersOnly precision="0">
+                <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)" class="alert alert-danger">
+                  <div *ngIf="mobileNumber.errors?.required">
+                    Mobile Number can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Nationality</label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  required="true"
+                  [items]="nationalitiesOptions | async"
+                  name="nationality"
+                  [(ngModel)]="formData.nationalityCode"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="not found"
+                  #nationality="ngModel"
+                >
+                </ng-select>
+                <div *ngIf="nationality.invalid && (nationality.dirty || nationality.touched)" class="alert alert-danger">
+                  <div *ngIf="nationality.errors?.required">
+                    Nationality can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Gender</label>
+              <div class="col-sm-9">
+                <input type="text" name="gender" #gender="ngModel" required="true" class="form-control" [(ngModel)]="formData.gender">
+                <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="alert alert-danger">
+                  <div *ngIf="gender.errors?.required">
+                    Gender can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row" *ngIf="isCustomerDisabled()">
+              <label class="col-sm-3 col-form-label">Type of Disability</label>
+              <div class="col-sm-9">
+                <input name="typeOfDisability" type="text" class="form-control" [(ngModel)]="formData.typeOfDisability">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Customer category</label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  required="true"
+                  [items]="customerCategoryOptions | async"
+                  name="customerCategory"
+                  [(ngModel)]="formData.customerCategoryId"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="not found"
+                  #customerCategory="ngModel"
+                >
+                </ng-select>
+                <div *ngIf="customerCategory.invalid && (customerCategory.dirty || customerCategory.touched)" class="alert alert-danger">
+                  <div *ngIf="customerCategory.errors?.required">
+                    Customer category can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Do you have a tax number?</label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  required="true"
+                  [items]="booleanOptions"
+                  name="hasTaxNumber"
+                  [(ngModel)]="formData.hasTrx"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="not found"
+                  #hasTaxNumber="ngModel"
+                >
+                </ng-select>
+                <div *ngIf="hasTaxNumber.invalid && (hasTaxNumber.dirty || hasTaxNumber.touched)" class="alert alert-danger">
+                  <div *ngIf="hasTaxNumber.errors?.required">
+                    Can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row" *ngIf="formData.hasTrx">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Emirate</label>
+              <div class="col-sm-9">
+                <input name="trxEmirateId" type="text" class="form-control" [(ngModel)]="formData.trxEmirateId">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Tax Number</label>
+              <div class="col-sm-9">
+                <input name="trxId" type="text" class="form-control" [(ngModel)]="formData.trxId">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">General Notes</label>
+              <div class="col-sm-9">
+                <textarea
+                  name="remarks"
+                  class="form-control"
+                  rows="3"
+                  [(ngModel)]="formData.remarks"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Home Address</label>
+              <div class="col-sm-9">
+                <textarea
+                  name="address"
+                  class="form-control"
+                  rows="3"
+                  [(ngModel)]="formData.address"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Mobile Number 2</label>
+              <div class="col-sm-9">
+                <input name="phone2" type="text" class="form-control" [(ngModel)]="formData.phone2" numbersOnly precision="0">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Email</label>
+              <div class="col-sm-9">
+                <input name="email" type="email" class="form-control" [(ngModel)]="formData.email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel">
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                  <div *ngIf="email.errors?.pattern">
+                    Enter valid Email
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Preferred way to communicate</label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  [items]="contactPerferencesOptions | async"
+                  name="contactPreferencesTypeId"
+                  [(ngModel)]="formData.contactPreferencesTypeId"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="not found"
+                >
+                </ng-select>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Preferred time to communicate</label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  [items]="timeToContactOptions | async"
+                  name="timeToContactPreferencesId"
+                  [(ngModel)]="formData.timeToContactPreferencesId"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="not found"
+                >
+                </ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Job Title</label>
+              <div class="col-sm-9">
+                <input name="jobTitle" type="text" class="form-control" [(ngModel)]="formData.jobTitle">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Employer</label>
+              <div class="col-sm-9">
+                <input name="employer" type="text" class="form-control" [(ngModel)]="formData.employer">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">City of residence in UAE</label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  [items]="emiratesOptions | async"
+                  name="emirateId"
+                  [(ngModel)]="formData.emirateId"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="not found"
+                >
+                </ng-select>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Country of residence</label>
+              <div class="col-sm-9">
+                <input name="countryOfResidence" type="text" class="form-control" [(ngModel)]="formData.countryOfResidence">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-10 col-form-label">Signature</label>
+              <div class="text-center col-sm-2 gallery-wrapper">
+                <app-media-gallery [medias]="getSignatureAttachments()"></app-media-gallery>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid || !isValid()" i18n="@@formSubmitLabel">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>

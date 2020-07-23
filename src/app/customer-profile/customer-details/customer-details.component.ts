@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { FieldsService } from '../../shared/fields.service';
 import { pluck } from 'rxjs/operators';
-import { FieldsService } from '../shared/fields.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
-  selector: 'app-customer-profile',
-  templateUrl: './customer-profile.component.html',
-  styleUrls: ['./customer-profile.component.css']
+  selector: 'app-customer-details',
+  templateUrl: './customer-details.component.html',
+  styleUrls: ['./customer-details.component.css']
 })
-export class CustomerProfileComponent implements OnInit {
+export class CustomerDetailsComponent implements OnInit {
   formData: any;
   profile$: Observable<any>;
   contactPerferencesOptions: any;
@@ -60,13 +60,13 @@ export class CustomerProfileComponent implements OnInit {
     });
   }
 
-  saveData(formData: any) {
+  updateData(formData: any) {
     let fd = new FormData();
     fd.append('customer', JSON.stringify(formData));
-    this.http.post('https://wfe.ajm.re/AjmanLandProperty/index.php/customers/create', fd)
+    this.http.post(`https://wfe.ajm.re/AjmanLandProperty/index.php/customers/update/${formData.id}`, fd)
       .subscribe((data: any) => {
         this.formData = data;
-        this.toastr.success('Customer Created Successfully!.', 'Success')
+        this.toastr.success(`Customer Updated Successfully!.`, 'Success')
     }, (error) => {
       this.toastr.success('Something went Wrong', 'Success')
     })
@@ -135,29 +135,5 @@ export class CustomerProfileComponent implements OnInit {
 
   getSignatureAttachments() {
     return this.formData.signature ? [this.formData.signature] : [];
-  }
-
-  prepareImageField() {
-    return {
-      fieldID: "image",
-      fieldType: "image",
-      required: false,
-      fieldName: {
-        "ar": "image",
-        "en": "image"
-      }
-    }
-  }
-
-  prepareSignatureField() {
-    return {
-      fieldID: "signature",
-      fieldType: "signature",
-      required: false,
-      fieldName: {
-        "ar": "signature",
-        "en": "signature"
-      }
-    }
   }
 }
