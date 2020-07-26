@@ -23,7 +23,7 @@
               <router-outlet></router-outlet>
               <section class="content" *ngIf="formData && !formData.id">
                 <div class="container-fluid">
-                  <form class="form-horizontal rtl" (ngSubmit)="saveData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+                  <form class="form-horizontal" (ngSubmit)="saveData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
                     <div class="card-body">
                       <div class="form-group row">
                         <div class="col-sm-6">
@@ -79,10 +79,12 @@
                         </div>
                       </div>
 
-                      <!-- <div class="form-group row">
+                      <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Name in English</label>
+                            <label class="col-sm-3 col-form-label">Name in English
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
                               <input type="text" name="nameEn" required="true" class="form-control" [(ngModel)]="formData.nameEn" #nameEn="ngModel">
                               <div *ngIf="nameEn.invalid && (nameEn.dirty || nameEn.touched)" class="alert alert-danger">
@@ -95,7 +97,9 @@
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Name In Arabic</label>
+                            <label class="col-sm-3 col-form-label">Name In Arabic
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
                               <input type="text" name="nameAr" required="true" class="form-control" [(ngModel)]="formData.nameAr" #nameAr="ngModel">
                               <div *ngIf="nameAr.invalid && (nameAr.dirty || nameAr.touched)" class="alert alert-danger">
@@ -106,8 +110,8 @@
                             </div>
                           </div>
                         </div>
-                      </div> -->
-
+                      </div>
+              
                       <div class="form-group row">
                         <div class="col-sm-6">
                         </div>
@@ -129,38 +133,55 @@
                       <div class="form-group row" *ngIf="formData.emiratesId">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Emirates ID expiry date</label>
+                            <label class="col-sm-3 col-form-label">Emirates ID expiry date
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
                               <input type="text"
                                 name="emiratesIdExpiryDate"
                                 class="form-control"
                                 [(ngModel)]="formData.emiratesIdExpiryDate"
+                                required="true"
                                 [min]="minDate"
                                 [owlDateTime]="dt4"
                                 [owlDateTimeTrigger]="dt4"
+                                #emiratesIdExpiryDate="ngModel"
                               >
                               <owl-date-time [pickerType]="'calendar'" #dt4></owl-date-time>
+                              <div *ngIf="emiratesIdExpiryDate.invalid && (emiratesIdExpiryDate.dirty || emiratesIdExpiryDate.touched)" class="alert alert-danger">
+                                <div *ngIf="emiratesIdExpiryDate.errors?.required">
+                                  Emirates ID expiry date can not be blank
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Emirates ID issuance date</label>
+                            <label class="col-sm-3 col-form-label">Emirates ID issuance date
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
                               <input type="text"
                               name="emiratesIdIssueDate"
                               class="form-control"
+                              required="true"
                               [(ngModel)]="formData.emiratesIdIssueDate"
                               [max]="minDate"
                               [owlDateTime]="dt6"
                               [owlDateTimeTrigger]="dt6"
-                            >
-                            <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+                              #emiratesIdIssueDate="ngModel"
+                              >
+                              <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+                              <div *ngIf="emiratesIdIssueDate.invalid && (emiratesIdIssueDate.dirty || emiratesIdIssueDate.touched)" class="alert alert-danger">
+                                <div *ngIf="emiratesIdIssueDate.errors?.required">
+                                  Emirates ID issuance date can not be blank
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-
                       <div class="form-group row">
                         <div class="col-sm-6">
                         </div>
@@ -177,33 +198,51 @@
                       <div class="form-group row" *ngIf="formData.passportNumber">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Passport number expiry date</label>
+                            <label class="col-sm-3 col-form-label">Passport number expiry date
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
                               <input type="text"
                                 class="form-control"
                                 name="passportExpiryDate"
+                                required="true"
                                 [(ngModel)]="formData.passportExpiryDate"
                                 [min]="minDate"
                                 [owlDateTime]="dt3"
                                 [owlDateTimeTrigger]="dt3"
+                                #passportExpiryDate="ngModel"
                               >
                               <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+                              <div *ngIf="passportExpiryDate.invalid && (passportExpiryDate.dirty || passportExpiryDate.touched)" class="alert alert-danger">
+                                <div *ngIf="passportExpiryDate.errors?.required">
+                                  Passport number expiry date can not be blank
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Passport number issuance date</label>
+                            <label class="col-sm-3 col-form-label">Passport number issuance date
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
                               <input type="text"
                                 class="form-control"
                                 name="passportIssueDate"
+                                required="true"
                                 [(ngModel)]="formData.passportIssueDate"
                                 [max]="minDate"
                                 [owlDateTime]="dt5"
                                 [owlDateTimeTrigger]="dt5"
+                                #passportIssueDate="ngModel"
                               >
                               <owl-date-time [pickerType]="'calendar'" #dt5></owl-date-time>
+                              <div *ngIf="passportIssueDate.invalid && (passportIssueDate.dirty || passportIssueDate.touched)" class="alert alert-danger">
+                                <div *ngIf="passportIssueDate.errors?.required">
+                                  Passport number issuance date can not be blank
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -212,9 +251,16 @@
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row" *ngIf="formData.otherId">
-                            <label class="col-sm-3 col-form-label">Other (document type)</label>
+                            <label class="col-sm-3 col-form-label">Other (document type)
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
-                              <input name="otherIdTypeId" type="text" class="form-control" [(ngModel)]="formData.otherIdTypeId">
+                              <input name="otherIdTypeId" required="true" type="text" class="form-control" [(ngModel)]="formData.otherIdTypeId" #otherIdTypeId="ngModel">
+                              <div *ngIf="otherIdTypeId.invalid && (otherIdTypeId.dirty || otherIdTypeId.touched)" class="alert alert-danger">
+                                <div *ngIf="otherIdTypeId.errors?.required">
+                                  Other (document type) can not be blank
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -231,7 +277,9 @@
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Date of Birth</label>
+                            <label class="col-sm-3 col-form-label">Date of Birth
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
                               <input type="text"
                                 class="form-control"
@@ -254,11 +302,13 @@
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Mobile Number</label>
+                            <label class="col-sm-3 col-form-label">Mobile Number
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
-                              <input type="text" name="mobileNumber" required="true" class="form-control" [(ngModel)]="formData.phone" #mobileNumber="ngModel" numbersOnly precision="0">
+                              <input type="text" name="mobileNumber" required="true" class="form-control" [(ngModel)]="formData.phone" #mobileNumber="ngModel" numbersOnly precision="0" pattern="[0-9]*">
                               <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)" class="alert alert-danger">
-                                <div *ngIf="mobileNumber.errors?.required">
+                                <div *ngIf="mobileNumber.errors?.required || mobileNumber.errors?.pattern">
                                   Mobile Number can not be blank
                                 </div>
                               </div>
@@ -266,11 +316,15 @@
                           </div>
                         </div>
                       </div>
+              
+              
 
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Nationality</label>
+                            <label class="col-sm-3 col-form-label">Nationality
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
                               <ng-select
                                 class="rtl"
@@ -294,9 +348,22 @@
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Gender</label>
+                            <label class="col-sm-3 col-form-label">Gender
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
-                              <input type="text" name="gender" #gender="ngModel" required="true" class="form-control" [(ngModel)]="formData.gender">
+                              <ng-select
+                                class="rtl"
+                                required="true"
+                                [items]="genderOptions"
+                                name="gender"
+                                [(ngModel)]="formData.gender"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="not found"
+                                #gender="ngModel"
+                              >
+                              </ng-select>
                               <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="alert alert-danger">
                                 <div *ngIf="gender.errors?.required">
                                   Gender can not be blank
@@ -310,15 +377,19 @@
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row" *ngIf="isCustomerDisabled()">
-                            <label class="col-sm-3 col-form-label">Type of Disability</label>
+                            <label class="col-sm-3 col-form-label">Type of Disability
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
-                              <input name="typeOfDisability" type="text" class="form-control" [(ngModel)]="formData.typeOfDisability">
+                              <input name="typeOfDisability" required="true" type="text" class="form-control" [(ngModel)]="formData.typeOfDisability">
                             </div>
                           </div>
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Customer category</label>
+                            <label class="col-sm-3 col-form-label">Customer category
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
                               <ng-select
                                 class="rtl"
@@ -341,13 +412,16 @@
                           </div>
                         </div>
                       </div>
+              
 
                       <div class="form-group row">
                         <div class="col-sm-6">
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Do you have a tax number?</label>
+                            <label class="col-sm-3 col-form-label">Do you have a tax number?
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
                               <ng-select
                                 class="rtl"
@@ -374,17 +448,31 @@
                       <div class="form-group row" *ngIf="formData.hasTrx">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Emirate</label>
+                            <label class="col-sm-3 col-form-label">Emirate
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
-                              <input name="trxEmirateId" type="text" class="form-control" [(ngModel)]="formData.trxEmirateId">
+                              <input name="trxEmirateId" required="true" type="text" class="form-control" [(ngModel)]="formData.trxEmirateId" #trxEmirateId="ngModel">
+                              <div *ngIf="trxEmirateId.invalid && (trxEmirateId.dirty || trxEmirateId.touched)" class="alert alert-danger">
+                                <div *ngIf="trxEmirateId.errors?.required">
+                                  Emirate can not be blank
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Tax Number</label>
+                            <label class="col-sm-3 col-form-label">Tax Number
+                              <span>*</span>
+                            </label>
                             <div class="col-sm-9">
-                              <input name="trxId" type="text" class="form-control" [(ngModel)]="formData.trxId">
+                              <input name="trxId" required="true" type="text" class="form-control" [(ngModel)]="formData.trxId" #trxId="ngModel">
+                              <div *ngIf="trxId.invalid && (trxId.dirty || trxId.touched)" class="alert alert-danger">
+                                <div *ngIf="trxId.errors?.required">
+                                  Tax Number can not be blank
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>

@@ -23,6 +23,7 @@ export class CustomerDetailsComponent implements OnInit {
   emiratesOptions: any;
   otherIdTypesOptions: any;
   booleanOptions: any;
+  genderOptions: any;
   minDate:any;
 
   constructor(
@@ -50,6 +51,16 @@ export class CustomerDetailsComponent implements OnInit {
       value: { en: 'No', ar: 'لا' }
     }]
 
+    this.genderOptions = [{
+      key: 'M',
+      value: { en: 'Male', ar: 'Male' }
+    },
+    {
+      key: 'F',
+      value: { en: 'Female', ar: 'Female' }
+    }]
+
+
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
       if (profile && profile.id) {
@@ -68,7 +79,7 @@ export class CustomerDetailsComponent implements OnInit {
         this.formData = data;
         this.toastr.success(`Customer Updated Successfully!.`, 'Success')
     }, (error) => {
-      this.toastr.success('Something went Wrong', 'Success')
+      this.toastr.error('Something went Wrong', 'Error')
     })
   }
 
