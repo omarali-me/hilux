@@ -66,7 +66,7 @@ export class CustomerDetailsComponent implements OnInit {
       if (profile && profile.id) {
         this.formData = profile as any;
       } else {
-        this.formData = { };
+        this.formData = { hasTrx: '0' };
       }
     });
   }

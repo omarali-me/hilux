@@ -65,7 +65,7 @@ export class CustomerProfileComponent implements OnInit {
       if (profile && profile.id) {
         this.formData = profile as any;
       } else {
-        this.formData = { hasTaxNumber: '0' };
+        this.formData = { hasTrx: '0' };
       }
     });
   }
