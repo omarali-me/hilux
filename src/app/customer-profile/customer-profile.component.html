@@ -329,7 +329,7 @@
                               <ng-select
                                 class="rtl"
                                 required="true"
-                                [items]="nationalitiesOptions | async"
+                                [items]="nationalitiesOptions"
                                 name="nationality"
                                 [(ngModel)]="formData.nationalityCode"
                                 bindLabel="value.ar"
@@ -394,7 +394,7 @@
                               <ng-select
                                 class="rtl"
                                 required="true"
-                                [items]="customerCategoryOptions | async"
+                                [items]="customerCategoryOptions"
                                 name="customerCategory"
                                 [(ngModel)]="formData.customerCategoryId"
                                 bindLabel="value.ar"
@@ -538,7 +538,7 @@
                             <div class="col-sm-9">
                               <ng-select
                                 class="rtl"
-                                [items]="contactPerferencesOptions | async"
+                                [items]="contactPerferencesOptions"
                                 name="contactPreferencesTypeId"
                                 [(ngModel)]="formData.contactPreferencesTypeId"
                                 bindLabel="value.ar"
@@ -555,7 +555,7 @@
                             <div class="col-sm-9">
                               <ng-select
                                 class="rtl"
-                                [items]="timeToContactOptions | async"
+                                [items]="timeToContactOptions"
                                 name="timeToContactPreferencesId"
                                 [(ngModel)]="formData.timeToContactPreferencesId"
                                 bindLabel="value.ar"
@@ -594,7 +594,7 @@
                             <div class="col-sm-9">
                               <ng-select
                                 class="rtl"
-                                [items]="emiratesOptions | async"
+                                [items]="emiratesOptions"
                                 name="emirateId"
                                 [(ngModel)]="formData.emirateId"
                                 bindLabel="value.ar"
