@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from '../../shared/fields.service';
 import { pluck } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-customer-details',
@@ -43,11 +44,11 @@ export class CustomerDetailsComponent implements OnInit {
     this.loadEmiratesOptions();
     this.loadOtherIdTypesOptions();
     this.booleanOptions = [{
-      key: '1',
+      key: 1,
       value: { en: 'Yes', ar: 'نعم' }
     },
     {
-      key: '0',
+      key: 0,
       value: { en: 'No', ar: 'لا' }
     }]
 
@@ -64,9 +65,9 @@ export class CustomerDetailsComponent implements OnInit {
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
       if (profile && profile.id) {
-        this.formData = profile as any;
+        this.formData = this.prepareProfile(profile) as any;
       } else {
-        this.formData = { hasTrx: '0' };
+        this.formData = { hasTrx: 0 };
       }
     });
   }
@@ -76,8 +77,12 @@ export class CustomerDetailsComponent implements OnInit {
     fd.append('customer', JSON.stringify(formData));
     this.http.post(`https://wfe.ajm.re/AjmanLandProperty/index.php/customers/update/${formData.id}`, fd)
       .subscribe((data: any) => {
-        this.formData = data;
-        this.toastr.success(`Customer Updated Successfully!.`, 'Success')
+        if (data.status == 'success') {
+          this.formData = data;
+          this.toastr.success(data.message, 'Success');
+        } else {
+          this.toastr.error(data.message, 'Error')
+        }
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
     })
@@ -137,14 +142,39 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   isCustomerDisabled() {
-    return this.formData.customerCategoryId == 'handicapped';
+    return (this.formData.customerCategoryId == '1' || this.formData.customerCategoryId == 1);
   }
 
   isValid() {
-    return (!!this.formData.emiratesId || !!this.formData.passportNumber || !!this.formData.otherId)
+    return (this.formData.isDead ? true : (!!this.formData.emiratesId || !!this.formData.passportNumber || !!this.formData.otherId))
   }
 
   getSignatureAttachments() {
     return this.formData.signature ? [this.formData.signature] : [];
+  }
+
+  hasTaxNumber() {
+    return (this.formData.hasTrx == 1 || this.formData.hasTrx == '1');
+  }
+
+  isRequired() {
+    return !this.formData.isDead;
+  }
+
+  isOneOrOtherNameRequired(fieldName: string) {
+    if (this.formData.isDead) {
+      if (fieldName == 'nameAr') {
+        return !this.formData.nameAr && !this.formData.nameEn
+      } else {
+        return !this.formData.nameEn && !this.formData.nameAr
+      }
+    } else {
+      return true;
+    }
+  }
+
+  prepareProfile(profile) {
+    profile.hasTrx = _.toInteger(profile.hasTrx);
+    return profile
   }
 }

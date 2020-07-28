@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { pluck } from 'rxjs/operators';
@@ -28,6 +28,7 @@ export class CustomerProfileComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private http: HttpClient,
     private toastr: ToastrService,
     private fieldsService: FieldsService
@@ -43,11 +44,11 @@ export class CustomerProfileComponent implements OnInit {
     this.loadEmiratesOptions();
     this.loadOtherIdTypesOptions();
     this.booleanOptions = [{
-      key: '1',
+      key: 1,
       value: { en: 'Yes', ar: 'نعم' }
     },
     {
-      key: '0',
+      key: 0,
       value: { en: 'No', ar: 'لا' }
     }]
 
@@ -65,7 +66,7 @@ export class CustomerProfileComponent implements OnInit {
       if (profile && profile.id) {
         this.formData = profile as any;
       } else {
-        this.formData = { hasTrx: '0' };
+        this.formData = { hasTrx: 0 };
       }
     });
   }
@@ -75,8 +76,13 @@ export class CustomerProfileComponent implements OnInit {
     fd.append('customer', JSON.stringify(formData));
     this.http.post('https://wfe.ajm.re/AjmanLandProperty/index.php/customers/create', fd)
       .subscribe((data: any) => {
-        this.formData = data;
-        this.toastr.success('Customer Created Successfully!.', 'Success')
+       if (data.status == 'success') {
+        this.toastr.success(data.message, 'Success');
+        this.toastr.success('Customer Created Successfully!.', 'Success');
+        this.router.navigate(['customer/profile', data.data.id, 'edit']);
+      } else {
+        this.toastr.error(data.message, 'Error')
+      }
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
     })
@@ -136,11 +142,11 @@ export class CustomerProfileComponent implements OnInit {
   }
 
   isCustomerDisabled() {
-    return this.formData.customerCategoryId == 'handicapped';
+    return (this.formData.customerCategoryId == '1' || this.formData.customerCategoryId == 1);
   }
 
   isValid() {
-    return (!!this.formData.emiratesId || !!this.formData.passportNumber || !!this.formData.otherId)
+    return (this.formData.isDead ? true : (!!this.formData.emiratesId || !!this.formData.passportNumber || !!this.formData.otherId))
   }
 
   getSignatureAttachments() {
@@ -168,6 +174,26 @@ export class CustomerProfileComponent implements OnInit {
         "ar": "signature",
         "en": "signature"
       }
+    }
+  }
+
+  hasTaxNumber() {
+    return (this.formData.hasTrx == 1 || this.formData.hasTrx == '1');
+  }
+
+  isRequired() {
+    return !this.formData.isDead;
+  }
+
+  isOneOrOtherNameRequired(fieldName: string) {
+    if (this.formData.isDead) {
+      if (fieldName == 'nameAr') {
+        return !this.formData.nameAr && !this.formData.nameEn
+      } else {
+        return !this.formData.nameEn && !this.formData.nameAr
+      }
+    } else {
+      return true;
     }
   }
 }
