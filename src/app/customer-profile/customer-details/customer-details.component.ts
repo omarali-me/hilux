@@ -54,13 +54,12 @@ export class CustomerDetailsComponent implements OnInit {
 
     this.genderOptions = [{
       key: 'M',
-      value: { en: 'Male', ar: 'Male' }
+      value: { en: 'Male', ar: 'ذكر' }
     },
     {
       key: 'F',
-      value: { en: 'Female', ar: 'Female' }
+      value: { en: 'Female', ar: 'أنثى' }
     }]
-
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
@@ -142,7 +141,7 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   isCustomerDisabled() {
-    return (this.formData.customerCategoryId == '1' || this.formData.customerCategoryId == 1);
+    return this.formData.customerCategoryId && (this.formData.customerCategoryId.includes('1') || this.formData.customerCategoryId.includes(1));
   }
 
   isValid() {
