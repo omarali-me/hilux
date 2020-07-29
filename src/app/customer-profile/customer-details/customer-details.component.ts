@@ -80,7 +80,7 @@ export class CustomerDetailsComponent implements OnInit {
     this.http.post(`https://wfe.ajm.re/AjmanLandProperty/index.php/customers/update/${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
-          this.formData = data;
+          this.formData = this.prepareProfile(data.data);
           this.toastr.success(data.message, 'Success');
         } else {
           this.toastr.error(data.message, 'Error')
@@ -140,8 +140,7 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   loadDisablilityTypesOptions() {
-    // this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/disabilityTypes`)
-    this.fieldsService.getUrl(`http://localhost:3000/disabilityTypes`)
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/disabilityTypes`)
     .subscribe((data) => {
       this.disabilityTypesOptions = data;
     })
@@ -185,6 +184,7 @@ export class CustomerDetailsComponent implements OnInit {
 
   prepareProfile(profile) {
     profile.hasTrx = _.toInteger(profile.hasTrx);
+    profile.customerCategoryId = _.split(profile.customerCategoryId, ',')
     return profile
   }
 }
