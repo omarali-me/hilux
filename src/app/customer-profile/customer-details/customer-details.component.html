@@ -375,7 +375,18 @@
                 <span>*</span>
               </label>
               <div class="col-sm-9">
-                <input name="typeOfDisability" required="true" type="text" class="form-control" [(ngModel)]="formData.typeOfDisability" #typeOfDisability="ngModel">
+                <ng-select
+                  class="rtl"
+                  required="true"
+                  [items]="disabilityTypesOptions"
+                  name="typeOfDisability"
+                  [(ngModel)]="formData.typeOfDisability"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="not found"
+                  #typeOfDisability="ngModel"
+                >
+                </ng-select>
                 <div *ngIf="typeOfDisability.invalid && (typeOfDisability.dirty || typeOfDisability.touched)" class="alert alert-danger">
                   <div *ngIf="typeOfDisability.errors?.required">
                     Type of Disability can not be blank

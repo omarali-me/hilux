@@ -22,6 +22,7 @@ export class CustomerProfileComponent implements OnInit {
   customerTypesOptions: any;
   emiratesOptions: any;
   otherIdTypesOptions: any;
+  disabilityTypesOptions: any;
   booleanOptions: any;
   genderOptions: any;
   minDate:any;
@@ -43,6 +44,8 @@ export class CustomerProfileComponent implements OnInit {
     this.loadCustomerTypesOptions();
     this.loadEmiratesOptions();
     this.loadOtherIdTypesOptions();
+    this.loadDisablilityTypesOptions();
+
     this.booleanOptions = [{
       key: 1,
       value: { en: 'Yes', ar: 'نعم' }
@@ -134,6 +137,13 @@ export class CustomerProfileComponent implements OnInit {
     this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/otherIdTypes`)
     .subscribe((data) => {
       this.otherIdTypesOptions = data;
+    })
+  }
+
+  loadDisablilityTypesOptions() {
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/disabilityTypes`)
+    .subscribe((data) => {
+      this.disabilityTypesOptions = data;
     })
   }
 
