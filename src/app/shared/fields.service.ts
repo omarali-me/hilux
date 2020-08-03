@@ -5,6 +5,7 @@ import { of } from 'rxjs';
 import * as _ from 'lodash';
 import { environment } from '../../environments/environment';
 import { isArray } from 'util';
+import { DatePipe } from '@angular/common';
 
 @Injectable()
 export class FieldsService {
@@ -13,7 +14,7 @@ export class FieldsService {
 
   public fieldValueChanged$ = new EventEmitter<any>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private datePipe: DatePipe) {}
 
   findField(fields: Field[], field_id: string): Field {
     return fields.find(f => f.fieldID === field_id);
@@ -191,5 +192,10 @@ export class FieldsService {
     return { key: element[source],
       value: { "ar": element[source] }
     }
+  }
+
+  formatDate(data: any, name: any, format?: string) {
+    format = format || 'yyyy-MM-dd';
+    return this.datePipe.transform(data[name], format)
   }
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
-import { CommonModule, CurrencyPipe, DecimalPipe } from '@angular/common';
+import { CommonModule, CurrencyPipe, DecimalPipe, DatePipe } from '@angular/common';
 import { AuthenticationService } from './authentication.service';
 import { FieldsService } from './fields.service';
 import { FormsModule } from '@angular/forms';
@@ -21,7 +21,7 @@ import { MediaGalleryComponent } from './media-gallery/media-gallery.component';
     RouterModule,
     NgxGalleryModule,
   ],
-  providers: [AuthenticationService, FieldsService, DecimalPipe, CurrencyPipe, TimeAgoPipe],
+  providers: [AuthenticationService, FieldsService, DecimalPipe, CurrencyPipe, TimeAgoPipe, DatePipe],
   declarations: [
     HeaderComponent,
     FooterComponent,

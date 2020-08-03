@@ -206,4 +206,8 @@ export class CustomerProfileComponent implements OnInit {
       return true;
     }
   }
+
+  formatDate(name: any) {
+    this.formData[name] = this.fieldsService.formatDate(this.formData, name);
+  }
 }

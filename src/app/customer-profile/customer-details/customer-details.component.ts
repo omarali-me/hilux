@@ -187,4 +187,8 @@ export class CustomerDetailsComponent implements OnInit {
     profile.customerCategoryId = _.split(profile.customerCategoryId, ',')
     return profile
   }
+
+  formatDate(name: any) {
+    this.formData[name] = this.fieldsService.formatDate(this.formData, name);
+  }
 }
