@@ -30,7 +30,7 @@
                           <div class="offset-sm-2 col-sm-10 placeholder">
                             <div class="form-check float-right">
                               <input name="isDead" type="checkbox" class="form-check-input" [(ngModel)]="formData.isDead">
-                              <label class="form-check-label">Deceased</label>
+                              <label class="form-check-label" i18n="@@customerProfileDeceased">Deceased</label>
                             </div>
                           </div>
                         </div>
@@ -43,7 +43,7 @@
                             </div>
                           </div> -->
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Profile Image</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileProfileImage">Profile Image</label>
                             <div class="col-sm-9">
                               <app-file-upload [field]="prepareImageField()" [formData]="formData"></app-file-upload>
                             </div>

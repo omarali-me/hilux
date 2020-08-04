@@ -12,8 +12,14 @@ import { NotificationPageComponent } from './notification-page/notification-page
 import { MyTasksComponent } from './my-tasks/my-tasks.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
-import { ProfileIdResolver } from './profileId.resolver';
+import { ProjectProfileComponent } from './project-profile/project-profile.component';
+import { UnitProfileComponent } from './unit-profile/unit-profile.component';
+import { CompanyProfileComponent } from './company-profile/company-profile.component';
+import { CustomerProfileResolver } from './customer-profile.resolver';
 import { CustomerDetailsComponent } from './customer-profile/customer-details/customer-details.component';
+import { ProjectProfileResolver } from './shared/project-profile.resolver';
+import { UnitProfileResolver } from './shared/unit-profile.resolver';
+import { CompanyProfileResolver } from './shared/company-profile.resolver';
 
 
 const routes: Routes = [
@@ -25,9 +31,35 @@ const routes: Routes = [
   { path: 'rule_generator',  component: RuleGeneratorComponent, canActivate: [AuthenticationGuard] },
   { path: 'service/:serviceId', component: ServicePageComponent, resolve: { serviceId: ServiceIdResolver} , canActivate: [AuthenticationGuard]},
   { path: 'notifications/:stepId', component: NotificationPageComponent, resolve: { stepId: StepIdResolver}, canActivate: [AuthenticationGuard]},
-  { path: 'customer/new', component: CustomerProfileComponent, resolve: { profile: ProfileIdResolver} },
+  { path: 'customer/new', component: CustomerProfileComponent, resolve: { profile: CustomerProfileResolver} },
   { path: 'customer/profile/:profileId', component: CustomerProfileComponent,
-    resolve: { profile: ProfileIdResolver},
+    resolve: { profile: CustomerProfileResolver},
+    canActivate: [AuthenticationGuard],
+    children: [
+      { path: '', redirectTo: 'edit', pathMatch: 'full' },
+      { path: 'edit', component: CustomerDetailsComponent }
+    ]
+  },
+  { path: 'project/new', component: ProjectProfileComponent, resolve: { profile: ProjectProfileResolver} },
+  { path: 'project/profile/:profileId', component: ProjectProfileComponent,
+    resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard],
+    children: [
+      { path: '', redirectTo: 'edit', pathMatch: 'full' },
+      { path: 'edit', component: CustomerDetailsComponent }
+    ]
+  },
+  { path: 'unit/new', component: UnitProfileComponent, resolve: { profile: UnitProfileResolver} },
+  { path: 'unit/profile/:profileId', component: UnitProfileComponent,
+    resolve: { profile: UnitProfileResolver},
+    canActivate: [AuthenticationGuard],
+    children: [
+      { path: '', redirectTo: 'edit', pathMatch: 'full' },
+      { path: 'edit', component: CustomerDetailsComponent }
+    ]
+  },
+  { path: 'company/new', component: CompanyProfileComponent, resolve: { profile: CompanyProfileResolver} },
+  { path: 'company/profile/:profileId', component: CompanyProfileComponent,
+    resolve: { profile: CompanyProfileResolver},
     canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
@@ -39,6 +71,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, { paramsInheritanceStrategy: 'always' })],
   exports: [RouterModule],
-  providers: [StepIdResolver, ServiceIdResolver, ProfileIdResolver]
+  providers: [StepIdResolver, ServiceIdResolver, CustomerProfileResolver, ProjectProfileResolver, UnitProfileResolver, CompanyProfileResolver]
 })
 export class AppRoutingModule { }

@@ -78,6 +78,9 @@ import { DisplayDataFormGeneratorComponent } from './display-data-form-generator
 import { HiddenFieldComponent } from './fields/hidden-field/hidden-field.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { CustomerDetailsComponent } from './customer-profile/customer-details/customer-details.component';
+import { ProjectProfileComponent } from './project-profile/project-profile.component';
+import { UnitProfileComponent } from './unit-profile/unit-profile.component';
+import { CompanyProfileComponent } from './company-profile/company-profile.component';
 
 @NgModule({
   declarations: [
@@ -145,7 +148,10 @@ import { CustomerDetailsComponent } from './customer-profile/customer-details/cu
     DisplayDataFormGeneratorComponent,
     HiddenFieldComponent,
     CustomerProfileComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    ProjectProfileComponent,
+    UnitProfileComponent,
+    CompanyProfileComponent
   ],
   imports: [
     FormsModule,

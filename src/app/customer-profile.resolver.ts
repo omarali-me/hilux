@@ -8,16 +8,17 @@ export interface ProfileId {
 }
 
 @Injectable()
-export class ProfileIdResolver implements Resolve<any> {
+export class CustomerProfileResolver implements Resolve<any> {
 
   constructor( private http: HttpClient) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
     const profileId = route.params.profileId;
-    return profileId ? this.getProfile(profileId) : {}
+    return profileId ? this.getProfile(profileId) : { hasTaxNumber: '0' }
   }
 
   getProfile(profileId) {
-    return this.http.get(`https://wfe.ajm.re/AjmanLandProperty/index.php/customers/get/${profileId}`)
+    // return this.http.get(`https://wfe.ajm.re/AjmanLandProperty/index.php/customers/get/${profileId}`)
+    return this.http.get(`http://localhost:3000/customer?profileId=${profileId}`)
   }
 }
