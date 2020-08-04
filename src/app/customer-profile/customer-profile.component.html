@@ -163,7 +163,6 @@
                         <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Emirates ID issuance date
-                              <span>*</span>
                             </label>
                             <div class="col-sm-9">
                               <input type="text"
@@ -264,7 +263,7 @@
                                 [(ngModel)]="formData.otherIdTypeId"
                                 bindLabel="value.ar"
                                 bindValue="key"
-                                notFoundText="not found"
+                                notFoundText="لا يوجد نتائج للبحث"
                                 #otherIdTypeId="ngModel"
                               >
                               </ng-select>
@@ -349,7 +348,7 @@
                                 [(ngModel)]="formData.nationalityCode"
                                 bindLabel="value.ar"
                                 bindValue="key"
-                                notFoundText="not found"
+                                notFoundText="لا يوجد نتائج للبحث"
                                 #nationality="ngModel"
                               >
                               </ng-select>
@@ -375,7 +374,7 @@
                                 [(ngModel)]="formData.gender"
                                 bindLabel="value.ar"
                                 bindValue="key"
-                                notFoundText="not found"
+                                notFoundText="لا يوجد نتائج للبحث"
                                 #gender="ngModel"
                               >
                               </ng-select>
@@ -404,7 +403,7 @@
                                 [(ngModel)]="formData.typeOfDisability"
                                 bindLabel="value.ar"
                                 bindValue="key"
-                                notFoundText="not found"
+                                notFoundText="لا يوجد نتائج للبحث"
                                 #typeOfDisability="ngModel"
                               >
                               </ng-select>
@@ -431,7 +430,7 @@
                                 bindLabel="value.ar"
                                 multiple="true"
                                 bindValue="key"
-                                notFoundText="not found"
+                                notFoundText="لا يوجد نتائج للبحث"
                                 #customerCategory="ngModel"
                               >
                               </ng-select>
@@ -462,7 +461,7 @@
                                 [(ngModel)]="formData.hasTrx"
                                 bindLabel="value.ar"
                                 bindValue="key"
-                                notFoundText="not found"
+                                notFoundText="لا يوجد نتائج للبحث"
                                 #hasTrx="ngModel"
                               >
                               </ng-select>
@@ -491,7 +490,7 @@
                                 [(ngModel)]="formData.trxEmirateId"
                                 bindLabel="value.ar"
                                 bindValue="key"
-                                notFoundText="not found"
+                                notFoundText="لا يوجد نتائج للبحث"
                                 #trxEmirateId="ngModel"
                               >
                               </ng-select>
@@ -590,7 +589,7 @@
                                 [(ngModel)]="formData.contactPreferencesTypeId"
                                 bindLabel="value.ar"
                                 bindValue="key"
-                                notFoundText="not found"
+                                notFoundText="لا يوجد نتائج للبحث"
                               >
                               </ng-select>
                             </div>
@@ -607,7 +606,7 @@
                                 [(ngModel)]="formData.timeToContactPreferencesId"
                                 bindLabel="value.ar"
                                 bindValue="key"
-                                notFoundText="not found"
+                                notFoundText="لا يوجد نتائج للبحث"
                               >
                               </ng-select>
                             </div>
@@ -636,6 +635,17 @@
 
                       <div class="form-group row">
                         <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-check float-right">
+                            <input name="isResident" type="checkbox" class="form-check-input" [(ngModel)]="formData.isResident">
+                            <label class="form-check-label">Is Resident</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">City of residence in UAE</label>
                             <div class="col-sm-9">
@@ -646,7 +656,7 @@
                                 [(ngModel)]="formData.emirateId"
                                 bindLabel="value.ar"
                                 bindValue="key"
-                                notFoundText="not found"
+                                notFoundText="لا يوجد نتائج للبحث"
                               >
                               </ng-select>
                             </div>
@@ -663,7 +673,7 @@
                                 [(ngModel)]="formData.countryOfResidence"
                                 bindLabel="value.ar"
                                 bindValue="key"
-                                notFoundText="not found"
+                                notFoundText="لا يوجد نتائج للبحث"
                                 #countryOfResidence="ngModel"
                               >
                               </ng-select>

@@ -83,7 +83,7 @@ export class CustomerDetailsComponent implements OnInit {
           this.formData = this.prepareProfile(data.data);
           this.toastr.success(data.message, 'Success');
         } else {
-          this.toastr.error(data.message, 'Error')
+          this.toastr.error(JSON.stringify(data.message), 'Error')
         }
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
