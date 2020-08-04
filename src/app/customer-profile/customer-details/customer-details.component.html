@@ -18,14 +18,14 @@
             <div class="offset-sm-2 col-sm-10 placeholder">
               <div class="form-check float-right">
                 <input name="isDead" type="checkbox" class="form-check-input" [(ngModel)]="formData.isDead">
-                <label class="form-check-label">Deceased</label>
+                <label class="form-check-label" i18n="@@customerProfileDeceased">Deceased</label>
               </div>
             </div>
           </div>
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Customer ID</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileCustomerId">Customer ID</label>
               <div class="col-sm-9">
                 <input name="customerId" type="text" class="form-control disabled" numbersOnly precision="0" [(ngModel)]="formData.id" readonly="true">
               </div>
@@ -38,7 +38,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Date of Death
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileDateOfDeath">Date of Death
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -67,7 +67,7 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Name in English
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileNameInEnglish">Name in English
                 <span *ngIf="isOneOrOtherNameRequired('nameEn')">*</span>
               </label>
               <div class="col-sm-9">
@@ -82,7 +82,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Name In Arabic
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileNameInArabic">Name In Arabic
                 <span *ngIf="isOneOrOtherNameRequired('nameAr')">*</span>
               </label>
               <div class="col-sm-9">
@@ -102,7 +102,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Emirates ID</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmiratesID">Emirates ID</label>
               <div class="col-sm-9">
                 <input name="emiratesId" type="text" [minlength]="15" class="form-control" [(ngModel)]="formData.emiratesId" pattern="^784[0-9]*" #emiratesId="ngModel" numbersOnly precision="0">
                 <div *ngIf="emiratesId.invalid && (emiratesId.dirty || emiratesId.touched)" class="alert alert-danger">
@@ -118,7 +118,7 @@
         <div class="form-group row" *ngIf="formData.emiratesId">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Emirates ID expiry date
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmiratesIDexpirydate">Emirates ID expiry date
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -144,7 +144,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Emirates ID issuance date
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmiratesIDissuancedate">Emirates ID issuance date
               </label>
               <div class="col-sm-9">
                 <input type="text"
@@ -168,7 +168,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Passport number</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfilePassportnumber">Passport number</label>
               <div class="col-sm-9">
                 <input name="passportNumber" type="text" class="form-control" [(ngModel)]="formData.passportNumber">
               </div>
@@ -179,7 +179,7 @@
         <div class="form-group row" *ngIf="formData.passportNumber">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Passport number expiry date
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfilePassportnumberexpirydate">Passport number expiry date
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -205,7 +205,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Passport number issuance date
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfilePassportnumberissuancedate">Passport number issuance date
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -234,7 +234,7 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row" *ngIf="formData.otherId">
-              <label class="col-sm-3 col-form-label">Other (document type)
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileOtherdocumenttype">Other (document type)
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -260,7 +260,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Other (decrees ..)</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileOtherdecrees">Other (decrees ..)</label>
               <div class="col-sm-9">
                 <input type="text" name="otherId" class="form-control" [(ngModel)]="formData.otherId">
               </div>
@@ -271,7 +271,7 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Date of Birth
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileDateofBirth">Date of Birth
                 <span *ngIf="isRequired()">*</span>
               </label>
               <div class="col-sm-9">
@@ -297,7 +297,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Mobile Number
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileMobileNumber">Mobile Number
                 <span *ngIf="isRequired()">*</span>
               </label>
               <div class="col-sm-9">
@@ -319,7 +319,7 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Nationality
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileNationality">Nationality
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -345,7 +345,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Gender
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileGender">Gender
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -374,7 +374,7 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row" *ngIf="isCustomerDisabled()">
-              <label class="col-sm-3 col-form-label">Type of Disability
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileTypeofDisability">Type of Disability
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -400,7 +400,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Customer category
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileCustomercategory">Customer category
                 <span *ngIf="isRequired()">*</span>
               </label>
               <div class="col-sm-9">
@@ -433,7 +433,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Do you have a tax number?
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileDoyouhavetaxnumber">Do you have a tax number?
                 <span *ngIf="isRequired()">*</span>
               </label>
               <div class="col-sm-9">
@@ -463,7 +463,7 @@
         <div class="form-group row" *ngIf="hasTaxNumber()">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Emirate
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmirate">Emirate
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -489,7 +489,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Tax Number
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileTaxNumber">Tax Number
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -507,7 +507,7 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">General Notes</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileGeneralNotes">General Notes</label>
               <div class="col-sm-9">
                 <textarea
                   name="remarks"
@@ -520,7 +520,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Home Address</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileHomeAddress">Home Address</label>
               <div class="col-sm-9">
                 <textarea
                   name="address"
@@ -536,7 +536,7 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Mobile Number 2</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileMobileNumber2">Mobile Number 2</label>
               <div class="col-sm-9">
                 <input name="phone2" type="text" [maxLength]="17" class="form-control" [(ngModel)]="formData.phone2" numbersOnly precision="0" pattern="[0-9]*">
                 <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)" class="alert alert-danger">
@@ -549,7 +549,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Email</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmail">Email</label>
               <div class="col-sm-9">
                 <input name="email" type="email" class="form-control" [(ngModel)]="formData.email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel">
                 <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
@@ -565,7 +565,7 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Preferred way to communicate</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfilePreferredwaytocommunicate">Preferred way to communicate</label>
               <div class="col-sm-9">
                 <ng-select
                   class="rtl"
@@ -582,7 +582,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Preferred time to communicate</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfilePreferredtimetocommunicate">Preferred time to communicate</label>
               <div class="col-sm-9">
                 <ng-select
                   class="rtl"
@@ -602,7 +602,7 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Job Title</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileJobTitle">Job Title</label>
               <div class="col-sm-9">
                 <input name="jobTitle" type="text" class="form-control" [(ngModel)]="formData.jobTitle">
               </div>
@@ -610,7 +610,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Employer</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmployer">Employer</label>
               <div class="col-sm-9">
                 <input name="employer" type="text" class="form-control" [(ngModel)]="formData.employer">
               </div>
@@ -624,7 +624,7 @@
           <div class="col-sm-6">
             <div class="form-check float-right">
               <input name="isResident" type="checkbox" class="form-check-input" [(ngModel)]="formData.isResident">
-              <label class="form-check-label">Is Resident</label>
+              <label class="form-check-label" i18n="@@customerProfileIsResident">Is Resident</label>
             </div>
           </div>
         </div>
@@ -632,7 +632,7 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">City of residence in UAE</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileCityofresidenceinUAE">City of residence in UAE</label>
               <div class="col-sm-9">
                 <ng-select
                   class="rtl"
@@ -649,7 +649,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Country of residence</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileCountryofresidence">Country of residence</label>
               <div class="col-sm-9">
                 <ng-select
                   class="rtl"
@@ -672,7 +672,7 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-10 col-form-label">Signature</label>
+              <label class="col-sm-10 col-form-label" i18n="@@customerProfileSignature">Signature</label>
               <div class="text-center col-sm-2 gallery-wrapper">
                 <app-media-gallery [medias]="getSignatureAttachments()"></app-media-gallery>
               </div>
