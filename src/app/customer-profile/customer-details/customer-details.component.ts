@@ -184,7 +184,7 @@ export class CustomerDetailsComponent implements OnInit {
 
   prepareProfile(profile) {
     profile.hasTrx = _.toInteger(profile.hasTrx);
-    profile.customerCategoryId = _.split(profile.customerCategoryId, ',')
+    // profile.customerCategoryId = _.split(profile.customerCategoryId, ',')
     return profile
   }
 
