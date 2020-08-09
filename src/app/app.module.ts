@@ -81,6 +81,7 @@ import { CustomerDetailsComponent } from './customer-profile/customer-details/cu
 import { ProjectProfileComponent } from './project-profile/project-profile.component';
 import { UnitProfileComponent } from './unit-profile/unit-profile.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
+import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.component';
 
 @NgModule({
   declarations: [
@@ -151,7 +152,8 @@ import { CompanyProfileComponent } from './company-profile/company-profile.compo
     CustomerDetailsComponent,
     ProjectProfileComponent,
     UnitProfileComponent,
-    CompanyProfileComponent
+    CompanyProfileComponent,
+    UnitDetailsComponent
   ],
   imports: [
     FormsModule,

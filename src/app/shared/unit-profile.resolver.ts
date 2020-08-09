@@ -14,11 +14,13 @@ export class UnitProfileResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
     const profileId = route.params.profileId;
-    return profileId ? this.getProfile(profileId) : { hasTaxNumber: '0' }
+    return profileId ? this.getProfile(profileId) : { }
   }
 
   getProfile(profileId) {
-    return this.http.get(`https://wfe.ajm.re/AjmanLandProperty/index.php/customers/get/${profileId}`)
-    // return this.http.get(`http://localhost:3000/unit?profileId=${profileId}`)
+    // return this.http.get(`https://wfe.ajm.re/AjmanLandProperty/index.php/customers/get/${profileId}`)
+    return this.http.get(`http://localhost:3000/unit?profileId=${profileId}`)
   }
 }
+
+

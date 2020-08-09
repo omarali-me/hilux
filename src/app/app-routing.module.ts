@@ -20,6 +20,7 @@ import { CustomerDetailsComponent } from './customer-profile/customer-details/cu
 import { ProjectProfileResolver } from './shared/project-profile.resolver';
 import { UnitProfileResolver } from './shared/unit-profile.resolver';
 import { CompanyProfileResolver } from './shared/company-profile.resolver';
+import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.component';
 
 
 const routes: Routes = [
@@ -54,7 +55,7 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
-      { path: 'edit', component: CustomerDetailsComponent }
+      { path: 'edit', component: UnitDetailsComponent }
     ]
   },
   { path: 'company/new', component: CompanyProfileComponent, resolve: { profile: CompanyProfileResolver} },

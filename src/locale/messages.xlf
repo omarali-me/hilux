@@ -101,6 +101,14 @@
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
           <context context-type="linenumber">684</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">461</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">438</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="formCancelLabel" datatype="html">
         <source>Cancel</source>
@@ -524,6 +532,286 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
           <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileProject" datatype="html">
+        <source>
+                            Project
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileDeveloper" datatype="html">
+        <source>Developer
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileUnitNumber" datatype="html">
+        <source>Unit Number
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileUnitUse" datatype="html">
+        <source>Unit Use
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileUnitType" datatype="html">
+        <source>
+                            Unit Type
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileLand" datatype="html">
+        <source>Land
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">161</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileFloorNumber" datatype="html">
+        <source>Floor Number
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">164</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileMeterTotalSoldArea" datatype="html">
+        <source>Meter Total Sold Area
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">211</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">188</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileMeterJointSoldArea" datatype="html">
+        <source>Meter Joint Sold Area</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">229</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">206</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileMeterNetSoldArea" datatype="html">
+        <source>Meter Net Sold Area</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">242</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">219</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileMeterTotalActualArea" datatype="html">
+        <source>Meter Total Actual Area</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">260</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">237</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileMeterJointActualArea" datatype="html">
+        <source>Meter Joint Actual Area</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">276</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">253</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileMeterNetActualArea" datatype="html">
+        <source>Meter Net Actual Area</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">289</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">266</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileServantRoomsCount" datatype="html">
+        <source>Servant Rooms Count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">305</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">282</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileRoomsCount" datatype="html">
+        <source>Rooms Count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">318</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">295</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileDiningRoomsCount" datatype="html">
+        <source>Dining Rooms Count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">334</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">311</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileLivingRoomsCount" datatype="html">
+        <source>Living Rooms Count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">347</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">324</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileLoungesCount" datatype="html">
+        <source>Lounges Count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">363</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">340</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileBathroomsCount" datatype="html">
+        <source>Bathrooms Count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">376</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">353</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileBalconyCount" datatype="html">
+        <source>Balcony Count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">392</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">369</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileKitchensCount" datatype="html">
+        <source>Kitchens Count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">405</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">382</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileOthers" datatype="html">
+        <source>Others</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">421</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">398</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileServicesDescription" datatype="html">
+        <source>Services Description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">434</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">411</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileSitePlan" datatype="html">
+        <source>Site Plan</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">452</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">429</context>
         </context-group>
       </trans-unit>
     </body>

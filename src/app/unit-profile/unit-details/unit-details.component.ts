@@ -3,16 +3,16 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
-import { FieldsService } from '../shared/fields.service';
+import { FieldsService } from '../../shared/fields.service';
 import { pluck } from 'rxjs/operators';
 import * as _ from 'lodash';
 
 @Component({
-  selector: 'app-unit-profile',
-  templateUrl: './unit-profile.component.html',
-  styleUrls: ['./unit-profile.component.css']
+  selector: 'app-unit-details',
+  templateUrl: './unit-details.component.html',
+  styleUrls: ['./unit-details.component.css']
 })
-export class UnitProfileComponent implements OnInit {
+export class UnitDetailsComponent implements OnInit {
   formData: any;
   profile$: Observable<any>;
   developerOptions: any;
@@ -48,18 +48,16 @@ export class UnitProfileComponent implements OnInit {
     });
   }
 
-  saveData(formData: any) {
+  updateData(formData: any) {
     let fd = new FormData();
     fd.append('unit', JSON.stringify(formData));
-    this.http.post('https://wfe.ajm.re/AjmanLandProperty/index.php/units/create', fd)
+    this.http.post(`https://wfe.ajm.re/AjmanLandProperty/index.php/units/update/${formData.id}`, fd)
       .subscribe((data: any) => {
-       if (data.status == 'success') {
-        this.toastr.success(data.message, 'Success');
-        if (data.data.id)
-          this.router.navigate(['units/profile', data.data.id, 'edit']);
-      } else {
-        this.toastr.error(JSON.stringify(data.message), 'Error')
-      }
+        if (data.status == 'success') {
+          this.toastr.success(data.message, 'Success');
+        } else {
+          this.toastr.error(JSON.stringify(data.message), 'Error')
+        }
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
     })
@@ -73,7 +71,6 @@ export class UnitProfileComponent implements OnInit {
   }
 
   loadProjectsOptions() {
-    // this.fieldsService.getUrl(`https://localhost:3000/projects`)
     this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projects`)
     .subscribe((data) => {
       this.projectsOptions = data;
