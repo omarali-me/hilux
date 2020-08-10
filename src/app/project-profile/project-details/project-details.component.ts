@@ -3,16 +3,16 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
-import { FieldsService } from '../shared/fields.service';
+import { FieldsService } from 'src/app/shared/fields.service';
 import { pluck } from 'rxjs/operators';
 import * as _ from 'lodash';
 
 @Component({
-  selector: 'app-project-profile',
-  templateUrl: './project-profile.component.html',
-  styleUrls: ['./project-profile.component.css']
+  selector: 'app-project-details',
+  templateUrl: './project-details.component.html',
+  styleUrls: ['./project-details.component.css']
 })
-export class ProjectProfileComponent implements OnInit {
+export class ProjectDetailsComponent implements OnInit {
   formData: any;
   profile$: Observable<any>;
   developerOptions: any;
@@ -48,18 +48,16 @@ export class ProjectProfileComponent implements OnInit {
     });
   }
 
-  saveData(formData: any) {
+  updateData(formData: any) {
     let fd = new FormData();
     fd.append('project', JSON.stringify(formData));
-    this.http.post('https:///wfe.ajm.re/AjmanLandProperty/index.php/projects/create', fd)
+    this.http.post(`https://wfe.ajm.re/AjmanLandProperty/index.php/projects/update/${formData.id}`, fd)
       .subscribe((data: any) => {
-       if (data.status == 'success') {
-        this.toastr.success(data.message, 'Success');
-        if (data.data.id)
-          this.router.navigate(['project/profile', data.data.id, 'edit']);
-      } else {
-        this.toastr.error(JSON.stringify(data.message), 'Error')
-      }
+        if (data.status == 'success') {
+          this.toastr.success(data.message, 'Success');
+        } else {
+          this.toastr.error(JSON.stringify(data.message), 'Error')
+        }
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
     })
@@ -157,10 +155,3 @@ export class ProjectProfileComponent implements OnInit {
     this.formData.meterJointSoldArea = _.toInteger(this.formData.meterTotalSoldArea) - _.toInteger(this.formData.meterNetSoldArea)
   }
 }
-
-// "id": "10",
-// "registrationTypeId": null,
-// "isMain": "0",
-// "projectTypeId": null,
-// "completionCertificateDate": null,
-// "areaCalculationTypeId": "1",

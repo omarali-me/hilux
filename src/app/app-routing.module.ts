@@ -21,6 +21,7 @@ import { ProjectProfileResolver } from './shared/project-profile.resolver';
 import { UnitProfileResolver } from './shared/unit-profile.resolver';
 import { CompanyProfileResolver } from './shared/company-profile.resolver';
 import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.component';
+import { ProjectDetailsComponent } from './project-profile/project-details/project-details.component';
 
 
 const routes: Routes = [
@@ -46,7 +47,7 @@ const routes: Routes = [
     resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
-      { path: 'edit', component: CustomerDetailsComponent }
+      { path: 'edit', component: ProjectDetailsComponent }
     ]
   },
   { path: 'unit/new', component: UnitProfileComponent, resolve: { profile: UnitProfileResolver} },

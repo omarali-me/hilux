@@ -82,6 +82,7 @@ import { ProjectProfileComponent } from './project-profile/project-profile.compo
 import { UnitProfileComponent } from './unit-profile/unit-profile.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.component';
+import { ProjectDetailsComponent } from './project-profile/project-details/project-details.component';
 
 @NgModule({
   declarations: [
@@ -153,7 +154,8 @@ import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.c
     ProjectProfileComponent,
     UnitProfileComponent,
     CompanyProfileComponent,
-    UnitDetailsComponent
+    UnitDetailsComponent,
+    ProjectDetailsComponent
   ],
   imports: [
     FormsModule,
