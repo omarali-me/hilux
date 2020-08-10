@@ -56,7 +56,7 @@ export class UnitProfileComponent implements OnInit {
        if (data.status == 'success') {
         this.toastr.success(data.message, 'Success');
         if (data.data.id)
-          this.router.navigate(['units/profile', data.data.id, 'edit']);
+          this.router.navigate(['unit/profile', data.data.id, 'edit']);
       } else {
         this.toastr.error(JSON.stringify(data.message), 'Error')
       }
