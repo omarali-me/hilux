@@ -18,7 +18,6 @@ export class ProjectProfileResolver implements Resolve<any> {
   }
 
   getProfile(profileId) {
-    // return this.http.get(`https://wfe.ajm.re/AjmanLandProperty/index.php/customers/get/${profileId}`)
-    return this.http.get(`http://localhost:3000/project?profileId=${profileId}`)
+    return this.http.get(`https://wfe.ajm.re/AjmanLandProperty/index.php/projects/get/${profileId}`)
   }
 }
