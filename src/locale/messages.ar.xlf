@@ -10,12 +10,60 @@
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="headerMoreLinks" datatype="html">
+        <source>
+        More Links
+      </source>
+      <target>
+        More Links Arabic
+      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="headerCustomer" datatype="html">
+        <source>
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Customer
+        </source>
+        <target>
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Customer
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="headerProject" datatype="html">
+        <source>
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Project
+        </source>
+        <target>
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Project
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="headerUnit" datatype="html">
+        <source>
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Unit
+        </source>
+        <target>
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Unit
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="headerMyTaskLabel" datatype="html">
         <source>My Tasks</source>
         <target>My Tasks Arabic</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="headerLooutLabel" datatype="html">
@@ -23,7 +71,7 @@
         <target>Logout Arabic</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sidebarHiluxLabel" datatype="html">
