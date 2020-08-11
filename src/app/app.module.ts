@@ -83,6 +83,7 @@ import { UnitProfileComponent } from './unit-profile/unit-profile.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.component';
 import { ProjectDetailsComponent } from './project-profile/project-details/project-details.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -155,7 +156,8 @@ import { ProjectDetailsComponent } from './project-profile/project-details/proje
     UnitProfileComponent,
     CompanyProfileComponent,
     UnitDetailsComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    ErrorPageComponent
   ],
   imports: [
     FormsModule,

@@ -22,18 +22,20 @@ import { UnitProfileResolver } from './shared/unit-profile.resolver';
 import { CompanyProfileResolver } from './shared/company-profile.resolver';
 import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.component';
 import { ProjectDetailsComponent } from './project-profile/project-details/project-details.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [AuthenticationGuard] },
   { path: 'login',  component: LoginComponent },
   // { path: 'signup',  component: SignupComponent },
+  { path: 'error',  component: ErrorPageComponent },
   { path: 'custom_page',  component: CustomPageComponent, canActivate: [AuthenticationGuard] },
   { path: 'my_tasks',  component: MyTasksComponent, canActivate: [AuthenticationGuard] },
   { path: 'rule_generator',  component: RuleGeneratorComponent, canActivate: [AuthenticationGuard] },
   { path: 'service/:serviceId', component: ServicePageComponent, resolve: { serviceId: ServiceIdResolver} , canActivate: [AuthenticationGuard]},
   { path: 'notifications/:stepId', component: NotificationPageComponent, resolve: { stepId: StepIdResolver}, canActivate: [AuthenticationGuard]},
-  { path: 'customer/new', component: CustomerProfileComponent, resolve: { profile: CustomerProfileResolver} },
+  { path: 'customer/new', component: CustomerProfileComponent, resolve: { profile: CustomerProfileResolver}, canActivate: [AuthenticationGuard] },
   { path: 'customer/profile/:profileId', component: CustomerProfileComponent,
     resolve: { profile: CustomerProfileResolver},
     canActivate: [AuthenticationGuard],
@@ -42,7 +44,7 @@ const routes: Routes = [
       { path: 'edit', component: CustomerDetailsComponent }
     ]
   },
-  { path: 'project/new', component: ProjectProfileComponent, resolve: { profile: ProjectProfileResolver} },
+  { path: 'project/new', component: ProjectProfileComponent, resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard] },
   { path: 'project/profile/:profileId', component: ProjectProfileComponent,
     resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard],
     children: [
@@ -50,7 +52,7 @@ const routes: Routes = [
       { path: 'edit', component: ProjectDetailsComponent }
     ]
   },
-  { path: 'unit/new', component: UnitProfileComponent, resolve: { profile: UnitProfileResolver} },
+  { path: 'unit/new', component: UnitProfileComponent, resolve: { profile: UnitProfileResolver}, canActivate: [AuthenticationGuard] },
   { path: 'unit/profile/:profileId', component: UnitProfileComponent,
     resolve: { profile: UnitProfileResolver},
     canActivate: [AuthenticationGuard],
