@@ -677,7 +677,7 @@
         <source>Developer
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Developer
+        <target>اسم المطور العقاري
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -693,7 +693,7 @@
         <source>Name in English
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Name in English
+        <target>اسم مشروع التطوير العقاري باللغة الانجليزية
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -709,7 +709,7 @@
         <source>Name In Arabic
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Name In Arabic
+        <target>اسم مشروع التطوير العقاري باللغة العربية
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -724,7 +724,7 @@
       <trans-unit id="projectProfileMainProject" datatype="html">
         <source>Main Project
                           </source>
-        <target>Main Project
+        <target>مشروع التطوير العقاري الرئيسي
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -741,7 +741,7 @@
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
         <target>
-                            Is Main
+                            نوع مشروع التطوير العقاري
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -757,7 +757,7 @@
         <source>Building Name in English
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Building Name in English
+        <target>اسم المبنى باللغة الانجليزية
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -773,7 +773,7 @@
         <source>Building Name In Arabic
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Building Name In Arabic
+        <target>اسم المبنى باللغة العربية
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -788,7 +788,7 @@
       <trans-unit id="projectProfileBuildingCode" datatype="html">
         <source>Building Code
                           </source>
-        <target>Building Code
+        <target>رمز المبنى
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -803,7 +803,7 @@
         <source>Building Number
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Building Number
+        <target>رقم المبنى
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -818,7 +818,7 @@
       <trans-unit id="projectProfileDevPartNumber" datatype="html">
         <source>Dev Part Number
                           </source>
-        <target>Dev Part Number
+        <target>رقم قطعة الارض (ترقيم المطور)
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -835,7 +835,7 @@
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
         <target>
-                            Parcel Id
+                            رقم الأرض المميز
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -850,7 +850,7 @@
       <trans-unit id="projectProfileProjectType" datatype="html">
         <source>Project Type
                           </source>
-        <target>Project Type
+        <target>وصف المشروع
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -864,7 +864,7 @@
       <trans-unit id="projectProfileTotalBuiltUpArea" datatype="html">
         <source>Total Built Up Area
                           </source>
-        <target>Total Built Up Area
+        <target>المساحة الكلية للبناء
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -878,7 +878,7 @@
       <trans-unit id="projectProfileCompletionCertificateDate" datatype="html">
         <source>Completion Certificate Date
                           </source>
-        <target>Completion Certificate Date
+        <target>تاريخ شهادة الانجاز
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -892,7 +892,7 @@
       <trans-unit id="projectProfileMeterTotalArea" datatype="html">
         <source>Meter Total Area
                           </source>
-        <target>Meter Total Area
+        <target>المساحة الاجمالية بالمتر
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -905,7 +905,7 @@
       </trans-unit>
       <trans-unit id="projectProfileMeterJointArea" datatype="html">
         <source>Meter Joint Area</source>
-        <target>Meter Joint Area</target>
+        <target>المساحة المشتركة بالمتر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
           <context context-type="linenumber">346</context>
@@ -917,7 +917,7 @@
       </trans-unit>
       <trans-unit id="projectProfileMeterNetArea" datatype="html">
         <source>Meter Net Area</source>
-        <target>Meter Net Area</target>
+        <target>المساحة الصافية بالمتر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
           <context context-type="linenumber">359</context>
@@ -929,7 +929,7 @@
       </trans-unit>
       <trans-unit id="projectProfileLatitude" datatype="html">
         <source>Latitude</source>
-        <target>Latitude</target>
+        <target>خط العرض</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
           <context context-type="linenumber">375</context>
@@ -941,7 +941,7 @@
       </trans-unit>
       <trans-unit id="projectProfileLongitude" datatype="html">
         <source>Longitude</source>
-        <target>Longitude</target>
+        <target>خط الطول</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
           <context context-type="linenumber">388</context>
@@ -954,7 +954,7 @@
       <trans-unit id="projectProfileAccountTrustee" datatype="html">
         <source>Account Trustee
                           </source>
-        <target>Account Trustee
+        <target>اسم أمين الحساب
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -968,7 +968,7 @@
       <trans-unit id="projectProfileAccountOpeningDate" datatype="html">
         <source>Account Opening Date
                           </source>
-        <target>Account Opening Date
+        <target>تاريخ فتح حساب الضمان
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -982,7 +982,7 @@
       <trans-unit id="projectProfileEscrowAccountNumber" datatype="html">
         <source>Escrow Account Number 
                           </source>
-        <target>Escrow Account Number 
+        <target>رقم حساب الضمان الرئيسي
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -996,7 +996,7 @@
       <trans-unit id="projectProfileExpiryDate" datatype="html">
         <source>Expiry Date
                           </source>
-        <target>Expiry Date
+        <target>تاريخ انتهاء تسجيل المشروع
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -1011,7 +1011,7 @@
         <source>Registration Date
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Registration Date
+        <target>تاريخ تسجيل المشروع
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -1026,7 +1026,7 @@
       <trans-unit id="projectProfileBuildingPermitNumber" datatype="html">
         <source>Building permit number
                           </source>
-        <target>Building permit number
+        <target>رقم رخصة البناء
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -1040,7 +1040,7 @@
       <trans-unit id="projectProfileBuildingPermitExpiryDate" datatype="html">
         <source>Building permit expiry date
                           </source>
-        <target>Building permit expiry date
+        <target>تاريخ إنتهاء رخصة البناء
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -1054,7 +1054,7 @@
       <trans-unit id="projectProfileBuildingPermitIssuanceDate" datatype="html">
         <source>Building permit issuance date
                           </source>
-        <target>Building permit issuance date
+        <target>تاريخ إصدار رخصة البناء
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -1069,7 +1069,7 @@
         <source>Project Completion percentage
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Project Completion percentage
+        <target>نسبة انجاز المشروع
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -1085,7 +1085,7 @@
         <source>Project Status
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Project Status
+        <target>حالة المشروع
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -1100,7 +1100,7 @@
       <trans-unit id="projectProfileConsultantContractValue" datatype="html">
         <source>Consultant contract Value
                           </source>
-        <target>Consultant contract Value
+        <target>قيمة عقد الاستشاري
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -1115,7 +1115,7 @@
         <source>Consultant
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Consultant
+        <target>الاستشاري
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -1130,7 +1130,7 @@
       <trans-unit id="projectProfileContractorContractValue" datatype="html">
         <source>Contractor contract Value
                           </source>
-        <target>Contractor contract Value
+        <target>قيمة عقد المقاول
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -1145,7 +1145,7 @@
         <source>Contractor
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Contractor
+        <target>المقاول
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -1160,7 +1160,7 @@
       <trans-unit id="projectProfileContractorContractEndDate" datatype="html">
         <source>Contractor Contract End Date
                           </source>
-        <target>Contractor Contract End Date
+        <target>تاريخ انتهاء عقد المقاول
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -1174,7 +1174,7 @@
       <trans-unit id="projectProfileContractorContractStartDate" datatype="html">
         <source>Contractor Contract start Date
                           </source>
-        <target>Contractor Contract start Date
+        <target>تاريخ بدأ عقد المقاول
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -1188,7 +1188,7 @@
       <trans-unit id="projectProfileTotalProjectCost" datatype="html">
         <source>Total project cost
                           </source>
-        <target>Total project cost
+        <target>الكلفة الاجمالية المشروع
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -1202,7 +1202,7 @@
       <trans-unit id="projectProfileActualStartDate" datatype="html">
         <source>Actual Start Date
                           </source>
-        <target>Actual Start Date
+        <target>تاريخ البدأ بالمشروع بحسب عقد المقاول
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -1217,7 +1217,7 @@
         <source>Tech Description
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Tech Description
+        <target>وصف مشروع التطوير العقاري
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -1232,7 +1232,7 @@
       <trans-unit id="projectProfileTypeOfUse" datatype="html">
         <source>Type of use
                           </source>
-        <target>Type of use
+        <target>نوع استخدام مشروع التطوير العقاري
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -1245,7 +1245,7 @@
       </trans-unit>
       <trans-unit id="projectProfileNumberofSwimmingPool" datatype="html">
         <source>Number of Swimming Pool</source>
-        <target>Number of Swimming Pool</target>
+        <target>عدد احواض السباحة في المشروع</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
           <context context-type="linenumber">812</context>
@@ -1257,7 +1257,7 @@
       </trans-unit>
       <trans-unit id="projectProfileNumberofElevators" datatype="html">
         <source>Number of Elevators</source>
-        <target>Number of Elevators</target>
+        <target>عدد المصاعد في المشروع</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
           <context context-type="linenumber">820</context>
@@ -1269,7 +1269,7 @@
       </trans-unit>
       <trans-unit id="projectProfileNumberofFlats" datatype="html">
         <source>Number of Flats</source>
-        <target>Number of Flats</target>
+        <target>عدد الشقق</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
           <context context-type="linenumber">831</context>
@@ -1281,7 +1281,7 @@
       </trans-unit>
       <trans-unit id="projectProfileNumberofFloors" datatype="html">
         <source>Number of Floors</source>
-        <target>Number of Floors</target>
+        <target>عدد الطوابق</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
           <context context-type="linenumber">839</context>
@@ -1293,7 +1293,7 @@
       </trans-unit>
       <trans-unit id="projectProfileNumberofShops" datatype="html">
         <source>Number of Shops</source>
-        <target>Number of Shops</target>
+        <target>عدد المحلات</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
           <context context-type="linenumber">850</context>
@@ -1305,7 +1305,7 @@
       </trans-unit>
       <trans-unit id="projectProfileNumberofOffices" datatype="html">
         <source>Number of Offices</source>
-        <target>Number of Offices</target>
+        <target>عدد المكاتب</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
           <context context-type="linenumber">858</context>
@@ -1317,7 +1317,7 @@
       </trans-unit>
       <trans-unit id="projectProfileNumberofCarParks" datatype="html">
         <source>Number of Car Parks</source>
-        <target>Number of Car Parks</target>
+        <target>عدد مواقف السيارات</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
           <context context-type="linenumber">871</context>
