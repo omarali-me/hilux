@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from '../../shared/fields.service';
@@ -30,6 +30,7 @@ export class CustomerDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private http: HttpClient,
     private toastr: ToastrService,
     private fieldsService: FieldsService
@@ -87,6 +88,7 @@ export class CustomerDetailsComponent implements OnInit {
         }
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
+      this.router.navigate(['error'])
     })
   }
 

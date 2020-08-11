@@ -62,6 +62,7 @@ export class ProjectProfileComponent implements OnInit {
       }
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
+      this.router.navigate(['error'])
     })
   }
 

@@ -60,6 +60,7 @@ export class ProjectDetailsComponent implements OnInit {
         }
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
+      this.router.navigate(['error'])
     })
   }
 

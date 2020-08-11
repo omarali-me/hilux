@@ -62,6 +62,7 @@ export class UnitProfileComponent implements OnInit {
       }
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
+      this.router.navigate(['error'])
     })
   }
 

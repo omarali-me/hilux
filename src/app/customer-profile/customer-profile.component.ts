@@ -89,6 +89,7 @@ export class CustomerProfileComponent implements OnInit {
       }
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
+      this.router.navigate(['error'])
     })
   }
 
