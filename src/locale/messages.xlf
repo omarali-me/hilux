@@ -102,12 +102,20 @@
           <context context-type="linenumber">684</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">881</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">461</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">438</context>
+          <context context-type="linenumber">440</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">858</context>
         </context-group>
       </trans-unit>
       <trans-unit id="formCancelLabel" datatype="html">
@@ -534,6 +542,563 @@
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="projectProfileDeveloper" datatype="html">
+        <source>Developer
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileNameInEnglish" datatype="html">
+        <source>Name in English
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileNameInArabic" datatype="html">
+        <source>Name In Arabic
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileMainProject" datatype="html">
+        <source>Main Project
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileisMain" datatype="html">
+        <source>
+                            Is Main
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileBuildingNameInEnglish" datatype="html">
+        <source>Building Name in English
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">154</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileBuildingNameInArabic" datatype="html">
+        <source>Building Name In Arabic
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">169</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">146</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileBuildingCode" datatype="html">
+        <source>Building Code
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">164</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileBuildingNumber" datatype="html">
+        <source>Building Number
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">201</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">178</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileDevPartNumber" datatype="html">
+        <source>Dev Part Number
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">219</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">196</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileParcelId" datatype="html">
+        <source>
+                            Parcel Id
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">233</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">210</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileProjectType" datatype="html">
+        <source>Project Type
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">265</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">242</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileTotalBuiltUpArea" datatype="html">
+        <source>Total Built Up Area
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">292</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">269</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileCompletionCertificateDate" datatype="html">
+        <source>Completion Certificate Date
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">306</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">283</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileMeterTotalArea" datatype="html">
+        <source>Meter Total Area
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">329</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">306</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileMeterJointArea" datatype="html">
+        <source>Meter Joint Area</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">346</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">323</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileMeterNetArea" datatype="html">
+        <source>Meter Net Area</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">359</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">336</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileLatitude" datatype="html">
+        <source>Latitude</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">375</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">352</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileLongitude" datatype="html">
+        <source>Longitude</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">388</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">365</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileAccountTrustee" datatype="html">
+        <source>Account Trustee
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">406</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">383</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileAccountOpeningDate" datatype="html">
+        <source>Account Opening Date
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">433</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">410</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileEscrowAccountNumber" datatype="html">
+        <source>Escrow Account Number 
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">451</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">428</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileExpiryDate" datatype="html">
+        <source>Expiry Date
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">472</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">449</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileRegistrationDate" datatype="html">
+        <source>Registration Date
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">495</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">472</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileBuildingPermitNumber" datatype="html">
+        <source>Building permit number
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">525</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">502</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileBuildingPermitExpiryDate" datatype="html">
+        <source>Building permit expiry date
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">537</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">514</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileBuildingPermitIssuanceDate" datatype="html">
+        <source>Building permit issuance date
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">555</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">532</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileProjectCompletionpercentage" datatype="html">
+        <source>Project Completion percentage
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">576</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">553</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileProjectStatus" datatype="html">
+        <source>Project Status
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">568</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileConsultantContractValue" datatype="html">
+        <source>Consultant contract Value
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">620</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">597</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileConsultant" datatype="html">
+        <source>Consultant
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">634</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">611</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileContractorContractValue" datatype="html">
+        <source>Contractor contract Value
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">663</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">640</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileContractor" datatype="html">
+        <source>Contractor
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">677</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">654</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileContractorContractEndDate" datatype="html">
+        <source>Contractor Contract End Date
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">706</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">683</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileContractorContractStartDate" datatype="html">
+        <source>Contractor Contract start Date
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">724</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">701</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileTotalProjectCost" datatype="html">
+        <source>Total project cost
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">745</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">722</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileActualStartDate" datatype="html">
+        <source>Actual Start Date
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">754</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">731</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileTechDescription" datatype="html">
+        <source>Tech Description
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">775</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">752</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileTypeOfUse" datatype="html">
+        <source>Type of use
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">790</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">767</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileNumberofSwimmingPool" datatype="html">
+        <source>Number of Swimming Pool</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">812</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">789</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileNumberofElevators" datatype="html">
+        <source>Number of Elevators</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">820</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">797</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileNumberofFlats" datatype="html">
+        <source>Number of Flats</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">831</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">808</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileNumberofFloors" datatype="html">
+        <source>Number of Floors</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">839</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">816</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileNumberofShops" datatype="html">
+        <source>Number of Shops</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">850</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">827</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileNumberofOffices" datatype="html">
+        <source>Number of Offices</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">858</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">835</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileNumberofCarParks" datatype="html">
+        <source>Number of Car Parks</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">871</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">848</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="unitProfileProject" datatype="html">
         <source>
                             Project
@@ -558,7 +1123,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileUnitNumber" datatype="html">
@@ -571,7 +1136,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">66</context>
+          <context context-type="linenumber">68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileUnitUse" datatype="html">
@@ -583,7 +1148,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">84</context>
+          <context context-type="linenumber">86</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileUnitType" datatype="html">
@@ -597,7 +1162,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">110</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileLand" datatype="html">
@@ -609,7 +1174,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">138</context>
+          <context context-type="linenumber">140</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileFloorNumber" datatype="html">
@@ -622,7 +1187,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">164</context>
+          <context context-type="linenumber">166</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterTotalSoldArea" datatype="html">
@@ -635,7 +1200,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">188</context>
+          <context context-type="linenumber">190</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterJointSoldArea" datatype="html">
@@ -646,7 +1211,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">206</context>
+          <context context-type="linenumber">208</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterNetSoldArea" datatype="html">
@@ -657,7 +1222,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">219</context>
+          <context context-type="linenumber">221</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterTotalActualArea" datatype="html">
@@ -668,7 +1233,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">237</context>
+          <context context-type="linenumber">239</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterJointActualArea" datatype="html">
@@ -679,7 +1244,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">253</context>
+          <context context-type="linenumber">255</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterNetActualArea" datatype="html">
@@ -690,7 +1255,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">266</context>
+          <context context-type="linenumber">268</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileServantRoomsCount" datatype="html">
@@ -701,7 +1266,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">282</context>
+          <context context-type="linenumber">284</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileRoomsCount" datatype="html">
@@ -712,7 +1277,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">295</context>
+          <context context-type="linenumber">297</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileDiningRoomsCount" datatype="html">
@@ -723,7 +1288,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">311</context>
+          <context context-type="linenumber">313</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileLivingRoomsCount" datatype="html">
@@ -734,7 +1299,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">324</context>
+          <context context-type="linenumber">326</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileLoungesCount" datatype="html">
@@ -745,7 +1310,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">340</context>
+          <context context-type="linenumber">342</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileBathroomsCount" datatype="html">
@@ -756,7 +1321,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">353</context>
+          <context context-type="linenumber">355</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileBalconyCount" datatype="html">
@@ -767,7 +1332,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">369</context>
+          <context context-type="linenumber">371</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileKitchensCount" datatype="html">
@@ -778,7 +1343,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">382</context>
+          <context context-type="linenumber">384</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileOthers" datatype="html">
@@ -789,7 +1354,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">398</context>
+          <context context-type="linenumber">400</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileServicesDescription" datatype="html">
@@ -800,7 +1365,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">411</context>
+          <context context-type="linenumber">413</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileSitePlan" datatype="html">
@@ -811,7 +1376,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">429</context>
+          <context context-type="linenumber">431</context>
         </context-group>
       </trans-unit>
     </body>
