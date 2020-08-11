@@ -13,6 +13,24 @@
   <ul class="navbar-nav">
     <li class="nav-item">
       <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>      </li>
+    <li class="nav-item d-none d-sm-inline-block " [routerLinkActive]="['active']">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        More Links
+      </a>
+      <div class="dropdown-menu rtl" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/customer/new">
+          <i class="fas fa-plus"></i> Customer
+        </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/project/new">
+          <i class="fas fa-plus"></i> Project
+        </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/unit/new">
+          <i class="fas fa-plus"></i> Unit
+        </a>
+      </div>
+    </li>
     <li [routerLink]="['/my_tasks']" class="nav-item d-none d-sm-inline-block" [routerLinkActive]="['active']">
       <a href="/my_tasks" class="nav-link" i18n="@@headerMyTaskLabel">My Tasks</a>      </li>
     <li [routerLink]="['/login']" class="nav-item d-none d-sm-inline-block">
