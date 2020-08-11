@@ -269,7 +269,7 @@
               <label class="col-sm-3 col-form-label" i18n="@@projectProfileTotalBuiltUpArea">Total Built Up Area
               </label>
               <div class="col-sm-9">
-                <input name="totalBuiltUpArea" type="text" class="form-control" [(ngModel)]="formData.totalBuiltUpArea" #totalBuiltUpArea="ngModel" numbersOnly precision="0">
+                <input name="totalBuiltUpArea" type="text" class="form-control" [(ngModel)]="formData.totalBuiltUpArea" #totalBuiltUpArea="ngModel" numbersOnly precision="2">
                 <div *ngIf="totalBuiltUpArea.invalid && (totalBuiltUpArea.dirty || totalBuiltUpArea.touched)" class="alert alert-danger">
                   <div *ngIf="totalBuiltUpArea.errors?.pattern || totalBuiltUpArea.errors?.minlength">
                     Enter valid Total Built Up Area
@@ -306,7 +306,7 @@
               <label class="col-sm-3 col-form-label" i18n="@@projectProfileMeterTotalArea">Meter Total Area
               </label>
               <div class="col-sm-9">
-                <input name="meterTotalArea" (change)="calculateJointSoldArea()" type="text" class="form-control" [(ngModel)]="formData.meterTotalArea" #meterTotalArea="ngModel" numbersOnly precision="0">
+                <input name="meterTotalArea" (change)="calculateJointSoldArea()" type="text" class="form-control" [(ngModel)]="formData.meterTotalArea" #meterTotalArea="ngModel" numbersOnly precision="2">
                 <div *ngIf="meterTotalArea.invalid && (meterTotalArea.dirty || meterTotalArea.touched)" class="alert alert-danger">
                   <div *ngIf="meterTotalArea.errors?.minlength">
                     Enter valid Meter Total Area
@@ -322,7 +322,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@projectProfileMeterJointArea">Meter Joint Area</label>
               <div class="col-sm-9">
-                <input name="meterJointArea" type="text" class="form-control" [(ngModel)]="formData.meterJointArea" #meterJointArea="ngModel" numbersOnly precision="0">
+                <input name="meterJointArea" type="text" class="form-control" [(ngModel)]="formData.meterJointArea" #meterJointArea="ngModel" numbersOnly precision="2">
                 <div *ngIf="meterJointArea.invalid && (meterJointArea.dirty || meterJointArea.touched)" class="alert alert-danger">
                   <div *ngIf="meterJointArea.errors?.pattern || meterJointArea.errors?.minlength">
                     Enter valid Meter Joint Area
@@ -335,7 +335,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@projectProfileMeterNetArea">Meter Net Area</label>
               <div class="col-sm-9">
-                <input name="meterNetArea" type="text" (change)="calculateJointSoldArea()" class="form-control" [(ngModel)]="formData.meterNetArea" #meterNetArea="ngModel" numbersOnly precision="0">
+                <input name="meterNetArea" type="text" (change)="calculateJointSoldArea()" class="form-control" [(ngModel)]="formData.meterNetArea" #meterNetArea="ngModel" numbersOnly precision="2">
                 <div *ngIf="meterNetArea.invalid && (meterNetArea.dirty || meterNetArea.touched)" class="alert alert-danger">
                   <div *ngIf="meterNetArea.errors?.pattern || meterNetArea.errors?.minlength">
                     Enter valid Meter Net Area

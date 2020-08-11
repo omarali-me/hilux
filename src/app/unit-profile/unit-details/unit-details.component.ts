@@ -152,11 +152,15 @@ export class UnitDetailsComponent implements OnInit {
 
   calculateJointActualArea() {
     // should automatically calculated = Meter Total Actual Area - Meter Net Actual Area
-    this.formData.meterJointActualArea = _.toInteger(this.formData.meterTotalActualArea) - _.toInteger(this.formData.meterNetActualArea)
+    const meterTotalActualArea = this.formData.meterTotalActualArea || null;
+    const meterNetActualArea = this.formData.meterNetActualArea || null;
+    this.formData.meterJointActualArea = _.toNumber(meterTotalActualArea) - _.toNumber(meterNetActualArea);
   }
 
   calculateJointSoldArea() {
     // should automatically calculated = Meter Total Sold Area - Meter Net Sold Area
-    this.formData.meterJointSoldArea = _.toInteger(this.formData.meterTotalSoldArea) - _.toInteger(this.formData.meterNetSoldArea)
+    const meterTotalSoldArea = this.formData.meterTotalSoldArea || null;
+    const meterNetSoldArea = this.formData.meterNetSoldArea || null;
+    this.formData.meterJointSoldArea = _.toNumber(meterTotalSoldArea) - _.toNumber(meterNetSoldArea)
   }
 }

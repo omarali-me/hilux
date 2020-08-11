@@ -152,6 +152,8 @@ export class ProjectDetailsComponent implements OnInit {
 
   calculateJointSoldArea() {
     // should automatically calculated = Meter Total Sold Area - Meter Net Sold Area
-    this.formData.meterJointSoldArea = _.toInteger(this.formData.meterTotalSoldArea) - _.toInteger(this.formData.meterNetSoldArea)
+    const meterTotalSoldArea = this.formData.meterTotalSoldArea || null;
+    const meterNetSoldArea = this.formData.meterNetSoldArea || null
+    this.formData.meterJointSoldArea = _.toNumber(meterTotalSoldArea) - _.toNumber(meterNetSoldArea)
   }
 }
