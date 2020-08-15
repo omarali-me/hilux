@@ -1,4 +1,4 @@
-<div *ngIf="field.auxInfo.type == 'date'">
+<div *ngIf="getFieldType() == 'date'">
   <div class="d-flex">
     <input type="text"
       class="form-control"
@@ -7,27 +7,30 @@
       [required]="isRequired()"
       [name]="getName(field.fieldName.en)"
       [id]="field.fieldID"
-      [min]="field.auxInfo?.minLength"
-      [max]="field.auxInfo?.maxLength"
+      [min]="getDate(field.auxInfo?.minLength)"
+      [max]="getDate(field.auxInfo?.maxLength)"
       [(ngModel)]="formData[field.fieldID]"
       #ngModel="ngModel"
       [owlDateTime]="dt1"
       [owlDateTimeTrigger]="dt1"
+      (dateTimeChange)="formatDate(field.fieldID)"
     >
     <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
   </div>
-  <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)" class="alert alert-danger">
-    <div *ngIf="ngModel.errors?.required">
-      {{getText(field, 'errorMsg')}}
-    </div>
+  <div class="alert alert-danger" *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) && ngModel.errors?.required">
+    {{getText(field, 'errorMsg')}}
+  </div>
 
-    <div *ngIf="showErrors(field.fieldID)">
-      {{getErrors(field.fieldID)}}
-    </div>
+  <div class="alert alert-danger" *ngIf="ngModel.invalid && (ngModel.errors?.owlDateTimeMax || ngModel.errors?.owlDateTimeMin)">
+    {{getText(field, 'errorMsg')}}
+  </div>
+
+  <div class="alert alert-danger" *ngIf="showErrors(field.fieldID)">
+    {{getErrors(field.fieldID)}}
   </div>
 </div>
 
-<div *ngIf="field.auxInfo.type == 'datetime'">
+<div *ngIf="getFieldType() == 'datetime'">
   <div class="d-flex">
     <input type="text"
       class="form-control"
@@ -36,8 +39,8 @@
       [required]="isRequired()"
       [name]="getName(field.fieldName.en)"
       [id]="field.fieldID"
-      [min]="field.auxInfo?.minLength"
-      [max]="field.auxInfo?.maxLength"
+      [min]="getDate(field.auxInfo?.minLength)"
+      [max]="getDate(field.auxInfo?.maxLength)"
       [(ngModel)]="formData[field.fieldID]"
       #ngModel="ngModel"
       [owlDateTime]="dt2"
@@ -45,18 +48,21 @@
     >
     <owl-date-time #dt2></owl-date-time>
   </div>
-  <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)" class="alert alert-danger">
-    <div *ngIf="ngModel.errors?.required">
-      {{getText(field, 'errorMsg')}}
-    </div>
 
-    <div *ngIf="showErrors(field.fieldID)">
-      {{getErrors(field.fieldID)}}
-    </div>
+  <div class="alert alert-danger" *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) && ngModel.errors?.required">
+    {{getText(field, 'errorMsg')}}
+  </div>
+
+  <div class="alert alert-danger" *ngIf="ngModel.invalid && (ngModel.errors?.owlDateTimeMax || ngModel.errors?.owlDateTimeMin)">
+    {{getText(field, 'errorMsg')}}
+  </div>
+
+  <div class="alert alert-danger" *ngIf="showErrors(field.fieldID)">
+    {{getErrors(field.fieldID)}}
   </div>
 </div>
 
-<div *ngIf="field.auxInfo.type == 'daterange'">
+<div *ngIf="getFieldType() == 'daterange'">
   <div class="d-flex">
     <input type="text"
       class="form-control"
@@ -65,8 +71,8 @@
       [required]="isRequired()"
       [name]="getName(field.fieldName.en)"
       [id]="field.fieldID"
-      [min]="field.auxInfo?.minLength"
-      [max]="field.auxInfo?.maxLength"
+      [min]="getDate(field.auxInfo?.minLength)"
+      [max]="getDate(field.auxInfo?.maxLength)"
       [(ngModel)]="formData[field.fieldID]"
       #ngModel="ngModel"
       [owlDateTime]="dt3"
@@ -75,13 +81,15 @@
     >
     <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
   </div>
-  <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)" class="alert alert-danger">
-    <div *ngIf="ngModel.errors?.required">
-      {{getText(field, 'errorMsg')}}
-    </div>
+  <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) && ngModel.errors?.required">
+    {{getText(field, 'errorMsg')}}
+  </div>
 
-    <div *ngIf="showErrors(field.fieldID)">
-      {{getErrors(field.fieldID)}}
-    </div>
+  <div class="alert alert-danger" *ngIf="ngModel.invalid && (ngModel.errors?.owlDateTimeMax || ngModel.errors?.owlDateTimeMin)">
+    {{getText(field, 'errorMsg')}}
+  </div>
+
+  <div *ngIf="showErrors(field.fieldID)">
+    {{getErrors(field.fieldID)}}
   </div>
 </div>

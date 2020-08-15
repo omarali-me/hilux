@@ -76,4 +76,23 @@ export class DateFieldComponent implements OnInit {
   isRequired() {
     return this.service.isRequired(this.field.required);
   }
+
+  formatDate(name: any) {
+    this.formData[name] = this.service.formatDate(this.formData, name);
+  }
+
+  formatDateTime(name: any) {
+    this.formData[name] = this.service.formatDate(this.formData, name, 'yyyy-MM-dd hh:mm a');
+  }
+
+  getFieldType() {
+    return this.field.auxInfo && this.field.auxInfo.type && this.field.auxInfo.type.toLowerCase();
+  }
+
+  getDate(date: any) {
+    if (!!date)
+      return new Date(date);
+    else
+      return null
+  }
 }
