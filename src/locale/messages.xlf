@@ -199,8 +199,8 @@
           <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileNameInEnglish" datatype="html">
-        <source>Name in English
+      <trans-unit id="customerProfileNameInArabic" datatype="html">
+        <source>Name In Arabic
                               <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
@@ -212,8 +212,8 @@
           <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileNameInArabic" datatype="html">
-        <source>Name In Arabic
+      <trans-unit id="customerProfileNameInEnglish" datatype="html">
+        <source>Name in English
                               <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
