@@ -86,5 +86,25 @@ export class AutocompleteFieldComponent implements OnInit {
 
   getDefaultValue(field_name: any) {
     this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
+    if (!!this.formData[this.field.fieldID])
+      this.prepareDisplayValues();
   }
+
+  isRequired() {
+    return this.service.isRequired(this.field.required);
+  }
+
+  setDisplayValue(option: any) {
+    this.formData[this.field.fieldID + '_displayValue'] = option && option.value.ar;
+  }
+
+  prepareDisplayValues() {
+    this.dataOptions.subscribe(data => {
+      let defaultOption = data.find(d => d.key == this.formData[this.field.fieldID]);
+      if (!!defaultOption) {
+        this.setDisplayValue(defaultOption);
+      }
+    })
+  }
+
 }

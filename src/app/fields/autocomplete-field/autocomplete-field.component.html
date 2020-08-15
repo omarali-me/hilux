@@ -2,7 +2,7 @@
   class="rtl"
   [items]="dataOptions | async"
   [class]="customClass"
-  [required]="field.required"
+  [required]="isRequired()"
   [name]="getName(field.fieldName.en)"
   [id]="field.fieldID"
   [(ngModel)]="formData[field.fieldID]"
@@ -15,9 +15,12 @@
   [loading]="dataOptionsLoading"
   typeToSearchText="Please enter 4 or more characters"
   [typeahead]="searchInput$"
+  (change)="setDisplayValue($event)"
   #ngModel="ngModel"
 >
 </ng-select>
+
+<input type="hidden" [name]="getName(field.fieldName.en) + '_displayValue'" [(ngModel)]="formData[field.fieldID + '_displayValue']">
 
 <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
     class="alert alert-danger">
