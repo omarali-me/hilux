@@ -20,7 +20,7 @@
                   bindLabel="value.ar"
                   bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث"
-                  #developer="ngModel"
+                  #developer="ngModel" disabled="true"
                 >
                 </ng-select>
                 <div *ngIf="developer.invalid && (developer.dirty || developer.touched)" class="alert alert-danger">
@@ -40,7 +40,7 @@
                 <span *ngIf="isOneOrOtherNameRequired('nameEn')">*</span>
               </label>
               <div class="col-sm-9">
-                <input type="text" name="nameEn" [required]="isOneOrOtherNameRequired('nameEn')" class="form-control" [(ngModel)]="formData.nameEn" #nameEn="ngModel">
+                <input type="text" name="nameEn" [required]="isOneOrOtherNameRequired('nameEn')" class="form-control" [(ngModel)]="formData.nameEn" #nameEn="ngModel" disabled="true">
                 <div *ngIf="nameEn.invalid && (nameEn.dirty || nameEn.touched)" class="alert alert-danger">
                   <div *ngIf="nameEn.errors?.required">
                     Name in English can not be blank
@@ -55,7 +55,7 @@
                 <span *ngIf="isOneOrOtherNameRequired('nameAr')">*</span>
               </label>
               <div class="col-sm-9">
-                <input type="text" name="nameAr" [required]="isOneOrOtherNameRequired('nameAr')" class="form-control" [(ngModel)]="formData.nameAr" #nameAr="ngModel">
+                <input type="text" name="nameAr" [required]="isOneOrOtherNameRequired('nameAr')" class="form-control" [(ngModel)]="formData.nameAr" #nameAr="ngModel" disabled="true">
                 <div *ngIf="nameAr.invalid && (nameAr.dirty || nameAr.touched)" class="alert alert-danger">
                   <div *ngIf="nameAr.errors?.required">
                     Name in Arabic can not be blank
@@ -85,7 +85,7 @@
                   bindLabel="value.ar"
                   bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث"
-                  #mainProject="ngModel"
+                  #mainProject="ngModel" disabled="true"
                 >
                 </ng-select>
                 <div *ngIf="mainProject.invalid && (mainProject.dirty || mainProject.touched)" class="alert alert-danger">
@@ -112,7 +112,7 @@
                   bindLabel="value.ar"
                   bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث"
-                  #isMain="ngModel"
+                  #isMain="ngModel" disabled="true"
                 >
                 </ng-select>
                 <div *ngIf="isMain.invalid && (isMain.dirty || isMain.touched)" class="alert alert-danger">
@@ -481,7 +481,7 @@
                 required="true"
                 [owlDateTime]="dt9"
                 [owlDateTimeTrigger]="dt9"
-                #registrationDate="ngModel"
+                #registrationDate="ngModel" disabled="true"
                 >
                 <owl-date-time [pickerType]="'calendar'" #dt9></owl-date-time>
                 <div *ngIf="registrationDate.invalid && (registrationDate.dirty || registrationDate.touched)" class="alert alert-danger">
@@ -807,7 +807,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@projectProfileNumberofFlats">Number of Flats</label>
               <div class="col-sm-9">
-                <input name="numberofFlats" type="text" class="form-control" [(ngModel)]="formData.numberofFlats" #numberofFlats="ngModel" numbersOnly precision="0">
+                <input name="numberofFlats" type="text" class="form-control" [(ngModel)]="formData.numberofFlats" #numberofFlats="ngModel" numbersOnly precision="0" disabled="true">
               </div>
             </div>
           </div>
@@ -815,7 +815,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@projectProfileNumberofFloors">Number of Floors</label>
               <div class="col-sm-9">
-                <input name="numberofFloors" type="text" class="form-control" [(ngModel)]="formData.numberofFloors" #numberofFloors="ngModel" numbersOnly precision="0">
+                <input name="numberofFloors" type="text" class="form-control" [(ngModel)]="formData.numberofFloors" #numberofFloors="ngModel" numbersOnly precision="0" disabled="true">
               </div>
             </div>
           </div>
@@ -826,7 +826,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@projectProfileNumberofShops">Number of Shops</label>
               <div class="col-sm-9">
-                <input name="numberofShops" type="text" class="form-control" [(ngModel)]="formData.numberofShops" #numberofShops="ngModel" numbersOnly precision="0">
+                <input name="numberofShops" type="text" class="form-control" [(ngModel)]="formData.numberofShops" #numberofShops="ngModel" numbersOnly precision="0" disabled="true">
               </div>
             </div>
           </div>
@@ -834,7 +834,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@projectProfileNumberofOffices">Number of Offices</label>
               <div class="col-sm-9">
-                <input name="numberofOffices" type="text" class="form-control" [(ngModel)]="formData.numberofOffices" #numberofOffices="ngModel" numbersOnly precision="0">
+                <input name="numberofOffices" type="text" class="form-control" [(ngModel)]="formData.numberofOffices" #numberofOffices="ngModel" numbersOnly precision="0" disabled="true">
               </div>
             </div>
           </div>
@@ -847,7 +847,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@projectProfileNumberofCarParks">Number of Car Parks</label>
               <div class="col-sm-9">
-                <input name="numberofCarParks" type="text" class="form-control" [(ngModel)]="formData.numberofCarParks" #numberofCarParks="ngModel" numbersOnly precision="0">
+                <input name="numberofCarParks" type="text" class="form-control" [(ngModel)]="formData.numberofCarParks" #numberofCarParks="ngModel" numbersOnly precision="0" disabled="true">
               </div>
             </div>
           </div>

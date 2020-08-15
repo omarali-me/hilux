@@ -54,10 +54,11 @@
                   #dateOfDeath="ngModel"
                 >
                 <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
-                <div *ngIf="dateOfDeath.invalid && (dateOfDeath.dirty || dateOfDeath.touched)" class="alert alert-danger">
-                  <div *ngIf="dateOfDeath.errors?.required">
-                    Date of Death can not be blank
-                  </div>
+                <div class="alert alert-danger" *ngIf="dateOfDeath.invalid && (dateOfDeath.dirty || dateOfDeath.touched) && dateOfDeath.errors?.required">
+                  Date of Death can not be blank
+                </div>
+                <div class="alert alert-danger" *ngIf="dateOfDeath.invalid && dateOfDeath.errors?.owlDateTimeMax">
+                  Enter valid Date of Death
                 </div>
               </div>
             </div>
@@ -65,21 +66,6 @@
         </div>
 
         <div class="form-group row">
-          <div class="col-sm-6">
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@customerProfileNameInEnglish">Name in English
-                <span *ngIf="isOneOrOtherNameRequired('nameEn')">*</span>
-              </label>
-              <div class="col-sm-9">
-                <input type="text" name="nameEn" [required]="isOneOrOtherNameRequired('nameEn')" class="form-control" [(ngModel)]="formData.nameEn" #nameEn="ngModel">
-                <div *ngIf="nameEn.invalid && (nameEn.dirty || nameEn.touched)" class="alert alert-danger">
-                  <div *ngIf="nameEn.errors?.required">
-                    Name in English can not be blank
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@customerProfileNameInArabic">Name In Arabic
@@ -90,6 +76,21 @@
                 <div *ngIf="nameAr.invalid && (nameAr.dirty || nameAr.touched)" class="alert alert-danger">
                   <div *ngIf="nameAr.errors?.required">
                     Name in Arabic can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileNameInEnglish">Name in English
+                <span *ngIf="isOneOrOtherNameRequired('nameEn')">*</span>
+              </label>
+              <div class="col-sm-9">
+                <input type="text" name="nameEn" [required]="isOneOrOtherNameRequired('nameEn')" class="form-control" [(ngModel)]="formData.nameEn" #nameEn="ngModel">
+                <div *ngIf="nameEn.invalid && (nameEn.dirty || nameEn.touched)" class="alert alert-danger">
+                  <div *ngIf="nameEn.errors?.required">
+                    Name in English can not be blank
                   </div>
                 </div>
               </div>
@@ -134,10 +135,11 @@
                   #emiratesIdExpiryDate="ngModel"
                 >
                 <owl-date-time [pickerType]="'calendar'" #dt4></owl-date-time>
-                <div *ngIf="emiratesIdExpiryDate.invalid && (emiratesIdExpiryDate.dirty || emiratesIdExpiryDate.touched)" class="alert alert-danger">
-                  <div *ngIf="emiratesIdExpiryDate.errors?.required">
-                    Emirates ID expiry date can not be blank
-                  </div>
+                <div class="alert alert-danger" *ngIf="emiratesIdExpiryDate.invalid && (emiratesIdExpiryDate.dirty || emiratesIdExpiryDate.touched) && emiratesIdExpiryDate.errors?.required">
+                  Emirates ID expiry date can not be blank
+                </div>
+                <div class="alert alert-danger" *ngIf="emiratesIdExpiryDate.invalid && emiratesIdExpiryDate.errors?.owlDateTimeMin">
+                  Enter valid Emirates ID expiry date
                 </div>
               </div>
             </div>
@@ -158,6 +160,9 @@
                 #emiratesIdIssueDate="ngModel"
                 >
                 <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+                <div class="alert alert-danger" *ngIf="emiratesIdIssueDate.invalid && emiratesIdIssueDate.errors?.owlDateTimeMax">
+                  Enter valid Emirates ID expiry date
+                </div>
               </div>
             </div>
           </div>
@@ -195,10 +200,12 @@
                   #passportExpiryDate="ngModel"
                 >
                 <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
-                <div *ngIf="passportExpiryDate.invalid && (passportExpiryDate.dirty || passportExpiryDate.touched)" class="alert alert-danger">
-                  <div *ngIf="passportExpiryDate.errors?.required">
-                    Passport number expiry date can not be blank
-                  </div>
+                
+                <div class="alert alert-danger" *ngIf="passportExpiryDate.invalid && (passportExpiryDate.dirty || passportExpiryDate.touched) && passportExpiryDate.errors?.required">
+                  Passport number expiry date can not be blank
+                </div>
+                <div class="alert alert-danger" *ngIf="passportExpiryDate.invalid &&  passportExpiryDate.errors?.owlDateTimeMin">
+                  Enter Valid Passport number expiry date
                 </div>
               </div>
             </div>
@@ -221,10 +228,12 @@
                   #passportIssueDate="ngModel"
                 >
                 <owl-date-time [pickerType]="'calendar'" #dt5></owl-date-time>
-                <div *ngIf="passportIssueDate.invalid && (passportIssueDate.dirty || passportIssueDate.touched)" class="alert alert-danger">
-                  <div *ngIf="passportIssueDate.errors?.required">
-                    Passport number issuance date can not be blank
-                  </div>
+                
+                <div class="alert alert-danger" *ngIf="passportIssueDate.invalid && (passportIssueDate.dirty || passportIssueDate.touched) && passportIssueDate.errors?.required">
+                  Passport number issuance date can not be blank
+                </div>
+                <div class="alert alert-danger" *ngIf="passportIssueDate.invalid && passportIssueDate.errors?.owlDateTimeMax">
+                  Enter Valid Passport number issuance date
                 </div>
               </div>
             </div>
@@ -287,10 +296,11 @@
                   #dateOfBirth="ngModel"
                 >
                 <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
-                <div *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)" class="alert alert-danger">
-                  <div *ngIf="dateOfBirth.errors?.required">
-                    Date of Birth can not be blank
-                  </div>
+                <div class="alert alert-danger" *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched) && dateOfBirth.errors?.required">
+                  Date of Birth can not be blank
+                </div>
+                <div class="alert alert-danger" *ngIf="dateOfBirth.invalid && dateOfBirth.errors?.owlDateTimeMax">
+                  Enter valid Date of Birth
                 </div>
               </div>
             </div>
