@@ -103,7 +103,7 @@ export class UnitProfileComponent implements OnInit {
   }
 
   getAttachments() {
-    return this.formData.profileImage ? [this.formData.profileImage] : [];
+    return this.formData.sitePlan || [];
   }
 
   isCustomerDisabled() {

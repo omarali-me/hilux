@@ -85,21 +85,6 @@
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileNameInEnglish">Name in English
-                              <span *ngIf="isOneOrOtherNameRequired('nameEn')">*</span>
-                            </label>
-                            <div class="col-sm-9">
-                              <input type="text" name="nameEn" [required]="isOneOrOtherNameRequired('nameEn')" class="form-control" [(ngModel)]="formData.nameEn" #nameEn="ngModel">
-                              <div *ngIf="nameEn.invalid && (nameEn.dirty || nameEn.touched)" class="alert alert-danger">
-                                <div *ngIf="nameEn.errors?.required">
-                                  Name in English can not be blank
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileNameInArabic">Name In Arabic
                               <span *ngIf="isOneOrOtherNameRequired('nameAr')">*</span>
                             </label>
@@ -108,6 +93,21 @@
                               <div *ngIf="nameAr.invalid && (nameAr.dirty || nameAr.touched)" class="alert alert-danger">
                                 <div *ngIf="nameAr.errors?.required">
                                   Name in Arabic can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileNameInEnglish">Name in English
+                              <span *ngIf="isOneOrOtherNameRequired('nameEn')">*</span>
+                            </label>
+                            <div class="col-sm-9">
+                              <input type="text" name="nameEn" [required]="isOneOrOtherNameRequired('nameEn')" class="form-control" [(ngModel)]="formData.nameEn" #nameEn="ngModel">
+                              <div *ngIf="nameEn.invalid && (nameEn.dirty || nameEn.touched)" class="alert alert-danger">
+                                <div *ngIf="nameEn.errors?.required">
+                                  Name in English can not be blank
                                 </div>
                               </div>
                             </div>
