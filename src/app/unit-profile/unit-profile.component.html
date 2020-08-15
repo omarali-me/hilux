@@ -42,7 +42,7 @@
                               bindLabel="value.ar"
                               bindValue="key"
                               notFoundText="لا يوجد نتائج للبحث"
-                              #project="ngModel"
+                              #project="ngModel" (open)="loadProjectsOptions()"
                             >
                             </ng-select>
                             <div *ngIf="project.invalid && (project.dirty || project.touched)" class="alert alert-danger">
@@ -63,8 +63,8 @@
                               class="rtl"
                               required="true"
                               [items]="developerOptions"
-                              name="developer"
-                              [(ngModel)]="formData.developer"
+                              name="developerId"
+                              [(ngModel)]="formData.developerId"
                               bindLabel="value.ar"
                               bindValue="key"
                               notFoundText="لا يوجد نتائج للبحث"

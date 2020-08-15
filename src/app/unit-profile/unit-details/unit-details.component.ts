@@ -13,7 +13,7 @@ import * as _ from 'lodash';
   styleUrls: ['./unit-details.component.css']
 })
 export class UnitDetailsComponent implements OnInit {
-  formData: any;
+  formData: any = {};
   profile$: Observable<any>;
   developerOptions: any;
   projectsOptions: any;
@@ -72,7 +72,7 @@ export class UnitDetailsComponent implements OnInit {
   }
 
   loadProjectsOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projects`)
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projects`, { developerId: this.formData.developerId })
     .subscribe((data) => {
       this.projectsOptions = data;
     })
