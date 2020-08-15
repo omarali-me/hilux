@@ -518,12 +518,18 @@
                   name="buildingPermitExpiryDate"
                   class="form-control"
                   [(ngModel)]="formData.buildingPermitExpiryDate"
-                  (dateTimeChange)="formatDate('buildingPermitExpiryDate')"
+                  (dateTimeChange)="formatDate('buildingPermitExpiryDate')" [min]="minDate"
                   [owlDateTime]="dt1"
                   [owlDateTimeTrigger]="dt1"
                   #buildingPermitExpiryDate="ngModel"
                 >
                 <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                <div class="alert alert-danger" *ngIf="buildingPermitExpiryDate.invalid && (buildingPermitExpiryDate.dirty || buildingPermitExpiryDate.touched) && buildingPermitExpiryDate.errors?.required">
+                  Building permit expiry date can not be blank
+                </div>
+                <div class="alert alert-danger" *ngIf="buildingPermitExpiryDate.invalid && buildingPermitExpiryDate.errors?.owlDateTimeMin">
+                  Enter valid Building permit expiry date
+                </div>
               </div>
             </div>
           </div>
@@ -535,13 +541,19 @@
                 <input type="text"
                 name="buildingPermitIssuanceDate"
                 class="form-control"
-                (dateTimeChange)="formatDate('buildingPermitIssuanceDate')"
+                (dateTimeChange)="formatDate('buildingPermitIssuanceDate')" [max]="minDate"
                 [(ngModel)]="formData.buildingPermitIssuanceDate"
                 [owlDateTime]="dt10"
                 [owlDateTimeTrigger]="dt10"
                 #buildingPermitIssuanceDate="ngModel"
                 >
                 <owl-date-time [pickerType]="'calendar'" #dt10></owl-date-time>
+                <div class="alert alert-danger" *ngIf="buildingPermitIssuanceDate.invalid && (buildingPermitIssuanceDate.dirty || buildingPermitIssuanceDate.touched) && buildingPermitIssuanceDate.errors?.required">
+                  Building permit issuance date can not be blank
+                </div>
+                <div class="alert alert-danger" *ngIf="buildingPermitIssuanceDate.invalid && buildingPermitIssuanceDate.errors?.owlDateTimeMax">
+                  Enter valid Building permit issuance date
+                </div>
               </div>
             </div>
           </div>
