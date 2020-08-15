@@ -90,4 +90,7 @@ export class EntitySelectComponent implements OnInit {
     return errors;
   }
 
+  isRequired() {
+    return this.service.isRequired(this.field.required);
+  }
 }

@@ -172,4 +172,8 @@ export class FileUploadComponent implements OnInit {
         return 'file';
     }
   }
+  
+  isRequired() {
+    return this.service.isRequired(this.field.required);
+  }
 }

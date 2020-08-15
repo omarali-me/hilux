@@ -89,4 +89,8 @@ export class StepSelectComponent implements OnInit {
   getName(field_name) {
     return this.service.getFieldName(field_name, this.row, this.index);
   }
+
+  isRequired() {
+    return this.service.isRequired(this.field.required);
+  }
 }

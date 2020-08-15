@@ -33,7 +33,7 @@
           </div>
         </div>
 
-        <input type="hidden" [name]="getName(field.fieldName.en)" [required]="field.required" #ngModel="ngModel" [(ngModel)]="formData[field.fieldID]">
+        <input type="hidden" [name]="getName(field.fieldName.en)" [required]="isRequired()" #ngModel="ngModel" [(ngModel)]="formData[field.fieldID]">
 
         <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
           class="alert alert-danger">

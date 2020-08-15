@@ -2,7 +2,7 @@
   class="form-control"
   rows="3"
   [placeholder]="getText(field, 'placeholder')"
-  [required]="field.required"
+  [required]="isRequired()"
   [name]="getName(field.fieldName.en)"
   [id]="field.fieldID"
   [minlength]="field.auxInfo?.minLength"

@@ -72,4 +72,8 @@ export class DateFieldComponent implements OnInit {
       this.formData[this.field.fieldID] = new Date(value);
     }
   }
+
+  isRequired() {
+    return this.service.isRequired(this.field.required);
+  }
 }

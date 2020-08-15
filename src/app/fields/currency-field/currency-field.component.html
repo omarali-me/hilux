@@ -7,7 +7,7 @@
     class="form-control"
     [class]="customClass"
     [placeholder]="getText(field, 'placeholder')"
-    [required]="field.required"
+    [required]="isRequired()"
     [name]="getName(field.fieldName.en)"
     [id]="field.fieldID"
     [minlength]="field.auxInfo?.minLength"

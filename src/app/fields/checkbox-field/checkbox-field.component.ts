@@ -93,4 +93,7 @@ export class CheckboxFieldComponent implements OnInit {
     return this.service.getFieldName(field_name, this.row, this.index);
   }
 
+  isRequired() {
+    return this.service.isRequired(this.field.required);
+  }
 }

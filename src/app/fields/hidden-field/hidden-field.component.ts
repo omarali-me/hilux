@@ -58,4 +58,8 @@ export class HiddenFieldComponent implements OnInit {
   getDefaultValue(field_name: any) {
     this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
   }
+
+  isRequired() {
+    return this.service.isRequired(this.field.required);
+  }
 }
