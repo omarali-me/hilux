@@ -198,4 +198,8 @@ export class FieldsService {
     format = format || 'yyyy-MM-dd';
     return this.datePipe.transform(data[name], format)
   }
+
+  isRequired(value: any) {
+    return (value == "true" || value == true);
+  }
 }
