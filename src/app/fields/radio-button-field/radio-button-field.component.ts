@@ -56,6 +56,8 @@ export class RadioButtonFieldComponent implements OnInit {
 
   getDefaultValue(field_name: any) {
     this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
+    if (!!this.formData[this.field.fieldID])
+      this.prepareDisplayValues();
   }
 
   getValue(value: any) {
@@ -75,6 +77,9 @@ export class RadioButtonFieldComponent implements OnInit {
     } else {
       this.formData[this.field.fieldID] = undefined;
     }
+
+    if (!!this.formData[this.field.fieldID])
+      this.prepareDisplayValues();
   }
 
   isChecked(option: any) {
@@ -92,6 +97,17 @@ export class RadioButtonFieldComponent implements OnInit {
 
   isRequired() {
     return this.service.isRequired(this.field.required);
+  }
+
+  setDisplayValue(option: any) {
+    this.formData[this.field.fieldID + '_displayValue'] = option && option.value.ar;
+  }
+
+  prepareDisplayValues() {
+    let defaultOption = this.dataOptions.find(d => d.key == this.formData[this.field.fieldID]);
+    if (!!defaultOption) {
+      this.setDisplayValue(defaultOption);
+    }
   }
 
 }
