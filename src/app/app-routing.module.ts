@@ -23,6 +23,7 @@ import { CompanyProfileResolver } from './shared/company-profile.resolver';
 import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.component';
 import { ProjectDetailsComponent } from './project-profile/project-details/project-details.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { CompanyDetailsComponent } from './company-profile/company-details/company-details.component';
 
 
 const routes: Routes = [
@@ -67,7 +68,7 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
-      { path: 'edit', component: CustomerDetailsComponent }
+      { path: 'edit', component: CompanyDetailsComponent }
     ]
   },
 ];
