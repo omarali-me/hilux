@@ -553,10 +553,10 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileMobileNumber2">Mobile Number 2</label>
                             <div class="col-sm-9">
-                              <input name="phone2" type="text" [maxLength]="17" class="form-control" [(ngModel)]="formData.phone2" numbersOnly precision="0" pattern="[0-9]*">
-                              <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)" class="alert alert-danger">
-                                <div *ngIf="mobileNumber.errors?.pattern">
-                                  Enter Valid Mobile Number
+                              <input name="phone2" type="text" [maxLength]="17" class="form-control" [(ngModel)]="formData.phone2" numbersOnly precision="0" pattern="[0-9]*" #phone2="ngModel">
+                              <div *ngIf="phone2.invalid && (phone2.dirty || phone2.touched)" class="alert alert-danger">
+                                <div *ngIf="phone2.errors?.pattern">
+                                  Enter Valid Mobile Number 2
                                 </div>
                               </div>
                             </div>

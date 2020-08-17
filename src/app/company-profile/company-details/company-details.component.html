@@ -136,11 +136,11 @@
                   (dateTimeChange)="formatDate('licenseExpiryDate')"
                   required="true"
                   [min]="minDate"
-                  [owlDateTime]="dt7"
-                  [owlDateTimeTrigger]="dt7"
+                  [owlDateTime]="dt6"
+                  [owlDateTimeTrigger]="dt6"
                   #licenseExpiryDate="ngModel"
                 >
-                <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+                <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
                 <div class="alert alert-danger" *ngIf="licenseExpiryDate.invalid && (licenseExpiryDate.dirty || licenseExpiryDate.touched) && licenseExpiryDate.errors?.required">
                   License Expiry date can not be blank
                 </div>
