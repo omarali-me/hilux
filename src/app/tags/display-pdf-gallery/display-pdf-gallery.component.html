@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row d-inline-flex" [ngClass]="getClass('col-sm-', data)">
   <div class="col-sm-3" *ngFor="let pdf of data">
     <app-display-pdf [data]="pdf" [customClass]="'mb3'"></app-display-pdf>
   </div>

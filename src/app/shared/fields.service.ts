@@ -46,7 +46,7 @@ export class FieldsService {
   }
 
   private textToNumber(grid_size: string): number {
-    switch (grid_size.toLowerCase()) {
+    switch (grid_size && grid_size.toLowerCase()) {
       case 'one':
         return 1;
       case 'two':

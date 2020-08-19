@@ -21,4 +21,7 @@ export class DisplayFieldDataComponent implements OnInit {
     return this.service.getText(field, key);
   }
 
+  getClass(classname: string, data: any) {
+    return classname + this.service.getFieldWidth(data.displayWidth)
+  }
 }
