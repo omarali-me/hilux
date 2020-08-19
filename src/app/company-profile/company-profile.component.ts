@@ -15,6 +15,9 @@ export class CompanyProfileComponent implements OnInit {
   formData: any = {};
   profile$: Observable<any>;
   emiratesOptions: any;
+  licenseTypeOptions: any;
+  ownerOptions: any;
+  companyTypeOptions: any;
   minDate:any;
 
   constructor(
@@ -28,6 +31,9 @@ export class CompanyProfileComponent implements OnInit {
   ngOnInit(): void {
     this.minDate = new Date();
     this.loadEmiratesOptions();
+    this.loadLicenseTypeOptions();
+    this.loadOwnerOptions();
+    this.loadCompanyTypeOptions();
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
@@ -61,6 +67,27 @@ export class CompanyProfileComponent implements OnInit {
     this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/emirates`)
     .subscribe((data) => {
       this.emiratesOptions = data;
+    })
+  }
+
+  loadLicenseTypeOptions() {
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/licensesTypes`)
+    .subscribe((data) => {
+      this.licenseTypeOptions = data;
+    })
+  }
+
+  loadOwnerOptions() {
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/owners`)
+    .subscribe((data) => {
+      this.ownerOptions = data;
+    })
+  }
+
+  loadCompanyTypeOptions() {
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/companiesTypes`)
+    .subscribe((data) => {
+      this.companyTypeOptions = data;
     })
   }
 
