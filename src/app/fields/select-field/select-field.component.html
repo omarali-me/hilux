@@ -28,6 +28,7 @@
   notFoundText="لا يوجد نتائج للبحث"
   (open)="loadData()"
   (change)="setDisplayValue($event)"
+  [multiple]="isMultiple()"
   #ngModel="ngModel"
 >
 </ng-select>

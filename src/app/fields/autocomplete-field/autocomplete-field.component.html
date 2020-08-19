@@ -16,6 +16,7 @@
   typeToSearchText="Please enter 4 or more characters"
   [typeahead]="searchInput$"
   (change)="setDisplayValue($event)"
+  [multiple]="isMultiple()"
   #ngModel="ngModel"
 >
 </ng-select>

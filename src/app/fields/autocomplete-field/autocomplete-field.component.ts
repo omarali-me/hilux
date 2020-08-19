@@ -85,7 +85,7 @@ export class AutocompleteFieldComponent implements OnInit {
   }
 
   getDefaultValue(field_name: any) {
-    this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
+    this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index || 0);
     if (!!this.formData[this.field.fieldID])
       this.prepareDisplayValues();
   }
@@ -95,16 +95,35 @@ export class AutocompleteFieldComponent implements OnInit {
   }
 
   setDisplayValue(option: any) {
-    this.formData[this.field.fieldID + '_displayValue'] = option && option.value.ar;
+    if (this.isMultiple()) {
+      this.formData[this.field.fieldID + '_displayValue'] = option.length && option.map(o => o.value && o.value.ar).filter(r => r);
+    } else {
+      this.formData[this.field.fieldID + '_displayValue'] = option && option.value.ar;
+    }
   }
 
   prepareDisplayValues() {
     this.dataOptions.subscribe(data => {
-      let defaultOption = data.find(d => d.key == this.formData[this.field.fieldID]);
-      if (!!defaultOption) {
-        this.setDisplayValue(defaultOption);
+      if (this.isMultiple()) {
+        let defaultOption = [];
+        this.formData[this.field.fieldID].forEach(element => {
+          defaultOption.push(data.find(d => d.key == element));
+        });
+        defaultOption = defaultOption.filter(r => r);
+        if (defaultOption.length) {
+          this.setDisplayValue(defaultOption);
+        }
+      } else {
+        let defaultOption = data.find(d => d.key == this.formData[this.field.fieldID]);
+        if (!!defaultOption) {
+          this.setDisplayValue(defaultOption);
+        }
       }
     })
+  }
+
+  isMultiple() {
+    return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isRequired(this.field.auxInfo.multiple) : false);
   }
 
 }
