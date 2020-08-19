@@ -54,6 +54,7 @@ export class CheckboxFieldComponent implements OnInit {
         this.formData[this.field.fieldID] = undefined;
       }
     }
+    this.prepareDisplayValues();
   }
 
   optionSelected(val: any) {
@@ -96,4 +97,24 @@ export class CheckboxFieldComponent implements OnInit {
   isRequired() {
     return this.service.isRequired(this.field.required);
   }
+
+  setDisplayValue(option: any) {
+    this.formData[this.field.fieldID + '_displayValue'] = (option.length ? option.map(o => o.value && o.value.ar).filter(r => r) : []);
+  }
+
+  prepareDisplayValues() {
+    let defaultOption = [];
+    if (!!this.formData[this.field.fieldID]) {
+      this.formData[this.field.fieldID].forEach(element => {
+        defaultOption.push(this.dataOptions.find(d => d.key == element));
+      });
+      defaultOption = defaultOption.filter(r => r);
+      if (defaultOption.length) {
+        this.setDisplayValue(defaultOption);
+      }
+    } else {
+      this.formData[this.field.fieldID + '_displayValue'] = [];
+    }
+  }
+
 }

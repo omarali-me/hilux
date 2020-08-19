@@ -13,6 +13,8 @@
 
   <input type="hidden" [name]="getName(field.fieldName.en)" [required]="isRequired()" #ngModel="ngModel" [(ngModel)]="formData[field.fieldID]">
 
+  <input type="hidden" [name]="getName(field.fieldName.en) + '_displayValue'" [(ngModel)]="formData[field.fieldID + '_displayValue']">
+  
   <div *ngIf="hasErrors() || showErrors(field.fieldID)" class="alert alert-danger">
 
     <div *ngIf="hasErrors()">
