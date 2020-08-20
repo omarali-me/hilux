@@ -384,14 +384,14 @@
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
-                              [items]="ownerOptions"
-                              name="owner"
-                              required="true"
-                              [(ngModel)]="formData.owner"
+                              [items]="ownerOptions | async"
+                              name="owner" [hideSelected]="true" 
+                              required="true" [minTermLength]="4" 
+                              [(ngModel)]="formData.owner" [loading]="dataOptionsLoading"
                               bindLabel="value.ar"
-                              bindValue="key"
-                              notFoundText="لا يوجد نتائج للبحث"
-                              #owner="ngModel"
+                              bindValue="key" typeToSearchText="Please enter 4 or more characters"
+                              notFoundText="لا يوجد نتائج للبحث" [typeahead]="searchInput$"
+                              #owner="ngModel" multiple="true"
                             >
                             </ng-select>
                             <div *ngIf="owner.invalid && (owner.dirty || owner.touched)" class="alert alert-danger">

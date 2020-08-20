@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, concat, of, Subject } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from '../shared/fields.service';
-import { pluck } from 'rxjs/operators';
+import { pluck, distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-company-profile',
@@ -16,9 +16,11 @@ export class CompanyProfileComponent implements OnInit {
   profile$: Observable<any>;
   emiratesOptions: any;
   licenseTypeOptions: any;
-  ownerOptions: any;
+  ownerOptions: Observable<any>;
   companyTypeOptions: any;
   minDate:any;
+  dataOptionsLoading = false;
+  searchInput$ = new Subject<string>();
 
   constructor(
     private route: ActivatedRoute,
@@ -78,10 +80,18 @@ export class CompanyProfileComponent implements OnInit {
   }
 
   loadOwnerOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/owners`)
-    .subscribe((data) => {
-      this.ownerOptions = data;
-    })
+    this.ownerOptions = concat(
+      of([]), // default items
+      this.searchInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.dataOptionsLoading = true),
+          switchMap(term => {
+            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/owners`, { term } ).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.dataOptionsLoading = false)
+          )})
+      )
+    );
   }
 
   loadCompanyTypeOptions() {
