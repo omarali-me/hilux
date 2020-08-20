@@ -1,6 +1,6 @@
 <div class="container col-sm-12 rtl" *ngIf="response.stepDetails?.dataDisplay && response.stepDetails?.dataDisplay?.length > 0">
   <div class="row" *ngFor="let display of response.stepDetails.dataDisplay">
-    <div class="columns">
+    <div class="col-sm-12">
       <app-display-fields [data]="item" *ngFor="let item of display | keyvalue"></app-display-fields>
     </div>
   </div>
