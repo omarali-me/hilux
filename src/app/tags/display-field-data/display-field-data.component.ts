@@ -24,4 +24,13 @@ export class DisplayFieldDataComponent implements OnInit {
   getClass(classname: string, data: any) {
     return classname + this.service.getFieldWidth(data.displayWidth)
   }
+
+  isEntityName() {
+    return !!this.data.entityName
+  }
+
+  getViewResourceUrl() {
+    let resourceName = this.data.entityName;
+    return `/${resourceName}/profile/${this.data.data.step}/edit`;
+  }
 }
