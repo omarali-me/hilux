@@ -360,16 +360,16 @@
                       </div>
                     </div>
 
-                    <div class="form-group row">
+                    <div class="form-group row" *ngFor="let owner of getOwnersData(); let j = index">
                       <div class="col-sm-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label" i18n="@@companyProfileOwnershipPercentage">Ownership percentage
                             <span>*</span>
                           </label>
                           <div class="col-sm-9">
-                            <input name="ownershipPercentage" required="true" type="text" class="form-control" [(ngModel)]="formData.ownershipPercentage" #ownershipPercentage="ngModel" numbersOnly precision="2">
-                            <div *ngIf="ownershipPercentage.invalid && (ownershipPercentage.dirty || ownershipPercentage.touched)" class="alert alert-danger">
-                              <div *ngIf="ownershipPercentage.errors?.required">
+                            <input [name]="getName('share', j)" maxlength="5" required="true" type="text" class="form-control" [(ngModel)]="owner.share" #share="ngModel" numbersOnly precision="2">
+                            <div *ngIf="share.invalid && (share.dirty || share.touched)" class="alert alert-danger">
+                              <div *ngIf="share.errors?.required">
                                 Ownership Percentage can not be blank
                               </div>
                             </div>
@@ -385,22 +385,27 @@
                             <ng-select
                               class="rtl"
                               [items]="ownerOptions | async"
-                              name="owner" [hideSelected]="true" 
+                              [name]="getName('ownerId', j)" [hideSelected]="true" 
                               required="true" [minTermLength]="4" 
-                              [(ngModel)]="formData.owner" [loading]="dataOptionsLoading"
+                              [(ngModel)]="owner.ownerId" [loading]="dataOptionsLoading"
                               bindLabel="value.ar"
                               bindValue="key" typeToSearchText="Please enter 4 or more characters"
                               notFoundText="لا يوجد نتائج للبحث" [typeahead]="searchInput$"
-                              #owner="ngModel" multiple="true"
+                              #ownerId="ngModel"
                             >
                             </ng-select>
-                            <div *ngIf="owner.invalid && (owner.dirty || owner.touched)" class="alert alert-danger">
-                              <div *ngIf="owner.errors?.required">
+                            <div *ngIf="ownerId.invalid && (ownerId.dirty || ownerId.touched)" class="alert alert-danger">
+                              <div *ngIf="ownerId.errors?.required">
                                 Owner can not be blank
                               </div>
                             </div>
                           </div>
                         </div>
+                      </div>
+                      <div class="col-sm-12 mt-2">
+                        <button type="button" (click)="deleteRow(j)" class="btn btn-sm btn-danger" *ngIf="j!= 0">Remove</button>
+                        <button type="button" (click)="addRow()" class="btn btn-sm btn-primary" *ngIf="j == 0">add</button>
+                        <hr *ngIf="j != 0"/>
                       </div>
                     </div>
                   </div>

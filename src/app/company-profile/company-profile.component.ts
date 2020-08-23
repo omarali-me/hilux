@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from '../shared/fields.service';
 import { pluck, distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-company-profile',
@@ -42,7 +43,7 @@ export class CompanyProfileComponent implements OnInit {
       if (profile && profile.id) {
         this.formData = profile as any;
       } else {
-        this.formData = { };
+        this.formData = { owners: [{}] };
       }
     });
   }
@@ -113,4 +114,21 @@ export class CompanyProfileComponent implements OnInit {
     this.formData[name] = this.fieldsService.formatDate(this.formData, name);
   }
 
+  getOwnersData() {
+    return this.formData.owners ? this.formData.owners : (this.formData.owners = [{}]);
+  }
+
+  addRow() {
+    this.formData.owners.push({});
+  }
+
+  deleteRow(index) {
+    _.remove(this.formData.owners, function(resource, i) {
+        return index === i;
+    });
+  }
+
+  getName(row: string, index: string) {
+    return this.fieldsService.getFieldName('owner', row, index);
+  }
 }
