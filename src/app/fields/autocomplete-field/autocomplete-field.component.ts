@@ -126,4 +126,13 @@ export class AutocompleteFieldComponent implements OnInit {
     return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isRequired(this.field.auxInfo.multiple) : false);
   }
 
+  isEntityName() {
+    return !this.isMultiple() && (this.field.auxInfo && !!this.field.auxInfo.entityName)
+  }
+
+  getViewResourceUrl() {
+    let resourceName = this.field.auxInfo && this.field.auxInfo.entityName
+    return `/${resourceName}/profile/${this.formData[this.field.fieldID]}/edit`;
+  }
+
 }

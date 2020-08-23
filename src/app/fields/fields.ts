@@ -19,6 +19,7 @@ export interface AuxInfo {
   apiParams?: string[];
   sourceDetails:  any;
   multiple?: string;
+  entityName?: string;
 }
 
 export interface FieldName {

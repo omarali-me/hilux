@@ -14,35 +14,46 @@
   </option>
 </select> -->
 
-<ng-select
-  class="rtl"
-  [items]="dataOptions | async"
-  [class]="customClass"
-  [required]="isRequired()"
-  [name]="getName(field.fieldName.en)"
-  [id]="field.fieldID"
-  [(ngModel)]="formData[field.fieldID]"
-  bindLabel="value.ar"
-  bindValue="key"
-  [placeholder]="getText(field, 'placeholder')"
-  notFoundText="لا يوجد نتائج للبحث"
-  (open)="loadData()"
-  (change)="setDisplayValue($event)"
-  [multiple]="isMultiple()"
-  #ngModel="ngModel"
->
-</ng-select>
+<div class="col-sm-12">
+  <div class="row">
+    <ng-select
+      class="rtl"
+      [items]="dataOptions | async"
+      [class]="customClass"
+      [ngClass]="isEntityName() ? 'col-sm-10' : ''"
+      [required]="isRequired()"
+      [name]="getName(field.fieldName.en)"
+      [id]="field.fieldID"
+      [(ngModel)]="formData[field.fieldID]"
+      bindLabel="value.ar"
+      bindValue="key"
+      [placeholder]="getText(field, 'placeholder')"
+      notFoundText="لا يوجد نتائج للبحث"
+      (open)="loadData()"
+      (change)="setDisplayValue($event)"
+      [multiple]="isMultiple()"
+      #ngModel="ngModel"
+    >
+    </ng-select>
 
-<input type="hidden" [name]="getName(field.fieldName.en) + '_displayValue'" [(ngModel)]="formData[field.fieldID + '_displayValue']">
+    <div class="col-sm-2" *ngIf="isEntityName() && !!formData[field.fieldID]">
+      <a [href]="getViewResourceUrl()" target="_blank">View {{field.auxInfo?.entityName}}
+        <i class="fa fa-eye"></i>
+      </a>
+    </div>
 
-<div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
-    class="alert alert-danger">
-
-  <div *ngIf="ngModel.errors?.required || ngModel.errors?.minlength">
-    {{getText(field, 'errorMsg')}}
+    <input type="hidden" [name]="getName(field.fieldName.en) + '_displayValue'" [(ngModel)]="formData[field.fieldID + '_displayValue']">
   </div>
-  
-  <div *ngIf="showErrors(field.fieldID)">
-    {{getErrors(field.fieldID)}}
+
+  <div [ngClass]="isEntityName() ? 'col-sm-10' : ''" *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
+      class="alert alert-danger">
+
+    <div *ngIf="ngModel.errors?.required || ngModel.errors?.minlength">
+      {{getText(field, 'errorMsg')}}
+    </div>
+
+    <div *ngIf="showErrors(field.fieldID)">
+      {{getErrors(field.fieldID)}}
+    </div>
   </div>
 </div>
