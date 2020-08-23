@@ -131,4 +131,11 @@ export class CompanyProfileComponent implements OnInit {
   getName(row: string, index: string) {
     return this.fieldsService.getFieldName('owner', row, index);
   }
+
+  notValidTotal() {
+    let shares = this.formData.owners && this.formData.owners.map(o => _.toNumber(o.share));
+    let shareTotal = 0.00;
+    shares.forEach(share => shareTotal = shareTotal + share);
+    return (shareTotal != 100.00 || shareTotal != 100);
+  }
 }
