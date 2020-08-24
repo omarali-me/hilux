@@ -15,17 +15,8 @@
 
   <ng-container class="" *ngIf="isEntityName()">
     <div class="card-header border-0">
-      <div class="card-tools">
-        <button type="button" class="btn btn-sm" data-card-widget="collapse">
-            <i class="fas fa-minus"></i>
-        </button>
-      </div>
-      <h3 class="card-title float-right font-weight-bold">{{getText(data, 'label')}}</h3>
-    </div>
-    <div class="card-body">
       <a [href]="getViewResourceUrl()" target="_blank">
-        View {{data.entityName}}
-        <i class="fa fa-eye"></i>
+        <h3 class="card-title float-right font-weight-bold">{{getText(data, 'value')}}</h3>
       </a>
     </div>
   </ng-container>
