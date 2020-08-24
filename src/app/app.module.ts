@@ -85,6 +85,7 @@ import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.c
 import { ProjectDetailsComponent } from './project-profile/project-details/project-details.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CompanyDetailsComponent } from './company-profile/company-details/company-details.component';
+import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 
 @NgModule({
   declarations: [
@@ -159,7 +160,8 @@ import { CompanyDetailsComponent } from './company-profile/company-details/compa
     UnitDetailsComponent,
     ProjectDetailsComponent,
     ErrorPageComponent,
-    CompanyDetailsComponent
+    CompanyDetailsComponent,
+    OwnerProfileComponent
   ],
   imports: [
     FormsModule,

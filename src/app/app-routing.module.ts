@@ -24,6 +24,8 @@ import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.c
 import { ProjectDetailsComponent } from './project-profile/project-details/project-details.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CompanyDetailsComponent } from './company-profile/company-details/company-details.component';
+import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
+import { OwnerProfileResolver } from './shared/owner-profile.resolver';
 
 
 const routes: Routes = [
@@ -71,11 +73,23 @@ const routes: Routes = [
       { path: 'edit', component: CompanyDetailsComponent }
     ]
   },
+  { path: 'owner/profile/:profileId/edit', component: OwnerProfileComponent,
+    resolve: { profile: OwnerProfileResolver},
+    canActivate: [AuthenticationGuard]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { paramsInheritanceStrategy: 'always' })],
   exports: [RouterModule],
-  providers: [StepIdResolver, ServiceIdResolver, CustomerProfileResolver, ProjectProfileResolver, UnitProfileResolver, CompanyProfileResolver]
+  providers: [
+    StepIdResolver,
+    ServiceIdResolver,
+    CustomerProfileResolver,
+    ProjectProfileResolver,
+    UnitProfileResolver,
+    CompanyProfileResolver,
+    OwnerProfileResolver
+  ]
 })
 export class AppRoutingModule { }
