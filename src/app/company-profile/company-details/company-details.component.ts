@@ -17,6 +17,7 @@ export class CompanyDetailsComponent implements OnInit {
   profile$: Observable<any>;
   emiratesOptions: any;
   licenseTypeOptions: any;
+  licenseIssuerOptions: any;
   ownerOptions: Observable<any>;
   companyTypeOptions: any;
   minDate:any;
@@ -37,6 +38,7 @@ export class CompanyDetailsComponent implements OnInit {
     this.loadLicenseTypeOptions();
     this.loadOwnerOptions();
     this.loadCompanyTypeOptions();
+    this.loadLicenseIssuerOptions();
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
@@ -97,6 +99,13 @@ export class CompanyDetailsComponent implements OnInit {
     this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/companiesTypes`)
     .subscribe((data) => {
       this.companyTypeOptions = data;
+    })
+  }
+
+  loadLicenseIssuerOptions() {
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/companiesLicensesIssuers`)
+    .subscribe((data) => {
+      this.licenseIssuerOptions = data;
     })
   }
 
