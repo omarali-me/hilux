@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, concat, of, Subject } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from 'src/app/shared/fields.service';
-import { pluck } from 'rxjs/operators';
+import { pluck, distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
 
 @Component({
@@ -15,12 +15,16 @@ import * as _ from 'lodash';
 export class ProjectDetailsComponent implements OnInit {
   formData: any;
   profile$: Observable<any>;
-  developerOptions: any;
+  developerOptions: Observable<any>;
   landsoptions: any;
-  projectsOptions: any;
+  projectsOptions: Observable<any>;
   projectsTypesOptions: any;
   projectsRegistrationTypesOptions: any;
   minDate:any;
+  developerDataOptionsLoading = false;
+  developerSearchInput$ = new Subject<string>();
+  projectsSearchInput$ = new Subject<string>();
+  projectDataOptionsLoading = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -65,17 +69,33 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   loadDeveloperOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/developers`)
-    .subscribe((data) => {
-      this.developerOptions = data;
-    })
+    this.developerOptions = concat(
+      of([]), // default items
+      this.developerSearchInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.developerDataOptionsLoading = true),
+          switchMap(term => {
+            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/developers`, { term } ).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.developerDataOptionsLoading = false)
+          )})
+      )
+    );
   }
 
   loadProjectsOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projects`, { developerId: this.formData.developerId })
-    .subscribe((data) => {
-      this.projectsOptions = data;
-    })
+    this.projectsOptions = concat(
+      of([]), // default items
+      this.projectsSearchInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.projectDataOptionsLoading = true),
+          switchMap(term => {
+            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projects`, { term, developerId: this.formData.developerId } ).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.projectDataOptionsLoading = false)
+          )})
+      )
+    );
   }
 
   loadLandsoptions() {

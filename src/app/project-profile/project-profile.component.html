@@ -37,12 +37,12 @@
                             <ng-select
                               class="rtl"
                               required="true"
-                              [items]="developerOptions"
-                              name="developer"
-                              [(ngModel)]="formData.developerId"
-                              bindLabel="value.ar"
-                              bindValue="key"
-                              notFoundText="لا يوجد نتائج للبحث"
+                              [items]="developerOptions | async"
+                              name="developer" [hideSelected]="true"
+                              [(ngModel)]="formData.developerId" [typeahead]="developerSearchInput$"
+                              bindLabel="value.ar" [minTermLength]="4"
+                              bindValue="key" [loading]="developerDataOptionsLoading"
+                              notFoundText="لا يوجد نتائج للبحث" typeToSearchText="Please enter 4 or more characters"
                               #developer="ngModel"
                             >
                             </ng-select>
@@ -101,13 +101,13 @@
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
-                              [items]="projectsOptions"
+                              [items]="projectsOptions | async"
                               required="true"
-                              name="mainProject"
-                              [(ngModel)]="formData.mainProjectId"
-                              bindLabel="value.ar"
-                              bindValue="key"
-                              notFoundText="لا يوجد نتائج للبحث"
+                              name="mainProject" [hideSelected]="true"
+                              [(ngModel)]="formData.mainProjectId" [minTermLength]="4"
+                              bindLabel="value.ar" typeToSearchText="Please enter 4 or more characters"
+                              bindValue="key" [typeahead]="projectsSearchInput$"
+                              notFoundText="لا يوجد نتائج للبحث" [loading]="projectDataOptionsLoading"
                               #mainProject="ngModel"
                             >
                             </ng-select>
@@ -267,7 +267,7 @@
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
-                              [items]="developerOptions"
+                              [items]="projectsTypesOptions"
                               name="projectType"
                               [(ngModel)]="formData.projectTypeId"
                               bindLabel="value.ar"
