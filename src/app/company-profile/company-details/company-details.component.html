@@ -34,7 +34,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@companyProfileCompanyId">Company ID</label>
               <div class="col-sm-9">
-                <input name="companyId" type="text" class="form-control" [(ngModel)]="formData.companyId" #companyId="ngModel" numbersOnly precision="0" disabled="true">
+                <input name="companyId" type="text" class="form-control" [(ngModel)]="formData.id" #companyId="ngModel" numbersOnly precision="0" disabled="true">
                 <div *ngIf="companyId.invalid && (companyId.dirty || companyId.touched)" class="alert alert-danger">
                   <div *ngIf="companyId.errors?.pattern || companyId.errors?.minlength">
                     Enter valid Company Id
