@@ -344,12 +344,12 @@
                 <span>*</span>
               </label>
               <div class="col-sm-9">
-                <input [name]="getName('share', j)" (change)="notValidTotal()" maxlength="6" required="true" type="text" class="form-control" [(ngModel)]="owner.share" #share="ngModel" numbersOnly precision="2">
+                <input [name]="getName('share', j)" maxlength="6" required="true" type="text" class="form-control" [(ngModel)]="owner.share" #share="ngModel" numbersOnly precision="2">
                 <div class="alert alert-danger" *ngIf="share.invalid && (share.dirty || share.touched) && share.errors?.required">
                   Ownership Percentage can not be blank
                 </div>
 
-                <div class="alert alert-danger" *ngIf="notValidTotal()">
+                <div class="alert alert-danger" *ngIf="false">
                   Ownership Percentage Total should be 100
                 </div>
               </div>
@@ -389,7 +389,7 @@
         </div>
       </div>
       <div class="card-footer">
-        <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid || notValidTotal()" i18n="@@formSubmitLabel">Submit</button>
+        <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid" i18n="@@formSubmitLabel">Submit</button>
       </div>
     </form>
   </div>
