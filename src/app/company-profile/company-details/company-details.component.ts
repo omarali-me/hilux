@@ -110,11 +110,15 @@ export class CompanyDetailsComponent implements OnInit {
   }
 
   isNotGovernmentInstitute () {
-    return true
+    return this.formData.companyType && !(["3", "4", "5"].includes(this.formData.companyType) || [3, 4, 5].includes(this.formData.companyType))
+  }
+
+  isNotGovernmentAndIndividualInstitute () {
+    return this.formData.companyType && !(["3", "4", "5"].includes(this.formData.companyType) || [3, 4, 5].includes(this.formData.companyType))
   }
 
   isGovernmentOrg () {
-    return false
+    return this.formData.companyType && (["3"].includes(this.formData.companyType) || [3].includes(this.formData.companyType))
   }
 
   formatDate(name: any) {
@@ -140,9 +144,13 @@ export class CompanyDetailsComponent implements OnInit {
   }
 
   notValidTotal() {
-    let shares = this.formData.owners && this.formData.owners.map(o => _.toNumber(o.share));
-    let shareTotal = 0.00;
-    shares.forEach(share => shareTotal = shareTotal + share);
-    return (shareTotal != 100.00 || shareTotal != 100);
+    if (this.isNotGovernmentAndIndividualInstitute()) {
+      let shares = this.formData.owners && this.formData.owners.map(o => _.toNumber(o.share));
+      let shareTotal = 0.00;
+      shares.forEach(share => shareTotal = shareTotal + share);
+      return (shareTotal != 100.00 || shareTotal != 100);
+    } else {
+      return false;
+    }
   }
 }
