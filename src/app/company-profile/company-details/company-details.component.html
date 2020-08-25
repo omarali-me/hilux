@@ -355,7 +355,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6" *ngIf="isNotGovernmentAndIndividualInstitute()">
+          <div class="col-sm-6" *ngIf="isNotGovernmentInstitute()">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@companyProfileOwner">Owner
                 <span>*</span>
@@ -381,7 +381,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-12 mt-2" *ngIf="isNotGovernmentAndIndividualInstitute()">
+          <div class="col-sm-12 mt-2" *ngIf="isNotGovernmentInstitute()">
             <button type="button" (click)="deleteRow(j)" class="btn btn-sm btn-danger" *ngIf="j!= 0">Remove</button>
             <button type="button" (click)="addRow()" class="btn btn-sm btn-primary" *ngIf="j == 0">add</button>
             <hr *ngIf="j != 0"/>
