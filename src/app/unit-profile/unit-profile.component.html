@@ -36,13 +36,13 @@
                             <ng-select
                               class="rtl"
                               required="true"
-                              [items]="projectsOptions"
-                              name="project"
-                              [(ngModel)]="formData.projectId"
-                              bindLabel="value.ar"
-                              bindValue="key"
-                              notFoundText="لا يوجد نتائج للبحث"
-                              #project="ngModel" (open)="loadProjectsOptions()"
+                              [items]="projectsOptions | async"
+                              name="project" [hideSelected]="true"
+                              [(ngModel)]="formData.projectId" [minTermLength]="4"
+                              bindLabel="value.ar" typeToSearchText="Please enter 4 or more characters"
+                              bindValue="key" [typeahead]="projectsSearchInput$"
+                              notFoundText="لا يوجد نتائج للبحث" [loading]="projectDataOptionsLoading"
+                              #project="ngModel"
                             >
                             </ng-select>
                             <div *ngIf="project.invalid && (project.dirty || project.touched)" class="alert alert-danger">
@@ -62,12 +62,12 @@
                             <ng-select
                               class="rtl"
                               required="true"
-                              [items]="developerOptions"
-                              name="developerId"
-                              [(ngModel)]="formData.developerId"
-                              bindLabel="value.ar"
-                              bindValue="key"
-                              notFoundText="لا يوجد نتائج للبحث"
+                              [items]="developerOptions | async"
+                              name="developerId" [hideSelected]="true"
+                              [(ngModel)]="formData.developerId" [typeahead]="developerSearchInput$"
+                              bindLabel="value.ar" [minTermLength]="4"
+                              bindValue="key" [loading]="developerDataOptionsLoading"
+                              notFoundText="لا يوجد نتائج للبحث" typeToSearchText="Please enter 4 or more characters"
                               #developer="ngModel"
                             >
                             </ng-select>

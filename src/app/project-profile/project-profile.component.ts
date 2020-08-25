@@ -74,7 +74,7 @@ export class ProjectProfileComponent implements OnInit {
   }
 
   loadProjectsOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projects`)
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projects`, { developerId: this.formData.developerId })
     .subscribe((data) => {
       this.projectsOptions = data;
     })
