@@ -143,12 +143,12 @@
                 <ng-select
                   class="rtl"
                   required="true"
-                  [items]="landsoptions"
-                  name="land"
-                  [(ngModel)]="formData.landId"
-                  bindLabel="value.ar"
-                  bindValue="key"
-                  notFoundText="لا يوجد نتائج للبحث"
+                  [items]="landsoptions | async"
+                  name="land" [hideSelected]="true"
+                  [(ngModel)]="formData.landId" [typeahead]="landSearchInput$"
+                  bindLabel="value.ar" [minTermLength]="4"
+                  bindValue="key" [loading]="landDataOptionsLoading"
+                  notFoundText="لا يوجد نتائج للبحث" typeToSearchText="Please enter 4 or more characters"
                   [disabled]="isUnitVilla()"
                   #land="ngModel"
                 >
