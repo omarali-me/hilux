@@ -27,6 +27,7 @@ export class ProjectDetailsComponent implements OnInit {
   projectDataOptionsLoading = false;
   landDataOptionsLoading = false;
   landSearchInput$ = new Subject<string>();
+  isMainOptions: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -43,6 +44,15 @@ export class ProjectDetailsComponent implements OnInit {
     this.loadProjectsOptions();
     this.loadProjectsTypesOptions();
     this.loadProjectsRegistrationTypesOptions();
+
+    this.isMainOptions = [{
+      key: 1,
+      value: { en: 'Master Project', ar: 'مشروع رئيسي' }
+    },
+    {
+      key: 0,
+      value: { en: 'Sub Project', ar: 'مشروع فرعي' }
+    }];
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe(async (profile: any) => {
@@ -181,7 +191,7 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   isNotMain() {
-    return this.formData.isMain == false || this.formData.isMain == "false";
+    return ((this.formData.isMain == '0') || (this.formData.isMain == 0));
   }
 
   calculateJointSoldArea() {
