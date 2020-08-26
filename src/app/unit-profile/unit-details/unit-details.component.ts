@@ -43,8 +43,10 @@ export class UnitDetailsComponent implements OnInit {
     this.loadunitsUsageTypesOptions();
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
-    this.profile$.subscribe((profile: any) => {
+    this.profile$.subscribe(async (profile: any) => {
       if (profile && profile.id) {
+        await this.prepareProjectValueOptions(profile);
+        await this.prepareDeveloperValueOptions(profile);
         this.formData = profile as any;
       } else {
         this.formData = { };
@@ -183,5 +185,23 @@ export class UnitDetailsComponent implements OnInit {
     const meterTotalSoldArea = this.formData.meterTotalSoldArea || null;
     const meterNetSoldArea = this.formData.meterNetSoldArea || null;
     this.formData.meterJointSoldArea = _.toNumber(meterTotalSoldArea) - _.toNumber(meterNetSoldArea)
+  }
+
+  prepareProjectValueOptions(profile: any) {
+    if(!!profile.projectId) {
+      this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projects`, { id: profile.projectId })
+      .subscribe((option)=> {
+        this.projectsSearchInput$.next(option.value && option.value.ar);
+      })
+    }
+  }
+
+  prepareDeveloperValueOptions(profile: any) {
+    if(!!profile.developerId) {
+      this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/developers`, { id: profile.developerId })
+      .subscribe((option)=> {
+        this.developerSearchInput$.next(option.value && option.value.ar);
+      })
+    }
   }
 }

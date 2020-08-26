@@ -41,8 +41,9 @@ export class CompanyDetailsComponent implements OnInit {
     this.loadLicenseIssuerOptions();
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
-    this.profile$.subscribe((profile: any) => {
+    this.profile$.subscribe(async(profile: any) => {
       if (profile && profile.id) {
+        await this.prepareOwnerValueOptions(profile);
         this.formData = profile as any;
       } else {
         this.formData = { owners: [{}] };
@@ -153,4 +154,13 @@ export class CompanyDetailsComponent implements OnInit {
   //     return false;
   //   }
   // }
+
+  prepareOwnerValueOptions(profile: any) {
+    for(let owner of (profile.owners || [])) {
+      this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/owners`, { id: owner.ownerId })
+      .subscribe((option)=> {
+        this.searchInput$.next(option.value && option.value.ar);
+      })
+    }
+  }
 }
