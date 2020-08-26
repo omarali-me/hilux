@@ -190,3 +190,7 @@ ngx-gallery-thumbnails {
 .fs-30 {
     font-size: 30px;
 }
+
+label > span {
+    color: red;
+}
