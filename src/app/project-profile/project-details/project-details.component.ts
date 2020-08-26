@@ -25,6 +25,8 @@ export class ProjectDetailsComponent implements OnInit {
   developerSearchInput$ = new Subject<string>();
   projectsSearchInput$ = new Subject<string>();
   projectDataOptionsLoading = false;
+  landDataOptionsLoading = false;
+  landSearchInput$ = new Subject<string>();
 
   constructor(
     private route: ActivatedRoute,
@@ -47,6 +49,7 @@ export class ProjectDetailsComponent implements OnInit {
       if (profile && profile.id) {
         await this.prepareProjectValueOptions(profile);
         await this.prepareDeveloperValueOptions(profile);
+        await this.prepareLandValueOptions(profile);
         this.formData = profile as any;
       } else {
         this.formData = { };
@@ -101,10 +104,18 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   loadLandsoptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/lands`)
-    .subscribe((data) => {
-      this.landsoptions = data;
-    })
+    this.landsoptions = concat(
+      of([]), // default items
+      this.landSearchInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.landDataOptionsLoading = true),
+          switchMap(term => {
+            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/lands`, { term } ).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.landDataOptionsLoading = false)
+          )})
+      )
+    );
   }
 
   loadProjectsTypesOptions() {
@@ -194,6 +205,15 @@ export class ProjectDetailsComponent implements OnInit {
       this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/developers`, { id: profile.developerId })
       .subscribe((option)=> {
         this.developerSearchInput$.next(option.value && option.value.ar);
+      })
+    }
+  }
+
+  prepareLandValueOptions(profile: any) {
+    if(!!profile.landId) {
+      this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/lands`, { id: profile.landId })
+      .subscribe((option)=> {
+        this.landSearchInput$.next(option.value && option.value.ar);
       })
     }
   }

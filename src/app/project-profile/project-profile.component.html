@@ -238,12 +238,12 @@
                             <ng-select
                               class="rtl"
                               [required]="isNotMain()"
-                              [items]="landsoptions"
-                              name="parcelId"
-                              [(ngModel)]="formData.landId"
-                              bindLabel="value.ar"
-                              bindValue="key"
-                              notFoundText="لا يوجد نتائج للبحث"
+                              [items]="landsoptions | async"
+                              name="parcelId" [hideSelected]="true"
+                              [(ngModel)]="formData.landId" [typeahead]="landSearchInput$"
+                              bindLabel="value.ar" [minTermLength]="4"
+                              bindValue="key" [loading]="landDataOptionsLoading"
+                              notFoundText="لا يوجد نتائج للبحث" typeToSearchText="Please enter 4 or more characters"
                               #parcelId="ngModel"
                             >
                             </ng-select>

@@ -16,7 +16,7 @@ export class ProjectProfileComponent implements OnInit {
   formData: any;
   profile$: Observable<any>;
   developerOptions: Observable<any>;
-  landsoptions: any;
+  landsoptions: Observable<any>;
   projectsOptions: Observable<any>;
   projectsTypesOptions: any;
   projectsRegistrationTypesOptions: any;
@@ -25,6 +25,8 @@ export class ProjectProfileComponent implements OnInit {
   developerSearchInput$ = new Subject<string>();
   projectsSearchInput$ = new Subject<string>();
   projectDataOptionsLoading = false;
+  landDataOptionsLoading = false;
+  landSearchInput$ = new Subject<string>();
 
   constructor(
     private route: ActivatedRoute,
@@ -101,10 +103,18 @@ export class ProjectProfileComponent implements OnInit {
   }
 
   loadLandsoptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/lands`)
-    .subscribe((data) => {
-      this.landsoptions = data;
-    })
+    this.landsoptions = concat(
+      of([]), // default items
+      this.landSearchInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.landDataOptionsLoading = true),
+          switchMap(term => {
+            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/lands`, { term } ).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.landDataOptionsLoading = false)
+          )})
+      )
+    );
   }
 
   loadProjectsTypesOptions() {
