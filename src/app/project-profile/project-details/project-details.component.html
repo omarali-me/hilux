@@ -72,8 +72,9 @@
 
         <div class="form-group row">
           <div class="col-sm-6">
-            <div class="form-group row">
+            <div class="form-group row" *ngIf="isNotMain()">
               <label class="col-sm-3 col-form-label" i18n="@@projectProfileMainProject">Main Project
+                <span>*</span>
               </label>
               <div class="col-sm-9">
                 <ng-select
