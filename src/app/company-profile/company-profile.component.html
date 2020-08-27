@@ -204,8 +204,6 @@
 
                     <div class="form-group row" *ngIf="isNotGovernmentInstitute()">
                       <div class="col-sm-6">
-                      </div>
-                      <div class="col-sm-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label" i18n="@@companyProfileLicenseType">License Type
                             <span>*</span>
@@ -231,11 +229,11 @@
                           </div>
                         </div>
                       </div>
+                      <div class="col-sm-6">
+                      </div>
                     </div>
 
                     <div class="form-group row">
-                      <div class="col-sm-6">
-                      </div>
                       <div class="col-sm-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label" i18n="@@companyProfileEstablishmentCardNumber">Establishment card number
@@ -253,6 +251,8 @@
                             </div>
                           </div>
                         </div>
+                      </div>
+                      <div class="col-sm-6">
                       </div>
                     </div>
 
@@ -408,6 +408,21 @@
                         <button type="button" (click)="deleteRow(j)" class="btn btn-sm btn-danger" *ngIf="j!= 0">Remove</button>
                         <button type="button" (click)="addRow()" class="btn btn-sm btn-primary" *ngIf="j == 0">add</button>
                         <hr *ngIf="j != 0"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row" *ngIf="isNotGovernmentAndIndividualInstitute()">
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" i18n="@@companyProfileEstablishmentContractFile">Establishment Contract File
+                            <span>*</span>
+                          </label>
+                          <div class="col-sm-9">
+                            <app-file-upload [field]="prepareEstablishmentContractFileField()" [formData]="formData"></app-file-upload>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
                       </div>
                     </div>
                   </div>

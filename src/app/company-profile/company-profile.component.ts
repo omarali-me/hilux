@@ -116,7 +116,7 @@ export class CompanyProfileComponent implements OnInit {
   }
 
   isNotGovernmentAndIndividualInstitute () {
-    return this.formData.companyType && !(["3", "4", "5"].includes(this.formData.companyType) || [3, 4, 5].includes(this.formData.companyType))
+    return this.formData.companyType && !(["2", "3", "4", "5"].includes(this.formData.companyType) || [2, 3, 4, 5].includes(this.formData.companyType))
   }
 
   isGovernmentOrg () {
@@ -155,4 +155,16 @@ export class CompanyProfileComponent implements OnInit {
   //     return false;
   //   }
   // }
+
+  prepareEstablishmentContractFileField() {
+    return {
+      fieldID: "establishmentContractFile",
+      fieldType: "fileupload",
+      required: true,
+      fieldName: {
+        "ar": "establishmentContractFile",
+        "en": "establishmentContractFile"
+      }
+    }
+  }
 }

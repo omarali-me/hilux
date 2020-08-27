@@ -156,7 +156,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">415</context>
+          <context context-type="linenumber">430</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
@@ -168,7 +168,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">392</context>
+          <context context-type="linenumber">407</context>
         </context-group>
       </trans-unit>
       <trans-unit id="formCancelLabel" datatype="html">
@@ -1542,11 +1542,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">210</context>
+          <context context-type="linenumber">208</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">187</context>
+          <context context-type="linenumber">185</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileEstablishmentCardNumber" datatype="html">
@@ -1555,11 +1555,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">241</context>
+          <context context-type="linenumber">239</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">218</context>
+          <context context-type="linenumber">216</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileEmirate" datatype="html">
@@ -1658,6 +1658,19 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
           <context context-type="linenumber">360</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="companyProfileEstablishmentContractFile" datatype="html">
+        <source>Establishment Contract File
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
+          <context context-type="linenumber">417</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
+          <context context-type="linenumber">394</context>
         </context-group>
       </trans-unit>
     </body>
