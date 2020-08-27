@@ -53,8 +53,6 @@
 
                       <div class="form-group row" *ngIf="formData.isDead">
                         <div class="col-sm-6">
-                        </div>
-                        <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileDateOfDeath">Date of Death
                               <span>*</span>
@@ -79,6 +77,8 @@
                               </div>
                             </div>
                           </div>
+                        </div>
+                        <div class="col-sm-6">
                         </div>
                       </div>
 
@@ -117,8 +117,6 @@
               
                       <div class="form-group row">
                         <div class="col-sm-6">
-                        </div>
-                        <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmiratesID">Emirates ID</label>
                             <div class="col-sm-9">
@@ -130,6 +128,8 @@
                               </div>
                             </div>
                           </div>
+                        </div>
+                        <div class="col-sm-6">
                         </div>
                       </div>
 
@@ -182,14 +182,14 @@
                       </div>
                       <div class="form-group row">
                         <div class="col-sm-6">
-                        </div>
-                        <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfilePassportnumber">Passport number</label>
                             <div class="col-sm-9">
                               <input name="passportNumber" type="text" class="form-control" [(ngModel)]="formData.passportNumber">
                             </div>
                           </div>
+                        </div>
+                        <div class="col-sm-6">
                         </div>
                       </div>
 
@@ -446,8 +446,6 @@
 
                       <div class="form-group row">
                         <div class="col-sm-6">
-                        </div>
-                        <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileDoyouhavetaxnumber">Do you have a tax number?
                               <span *ngIf="isRequired()">*</span>
@@ -472,6 +470,8 @@
                               </div>
                             </div>
                           </div>
+                        </div>
+                        <div class="col-sm-6">
                         </div>
                       </div>
 
@@ -635,12 +635,12 @@
 
                       <div class="form-group row">
                         <div class="col-sm-6">
-                        </div>
-                        <div class="col-sm-6">
                           <div class="form-check float-right">
                             <input name="isResident" type="checkbox" class="form-check-input" [(ngModel)]="formData.isResident">
                             <label class="form-check-label" i18n="@@customerProfileIsResident">Is Resident</label>
                           </div>
+                        </div>
+                        <div class="col-sm-6">
                         </div>
                       </div>
 
@@ -684,14 +684,14 @@
 
                       <div class="form-group row">
                         <div class="col-sm-6">
-                        </div>
-                        <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-2 col-form-label" i18n="@@customerProfileSignature">Signature</label>
                             <div class="text-center col-sm-10">
                               <app-file-upload [field]="prepareSignatureField()" [formData]="formData"></app-file-upload>
                             </div>
                           </div>
+                        </div>
+                        <div class="col-sm-6">
                         </div>
                       </div>
                     </div>

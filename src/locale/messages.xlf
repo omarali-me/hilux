@@ -209,11 +209,11 @@
                             </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">57</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileNameInArabic" datatype="html">
@@ -246,11 +246,11 @@
         <source>Emirates ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">123</context>
+          <context context-type="linenumber">121</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">106</context>
+          <context context-type="linenumber">104</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileEmiratesIDexpirydate" datatype="html">
@@ -282,11 +282,11 @@
         <source>Passport number</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">188</context>
+          <context context-type="linenumber">186</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">176</context>
+          <context context-type="linenumber">174</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfilePassportnumberexpirydate" datatype="html">
@@ -423,11 +423,11 @@
                             </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">452</context>
+          <context context-type="linenumber">450</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">446</context>
+          <context context-type="linenumber">444</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileEmirate" datatype="html">
@@ -548,11 +548,11 @@
         <source>Is Resident</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">642</context>
+          <context context-type="linenumber">640</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">637</context>
+          <context context-type="linenumber">635</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileCityofresidenceinUAE" datatype="html">
@@ -581,11 +581,11 @@
         <source>Signature</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">690</context>
+          <context context-type="linenumber">688</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">685</context>
+          <context context-type="linenumber">683</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileCustomerId" datatype="html">
