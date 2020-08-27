@@ -153,7 +153,7 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   isCustomerDisabled() {
-    return this.formData.customerCategoryId && (this.formData.customerCategoryId.includes('1') || this.formData.customerCategoryId.includes(1));
+    return (this.formData.customerCategoryId == '1' || this.formData.customerCategoryId == 1);
   }
 
   isValid() {
