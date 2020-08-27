@@ -409,7 +409,7 @@
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
-                              [items]="[]"
+                              [items]="accountTrusteesOptions"
                               name="accountTrustee"
                               [(ngModel)]="formData.accountTrusteeId"
                               bindLabel="value.ar"
@@ -638,7 +638,7 @@
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
-                              [items]="[]"
+                              [items]="consultantsOptions"
                               name="consultant"
                               required="true"
                               [(ngModel)]="formData.consultantId"
@@ -681,7 +681,7 @@
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
-                              [items]="[]"
+                              [items]="contractorsOptions"
                               name="contractor"
                               required="true"
                               [(ngModel)]="formData.contractorId"
@@ -793,7 +793,7 @@
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
-                              [items]="[]"
+                              [items]="projectUsageTypesOptions"
                               name="typeOfUse"
                               [(ngModel)]="formData.typeOfUseId"
                               bindLabel="value.ar"

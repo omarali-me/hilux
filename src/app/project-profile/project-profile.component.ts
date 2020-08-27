@@ -28,6 +28,10 @@ export class ProjectProfileComponent implements OnInit {
   landDataOptionsLoading = false;
   landSearchInput$ = new Subject<string>();
   isMainOptions: any;
+  projectUsageTypesOptions: any;
+  contractorsOptions: any;
+  consultantsOptions: any;
+  accountTrusteesOptions: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -44,6 +48,10 @@ export class ProjectProfileComponent implements OnInit {
     this.loadProjectsOptions();
     this.loadProjectsTypesOptions();
     this.loadProjectsRegistrationTypesOptions();
+    this.loadProjectUsageTypesOptions();
+    this.loadContractorsOptions();
+    this.loadConsultantsOptions();
+    this.loadAccountTrusteesOptions();
 
     this.isMainOptions = [{
       key: 1,
@@ -138,6 +146,34 @@ export class ProjectProfileComponent implements OnInit {
     this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projectsRegistrationTypes`)
     .subscribe((data) => {
       this.projectsRegistrationTypesOptions = data;
+    })
+  }
+
+  loadProjectUsageTypesOptions() {
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projectsUsageTypes`)
+    .subscribe((data) => {
+      this.projectUsageTypesOptions = data;
+    })
+  }
+
+  loadContractorsOptions() {
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/projetcsContractors`)
+    .subscribe((data) => {
+      this.contractorsOptions = data;
+    })
+  }
+
+  loadConsultantsOptions() {
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/projetcsConsultants`)
+    .subscribe((data) => {
+      this.consultantsOptions = data;
+    })
+  }
+
+  loadAccountTrusteesOptions() {
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/projetcsConsultants`)
+    .subscribe((data) => {
+      this.accountTrusteesOptions = data;
     })
   }
 
