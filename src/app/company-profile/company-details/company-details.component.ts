@@ -155,12 +155,16 @@ export class CompanyDetailsComponent implements OnInit {
   //   }
   // }
 
-  prepareOwnerValueOptions(profile: any) {
+  async prepareOwnerValueOptions(profile: any) {
     for(let owner of (profile.owners || [])) {
-      this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/owners`, { id: owner.ownerId })
-      .subscribe((option)=> {
-        this.searchInput$.next(option.value && option.value.ar);
-      })
+      await setTimeout(() => {
+        this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/owners`, { id: owner.ownerId })
+        .subscribe((option)=> {
+          this.searchInput$.next(option.value && option.value.ar);
+        })
+      },
+      100)
     }
   }
+
 }
