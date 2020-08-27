@@ -32,7 +32,8 @@ export class ProjectProfileComponent implements OnInit {
   contractorsOptions: any;
   consultantsOptions: any;
   accountTrusteesOptions: any;
-
+  projectStatusOptions: any;
+  
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -136,10 +137,23 @@ export class ProjectProfileComponent implements OnInit {
   }
 
   loadProjectsTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projectstypes`)
-    .subscribe((data) => {
-      this.projectsTypesOptions = data;
-    })
+    this.projectsTypesOptions = [{
+      key: 1,
+      value: { en: 'Main', ar: 'رئيسي' }
+    },
+    {
+      key: 0,
+      value: { en: 'Sub', ar: 'فرعي' }
+    }];
+
+    this.projectStatusOptions = [{
+      key: 1,
+      value: { en: 'Active', ar: 'فعال' }
+    },
+    {
+      key: 0,
+      value: { en: 'Inactive', ar: 'غير فعال' }
+    }];
   }
 
   loadProjectsRegistrationTypesOptions() {
