@@ -17,12 +17,12 @@
   <section class="content">
     <div class="container-fluid">
       <div class="row">
-        <!-- /.col -->
         <div class="col-md-12" *ngIf="profile$ | async as profile">
           <div class="card rtl">
             <router-outlet></router-outlet>
             <section class="content" *ngIf="formData && !formData.id">
               <div class="container-fluid">
+                <app-alerts [errors]="formErrors"></app-alerts>
                 <form class="form-horizontal" (ngSubmit)="saveData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
                   <div class="card-body">
                     <div class="form-group row">
