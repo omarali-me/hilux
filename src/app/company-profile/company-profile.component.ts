@@ -23,6 +23,7 @@ export class CompanyProfileComponent implements OnInit {
   minDate:any;
   dataOptionsLoading = false;
   searchInput$ = new Subject<string>();
+  formErrors: any = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -60,6 +61,7 @@ export class CompanyProfileComponent implements OnInit {
         if (data.data.id)
           this.router.navigate(['company/profile', data.data.id, 'edit']);
       } else {
+        this.formErrors = data.data;
         this.toastr.error(JSON.stringify(data.message), 'Error')
       }
     }, (error) => {

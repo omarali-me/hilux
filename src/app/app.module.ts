@@ -86,6 +86,7 @@ import { ProjectDetailsComponent } from './project-profile/project-details/proje
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CompanyDetailsComponent } from './company-profile/company-details/company-details.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
+import { AlertsComponent } from './alerts/alerts.component';
 
 @NgModule({
   declarations: [
@@ -161,7 +162,8 @@ import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
     ProjectDetailsComponent,
     ErrorPageComponent,
     CompanyDetailsComponent,
-    OwnerProfileComponent
+    OwnerProfileComponent,
+    AlertsComponent
   ],
   imports: [
     FormsModule,

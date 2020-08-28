@@ -14,6 +14,7 @@ import * as _ from 'lodash';
 })
 export class CompanyDetailsComponent implements OnInit {
   formData: any = {};
+  formErrors: any = {};
   profile$: Observable<any>;
   emiratesOptions: any;
   licenseTypeOptions: any;
@@ -59,6 +60,7 @@ export class CompanyDetailsComponent implements OnInit {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
         } else {
+          this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
         }
     }, (error) => {

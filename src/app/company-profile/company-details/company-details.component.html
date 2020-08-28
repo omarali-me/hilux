@@ -1,8 +1,8 @@
 <section class="content" *ngIf="profile$ | async as profile">
   <div class="container-fluid">
+    <app-alerts [errors]="formErrors"></app-alerts>
     <form class="form-horizontal" (ngSubmit)="updateData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
-      <div class="card-body">
-        <div class="form-group row">
+      <div class="card-body"> <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@companyProfileCompanyOrganisationType">
