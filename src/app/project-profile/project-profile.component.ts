@@ -14,6 +14,7 @@ import * as _ from 'lodash';
 })
 export class ProjectProfileComponent implements OnInit {
   formData: any;
+  formErrors: any = {};
   profile$: Observable<any>;
   developerOptions: Observable<any>;
   landsoptions: Observable<any>;
@@ -83,6 +84,7 @@ export class ProjectProfileComponent implements OnInit {
         if (data.data.id)
           this.router.navigate(['project/profile', data.data.id, 'edit']);
       } else {
+        this.formErrors = data.data;
         this.toastr.error(JSON.stringify(data.message), 'Error')
       }
     }, (error) => {

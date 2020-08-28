@@ -14,6 +14,7 @@ import * as _ from 'lodash';
 })
 export class UnitDetailsComponent implements OnInit {
   formData: any = {};
+  formErrors: any = {};
   profile$: Observable<any>;
   developerOptions: Observable<any>;
   projectsOptions: Observable<any>;
@@ -65,6 +66,7 @@ export class UnitDetailsComponent implements OnInit {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
         } else {
+          this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
         }
     }, (error) => {

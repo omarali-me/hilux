@@ -14,6 +14,7 @@ import * as _ from 'lodash';
 })
 export class ProjectDetailsComponent implements OnInit {
   formData: any;
+  formErrors:any = {};
   profile$: Observable<any>;
   developerOptions: Observable<any>;
   landsoptions: any;
@@ -84,6 +85,7 @@ export class ProjectDetailsComponent implements OnInit {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
         } else {
+          this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
         }
     }, (error) => {

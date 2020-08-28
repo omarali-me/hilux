@@ -14,6 +14,7 @@ import { FieldsService } from '../shared/fields.service';
 })
 export class CustomerProfileComponent implements OnInit {
   formData: any;
+  formErrors: any = {};
   profile$: Observable<any>;
   contactPerferencesOptions: any;
   timeToContactOptions: any;
@@ -85,6 +86,7 @@ export class CustomerProfileComponent implements OnInit {
         if (data.data.id)
           this.router.navigate(['customer/profile', data.data.id, 'edit']);
       } else {
+        this.formErrors = data.data;
         this.toastr.error(JSON.stringify(data.message), 'Error')
       }
     }, (error) => {

@@ -27,6 +27,7 @@ export class CustomerDetailsComponent implements OnInit {
   booleanOptions: any;
   genderOptions: any;
   minDate:any;
+  formErrors:any = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -84,6 +85,7 @@ export class CustomerDetailsComponent implements OnInit {
           this.formData = this.prepareProfile(data.data);
           this.toastr.success(data.message, 'Success');
         } else {
+          this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
         }
     }, (error) => {
