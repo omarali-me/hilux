@@ -88,6 +88,8 @@ import { CompanyDetailsComponent } from './company-profile/company-details/compa
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { PropertiesProfileComponent } from './properties-profile/properties-profile.component';
+import { LandProfileComponent } from './land-profile/land-profile.component';
+import { LandDetailsComponent } from './land-profile/land-details/land-details.component';
 
 @NgModule({
   declarations: [
@@ -165,7 +167,9 @@ import { PropertiesProfileComponent } from './properties-profile/properties-prof
     CompanyDetailsComponent,
     OwnerProfileComponent,
     AlertsComponent,
-    PropertiesProfileComponent
+    PropertiesProfileComponent,
+    LandProfileComponent,
+    LandDetailsComponent
   ],
   imports: [
     FormsModule,

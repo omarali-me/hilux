@@ -27,6 +27,10 @@ import { CompanyDetailsComponent } from './company-profile/company-details/compa
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { OwnerProfileResolver } from './shared/owner-profile.resolver';
 import { PropertiesProfileResolver } from './shared/properties-profile.resolver';
+import { PropertiesProfileComponent } from './properties-profile/properties-profile.component';
+import { LandProfileComponent } from './land-profile/land-profile.component';
+import { LandDetailsComponent } from './land-profile/land-details/land-details.component';
+import { LandProfileResolver } from './shared/land-profile.resolver';
 
 
 const routes: Routes = [
@@ -74,6 +78,15 @@ const routes: Routes = [
       { path: 'edit', component: CompanyDetailsComponent }
     ]
   },
+  { path: 'land/new', component: LandProfileComponent, resolve: { profile: LandProfileResolver} },
+  { path: 'land/profile/:profileId', component: LandProfileComponent,
+    resolve: { profile: LandProfileResolver},
+    canActivate: [AuthenticationGuard],
+    children: [
+      { path: '', redirectTo: 'edit', pathMatch: 'full' },
+      { path: 'edit', component: LandDetailsComponent }
+    ]
+  },
   { path: 'owner/profile/:profileId/edit', component: OwnerProfileComponent,
     resolve: { profile: OwnerProfileResolver},
     canActivate: [AuthenticationGuard]
@@ -95,7 +108,8 @@ const routes: Routes = [
     UnitProfileResolver,
     CompanyProfileResolver,
     OwnerProfileResolver,
-    PropertiesProfileResolver
+    PropertiesProfileResolver,
+    LandProfileResolver
   ]
 })
 export class AppRoutingModule { }
