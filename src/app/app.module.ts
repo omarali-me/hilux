@@ -87,6 +87,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { CompanyDetailsComponent } from './company-profile/company-details/company-details.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { AlertsComponent } from './alerts/alerts.component';
+import { PropertiesProfileComponent } from './properties-profile/properties-profile.component';
 
 @NgModule({
   declarations: [
@@ -163,7 +164,8 @@ import { AlertsComponent } from './alerts/alerts.component';
     ErrorPageComponent,
     CompanyDetailsComponent,
     OwnerProfileComponent,
-    AlertsComponent
+    AlertsComponent,
+    PropertiesProfileComponent
   ],
   imports: [
     FormsModule,

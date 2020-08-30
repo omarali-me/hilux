@@ -26,6 +26,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { CompanyDetailsComponent } from './company-profile/company-details/company-details.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { OwnerProfileResolver } from './shared/owner-profile.resolver';
+import { PropertiesProfileResolver } from './shared/properties-profile.resolver';
 
 
 const routes: Routes = [
@@ -76,6 +77,10 @@ const routes: Routes = [
   { path: 'owner/profile/:profileId/edit', component: OwnerProfileComponent,
     resolve: { profile: OwnerProfileResolver},
     canActivate: [AuthenticationGuard]
+  },
+  { path: 'properties/profile/:profileId/edit', component: PropertiesProfileComponent,
+    resolve: { profile: PropertiesProfileResolver},
+    canActivate: [AuthenticationGuard]
   }
 ];
 
@@ -89,7 +94,8 @@ const routes: Routes = [
     ProjectProfileResolver,
     UnitProfileResolver,
     CompanyProfileResolver,
-    OwnerProfileResolver
+    OwnerProfileResolver,
+    PropertiesProfileResolver
   ]
 })
 export class AppRoutingModule { }
