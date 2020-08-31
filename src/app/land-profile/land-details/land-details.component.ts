@@ -34,6 +34,14 @@ export class LandDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loadSectorsOptions();
+    this.loadSectionsOptions();
+    this.loadStreetNamesOptions();
+    this.loadStreetTypesOptions();
+    this.loadMainUsageTypesOptions();
+    this.loadSubUsageTypesOptions();
+    this.loadCitiesOptions();
+
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
       if (profile && profile.id) {
