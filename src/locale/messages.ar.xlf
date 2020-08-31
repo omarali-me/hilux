@@ -1969,7 +1969,7 @@
       </trans-unit>
       <trans-unit id="landProfileFreeHold" datatype="html">
         <source>Free Hold</source>
-        <target>Free Hold</target>
+        <target>تملك حر (عقار يخضع لقوانين الملكيات المشتركة)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
           <context context-type="linenumber">34</context>
@@ -1982,7 +1982,7 @@
       <trans-unit id="landProfileOldLandID" datatype="html">
         <source>Old Land ID
                           </source>
-        <target>Old Land ID
+        <target>رقم الارض القديم
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1997,7 +1997,7 @@
         <source>Land ID
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Land ID
+        <target>رقم الأرض
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -2013,7 +2013,7 @@
         <source>Sector
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Sector
+        <target>القطاع 
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -2029,7 +2029,7 @@
         <source>City
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>City
+        <target>المدينة
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -2045,7 +2045,7 @@
         <source>Plot
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>Plot
+        <target>القطعة
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -2061,7 +2061,7 @@
         <source>District
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>District
+        <target>الحي
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -2076,7 +2076,7 @@
       <trans-unit id="landProfileSubLandUse" datatype="html">
         <source>Sub Land Use
                           </source>
-        <target>Sub Land Use
+        <target>الاستعمال الفرعي
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2090,7 +2090,7 @@
       <trans-unit id="landProfileLandUse" datatype="html">
         <source>Land Use
                           </source>
-        <target>Land Use
+        <target>الاستعمال الرئيسي
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2104,7 +2104,7 @@
       <trans-unit id="landProfilePropertyType" datatype="html">
         <source>Property Type
                           </source>
-        <target>Property Type
+        <target>نوع العقار
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2118,7 +2118,7 @@
       <trans-unit id="landProfileFloorsasperSiteMap" datatype="html">
         <source>Floors as per Site Map
                           </source>
-        <target>Floors as per Site Map
+        <target>عدد الطوابق بحسب المخطط
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2132,7 +2132,7 @@
       <trans-unit id="landProfileLandAreaM2" datatype="html">
         <source>Land Area m2
                           </source>
-        <target>Land Area m2
+        <target>مساحة الأرض م2
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2145,7 +2145,7 @@
       </trans-unit>
       <trans-unit id="landProfileEngineeringsRemarks" datatype="html">
         <source>Engineerings Remarks</source>
-        <target>Engineerings Remarks</target>
+        <target>الملاحظات الهندسية</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
           <context context-type="linenumber">238</context>
@@ -2157,7 +2157,7 @@
       </trans-unit>
       <trans-unit id="landProfileMunicipalityRemarks" datatype="html">
         <source>Municipality Remarks</source>
-        <target>Municipality Remarks</target>
+        <target>ملاحظات البلدية</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
           <context context-type="linenumber">252</context>
@@ -2170,7 +2170,7 @@
       <trans-unit id="landProfileStreetName" datatype="html">
         <source>Street Name
                           </source>
-        <target>Street Name
+        <target>اسم الشارع
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2184,7 +2184,7 @@
       <trans-unit id="landProfileStreetType" datatype="html">
         <source>Street Type
                           </source>
-        <target>Street Type
+        <target>نوع الشارع
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2198,7 +2198,7 @@
       <trans-unit id="landProfileSouth" datatype="html">
         <source>South
                           </source>
-        <target>South
+        <target>جنوب
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2212,7 +2212,7 @@
       <trans-unit id="landProfileNorth" datatype="html">
         <source>North
                           </source>
-        <target>North
+        <target>شمال
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2226,7 +2226,7 @@
       <trans-unit id="landProfileWest" datatype="html">
         <source>West
                           </source>
-        <target>West
+        <target>غرب
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2240,7 +2240,7 @@
       <trans-unit id="landProfileEast" datatype="html">
         <source>East
                           </source>
-        <target>East
+        <target>شرق
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2254,7 +2254,7 @@
       <trans-unit id="landProfileNumberofBuiltFloors" datatype="html">
         <source>Number of Built Floors
                           </source>
-        <target>Number of Built Floors
+        <target>عدد الادوار المنجزة
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2268,7 +2268,7 @@
       <trans-unit id="landProfileBuildingArea" datatype="html">
         <source>Building area
                           </source>
-        <target>Building area
+        <target>مساحة البناء
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2282,7 +2282,7 @@
       <trans-unit id="landProfileBuildingAge" datatype="html">
         <source>Building Age
                           </source>
-        <target>Building Age
+        <target>عمر البناء
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2296,7 +2296,7 @@
       <trans-unit id="landProfileCompletionRate" datatype="html">
         <source>Completion rate
                           </source>
-        <target>Completion rate
+        <target>نسبة الانجاز
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2310,7 +2310,7 @@
       <trans-unit id="landProfileAnnualincomefromRent" datatype="html">
         <source>Annual income from rent
                           </source>
-        <target>Annual income from rent
+        <target>الدخل السنوي من الايجار
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2323,7 +2323,7 @@
       </trans-unit>
       <trans-unit id="landProfilePropertyLeased" datatype="html">
         <source>Property leased</source>
-        <target>Property leased</target>
+        <target> العقار مؤجر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
           <context context-type="linenumber">430</context>
@@ -2336,7 +2336,7 @@
       <trans-unit id="landProfileAnnualMaintenanceAmount" datatype="html">
         <source>Annual maintenance amount
                           </source>
-        <target>Annual maintenance amount
+        <target>مبلغ الصيانة السنوي
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2350,7 +2350,7 @@
       <trans-unit id="landProfileNumberofShops" datatype="html">
         <source>Number of shops
                           </source>
-        <target>Number of shops
+        <target>عدد المحلات التجارية
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2364,7 +2364,7 @@
       <trans-unit id="landProfileTheNumberofRentedShops" datatype="html">
         <source>The number of rented shops
                           </source>
-        <target>The number of rented shops
+        <target>عدد المحلات المؤجرة
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2378,7 +2378,7 @@
       <trans-unit id="landProfileNumberofVacantShops" datatype="html">
         <source>Number of vacant shops
                           </source>
-        <target>Number of vacant shops
+        <target>عدد المحلات الشاغرة
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2392,7 +2392,7 @@
       <trans-unit id="landProfileNumberofWarehouses" datatype="html">
         <source>Number of warehouses
                           </source>
-        <target>Number of warehouses
+        <target>عدد الشبرات
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2406,7 +2406,7 @@
       <trans-unit id="landProfileTheNumberofRentedWarehouses" datatype="html">
         <source>The number of rented warehouses
                           </source>
-        <target>The number of rented warehouses
+        <target>عدد الشبرات المؤجرة
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2420,7 +2420,7 @@
       <trans-unit id="landProfileNumberofVacantWarehouses" datatype="html">
         <source>Number of vacant warehouses
                           </source>
-        <target>Number of vacant warehouses
+        <target>عدد الشبرات الشاغرة
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2434,7 +2434,7 @@
       <trans-unit id="landProfileNumberofServiceUnits" datatype="html">
         <source>Number of service units
                           </source>
-        <target>Number of service units
+        <target>عدد الوحدات الخدمية
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2448,7 +2448,7 @@
       <trans-unit id="landProfileNumberofRooms" datatype="html">
         <source>Number of rooms
                           </source>
-        <target>Number of rooms
+        <target>عدد الغرف
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2462,7 +2462,7 @@
       <trans-unit id="landProfileNumberofRentedRooms" datatype="html">
         <source>Number of rented rooms
                           </source>
-        <target>Number of rented rooms
+        <target>عدد الغرف المؤجرة
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2476,7 +2476,7 @@
       <trans-unit id="landProfileNumberofVacantRooms" datatype="html">
         <source>Number of vacant rooms
                           </source>
-        <target>Number of vacant rooms
+        <target>عدد الغرف الشاغرة
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2490,7 +2490,7 @@
       <trans-unit id="landProfileEastern" datatype="html">
         <source>Eastern
                           </source>
-        <target>Eastern
+        <target>الشرقية
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2504,7 +2504,7 @@
       <trans-unit id="landProfileNorthFacade" datatype="html">
         <source>North facade
                           </source>
-        <target>North facade
+        <target>الواجهة الشمالية
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2518,7 +2518,7 @@
       <trans-unit id="landProfileWestern" datatype="html">
         <source>Western
                           </source>
-        <target>Western
+        <target>الغربية
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2532,7 +2532,7 @@
       <trans-unit id="landProfileSouthern" datatype="html">
         <source>Southern
                           </source>
-        <target>Southern
+        <target>الجنوبية
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2546,7 +2546,7 @@
       <trans-unit id="landProfileStructureType" datatype="html">
         <source>Structure type
                           </source>
-        <target>Structure type
+        <target>نوع الهيكل
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2560,7 +2560,7 @@
       <trans-unit id="landProfileReception" datatype="html">
         <source>Reception
                           </source>
-        <target>Reception
+        <target>الاستقبال
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2574,7 +2574,7 @@
       <trans-unit id="landProfileExternalYards" datatype="html">
         <source>External yards
                           </source>
-        <target>External yards
+        <target>الاحواش الخارجية
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2588,7 +2588,7 @@
       <trans-unit id="landProfileTheRooms" datatype="html">
         <source>The rooms
                           </source>
-        <target>The rooms
+        <target>الغرف
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2602,7 +2602,7 @@
       <trans-unit id="landProfileTheEntrance" datatype="html">
         <source>The Entrance
                           </source>
-        <target>The Entrance
+        <target>المدخل
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
