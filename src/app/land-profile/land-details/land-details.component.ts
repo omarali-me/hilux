@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from 'src/app/shared/fields.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { pluck } from 'rxjs/operators';
 
 @Component({
@@ -22,6 +22,8 @@ export class LandDetailsComponent implements OnInit {
   mainUsageTypesOptions: any;
   subUsageTypesOptions: any;
   citiesOptions: any;
+  dataOptionsLoading = false;
+  searchInput$ = new Subject<string>();
 
   constructor(
     private route: ActivatedRoute,
@@ -108,24 +110,24 @@ export class LandDetailsComponent implements OnInit {
     })
   }
 
-  // isShoporShoppingMall() {
-  //   return  true && completionRate == 100
-  // }
+  isShoporShoppingMall() {
+    return  true && (this.formData.completionRate == 100 || this.formData.completionRate == '100')
+  }
 
-  // isNotVavantLand() {
-  //   return 
-  // }
+  isNotVacantLand() {
+    return true 
+  }
 
-  // isWarehouse() {
-  //   return true && completionRate == 100
-  // }
+  isWarehouse() {
+    return true && (this.formData.completionRate == 100 || this.formData.completionRate == '100')
+  }
 
-  // isLabourerHouseing() {
-  //   return true && completionRate == 100
-  // }
+  isLabourerHousing() {
+    return true && (this.formData.completionRate == 100 || this.formData.completionRate == '100')
+  }
 
-  // isLeased () {
-  //   return
-  // }
+  isLeased() {
+    return this.formData.propertyLeased;
+  }
 
 }
