@@ -749,11 +749,13 @@
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectProfileMainProject" datatype="html">
-        <source>Main Project
+      <trans-unit id="projectProfileisMain" datatype="html">
+        <source>
+                            Is Main
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>مشروع التطوير العقاري الرئيسي
+        <target>
+                            نوع مشروع التطوير العقاري
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -765,13 +767,11 @@
           <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectProfileisMain" datatype="html">
-        <source>
-                            Is Main
+      <trans-unit id="projectProfileMainProject" datatype="html">
+        <source>Main Project
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>
-                            نوع مشروع التطوير العقاري
+        <target>مشروع التطوير العقاري الرئيسي
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">

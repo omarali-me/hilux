@@ -95,32 +95,6 @@
 
                     <div class="form-group row">
                       <div class="col-sm-6">
-                        <div class="form-group row" *ngIf="isNotMain()">
-                          <label class="col-sm-3 col-form-label" i18n="@@projectProfileMainProject">Main Project
-                            <span>*</span>
-                          </label>
-                          <div class="col-sm-9">
-                            <ng-select
-                              class="rtl"
-                              [items]="projectsOptions | async"
-                              required="true"
-                              name="mainProject" [hideSelected]="true"
-                              [(ngModel)]="formData.mainProjectId" [minTermLength]="4"
-                              bindLabel="value.ar" typeToSearchText="Please enter 4 or more characters"
-                              bindValue="key" [typeahead]="projectsSearchInput$"
-                              notFoundText="لا يوجد نتائج للبحث" [loading]="projectDataOptionsLoading"
-                              #mainProject="ngModel"
-                            >
-                            </ng-select>
-                            <div *ngIf="mainProject.invalid && (mainProject.dirty || mainProject.touched)" class="alert alert-danger">
-                              <div *ngIf="mainProject.errors?.required">
-                                Main Project can not be blank
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label" i18n="@@projectProfileisMain">
                             Is Main
@@ -142,6 +116,32 @@
                             <div *ngIf="isMain.invalid && (isMain.dirty || isMain.touched)" class="alert alert-danger">
                               <div *ngIf="isMain.errors?.required">
                                 Is Main can not be blank
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group row" *ngIf="isNotMain()">
+                          <label class="col-sm-3 col-form-label" i18n="@@projectProfileMainProject">Main Project
+                            <span>*</span>
+                          </label>
+                          <div class="col-sm-9">
+                            <ng-select
+                              class="rtl"
+                              [items]="projectsOptions | async"
+                              required="true"
+                              name="mainProject" [hideSelected]="true"
+                              [(ngModel)]="formData.mainProjectId" [minTermLength]="4"
+                              bindLabel="value.ar" typeToSearchText="Please enter 4 or more characters"
+                              bindValue="key" [typeahead]="projectsSearchInput$"
+                              notFoundText="لا يوجد نتائج للبحث" [loading]="projectDataOptionsLoading"
+                              #mainProject="ngModel"
+                            >
+                            </ng-select>
+                            <div *ngIf="mainProject.invalid && (mainProject.dirty || mainProject.touched)" class="alert alert-danger">
+                              <div *ngIf="mainProject.errors?.required">
+                                Main Project can not be blank
                               </div>
                             </div>
                           </div>
