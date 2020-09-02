@@ -54,6 +54,7 @@ export class ProjectProfileComponent implements OnInit {
     this.loadContractorsOptions();
     this.loadConsultantsOptions();
     this.loadAccountTrusteesOptions();
+    this.loadProjectStatusOptions();
 
     this.isMainOptions = [{
       key: 1,
@@ -139,23 +140,17 @@ export class ProjectProfileComponent implements OnInit {
   }
 
   loadProjectsTypesOptions() {
-    this.projectsTypesOptions = [{
-      key: 1,
-      value: { en: 'Main', ar: 'رئيسي' }
-    },
-    {
-      key: 0,
-      value: { en: 'Sub', ar: 'فرعي' }
-    }];
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projectstypes`)
+    .subscribe((data) => {
+      this.projectsTypesOptions = data;
+    })
+  }
 
-    this.projectStatusOptions = [{
-      key: 1,
-      value: { en: 'Active', ar: 'فعال' }
-    },
-    {
-      key: 0,
-      value: { en: 'Inactive', ar: 'غير فعال' }
-    }];
+  loadProjectStatusOptions() {
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projectsStatuses`)
+    .subscribe((data) => {
+      this.projectStatusOptions = data;
+    })
   }
 
   loadProjectsRegistrationTypesOptions() {
@@ -187,7 +182,7 @@ export class ProjectProfileComponent implements OnInit {
   }
 
   loadAccountTrusteesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/projetcsConsultants`)
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/projetcsAccountTrusteeBanks`)
     .subscribe((data) => {
       this.accountTrusteesOptions = data;
     })
