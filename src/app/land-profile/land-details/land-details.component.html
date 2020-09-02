@@ -142,7 +142,17 @@
               <label class="col-sm-3 col-form-label" i18n="@@landProfileSubLandUse">Sub Land Use
               </label>
               <div class="col-sm-9">
-                <input type="text" name="subLandUse" class="form-control" [(ngModel)]="formData.subLandUse" #subLandUse="ngModel">
+                <ng-select
+                  class="rtl"
+                  [items]="subUsageTypesOptions"
+                  name="subLandUse"
+                  [(ngModel)]="formData.subUsageTypeId"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  #subLandUse="ngModel"
+                >
+                </ng-select>
               </div>
             </div>
           </div>
@@ -152,7 +162,17 @@
               <label class="col-sm-3 col-form-label" i18n="@@landProfileLandUse">Land Use
               </label>
               <div class="col-sm-9">
-                <input type="text" name="landUse" class="form-control" [(ngModel)]="formData.landUse" #landUse="ngModel">
+                <ng-select
+                  class="rtl"
+                  [items]="mainUsageTypesOptions"
+                  name="landUse"
+                  [(ngModel)]="formData.mainUsageTypeId"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  #landUse="ngModel"
+                >
+                </ng-select>
               </div>
             </div>
           </div>

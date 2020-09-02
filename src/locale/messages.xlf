@@ -172,11 +172,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">797</context>
+          <context context-type="linenumber">817</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">775</context>
+          <context context-type="linenumber">795</context>
         </context-group>
       </trans-unit>
       <trans-unit id="formCancelLabel" datatype="html">
@@ -1782,11 +1782,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">174</context>
+          <context context-type="linenumber">184</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">152</context>
+          <context context-type="linenumber">162</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfilePropertyType" datatype="html">
@@ -1794,11 +1794,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">186</context>
+          <context context-type="linenumber">206</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">164</context>
+          <context context-type="linenumber">184</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileFloorsasperSiteMap" datatype="html">
@@ -1806,11 +1806,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">216</context>
+          <context context-type="linenumber">236</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">194</context>
+          <context context-type="linenumber">214</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileLandAreaM2" datatype="html">
@@ -1818,33 +1818,33 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">226</context>
+          <context context-type="linenumber">246</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">204</context>
+          <context context-type="linenumber">224</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileEngineeringsRemarks" datatype="html">
         <source>Engineerings Remarks</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">238</context>
+          <context context-type="linenumber">258</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">216</context>
+          <context context-type="linenumber">236</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileMunicipalityRemarks" datatype="html">
         <source>Municipality Remarks</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">252</context>
+          <context context-type="linenumber">272</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">230</context>
+          <context context-type="linenumber">250</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileStreetName" datatype="html">
@@ -1852,11 +1852,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">268</context>
+          <context context-type="linenumber">288</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">246</context>
+          <context context-type="linenumber">266</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileStreetType" datatype="html">
@@ -1864,11 +1864,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">293</context>
+          <context context-type="linenumber">313</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">271</context>
+          <context context-type="linenumber">291</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileSouth" datatype="html">
@@ -1876,11 +1876,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">324</context>
+          <context context-type="linenumber">344</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">302</context>
+          <context context-type="linenumber">322</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNorth" datatype="html">
@@ -1888,11 +1888,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">334</context>
+          <context context-type="linenumber">354</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">312</context>
+          <context context-type="linenumber">332</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileWest" datatype="html">
@@ -1900,11 +1900,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">346</context>
+          <context context-type="linenumber">366</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">324</context>
+          <context context-type="linenumber">344</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileEast" datatype="html">
@@ -1912,11 +1912,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">356</context>
+          <context context-type="linenumber">376</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">334</context>
+          <context context-type="linenumber">354</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNumberofBuiltFloors" datatype="html">
@@ -1924,11 +1924,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">373</context>
+          <context context-type="linenumber">393</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">351</context>
+          <context context-type="linenumber">371</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileBuildingArea" datatype="html">
@@ -1936,11 +1936,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">383</context>
+          <context context-type="linenumber">403</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">361</context>
+          <context context-type="linenumber">381</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileBuildingAge" datatype="html">
@@ -1948,11 +1948,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">395</context>
+          <context context-type="linenumber">415</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">373</context>
+          <context context-type="linenumber">393</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileCompletionRate" datatype="html">
@@ -1960,11 +1960,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">405</context>
+          <context context-type="linenumber">425</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">383</context>
+          <context context-type="linenumber">403</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileAnnualincomefromRent" datatype="html">
@@ -1972,22 +1972,22 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">417</context>
+          <context context-type="linenumber">437</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">395</context>
+          <context context-type="linenumber">415</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfilePropertyLeased" datatype="html">
         <source>Property leased</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">430</context>
+          <context context-type="linenumber">450</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">408</context>
+          <context context-type="linenumber">428</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileAnnualMaintenanceAmount" datatype="html">
@@ -1995,11 +1995,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">440</context>
+          <context context-type="linenumber">460</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">418</context>
+          <context context-type="linenumber">438</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNumberofShops" datatype="html">
@@ -2007,11 +2007,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">455</context>
+          <context context-type="linenumber">475</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">433</context>
+          <context context-type="linenumber">453</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileTheNumberofRentedShops" datatype="html">
@@ -2019,11 +2019,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">470</context>
+          <context context-type="linenumber">490</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">448</context>
+          <context context-type="linenumber">468</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNumberofVacantShops" datatype="html">
@@ -2031,11 +2031,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">480</context>
+          <context context-type="linenumber">500</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">458</context>
+          <context context-type="linenumber">478</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNumberofWarehouses" datatype="html">
@@ -2043,11 +2043,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">493</context>
+          <context context-type="linenumber">513</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">471</context>
+          <context context-type="linenumber">491</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileTheNumberofRentedWarehouses" datatype="html">
@@ -2055,11 +2055,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">508</context>
+          <context context-type="linenumber">528</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">486</context>
+          <context context-type="linenumber">506</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNumberofVacantWarehouses" datatype="html">
@@ -2067,11 +2067,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">518</context>
+          <context context-type="linenumber">538</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">496</context>
+          <context context-type="linenumber">516</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNumberofServiceUnits" datatype="html">
@@ -2079,11 +2079,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">530</context>
+          <context context-type="linenumber">550</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">508</context>
+          <context context-type="linenumber">528</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNumberofRooms" datatype="html">
@@ -2091,11 +2091,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">540</context>
+          <context context-type="linenumber">560</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">518</context>
+          <context context-type="linenumber">538</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNumberofRentedRooms" datatype="html">
@@ -2103,11 +2103,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">552</context>
+          <context context-type="linenumber">572</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">530</context>
+          <context context-type="linenumber">550</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNumberofVacantRooms" datatype="html">
@@ -2115,11 +2115,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">562</context>
+          <context context-type="linenumber">582</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">540</context>
+          <context context-type="linenumber">560</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileEastern" datatype="html">
@@ -2127,11 +2127,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">578</context>
+          <context context-type="linenumber">598</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">556</context>
+          <context context-type="linenumber">576</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNorthFacade" datatype="html">
@@ -2139,11 +2139,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">588</context>
+          <context context-type="linenumber">608</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">566</context>
+          <context context-type="linenumber">586</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileWestern" datatype="html">
@@ -2151,11 +2151,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">600</context>
+          <context context-type="linenumber">620</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">578</context>
+          <context context-type="linenumber">598</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileSouthern" datatype="html">
@@ -2163,11 +2163,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">610</context>
+          <context context-type="linenumber">630</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">588</context>
+          <context context-type="linenumber">608</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileStructureType" datatype="html">
@@ -2175,11 +2175,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">623</context>
+          <context context-type="linenumber">643</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">601</context>
+          <context context-type="linenumber">621</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileReception" datatype="html">
@@ -2187,11 +2187,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">642</context>
+          <context context-type="linenumber">662</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">620</context>
+          <context context-type="linenumber">640</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileExternalYards" datatype="html">
@@ -2199,11 +2199,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">652</context>
+          <context context-type="linenumber">672</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">630</context>
+          <context context-type="linenumber">650</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileTheRooms" datatype="html">
@@ -2211,11 +2211,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">664</context>
+          <context context-type="linenumber">684</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">642</context>
+          <context context-type="linenumber">662</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileTheEntrance" datatype="html">
@@ -2223,11 +2223,11 @@
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">674</context>
+          <context context-type="linenumber">694</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">652</context>
+          <context context-type="linenumber">672</context>
         </context-group>
       </trans-unit>
     </body>
