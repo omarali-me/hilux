@@ -36,21 +36,6 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@projectProfileNameInEnglish">Name in English
-                <span *ngIf="isOneOrOtherNameRequired('nameEn')">*</span>
-              </label>
-              <div class="col-sm-9">
-                <input type="text" name="nameEn" [required]="isOneOrOtherNameRequired('nameEn')" class="form-control" [(ngModel)]="formData.nameEn" #nameEn="ngModel" disabled="true">
-                <div *ngIf="nameEn.invalid && (nameEn.dirty || nameEn.touched)" class="alert alert-danger">
-                  <div *ngIf="nameEn.errors?.required">
-                    Name in English can not be blank
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@projectProfileNameInArabic">Name In Arabic
                 <span *ngIf="isOneOrOtherNameRequired('nameAr')">*</span>
               </label>
@@ -59,6 +44,21 @@
                 <div *ngIf="nameAr.invalid && (nameAr.dirty || nameAr.touched)" class="alert alert-danger">
                   <div *ngIf="nameAr.errors?.required">
                     Name in Arabic can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@projectProfileNameInEnglish">Name in English
+                <span *ngIf="isOneOrOtherNameRequired('nameEn')">*</span>
+              </label>
+              <div class="col-sm-9">
+                <input type="text" name="nameEn" [required]="isOneOrOtherNameRequired('nameEn')" class="form-control" [(ngModel)]="formData.nameEn" #nameEn="ngModel" disabled="true">
+                <div *ngIf="nameEn.invalid && (nameEn.dirty || nameEn.touched)" class="alert alert-danger">
+                  <div *ngIf="nameEn.errors?.required">
+                    Name in English can not be blank
                   </div>
                 </div>
               </div>
@@ -567,7 +567,7 @@
                 <span>*</span>
               </label>
               <div class="col-sm-9">
-                <input name="projectCompletionpercentage" type="text" class="form-control" required="true" [(ngModel)]="formData.projectCompletionpercentage" #projectCompletionpercentage="ngModel" numbersOnly precision="0">
+                <input name="projectCompletionpercentage" type="text" class="form-control" required="true" [(ngModel)]="formData.projectCompletionpercentage" #projectCompletionpercentage="ngModel" numbersOnly precision="0" [disabled]="isProjectCompleted()">
                 <div *ngIf="projectCompletionpercentage.invalid && (projectCompletionpercentage.dirty || projectCompletionpercentage.touched)" class="alert alert-danger">
                   <div *ngIf="projectCompletionpercentage.errors?.pattern || projectCompletionpercentage.errors?.required">
                     Enter valid Project Completion Percentage
@@ -590,7 +590,7 @@
                   [(ngModel)]="formData.projectStatusId"
                   bindLabel="value.ar"
                   bindValue="key"
-                  notFoundText="لا يوجد نتائج للبحث"
+                  notFoundText="لا يوجد نتائج للبحث" (change)="setProjectCompletionPercentage()"
                   #projectStatus="ngModel"
                 >
                 </ng-select>

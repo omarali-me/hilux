@@ -718,10 +718,10 @@
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileNameInEnglish" datatype="html">
-        <source>Name in English
+        <source>Name In Arabic
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>اسم مشروع التطوير العقاري باللغة الانجليزية
+        <target>اسم مشروع التطوير العقاري باللغة العربية
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -734,10 +734,10 @@
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileNameInArabic" datatype="html">
-        <source>Name In Arabic
+        <source>Name in English
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>اسم مشروع التطوير العقاري باللغة العربية
+        <target>اسم مشروع التطوير العقاري باللغة الانجليزية
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">

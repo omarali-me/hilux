@@ -243,9 +243,9 @@ export class ProjectDetailsComponent implements OnInit {
 
   calculateJointSoldArea() {
     // should automatically calculated = Meter Total Sold Area - Meter Net Sold Area
-    const meterTotalSoldArea = this.formData.meterTotalSoldArea || null;
-    const meterNetSoldArea = this.formData.meterNetSoldArea || null
-    this.formData.meterJointSoldArea = _.toNumber(meterTotalSoldArea) - _.toNumber(meterNetSoldArea)
+    const meterTotalSoldArea = this.formData.meterTotalArea || null;
+    const meterNetSoldArea = this.formData.meterNetArea || null
+    this.formData.meterJointArea = _.toNumber(meterTotalSoldArea) - _.toNumber(meterNetSoldArea)
   }
 
   prepareProjectValueOptions(profile: any) {
@@ -273,5 +273,15 @@ export class ProjectDetailsComponent implements OnInit {
         this.landSearchInput$.next(option.value && option.value.ar);
       })
     }
+  }
+
+  setProjectCompletionPercentage() {
+    if (this.isProjectCompleted()) {
+      this.formData.projectCompletionpercentage = '100';
+    }
+  }
+
+  isProjectCompleted() {
+    return this.formData.projectStatusId && (this.formData.projectStatusId.includes('9') || this.formData.projectStatusId.includes(9));
   }
 }
