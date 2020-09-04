@@ -1161,9 +1161,8 @@
           <context context-type="linenumber">859</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileProject" datatype="html">
-        <source>
-                            Project
+      <trans-unit id="unitProfileDeveloper" datatype="html">
+        <source>Developer
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
         <context-group purpose="location">
@@ -1175,17 +1174,18 @@
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileDeveloper" datatype="html">
-        <source>Developer
+      <trans-unit id="unitProfileProject" datatype="html">
+        <source>
+                            Project
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">58</context>
+          <context context-type="linenumber">57</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileUnitNumber" datatype="html">
@@ -1201,8 +1201,10 @@
           <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileUnitUse" datatype="html">
-        <source>Unit Use
+      <trans-unit id="unitProfileUnitType" datatype="html">
+        <source>
+                            Unit Type
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
@@ -1213,22 +1215,21 @@
           <context context-type="linenumber">86</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileUnitType" datatype="html">
-        <source>
-                            Unit Type
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+      <trans-unit id="unitProfileUnitUse" datatype="html">
+        <source>Unit Use
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">131</context>
+          <context context-type="linenumber">134</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">110</context>
+          <context context-type="linenumber">113</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileLand" datatype="html">
-        <source>Land
+      <trans-unit id="unitProfileFloorNumber" datatype="html">
+        <source>Floor Number
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
@@ -1239,17 +1240,16 @@
           <context context-type="linenumber">140</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileFloorNumber" datatype="html">
-        <source>Floor Number
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+      <trans-unit id="unitProfileLand" datatype="html">
+        <source>Land
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">187</context>
+          <context context-type="linenumber">180</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">166</context>
+          <context context-type="linenumber">159</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterTotalSoldArea" datatype="html">
@@ -1265,8 +1265,8 @@
           <context context-type="linenumber">188</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileMeterJointSoldArea" datatype="html">
-        <source>Meter Joint Sold Area</source>
+      <trans-unit id="unitProfileMeterNetSoldArea" datatype="html">
+        <source>Meter Net Sold Area</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">229</context>
@@ -1276,8 +1276,8 @@
           <context context-type="linenumber">208</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileMeterNetSoldArea" datatype="html">
-        <source>Meter Net Sold Area</source>
+      <trans-unit id="unitProfileMeterJointSoldArea" datatype="html">
+        <source>Meter Joint Sold Area</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">242</context>
@@ -1298,8 +1298,8 @@
           <context context-type="linenumber">237</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileMeterJointActualArea" datatype="html">
-        <source>Meter Joint Actual Area</source>
+      <trans-unit id="unitProfileMeterNetActualArea" datatype="html">
+        <source>Meter Net Actual Area</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">276</context>
@@ -1309,8 +1309,8 @@
           <context context-type="linenumber">255</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileMeterNetActualArea" datatype="html">
-        <source>Meter Net Actual Area</source>
+      <trans-unit id="unitProfileMeterJointActualArea" datatype="html">
+        <source>Meter Joint Actual Area</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">289</context>
@@ -1320,8 +1320,8 @@
           <context context-type="linenumber">268</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileServantRoomsCount" datatype="html">
-        <source>Servant Rooms Count</source>
+      <trans-unit id="unitProfileRoomsCount" datatype="html">
+        <source>Rooms Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">305</context>
@@ -1331,8 +1331,8 @@
           <context context-type="linenumber">284</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileRoomsCount" datatype="html">
-        <source>Rooms Count</source>
+      <trans-unit id="unitProfileServantRoomsCount" datatype="html">
+        <source>Servant Rooms Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">318</context>
@@ -1342,8 +1342,8 @@
           <context context-type="linenumber">297</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileDiningRoomsCount" datatype="html">
-        <source>Dining Rooms Count</source>
+      <trans-unit id="unitProfileLivingRoomsCount" datatype="html">
+        <source>Living Rooms Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">334</context>
@@ -1353,8 +1353,8 @@
           <context context-type="linenumber">313</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileLivingRoomsCount" datatype="html">
-        <source>Living Rooms Count</source>
+      <trans-unit id="unitProfileDiningRoomsCount" datatype="html">
+        <source>Dining Rooms Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">347</context>
@@ -1364,8 +1364,8 @@
           <context context-type="linenumber">326</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileLoungesCount" datatype="html">
-        <source>Lounges Count</source>
+      <trans-unit id="unitProfileBathroomsCount" datatype="html">
+        <source>Bathrooms Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">363</context>
@@ -1375,8 +1375,8 @@
           <context context-type="linenumber">342</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileBathroomsCount" datatype="html">
-        <source>Bathrooms Count</source>
+      <trans-unit id="unitProfileLoungesCount" datatype="html">
+        <source>Lounges Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">376</context>
@@ -1386,8 +1386,8 @@
           <context context-type="linenumber">355</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileBalconyCount" datatype="html">
-        <source>Balcony Count</source>
+      <trans-unit id="unitProfileKitchensCount" datatype="html">
+        <source>Kitchens Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">392</context>
@@ -1397,8 +1397,8 @@
           <context context-type="linenumber">371</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileKitchensCount" datatype="html">
-        <source>Kitchens Count</source>
+      <trans-unit id="unitProfileBalconyCount" datatype="html">
+        <source>Balcony Count</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">405</context>
@@ -1408,8 +1408,8 @@
           <context context-type="linenumber">384</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileOthers" datatype="html">
-        <source>Others</source>
+      <trans-unit id="unitProfileServicesDescription" datatype="html">
+        <source>Services Description</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">421</context>
@@ -1419,8 +1419,8 @@
           <context context-type="linenumber">400</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="unitProfileServicesDescription" datatype="html">
-        <source>Services Description</source>
+      <trans-unit id="unitProfileOthers" datatype="html">
+        <source>Others</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
           <context context-type="linenumber">434</context>

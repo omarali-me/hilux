@@ -5,6 +5,33 @@
       <div class="card-body"> <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@unitProfileDeveloper">Developer
+                <span>*</span>
+              </label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  required="true"
+                  [items]="developerOptions | async"
+                  name="developerId" [hideSelected]="true"
+                  [(ngModel)]="formData.developerId" [typeahead]="developerSearchInput$"
+                  bindLabel="value.ar" [minTermLength]="4"
+                  bindValue="key" [loading]="developerDataOptionsLoading"
+                  notFoundText="لا يوجد نتائج للبحث" typeToSearchText="Please enter 4 or more characters"
+                  disabled="true"
+                  #developer="ngModel"
+                >
+                </ng-select>
+                <div *ngIf="developer.invalid && (developer.dirty || developer.touched)" class="alert alert-danger">
+                  <div *ngIf="developer.errors?.required">
+                    Developer can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@unitProfileProject">
                 Project
                 <span>*</span>
@@ -26,33 +53,6 @@
                 <div *ngIf="project.invalid && (project.dirty || project.touched)" class="alert alert-danger">
                   <div *ngIf="project.errors?.required">
                     Project can not be blank
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@unitProfileDeveloper">Developer
-                <span>*</span>
-              </label>
-              <div class="col-sm-9">
-                <ng-select
-                  class="rtl"
-                  required="true"
-                  [items]="developerOptions | async"
-                  name="developerId" [hideSelected]="true"
-                  [(ngModel)]="formData.developerId" [typeahead]="developerSearchInput$"
-                  bindLabel="value.ar" [minTermLength]="4"
-                  bindValue="key" [loading]="developerDataOptionsLoading"
-                  notFoundText="لا يوجد نتائج للبحث" typeToSearchText="Please enter 4 or more characters"
-                  disabled="true"
-                  #developer="ngModel"
-                >
-                </ng-select>
-                <div *ngIf="developer.invalid && (developer.dirty || developer.touched)" class="alert alert-danger">
-                  <div *ngIf="developer.errors?.required">
-                    Developer can not be blank
                   </div>
                 </div>
               </div>
@@ -83,30 +83,6 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@unitProfileUnitUse">Unit Use
-              </label>
-              <div class="col-sm-9">
-                <ng-select
-                  class="rtl"
-                  [items]="unitsUsageTypesOptions"
-                  name="unitUse"
-                  [(ngModel)]="formData.unitUseId"
-                  bindLabel="value.ar"
-                  bindValue="key"
-                  notFoundText="لا يوجد نتائج للبحث"
-                  #unitUse="ngModel"
-                >
-                </ng-select>
-                <div *ngIf="unitUse.invalid && (unitUse.dirty || unitUse.touched)" class="alert alert-danger">
-                  <div *ngIf="unitUse.errors?.required">
-                    Unit Use can not be blank
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@unitProfileUnitType">
                 Unit Type
                 <span>*</span>
@@ -132,9 +108,52 @@
               </div>
             </div>
           </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@unitProfileUnitUse">Unit Use
+              </label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  [items]="unitsUsageTypesOptions"
+                  name="unitUse"
+                  [(ngModel)]="formData.unitUseId"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  #unitUse="ngModel"
+                >
+                </ng-select>
+                <div *ngIf="unitUse.invalid && (unitUse.dirty || unitUse.touched)" class="alert alert-danger">
+                  <div *ngIf="unitUse.errors?.required">
+                    Unit Use can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@unitProfileFloorNumber">Floor Number
+                <span>*</span>
+              </label>
+              <div class="col-sm-9">
+                <input type="text" name="floorNumber" required="true" class="form-control" [(ngModel)]="formData.floorNumber" #floorNumber="ngModel" numbersOnly precision="0" pattern="[0-9]*" >
+                <div *ngIf="floorNumber.invalid && (floorNumber.dirty || floorNumber.touched)" class="alert alert-danger">
+                  <div *ngIf="floorNumber.errors?.required">
+                    Floor Number can not be blank
+                  </div>
+
+                  <div *ngIf="floorNumber.errors?.pattern">
+                    Enter Valid Floor Number
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@unitProfileLand">Land
@@ -156,25 +175,6 @@
                 <div *ngIf="land.invalid && (land.dirty || land.touched)" class="alert alert-danger">
                   <div *ngIf="land.errors?.required">
                     Land can not be blank
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@unitProfileFloorNumber">Floor Number
-                <span>*</span>
-              </label>
-              <div class="col-sm-9">
-                <input type="text" name="floorNumber" required="true" class="form-control" [(ngModel)]="formData.floorNumber" #floorNumber="ngModel" numbersOnly precision="0" pattern="[0-9]*" >
-                <div *ngIf="floorNumber.invalid && (floorNumber.dirty || floorNumber.touched)" class="alert alert-danger">
-                  <div *ngIf="floorNumber.errors?.required">
-                    Floor Number can not be blank
-                  </div>
-
-                  <div *ngIf="floorNumber.errors?.pattern">
-                    Enter Valid Floor Number
                   </div>
                 </div>
               </div>
@@ -205,12 +205,12 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@unitProfileMeterJointSoldArea">Meter Joint Sold Area</label>
+              <label class="col-sm-3 col-form-label" i18n="@@unitProfileMeterNetSoldArea">Meter Net Sold Area</label>
               <div class="col-sm-9">
-                <input name="meterJointSoldArea" type="text" class="form-control" [(ngModel)]="formData.meterJointSoldArea" #meterJointSoldArea="ngModel" numbersOnly precision="2">
-                <div *ngIf="meterJointSoldArea.invalid && (meterJointSoldArea.dirty || meterJointSoldArea.touched)" class="alert alert-danger">
-                  <div *ngIf="meterJointSoldArea.errors?.pattern || meterJointSoldArea.errors?.minlength">
-                    Enter valid Meter Joint Sold Area
+                <input name="meterNetSoldArea" type="text" (change)="calculateJointSoldArea()" class="form-control" [(ngModel)]="formData.meterNetSoldArea" #meterNetSoldArea="ngModel" numbersOnly precision="2">
+                <div *ngIf="meterNetSoldArea.invalid && (meterNetSoldArea.dirty || meterNetSoldArea.touched)" class="alert alert-danger">
+                  <div *ngIf="meterNetSoldArea.errors?.pattern || meterNetSoldArea.errors?.minlength">
+                    Enter valid Meter Net Sold Area
                   </div>
                 </div>
               </div>
@@ -218,12 +218,12 @@
           </div>
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@unitProfileMeterNetSoldArea">Meter Net Sold Area</label>
+              <label class="col-sm-3 col-form-label" i18n="@@unitProfileMeterJointSoldArea">Meter Joint Sold Area</label>
               <div class="col-sm-9">
-                <input name="meterNetSoldArea" type="text" (change)="calculateJointSoldArea()" class="form-control" [(ngModel)]="formData.meterNetSoldArea" #meterNetSoldArea="ngModel" numbersOnly precision="2">
-                <div *ngIf="meterNetSoldArea.invalid && (meterNetSoldArea.dirty || meterNetSoldArea.touched)" class="alert alert-danger">
-                  <div *ngIf="meterNetSoldArea.errors?.pattern || meterNetSoldArea.errors?.minlength">
-                    Enter valid Meter Net Sold Area
+                <input name="meterJointSoldArea" type="text" class="form-control" [(ngModel)]="formData.meterJointSoldArea" #meterJointSoldArea="ngModel" numbersOnly precision="2">
+                <div *ngIf="meterJointSoldArea.invalid && (meterJointSoldArea.dirty || meterJointSoldArea.touched)" class="alert alert-danger">
+                  <div *ngIf="meterJointSoldArea.errors?.pattern || meterJointSoldArea.errors?.minlength">
+                    Enter valid Meter Joint Sold Area
                   </div>
                 </div>
               </div>
@@ -252,19 +252,6 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@unitProfileMeterJointActualArea">Meter Joint Actual Area</label>
-              <div class="col-sm-9">
-                <input name="meterJointActualArea" type="text" class="form-control" [(ngModel)]="formData.meterJointActualArea" #meterJointActualArea="ngModel" numbersOnly precision="2">
-                <div *ngIf="meterJointActualArea.invalid && (meterJointActualArea.dirty || meterJointActualArea.touched)" class="alert alert-danger">
-                  <div *ngIf="meterJointActualArea.errors?.minlength">
-                    Enter valid Meter Joint Actual Area
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@unitProfileMeterNetActualArea">Meter Net Actual Area</label>
               <div class="col-sm-9">
                 <input name="meterNetActualArea" type="text" (change)="calculateJointActualArea()" class="form-control" [(ngModel)]="formData.meterNetActualArea" #meterNetActualArea="ngModel" numbersOnly precision="2">
@@ -276,22 +263,22 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@unitProfileServantRoomsCount">Servant Rooms Count</label>
+              <label class="col-sm-3 col-form-label" i18n="@@unitProfileMeterJointActualArea">Meter Joint Actual Area</label>
               <div class="col-sm-9">
-                <input name="servantRoomsCount" type="text" class="form-control" [(ngModel)]="formData.servantRoomsCount" #servantRoomsCount="ngModel" numbersOnly precision="0">
-                <div *ngIf="servantRoomsCount.invalid && (servantRoomsCount.dirty || servantRoomsCount.touched)" class="alert alert-danger">
-                  <div *ngIf="servantRoomsCount.errors?.minlength">
-                    Enter valid Servant Rooms Count
+                <input name="meterJointActualArea" type="text" class="form-control" [(ngModel)]="formData.meterJointActualArea" #meterJointActualArea="ngModel" numbersOnly precision="2">
+                <div *ngIf="meterJointActualArea.invalid && (meterJointActualArea.dirty || meterJointActualArea.touched)" class="alert alert-danger">
+                  <div *ngIf="meterJointActualArea.errors?.minlength">
+                    Enter valid Meter Joint Actual Area
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@unitProfileRoomsCount">Rooms Count</label>
@@ -305,22 +292,22 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@unitProfileDiningRoomsCount">Dining Rooms Count</label>
+              <label class="col-sm-3 col-form-label" i18n="@@unitProfileServantRoomsCount">Servant Rooms Count</label>
               <div class="col-sm-9">
-                <input name="diningRoomsCount" type="text" class="form-control" [(ngModel)]="formData.diningRoomsCount" #diningRoomsCount="ngModel" numbersOnly precision="0">
-                <div *ngIf="diningRoomsCount.invalid && (diningRoomsCount.dirty || diningRoomsCount.touched)" class="alert alert-danger">
-                  <div *ngIf="diningRoomsCount.errors?.minlength">
-                    Enter valid Dining Rooms Count
+                <input name="servantRoomsCount" type="text" class="form-control" [(ngModel)]="formData.servantRoomsCount" #servantRoomsCount="ngModel" numbersOnly precision="0">
+                <div *ngIf="servantRoomsCount.invalid && (servantRoomsCount.dirty || servantRoomsCount.touched)" class="alert alert-danger">
+                  <div *ngIf="servantRoomsCount.errors?.minlength">
+                    Enter valid Servant Rooms Count
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@unitProfileLivingRoomsCount">Living Rooms Count</label>
@@ -334,22 +321,22 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@unitProfileLoungesCount">Lounges Count</label>
+              <label class="col-sm-3 col-form-label" i18n="@@unitProfileDiningRoomsCount">Dining Rooms Count</label>
               <div class="col-sm-9">
-                <input name="loungesCount" type="text" class="form-control" [(ngModel)]="formData.loungesCount" #loungesCount="ngModel" numbersOnly precision="0">
-                <div *ngIf="loungesCount.invalid && (loungesCount.dirty || loungesCount.touched)" class="alert alert-danger">
-                  <div *ngIf="loungesCount.errors?.minlength">
-                    Enter valid Lounges Count
+                <input name="diningRoomsCount" type="text" class="form-control" [(ngModel)]="formData.diningRoomsCount" #diningRoomsCount="ngModel" numbersOnly precision="0">
+                <div *ngIf="diningRoomsCount.invalid && (diningRoomsCount.dirty || diningRoomsCount.touched)" class="alert alert-danger">
+                  <div *ngIf="diningRoomsCount.errors?.minlength">
+                    Enter valid Dining Rooms Count
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@unitProfileBathroomsCount">Bathrooms Count</label>
@@ -363,22 +350,22 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@unitProfileBalconyCount">Balcony Count</label>
+              <label class="col-sm-3 col-form-label" i18n="@@unitProfileLoungesCount">Lounges Count</label>
               <div class="col-sm-9">
-                <input name="balconyCount" type="text" class="form-control" [(ngModel)]="formData.balconyCount" #balconyCount="ngModel" numbersOnly precision="0">
-                <div *ngIf="balconyCount.invalid && (balconyCount.dirty || balconyCount.touched)" class="alert alert-danger">
-                  <div *ngIf="balconyCount.errors?.minlength">
-                    Enter valid Balcony Count
+                <input name="loungesCount" type="text" class="form-control" [(ngModel)]="formData.loungesCount" #loungesCount="ngModel" numbersOnly precision="0">
+                <div *ngIf="loungesCount.invalid && (loungesCount.dirty || loungesCount.touched)" class="alert alert-danger">
+                  <div *ngIf="loungesCount.errors?.minlength">
+                    Enter valid Lounges Count
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@unitProfileKitchensCount">Kitchens Count</label>
@@ -392,22 +379,22 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@unitProfileOthers">Others</label>
+              <label class="col-sm-3 col-form-label" i18n="@@unitProfileBalconyCount">Balcony Count</label>
               <div class="col-sm-9">
-                <textarea
-                  name="others"
-                  class="form-control"
-                  rows="3"
-                  [(ngModel)]="formData.Others"
-                ></textarea>
+                <input name="balconyCount" type="text" class="form-control" [(ngModel)]="formData.balconyCount" #balconyCount="ngModel" numbersOnly precision="0">
+                <div *ngIf="balconyCount.invalid && (balconyCount.dirty || balconyCount.touched)" class="alert alert-danger">
+                  <div *ngIf="balconyCount.errors?.minlength">
+                    Enter valid Balcony Count
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@unitProfileServicesDescription">Services Description</label>
@@ -417,6 +404,19 @@
                   class="form-control"
                   rows="3"
                   [(ngModel)]="formData.servicesDescription"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@unitProfileOthers">Others</label>
+              <div class="col-sm-9">
+                <textarea
+                  name="others"
+                  class="form-control"
+                  rows="3"
+                  [(ngModel)]="formData.Others"
                 ></textarea>
               </div>
             </div>
