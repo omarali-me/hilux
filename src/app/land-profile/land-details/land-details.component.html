@@ -21,16 +21,6 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileOldLandID">Old Land ID
-              </label>
-              <div class="col-sm-9">
-                <input type="text" name="oldLandId" class="form-control" [(ngModel)]="formData.oldLandId" #oldLandId="ngModel">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileLandID">Land ID
                 <span>*</span>
               </label>
@@ -44,36 +34,19 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileSector">Sector
-                <span>*</span>
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileOldLandID">Old Land ID
               </label>
               <div class="col-sm-9">
-                <ng-select
-                  class="rtl"
-                  required="true"
-                  [items]="sectorsOptions"
-                  name="sector"
-                  [(ngModel)]="formData.sectorId"
-                  bindLabel="value.ar"
-                  bindValue="key"
-                  notFoundText="لا يوجد نتائج للبحث"
-                  #sectorId="ngModel"
-                >
-                </ng-select>
-                <div *ngIf="sectorId.invalid && (sectorId.dirty || sectorId.touched)" class="alert alert-danger">
-                  <div *ngIf="sectorId.errors?.required">
-                    Sector can not be blank
-                  </div>
-                </div>
+                <input type="text" name="oldLandId" class="form-control" [(ngModel)]="formData.oldLandId" #oldLandId="ngModel">
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileCity">City
@@ -100,25 +73,36 @@
               </div>
             </div>                        
           </div>
-        </div>
 
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfilePlot">Plot
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileSector">Sector
                 <span>*</span>
               </label>
               <div class="col-sm-9">
-                <input type="text" name="plot" required="true" class="form-control" [(ngModel)]="formData.plot" #plot="ngModel" numbersOnly precision="0">
-                <div *ngIf="plot.invalid && (plot.dirty || plot.touched)" class="alert alert-danger">
-                  <div *ngIf="plot.errors?.required">
-                    Plot can not be blank
+                <ng-select
+                  class="rtl"
+                  required="true"
+                  [items]="sectorsOptions"
+                  name="sector"
+                  [(ngModel)]="formData.sectorId"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  #sectorId="ngModel"
+                >
+                </ng-select>
+                <div *ngIf="sectorId.invalid && (sectorId.dirty || sectorId.touched)" class="alert alert-danger">
+                  <div *ngIf="sectorId.errors?.required">
+                    Sector can not be blank
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileDistrict">District
@@ -134,29 +118,25 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileSubLandUse">Sub Land Use
+              <label class="col-sm-3 col-form-label" i18n="@@landProfilePlot">Plot
+                <span>*</span>
               </label>
               <div class="col-sm-9">
-                <ng-select
-                  class="rtl"
-                  [items]="subUsageTypesOptions"
-                  name="subLandUse"
-                  [(ngModel)]="formData.subUsageTypeId"
-                  bindLabel="value.ar"
-                  bindValue="key"
-                  notFoundText="لا يوجد نتائج للبحث"
-                  #subLandUse="ngModel"
-                >
-                </ng-select>
+                <input type="text" name="plot" required="true" class="form-control" [(ngModel)]="formData.plot" #plot="ngModel" numbersOnly precision="0">
+                <div *ngIf="plot.invalid && (plot.dirty || plot.touched)" class="alert alert-danger">
+                  <div *ngIf="plot.errors?.required">
+                    Plot can not be blank
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileLandUse">Land Use
@@ -171,6 +151,26 @@
                   bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث"
                   #landUse="ngModel"
+                >
+                </ng-select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileSubLandUse">Sub Land Use
+              </label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  [items]="subUsageTypesOptions"
+                  name="subLandUse"
+                  [(ngModel)]="formData.subUsageTypeId"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  #subLandUse="ngModel"
                 >
                 </ng-select>
               </div>
@@ -211,16 +211,6 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileFloorsasperSiteMap">Floors as per Site Map
-              </label>
-              <div class="col-sm-9">
-                <input type="text" name="floorsasperSiteMap" class="form-control" [(ngModel)]="formData.floorsasperSiteMap" #floorsasperSiteMap="ngModel" numbersOnly precision="0">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileLandAreaM2">Land Area m2
               </label>
               <div class="col-sm-9">
@@ -228,23 +218,19 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileEngineeringsRemarks">Engineerings Remarks</label>
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileFloorsasperSiteMap">Floors as per Site Map
+              </label>
               <div class="col-sm-9">
-                <textarea
-                  name="engineeringsRemarks"
-                  class="form-control"
-                  rows="3"
-                  [(ngModel)]="formData.engineeringsRemarks"
-                ></textarea>
+                <input type="text" name="floorsasperSiteMap" class="form-control" [(ngModel)]="formData.floorsasperSiteMap" #floorsasperSiteMap="ngModel" numbersOnly precision="0">
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileMunicipalityRemarks">Municipality Remarks</label>
@@ -258,34 +244,23 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileStreetName">Street Name
-              </label>
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileEngineeringsRemarks">Engineerings Remarks</label>
               <div class="col-sm-9">
-                <ng-select
-                  class="rtl"
-                  [items]="streetsNamesOptions"
-                  name="streetName"
-                  [(ngModel)]="formData.streetNameId"
-                  bindLabel="value.ar"
-                  bindValue="key"
-                  notFoundText="لا يوجد نتائج للبحث"
-                  #streetNameId="ngModel"
-                >
-                </ng-select>
-                <div *ngIf="streetNameId.invalid && (streetNameId.dirty || streetNameId.touched)" class="alert alert-danger">
-                  <div *ngIf="streetNameId.errors?.required">
-                    Street Name can not be blank
-                  </div>
-                </div>
+                <textarea
+                  name="engineeringsRemarks"
+                  class="form-control"
+                  rows="3"
+                  [(ngModel)]="formData.engineeringsRemarks"
+                ></textarea>
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileStreetType">Street Type
@@ -310,6 +285,31 @@
               </div>
             </div>                        
           </div>
+
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileStreetName">Street Name
+              </label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  [items]="streetsNamesOptions"
+                  name="streetName"
+                  [(ngModel)]="formData.streetNameId"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  #streetNameId="ngModel"
+                >
+                </ng-select>
+                <div *ngIf="streetNameId.invalid && (streetNameId.dirty || streetNameId.touched)" class="alert alert-danger">
+                  <div *ngIf="streetNameId.errors?.required">
+                    Street Name can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         
         <div class="form-group row">
@@ -319,20 +319,20 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileSouth">South
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileNorth">North
               </label>
               <div class="col-sm-9">
-                <input type="text" name="south" class="form-control" [(ngModel)]="formData.south" #south="ngModel">
+                <input type="text" name="north" class="form-control" [(ngModel)]="formData.north" #north="ngModel">
               </div>
             </div>
           </div>
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileNorth">North
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileSouth">South
               </label>
               <div class="col-sm-9">
-                <input type="text" name="north" class="form-control" [(ngModel)]="formData.north" #north="ngModel">
+                <input type="text" name="south" class="form-control" [(ngModel)]="formData.south" #south="ngModel">
               </div>
             </div>
           </div>
@@ -341,20 +341,20 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileWest">West
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileEast">East
               </label>
               <div class="col-sm-9">
-                <input type="text" name="west" class="form-control" [(ngModel)]="formData.west" #west="ngModel">
+                <input type="text" name="east" class="form-control" [(ngModel)]="formData.east" #east="ngModel">
               </div>
             </div>
           </div>
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileEast">East
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileWest">West
               </label>
               <div class="col-sm-9">
-                <input type="text" name="east" class="form-control" [(ngModel)]="formData.east" #east="ngModel">
+                <input type="text" name="west" class="form-control" [(ngModel)]="formData.west" #west="ngModel">
               </div>
             </div>
           </div>
@@ -368,16 +368,6 @@
         <div class="form-group row" *ngIf="isNotVacantLand()">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofBuiltFloors">Number of Built Floors
-              </label>
-              <div class="col-sm-9">
-                <input type="text" name="numberofBuiltFloors" class="form-control" [(ngModel)]="formData.numberofBuiltFloors" #numberofBuiltFloors="ngModel" numbersOnly precision="0">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileBuildingArea">Building area
               </label>
               <div class="col-sm-9">
@@ -385,19 +375,19 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-group row" *ngIf="isNotVacantLand()">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileBuildingAge">Building Age
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofBuiltFloors">Number of Built Floors
               </label>
               <div class="col-sm-9">
-                <input type="text" name="buildingAge" class="form-control" [(ngModel)]="formData.buildingAge" #buildingAge="ngModel" numbersOnly precision="0">
+                <input type="text" name="numberofBuiltFloors" class="form-control" [(ngModel)]="formData.numberofBuiltFloors" #numberofBuiltFloors="ngModel" numbersOnly precision="0">
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group row" *ngIf="isNotVacantLand()">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileCompletionRate">Completion rate
@@ -407,19 +397,19 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-group row" *ngIf="isNotVacantLand()">
           <div class="col-sm-6">
-            <div class="form-group row" *ngIf="isLeased()">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileAnnualincomefromRent">Annual income from rent
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileBuildingAge">Building Age
               </label>
               <div class="col-sm-9">
-                <input type="text" name="annualIncomeFromRent" class="form-control" [(ngModel)]="formData.annualIncomeFromRent" #annualIncomeFromRent="ngModel" numbersOnly precision="2">
+                <input type="text" name="buildingAge" class="form-control" [(ngModel)]="formData.buildingAge" #buildingAge="ngModel" numbersOnly precision="0">
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group row" *ngIf="isNotVacantLand()">
           <div class="col-sm-6">
             <div class="form-group row">
               <div class="offset-sm-2 col-sm-10 placeholder">
@@ -427,6 +417,16 @@
                   <input name="propertyLeased" type="checkbox" class="form-check-input" [(ngModel)]="formData.propertyLeased">
                   <label class="form-check-label" i18n="@@landProfilePropertyLeased">Property leased</label>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group row" *ngIf="isLeased()">
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileAnnualincomefromRent">Annual income from rent
+              </label>
+              <div class="col-sm-9">
+                <input type="text" name="annualIncomeFromRent" class="form-control" [(ngModel)]="formData.annualIncomeFromRent" #annualIncomeFromRent="ngModel" numbersOnly precision="2">
               </div>
             </div>
           </div>
@@ -465,20 +465,20 @@
         <div class="form-group row" *ngIf="isShoporShoppingMall()">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileTheNumberofRentedShops">The number of rented shops
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofVacantShops">Number of vacant shops
               </label>
               <div class="col-sm-9">
-                <input type="text" name="theNumberofRentedShops" class="form-control" [(ngModel)]="formData.theNumberofRentedShops" #theNumberofRentedShops="ngModel" numbersOnly precision="0">
+                <input type="text" name="numberofVacantShops" class="form-control" [(ngModel)]="formData.numberofVacantShops" #numberofVacantShops="ngModel" numbersOnly precision="0">
               </div>
             </div>
           </div>
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofVacantShops">Number of vacant shops
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileTheNumberofRentedShops">The number of rented shops
               </label>
               <div class="col-sm-9">
-                <input type="text" name="numberofVacantShops" class="form-control" [(ngModel)]="formData.numberofVacantShops" #numberofVacantShops="ngModel" numbersOnly precision="0">
+                <input type="text" name="theNumberofRentedShops" class="form-control" [(ngModel)]="formData.theNumberofRentedShops" #theNumberofRentedShops="ngModel" numbersOnly precision="0">
               </div>
             </div>
           </div>
@@ -503,16 +503,6 @@
         <div class="form-group row" *ngIf="isWarehouse()">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileTheNumberofRentedWarehouses">The number of rented warehouses
-              </label>
-              <div class="col-sm-9">
-                <input type="text" name="theNumberofRentedWarehouses" class="form-control" [(ngModel)]="formData.theNumberofRentedWarehouses" #theNumberofRentedWarehouses="ngModel" numbersOnly precision="0">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofVacantWarehouses">Number of vacant warehouses
               </label>
               <div class="col-sm-9">
@@ -520,19 +510,19 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-group row" *ngIf="isLabourerHousing()">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofServiceUnits">Number of service units
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileTheNumberofRentedWarehouses">The number of rented warehouses
               </label>
               <div class="col-sm-9">
-                <input type="text" name="numberofServiceUnits" class="form-control" [(ngModel)]="formData.numberofServiceUnits" #numberofServiceUnits="ngModel" numbersOnly precision="0">
+                <input type="text" name="theNumberofRentedWarehouses" class="form-control" [(ngModel)]="formData.theNumberofRentedWarehouses" #theNumberofRentedWarehouses="ngModel" numbersOnly precision="0">
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group row" *ngIf="isLabourerHousing()">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofRooms">Number of rooms
@@ -542,25 +532,35 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-group row" *ngIf="isLabourerHousing()">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofRentedRooms">Number of rented rooms
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofServiceUnits">Number of service units
               </label>
               <div class="col-sm-9">
-                <input type="text" name="numberofRentedRooms" class="form-control" [(ngModel)]="formData.numberofRentedRooms" #numberofRentedRooms="ngModel" numbersOnly precision="0">
+                <input type="text" name="numberofServiceUnits" class="form-control" [(ngModel)]="formData.numberofServiceUnits" #numberofServiceUnits="ngModel" numbersOnly precision="0">
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group row" *ngIf="isLabourerHousing()">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofVacantRooms">Number of vacant rooms
               </label>
               <div class="col-sm-9">
                 <input type="text" name="numberofVacantRooms" class="form-control" [(ngModel)]="formData.numberofVacantRooms" #numberofVacantRooms="ngModel" numbersOnly precision="0">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofRentedRooms">Number of rented rooms
+              </label>
+              <div class="col-sm-9">
+                <input type="text" name="numberofRentedRooms" class="form-control" [(ngModel)]="formData.numberofRentedRooms" #numberofRentedRooms="ngModel" numbersOnly precision="0">
               </div>
             </div>
           </div>
@@ -573,20 +573,20 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileEastern">Eastern
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileNorthFacade">North facade
               </label>
               <div class="col-sm-9">
-                <input type="text" name="eastern" class="form-control" [(ngModel)]="formData.eastern" #eastern="ngModel">
+                <input type="text" name="northFacade" class="form-control" [(ngModel)]="formData.northFacade" #northFacade="ngModel">
               </div>
             </div>
           </div>
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileNorthFacade">North facade
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileEastern">Eastern
               </label>
               <div class="col-sm-9">
-                <input type="text" name="northFacade" class="form-control" [(ngModel)]="formData.northFacade" #northFacade="ngModel">
+                <input type="text" name="eastern" class="form-control" [(ngModel)]="formData.eastern" #eastern="ngModel">
               </div>
             </div>
           </div>
@@ -595,20 +595,20 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileWestern">Western
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileSouthern">Southern
               </label>
               <div class="col-sm-9">
-                <input type="text" name="western" class="form-control" [(ngModel)]="formData.western" #western="ngModel">
+                <input type="text" name="southern" class="form-control" [(ngModel)]="formData.southern" #southern="ngModel">
               </div>
             </div>
           </div>
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileSouthern">Southern
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileWestern">Western
               </label>
               <div class="col-sm-9">
-                <input type="text" name="southern" class="form-control" [(ngModel)]="formData.southern" #southern="ngModel">
+                <input type="text" name="western" class="form-control" [(ngModel)]="formData.western" #western="ngModel">
               </div>
             </div>
           </div>
@@ -637,20 +637,20 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileReception">Reception
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileExternalYards">External yards
               </label>
               <div class="col-sm-9">
-                <input type="text" name="reception" class="form-control" [(ngModel)]="formData.reception" #reception="ngModel">
+                <input type="text" name="externalYards" class="form-control" [(ngModel)]="formData.externalYards" #externalYards="ngModel">
               </div>
             </div>
           </div>
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileExternalYards">External yards
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileReception">Reception
               </label>
               <div class="col-sm-9">
-                <input type="text" name="externalYards" class="form-control" [(ngModel)]="formData.externalYards" #externalYards="ngModel">
+                <input type="text" name="reception" class="form-control" [(ngModel)]="formData.reception" #reception="ngModel">
               </div>
             </div>
           </div>
@@ -659,20 +659,20 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileTheRooms">The rooms
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileTheEntrance">The Entrance
               </label>
               <div class="col-sm-9">
-                <input type="text" name="theRooms" class="form-control" [(ngModel)]="formData.theRooms" #theRooms="ngModel">
+                <input type="text" name="theEntrance" class="form-control" [(ngModel)]="formData.theEntrance" #theEntrance="ngModel">
               </div>
             </div>
           </div>
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileTheEntrance">The Entrance
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileTheRooms">The rooms
               </label>
               <div class="col-sm-9">
-                <input type="text" name="theEntrance" class="form-control" [(ngModel)]="formData.theEntrance" #theEntrance="ngModel">
+                <input type="text" name="theRooms" class="form-control" [(ngModel)]="formData.theRooms" #theRooms="ngModel">
               </div>
             </div>
           </div>
@@ -685,16 +685,6 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileElectricity">Electricity
-              </label>
-              <div class="col-sm-9">
-                <input type="text" name="electricity" class="form-control" [(ngModel)]="formData.electricity" #electricity="ngModel">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileLiftsStairsEscalators">Lifts  / Stairs / Escalators
               </label>
               <div class="col-sm-9">
@@ -702,19 +692,19 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileAppendix">Appendix
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileElectricity">Electricity
               </label>
               <div class="col-sm-9">
-                <input type="text" name="appendix" class="form-control" [(ngModel)]="formData.appendix" #appendix="ngModel">
+                <input type="text" name="electricity" class="form-control" [(ngModel)]="formData.electricity" #electricity="ngModel">
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileAirConditioning">Air conditioning
@@ -724,19 +714,19 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileCarParking">car parking
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileAppendix">Appendix
               </label>
               <div class="col-sm-9">
-                <input type="text" name="carParking" class="form-control" [(ngModel)]="formData.carParking" #carParking="ngModel">
+                <input type="text" name="appendix" class="form-control" [(ngModel)]="formData.appendix" #appendix="ngModel">
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileGas">Gas
@@ -746,25 +736,35 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileGates">Gates
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileCarParking">car parking
               </label>
               <div class="col-sm-9">
-                <input type="text" name="gates" class="form-control" [(ngModel)]="formData.gates" #gates="ngModel">
+                <input type="text" name="carParking" class="form-control" [(ngModel)]="formData.carParking" #carParking="ngModel">
               </div>
             </div>
           </div>
+        </div>
 
+        <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@landProfileMetalAwnings">Metal awnings
               </label>
               <div class="col-sm-9">
                 <input type="text" name="metalAwnings" class="form-control" [(ngModel)]="formData.metalAwnings" #metalAwnings="ngModel">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileGates">Gates
+              </label>
+              <div class="col-sm-9">
+                <input type="text" name="gates" class="form-control" [(ngModel)]="formData.gates" #gates="ngModel">
               </div>
             </div>
           </div>

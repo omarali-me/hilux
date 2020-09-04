@@ -1688,8 +1688,9 @@
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileOldLandID" datatype="html">
-        <source>Old Land ID
+      <trans-unit id="landProfileLandID" datatype="html">
+        <source>Land ID
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1700,21 +1701,20 @@
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileLandID" datatype="html">
-        <source>Land ID
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+      <trans-unit id="landProfileOldLandID" datatype="html">
+        <source>Old Land ID
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">62</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileSector" datatype="html">
-        <source>Sector
+      <trans-unit id="landProfileCity" datatype="html">
+        <source>City
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
         <context-group purpose="location">
@@ -1726,8 +1726,8 @@
           <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileCity" datatype="html">
-        <source>City
+      <trans-unit id="landProfileSector" datatype="html">
+        <source>Sector
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
         <context-group purpose="location">
@@ -1739,8 +1739,8 @@
           <context context-type="linenumber">79</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfilePlot" datatype="html">
-        <source>Plot
+      <trans-unit id="landProfileDistrict" datatype="html">
+        <source>District
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
         <context-group purpose="location">
@@ -1752,8 +1752,8 @@
           <context context-type="linenumber">108</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileDistrict" datatype="html">
-        <source>District
+      <trans-unit id="landProfilePlot" datatype="html">
+        <source>Plot
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
         <context-group purpose="location">
@@ -1765,8 +1765,8 @@
           <context context-type="linenumber">124</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileSubLandUse" datatype="html">
-        <source>Sub Land Use
+      <trans-unit id="landProfileLandUse" datatype="html">
+        <source>Land Use
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1777,8 +1777,8 @@
           <context context-type="linenumber">142</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileLandUse" datatype="html">
-        <source>Land Use
+      <trans-unit id="landProfileSubLandUse" datatype="html">
+        <source>Sub Land Use
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1801,8 +1801,8 @@
           <context context-type="linenumber">184</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileFloorsasperSiteMap" datatype="html">
-        <source>Floors as per Site Map
+      <trans-unit id="landProfileLandAreaM2" datatype="html">
+        <source>Land Area m2
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1813,8 +1813,8 @@
           <context context-type="linenumber">214</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileLandAreaM2" datatype="html">
-        <source>Land Area m2
+      <trans-unit id="landProfileFloorsasperSiteMap" datatype="html">
+        <source>Floors as per Site Map
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1825,8 +1825,8 @@
           <context context-type="linenumber">224</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileEngineeringsRemarks" datatype="html">
-        <source>Engineerings Remarks</source>
+      <trans-unit id="landProfileMunicipalityRemarks" datatype="html">
+        <source>Municipality Remarks</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
           <context context-type="linenumber">258</context>
@@ -1836,8 +1836,8 @@
           <context context-type="linenumber">236</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileMunicipalityRemarks" datatype="html">
-        <source>Municipality Remarks</source>
+      <trans-unit id="landProfileEngineeringsRemarks" datatype="html">
+        <source>Engineerings Remarks</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
           <context context-type="linenumber">272</context>
@@ -1847,8 +1847,8 @@
           <context context-type="linenumber">250</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileStreetName" datatype="html">
-        <source>Street Name
+      <trans-unit id="landProfileStreetType" datatype="html">
+        <source>Street Type
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1859,8 +1859,8 @@
           <context context-type="linenumber">266</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileStreetType" datatype="html">
-        <source>Street Type
+      <trans-unit id="landProfileStreetName" datatype="html">
+        <source>Street Name
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1871,8 +1871,8 @@
           <context context-type="linenumber">291</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileSouth" datatype="html">
-        <source>South
+      <trans-unit id="landProfileNorth" datatype="html">
+        <source>North
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1883,8 +1883,8 @@
           <context context-type="linenumber">322</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileNorth" datatype="html">
-        <source>North
+      <trans-unit id="landProfileSouth" datatype="html">
+        <source>South
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1895,8 +1895,8 @@
           <context context-type="linenumber">332</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileWest" datatype="html">
-        <source>West
+      <trans-unit id="landProfileEast" datatype="html">
+        <source>East
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1907,8 +1907,8 @@
           <context context-type="linenumber">344</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileEast" datatype="html">
-        <source>East
+      <trans-unit id="landProfileWest" datatype="html">
+        <source>West
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1919,8 +1919,8 @@
           <context context-type="linenumber">354</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileNumberofBuiltFloors" datatype="html">
-        <source>Number of Built Floors
+      <trans-unit id="landProfileBuildingArea" datatype="html">
+        <source>Building area
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1931,8 +1931,8 @@
           <context context-type="linenumber">371</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileBuildingArea" datatype="html">
-        <source>Building area
+      <trans-unit id="landProfileNumberofBuiltFloors" datatype="html">
+        <source>Number of Built Floors
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1943,8 +1943,8 @@
           <context context-type="linenumber">381</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileBuildingAge" datatype="html">
-        <source>Building Age
+      <trans-unit id="landProfileCompletionRate" datatype="html">
+        <source>Completion rate
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1955,8 +1955,8 @@
           <context context-type="linenumber">393</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileCompletionRate" datatype="html">
-        <source>Completion rate
+      <trans-unit id="landProfileBuildingAge" datatype="html">
+        <source>Building Age
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -1967,27 +1967,27 @@
           <context context-type="linenumber">403</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="landProfilePropertyLeased" datatype="html">
+        <source>Property leased</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">440</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">418</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="landProfileAnnualincomefromRent" datatype="html">
         <source>Annual income from rent
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">437</context>
+          <context context-type="linenumber">448</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">415</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfilePropertyLeased" datatype="html">
-        <source>Property leased</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">450</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">428</context>
+          <context context-type="linenumber">426</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileAnnualMaintenanceAmount" datatype="html">
@@ -2014,8 +2014,8 @@
           <context context-type="linenumber">453</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileTheNumberofRentedShops" datatype="html">
-        <source>The number of rented shops
+      <trans-unit id="landProfileNumberofVacantShops" datatype="html">
+        <source>Number of vacant shops
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2026,8 +2026,8 @@
           <context context-type="linenumber">468</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileNumberofVacantShops" datatype="html">
-        <source>Number of vacant shops
+      <trans-unit id="landProfileTheNumberofRentedShops" datatype="html">
+        <source>The number of rented shops
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2050,8 +2050,8 @@
           <context context-type="linenumber">491</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileTheNumberofRentedWarehouses" datatype="html">
-        <source>The number of rented warehouses
+      <trans-unit id="landProfileNumberofVacantWarehouses" datatype="html">
+        <source>Number of vacant warehouses
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2062,8 +2062,8 @@
           <context context-type="linenumber">506</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileNumberofVacantWarehouses" datatype="html">
-        <source>Number of vacant warehouses
+      <trans-unit id="landProfileTheNumberofRentedWarehouses" datatype="html">
+        <source>The number of rented warehouses
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2074,8 +2074,8 @@
           <context context-type="linenumber">516</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileNumberofServiceUnits" datatype="html">
-        <source>Number of service units
+      <trans-unit id="landProfileNumberofRooms" datatype="html">
+        <source>Number of rooms
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2086,8 +2086,8 @@
           <context context-type="linenumber">528</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileNumberofRooms" datatype="html">
-        <source>Number of rooms
+      <trans-unit id="landProfileNumberofServiceUnits" datatype="html">
+        <source>Number of service units
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2098,8 +2098,8 @@
           <context context-type="linenumber">538</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileNumberofRentedRooms" datatype="html">
-        <source>Number of rented rooms
+      <trans-unit id="landProfileNumberofVacantRooms" datatype="html">
+        <source>Number of vacant rooms
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2110,8 +2110,8 @@
           <context context-type="linenumber">550</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileNumberofVacantRooms" datatype="html">
-        <source>Number of vacant rooms
+      <trans-unit id="landProfileNumberofRentedRooms" datatype="html">
+        <source>Number of rented rooms
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2122,8 +2122,8 @@
           <context context-type="linenumber">560</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileEastern" datatype="html">
-        <source>Eastern
+      <trans-unit id="landProfileNorthFacade" datatype="html">
+        <source>North facade
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2134,8 +2134,8 @@
           <context context-type="linenumber">576</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileNorthFacade" datatype="html">
-        <source>North facade
+      <trans-unit id="landProfileEastern" datatype="html">
+        <source>Eastern
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2146,8 +2146,8 @@
           <context context-type="linenumber">586</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileWestern" datatype="html">
-        <source>Western
+      <trans-unit id="landProfileSouthern" datatype="html">
+        <source>Southern
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2158,8 +2158,8 @@
           <context context-type="linenumber">598</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileSouthern" datatype="html">
-        <source>Southern
+      <trans-unit id="landProfileWestern" datatype="html">
+        <source>Western
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2182,8 +2182,8 @@
           <context context-type="linenumber">621</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileReception" datatype="html">
-        <source>Reception
+      <trans-unit id="landProfileExternalYards" datatype="html">
+        <source>External yards
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2194,8 +2194,8 @@
           <context context-type="linenumber">640</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileExternalYards" datatype="html">
-        <source>External yards
+      <trans-unit id="landProfileReception" datatype="html">
+        <source>Reception
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2206,8 +2206,8 @@
           <context context-type="linenumber">650</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileTheRooms" datatype="html">
-        <source>The rooms
+      <trans-unit id="landProfileTheEntrance" datatype="html">
+        <source>The Entrance
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2218,8 +2218,8 @@
           <context context-type="linenumber">662</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileTheEntrance" datatype="html">
-        <source>The Entrance
+      <trans-unit id="landProfileTheRooms" datatype="html">
+        <source>The rooms
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2230,8 +2230,8 @@
           <context context-type="linenumber">672</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileElectricity" datatype="html">
-        <source>Electricity
+      <trans-unit id="landProfileLiftsStairsEscalators" datatype="html">
+        <source>Lifts  / Stairs / Escalators
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2242,8 +2242,8 @@
           <context context-type="linenumber">688</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileLiftsStairsEscalators" datatype="html">
-        <source>Lifts  / Stairs / Escalators
+      <trans-unit id="landProfileElectricity" datatype="html">
+        <source>Electricity
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2254,8 +2254,8 @@
           <context context-type="linenumber">698</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileAppendix" datatype="html">
-        <source>Appendix
+      <trans-unit id="landProfileAirConditioning" datatype="html">
+        <source>Air conditioning
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2266,8 +2266,8 @@
           <context context-type="linenumber">710</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileAirConditioning" datatype="html">
-        <source>Air conditioning
+      <trans-unit id="landProfileAppendix" datatype="html">
+        <source>Appendix
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2278,8 +2278,8 @@
           <context context-type="linenumber">720</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileCarParking" datatype="html">
-        <source>car parking
+      <trans-unit id="landProfileGas" datatype="html">
+        <source>Gas
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2290,8 +2290,8 @@
           <context context-type="linenumber">732</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileGas" datatype="html">
-        <source>Gas
+      <trans-unit id="landProfileCarParking" datatype="html">
+        <source>car parking
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2302,8 +2302,8 @@
           <context context-type="linenumber">742</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileGates" datatype="html">
-        <source>Gates
+      <trans-unit id="landProfileMetalAwnings" datatype="html">
+        <source>Metal awnings
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2314,8 +2314,8 @@
           <context context-type="linenumber">754</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileMetalAwnings" datatype="html">
-        <source>Metal awnings
+      <trans-unit id="landProfileGates" datatype="html">
+        <source>Gates
                           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
