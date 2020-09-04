@@ -27,15 +27,6 @@
                     <div class="card-body">
                       <div class="form-group row">
                         <div class="col-sm-6">
-                          <div class="offset-sm-2 col-sm-10 placeholder">
-                            <div class="form-check float-right">
-                              <input name="isDead" type="checkbox" class="form-check-input" [(ngModel)]="formData.isDead">
-                              <label class="form-check-label" i18n="@@customerProfileDeceased">Deceased</label>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-6">
                           <!-- <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Customer ID</label>
                             <div class="col-sm-9">
@@ -46,6 +37,15 @@
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileProfileImage">Profile Image</label>
                             <div class="col-sm-9">
                               <app-file-upload [field]="prepareImageField()" [formData]="formData"></app-file-upload>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <div class="offset-sm-2 col-sm-10 placeholder">
+                            <div class="form-check float-right">
+                              <input name="isDead" type="checkbox" class="form-check-input" [(ngModel)]="formData.isDead">
+                              <label class="form-check-label" i18n="@@customerProfileDeceased">Deceased</label>
                             </div>
                           </div>
                         </div>
@@ -136,6 +136,25 @@
                       <div class="form-group row" *ngIf="formData.emiratesId">
                         <div class="col-sm-6">
                           <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmiratesIDissuancedate">Emirates ID issuance date
+                            </label>
+                            <div class="col-sm-9">
+                              <input type="text"
+                              name="emiratesIdIssueDate"
+                              class="form-control"
+                              (dateTimeChange)="formatDate('emiratesIdIssueDate')"
+                              [(ngModel)]="formData.emiratesIdIssueDate"
+                              [max]="minDate"
+                              [owlDateTime]="dt6"
+                              [owlDateTimeTrigger]="dt6"
+                              #emiratesIdIssueDate="ngModel"
+                              >
+                              <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmiratesIDexpirydate">Emirates ID expiry date
                               <span>*</span>
                             </label>
@@ -160,25 +179,6 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-sm-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmiratesIDissuancedate">Emirates ID issuance date
-                            </label>
-                            <div class="col-sm-9">
-                              <input type="text"
-                              name="emiratesIdIssueDate"
-                              class="form-control"
-                              (dateTimeChange)="formatDate('emiratesIdIssueDate')"
-                              [(ngModel)]="formData.emiratesIdIssueDate"
-                              [max]="minDate"
-                              [owlDateTime]="dt6"
-                              [owlDateTimeTrigger]="dt6"
-                              #emiratesIdIssueDate="ngModel"
-                              >
-                              <owl-date-time [pickerType]="'calendar'" #dt6></owl-date-time>
-                            </div>
-                          </div>
-                        </div>
                       </div>
                       <div class="form-group row">
                         <div class="col-sm-6">
@@ -194,32 +194,6 @@
                       </div>
 
                       <div class="form-group row" *ngIf="formData.passportNumber">
-                        <div class="col-sm-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfilePassportnumberexpirydate">Passport number expiry date
-                              <span>*</span>
-                            </label>
-                            <div class="col-sm-9">
-                              <input type="text"
-                                class="form-control"
-                                name="passportExpiryDate"
-                                required="true"
-                                (dateTimeChange)="formatDate('passportExpiryDate')"
-                                [(ngModel)]="formData.passportExpiryDate"
-                                [min]="minDate"
-                                [owlDateTime]="dt3"
-                                [owlDateTimeTrigger]="dt3"
-                                #passportExpiryDate="ngModel"
-                              >
-                              <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
-                              <div *ngIf="passportExpiryDate.invalid && (passportExpiryDate.dirty || passportExpiryDate.touched)" class="alert alert-danger">
-                                <div *ngIf="passportExpiryDate.errors?.required">
-                                  Passport number expiry date can not be blank
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfilePassportnumberissuancedate">Passport number issuance date
@@ -246,9 +220,43 @@
                             </div>
                           </div>
                         </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfilePassportnumberexpirydate">Passport number expiry date
+                              <span>*</span>
+                            </label>
+                            <div class="col-sm-9">
+                              <input type="text"
+                                class="form-control"
+                                name="passportExpiryDate"
+                                required="true"
+                                (dateTimeChange)="formatDate('passportExpiryDate')"
+                                [(ngModel)]="formData.passportExpiryDate"
+                                [min]="minDate"
+                                [owlDateTime]="dt3"
+                                [owlDateTimeTrigger]="dt3"
+                                #passportExpiryDate="ngModel"
+                              >
+                              <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+                              <div *ngIf="passportExpiryDate.invalid && (passportExpiryDate.dirty || passportExpiryDate.touched)" class="alert alert-danger">
+                                <div *ngIf="passportExpiryDate.errors?.required">
+                                  Passport number expiry date can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileOtherdecrees">Other (decrees ..)</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="otherId" class="form-control" [(ngModel)]="formData.otherId">
+                            </div>
+                          </div>
+                        </div>
                         <div class="col-sm-6">
                           <div class="form-group row" *ngIf="formData.otherId">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileOtherdocumenttype">Other (document type)
@@ -275,17 +283,28 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-sm-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileOtherdecrees">Other (decrees ..)</label>
-                            <div class="col-sm-9">
-                              <input type="text" name="otherId" class="form-control" [(ngModel)]="formData.otherId">
-                            </div>
-                          </div>
-                        </div>
                       </div>
 
                       <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileMobileNumber">Mobile Number
+                              <span *ngIf="isRequired()">*</span>
+                            </label>
+                            <div class="col-sm-9">
+                              <input type="text" name="mobileNumber" [maxLength]="17" [required]="isRequired()" class="form-control" [(ngModel)]="formData.phone" #mobileNumber="ngModel" numbersOnly precision="0" pattern="[0-9]*" >
+                              <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)" class="alert alert-danger">
+                                <div *ngIf="mobileNumber.errors?.required">
+                                  Mobile Number can not be blank
+                                </div>
+
+                                <div *ngIf="mobileNumber.errors?.pattern">
+                                  Enter Valid Mobile Number
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileDateofBirth">Date of Birth
@@ -312,54 +331,9 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-sm-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileMobileNumber">Mobile Number
-                              <span *ngIf="isRequired()">*</span>
-                            </label>
-                            <div class="col-sm-9">
-                              <input type="text" name="mobileNumber" [maxLength]="17" [required]="isRequired()" class="form-control" [(ngModel)]="formData.phone" #mobileNumber="ngModel" numbersOnly precision="0" pattern="[0-9]*" >
-                              <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)" class="alert alert-danger">
-                                <div *ngIf="mobileNumber.errors?.required">
-                                  Mobile Number can not be blank
-                                </div>
-
-                                <div *ngIf="mobileNumber.errors?.pattern">
-                                  Enter Valid Mobile Number
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
                       </div>
               
                       <div class="form-group row">
-                        <div class="col-sm-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileNationality">Nationality
-                              <span>*</span>
-                            </label>
-                            <div class="col-sm-9">
-                              <ng-select
-                                class="rtl"
-                                required="true"
-                                [items]="nationalitiesOptions"
-                                name="nationality"
-                                [(ngModel)]="formData.nationalityCode"
-                                bindLabel="value.ar"
-                                bindValue="key"
-                                notFoundText="لا يوجد نتائج للبحث"
-                                #nationality="ngModel"
-                              >
-                              </ng-select>
-                              <div *ngIf="nationality.invalid && (nationality.dirty || nationality.touched)" class="alert alert-danger">
-                                <div *ngIf="nationality.errors?.required">
-                                  Nationality can not be blank
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileGender">Gender
@@ -386,35 +360,35 @@
                             </div>
                           </div>
                         </div>
-                      </div>
-
-                      <div class="form-group row">
                         <div class="col-sm-6">
-                          <div class="form-group row" *ngIf="isCustomerDisabled()">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileTypeofDisability">Type of Disability
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileNationality">Nationality
                               <span>*</span>
                             </label>
                             <div class="col-sm-9">
                               <ng-select
                                 class="rtl"
                                 required="true"
-                                [items]="disabilityTypesOptions"
-                                name="typeOfDisability"
-                                [(ngModel)]="formData.typeOfDisability"
+                                [items]="nationalitiesOptions"
+                                name="nationality"
+                                [(ngModel)]="formData.nationalityCode"
                                 bindLabel="value.ar"
                                 bindValue="key"
                                 notFoundText="لا يوجد نتائج للبحث"
-                                #typeOfDisability="ngModel"
+                                #nationality="ngModel"
                               >
                               </ng-select>
-                              <div *ngIf="typeOfDisability.invalid && (typeOfDisability.dirty || typeOfDisability.touched)" class="alert alert-danger">
-                                <div *ngIf="typeOfDisability.errors?.required">
-                                  Type of Disability can not be blank
+                              <div *ngIf="nationality.invalid && (nationality.dirty || nationality.touched)" class="alert alert-danger">
+                                <div *ngIf="nationality.errors?.required">
+                                  Nationality can not be blank
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                      </div>
+
+                      <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileCustomercategory">Customer category
@@ -437,6 +411,32 @@
                               <div *ngIf="customerCategory.invalid && (customerCategory.dirty || customerCategory.touched)" class="alert alert-danger">
                                 <div *ngIf="customerCategory.errors?.required">
                                   Customer category can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row" *ngIf="isCustomerDisabled()">
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileTypeofDisability">Type of Disability
+                              <span>*</span>
+                            </label>
+                            <div class="col-sm-9">
+                              <ng-select
+                                class="rtl"
+                                required="true"
+                                [items]="disabilityTypesOptions"
+                                name="typeOfDisability"
+                                [(ngModel)]="formData.typeOfDisability"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="لا يوجد نتائج للبحث"
+                                #typeOfDisability="ngModel"
+                              >
+                              </ng-select>
+                              <div *ngIf="typeOfDisability.invalid && (typeOfDisability.dirty || typeOfDisability.touched)" class="alert alert-danger">
+                                <div *ngIf="typeOfDisability.errors?.required">
+                                  Type of Disability can not be blank
                                 </div>
                               </div>
                             </div>
@@ -478,6 +478,21 @@
                       <div class="form-group row" *ngIf="hasTaxNumber()">
                         <div class="col-sm-6">
                           <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileTaxNumber">Tax Number
+                              <span>*</span>
+                            </label>
+                            <div class="col-sm-9">
+                              <input name="trxId" required="true" type="text" class="form-control" [(ngModel)]="formData.trxId" #trxId="ngModel">
+                              <div *ngIf="trxId.invalid && (trxId.dirty || trxId.touched)" class="alert alert-danger">
+                                <div *ngIf="trxId.errors?.required">
+                                  Tax Number can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmirate">Emirate
                               <span>*</span>
                             </label>
@@ -502,37 +517,9 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-sm-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileTaxNumber">Tax Number
-                              <span>*</span>
-                            </label>
-                            <div class="col-sm-9">
-                              <input name="trxId" required="true" type="text" class="form-control" [(ngModel)]="formData.trxId" #trxId="ngModel">
-                              <div *ngIf="trxId.invalid && (trxId.dirty || trxId.touched)" class="alert alert-danger">
-                                <div *ngIf="trxId.errors?.required">
-                                  Tax Number can not be blank
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
                       </div>
 
                       <div class="form-group row">
-                        <div class="col-sm-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileGeneralNotes">General Notes</label>
-                            <div class="col-sm-9">
-                              <textarea
-                                name="remarks"
-                                class="form-control"
-                                rows="3"
-                                [(ngModel)]="formData.remarks"
-                              ></textarea>
-                            </div>
-                          </div>
-                        </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileHomeAddress">Home Address</label>
@@ -546,22 +533,22 @@
                             </div>
                           </div>
                         </div>
-                      </div>
-
-                      <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileMobileNumber2">Mobile Number 2</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileGeneralNotes">General Notes</label>
                             <div class="col-sm-9">
-                              <input name="phone2" type="text" [maxLength]="17" class="form-control" [(ngModel)]="formData.phone2" numbersOnly precision="0" pattern="[0-9]*" #phone2="ngModel">
-                              <div *ngIf="phone2.invalid && (phone2.dirty || phone2.touched)" class="alert alert-danger">
-                                <div *ngIf="phone2.errors?.pattern">
-                                  Enter Valid Mobile Number 2
-                                </div>
-                              </div>
+                              <textarea
+                                name="remarks"
+                                class="form-control"
+                                rows="3"
+                                [(ngModel)]="formData.remarks"
+                              ></textarea>
                             </div>
                           </div>
                         </div>
+                      </div>
+
+                      <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmail">Email</label>
@@ -575,26 +562,22 @@
                             </div>
                           </div>
                         </div>
-                      </div>
-
-                      <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfilePreferredwaytocommunicate">Preferred way to communicate</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileMobileNumber2">Mobile Number 2</label>
                             <div class="col-sm-9">
-                              <ng-select
-                                class="rtl"
-                                [items]="contactPerferencesOptions"
-                                name="contactPreferencesTypeId"
-                                [(ngModel)]="formData.contactPreferencesTypeId"
-                                bindLabel="value.ar"
-                                bindValue="key"
-                                notFoundText="لا يوجد نتائج للبحث"
-                              >
-                              </ng-select>
+                              <input name="phone2" type="text" [maxLength]="17" class="form-control" [(ngModel)]="formData.phone2" numbersOnly precision="0" pattern="[0-9]*" #phone2="ngModel">
+                              <div *ngIf="phone2.invalid && (phone2.dirty || phone2.touched)" class="alert alert-danger">
+                                <div *ngIf="phone2.errors?.pattern">
+                                  Enter Valid Mobile Number 2
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
+                      </div>
+
+                      <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfilePreferredtimetocommunicate">Preferred time to communicate</label>
@@ -612,22 +595,39 @@
                             </div>
                           </div>
                         </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfilePreferredwaytocommunicate">Preferred way to communicate</label>
+                            <div class="col-sm-9">
+                              <ng-select
+                                class="rtl"
+                                [items]="contactPerferencesOptions"
+                                name="contactPreferencesTypeId"
+                                [(ngModel)]="formData.contactPreferencesTypeId"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="لا يوجد نتائج للبحث"
+                              >
+                              </ng-select>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileJobTitle">Job Title</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmployer">Employer</label>
                             <div class="col-sm-9">
-                              <input name="jobTitle" type="text" class="form-control" [(ngModel)]="formData.jobTitle">
+                              <input name="employer" type="text" class="form-control" [(ngModel)]="formData.employer">
                             </div>
                           </div>
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileEmployer">Employer</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileJobTitle">Job Title</label>
                             <div class="col-sm-9">
-                              <input name="employer" type="text" class="form-control" [(ngModel)]="formData.employer">
+                              <input name="jobTitle" type="text" class="form-control" [(ngModel)]="formData.jobTitle">
                             </div>
                           </div>
                         </div>
@@ -647,23 +647,6 @@
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileCityofresidenceinUAE">City of residence in UAE</label>
-                            <div class="col-sm-9">
-                              <ng-select
-                                class="rtl"
-                                [items]="emiratesOptions"
-                                name="emirateId"
-                                [(ngModel)]="formData.emirateId"
-                                bindLabel="value.ar"
-                                bindValue="key"
-                                notFoundText="لا يوجد نتائج للبحث"
-                              >
-                              </ng-select>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group row">
                             <label class="col-sm-3 col-form-label" i18n="@@customerProfileCountryofresidence">Country of residence</label>
                             <div class="col-sm-9">
                               <ng-select
@@ -675,6 +658,23 @@
                                 bindValue="key"
                                 notFoundText="لا يوجد نتائج للبحث"
                                 #countryOfResidence="ngModel"
+                              >
+                              </ng-select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@customerProfileCityofresidenceinUAE">City of residence in UAE</label>
+                            <div class="col-sm-9">
+                              <ng-select
+                                class="rtl"
+                                [items]="emiratesOptions"
+                                name="emirateId"
+                                [(ngModel)]="formData.emirateId"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="لا يوجد نتائج للبحث"
                               >
                               </ng-select>
                             </div>

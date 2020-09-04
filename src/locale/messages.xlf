@@ -193,22 +193,22 @@
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileDeceased" datatype="html">
-        <source>Deceased</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="customerProfileProfileImage" datatype="html">
         <source>Profile Image</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="customerProfileDeceased" datatype="html">
+        <source>Deceased</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileDateOfDeath" datatype="html">
@@ -261,9 +261,8 @@
           <context context-type="linenumber">104</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileEmiratesIDexpirydate" datatype="html">
-        <source>Emirates ID expiry date
-                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+      <trans-unit id="customerProfileEmiratesIDissuancedate" datatype="html">
+        <source>Emirates ID issuance date
                             </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
@@ -274,16 +273,17 @@
           <context context-type="linenumber">122</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileEmiratesIDissuancedate" datatype="html">
-        <source>Emirates ID issuance date
+      <trans-unit id="customerProfileEmiratesIDexpirydate" datatype="html">
+        <source>Emirates ID expiry date
+                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">165</context>
+          <context context-type="linenumber">158</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">149</context>
+          <context context-type="linenumber">144</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfilePassportnumber" datatype="html">
@@ -297,8 +297,8 @@
           <context context-type="linenumber">174</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfilePassportnumberexpirydate" datatype="html">
-        <source>Passport number expiry date
+      <trans-unit id="customerProfilePassportnumberissuancedate" datatype="html">
+        <source>Passport number issuance date
                               <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
@@ -310,8 +310,8 @@
           <context context-type="linenumber">187</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfilePassportnumberissuancedate" datatype="html">
-        <source>Passport number issuance date
+      <trans-unit id="customerProfilePassportnumberexpirydate" datatype="html">
+        <source>Passport number expiry date
                               <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
@@ -323,10 +323,8 @@
           <context context-type="linenumber">215</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileOtherdocumenttype" datatype="html">
-        <source>Other (document type)
-                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
-                            </source>
+      <trans-unit id="customerProfileOtherdecrees" datatype="html">
+        <source>Other (decrees ..)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
           <context context-type="linenumber">254</context>
@@ -336,19 +334,21 @@
           <context context-type="linenumber">246</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileOtherdecrees" datatype="html">
-        <source>Other (decrees ..)</source>
+      <trans-unit id="customerProfileOtherdocumenttype" datatype="html">
+        <source>Other (document type)
+                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">280</context>
+          <context context-type="linenumber">262</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">272</context>
+          <context context-type="linenumber">254</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileDateofBirth" datatype="html">
-        <source>Date of Birth
+      <trans-unit id="customerProfileMobileNumber" datatype="html">
+        <source>Mobile Number
                               <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
@@ -360,21 +360,21 @@
           <context context-type="linenumber">283</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileMobileNumber" datatype="html">
-        <source>Mobile Number
+      <trans-unit id="customerProfileDateofBirth" datatype="html">
+        <source>Date of Birth
                               <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">317</context>
+          <context context-type="linenumber">310</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">310</context>
+          <context context-type="linenumber">302</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileNationality" datatype="html">
-        <source>Nationality
+      <trans-unit id="customerProfileGender" datatype="html">
+        <source>Gender
                               <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
@@ -386,8 +386,8 @@
           <context context-type="linenumber">332</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileGender" datatype="html">
-        <source>Gender
+      <trans-unit id="customerProfileNationality" datatype="html">
+        <source>Nationality
                               <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
@@ -399,8 +399,8 @@
           <context context-type="linenumber">358</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileTypeofDisability" datatype="html">
-        <source>Type of Disability
+      <trans-unit id="customerProfileCustomercategory" datatype="html">
+        <source>Customer category
                               <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
@@ -412,17 +412,17 @@
           <context context-type="linenumber">387</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileCustomercategory" datatype="html">
-        <source>Customer category
+      <trans-unit id="customerProfileTypeofDisability" datatype="html">
+        <source>Type of Disability
                               <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">420</context>
+          <context context-type="linenumber">421</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">413</context>
+          <context context-type="linenumber">414</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileDoyouhavetaxnumber" datatype="html">
@@ -438,8 +438,8 @@
           <context context-type="linenumber">444</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileEmirate" datatype="html">
-        <source>Emirate
+      <trans-unit id="customerProfileTaxNumber" datatype="html">
+        <source>Tax Number
                               <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
@@ -451,21 +451,21 @@
           <context context-type="linenumber">476</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileTaxNumber" datatype="html">
-        <source>Tax Number
+      <trans-unit id="customerProfileEmirate" datatype="html">
+        <source>Emirate
                               <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">507</context>
+          <context context-type="linenumber">496</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">502</context>
+          <context context-type="linenumber">491</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileGeneralNotes" datatype="html">
-        <source>General Notes</source>
+      <trans-unit id="customerProfileHomeAddress" datatype="html">
+        <source>Home Address</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
           <context context-type="linenumber">525</context>
@@ -475,8 +475,8 @@
           <context context-type="linenumber">520</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileHomeAddress" datatype="html">
-        <source>Home Address</source>
+      <trans-unit id="customerProfileGeneralNotes" datatype="html">
+        <source>General Notes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
           <context context-type="linenumber">538</context>
@@ -486,8 +486,8 @@
           <context context-type="linenumber">533</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileMobileNumber2" datatype="html">
-        <source>Mobile Number 2</source>
+      <trans-unit id="customerProfileEmail" datatype="html">
+        <source>Email</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
           <context context-type="linenumber">554</context>
@@ -497,8 +497,8 @@
           <context context-type="linenumber">549</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileEmail" datatype="html">
-        <source>Email</source>
+      <trans-unit id="customerProfileMobileNumber2" datatype="html">
+        <source>Mobile Number 2</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
           <context context-type="linenumber">567</context>
@@ -508,8 +508,8 @@
           <context context-type="linenumber">562</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfilePreferredwaytocommunicate" datatype="html">
-        <source>Preferred way to communicate</source>
+      <trans-unit id="customerProfilePreferredtimetocommunicate" datatype="html">
+        <source>Preferred time to communicate</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
           <context context-type="linenumber">583</context>
@@ -519,8 +519,8 @@
           <context context-type="linenumber">578</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfilePreferredtimetocommunicate" datatype="html">
-        <source>Preferred time to communicate</source>
+      <trans-unit id="customerProfilePreferredwaytocommunicate" datatype="html">
+        <source>Preferred way to communicate</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
           <context context-type="linenumber">600</context>
@@ -530,8 +530,8 @@
           <context context-type="linenumber">595</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileJobTitle" datatype="html">
-        <source>Job Title</source>
+      <trans-unit id="customerProfileEmployer" datatype="html">
+        <source>Employer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
           <context context-type="linenumber">620</context>
@@ -541,8 +541,8 @@
           <context context-type="linenumber">615</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileEmployer" datatype="html">
-        <source>Employer</source>
+      <trans-unit id="customerProfileJobTitle" datatype="html">
+        <source>Job Title</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
           <context context-type="linenumber">628</context>
@@ -563,8 +563,8 @@
           <context context-type="linenumber">635</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileCityofresidenceinUAE" datatype="html">
-        <source>City of residence in UAE</source>
+      <trans-unit id="customerProfileCountryofresidence" datatype="html">
+        <source>Country of residence</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
           <context context-type="linenumber">650</context>
@@ -574,15 +574,15 @@
           <context context-type="linenumber">645</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="customerProfileCountryofresidence" datatype="html">
-        <source>Country of residence</source>
+      <trans-unit id="customerProfileCityofresidenceinUAE" datatype="html">
+        <source>City of residence in UAE</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">667</context>
+          <context context-type="linenumber">668</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">662</context>
+          <context context-type="linenumber">663</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileSignature" datatype="html">
@@ -600,7 +600,7 @@
         <source>Customer ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileDeveloper" datatype="html">
