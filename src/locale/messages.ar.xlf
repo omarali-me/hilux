@@ -1691,35 +1691,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="companyProfileCompanyId" datatype="html">
-        <source>Company ID</source>
-        <target>رقم الشركة</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">58</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">35</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="companyProfileNameInEnglish" datatype="html">
-        <source>Company Name in English
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
-                          </source>
-        <target>اسم الشركة/ المؤسسة باللغة الانجليزية
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
-                          </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">74</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileNameInArabic" datatype="html">
@@ -1731,27 +1703,27 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="companyProfileNameInEnglish" datatype="html">
+        <source>Company Name in English
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <target>اسم الشركة/ المؤسسة باللغة الانجليزية
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
           <context context-type="linenumber">89</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
           <context context-type="linenumber">66</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="companyProfileLicenseIssuer" datatype="html">
-        <source>License Issuer
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
-                          </source>
-        <target>جهة اصدار الرخصة
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
-                          </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">107</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileTradeLicenseNumber" datatype="html">
@@ -1763,18 +1735,34 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">133</context>
+          <context context-type="linenumber">107</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">110</context>
+          <context context-type="linenumber">84</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="companyProfileLicenseExpiryDate" datatype="html">
-        <source>License Expiry date
+      <trans-unit id="companyProfileLicenseIssuer" datatype="html">
+        <source>License Issuer
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>تاريخ انتهاء الرخصة
+        <target>جهة اصدار الرخصة
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="companyProfileLicenseIssuanceDate" datatype="html">
+        <source>License issuance date
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <target>تاريخ اصدار الرخصة
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -1786,11 +1774,11 @@
           <context context-type="linenumber">128</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="companyProfileLicenseIssuanceDate" datatype="html">
-        <source>License issuance date
+      <trans-unit id="companyProfileLicenseExpiryDate" datatype="html">
+        <source>License Expiry date
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>تاريخ اصدار الرخصة
+        <target>تاريخ انتهاء الرخصة
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -1834,11 +1822,11 @@
           <context context-type="linenumber">216</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="companyProfileEmirate" datatype="html">
-        <source>Emirate
+      <trans-unit id="companyProfileTaxNumber" datatype="html">
+        <source>Tax Number
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>الإمارة
+        <target>الرقم الضريبي
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
@@ -1850,32 +1838,20 @@
           <context context-type="linenumber">240</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="companyProfileTaxNumber" datatype="html">
-        <source>Tax Number
+      <trans-unit id="companyProfileEmirate" datatype="html">
+        <source>Emirate
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </source>
-        <target>الرقم الضريبي
+        <target>الإمارة
                             <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">289</context>
+          <context context-type="linenumber">278</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">266</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="companyProfileMakaniNumber" datatype="html">
-        <source>Makani Number</source>
-        <target>رقم مكاني</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">307</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">284</context>
+          <context context-type="linenumber">255</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfilePhoneNumber" datatype="html">
@@ -1887,16 +1863,28 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">315</context>
+          <context context-type="linenumber">307</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">292</context>
+          <context context-type="linenumber">284</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="companyProfileWebsite" datatype="html">
-        <source>Website</source>
-        <target>الموقع الالكتروني</target>
+      <trans-unit id="companyProfileMakaniNumber" datatype="html">
+        <source>Makani Number</source>
+        <target>رقم مكاني</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
+          <context context-type="linenumber">326</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
+          <context context-type="linenumber">303</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="companyProfileEmail" datatype="html">
+        <source>Email</source>
+        <target>البريد الالكتروني</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
           <context context-type="linenumber">337</context>
@@ -1906,9 +1894,9 @@
           <context context-type="linenumber">314</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="companyProfileEmail" datatype="html">
-        <source>Email</source>
-        <target>البريد الالكتروني</target>
+      <trans-unit id="companyProfileWebsite" datatype="html">
+        <source>Website</source>
+        <target>الموقع الالكتروني</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
           <context context-type="linenumber">350</context>
@@ -1916,22 +1904,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
           <context context-type="linenumber">327</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="companyProfileOwnershipPercentage" datatype="html">
-        <source>Ownership percentage
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
-                          </source>
-        <target>نسبة التملك
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
-                          </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">366</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">343</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileOwner" datatype="html">
@@ -1943,11 +1915,27 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">383</context>
+          <context context-type="linenumber">366</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">360</context>
+          <context context-type="linenumber">343</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="companyProfileOwnershipPercentage" datatype="html">
+        <source>Ownership percentage
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <target>نسبة التملك
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
+          <context context-type="linenumber">392</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
+          <context context-type="linenumber">369</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileEstablishmentContractFile" datatype="html">
@@ -1964,6 +1952,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
           <context context-type="linenumber">394</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="companyProfileCompanyId" datatype="html">
+        <source>Company ID</source>
+        <target>رقم الشركة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileFreeHold" datatype="html">
