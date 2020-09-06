@@ -567,6 +567,42 @@
         </div>
         
         <div class="form-group row">
+          <h5>Site Plan</h5>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label" i18n="@@landProfileDistrictImage">District Image</label>
+              <div class="text-center col-sm-10">
+                <app-file-upload [field]="prepareDistrictImage()" [formData]="formData"></app-file-upload>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label" i18n="@@landProfileSectorImage">Sector Image</label>
+              <div class="text-center col-sm-10">
+                <app-file-upload [field]="prepareSectorImage()" [formData]="formData"></app-file-upload>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label" i18n="@@landProfileParcelImage">Parcel Image</label>
+              <div class="text-center col-sm-10">
+                <app-file-upload [field]="prepareParcelImage()" [formData]="formData"></app-file-upload>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="form-group row">
           <h5>التشطيبات الخارجية و الهيكل</h5>
         </div>
 

@@ -138,4 +138,39 @@ export class LandDetailsComponent implements OnInit {
     return this.formData.propertyLeased;
   }
 
+  prepareSectorImage() {
+    return {
+      fieldID: "sectorImageUrl",
+      fieldType: "fileupload",
+      required: false,
+      fieldName: {
+        "ar": "Sector Image",
+        "en": "Sector Image"
+      }
+    }
+  }
+
+  prepareDistrictImage() {
+    return {
+      fieldID: "districtImageUrl",
+      fieldType: "fileupload",
+      required: false,
+      fieldName: {
+        "ar": "District Image",
+        "en": "District Image"
+      }
+    }
+  }
+
+  prepareParcelImage() {
+    return {
+      fieldID: "parcelImageUrl",
+      fieldType: "fileupload",
+      required: false,
+      fieldName: {
+        "ar": "Parcel Image",
+        "en": "Parcel Image"
+      }
+    }
+  }
 }
