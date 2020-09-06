@@ -23,6 +23,7 @@ export class LandProfileComponent implements OnInit {
   subUsageTypesOptions: any;
   citiesOptions: any;
   dataOptionsLoading = false;
+  propertyTypesOptions: any;
   searchInput$ = new Subject<string>();
 
   constructor(
@@ -41,6 +42,7 @@ export class LandProfileComponent implements OnInit {
     this.loadMainUsageTypesOptions();
     this.loadSubUsageTypesOptions();
     this.loadCitiesOptions();
+    this.loadPropertyTypesOptions();
     
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
@@ -117,6 +119,13 @@ export class LandProfileComponent implements OnInit {
     this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/cities`)
     .subscribe((data) => {
       this.citiesOptions = data;
+    })
+  }
+
+  loadPropertyTypesOptions() {
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/landsTypes`)
+    .subscribe((data) => {
+      this.propertyTypesOptions = data;
     })
   }
 
