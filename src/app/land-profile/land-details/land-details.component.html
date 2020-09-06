@@ -109,7 +109,7 @@
                 <span>*</span>
               </label>
               <div class="col-sm-9">
-                <input type="text" name="district" required="true" class="form-control" [(ngModel)]="formData.district" #district="ngModel" [disabled]="true">
+                <input type="text" name="district" required="true" class="form-control" [(ngModel)]="formData.sectionId" #district="ngModel" [disabled]="true">
                 <div *ngIf="district.invalid && (district.dirty || district.touched)" class="alert alert-danger">
                   <div *ngIf="district.errors?.required">
                     District can not be blank
@@ -125,7 +125,7 @@
                 <span>*</span>
               </label>
               <div class="col-sm-9">
-                <input type="text" name="plot" required="true" class="form-control" [(ngModel)]="formData.plot" #plot="ngModel" numbersOnly precision="0" [disabled]="true">
+                <input type="text" name="plot" required="true" class="form-control" [(ngModel)]="formData.pieceNumber" #plot="ngModel" numbersOnly precision="0" [disabled]="true">
                 <div *ngIf="plot.invalid && (plot.dirty || plot.touched)" class="alert alert-danger">
                   <div *ngIf="plot.errors?.required">
                     Plot can not be blank
@@ -188,7 +188,7 @@
                   class="rtl"
                   [items]="[]"
                   name="propertyType"
-                  [(ngModel)]="formData.propertyTypeId"
+                  [(ngModel)]="formData.typeId"
                   bindLabel="value.ar"
                   bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث"
@@ -214,7 +214,7 @@
               <label class="col-sm-3 col-form-label" i18n="@@landProfileLandAreaM2">Land Area m2
               </label>
               <div class="col-sm-9">
-                <input type="text" name="landAreaM2" class="form-control" [(ngModel)]="formData.landAreaM2" #landAreaM2="ngModel" numbersOnly precision="2" [disabled]="true">
+                <input type="text" name="landAreaM2" class="form-control" [(ngModel)]="formData.area" #landAreaM2="ngModel" numbersOnly precision="2" [disabled]="true">
               </div>
             </div>
           </div>
@@ -224,7 +224,7 @@
               <label class="col-sm-3 col-form-label" i18n="@@landProfileFloorsasperSiteMap">Floors as per Site Map
               </label>
               <div class="col-sm-9">
-                <input type="text" name="floorsasperSiteMap" class="form-control" [(ngModel)]="formData.floorsasperSiteMap" #floorsasperSiteMap="ngModel" numbersOnly precision="0" [disabled]="true">
+                <input type="text" name="floorsasperSiteMap" class="form-control" [(ngModel)]="formData.floors" #floorsasperSiteMap="ngModel" numbersOnly precision="0" [disabled]="true">
               </div>
             </div>
           </div>
@@ -253,7 +253,7 @@
                   name="engineeringsRemarks"
                   class="form-control"
                   rows="3"
-                  [(ngModel)]="formData.engineeringsRemarks"
+                  [(ngModel)]="formData.remarks"
                 ></textarea>
               </div>
             </div>
@@ -295,7 +295,7 @@
                   class="rtl"
                   [items]="streetsNamesOptions"
                   name="streetName"
-                  [(ngModel)]="formData.streetNameId"
+                  [(ngModel)]="formData.streetId"
                   bindLabel="value.ar"
                   bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث"
