@@ -77,13 +77,13 @@
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
-                              [items]="citiesOptions | async"
-                              name="city" [hideSelected]="true" 
-                              required="true" [minTermLength]="4" 
-                              [(ngModel)]="formData.cityId" [loading]="dataOptionsLoading"
+                              [items]="citiesOptions"
+                              name="city"
+                              required="true"
+                              [(ngModel)]="formData.cityId"
                               bindLabel="value.ar"
-                              bindValue="key" typeToSearchText="Please enter 4 or more characters"
-                              notFoundText="لا يوجد نتائج للبحث" [typeahead]="searchInput$"
+                              bindValue="key"
+                              notFoundText="لا يوجد نتائج للبحث"
                               #cityId="ngModel"
                             >
                             </ng-select>
@@ -211,7 +211,7 @@
                               [items]="propertyTypesOptions"
                               name="propertyType"
                               [(ngModel)]="formData.typeId"
-                              bindLabel="value.ar"
+                              bindLabel="value.en"
                               bindValue="key"
                               notFoundText="لا يوجد نتائج للبحث"
                               #propertyTypeId="ngModel"
@@ -393,7 +393,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileBuildingArea">Building area
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="buildingArea" class="form-control" [(ngModel)]="formData.buildingArea" #buildingArea="ngModel" numbersOnly precision="2">
+                            <input type="text" name="buildingArea" class="form-control" [(ngModel)]="formData.buildingDetails.buildingArea" #buildingArea="ngModel" numbersOnly precision="2">
                           </div>
                         </div>
                       </div>
@@ -403,7 +403,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofBuiltFloors">Number of Built Floors
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="numberofBuiltFloors" class="form-control" [(ngModel)]="formData.numberofBuiltFloors" #numberofBuiltFloors="ngModel" numbersOnly precision="0">
+                            <input type="text" name="numberofBuiltFloors" class="form-control" [(ngModel)]="formData.buildingDetails.numberofBuiltFloors" #numberofBuiltFloors="ngModel" numbersOnly precision="0">
                           </div>
                         </div>
                       </div>
@@ -415,7 +415,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileCompletionRate">Completion rate
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="completionRate" class="form-control" [(ngModel)]="formData.completionRate" #completionRate="ngModel" numbersOnly precision="2">
+                            <input type="text" name="completionRate" class="form-control" [(ngModel)]="formData.buildingDetails.completionRate" #completionRate="ngModel" numbersOnly precision="2">
                           </div>
                         </div>
                       </div>
@@ -425,7 +425,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileBuildingAge">Building Age
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="buildingAge" class="form-control" [(ngModel)]="formData.buildingAge" #buildingAge="ngModel" numbersOnly precision="0">
+                            <input type="text" name="buildingAge" class="form-control" [(ngModel)]="formData.buildingDetails.buildingAge" #buildingAge="ngModel" numbersOnly precision="0">
                           </div>
                         </div>
                       </div>
@@ -436,7 +436,7 @@
                         <div class="form-group row">
                           <div class="offset-sm-2 col-sm-10 placeholder">
                             <div class="form-check float-right">
-                              <input name="propertyLeased" type="checkbox" class="form-check-input" [(ngModel)]="formData.propertyLeased">
+                              <input name="propertyLeased" type="checkbox" class="form-check-input" [(ngModel)]="formData.buildingDetails.propertyLeased">
                               <label class="form-check-label" i18n="@@landProfilePropertyLeased">Property leased</label>
                             </div>
                           </div>
@@ -448,7 +448,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileAnnualincomefromRent">Annual income from rent
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="annualIncomeFromRent" class="form-control" [(ngModel)]="formData.annualIncomeFromRent" #annualIncomeFromRent="ngModel" numbersOnly precision="2">
+                            <input type="text" name="annualIncomeFromRent" class="form-control" [(ngModel)]="formData.buildingDetails.annualIncomeFromRent" #annualIncomeFromRent="ngModel" numbersOnly precision="2">
                           </div>
                         </div>
                       </div>
@@ -460,7 +460,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileAnnualMaintenanceAmount">Annual maintenance amount
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="annualMaintenanceAmount" class="form-control" [(ngModel)]="formData.annualMaintenanceAmount" #annualMaintenanceAmount="ngModel" numbersOnly precision="2">
+                            <input type="text" name="annualMaintenanceAmount" class="form-control" [(ngModel)]="formData.buildingDetails.annualMaintenanceAmount" #annualMaintenanceAmount="ngModel" numbersOnly precision="2">
                           </div>
                         </div>
                       </div>
@@ -475,7 +475,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofShops">Number of shops
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="numberofShops" class="form-control" [(ngModel)]="formData.numberofShops" #numberofShops="ngModel" numbersOnly precision="0">
+                            <input type="text" name="numberofShops" class="form-control" [(ngModel)]="formData.buildingDetails.numberofShops" #numberofShops="ngModel" numbersOnly precision="0">
                           </div>
                         </div>
                       </div>
@@ -490,7 +490,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofVacantShops">Number of vacant shops
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="numberofVacantShops" class="form-control" [(ngModel)]="formData.numberofVacantShops" #numberofVacantShops="ngModel" numbersOnly precision="0">
+                            <input type="text" name="numberofVacantShops" class="form-control" [(ngModel)]="formData.buildingDetails.numberofVacantShops" #numberofVacantShops="ngModel" numbersOnly precision="0">
                           </div>
                         </div>
                       </div>
@@ -500,7 +500,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileTheNumberofRentedShops">The number of rented shops
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="theNumberofRentedShops" class="form-control" [(ngModel)]="formData.theNumberofRentedShops" #theNumberofRentedShops="ngModel" numbersOnly precision="0">
+                            <input type="text" name="theNumberofRentedShops" class="form-control" [(ngModel)]="formData.buildingDetails.theNumberofRentedShops" #theNumberofRentedShops="ngModel" numbersOnly precision="0">
                           </div>
                         </div>
                       </div>
@@ -513,7 +513,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofWarehouses">Number of warehouses
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="numberofWarehouses" class="form-control" [(ngModel)]="formData.numberofWarehouses" #numberofWarehouses="ngModel" numbersOnly precision="0">
+                            <input type="text" name="numberofWarehouses" class="form-control" [(ngModel)]="formData.buildingDetails.numberofWarehouses" #numberofWarehouses="ngModel" numbersOnly precision="0">
                           </div>
                         </div>
                       </div>
@@ -528,7 +528,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofVacantWarehouses">Number of vacant warehouses
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="numberofVacantWarehouses" class="form-control" [(ngModel)]="formData.numberofVacantWarehouses" #numberofVacantWarehouses="ngModel" numbersOnly precision="0">
+                            <input type="text" name="numberofVacantWarehouses" class="form-control" [(ngModel)]="formData.buildingDetails.numberofVacantWarehouses" #numberofVacantWarehouses="ngModel" numbersOnly precision="0">
                           </div>
                         </div>
                       </div>
@@ -538,7 +538,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileTheNumberofRentedWarehouses">The number of rented warehouses
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="theNumberofRentedWarehouses" class="form-control" [(ngModel)]="formData.theNumberofRentedWarehouses" #theNumberofRentedWarehouses="ngModel" numbersOnly precision="0">
+                            <input type="text" name="theNumberofRentedWarehouses" class="form-control" [(ngModel)]="formData.buildingDetails.theNumberofRentedWarehouses" #theNumberofRentedWarehouses="ngModel" numbersOnly precision="0">
                           </div>
                         </div>
                       </div>
@@ -550,7 +550,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofRooms">Number of rooms
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="numberofRooms" class="form-control" [(ngModel)]="formData.numberofRooms" #numberofRooms="ngModel" numbersOnly precision="0">
+                            <input type="text" name="numberofRooms" class="form-control" [(ngModel)]="formData.buildingDetails.numberofRooms" #numberofRooms="ngModel" numbersOnly precision="0">
                           </div>
                         </div>
                       </div>
@@ -560,7 +560,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofServiceUnits">Number of service units
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="numberofServiceUnits" class="form-control" [(ngModel)]="formData.numberofServiceUnits" #numberofServiceUnits="ngModel" numbersOnly precision="0">
+                            <input type="text" name="numberofServiceUnits" class="form-control" [(ngModel)]="formData.buildingDetails.numberofServiceUnits" #numberofServiceUnits="ngModel" numbersOnly precision="0">
                           </div>
                         </div>
                       </div>
@@ -572,7 +572,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofVacantRooms">Number of vacant rooms
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="numberofVacantRooms" class="form-control" [(ngModel)]="formData.numberofVacantRooms" #numberofVacantRooms="ngModel" numbersOnly precision="0">
+                            <input type="text" name="numberofVacantRooms" class="form-control" [(ngModel)]="formData.buildingDetails.numberofVacantRooms" #numberofVacantRooms="ngModel" numbersOnly precision="0">
                           </div>
                         </div>
                       </div>
@@ -582,7 +582,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileNumberofRentedRooms">Number of rented rooms
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="numberofRentedRooms" class="form-control" [(ngModel)]="formData.numberofRentedRooms" #numberofRentedRooms="ngModel" numbersOnly precision="0">
+                            <input type="text" name="numberofRentedRooms" class="form-control" [(ngModel)]="formData.buildingDetails.numberofRentedRooms" #numberofRentedRooms="ngModel" numbersOnly precision="0">
                           </div>
                         </div>
                       </div>
@@ -634,7 +634,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileNorthFacade">North facade
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="northFacade" class="form-control" [(ngModel)]="formData.northFacade" #northFacade="ngModel">
+                            <input type="text" name="northFacade" class="form-control" [(ngModel)]="formData.buildingFinishes.northFacade" #northFacade="ngModel">
                           </div>
                         </div>
                       </div>
@@ -644,7 +644,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileEastern">Eastern
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="eastern" class="form-control" [(ngModel)]="formData.eastern" #eastern="ngModel">
+                            <input type="text" name="eastern" class="form-control" [(ngModel)]="formData.buildingFinishes.eastern" #eastern="ngModel">
                           </div>
                         </div>
                       </div>
@@ -656,7 +656,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileSouthern">Southern
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="southern" class="form-control" [(ngModel)]="formData.southern" #southern="ngModel">
+                            <input type="text" name="southern" class="form-control" [(ngModel)]="formData.buildingFinishes.southern" #southern="ngModel">
                           </div>
                         </div>
                       </div>
@@ -666,7 +666,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileWestern">Western
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="western" class="form-control" [(ngModel)]="formData.western" #western="ngModel">
+                            <input type="text" name="western" class="form-control" [(ngModel)]="formData.buildingFinishes.western" #western="ngModel">
                           </div>
                         </div>
                       </div>
@@ -679,7 +679,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileStructureType">Structure type
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="structureType" class="form-control" [(ngModel)]="formData.structureType" #structureType="ngModel">
+                            <input type="text" name="structureType" class="form-control" [(ngModel)]="formData.buildingFinishes.structureType" #structureType="ngModel">
                           </div>
                         </div>
                       </div>
@@ -698,7 +698,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileExternalYards">External yards
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="externalYards" class="form-control" [(ngModel)]="formData.externalYards" #externalYards="ngModel">
+                            <input type="text" name="externalYards" class="form-control" [(ngModel)]="formData.buildingFinishes.externalYards" #externalYards="ngModel">
                           </div>
                         </div>
                       </div>
@@ -708,7 +708,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileReception">Reception
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="reception" class="form-control" [(ngModel)]="formData.reception" #reception="ngModel">
+                            <input type="text" name="reception" class="form-control" [(ngModel)]="formData.buildingFinishes.reception" #reception="ngModel">
                           </div>
                         </div>
                       </div>
@@ -720,7 +720,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileTheEntrance">The Entrance
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="theEntrance" class="form-control" [(ngModel)]="formData.theEntrance" #theEntrance="ngModel">
+                            <input type="text" name="theEntrance" class="form-control" [(ngModel)]="formData.buildingFinishes.theEntrance" #theEntrance="ngModel">
                           </div>
                         </div>
                       </div>
@@ -730,7 +730,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileTheRooms">The rooms
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="theRooms" class="form-control" [(ngModel)]="formData.theRooms" #theRooms="ngModel">
+                            <input type="text" name="theRooms" class="form-control" [(ngModel)]="formData.buildingFinishes.theRooms" #theRooms="ngModel">
                           </div>
                         </div>
                       </div>
@@ -746,7 +746,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileLiftsStairsEscalators">Lifts  / Stairs / Escalators
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="liftsStairsEscalators" class="form-control" [(ngModel)]="formData.liftsStairsEscalators" #liftsStairsEscalators="ngModel">
+                            <input type="text" name="liftsStairsEscalators" class="form-control" [(ngModel)]="formData.buildingFinishes.liftsStairsEscalators" #liftsStairsEscalators="ngModel">
                           </div>
                         </div>
                       </div>
@@ -756,7 +756,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileElectricity">Electricity
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="electricity" class="form-control" [(ngModel)]="formData.electricity" #electricity="ngModel">
+                            <input type="text" name="electricity" class="form-control" [(ngModel)]="formData.buildingFinishes.electricity" #electricity="ngModel">
                           </div>
                         </div>
                       </div>
@@ -768,7 +768,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileAirConditioning">Air conditioning
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="airConditioning" class="form-control" [(ngModel)]="formData.airConditioning" #airConditioning="ngModel">
+                            <input type="text" name="airConditioning" class="form-control" [(ngModel)]="formData.buildingFinishes.airConditioning" #airConditioning="ngModel">
                           </div>
                         </div>
                       </div>
@@ -778,7 +778,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileAppendix">Appendix
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="appendix" class="form-control" [(ngModel)]="formData.appendix" #appendix="ngModel">
+                            <input type="text" name="appendix" class="form-control" [(ngModel)]="formData.buildingFinishes.appendix" #appendix="ngModel">
                           </div>
                         </div>
                       </div>
@@ -790,7 +790,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileGas">Gas
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="gas" class="form-control" [(ngModel)]="formData.gas" #gas="ngModel">
+                            <input type="text" name="gas" class="form-control" [(ngModel)]="formData.buildingFinishes.gas" #gas="ngModel">
                           </div>
                         </div>
                       </div>
@@ -800,7 +800,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileCarParking">car parking
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="carParking" class="form-control" [(ngModel)]="formData.carParking" #carParking="ngModel">
+                            <input type="text" name="carParking" class="form-control" [(ngModel)]="formData.buildingFinishes.carParking" #carParking="ngModel">
                           </div>
                         </div>
                       </div>
@@ -812,7 +812,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileMetalAwnings">Metal awnings
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="metalAwnings" class="form-control" [(ngModel)]="formData.metalAwnings" #metalAwnings="ngModel">
+                            <input type="text" name="metalAwnings" class="form-control" [(ngModel)]="formData.buildingFinishes.metalAwnings" #metalAwnings="ngModel">
                           </div>
                         </div>
                       </div>
@@ -822,7 +822,7 @@
                           <label class="col-sm-3 col-form-label" i18n="@@landProfileGates">Gates
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="gates" class="form-control" [(ngModel)]="formData.gates" #gates="ngModel">
+                            <input type="text" name="gates" class="form-control" [(ngModel)]="formData.buildingFinishes.gates" #gates="ngModel">
                           </div>
                         </div>
                       </div>
@@ -838,7 +838,7 @@
                               name="propertyDescription"
                               class="form-control"
                               rows="3"
-                              [(ngModel)]="formData.propertyDescription"
+                              [(ngModel)]="formData.buildingFinishes.propertyDescription"
                             ></textarea>
                           </div>
                         </div>

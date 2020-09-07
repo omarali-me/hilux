@@ -12,7 +12,7 @@ import { pluck } from 'rxjs/operators';
   styleUrls: ['./land-details.component.css']
 })
 export class LandDetailsComponent implements OnInit {
-  formData: any = {};
+  formData: any = { buildingDetails: {}, buildingFinishes: {} };
   formErrors: any = {};
   profile$: Observable<any>;
   sectorsOptions: any;
@@ -49,7 +49,7 @@ export class LandDetailsComponent implements OnInit {
       if (profile && profile.id) {
         this.formData = profile as any;
       } else {
-        this.formData = { };
+        this.formData = { buildingDetails: {}, buildingFinishes: {} };
       }
     });
   }
@@ -93,7 +93,7 @@ export class LandDetailsComponent implements OnInit {
   }
 
   loadStreetTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/streetsnames`)
+    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/streetstypes`)
     .subscribe((data) => {
       this.streetsTypesOptions = data;
     })
@@ -128,23 +128,27 @@ export class LandDetailsComponent implements OnInit {
   }
 
   isShoporShoppingMall() {
-    return  true && (this.formData.completionRate == 100 || this.formData.completionRate == '100')
+    return (this.formData.typeId == '12' || this.formData.typeId == 12) && this.isCompleted()
   }
 
   isNotVacantLand() {
-    return true 
+    return (!['1', '2'].includes(this.formData.typeId))
   }
 
   isWarehouse() {
-    return true && (this.formData.completionRate == 100 || this.formData.completionRate == '100')
+    return (this.formData.typeId == '16' || this.formData.typeId == 16) && this.isCompleted()
   }
 
   isLabourerHousing() {
-    return true && (this.formData.completionRate == 100 || this.formData.completionRate == '100')
+    return (this.formData.typeId == '7' || this.formData.typeId == 7) && this.isCompleted()
   }
 
   isLeased() {
-    return this.formData.propertyLeased;
+    return !!this.formData.buildingDetails && this.formData.buildingDetails.propertyLeased;
+  }
+
+  isCompleted() {
+    return this.formData.buildingDetails && (this.formData.buildingDetails.completionRate == 100 || this.formData.buildingDetails.completionRate == '100')
   }
 
   prepareSectorImage() {
