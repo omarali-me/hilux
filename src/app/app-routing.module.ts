@@ -31,6 +31,7 @@ import { PropertiesProfileComponent } from './properties-profile/properties-prof
 import { LandProfileComponent } from './land-profile/land-profile.component';
 import { LandDetailsComponent } from './land-profile/land-details/land-details.component';
 import { LandProfileResolver } from './shared/land-profile.resolver';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 
 const routes: Routes = [
@@ -94,7 +95,8 @@ const routes: Routes = [
   { path: 'properties/profile/:profileId/edit', component: PropertiesProfileComponent,
     resolve: { profile: PropertiesProfileResolver},
     canActivate: [AuthenticationGuard]
-  }
+  },
+  { path: 'search', component: SearchPageComponent, canActivate: [AuthenticationGuard] }
 ];
 
 @NgModule({

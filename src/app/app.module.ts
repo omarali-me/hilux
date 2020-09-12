@@ -90,6 +90,7 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { PropertiesProfileComponent } from './properties-profile/properties-profile.component';
 import { LandProfileComponent } from './land-profile/land-profile.component';
 import { LandDetailsComponent } from './land-profile/land-details/land-details.component';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -169,7 +170,8 @@ import { LandDetailsComponent } from './land-profile/land-details/land-details.c
     AlertsComponent,
     PropertiesProfileComponent,
     LandProfileComponent,
-    LandDetailsComponent
+    LandDetailsComponent,
+    SearchPageComponent
   ],
   imports: [
     FormsModule,

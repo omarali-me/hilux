@@ -1,0 +1,94 @@
+<app-sidebar></app-sidebar>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-12 text-center">
+          <h1 >Search</h1>
+        </div>
+        <!-- <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active">My Tasks</li>
+          </ol>
+        </div> -->
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="card card-primary card-outline">
+        <!-- <div class="card-header">
+          <h3 class="card-title"></h3>
+        </div> -->
+        <!-- <div class="card-body" *ngIf="response$ | async as response">
+          <div class="container" *ngIf="response.displayData">
+              <div class="row" *ngFor="let display of response.displayData">
+                <div class="col-sm-12 mt-3" *ngFor="let item of display | keyvalue">
+                  <app-display-fields [data]="item"></app-display-fields>
+                </div>
+              </div>
+            </div>
+            <app-form [response]="response" *ngIf="response.fieldOrder"></app-form>
+        </div> -->
+
+        <div class="">
+          <div class="">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Application ID</th>
+                  <th>Service Name</th>
+                  <th colspan="3">Steps Executed</th>
+                  <th>Step Status</th>
+                  <th>Time Available</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <!-- <tbody>
+                <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
+                  <td>{{i + 1}}</td>
+                  <td>{{item.applicationDetails?.applicationID}}</td>
+                  <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
+                  <td colspan="3">
+                    <table *ngIf="item.applicationDetails?.stepsExecuted">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Executed</th>
+                          <th>Step Name</th>
+                          <th>User Id</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let rowItem of getStepDetails(item); let j = index">
+                          <td>{{j + 1}}</td>
+                          <td>{{rowItem.timeExecuted}}</td>
+                          <td>{{rowItem.stepName}}</td>
+                          <td>{{rowItem.userID}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>{{item.stepDetails?.status}}</td>
+                  <td>{{getTimeAvailable(item)}}</td>
+                  <td>
+                    <span class="float-right text-sm mr-3" [ngClass]="getStatusClass(item)">
+                      <i class="fas fa-star"></i>
+                    </span>
+                  </td>
+                </tr>
+              </tbody> -->
+            </table>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
