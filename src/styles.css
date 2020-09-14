@@ -194,3 +194,19 @@ ngx-gallery-thumbnails {
 label > span {
     color: red;
 }
+
+.red {
+    color: red;
+}
+
+.bg-grey {
+    background-color: #d0cece;
+}
+
+.bg-seagreen {
+    background-color: #c4e0b2;
+}
+
+.bg-light-red {
+    background-color: #f7caac;
+}

@@ -267,4 +267,12 @@ export class SearchPageComponent implements OnInit {
   isEmpty(field_name: string) {
     return this.isSearchByUnit() && (this.formData[field_name] == undefined)
   }
+
+  getOwnerClass(item: any) {
+    return (item.deed.status == '1') ? 'bg-seagreen' : 'bg-light-red'
+  }
+
+  getfirstLand(deeds: any) {
+    return deeds.length > 0 ? deeds[0].land : {}
+  }
 }

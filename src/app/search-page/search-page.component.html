@@ -234,11 +234,12 @@
 
           <hr/>
 
-          <div class="resultsWrapper" *ngIf="response">
+          <div class="resultsWrapper rtl" *ngIf="response">
             <div class="searchbyOwner" *ngIf="isOwnerResponse()">
+              <label>Owner:</label>
               <table class="table table-bordered ownerTable">
                 <thead>
-                  <tr>
+                  <tr class="bg-grey">
                     <th>#</th>
                     <th>Customer ID</th>
                     <th>Name Arabic</th>
@@ -248,8 +249,8 @@
                     <th>Nationality</th>
                   </tr>
                 </thead>
-                <!-- <tbody>
-                  <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
+                <tbody>
+                  <!-- <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
                     <td>{{i + 1}}</td>
                     <td>{{item.applicationDetails?.applicationID}}</td>
                     <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
@@ -280,13 +281,14 @@
                         <i class="fas fa-star"></i>
                       </span>
                     </td>
-                  </tr>
-                </tbody> -->
+                  </tr> -->
+                </tbody>
               </table>
   
+              <label>Lands:</label>
               <table class="table table-bordered landTable">
                 <thead>
-                  <tr>
+                  <tr class="bg-grey">
                     <th>#</th>
                     <th>Land ID</th>
                     <th>Old Land ID</th>
@@ -298,8 +300,8 @@
                     <th>Bans</th>
                   </tr>
                 </thead>
-                <!-- <tbody>
-                  <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
+                <tbody>
+                  <!-- <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
                     <td>{{i + 1}}</td>
                     <td>{{item.applicationDetails?.applicationID}}</td>
                     <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
@@ -330,13 +332,14 @@
                         <i class="fas fa-star"></i>
                       </span>
                     </td>
-                  </tr>
-                </tbody> -->
+                  </tr> -->
+                </tbody>
               </table>
   
+              <label>Real Estate Units:</label>
               <table class="table table-bordered unitTable">
                 <thead>
-                  <tr>
+                  <tr class="bg-grey">
                     <th>#</th>
                     <th>Unit ID</th>
                     <th>Project Name</th>
@@ -347,8 +350,8 @@
                     <th>Bans</th>
                   </tr>
                 </thead>
-                <!-- <tbody>
-                  <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
+                <tbody>
+                  <!-- <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
                     <td>{{i + 1}}</td>
                     <td>{{item.applicationDetails?.applicationID}}</td>
                     <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
@@ -379,16 +382,16 @@
                         <i class="fas fa-star"></i>
                       </span>
                     </td>
-                  </tr>
-                </tbody> -->
+                  </tr> -->
+                </tbody>
               </table>
             </div>
   
             <div class="searchbyLand" *ngIf="isLandResponse()">
+              <label>Land:</label>
               <table class="table table-bordered landTable">
                 <thead>
-                  <tr>
-                    <th>#</th>
+                  <tr class="bg-grey">
                     <th>Land ID</th>
                     <th>Old Land ID</th>
                     <th>Sector</th>
@@ -396,45 +399,27 @@
                     <th>Bans</th>
                   </tr>
                 </thead>
-                <!-- <tbody>
-                  <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
-                    <td>{{i + 1}}</td>
-                    <td>{{item.applicationDetails?.applicationID}}</td>
-                    <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
-                    <td colspan="3">
-                      <table *ngIf="item.applicationDetails?.stepsExecuted">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Executed</th>
-                            <th>Step Name</th>
-                            <th>User Id</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr *ngFor="let rowItem of getStepDetails(item); let j = index">
-                            <td>{{j + 1}}</td>
-                            <td>{{rowItem.timeExecuted}}</td>
-                            <td>{{rowItem.stepName}}</td>
-                            <td>{{rowItem.userID}}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                    <td>{{item.stepDetails?.status}}</td>
-                    <td>{{getTimeAvailable(item)}}</td>
+                <tbody>
+                  <tr *ngIf="getfirstLand(response.deeds) as land_detail">
+                    <td>testing</td>
+                    <td>testing</td>
+                    <td>testing</td>
+                    <td>testing</td>
                     <td>
-                      <span class="float-right text-sm mr-3" [ngClass]="getStatusClass(item)">
-                        <i class="fas fa-star"></i>
-                      </span>
+                      <ul class="bans-wrapper">
+                        <li class="ban red" *ngFor="let blockage of land_detail.blockages">
+                          {{blockage}}
+                        </li>
+                      </ul>
                     </td>
                   </tr>
-                </tbody> -->
+                </tbody>
               </table>
   
+              <label>Owners:</label>
               <table class="table table-bordered ownerTable">
                 <thead>
-                  <tr>
+                  <tr class="bg-grey">
                     <th>#</th>
                     <th>Customer ID</th>
                     <th>Name Arabic</th>
@@ -446,47 +431,27 @@
                     <th>Date</th>
                   </tr>
                 </thead>
-                <!-- <tbody>
-                  <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
+                <tbody>
+                  <tr [ngClass]="getOwnerClass(item)" *ngFor="let item of response.deeds; let i = index">
                     <td>{{i + 1}}</td>
-                    <td>{{item.applicationDetails?.applicationID}}</td>
-                    <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
-                    <td colspan="3">
-                      <table *ngIf="item.applicationDetails?.stepsExecuted">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Executed</th>
-                            <th>Step Name</th>
-                            <th>User Id</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr *ngFor="let rowItem of getStepDetails(item); let j = index">
-                            <td>{{j + 1}}</td>
-                            <td>{{rowItem.timeExecuted}}</td>
-                            <td>{{rowItem.stepName}}</td>
-                            <td>{{rowItem.userID}}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                    <td>{{item.stepDetails?.status}}</td>
-                    <td>{{getTimeAvailable(item)}}</td>
-                    <td>
-                      <span class="float-right text-sm mr-3" [ngClass]="getStatusClass(item)">
-                        <i class="fas fa-star"></i>
-                      </span>
-                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
-                </tbody> -->
+                </tbody>
               </table>
             </div>
   
             <div class="searchbyUnit" *ngIf="isUnitResponse()">
+              <label>Real Estate Unit:</label>
               <table class="table table-bordered unitTable">
                 <thead>
-                  <tr>
+                  <tr class="bg-grey">
                     <th>#</th>
                     <th>Unit ID</th>
                     <th>Project Name</th>
@@ -494,8 +459,8 @@
                     <th>Bans</th>
                   </tr>
                 </thead>
-                <!-- <tbody>
-                  <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
+                <tbody>
+                  <!-- <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
                     <td>{{i + 1}}</td>
                     <td>{{item.applicationDetails?.applicationID}}</td>
                     <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
@@ -526,13 +491,14 @@
                         <i class="fas fa-star"></i>
                       </span>
                     </td>
-                  </tr>
-                </tbody> -->
+                  </tr> -->
+                </tbody>
               </table>
   
+              <label>Owners:</label>
               <table class="table table-bordered ownerTable">
                 <thead>
-                  <tr>
+                  <tr class="bg-grey">
                     <th>#</th>
                     <th>Customer ID</th>
                     <th>Name Arabic</th>
@@ -544,8 +510,8 @@
                     <th>Date</th>
                   </tr>
                 </thead>
-                <!-- <tbody>
-                  <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
+                <tbody>
+                  <!-- <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
                     <td>{{i + 1}}</td>
                     <td>{{item.applicationDetails?.applicationID}}</td>
                     <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
@@ -576,8 +542,8 @@
                         <i class="fas fa-star"></i>
                       </span>
                     </td>
-                  </tr>
-                </tbody> -->
+                  </tr> -->
+                </tbody>
               </table>
             </div>
           </div>
