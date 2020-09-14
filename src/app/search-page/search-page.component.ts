@@ -34,8 +34,10 @@ export class SearchPageComponent implements OnInit {
   landSearchInput$ = new Subject<string>();
   oldLandDataOptionsLoading = false;
   oldLandSearchInput$ = new Subject<string>();
+  ownersSearchInput$ = new Subject<string>();
+  ownersOptionsLoading = false;
   unitsOptions: any;
-  ownersOptions: any;
+  ownersOptions: Observable<any>;
   response: any;
 
   searchby: any;
@@ -87,10 +89,18 @@ export class SearchPageComponent implements OnInit {
   }
 
   loadOwnersOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/owners`)
-    .subscribe((data) => {
-      this.ownersOptions = data;
-    })
+    this.ownersOptions = concat(
+      of([]), // default items
+      this.ownersSearchInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.ownersOptionsLoading = true),
+          switchMap(term => {
+            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/owners`, { term } ).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.ownersOptionsLoading = false)
+          )})
+      )
+    );
   }
 
   loadDeveloperOptions() {

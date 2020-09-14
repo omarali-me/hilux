@@ -116,8 +116,6 @@
                           notFoundText="لا يوجد نتائج للبحث"
                           #unitId="ngModel"
                           [disabled]="isNotSearchTypeUnit() || isEmpty('projectId')"
-                          (keyup)="setSearchType('unitId', $event)"
-                          (blur)="checkTypeAndValues('unitId')"
                           (open)="loadUnitsOptions()"
                         >
                         </ng-select>
@@ -187,12 +185,17 @@
                         <ng-select
                           class="rtl"
                           required="true"
-                          [items]="ownersOptions"
+                          [items]="ownersOptions | async"
                           [(ngModel)]="formData.owner"
+                          [hideSelected]="true"
                           name="Owner"
                           bindLabel="value.ar"
                           bindValue="key"
+                          [minTermLength]="4"
+                          [typeahead]="ownersSearchInput$"
+                          [loading]="ownersOptionsLoading"
                           notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 4 or more characters"
                           #owner="ngModel"
                           [disabled]="isNotSearchTypeOwner() || isNotSearchBy('owner')"
                           (blur)="checkTypeAndValues('owner')"
