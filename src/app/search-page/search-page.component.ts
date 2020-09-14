@@ -38,6 +38,8 @@ export class SearchPageComponent implements OnInit {
   ownersOptions: any;
   response: any;
 
+  searchby: any;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -47,17 +49,21 @@ export class SearchPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loadUnitsOptions();
+    this.loadOwnersOptions();
     this.loadDeveloperOptions();
     this.loadProjectsOptions();
     this.loadLandsoptions();
     this.loadOldLandsoptions();
+
     // this.paramsSubscription = this.route.queryParams
     //   .subscribe(params => this.search(params));
   }
 
   searchData(formData: any) {
+    let prepapedData = this.prepareFormData(formData)
     let fd = new FormData();
-    fd.append('data', JSON.stringify(formData));
+    fd.append('data', JSON.stringify(prepapedData));
 
     this.http.post(`https://wfe.ajm.re/AjmanLandProperty/index.php/properties/search`, fd)
       .subscribe((data: any) => {
@@ -135,7 +141,7 @@ export class SearchPageComponent implements OnInit {
   loadOldLandsoptions() {
     this.oldLandsOptions = concat(
       of([]), // default items
-      this.landSearchInput$.pipe(
+      this.oldLandSearchInput$.pipe(
           distinctUntilChanged(),
           tap(() => this.oldLandDataOptionsLoading = true),
           switchMap(term => {
@@ -159,22 +165,6 @@ export class SearchPageComponent implements OnInit {
     return this.response && (this.response.type == 3 || this.response.type == '3')
   }
 
-  isSearchByOwner() {
-    return !!this.formData.type && (this.formData.type == '3' && !!this.formData.owner)
-  }
-
-  isSearchByOwnerId() {
-    return !!this.formData.type && (this.formData.type == '3' && !!this.formData.ownerId)
-  }
-
-  isSearchByLand() {
-    return !!this.formData.type && (this.formData.type == '1' && !!this.formData.landId)
-  }
-
-  isSearchByOldLandId() {
-    return !!this.formData.type && (this.formData.type == '1' && !!this.formData.oldLandId)
-  }
-
   isSearchByUnit() {
     return (this.formData.type == '2')
   }
@@ -193,7 +183,12 @@ export class SearchPageComponent implements OnInit {
 
   setSearchType(field_name: string, event: any) {
     var val = event.target.value.trim();
+    this.setSearchByandTypeValues(val, field_name)
+  }
+
+  setSearchByandTypeValues(val: any, field_name: any) {
     if (val != '') {
+      this.searchby = field_name;
       if (['developerId', 'projectId', 'unitId'].includes(field_name)) {
         this.formData.type = '2'
       } else if (['landId', 'oldLandId'].includes(field_name)) {
@@ -203,6 +198,63 @@ export class SearchPageComponent implements OnInit {
       }
     } else {
       this.formData.type = null;
+      this.searchby = null;
     }
+  }
+
+  isNotSearchBy(field_name: string) {
+    return !!this.searchby && (this.searchby != field_name);
+  }
+
+  prepareFormData(formData: any) {
+    switch (this.searchby) {
+      case 'unitId':
+      case 'projectId':
+      case 'developerId':
+        this.formData.value = this.formData.unitId
+        break;
+      case 'landId':
+        this.formData.value = this.formData.landId
+        break;
+      case 'oldLandId':
+        this.formData.value = this.formData.oldLandId
+        break;
+      case 'owner':
+        this.formData.value = this.formData.owner
+        break;
+      case 'ownerId':
+        this.formData.value = this.formData.ownerId
+        break;
+      default:
+        this.formData.value = null;
+    }
+
+    return formData
+  }
+
+  checkTypeAndValues(field_name: string) {
+    let val = this.formData[field_name] && this.formData[field_name].trim();
+    val = (val == undefined ? '' : val);
+    if (!this.isSearchByUnit() && (val == '')) {
+      this.setSearchByandTypeValues(val, field_name);
+    } else if (this.isSearchByUnit()) {
+      //check all are empty then reset types
+      if (this.isEmpty('developerId') && this.isEmpty('projectId') && this.isEmpty('unitId')) {
+        this.setSearchByandTypeValues(val, null);
+      }
+    }
+  }
+
+  resetProjectAndUnit() {
+    this.formData.projectId = null;
+    this.resetUnit();
+  }
+
+  resetUnit() {
+    this.formData.unitId = null;
+  }
+
+  isEmpty(field_name: string) {
+    return this.isSearchByUnit() && (this.formData[field_name] == undefined)
   }
 }

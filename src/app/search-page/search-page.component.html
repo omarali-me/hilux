@@ -64,13 +64,10 @@
                           #developer="ngModel"
                           [disabled]="isNotSearchTypeUnit()"
                           (keyup)="setSearchType('developerId', $event)"
+                          (blur)="checkTypeAndValues('developerId')"
+                          (change)="resetProjectAndUnit()"
                         >
                         </ng-select>
-                        <div *ngIf="developer.invalid && (developer.dirty || developer.touched)" class="alert alert-danger">
-                          <div *ngIf="developer.errors?.required">
-                            Developer can not be blank
-                          </div>
-                        </div>
                       </div>
                     </div>
 
@@ -94,15 +91,12 @@
                           notFoundText="لا يوجد نتائج للبحث"
                           [loading]="projectDataOptionsLoading"
                           #project="ngModel"
-                          [disabled]="isNotSearchTypeUnit()"
-                          (keyup)="setSearchType('projectId', $event)"
+                          [disabled]="isNotSearchTypeUnit() || isEmpty('developerId')"
+                          (keyup)="setSearchType('unitId', $event)"
+                          (blur)="checkTypeAndValues('projectId')"
+                          (change)="resetUnit()"
                         >
                         </ng-select>
-                        <div *ngIf="project.invalid && (project.dirty || project.touched)" class="alert alert-danger">
-                          <div *ngIf="project.errors?.required">
-                            Project can not be blank
-                          </div>
-                        </div>
                       </div>
                     </div>
 
@@ -121,15 +115,12 @@
                           bindValue="key"
                           notFoundText="لا يوجد نتائج للبحث"
                           #unitId="ngModel"
-                          [disabled]="isNotSearchTypeUnit()"
+                          [disabled]="isNotSearchTypeUnit() || isEmpty('projectId')"
                           (keyup)="setSearchType('unitId', $event)"
+                          (blur)="checkTypeAndValues('unitId')"
+                          (open)="loadUnitsOptions()"
                         >
                         </ng-select>
-                        <div *ngIf="unitId.invalid && (unitId.dirty || unitId.touched)" class="alert alert-danger">
-                          <div *ngIf="unitId.errors?.required">
-                            Unit ID can not be blank
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -154,7 +145,8 @@
                           notFoundText="لا يوجد نتائج للبحث"
                           typeToSearchText="Please enter 4 or more characters"
                           #land="ngModel"
-                          [disabled]="isNotSearchTypeLand()"
+                          [disabled]="isNotSearchTypeLand() || isNotSearchBy('landId')"
+                          (blur)="checkTypeAndValues('landId')"
                           (keyup)="setSearchType('landId', $event)">
                         </ng-select>
                       </div>
@@ -179,7 +171,8 @@
                           notFoundText="لا يوجد نتائج للبحث"
                           typeToSearchText="Please enter 4 or more characters"
                           #oldLand="ngModel"
-                          [disabled]="isNotSearchTypeLand()"
+                          [disabled]="isNotSearchTypeLand() || isNotSearchBy('oldLandId')"
+                          (blur)="checkTypeAndValues('oldLandId')"
                           (keyup)="setSearchType('oldLandId', $event)">
                         </ng-select>
                       </div>
@@ -201,7 +194,8 @@
                           bindValue="key"
                           notFoundText="لا يوجد نتائج للبحث"
                           #owner="ngModel"
-                          [disabled]="isNotSearchTypeOwner()"
+                          [disabled]="isNotSearchTypeOwner() || isNotSearchBy('owner')"
+                          (blur)="checkTypeAndValues('owner')"
                           (keyup)="setSearchType('owner', $event)">
                         </ng-select>
                       </div>
@@ -217,7 +211,8 @@
                           class="form-control"
                           [(ngModel)]="formData.ownerId"
                           #ownerId="ngModel"
-                          [disabled]="isNotSearchTypeOwner()"
+                          [disabled]="isNotSearchTypeOwner() || isNotSearchBy('ownerId')"
+                          (blur)="checkTypeAndValues('ownerId')"
                           (keyup)="setSearchType('ownerId', $event)">
                       </div>
                     </div>
