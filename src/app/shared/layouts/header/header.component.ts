@@ -26,22 +26,22 @@ export class HeaderComponent implements OnInit {
       this.userloggedIn = data;
     })
 
-    this.router.events.subscribe((url: any) => {
-      const queryFromUrl = this.getUrlParams(window.location.href)
-      this.searchData.query = queryFromUrl['query'] ||this.query
-    });
+    // this.router.events.subscribe((url: any) => {
+    //   const queryFromUrl = this.getUrlParams(window.location.href)
+    //   this.searchData.query = queryFromUrl['query'] ||this.query
+    // });
 
-    this.route.queryParams
-      .subscribe(params => {
-        const query = params['query'];
-        const queryFromUrl = this.getUrlParams(window.location.href)
-        if(query && query !== '') {
-          this.searchData.query = query;
-        }
-        if(queryFromUrl['query'] && queryFromUrl['query'] !== '') {
-          this.searchData.query = queryFromUrl['query']
-        }
-      });
+    // this.route.queryParams
+    //   .subscribe(params => {
+    //     const query = params['query'];
+    //     const queryFromUrl = this.getUrlParams(window.location.href)
+    //     if(query && query !== '') {
+    //       this.searchData.query = query;
+    //     }
+    //     if(queryFromUrl['query'] && queryFromUrl['query'] !== '') {
+    //       this.searchData.query = queryFromUrl['query']
+    //     }
+    //   });
   }
 
   logout() {
@@ -57,10 +57,10 @@ export class HeaderComponent implements OnInit {
 
   onSearchSubmit(searchData: any) {
     this.query = searchData.query  || ''
-    this.router.navigate(['/search'], {
-      queryParams: { query: searchData.query },
-      queryParamsHandling: 'merge'
-    });
+    // this.router.navigate(['/search'], {
+    //   queryParams: { query: searchData.query },
+    //   queryParamsHandling: 'merge'
+    // });
   }
 
   getUrlParams(search) {
