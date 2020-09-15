@@ -234,7 +234,7 @@
 
           <hr/>
 
-          <div class="resultsWrapper rtl" *ngIf="response?.length > 0">
+          <div class="resultsWrapper rtl" *ngIf="response">
             <div class="searchbyOwner" *ngIf="isOwnerResponse()">
               <label>Owner:</label>
               <table class="table table-bordered ownerTable">
@@ -465,15 +465,15 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                  <tr *ngIf="getfirstUnit(response.deeds) as unit_detail">
+                    <td>{{unit_detail?.unit?.id}}</td>
+                    <td>{{unit_detail?.project?.nameEn}}</td>
+                    <td>{{unit_detail?.developer?.nameEn}}</td>
                     <td>
                       <ul class="bans-wrapper">
-                        <!-- <li class="ban red" *ngFor="let blockage of land_detail.blockages">
-                          {{blockage}}
-                        </li> -->
+                        <li class="ban red" *ngFor="let blockage of unit_detail.blockages">
+                          {{blockage.remarks}}
+                        </li>
                       </ul>
                     </td>
                   </tr>
@@ -481,58 +481,43 @@
               </table>
   
               <label>Owners:</label>
-              <table class="table table-bordered ownerTable">
-                <thead>
-                  <tr class="bg-grey">
-                    <th>#</th>
-                    <th>Customer ID</th>
-                    <th>Name Arabic</th>
-                    <th>Name English</th>
-                    <th>Owner ID</th>
-                    <th>Ownership Percentage</th>
-                    <th>Nationality</th>
-                    <th>Ownership Transfer Method</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
-                    <td>{{i + 1}}</td>
-                    <td>{{item.applicationDetails?.applicationID}}</td>
-                    <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
-                    <td colspan="3">
-                      <table *ngIf="item.applicationDetails?.stepsExecuted">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Executed</th>
-                            <th>Step Name</th>
-                            <th>User Id</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr *ngFor="let rowItem of getStepDetails(item); let j = index">
-                            <td>{{j + 1}}</td>
-                            <td>{{rowItem.timeExecuted}}</td>
-                            <td>{{rowItem.stepName}}</td>
-                            <td>{{rowItem.userID}}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                    <td>{{item.stepDetails?.status}}</td>
-                    <td>{{getTimeAvailable(item)}}</td>
-                    <td>
-                      <span class="float-right text-sm mr-3" [ngClass]="getStatusClass(item)">
-                        <i class="fas fa-star"></i>
-                      </span>
-                    </td>
-                  </tr> -->
-                </tbody>
-              </table>
+              <div class="card" [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-seagreen' : ''"*ngFor="let item of response.deeds; let i = index">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">{{getOwnerHeader(item)}}</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered ownerTable">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>Customer ID</th>
+                        <th>Name Arabic</th>
+                        <th>Name English</th>
+                        <th>Owner ID</th>
+                        <th>Ownership Percentage</th>
+                        <th>Nationality</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-white' : getOwnerClass(item)" *ngFor="let deed_detail_item of item.deedDetails; let i = index">
+                        <td>{{deed_detail_item.profile?.id}}</td>
+                        <td>{{deed_detail_item.profile?.nameAr}}</td>
+                        <td>{{deed_detail_item.profile?.nameEn}}</td>
+                        <td>{{deed_detail_item.details?.ownerId}}</td>
+                        <td>{{deed_detail_item.details?.share}}</td>
+                        <td>{{deed_detail_item.profile?.nationalityCode}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="row" *ngIf="response?.length == 0">
+          <div class="row" *ngIf="!response">
             <div class="col-sm-12 text-center">
               <h4>No data Found for this Search, Try again by changing Search Criteria</h4>
             </div>

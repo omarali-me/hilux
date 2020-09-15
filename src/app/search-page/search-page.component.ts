@@ -38,7 +38,7 @@ export class SearchPageComponent implements OnInit {
   ownersOptionsLoading = false;
   unitsOptions: any;
   ownersOptions: Observable<any>;
-  response: any = [];
+  response: any;
 
   searchby: any;
 
@@ -274,6 +274,10 @@ export class SearchPageComponent implements OnInit {
 
   getfirstLand(deeds: any) {
     return deeds.length > 0 ? deeds[0].land : {}
+  }
+
+  getfirstUnit(deeds: any) {
+    return deeds.length > 0 ? deeds[0].unitData : {}
   }
 
   getOwnerHeader(item: any) {
