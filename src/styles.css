@@ -210,3 +210,7 @@ label > span {
 .bg-light-red {
     background-color: #f7caac;
 }
+
+.bg-white {
+    background-color: #ffffff;
+}
