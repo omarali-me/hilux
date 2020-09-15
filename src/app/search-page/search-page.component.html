@@ -406,11 +406,11 @@
                     <td>{{land_detail.land.sectorId}}</td>
                     <td>{{land_detail.land.sectionId}}</td>
                     <td>
-                      <ul class="bans-wrapper">
-                        <li class="ban red" *ngFor="let blockage of land_detail.blockages">
-                          {{blockage}}
+                      <ng-container *ngFor="let blockage of land_detail.blockages">
+                        <li class="ban red" *ngIf="blockage.remarks">
+                          {{blockage.remarks}}
                         </li>
-                      </ul>
+                      </ng-container>
                     </td>
                   </tr>
                 </tbody>
@@ -467,13 +467,15 @@
                 <tbody>
                   <tr *ngIf="getfirstUnit(response.deeds) as unit_detail">
                     <td>{{unit_detail?.unit?.id}}</td>
-                    <td>{{unit_detail?.project?.nameEn}}</td>
-                    <td>{{unit_detail?.developer?.nameEn}}</td>
+                    <td>{{unit_detail?.project?.nameAr}}</td>
+                    <td>{{unit_detail?.developer?.nameAr}}</td>
                     <td>
                       <ul class="bans-wrapper">
-                        <li class="ban red" *ngFor="let blockage of unit_detail.blockages">
-                          {{blockage.remarks}}
-                        </li>
+                        <ng-container *ngFor="let blockage of unit_detail.blockages">
+                          <li class="ban red" *ngIf="blockage.remarks">
+                            {{blockage.remarks}}
+                          </li>
+                        </ng-container>
                       </ul>
                     </td>
                   </tr>
@@ -488,7 +490,7 @@
                         <i class="fas fa-minus"></i>
                     </button>
                   </div>
-                  <h3 class="card-title float-right font-weight-bold">{{getOwnerHeader(item)}}</h3>
+                  <h3 class="card-title float-right font-weight-bold">{{getUnitOwnerHeader(item)}}</h3>
                 </div>
                 <div class="card-body">
                   <table class="table table-bordered ownerTable">
