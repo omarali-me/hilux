@@ -288,7 +288,7 @@
                     <tbody>
                       <tr *ngFor="let current_land_detail of getCurrentOwnedLands(response.deeds); let i = index">
                         <td>{{ i + 1}}</td>
-                        <td>{{ current_land_detail?.land?.land?.id }}</td>
+                        <td>{{ current_land_detail?.land?.land?.landId }}</td>
                         <td>{{ current_land_detail?.land?.land?.oldLandId }}</td>
                         <td>{{ current_land_detail?.land?.land?.sectorId }}</td>
                         <td>{{ current_land_detail?.land?.land?.sectionId }}</td>
@@ -335,7 +335,7 @@
                     <tbody>
                       <tr *ngFor="let previous_land_detail of getPreviouslyOwnedLands(response.deeds); let i = index">
                         <td>{{ i + 1}}</td>
-                        <td>{{ previous_land_detail?.land?.land?.id }}</td>
+                        <td>{{ previous_land_detail?.land?.land?.landId }}</td>
                         <td>{{ previous_land_detail?.land?.land?.oldLandId }}</td>
                         <td>{{ previous_land_detail?.land?.land?.sectorId }}</td>
                         <td>{{ previous_land_detail?.land?.land?.sectionId }}</td>
