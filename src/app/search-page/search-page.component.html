@@ -56,11 +56,11 @@
                           [(ngModel)]="formData.developerId"
                           [typeahead]="developerSearchInput$"
                           bindLabel="value.ar"
-                          [minTermLength]="4"
+                          [minTermLength]="1"
                           bindValue="key"
                           [loading]="developerDataOptionsLoading"
                           notFoundText="لا يوجد نتائج للبحث"
-                          typeToSearchText="Please enter 4 or more characters"
+                          typeToSearchText="Please enter 1 or more characters"
                           #developer="ngModel"
                           [disabled]="isNotSearchTypeUnit()"
                           (keyup)="setSearchType('developerId', $event)"
@@ -83,9 +83,9 @@
                           name="project"
                           [hideSelected]="true"
                           [(ngModel)]="formData.projectId"
-                          [minTermLength]="4"
+                          [minTermLength]="1"
                           bindLabel="value.ar"
-                          typeToSearchText="Please enter 4 or more characters"
+                          typeToSearchText="Please enter 1 or more characters"
                           bindValue="key"
                           [typeahead]="projectsSearchInput$"
                           notFoundText="لا يوجد نتائج للبحث"
@@ -137,11 +137,11 @@
                           [(ngModel)]="formData.landId"
                           [typeahead]="landSearchInput$"
                           bindLabel="value.ar"
-                          [minTermLength]="4"
+                          [minTermLength]="1"
                           bindValue="key"
                           [loading]="landDataOptionsLoading"
                           notFoundText="لا يوجد نتائج للبحث"
-                          typeToSearchText="Please enter 4 or more characters"
+                          typeToSearchText="Please enter 1 or more characters"
                           #land="ngModel"
                           [disabled]="isNotSearchTypeLand() || isNotSearchBy('landId')"
                           (blur)="checkTypeAndValues('landId')"
@@ -163,11 +163,11 @@
                           [(ngModel)]="formData.oldLandId"
                           [typeahead]="oldLandSearchInput$"
                           bindLabel="value.ar"
-                          [minTermLength]="4"
+                          [minTermLength]="1"
                           bindValue="key"
                           [loading]="oldLandDataOptionsLoading"
                           notFoundText="لا يوجد نتائج للبحث"
-                          typeToSearchText="Please enter 4 or more characters"
+                          typeToSearchText="Please enter 1 or more characters"
                           #oldLand="ngModel"
                           [disabled]="isNotSearchTypeLand() || isNotSearchBy('oldLandId')"
                           (blur)="checkTypeAndValues('oldLandId')"
@@ -191,11 +191,11 @@
                           name="Owner"
                           bindLabel="value.ar"
                           bindValue="key"
-                          [minTermLength]="4"
+                          [minTermLength]="1"
                           [typeahead]="ownersSearchInput$"
                           [loading]="ownersOptionsLoading"
                           notFoundText="لا يوجد نتائج للبحث"
-                          typeToSearchText="Please enter 4 or more characters"
+                          typeToSearchText="Please enter 1 or more characters"
                           #owner="ngModel"
                           [disabled]="isNotSearchTypeOwner() || isNotSearchBy('owner')"
                           (blur)="checkTypeAndValues('owner')"
@@ -240,7 +240,6 @@
               <table class="table table-bordered ownerTable">
                 <thead>
                   <tr class="bg-grey">
-                    <th>#</th>
                     <th>Customer ID</th>
                     <th>Name Arabic</th>
                     <th>Name English</th>
@@ -250,141 +249,202 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
-                    <td>{{i + 1}}</td>
-                    <td>{{item.applicationDetails?.applicationID}}</td>
-                    <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
-                    <td colspan="3">
-                      <table *ngIf="item.applicationDetails?.stepsExecuted">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Executed</th>
-                            <th>Step Name</th>
-                            <th>User Id</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr *ngFor="let rowItem of getStepDetails(item); let j = index">
-                            <td>{{j + 1}}</td>
-                            <td>{{rowItem.timeExecuted}}</td>
-                            <td>{{rowItem.stepName}}</td>
-                            <td>{{rowItem.userID}}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                    <td>{{item.stepDetails?.status}}</td>
-                    <td>{{getTimeAvailable(item)}}</td>
-                    <td>
-                      <span class="float-right text-sm mr-3" [ngClass]="getStatusClass(item)">
-                        <i class="fas fa-star"></i>
-                      </span>
-                    </td>
-                  </tr> -->
+                  <tr *ngIf="getfirstOwner(response.deeds) as owner_detail">
+                    <td>{{owner_detail?.profile?.id}}</td>
+                    <td>{{owner_detail?.profile?.nameAr}}</td>
+                    <td>{{owner_detail?.profile?.nameEn}}</td>
+                    <td>{{owner_detail?.profile?.ownerId}}</td>
+                    <td>{{owner_detail?.profile?.phone}}</td>
+                    <td>{{owner_detail?.profile?.nationalityCode}}</td>
+                  </tr>
                 </tbody>
               </table>
   
               <label>Lands:</label>
-              <table class="table table-bordered landTable">
-                <thead>
-                  <tr class="bg-grey">
-                    <th>#</th>
-                    <th>Land ID</th>
-                    <th>Old Land ID</th>
-                    <th>Sector</th>
-                    <th>District</th>
-                    <th>Ownership Transfer Method</th>
-                    <th>Ownership Percentage</th>
-                    <th>Date</th>
-                    <th>Bans</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
-                    <td>{{i + 1}}</td>
-                    <td>{{item.applicationDetails?.applicationID}}</td>
-                    <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
-                    <td colspan="3">
-                      <table *ngIf="item.applicationDetails?.stepsExecuted">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Executed</th>
-                            <th>Step Name</th>
-                            <th>User Id</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr *ngFor="let rowItem of getStepDetails(item); let j = index">
-                            <td>{{j + 1}}</td>
-                            <td>{{rowItem.timeExecuted}}</td>
-                            <td>{{rowItem.stepName}}</td>
-                            <td>{{rowItem.userID}}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                    <td>{{item.stepDetails?.status}}</td>
-                    <td>{{getTimeAvailable(item)}}</td>
-                    <td>
-                      <span class="float-right text-sm mr-3" [ngClass]="getStatusClass(item)">
-                        <i class="fas fa-star"></i>
-                      </span>
-                    </td>
-                  </tr> -->
-                </tbody>
-              </table>
-  
+              <div class="card bg-seagreen">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">Currently Owned Lands</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered landTable bg-white">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>#</th>
+                        <th>Land ID</th>
+                        <th>Old Land ID</th>
+                        <th>Sector</th>
+                        <th>District</th>
+                        <th>Ownership Transfer Method</th>
+                        <th>Ownership Percentage</th>
+                        <th>Date</th>
+                        <th>Bans</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let current_land_detail of getCurrentOwnedLands(response.deeds); let i = index">
+                        <td>{{ i + 1}}</td>
+                        <td>{{ current_land_detail?.land?.land?.id }}</td>
+                        <td>{{ current_land_detail?.land?.land?.oldLandId }}</td>
+                        <td>{{ current_land_detail?.land?.land?.sectorId }}</td>
+                        <td>{{ current_land_detail?.land?.land?.sectionId }}</td>
+                        <td>{{ current_land_detail?.childDeed?.ownershipTypeId }}</td>
+                        <td>{{ getItemShare(current_land_detail) }}</td>
+                        <td>{{ current_land_detail?.deed?.createdAt }}</td>
+                        <td>
+                          <ng-container *ngFor="let blockage of current_land_detail.land.blockages">
+                            <li class="ban red" *ngIf="blockage.remarks">
+                              {{blockage.remarks}}
+                            </li>
+                          </ng-container>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">Previously Owned Lands</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered landTable bg-light-red">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>#</th>
+                        <th>Land ID</th>
+                        <th>Old Land ID</th>
+                        <th>Sector</th>
+                        <th>District</th>
+                        <th>Ownership Transfer Method</th>
+                        <th>Ownership Percentage</th>
+                        <th>Date</th>
+                        <th>Bans</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let previous_land_detail of getPreviouslyOwnedLands(response.deeds); let i = index">
+                        <td>{{ i + 1}}</td>
+                        <td>{{ previous_land_detail?.land?.land?.id }}</td>
+                        <td>{{ previous_land_detail?.land?.land?.oldLandId }}</td>
+                        <td>{{ previous_land_detail?.land?.land?.sectorId }}</td>
+                        <td>{{ previous_land_detail?.land?.land?.sectionId }}</td>
+                        <td>{{ previous_land_detail?.childDeed?.ownershipTypeId }}</td>
+                        <td>{{ getItemShare(previous_land_detail) }}</td>
+                        <td>{{ previous_land_detail?.deed?.createdAt }}</td>
+                        <td>
+                          <ng-container *ngFor="let blockage of previous_land_detail.land.blockages">
+                            <li class="ban red" *ngIf="blockage.remarks">
+                              {{blockage.remarks}}
+                            </li>
+                          </ng-container>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
               <label>Real Estate Units:</label>
-              <table class="table table-bordered unitTable">
-                <thead>
-                  <tr class="bg-grey">
-                    <th>#</th>
-                    <th>Unit ID</th>
-                    <th>Project Name</th>
-                    <th>Developer Name</th>
-                    <th>Ownership Transfer Method</th>
-                    <th>Ownership Percentage</th>
-                    <th>Date</th>
-                    <th>Bans</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
-                    <td>{{i + 1}}</td>
-                    <td>{{item.applicationDetails?.applicationID}}</td>
-                    <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
-                    <td colspan="3">
-                      <table *ngIf="item.applicationDetails?.stepsExecuted">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Executed</th>
-                            <th>Step Name</th>
-                            <th>User Id</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr *ngFor="let rowItem of getStepDetails(item); let j = index">
-                            <td>{{j + 1}}</td>
-                            <td>{{rowItem.timeExecuted}}</td>
-                            <td>{{rowItem.stepName}}</td>
-                            <td>{{rowItem.userID}}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                    <td>{{item.stepDetails?.status}}</td>
-                    <td>{{getTimeAvailable(item)}}</td>
-                    <td>
-                      <span class="float-right text-sm mr-3" [ngClass]="getStatusClass(item)">
-                        <i class="fas fa-star"></i>
-                      </span>
-                    </td>
-                  </tr> -->
-                </tbody>
-              </table>
+              <div class="card bg-seagreen">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">Currently Owned Units</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered unitTable bg-white">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>#</th>
+                        <th>Unit ID</th>
+                        <th>Project Name</th>
+                        <th>Developer Name</th>
+                        <th>Ownership Percentage</th>
+                        <th>Date</th>
+                        <th>Bans</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let current_unit_detail of getCurrentOwnedUnits(response.deeds); let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{current_unit_detail?.unitData?.unit?.id}}</td>
+                        <td>{{current_unit_detail?.unitData?.project?.nameAr}}</td>
+                        <td>{{current_unit_detail?.unitData?.developer?.nameAr}}</td>
+                        <td>{{ getItemShare(current_unit_detail) }}</td>
+                        <td>{{current_unit_detail?.deed?.createdAt}}</td>
+                        <td>
+                          <ul class="bans-wrapper">
+                            <ng-container *ngFor="let blockage of current_unit_detail.unitData.blockages">
+                              <li class="ban red" *ngIf="blockage.remarks">
+                                {{blockage.remarks}}
+                              </li>
+                            </ng-container>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">Previously Owned Units</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered unitTable bg-light-red">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>#</th>
+                        <th>Unit ID</th>
+                        <th>Project Name</th>
+                        <th>Developer Name</th>
+                        <th>Ownership Percentage</th>
+                        <th>Date</th>
+                        <th>Bans</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let previous_unit_detail of getPreviouslyOwnedUnits(response.deeds); let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{previous_unit_detail?.unitData?.unit?.id}}</td>
+                        <td>{{previous_unit_detail?.unitData?.project?.nameAr}}</td>
+                        <td>{{previous_unit_detail?.unitData?.developer?.nameAr}}</td>
+                        <td>{{ getItemShare(previous_unit_detail) }}</td>
+                        <td>{{previous_unit_detail?.deed?.createdAt}}</td>
+                        <td>
+                          <ul class="bans-wrapper">
+                            <ng-container *ngFor="let blockage of previous_unit_detail.unitData.blockages">
+                              <li class="ban red" *ngIf="blockage.remarks">
+                                {{blockage.remarks}}
+                              </li>
+                            </ng-container>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
   
             <div class="searchbyLand" *ngIf="isLandResponse()">

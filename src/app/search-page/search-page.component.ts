@@ -280,11 +280,43 @@ export class SearchPageComponent implements OnInit {
     return deeds.length > 0 ? deeds[0].unitData : {}
   }
 
+  getfirstOwner(deeds: any) {
+    return deeds.length > 0 ? deeds[0].deedDetails[0] : {}
+  }
+
   getOwnerHeader(item: any) {
     return `Ownership Method: ${item.childDeed?.ownershipTypeId}, Created At: ${item.deed?.createdAt}`
   }
 
   getUnitOwnerHeader(item: any) {
     return `Created At: ${item.deed?.createdAt}`
+  }
+
+  getCurrentOwnedLands(deeds: any) {
+    return this.filterLandsWithStatus(deeds, '1');
+  }
+
+  getPreviouslyOwnedLands(deeds: any) {
+    return this.filterLandsWithStatus(deeds, '0');
+  }
+
+  getCurrentOwnedUnits(deeds: any) {
+    return this.filterUnitsWithStatus(deeds, '1');
+  }
+
+  getPreviouslyOwnedUnits(deeds: any) {
+    return this.filterUnitsWithStatus(deeds, '0');
+  }
+
+  filterLandsWithStatus(deeds: any, status: any) {
+    return deeds.filter(d => d.land && d.deed?.status == status);
+  }
+
+  filterUnitsWithStatus(deeds: any, status: any) {
+    return deeds.filter(d => d.unitData && d.deed?.status == status);
+  }
+
+  getItemShare(deed: any) {
+    return (deed.deedDetails[0] && deed.deedDetails[0].details?.share);
   }
 }
