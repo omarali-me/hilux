@@ -319,4 +319,12 @@ export class SearchPageComponent implements OnInit {
   getItemShare(deed: any) {
     return (deed.deedDetails[0] && deed.deedDetails[0].details?.share);
   }
+
+  getFieldNameorId(item: any, field_name: any) {
+    return item && (item[`${field_name}NameAr`] || item[`${field_name}Id`])
+  }
+
+  getNationalityName(item: any, field_name: any) {
+    return item && (item[`${field_name}NameAr`] || item[`${field_name}`])
+  }
 }
