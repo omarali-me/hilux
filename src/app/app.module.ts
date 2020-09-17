@@ -91,6 +91,8 @@ import { PropertiesProfileComponent } from './properties-profile/properties-prof
 import { LandProfileComponent } from './land-profile/land-profile.component';
 import { LandDetailsComponent } from './land-profile/land-details/land-details.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { DeveloperProfileComponent } from './developer-profile/developer-profile.component';
+import { DeveloperDetailsComponent } from './developer-profile/developer-details/developer-details.component';
 
 @NgModule({
   declarations: [
@@ -171,7 +173,9 @@ import { SearchPageComponent } from './search-page/search-page.component';
     PropertiesProfileComponent,
     LandProfileComponent,
     LandDetailsComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    DeveloperProfileComponent,
+    DeveloperDetailsComponent
   ],
   imports: [
     FormsModule,
