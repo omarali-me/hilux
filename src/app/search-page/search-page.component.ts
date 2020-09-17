@@ -285,7 +285,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   getOwnerHeader(item: any) {
-    return `Ownership Method: ${item.childDeed?.ownershipTypeId}, Created At: ${item.deed?.createdAt}`
+    return `Ownership Method: ${ this.getFieldNameorId(item.childDeed, 'ownershipType') }, Created At: ${item.deed?.createdAt}`
   }
 
   getUnitOwnerHeader(item: any) {

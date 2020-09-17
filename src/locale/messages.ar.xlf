@@ -75,7 +75,7 @@
           <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Land
         </source>
         <target>
-          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Land
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> الأرض
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
@@ -87,7 +87,7 @@
           <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Search
         </source>
         <target>
-          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Search
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> بحث
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
@@ -2794,6 +2794,470 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
           <context context-type="linenumber">813</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageHeaderLabel" datatype="html">
+        <source>Search</source>
+        <target>بحث</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageDeveloperName" datatype="html">
+        <source>Developer Name
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <target>المطور العقاري
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageProjectName" datatype="html">
+        <source>Project Name
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <target>مشروع التطوير العقاري 
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageUnitID" datatype="html">
+        <source>Unit ID
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <target>رقم الوحدة العقارية
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageLandID" datatype="html">
+        <source>Land ID
+                      </source>
+        <target>رقم الأرض
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageOldLandID" datatype="html">
+        <source>Old Land ID
+                      </source>
+        <target>رقم الأرض القديم
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">154</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageOwner" datatype="html">
+        <source>Owner
+                      </source>
+        <target>المالك
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">182</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageOwnerID" datatype="html">
+        <source>Owner ID
+                      </source>
+        <target>الرقم المعرف
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">208</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageSearchButton" datatype="html">
+        <source>Search</source>
+        <target>بحث</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">228</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableOwner" datatype="html">
+        <source>Owner:</source>
+        <target>المـــــالك:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">239</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderCustomerID" datatype="html">
+        <source>Customer ID</source>
+        <target>رقم المتعامل</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">243</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">493</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">559</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderNameArabic" datatype="html">
+        <source>Name Arabic</source>
+        <target>الاسم باللغة العربية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">244</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">494</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">560</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderNameEnglish" datatype="html">
+        <source>Name English</source>
+        <target>الاسم باللغة الانجليزية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">245</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">495</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">561</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderOwnerID" datatype="html">
+        <source>Owner ID</source>
+        <target>الرقم المعرف</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">246</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">496</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">562</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderPhoneNumber" datatype="html">
+        <source>Phone Number</source>
+        <target>رقم الهاتف</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">247</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderNationality" datatype="html">
+        <source>Nationality</source>
+        <target>الجنسية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">248</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">498</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">564</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableLands" datatype="html">
+        <source>Lands:</source>
+        <target>الأراضـــي:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">263</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableCurrentlyOwnedLands" datatype="html">
+        <source>Currently Owned Lands</source>
+        <target>Currently Owned Lands</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">271</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderLandID" datatype="html">
+        <source>Land ID</source>
+        <target>رقم الأرض</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">278</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">325</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">455</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderOldLandID" datatype="html">
+        <source>Old Land ID</source>
+        <target>رقم الأرض القديم</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">279</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">326</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">456</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderSector" datatype="html">
+        <source>Sector</source>
+        <target>القطاع</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">280</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">327</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">457</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderDistrict" datatype="html">
+        <source>District</source>
+        <target>الحي</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">281</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">328</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">458</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderOwnershipTransferMethod" datatype="html">
+        <source>Ownership Transfer Method</source>
+        <target>طريقة انتقال الملكية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">282</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">329</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderOwnershipPercentage" datatype="html">
+        <source>Ownership Percentage</source>
+        <target>نسبة التملك</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">283</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">330</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">376</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">421</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">497</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">563</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderDate" datatype="html">
+        <source>Date</source>
+        <target>التاريخ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">284</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">331</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">377</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">422</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderBans" datatype="html">
+        <source>Bans</source>
+        <target>الحجوزات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">285</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">332</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">378</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">423</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">459</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">524</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTablePreviouslyOwnedLands" datatype="html">
+        <source>Previously Owned Lands</source>
+        <target>Previously Owned Lands</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">318</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableRealEstateUnits" datatype="html">
+        <source>Real Estate Units:</source>
+        <target>الوحدات العقارية:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">358</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableCurrentlyOwnedUnits" datatype="html">
+        <source>Currently Owned Units</source>
+        <target>Currently Owned Units</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">366</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderUnitID" datatype="html">
+        <source>Unit ID</source>
+        <target>رقم الوحدة العقارية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">373</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">418</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">521</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderProjectName" datatype="html">
+        <source>Project Name</source>
+        <target>مشروع التطوير العقاري</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">374</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">419</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">522</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableHeaderDeveloperName" datatype="html">
+        <source>Developer Name</source>
+        <target>المطور العقاري</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">375</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">420</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">523</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTablePreviouslyOwnedUnits" datatype="html">
+        <source>Previously Owned Units</source>
+        <target>Previously Owned Units</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">411</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableLand" datatype="html">
+        <source>Land:</source>
+        <target>الأرض:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">451</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableOwners" datatype="html">
+        <source>Owners:</source>
+        <target>الملاك:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">479</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">545</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageTableRealEstateUnit" datatype="html">
+        <source>Real Estate Unit:</source>
+        <target>الوحدة العقارية:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">517</context>
         </context-group>
       </trans-unit>
     </body>
