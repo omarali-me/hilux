@@ -161,6 +161,9 @@ export class LandProfileComponent implements OnInit {
       fieldName: {
         "ar": "Sector Image",
         "en": "Sector Image"
+      },
+      auxInfo: {
+        multiple: false
       }
     }
   }
@@ -173,6 +176,9 @@ export class LandProfileComponent implements OnInit {
       fieldName: {
         "ar": "District Image",
         "en": "District Image"
+      },
+      auxInfo: {
+        multiple: false
       }
     }
   }
@@ -185,6 +191,9 @@ export class LandProfileComponent implements OnInit {
       fieldName: {
         "ar": "Parcel Image",
         "en": "Parcel Image"
+      },
+      auxInfo: {
+        multiple: false
       }
     }
   }

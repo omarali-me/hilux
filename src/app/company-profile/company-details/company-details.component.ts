@@ -177,6 +177,9 @@ export class CompanyDetailsComponent implements OnInit {
       fieldName: {
         "ar": "establishmentContractFile",
         "en": "establishmentContractFile"
+      },
+      auxInfo: {
+        multiple: true
       }
     }
   }

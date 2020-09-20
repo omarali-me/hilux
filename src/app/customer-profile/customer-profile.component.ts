@@ -175,6 +175,9 @@ export class CustomerProfileComponent implements OnInit {
       fieldName: {
         "ar": "image",
         "en": "image"
+      },
+      auxInfo: {
+        multiple: false
       }
     }
   }
@@ -187,6 +190,9 @@ export class CustomerProfileComponent implements OnInit {
       fieldName: {
         "ar": "signature",
         "en": "signature"
+      },
+      auxInfo: {
+        multiple: false
       }
     }
   }

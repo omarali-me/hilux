@@ -207,11 +207,14 @@ export class ProjectProfileComponent implements OnInit {
   prepareImageField() {
     return {
       fieldID: "image",
-      fieldType: "image",
+      fieldType: "fileupload",
       required: false,
       fieldName: {
         "ar": "image",
         "en": "image"
+      },
+      auxInfo: {
+        multiple: false
       }
     }
   }
