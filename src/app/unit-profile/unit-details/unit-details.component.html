@@ -428,7 +428,7 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label" i18n="@@unitProfileSitePlan">Site Plan</label>
               <div class="text-center col-sm-10 gallery-wrapper img-fluid">
-                <app-media-gallery [medias]="getAttachments()"></app-media-gallery>
+                <app-media-gallery [medias]="getAttachments()" *ngIf="getAttachments()?.length > 0"></app-media-gallery>
               </div>
             </div>
           </div>

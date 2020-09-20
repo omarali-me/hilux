@@ -135,7 +135,7 @@ export class UnitDetailsComponent implements OnInit {
   }
 
   getAttachments() {
-    return this.formData.sitePlan || [];
+    return !!this.formData.sitePlan ? [this.formData.sitePlan] : [];
   }
 
   isCustomerDisabled() {
