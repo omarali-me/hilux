@@ -73,7 +73,7 @@ const routes: Routes = [
       { path: 'edit', component: UnitDetailsComponent }
     ]
   },
-  { path: 'company/new', component: CompanyProfileComponent, resolve: { profile: CompanyProfileResolver} },
+  { path: 'company/new', component: CompanyProfileComponent, resolve: { profile: CompanyProfileResolver}, canActivate: [AuthenticationGuard] },
   { path: 'company/profile/:profileId', component: CompanyProfileComponent,
     resolve: { profile: CompanyProfileResolver},
     canActivate: [AuthenticationGuard],
@@ -82,7 +82,7 @@ const routes: Routes = [
       { path: 'edit', component: CompanyDetailsComponent }
     ]
   },
-  { path: 'land/new', component: LandProfileComponent, resolve: { profile: LandProfileResolver} },
+  { path: 'land/new', component: LandProfileComponent, resolve: { profile: LandProfileResolver} , canActivate: [AuthenticationGuard] },
   { path: 'land/profile/:profileId', component: LandProfileComponent,
     resolve: { profile: LandProfileResolver},
     canActivate: [AuthenticationGuard],
@@ -91,7 +91,7 @@ const routes: Routes = [
       { path: 'edit', component: LandDetailsComponent }
     ]
   },
-  { path: 'developer/new', component: DeveloperProfileComponent, resolve: { profile: DeveloperProfileResolver} },
+  { path: 'developer/new', component: DeveloperProfileComponent, resolve: { profile: DeveloperProfileResolver}, canActivate: [AuthenticationGuard] },
   { path: 'developer/profile/:profileId', component: DeveloperProfileComponent,
     resolve: { profile: DeveloperProfileResolver},
     canActivate: [AuthenticationGuard],
