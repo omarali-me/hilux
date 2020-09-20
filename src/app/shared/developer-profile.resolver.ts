@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class DeveloperProfileResolver implements Resolve<any> {
@@ -14,6 +15,6 @@ export class DeveloperProfileResolver implements Resolve<any> {
   }
 
   getProfile(profileId) {
-    return this.http.get(`https://wfe.ajm.re/AjmanLandProperty/index.php/developers/get/${profileId}`)
+    return this.http.get(`${environment.apiHost}/AjmanLandProperty/index.php/developers/get/${profileId}`)
   }
 }

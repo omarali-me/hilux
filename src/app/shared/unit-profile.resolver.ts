@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface ProfileId {
   [prop: string]: any;
@@ -18,7 +19,7 @@ export class UnitProfileResolver implements Resolve<any> {
   }
 
   getProfile(profileId) {
-    return this.http.get(`https://wfe.ajm.re/AjmanLandProperty/index.php/units/get/${profileId}`)
+    return this.http.get(`${environment.apiHost}/AjmanLandProperty/index.php/units/get/${profileId}`)
   }
 }
 
