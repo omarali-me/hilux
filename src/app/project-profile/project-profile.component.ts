@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from '../shared/fields.service';
 import { pluck, distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-project-profile',
@@ -78,7 +79,7 @@ export class ProjectProfileComponent implements OnInit {
   saveData(formData: any) {
     let fd = new FormData();
     fd.append('project', JSON.stringify(formData));
-    this.http.post('https:///wfe.ajm.re/AjmanLandProperty/index.php/projects/create', fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/projects/create`, fd)
       .subscribe((data: any) => {
        if (data.status == 'success') {
         this.toastr.success(data.message, 'Success');
@@ -101,7 +102,7 @@ export class ProjectProfileComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.developerDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/developers`, { term } ).pipe(
+            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/developers`, { term } ).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.developerDataOptionsLoading = false)
           )})
@@ -116,7 +117,7 @@ export class ProjectProfileComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.projectDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projects`, { term, developerId: this.formData.developerId } ).pipe(
+            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projects`, { term, developerId: this.formData.developerId } ).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectDataOptionsLoading = false)
           )})
@@ -131,7 +132,7 @@ export class ProjectProfileComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.landDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/lands`, { term } ).pipe(
+            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/lands`, { term } ).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.landDataOptionsLoading = false)
           )})
@@ -140,49 +141,49 @@ export class ProjectProfileComponent implements OnInit {
   }
 
   loadProjectsTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projectstypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projectstypes`)
     .subscribe((data) => {
       this.projectsTypesOptions = data;
     })
   }
 
   loadProjectStatusOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projectsStatuses`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projectsStatuses`)
     .subscribe((data) => {
       this.projectStatusOptions = data;
     })
   }
 
   loadProjectsRegistrationTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projectsRegistrationTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projectsRegistrationTypes`)
     .subscribe((data) => {
       this.projectsRegistrationTypesOptions = data;
     })
   }
 
   loadProjectUsageTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projectsUsageTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projectsUsageTypes`)
     .subscribe((data) => {
       this.projectUsageTypesOptions = data;
     })
   }
 
   loadContractorsOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/projetcsContractors`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projetcsContractors`)
     .subscribe((data) => {
       this.contractorsOptions = data;
     })
   }
 
   loadConsultantsOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/projetcsConsultants`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projetcsConsultants`)
     .subscribe((data) => {
       this.consultantsOptions = data;
     })
   }
 
   loadAccountTrusteesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/projetcsAccountTrusteeBanks`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projetcsAccountTrusteeBanks`)
     .subscribe((data) => {
       this.accountTrusteesOptions = data;
     })

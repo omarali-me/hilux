@@ -5,6 +5,7 @@ import { FieldsService } from '../shared/fields.service';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 interface SearchParams {
   query?: string;
@@ -67,7 +68,7 @@ export class SearchPageComponent implements OnInit {
     let fd = new FormData();
     fd.append('data', JSON.stringify(prepapedData));
 
-    this.http.post(`https://wfe.ajm.re/AjmanLandProperty/index.php/properties/search`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/properties/search`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.response = data.data;
@@ -82,7 +83,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   loadUnitsOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/units`, { projectId: this.formData.projectId })
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/units`, { projectId: this.formData.projectId })
     .subscribe((data) => {
       this.unitsOptions = data;
     })
@@ -95,7 +96,7 @@ export class SearchPageComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.ownersOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/owners`, { term } ).pipe(
+            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/owners`, { term } ).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.ownersOptionsLoading = false)
           )})
@@ -110,7 +111,7 @@ export class SearchPageComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.developerDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/developers`, { term } ).pipe(
+            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/developers`, { term } ).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.developerDataOptionsLoading = false)
           )})
@@ -125,7 +126,7 @@ export class SearchPageComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.projectDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projects`, { term, developerId: this.formData.developerId } ).pipe(
+            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projects`, { term, developerId: this.formData.developerId } ).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectDataOptionsLoading = false)
           )})
@@ -140,7 +141,7 @@ export class SearchPageComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.landDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/lands`, { term } ).pipe(
+            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/lands`, { term } ).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.landDataOptionsLoading = false)
           )})
@@ -155,7 +156,7 @@ export class SearchPageComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.oldLandDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/oldLands`, { term } ).pipe(
+            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/oldLands`, { term } ).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.oldLandDataOptionsLoading = false)
           )})

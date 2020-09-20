@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from '../../shared/fields.service';
 import { pluck, distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-unit-details',
@@ -61,7 +62,7 @@ export class UnitDetailsComponent implements OnInit {
   updateData(formData: any) {
     let fd = new FormData();
     fd.append('unit', JSON.stringify(formData));
-    this.http.post(`https://wfe.ajm.re/AjmanLandProperty/index.php/units/update/${formData.id}`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/units/update/${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
@@ -82,7 +83,7 @@ export class UnitDetailsComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.developerDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/developers`, { term } ).pipe(
+            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/developers`, { term } ).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.developerDataOptionsLoading = false)
           )})
@@ -97,7 +98,7 @@ export class UnitDetailsComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.projectDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projects`, { term, developerId: this.formData.developerId } ).pipe(
+            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projects`, { term, developerId: this.formData.developerId } ).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectDataOptionsLoading = false)
           )})
@@ -112,7 +113,7 @@ export class UnitDetailsComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.landDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/lands`, { term } ).pipe(
+            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/lands`, { term } ).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.landDataOptionsLoading = false)
           )})
@@ -121,14 +122,14 @@ export class UnitDetailsComponent implements OnInit {
   }
 
   loadUnitsTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/unitsTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/unitsTypes`)
     .subscribe((data) => {
       this.unitsTypesOptions = data;
     })
   }
 
   loadunitsUsageTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/unitsUsageTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/unitsUsageTypes`)
     .subscribe((data) => {
       this.unitsUsageTypesOptions = data;
     })
@@ -153,11 +154,14 @@ export class UnitDetailsComponent implements OnInit {
   prepareImageField() {
     return {
       fieldID: "image",
-      fieldType: "image",
+      fieldType: "fileupload",
       required: false,
       fieldName: {
         "ar": "image",
         "en": "image"
+      },
+      auxInfo: {
+        multiple: false
       }
     }
   }
@@ -165,7 +169,7 @@ export class UnitDetailsComponent implements OnInit {
   prepareSitePlanField() {
     return {
       fieldID: "sitePlan",
-      fieldType: "image",
+      fieldType: "fileupload",
       required: false,
       fieldName: {
         "ar": "site Plan",
@@ -205,7 +209,7 @@ export class UnitDetailsComponent implements OnInit {
 
   prepareProjectValueOptions(profile: any) {
     if(!!profile.projectId) {
-      this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/projects`, { id: profile.projectId })
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projects`, { id: profile.projectId })
       .subscribe((option)=> {
         this.projectsSearchInput$.next(option.value && option.value.ar);
       })
@@ -214,7 +218,7 @@ export class UnitDetailsComponent implements OnInit {
 
   prepareDeveloperValueOptions(profile: any) {
     if(!!profile.developerId) {
-      this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/developers`, { id: profile.developerId })
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/developers`, { id: profile.developerId })
       .subscribe((option)=> {
         this.developerSearchInput$.next(option.value && option.value.ar);
       })
@@ -223,7 +227,7 @@ export class UnitDetailsComponent implements OnInit {
 
   prepareLandValueOptions(profile: any) {
     if(!!profile.landId) {
-      this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/lookups/lands`, { id: profile.landId })
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/lands`, { id: profile.landId })
       .subscribe((option)=> {
         this.landSearchInput$.next(option.value && option.value.ar);
       })

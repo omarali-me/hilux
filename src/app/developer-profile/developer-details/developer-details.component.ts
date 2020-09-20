@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from '../../shared/fields.service';
 import { pluck } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-developer-details',
@@ -40,7 +41,7 @@ export class DeveloperDetailsComponent implements OnInit {
   updateData(formData: any) {
     let fd = new FormData();
     fd.append('developer', JSON.stringify(formData));
-    this.http.post(`https://wfe.ajm.re/AjmanLandProperty/index.php/developers/update//${formData.id}`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/developers/update//${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');

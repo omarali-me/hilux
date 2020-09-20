@@ -78,7 +78,7 @@ export class CustomerProfileComponent implements OnInit {
   saveData(formData: any) {
     let fd = new FormData();
     fd.append('customer', JSON.stringify(formData));
-    this.http.post('https://wfe.ajm.re/AjmanLandProperty/index.php/customers/create', fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/customers/create`, fd)
       .subscribe((data: any) => {
        if (data.status == 'success') {
         this.toastr.success(data.message, 'Success');
@@ -96,56 +96,56 @@ export class CustomerProfileComponent implements OnInit {
   }
 
   loadContactPerferencesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/contactPreferencesTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/contactPreferencesTypes`)
     .subscribe((data) => {
       this.contactPerferencesOptions = data;
     })
   }
 
   loadTimeToContactOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/timeToContactPreferences`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/timeToContactPreferences`)
     .subscribe((data) => {
       this.timeToContactOptions = data;
     })
   }
 
   loadNationalitiesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/nationalities`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/nationalities`)
     .subscribe((data) => {
       this.nationalitiesOptions = data;
     })
   }
 
   loadCustomerCategoryOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/customersCategories`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/customersCategories`)
     .subscribe((data) => {
       this.customerCategoryOptions = data;
     })
   }
 
   loadCustomerTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/customerTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/customerTypes`)
     .subscribe((data) => {
       this.customerTypesOptions = data;
     })
   }
 
   loadEmiratesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/emirates`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/emirates`)
     .subscribe((data) => {
       this.emiratesOptions = data;
     })
   }
 
   loadOtherIdTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/otherIdTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/otherIdTypes`)
     .subscribe((data) => {
       this.otherIdTypesOptions = data;
     })
   }
 
   loadDisablilityTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/disabilityTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/disabilityTypes`)
     .subscribe((data) => {
       this.disabilityTypesOptions = data;
     })
@@ -170,7 +170,7 @@ export class CustomerProfileComponent implements OnInit {
   prepareImageField() {
     return {
       fieldID: "image",
-      fieldType: "image",
+      fieldType: "fileupload",
       required: false,
       fieldName: {
         "ar": "image",
@@ -185,7 +185,7 @@ export class CustomerProfileComponent implements OnInit {
   prepareSignatureField() {
     return {
       fieldID: "signature",
-      fieldType: "signature",
+      fieldType: "fileupload",
       required: false,
       fieldName: {
         "ar": "signature",

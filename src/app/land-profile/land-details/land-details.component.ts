@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from 'src/app/shared/fields.service';
 import { Observable, Subject } from 'rxjs';
 import { pluck } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-land-details',
@@ -57,7 +58,7 @@ export class LandDetailsComponent implements OnInit {
   updateData(formData: any) {
     let fd = new FormData();
     fd.append('land', JSON.stringify(formData));
-    this.http.post(`https://wfe.ajm.re/AjmanLandProperty/index.php/lands/update/${formData.id}`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/lands/update/${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
@@ -72,56 +73,56 @@ export class LandDetailsComponent implements OnInit {
   }
 
   loadSectorsOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/sectors`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/sectors`)
     .subscribe((data) => {
       this.sectorsOptions = data;
     })
   }
 
   loadSectionsOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/sections`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/sections`)
     .subscribe((data) => {
       this.sectionsOptions = data;
     })
   }
 
   loadStreetNamesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/streetsnames`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/streetsnames`)
     .subscribe((data) => {
       this.streetsNamesOptions = data;
     })
   }
 
   loadStreetTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/streetstypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/streetstypes`)
     .subscribe((data) => {
       this.streetsTypesOptions = data;
     })
   }
 
   loadMainUsageTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/mainUsageTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/mainUsageTypes`)
     .subscribe((data) => {
       this.mainUsageTypesOptions = data;
     })
   }
 
   loadSubUsageTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/subUsageTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/subUsageTypes`)
     .subscribe((data) => {
       this.subUsageTypesOptions = data;
     })
   }
 
   loadCitiesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/cities`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/cities`)
     .subscribe((data) => {
       this.citiesOptions = data;
     })
   }
 
   loadPropertyTypesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/landsTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/landsTypes`)
     .subscribe((data) => {
       this.propertyTypesOptions = data;
     })

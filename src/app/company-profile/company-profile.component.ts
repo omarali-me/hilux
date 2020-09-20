@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from '../shared/fields.service';
 import { pluck, distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-company-profile',
@@ -54,7 +55,7 @@ export class CompanyProfileComponent implements OnInit {
   saveData(formData: any) {
     let fd = new FormData();
     fd.append('company', JSON.stringify(formData));
-    this.http.post('https://wfe.ajm.re/AjmanLandProperty/index.php/companies/create', fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/companies/create`, fd)
       .subscribe((data: any) => {
        if (data.status == 'success') {
         this.toastr.success(data.message, 'Success');
@@ -71,21 +72,21 @@ export class CompanyProfileComponent implements OnInit {
   }
 
   loadEmiratesOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/emirates`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/emirates`)
     .subscribe((data) => {
       this.emiratesOptions = data;
     })
   }
 
   loadLicenseTypeOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/licensesTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/licensesTypes`)
     .subscribe((data) => {
       this.licenseTypeOptions = data;
     })
   }
 
   loadLicenseIssuerOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/companiesLicensesIssuers`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companiesLicensesIssuers`)
     .subscribe((data) => {
       this.licenseIssuerOptions = data;
     })
@@ -98,7 +99,7 @@ export class CompanyProfileComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.dataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/owners`, { term } ).pipe(
+            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/owners`, { term } ).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.dataOptionsLoading = false)
           )})
@@ -107,7 +108,7 @@ export class CompanyProfileComponent implements OnInit {
   }
 
   loadCompanyTypeOptions() {
-    this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/Lookups/companiesTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companiesTypes`)
     .subscribe((data) => {
       this.companyTypeOptions = data;
     })
