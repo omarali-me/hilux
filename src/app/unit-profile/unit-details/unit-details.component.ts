@@ -170,6 +170,9 @@ export class UnitDetailsComponent implements OnInit {
       fieldName: {
         "ar": "site Plan",
         "en": "site Plan"
+      },
+      auxInfo: {
+        multiple: false
       }
     }
   }

@@ -169,6 +169,9 @@ export class UnitProfileComponent implements OnInit {
       fieldName: {
         "ar": "site Plan",
         "en": "site Plan"
+      },
+      auxInfo: {
+        multiple: false
       }
     }
   }

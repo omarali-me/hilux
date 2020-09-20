@@ -94,7 +94,7 @@ export class FileUploadComponent implements OnInit {
 
   private async uploadFile(file: any, fieldId: any, percentage: any) {
     let form = new FormData();
-    let values = (this.formData[fieldId] || [])
+    let values = (this.isMultiple() ? (this.formData[fieldId] || []) : ( !!this.formData[fieldId] ? [this.formData[fieldId]] : []))
     form.append(`${fieldId}`, file);
     return this.http.post<any>(`https://wfe.ajm.re/ajaxupload.php`, form).subscribe((data: any) => {
         if (data.status == 'success') {
@@ -124,56 +124,78 @@ export class FileUploadComponent implements OnInit {
   }
 
   private setValues(values: any [], fieldId: string) {
-    if (values.length > 0) {
-      this.formData[fieldId] = values;
+    if (this.isMultiple()) {
+      if (values.length > 0) {
+        this.formData[fieldId] = values;
+      } else {
+        this.formData[fieldId] = undefined;
+      }
     } else {
-      this.formData[fieldId] = undefined;
+      if (values.length > 0) {
+        let len = values.length;
+        this.formData[fieldId] = values[len - 1];
+      } else {
+        this.formData[fieldId] = undefined;
+      }
     }
   }
 
   removeFile(index: any) {
     if (this.formData[this.field.fieldID]) {
-      _.remove(this.formData[this.field.fieldID], function(resource, i) {
+      let data = this.isMultiple() ? this.formData[this.field.fieldID] : [this.formData[this.field.fieldID]]
+      _.remove(data, function(resource, i) {
           return index === i;
       });
 
-      if (this.formData[this.field.fieldID] && (this.formData[this.field.fieldID].length  == 0)) {
+      if (this.formData[this.field.fieldID] && (data.length  == 0)) {
         this.formData[this.field.fieldID] = undefined;
       }
     }
   }
 
   notImage(item: any) {
-    const ext = item.split('.');
-    const index = ext.length;
-    return ['pdf', 'ods', 'csv', 'xlsx', 'xls', 'ppt', 'pptx', 'doc', 'docx'].includes(ext[index - 1]);
+    const ext = item && item.split('.');
+    const index = ext && ext.length;
+    return !!index ? ['pdf', 'ods', 'csv', 'xlsx', 'xls', 'ppt', 'pptx', 'doc', 'docx'].includes(ext[index - 1]) : false;
   }
 
   getIconClass(item: any) {
-    const ext = item.split('.');
-    const index = ext.length;
-
-    switch (ext[index -1]) {
-      case 'pdf':
-        return 'file-pdf';
-      case 'ods':
-      case 'xlsx':
-      case 'xls':
-        return 'file-excel';
-      case 'doc':
-      case 'docx':
-          return 'file-word';
-      case 'ppt':
-      case 'pptx':
-        return 'file-powerpoint';
-      case 'csv':
-        return 'file-alt';
-      default:
-        return 'file';
+    const ext = item && item.split('.');
+    const index = ext && ext.length;
+    
+    if (!index) {
+      return false
+    } else {
+      switch (ext[index -1]) {
+        case 'pdf':
+          return 'file-pdf';
+        case 'ods':
+        case 'xlsx':
+        case 'xls':
+          return 'file-excel';
+        case 'doc':
+        case 'docx':
+            return 'file-word';
+        case 'ppt':
+        case 'pptx':
+          return 'file-powerpoint';
+        case 'csv':
+          return 'file-alt';
+        default:
+          return 'file';
+      }
     }
   }
   
   isRequired() {
     return this.service.isRequired(this.field.required);
+  }
+
+  isMultiple() {
+    return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isRequired(this.field.auxInfo.multiple) : false);
+  }
+
+  getUploadedFiles() {
+    return this.isMultiple() ? this.formData[this.field.fieldID] : (this.formData[this.field.fieldID] ? [this.formData[this.field.fieldID]] : []);
   }
 }

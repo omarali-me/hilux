@@ -1,11 +1,11 @@
 <div class="col-sm-12">
   <div class="row">
     <div class="col-sm-12 form-group">
-      <label class="d-block" *ngIf="formData[field.fieldID]?.length > 0">Preview</label>
-      <div class="image-preview m-2 d-inline-block text-center" *ngFor="let item of formData[field.fieldID]; let i = index;">
-        <span class="close-button" title="Remove" (click)="removeFile(i)">X</span>
-        <img class="inherit-height" [src]="item" *ngIf="!notImage(item)"/>
-        <a class="veryLargeFont" [href]="item" target="_blank" *ngIf="notImage(item)">
+      <label class="d-block" *ngIf="getUploadedFiles()?.length > 0">Preview</label>
+      <div class="image-preview m-2 d-inline-block text-center" *ngFor="let item of getUploadedFiles(); let i = index;">
+        <span class="close-button" title="Remove" (click)="removeFile(i)" *ngIf="item">X</span>
+        <img class="inherit-height" [src]="item" *ngIf="item && !notImage(item)"/>
+        <a class="veryLargeFont" [href]="item" target="_blank" *ngIf="item && notImage(item)">
           <i class="far fa-{{getIconClass(item)}}"></i>
         </a>
       </div>
@@ -21,7 +21,7 @@
           [accept]="field.auxInfo?.acceptedFileTypes"
           [name]="getName(field.fieldName.en)"
           [id]="field.fieldID"
-          [multiple]="true"
+          [multiple]="isMultiple()"
           (change)="updateControlLabel($event)"
           />
         <label class="custom-file-label" [for]="field.fieldID" #labelImport>choose file</label>
