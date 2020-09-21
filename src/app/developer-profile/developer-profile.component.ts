@@ -63,11 +63,11 @@ export class DeveloperProfileComponent implements OnInit {
     });
 
     this.developerTypeOptions = [{
-      key: 1,
+      key: "1",
       value: { en: 'Master Project', ar: 'مشروع رئيسي' }
     },
     {
-      key: 0,
+      key: "0",
       value: { en: 'Sub Project', ar: 'مشروع فرعي' }
     }];
   }
