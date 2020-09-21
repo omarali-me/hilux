@@ -210,6 +210,7 @@ export class SearchPageComponent implements OnInit {
     } else {
       this.formData.type = null;
       this.searchby = null;
+      this.resetSearch(field_name);
     }
   }
 
@@ -327,5 +328,25 @@ export class SearchPageComponent implements OnInit {
 
   getNationalityName(item: any, field_name: any) {
     return item && (item[`${field_name}NameAr`] || item[`${field_name}`])
+  }
+
+  resetSearch(field_name: any) {
+    switch (field_name) {
+      case 'projectId':
+        this.projectsSearchInput$.next(null);
+        break;
+      case 'developerId':
+        this.developerSearchInput$.next(null);
+        break;
+      case 'landId':
+        this.landSearchInput$.next(null);
+        break;
+      case 'oldLandId':
+        this.oldLandSearchInput$.next(null);
+        break;
+      case 'owner':
+        this.ownersSearchInput$.next(null);
+        break;
+    }
   }
 }
