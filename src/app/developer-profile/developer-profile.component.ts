@@ -74,7 +74,8 @@ export class DeveloperProfileComponent implements OnInit {
 
   saveData(formData: any) {
     let fd = new FormData();
-    fd.append('developer', JSON.stringify(formData));
+    let preparedData = this.prepareDeveloperName(formData);
+    fd.append('developer', JSON.stringify(preparedData));
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/developers/create`, fd)
       .subscribe((data: any) => {
        if (data.status == 'success') {
@@ -257,4 +258,9 @@ export class DeveloperProfileComponent implements OnInit {
     this.formData.registrationExpiryDate = date;
   }
 
+  prepareDeveloperName(formData: any) {
+    formData["nameAr"] = this.companyDetails.nameAr;
+    formData["nameEn"] = this.companyDetails.nameEn;
+    return formData;
+  }
 }
