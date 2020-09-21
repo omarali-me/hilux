@@ -477,7 +477,42 @@
               </table>
   
               <label i18n="@@searchPageTableOwners">Owners:</label>
-              <div class="card" [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-seagreen' : ''"*ngFor="let item of response.deeds; let i = index">
+              <div class="card" [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-seagreen' : ''" *ngFor="let item of getCurrentOwnedLands(response.deeds); let i = index">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">{{getOwnerHeader(item)}}</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered ownerTable">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th i18n="@@searchPageTableHeaderCustomerID">Customer ID</th>
+                        <th i18n="@@searchPageTableHeaderNameArabic">Name Arabic</th>
+                        <th i18n="@@searchPageTableHeaderNameEnglish">Name English</th>
+                        <th i18n="@@searchPageTableHeaderOwnerID">Owner ID</th>
+                        <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
+                        <th i18n="@@searchPageTableHeaderNationality">Nationality</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-white' : getOwnerClass(item)" *ngFor="let deed_detail_item of item.deedDetails; let i = index">
+                        <td>{{deed_detail_item.profile?.id}}</td>
+                        <td>{{deed_detail_item.profile?.nameAr}}</td>
+                        <td>{{deed_detail_item.profile?.nameEn}}</td>
+                        <td>{{deed_detail_item.details?.ownerId}}</td>
+                        <td>{{deed_detail_item.details?.share}}</td>
+                        <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card" [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-seagreen' : ''" *ngFor="let item of getPreviouslyOwnedLands(response.deeds); let i = index">
                 <div class="card-header border-0">
                   <div class="card-tools">
                     <button type="button" class="btn btn-sm" data-card-widget="collapse">
@@ -543,7 +578,42 @@
               </table>
   
               <label i18n="@@searchPageTableOwners">Owners:</label>
-              <div class="card" [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-seagreen' : ''"*ngFor="let item of response.deeds; let i = index">
+              <div class="card" [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-seagreen' : ''" *ngFor="let item of getCurrentOwnedUnits(response.deeds); let i = index">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">{{getUnitOwnerHeader(item)}}</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered ownerTable">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th i18n="@@searchPageTableHeaderCustomerID">Customer ID</th>
+                        <th i18n="@@searchPageTableHeaderNameArabic">Name Arabic</th>
+                        <th i18n="@@searchPageTableHeaderNameEnglish">Name English</th>
+                        <th i18n="@@searchPageTableHeaderOwnerID">Owner ID</th>
+                        <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
+                        <th i18n="@@searchPageTableHeaderNationality">Nationality</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-white' : getOwnerClass(item)" *ngFor="let deed_detail_item of item.deedDetails; let i = index">
+                        <td>{{deed_detail_item.profile?.id}}</td>
+                        <td>{{deed_detail_item.profile?.nameAr}}</td>
+                        <td>{{deed_detail_item.profile?.nameEn}}</td>
+                        <td>{{deed_detail_item.details?.ownerId}}</td>
+                        <td>{{deed_detail_item.details?.share}}</td>
+                        <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card" [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-seagreen' : ''" *ngFor="let item of getPreviouslyOwnedUnits(response.deeds); let i = index">
                 <div class="card-header border-0">
                   <div class="card-tools">
                     <button type="button" class="btn btn-sm" data-card-widget="collapse">
