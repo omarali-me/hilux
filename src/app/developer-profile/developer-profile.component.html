@@ -36,6 +36,7 @@
                               class="rtl"
                               [items]="companyOptions | async"
                               name="companyName"
+                              required="true"
                               [(ngModel)]="formData.companyName"
                               bindLabel="value.ar"
                               bindValue="key"
@@ -46,6 +47,8 @@
                               [loading]="companyOptionsLoading"
                               [typeahead]="companySearchInput$"
                               (change)="getCompanyDetails($event)"
+                              (keyup)="setSearchby('companyName', $event)"
+                              [disabled]="isNotSearchBy('companyName')"
                               #companyName="ngModel"
                             >
                             </ng-select>
@@ -63,6 +66,7 @@
                               class="rtl"
                               [items]="licenseNumberCompanyOptions | async"
                               name="licenseNumber"
+                              required="true"
                               [(ngModel)]="formData.licenseNumber"
                               bindLabel="value.ar"
                               bindValue="key"
@@ -73,6 +77,8 @@
                               [loading]="licenseNumberOptionsLoading"
                               [typeahead]="licenseSearchInput$"
                               (change)="getCompanyDetails($event)"
+                              (keyup)="setSearchby('licenseNumber', $event)"
+                              [disabled]="isNotSearchBy('licenseNumber')"
                               #licenseNumber="ngModel"
                             >
                             </ng-select>
@@ -486,6 +492,7 @@
                               [max]="minDate"
                               [owlDateTime]="dt7"
                               [owlDateTimeTrigger]="dt7"
+                              (dateTimeChange)="calculateExpiryDate($event)"
                               #registrationDate="ngModel"
                             >
                             <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>

@@ -33,6 +33,8 @@ export class DeveloperProfileComponent implements OnInit {
   formErrors: any = {};
   companyDetails: any = { owners: [{}] };
 
+  searchCompanyBy: any;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -235,4 +237,24 @@ export class DeveloperProfileComponent implements OnInit {
         this.router.navigate(['error'])
       })
   }
+
+  setSearchby(field_name: any, event: any) {
+    let val = event.target.value.trim();
+    if (val != '') {
+      this.searchCompanyBy = field_name;
+    } else {
+      this.searchCompanyBy = undefined;
+    }
+  }
+
+  isNotSearchBy(field_name: any) {
+    return this.searchCompanyBy && (this.searchCompanyBy != field_name);
+  }
+
+  calculateExpiryDate(event: any) {
+    let date = new Date(event.value);
+    date.setFullYear(date.getFullYear() + 1);
+    this.formData.registrationExpiryDate = date;
+  }
+
 }
