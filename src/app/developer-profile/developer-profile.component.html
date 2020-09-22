@@ -28,7 +28,7 @@
                     <div class="form-group row">
                       <div class="col-sm-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">
+                          <label class="col-sm-3 col-form-label" i18n="@@developerProfileCompanyName">
                             Company Name
                           </label>
                           <div class="col-sm-9">
@@ -58,7 +58,7 @@
 
                       <div class="col-sm-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">
+                          <label class="col-sm-3 col-form-label" i18n="@@developerProfileLicenseNumber">
                             License Number
                           </label>
                           <div class="col-sm-9">
@@ -88,14 +88,14 @@
                     </div>
 
                     <div class="form-group row">
-                      <h5>Company Details</h5>
+                      <h5 i18n="@@developerProfileCompanyDetails">Company Details</h5>
                     </div>
 
                     <ng-container *ngIf="companyDetails.id">
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Company ID</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileCompanyID">Company ID</label>
                             <div class="col-sm-9">
                               <input name="companyId" type="text" class="form-control" [(ngModel)]="companyDetails.id" #companyId="ngModel" numbersOnly precision="0" [disabled]="true">
                               <div *ngIf="companyId.invalid && (companyId.dirty || companyId.touched)" class="alert alert-danger">
@@ -109,7 +109,7 @@
 
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Company / organization Type</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileCompanyOrganizationType">Company / organization Type</label>
                             <div class="col-sm-9">
                               <ng-select
                                 class="rtl"
@@ -131,7 +131,7 @@
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Company Name In Arabic</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileCompanyNameInArabic">Company Name In Arabic</label>
                             <div class="col-sm-9">
                               <input type="text" name="nameAr" class="form-control" [(ngModel)]="companyDetails.nameAr" #nameAr="ngModel" [disabled]="true">
                             </div>
@@ -140,7 +140,7 @@
 
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Company Name in English
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileCompanyNameInEnglish">Company Name In English
                             </label>
                             <div class="col-sm-9">
                               <input type="text" name="nameEn" class="form-control" [(ngModel)]="companyDetails.nameEn" #nameEn="ngModel" [disabled]="true">
@@ -152,7 +152,7 @@
                       <div class="form-group row" *ngIf="isNotGovernmentInstitute()">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Trade license number</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileTradeLicenseNumber">Trade license number</label>
                             <div class="col-sm-9">
                               <input type="text" name="tradeLicenseNumber" class="form-control" [(ngModel)]="companyDetails.licenseNumber" #licenseNumber="ngModel" [disabled]="true">
                             </div>
@@ -161,7 +161,7 @@
                       
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">License Issuer</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileLicenseIssuer">License Issuer</label>
                             <div class="col-sm-9">
                               <ng-select
                                 class="rtl"
@@ -183,7 +183,7 @@
                       <div class="form-group row" *ngIf="isNotGovernmentInstitute()">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">License issuance date</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileLicenseIssuanceDate">License issuance date</label>
                             <div class="col-sm-9">
                               <input type="text"
                                 class="form-control"
@@ -202,7 +202,7 @@
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">License Expiry date</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileLicenseExpiryDate">License Expiry date</label>
                             <div class="col-sm-9">
                               <input type="text"
                                 class="form-control"
@@ -224,7 +224,7 @@
                       <div class="form-group row" *ngIf="isNotGovernmentInstitute()">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">License Type</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileLicenseType">License Type</label>
                             <div class="col-sm-9">
                               <ng-select
                                 class="rtl"
@@ -248,7 +248,7 @@
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Tax Number
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileTaxNumber">Tax Number
                               <span>*</span>
                             </label>
                             <div class="col-sm-9">
@@ -263,7 +263,7 @@
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Emirate
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileEmirate">Emirate
                               <span>*</span>
                             </label>
                             <div class="col-sm-9">
@@ -292,7 +292,7 @@
                       <div class="form-group row" *ngFor="let owner of getOwnersData(); let j = index">
                         <div class="col-sm-6" *ngIf="isNotGovernmentInstitute()">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Owner</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileOwner">Owner</label>
                             <div class="col-sm-9">
                               <ng-select
                                 class="rtl"
@@ -318,15 +318,11 @@
 
                         <div class="col-sm-6" *ngIf="isNotGovernmentAndIndividualInstitute()">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Ownership percentage</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileOwnershipPercentage">Ownership percentage</label>
                             <div class="col-sm-9">
                               <input [name]="getName('share', j)" maxlength="6" required="true" type="text" class="form-control" [(ngModel)]="owner.share" #share="ngModel" numbersOnly precision="2" [disabled]="true">
                               <div class="alert alert-danger" *ngIf="share.invalid && (share.dirty || share.touched) && share.errors?.required">
                                 Ownership Percentage can not be blank
-                              </div>
-
-                              <div class="alert alert-danger" *ngIf="false">
-                                Ownership Percentage Total should be 100
                               </div>
                             </div>
                           </div>
@@ -336,7 +332,7 @@
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Phone Number
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfilePhoneNumber">Phone Number
                               <span>*</span>
                             </label>
                             <div class="col-sm-9">
@@ -356,7 +352,7 @@
 
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Makani Number</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileMakaniNumber">Makani Number</label>
                             <div class="col-sm-9">
                               <input name="makaniNumber" type="text" class="form-control" [(ngModel)]="companyDetails.makaniNumber" #makaniNumber="ngModel" numbersOnly precision="0">
                             </div>
@@ -367,7 +363,7 @@
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Email</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileEmail">Email</label>
                             <div class="col-sm-9">
                               <input name="email" type="email" class="form-control" [(ngModel)]="formData.email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel">
                               <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
@@ -381,7 +377,7 @@
 
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Website</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileWebsite">Website</label>
                             <div class="col-sm-9">
                               <input name="website" type="text" class="form-control" [(ngModel)]="formData.website" #website="ngModel">
                               <div *ngIf="website.invalid && (website.dirty || website.touched)" class="alert alert-danger">
@@ -397,7 +393,7 @@
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Address</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileAddress">Address</label>
                             <div class="col-sm-9">
                               <textarea
                                 name="address"
@@ -411,7 +407,7 @@
 
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">P.O.box.</label>
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfilePOBox">P.O.box.</label>
                             <div class="col-sm-9">
                               <input name="pobox" type="text" class="form-control" [(ngModel)]="formData.POBox" #POBox="ngModel">
                             </div>
@@ -422,7 +418,7 @@
                       <div class="form-group row" *ngIf="isNotGovernmentAndIndividualInstitute()">
                         <div class="col-sm-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Establishment Contract File
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileEstablishmentContractFile">Establishment Contract File
                               <span>*</span>
                             </label>
                             <div class="col-sm-9">
@@ -434,18 +430,19 @@
                         </div>
                       </div>
                     </ng-container>
+
                     <ng-container *ngIf="!companyDetails.id">
                         Please Select a Company
                     </ng-container>
 
                     <div class="form-group row">
-                      <h5>Developer Details</h5>
+                      <h5 i18n="@@developerProfileDeveloperDetails">Developer Details</h5>
                     </div>
 
                     <div class="form-group row">
                       <div class="col-sm-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">
+                          <label class="col-sm-3 col-form-label" i18n="@@developerProfileDeveloperType">
                             Developer Type
                             <span>*</span>
                           </label>
@@ -479,7 +476,7 @@
                     <div class="form-group row">
                       <div class="col-sm-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Registration date
+                          <label class="col-sm-3 col-form-label" i18n="@@developerProfileRegistrationDate">Registration date
                             <span>*</span>
                           </label>
                           <div class="col-sm-9">
@@ -504,7 +501,7 @@
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Registration Expiry date
+                          <label class="col-sm-3 col-form-label" i18n="@@developerProfileRegistrationExpiryDate">Registration Expiry date
                             <span>*</span>
                           </label>
                           <div class="col-sm-9">
@@ -533,7 +530,7 @@
 
                   </div>
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid">Submit</button>
+                    <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid" i18n="@@formSubmitLabel">Submit</button>
                   </div>
                 </form>
               </div>

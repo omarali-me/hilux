@@ -82,6 +82,18 @@
           <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="headerDeveloper" datatype="html">
+        <source>
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Developer
+        </source>
+        <target>
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Developer
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="headerSearch" datatype="html">
         <source>
           <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Search
@@ -91,7 +103,7 @@
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="headerMyTaskLabel" datatype="html">
@@ -99,7 +111,7 @@
         <target>My Tasks Arabic</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="headerLooutLabel" datatype="html">
@@ -107,7 +119,7 @@
         <target>Logout Arabic</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sidebarHiluxLabel" datatype="html">
@@ -200,7 +212,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">882</context>
+          <context context-type="linenumber">883</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
@@ -229,6 +241,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
           <context context-type="linenumber">831</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">533</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">477</context>
         </context-group>
       </trans-unit>
       <trans-unit id="formCancelLabel" datatype="html">
@@ -3306,6 +3326,388 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
           <context context-type="linenumber">552</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileCompanyName" datatype="html">
+        <source>
+                            Company Name
+                          </source>
+        <target>
+                            اسم الشركة
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileLicenseNumber" datatype="html">
+        <source>
+                            License Number
+                          </source>
+        <target>
+                            رقم الرخصة
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileCompanyDetails" datatype="html">
+        <source>Company Details</source>
+        <target>بيانات الشركة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileCompanyID" datatype="html">
+        <source>Company ID</source>
+        <target>رقم الشركة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">135</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileCompanyOrganizationType" datatype="html">
+        <source>Company / organization Type</source>
+        <target>نوع الشركة / المؤسسة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">149</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileCompanyNameInArabic" datatype="html">
+        <source>Company Name In Arabic</source>
+        <target>اسم الشركة/ المؤسسة باللغة العربية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">134</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">171</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileCompanyNameInEnglish" datatype="html">
+        <source>Company Name In English
+                            </source>
+        <target>اسم الشركة/ المؤسسة باللغة الانجليزية
+                            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">143</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">180</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileTradeLicenseNumber" datatype="html">
+        <source>Trade license number</source>
+        <target>رقم الرخصة التجارية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">155</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">192</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileLicenseIssuer" datatype="html">
+        <source>License Issuer</source>
+        <target>جهة اصدار الرخصة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">164</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">201</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileLicenseIssuanceDate" datatype="html">
+        <source>License issuance date</source>
+        <target>تاريخ اصدار الرخصة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">186</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">223</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileLicenseExpiryDate" datatype="html">
+        <source>License Expiry date</source>
+        <target>تاريخ انتهاء الرخصة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">205</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">242</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileLicenseType" datatype="html">
+        <source>License Type</source>
+        <target>نوع الرخصة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">227</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">264</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileTaxNumber" datatype="html">
+        <source>Tax Number
+                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            </source>
+        <target>الرقم الضريبي
+                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">251</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">288</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileEmirate" datatype="html">
+        <source>Emirate
+                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            </source>
+        <target>الإمارة
+                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">266</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">303</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileOwner" datatype="html">
+        <source>Owner</source>
+        <target>المالك / الشريك</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">295</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">332</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileOwnershipPercentage" datatype="html">
+        <source>Ownership percentage</source>
+        <target>نسبة التملك</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">321</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">358</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfilePhoneNumber" datatype="html">
+        <source>Phone Number
+                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            </source>
+        <target>رقم الهاتف
+                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">335</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">372</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileMakaniNumber" datatype="html">
+        <source>Makani Number</source>
+        <target>رقم مكاني</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">355</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">392</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileEmail" datatype="html">
+        <source>Email</source>
+        <target>البريد الالكتروني</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">366</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">403</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileWebsite" datatype="html">
+        <source>Website</source>
+        <target>الموقع الالكتروني</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">380</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">417</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileAddress" datatype="html">
+        <source>Address</source>
+        <target>العنوان</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">396</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">433</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfilePOBox" datatype="html">
+        <source>P.O.box.</source>
+        <target>صندوق البريد</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">410</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">447</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileEstablishmentContractFile" datatype="html">
+        <source>Establishment Contract File
+                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            </source>
+        <target>عقد التأسيس	
+                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">421</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">458</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileDeveloperDetails" datatype="html">
+        <source>Developer Details</source>
+        <target>بيانات القيد</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">439</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileDeveloperType" datatype="html">
+        <source>
+                            Developer Type
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <target>
+                            نوع المطور العقاري
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">445</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileRegistrationDate" datatype="html">
+        <source>Registration date
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <target>تاريخ تسجيل المشروع
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">479</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileRegistrationExpiryDate" datatype="html">
+        <source>Registration Expiry date
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <target>تاريخ انتهاء تسجيل المشروع
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">504</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileDeveloperId" datatype="html">
+        <source>
+                  Developer Id
+                </source>
+        <target>
+                  رقم القيد
+                </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileDeveloperNameInArabic" datatype="html">
+        <source>Developer Name In Arabic</source>
+        <target>اسم المطور العقاري باللغة العربية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileDeveloperNameInEnglish" datatype="html">
+        <source>Developer Name In English
+                </source>
+        <target>اسم المطور العقاري باللغة الانجليزية
+                </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
     </body>
