@@ -381,7 +381,7 @@
                     <tbody>
                       <tr *ngFor="let current_unit_detail of getCurrentOwnedUnits(response.deeds); let i = index">
                         <td>{{ i + 1 }}</td>
-                        <td>{{current_unit_detail?.unitData?.unit?.id}}</td>
+                        <td>{{current_unit_detail?.unitData?.unit?.unitNumber}}</td>
                         <td>{{current_unit_detail?.unitData?.project?.nameAr}}</td>
                         <td>{{current_unit_detail?.unitData?.developer?.nameAr}}</td>
                         <td>{{ getItemShare(current_unit_detail) }}</td>
@@ -426,7 +426,7 @@
                     <tbody>
                       <tr *ngFor="let previous_unit_detail of getPreviouslyOwnedUnits(response.deeds); let i = index">
                         <td>{{ i + 1 }}</td>
-                        <td>{{previous_unit_detail?.unitData?.unit?.id}}</td>
+                        <td>{{previous_unit_detail?.unitData?.unit?.unitNumber}}</td>
                         <td>{{previous_unit_detail?.unitData?.project?.nameAr}}</td>
                         <td>{{previous_unit_detail?.unitData?.developer?.nameAr}}</td>
                         <td>{{ getItemShare(previous_unit_detail) }}</td>
@@ -561,7 +561,7 @@
                 </thead>
                 <tbody>
                   <tr *ngIf="getfirstUnit(response.deeds) as unit_detail">
-                    <td>{{unit_detail?.unit?.id}}</td>
+                    <td>{{unit_detail?.unit?.unitNumber}}</td>
                     <td>{{unit_detail?.project?.nameAr}}</td>
                     <td>{{unit_detail?.developer?.nameAr}}</td>
                     <td>

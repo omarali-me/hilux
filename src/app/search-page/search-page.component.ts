@@ -287,11 +287,11 @@ export class SearchPageComponent implements OnInit {
   }
 
   getOwnerHeader(item: any) {
-    return `طريقة انتقال الملكية: ${ this.getFieldNameorId(item.childDeed, 'ownershipType') }, Created At: ${item.deed?.createdAt}`
+    return `نوع الملكية: ${ this.getFieldNameorId(item.childDeed, 'ownershipType') }, Created At: ${item.deed?.createdAt}`
   }
 
   getUnitOwnerHeader(item: any) {
-    return `طريقة انتقال الملكية: ${item.childDeed?.deedTypeNameAr}, Created At: ${item.deed?.createdAt}`
+    return `نوع الملكية: ${item.childDeed?.deedTypeNameAr}, طريقة انتقال الملكية: ${item.childDeed?.transferServiceNameAr}, Created At: ${item.deed?.createdAt}`
   }
 
   getCurrentOwnedLands(deeds: any) {
