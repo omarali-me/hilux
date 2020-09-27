@@ -73,7 +73,11 @@ export class FormComponent implements OnInit {
       .subscribe((data: any)=> {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success')
-          this.router.navigate(['my_tasks']);
+          if (!!data.stepID) {
+            this.router.navigate(['notifications', data.stepID]);
+          } else {
+            this.router.navigate(['my_tasks']);
+          }
         } else {
           this.toastr.error(data.message, 'Error')
           this.formErrors = data.data;
