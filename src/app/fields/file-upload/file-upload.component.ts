@@ -188,14 +188,18 @@ export class FileUploadComponent implements OnInit {
   }
   
   isRequired() {
-    return this.service.isRequired(this.field.required);
+    return this.service.isRequired(this.field.required, this.field.fieldID);
   }
 
   isMultiple() {
-    return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isRequired(this.field.auxInfo.multiple) : false);
+    return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isMultiple(this.field.auxInfo.multiple) : false);
   }
 
   getUploadedFiles() {
     return this.isMultiple() ? this.formData[this.field.fieldID] : (this.formData[this.field.fieldID] ? [this.formData[this.field.fieldID]] : []);
+  }
+
+  isActiveEditStep() {
+    return this.service.isEditStep && (this.service.editStepField != this.field.fieldID);
   }
 }

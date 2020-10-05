@@ -14,6 +14,9 @@ export class FieldsService {
 
   public fieldValueChanged$ = new EventEmitter<any>();
 
+  public isEditStep: boolean = false;
+  public editStepField: any;
+
   constructor(private http: HttpClient, private datePipe: DatePipe) {}
 
   findField(fields: Field[], field_id: string): Field {
@@ -199,7 +202,25 @@ export class FieldsService {
     return this.datePipe.transform(data[name], format)
   }
 
-  isRequired(value: any) {
+  isRequired(value: any, field_name: any) {
+    if (this.isEditStep && ('stepToEdit' == field_name)) {
+      return true;
+    } else if (this.isEditStep && (this.editStepField == field_name)) {
+      return (value == "true" || value == true);
+    } else {
+      return this.isEditStep ? false : (value == "true" || value == true);
+    }
+  }
+
+  isMultiple(value: any) {
     return (value == "true" || value == true);
+  }
+
+  setIsEditStep(value: any) {
+    this.isEditStep = value;
+  }
+
+  setSteptoEditField(field_name: any) {
+    this.editStepField = field_name;
   }
 }

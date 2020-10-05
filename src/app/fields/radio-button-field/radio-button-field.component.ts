@@ -96,7 +96,7 @@ export class RadioButtonFieldComponent implements OnInit {
   }
 
   isRequired() {
-    return this.service.isRequired(this.field.required);
+    return this.service.isRequired(this.field.required, this.field.fieldID);
   }
 
   setDisplayValue(option: any) {
@@ -110,4 +110,7 @@ export class RadioButtonFieldComponent implements OnInit {
     }
   }
 
+  isActiveEditStep() {
+    return this.service.isEditStep && (this.service.editStepField != this.field.fieldID);
+  }
 }

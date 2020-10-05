@@ -23,6 +23,7 @@
           [id]="field.fieldID"
           [multiple]="isMultiple()"
           (change)="updateControlLabel($event)"
+          [disabled]="isActiveEditStep()"
           />
         <label class="custom-file-label" [for]="field.fieldID" #labelImport>choose file</label>
 

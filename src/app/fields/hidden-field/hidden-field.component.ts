@@ -60,6 +60,10 @@ export class HiddenFieldComponent implements OnInit {
   }
 
   isRequired() {
-    return this.service.isRequired(this.field.required);
+    return this.service.isRequired(this.field.required, this.field.fieldID);
+  }
+
+  isActiveEditStep() {
+    return this.service.isEditStep && (this.service.editStepField != this.field.fieldID);
   }
 }

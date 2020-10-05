@@ -24,7 +24,7 @@ export class LabelComponent implements OnInit {
 
   showRequired(field_id: string) {
     const field = this.getField(field_id);
-    return (field && (field.required == 'true'));
+    return (field && this.service.isRequired(field.required, field.fieldID));
   }
 
   notHiddenField(field_id: string) {

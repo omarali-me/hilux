@@ -3,6 +3,7 @@ import { Field } from '../fields';
 import { FieldsService } from 'src/app/shared/fields.service';
 import * as _ from 'lodash';
 import { ControlContainer, NgForm } from '@angular/forms';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-checkbox-field',
@@ -12,6 +13,7 @@ import { ControlContainer, NgForm } from '@angular/forms';
 })
 export class CheckboxFieldComponent implements OnInit {
   dataOptions: any;
+  isEditStep: boolean = false;
 
   @Input() field: Field;
 
@@ -29,13 +31,18 @@ export class CheckboxFieldComponent implements OnInit {
 
   @Input() defaultValues: any;
 
-  constructor(private service: FieldsService) { }
+  constructor(private service: FieldsService, private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    this.isEditStep = (this.field.fieldID == 'editStep');
     this.service.getFieldData(this.field, this.fullFormData).subscribe((data)=> {
       this.dataOptions = data;
       this.getDefaultValue(this.field.fieldID);
     })
+  }
+
+  ngAfterViewInit () {
+    this.changeDetector.detectChanges();
   }
 
   getFieldModelName(field: Field) {
@@ -54,7 +61,11 @@ export class CheckboxFieldComponent implements OnInit {
         this.formData[this.field.fieldID] = undefined;
       }
     }
+    
     this.prepareDisplayValues();
+    if (this.isEditStep) {
+      this.service.setIsEditStep($event.target.checked);
+    }
   }
 
   optionSelected(val: any) {
@@ -95,7 +106,7 @@ export class CheckboxFieldComponent implements OnInit {
   }
 
   isRequired() {
-    return this.service.isRequired(this.field.required);
+    return this.service.isRequired(this.field.required, this.field.fieldID);
   }
 
   setDisplayValue(option: any) {
@@ -117,4 +128,7 @@ export class CheckboxFieldComponent implements OnInit {
     }
   }
 
+  isActiveEditStep() {
+    return this.isEditStep ? false : (this.service.isEditStep && (this.service.editStepField != this.field.fieldID));
+  }
 }

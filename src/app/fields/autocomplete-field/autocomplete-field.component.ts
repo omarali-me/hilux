@@ -91,7 +91,7 @@ export class AutocompleteFieldComponent implements OnInit {
   }
 
   isRequired() {
-    return this.service.isRequired(this.field.required);
+    return this.service.isRequired(this.field.required, this.field.fieldID);
   }
 
   setDisplayValue(option: any) {
@@ -123,7 +123,7 @@ export class AutocompleteFieldComponent implements OnInit {
   }
 
   isMultiple() {
-    return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isRequired(this.field.auxInfo.multiple) : false);
+    return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isMultiple(this.field.auxInfo.multiple) : false);
   }
 
   isEntityName() {
@@ -135,4 +135,7 @@ export class AutocompleteFieldComponent implements OnInit {
     return `/${resourceName}/profile/${this.formData[this.field.fieldID]}/edit`;
   }
 
+  isActiveEditStep() {
+    return this.service.isEditStep && (this.service.editStepField != this.field.fieldID);
+  }
 }

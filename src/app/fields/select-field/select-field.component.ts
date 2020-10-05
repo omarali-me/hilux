@@ -3,6 +3,7 @@ import { Field } from '../fields';
 import { FieldsService } from 'src/app/shared/fields.service';
 import { ControlContainer, NgForm } from '@angular/forms';
 import * as _ from 'lodash';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-select-field',
@@ -12,6 +13,7 @@ import * as _ from 'lodash';
 })
 export class SelectFieldComponent implements OnInit {
   dataOptions: any;
+  isStepToEdit: boolean = false;
 
   @Input() field: Field;
 
@@ -29,7 +31,7 @@ export class SelectFieldComponent implements OnInit {
 
   @Input() defaultValues: any;
 
-  constructor(private service: FieldsService) {
+  constructor(private service: FieldsService, private changeDetector: ChangeDetectorRef) {
     this.service.fieldValueChanged$.subscribe(()=> {
       this.loadData()
       this.resetFieldData();
@@ -37,8 +39,13 @@ export class SelectFieldComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isStepToEdit = (this.field.fieldID == 'stepToEdit');
     this.loadData();
     this.getDefaultValue(this.field.fieldID);
+  }
+
+  ngAfterViewInit () {
+    this.changeDetector.detectChanges();
   }
 
   getFieldModelName(field: Field) {
@@ -90,7 +97,7 @@ export class SelectFieldComponent implements OnInit {
   }
 
   isRequired() {
-    return this.service.isRequired(this.field.required);
+    return this.service.isRequired(this.field.required, this.field.fieldID);
   }
 
   setDisplayValue(option: any) {
@@ -98,6 +105,10 @@ export class SelectFieldComponent implements OnInit {
       this.formData[this.field.fieldID + '_displayValue'] = (option.length ? option.map(o => o.value && o.value.ar).filter(r => r) : []);
     } else {
       this.formData[this.field.fieldID + '_displayValue'] = option && option.value.ar;
+    }
+
+    if (this.isStepToEdit) {
+      this.service.setSteptoEditField(option && option.key);
     }
   }
 
@@ -122,7 +133,7 @@ export class SelectFieldComponent implements OnInit {
   }
 
   isMultiple() {
-    return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isRequired(this.field.auxInfo.multiple) : false);
+    return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isMultiple(this.field.auxInfo.multiple) : false);
   }
 
   isEntityName() {
@@ -132,5 +143,9 @@ export class SelectFieldComponent implements OnInit {
   getViewResourceUrl() {
     let resourceName = this.field.auxInfo && this.field.auxInfo.entityName
     return `/${resourceName}/profile/${this.formData[this.field.fieldID]}/edit`;
+  }
+
+  isActiveEditStep() {
+    return this.isStepToEdit ? false : (this.service.isEditStep && (this.service.editStepField != this.field.fieldID));
   }
 }

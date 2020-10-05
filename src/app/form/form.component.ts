@@ -120,12 +120,23 @@ export class FormComponent implements OnInit {
   }
 
   rearrangeFieldOrder() {
+    this.unshiftResource('editStepRow');
+    this.unshiftResource('hiddenRow');
+  }
+
+  emitRowsChanged() {
+    this.fieldsService.fieldValueChanged$.emit();
+  }
+
+  unshiftResource(rowkey: any) {
     let orders = this.response.stepDetails.dataIn.fieldOrder;
-    const index = _.findIndex(orders, function(o) { return o.row == 'hiddenRow'; });
+    const index = _.findIndex(orders, function(o) { return o.row == rowkey; });
     let deletedResource = undefined;
     if (index != -1) {
       _.remove(orders, function(resource, i) {
-        deletedResource = resource
+        if (index === i) {
+          deletedResource = resource
+        }
         return index === i;
       });
 
@@ -133,9 +144,5 @@ export class FormComponent implements OnInit {
     }
 
     this.response.stepDetails.dataIn.fieldOrder = orders;
-  }
-
-  emitRowsChanged() {
-    this.fieldsService.fieldValueChanged$.emit();
   }
 }

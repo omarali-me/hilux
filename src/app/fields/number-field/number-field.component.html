@@ -9,6 +9,7 @@
   [minlength]="field.auxInfo?.minLength"
   [maxlength]="field.auxInfo?.maxLength"
   [(ngModel)]="formData[field.fieldID]"
+  [disabled]="isActiveEditStep()"
   numbersOnly
   precision="2"
   #ngModel="ngModel"
