@@ -1,0 +1,39 @@
+<div class="form-group">
+  <table class="table table-bordered">
+    <thead>
+      <tr *ngFor="let dataOption of dataOptions | slice:0:1">
+        <th *ngFor="let pair of dataOption.rowFields | keyvalue">{{pair.key}}</th>
+        <th class="text-center">Selected</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let field_detail of dataOptions; let i = index">
+        <td *ngFor="let item of field_detail.rowFields | keyvalue">{{item.value}}</td>
+        <td class="text-center">
+          <div class="form-check">
+            <input class="form-check-input m-0"
+              type="radio"
+              [class]="customClass"
+              [value]="getValue(field_detail.entityID)"
+              [name]="getFieldName(field.fieldID, i)"
+              (change)="handleChange($event)"
+              [checked]="isChecked(field_detail.entityID)"
+            />
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <input type="hidden" [name]="getName(field.fieldName.en)" [required]="isRequired()" #ngModel="ngModel" [(ngModel)]="formData[field.fieldID]">
+
+  <div *ngIf="hasErrors() || showErrors(field.fieldID)" class="alert alert-danger">
+
+    <div *ngIf="hasErrors()">
+      {{getText(field, 'errorMsg')}}
+    </div>
+
+    <div *ngIf="showErrors(field.fieldID)">
+      {{getErrors(field.fieldID)}}
+    </div>
+  </div>
+</div>

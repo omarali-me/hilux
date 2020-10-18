@@ -1,0 +1,68 @@
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "~tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css";
+@import "~bootstrap-v4-rtl/dist/css/bootstrap-rtl.min.css";
+@import "~icheck-bootstrap/icheck-bootstrap.min.css";
+@import "~assets/css/adminlte.rtl.css";
+@import '~overlayscrollbars/css/OverlayScrollbars.css';
+@import "~daterangepicker/daterangepicker.css";
+@import "~jquery-ui-dist/jquery-ui.min.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+@import '~ngx-toastr/toastr.css';
+/* @import '~datatables.net-dt/css/jquery.dataTables.min.css'; */
+@import "~assets/css/dataTables.bootstrap4.min.css";
+
+@font-face {
+  font-family: "GE SS Two Light";
+  src: local("GE SS Two Light"), url(/assets/fonts/GE\ SS\ Two\ Light.ttf) format("truetype");
+}
+
+body {
+  font-family: "GE SS Two Light", sans-serif;
+}
+
+
+.bg-grey {
+  background-color: #d0cece;
+}
+
+.bg-seagreen {
+  background-color: #c4e0b2;
+}
+
+.bg-light-red {
+  background-color: #f7caac;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-victoria {
+  background-color: #54499E;
+}
+
+.bg-truev {
+  background-color: #7364D9;
+}
+.ng-select .ng-select-container .ng-value-container {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+  color: transparent;
+}
+
+.form-check {
+  padding-left: 0;
+  padding-right: 1.25rem;
+}
+
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+  padding-left: 50px;
+  padding-right: 10px;
+}
+.dataTables_filter{
+  float: left;
+}

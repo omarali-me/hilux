@@ -1,0 +1,12 @@
+<div class="custom-direction limit-div">
+  <pre [innerHtml]="getAjaxData() | prettyjson:4">
+  </pre>
+</div>
+<button type="button" class="btn btn-primary"
+  (click)="loadData()" [disabled]="isActiveEditStep()">
+  {{ getText(field, 'fieldName') }}
+</button>
+
+<div *ngIf="showErrors(field.fieldID)" class="alert alert-danger">
+  {{getErrors(field.fieldID)}}
+</div>

@@ -1,0 +1,60 @@
+<!-- <select class="form-control select2bs4 rtl"
+  [class]="customClass"
+  [required]="field.required"
+  [name]="field.fieldName.en"
+  [id]="field.fieldID"
+  [multiple]="'false'"
+  [(ngModel)]="formData[field.fieldID]"
+  (change)="setmyvalue($event)"
+  #ngModel="ngModel"
+>
+  <option value="">{{field.placeholder.en}}</option>
+  <option [value]="field_detail.key" *ngFor="let field_detail of dataOptions">
+    {{field_detail.value.en}}
+  </option>
+</select> -->
+
+<div class="col-sm-12">
+  <div class="row align-items-center" [ngClass]="isEntityName() ? '' : 'd-block'">
+    <ng-select
+      class="rtl"
+      [items]="dataOptions | async"
+      [class]="customClass"
+      [ngClass]="isEntityName() ? 'col-sm-11' : ''"
+      [required]="isRequired()"
+      [name]="getName(field.fieldName.en)"
+      [id]="field.fieldID"
+      [(ngModel)]="formData[field.fieldID]"
+      bindLabel="value.ar"
+      bindValue="key"
+      [placeholder]="getText(field, 'placeholder')"
+      notFoundText="لا يوجد نتائج للبحث"
+      (open)="loadData()"
+      (change)="setDisplayValue($event)"
+      [multiple]="isMultiple()"
+      [disabled]="isActiveEditStep()"
+      #ngModel="ngModel"
+    >
+    </ng-select>
+
+    <div class="col-sm-1" *ngIf="isEntityName() && !!formData[field.fieldID]">
+      <a [href]="getViewResourceUrl()" target="_blank">
+        <i class="fa fa-eye fs-30"></i>
+      </a>
+    </div>
+
+    <input type="hidden" [name]="getName(field.fieldName.en) + '_displayValue'" [(ngModel)]="formData[field.fieldID + '_displayValue']">
+  </div>
+
+  <div [ngClass]="isEntityName() ? 'col-sm-11' : ''" *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
+      class="alert alert-danger">
+
+    <div *ngIf="ngModel.errors?.required || ngModel.errors?.minlength">
+      {{getText(field, 'errorMsg')}}
+    </div>
+
+    <div *ngIf="showErrors(field.fieldID)">
+      {{getErrors(field.fieldID)}}
+    </div>
+  </div>
+</div>

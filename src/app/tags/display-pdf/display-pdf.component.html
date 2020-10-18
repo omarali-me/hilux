@@ -1,0 +1,20 @@
+<div class="card d-inline-flex" [ngClass]="getClass('col-sm-', data)">
+  <div class="card-header border-0">
+    <div class="card-tools">
+      <button type="button" class="btn btn-sm" data-card-widget="collapse">
+          <i class="fas fa-minus"></i>
+      </button>
+    </div>
+    <h3 class="card-title float-right font-weight-bold">{{data.caption}}</h3>
+  </div>
+  <div class="card-body">
+    <a
+    class="increasedFont"
+    [class]="customClass"
+    [href]="data.src"
+    target="_blank"
+    >
+    <i class="far fa-file-pdf"></i>
+  </a>
+  </div>
+</div>

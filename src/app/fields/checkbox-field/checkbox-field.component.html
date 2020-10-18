@@ -1,0 +1,29 @@
+<div class="form-group">
+  <div class="form-check" *ngFor="let field_detail of dataOptions">
+    <input class="form-check-input"
+      type="checkbox"
+      [class]="customClass"
+      [value]="field_detail.key"
+      [name]="field_detail.value.en"
+      (change)="handleChange($event)"
+      [checked]="isChecked(field_detail.key)"
+      [disabled]="isActiveEditStep()"
+    />
+    <label class="form-check-label">{{ getText(field_detail, 'value') }}</label>
+  </div>
+
+  <input type="hidden" [name]="getName(field.fieldName.en)" [required]="isRequired()" #ngModel="ngModel" [(ngModel)]="formData[field.fieldID]">
+
+  <input type="hidden" [name]="getName(field.fieldName.en) + '_displayValue'" [(ngModel)]="formData[field.fieldID + '_displayValue']">
+  
+  <div *ngIf="hasErrors() || showErrors(field.fieldID)" class="alert alert-danger">
+
+    <div *ngIf="hasErrors()">
+      {{getText(field, 'errorMsg')}}
+    </div>
+
+    <div *ngIf="showErrors(field.fieldID)">
+      {{getErrors(field.fieldID)}}
+    </div>
+  </div>
+</div>

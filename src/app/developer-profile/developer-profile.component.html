@@ -1,0 +1,543 @@
+<app-sidebar></app-sidebar>
+<div class="content-wrapper">
+<section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <!-- <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">User Profile</li>
+          </ol>
+        </div> -->
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12" *ngIf="profile$ | async as profile">
+          <div class="card rtl">
+            <router-outlet></router-outlet>
+            <section class="content" *ngIf="formData && !formData.id">
+              <div class="container-fluid">
+                <app-alerts [errors]="formErrors"></app-alerts>
+                <form class="form-horizontal" (ngSubmit)="saveData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" i18n="@@developerProfileCompanyName">
+                            Company Name
+                          </label>
+                          <div class="col-sm-9">
+                            <ng-select
+                              class="rtl"
+                              [items]="companyOptions | async"
+                              name="companyName"
+                              required="true"
+                              [(ngModel)]="formData.companyName"
+                              bindLabel="value.ar"
+                              bindValue="key"
+                              notFoundText="لا يوجد نتائج للبحث"
+                              [hideSelected]="true" 
+                              [minTermLength]="4" 
+                              typeToSearchText="Please enter 4 or more characters"
+                              [loading]="companyOptionsLoading"
+                              [typeahead]="companySearchInput$"
+                              (change)="getCompanyDetails($event)"
+                              (keyup)="setSearchby('companyName', $event)"
+                              [disabled]="isNotSearchBy('companyName')"
+                              #companyName="ngModel"
+                            >
+                            </ng-select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" i18n="@@developerProfileLicenseNumber">
+                            License Number
+                          </label>
+                          <div class="col-sm-9">
+                            <ng-select
+                              class="rtl"
+                              [items]="licenseNumberCompanyOptions | async"
+                              name="licenseNumber"
+                              required="true"
+                              [(ngModel)]="formData.licenseNumber"
+                              bindLabel="value.ar"
+                              bindValue="key"
+                              notFoundText="لا يوجد نتائج للبحث"
+                              [hideSelected]="true" 
+                              [minTermLength]="4" 
+                              typeToSearchText="Please enter 4 or more characters"
+                              [loading]="licenseNumberOptionsLoading"
+                              [typeahead]="licenseSearchInput$"
+                              (change)="getCompanyDetails($event)"
+                              (keyup)="setSearchby('licenseNumber', $event)"
+                              [disabled]="isNotSearchBy('licenseNumber')"
+                              #licenseNumber="ngModel"
+                            >
+                            </ng-select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <h5 i18n="@@developerProfileCompanyDetails">Company Details</h5>
+                    </div>
+
+                    <ng-container *ngIf="companyDetails.id">
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileCompanyID">Company ID</label>
+                            <div class="col-sm-9">
+                              <input name="companyId" type="text" class="form-control" [(ngModel)]="companyDetails.id" #companyId="ngModel" numbersOnly precision="0" [disabled]="true">
+                              <div *ngIf="companyId.invalid && (companyId.dirty || companyId.touched)" class="alert alert-danger">
+                                <div *ngIf="companyId.errors?.pattern || companyId.errors?.minlength">
+                                  Enter valid Company Id
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileCompanyOrganizationType">Company / organization Type</label>
+                            <div class="col-sm-9">
+                              <ng-select
+                                class="rtl"
+                                [items]="companyTypeOptions"
+                                name="companyType"
+                                [(ngModel)]="companyDetails.companyType"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="لا يوجد نتائج للبحث"
+                                #companyType="ngModel"
+                                [disabled]="true"
+                              >
+                              </ng-select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileCompanyNameInArabic">Company Name In Arabic</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="nameAr" class="form-control" [(ngModel)]="companyDetails.nameAr" #nameAr="ngModel" [disabled]="true">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileCompanyNameInEnglish">Company Name In English
+                            </label>
+                            <div class="col-sm-9">
+                              <input type="text" name="nameEn" class="form-control" [(ngModel)]="companyDetails.nameEn" #nameEn="ngModel" [disabled]="true">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row" *ngIf="isNotGovernmentInstitute()">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileTradeLicenseNumber">Trade license number</label>
+                            <div class="col-sm-9">
+                              <input type="text" name="tradeLicenseNumber" class="form-control" [(ngModel)]="companyDetails.licenseNumber" #licenseNumber="ngModel" [disabled]="true">
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileLicenseIssuer">License Issuer</label>
+                            <div class="col-sm-9">
+                              <ng-select
+                                class="rtl"
+                                [items]="licenseIssuerOptions"
+                                name="licenseIssuer"
+                                [(ngModel)]="companyDetails.licenseIssuerId"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="لا يوجد نتائج للبحث"
+                                #licenseIssuer="ngModel"
+                                [disabled]="true"
+                              >
+                              </ng-select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row" *ngIf="isNotGovernmentInstitute()">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileLicenseIssuanceDate">License issuance date</label>
+                            <div class="col-sm-9">
+                              <input type="text"
+                                class="form-control"
+                                name="licenseIssuanceDate"
+                                [(ngModel)]="companyDetails.licenseIssuanceDate"
+                                (dateTimeChange)="formatDate('licenseIssuanceDate')"
+                                [max]="minDate"
+                                [owlDateTime]="dt7"
+                                [owlDateTimeTrigger]="dt7"
+                                #licenseIssuanceDate="ngModel"
+                                [disabled]="true"
+                              >
+                              <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileLicenseExpiryDate">License Expiry date</label>
+                            <div class="col-sm-9">
+                              <input type="text"
+                                class="form-control"
+                                name="licenseExpiryDate"
+                                [(ngModel)]="companyDetails.licenseExpiryDate"
+                                (dateTimeChange)="formatDate('licenseExpiryDate')"
+                                [min]="minDate"
+                                [owlDateTime]="dt5"
+                                [owlDateTimeTrigger]="dt5"
+                                #licenseExpiryDate="ngModel"
+                                [disabled]="true"
+                              >
+                              <owl-date-time [pickerType]="'calendar'" #dt5></owl-date-time>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row" *ngIf="isNotGovernmentInstitute()">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileLicenseType">License Type</label>
+                            <div class="col-sm-9">
+                              <ng-select
+                                class="rtl"
+                                [items]="licenseTypeOptions"
+                                name="licenseType"
+                                [(ngModel)]="companyDetails.licenseType"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="لا يوجد نتائج للبحث"
+                                #licenseType="ngModel"
+                                [disabled]="true"
+                              >
+                              </ng-select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileTaxNumber">Tax Number
+                              <span>*</span>
+                            </label>
+                            <div class="col-sm-9">
+                              <input name="trxId" required="true" type="text" class="form-control" [(ngModel)]="companyDetails.trxId" #trxId="ngModel">
+                              <div *ngIf="trxId.invalid && (trxId.dirty || trxId.touched)" class="alert alert-danger">
+                                <div *ngIf="trxId.errors?.required">
+                                  Tax Number can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileEmirate">Emirate
+                              <span>*</span>
+                            </label>
+                            <div class="col-sm-9">
+                              <ng-select
+                                class="rtl"
+                                [items]="emiratesOptions"
+                                name="trxEmirateId"
+                                required="true"
+                                [(ngModel)]="companyDetails.trxEmirateId"
+                                bindLabel="value.ar"
+                                bindValue="key"
+                                notFoundText="لا يوجد نتائج للبحث"
+                                #trxEmirateId="ngModel"
+                              >
+                              </ng-select>
+                              <div *ngIf="trxEmirateId.invalid && (trxEmirateId.dirty || trxEmirateId.touched)" class="alert alert-danger">
+                                <div *ngIf="trxEmirateId.errors?.required">
+                                  Emirate can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row" *ngFor="let owner of getOwnersData(); let j = index">
+                        <div class="col-sm-6" *ngIf="isNotGovernmentInstitute()">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileOwner">Owner</label>
+                            <div class="col-sm-9">
+                              <ng-select
+                                class="rtl"
+                                [items]="ownerOptions | async"
+                                [name]="getName('ownerId', j)" [hideSelected]="true" 
+                                required="true" [minTermLength]="4" 
+                                [(ngModel)]="owner.ownerId" [loading]="dataOptionsLoading"
+                                bindLabel="value.ar"
+                                bindValue="key" typeToSearchText="Please enter 4 or more characters"
+                                notFoundText="لا يوجد نتائج للبحث" [typeahead]="searchInput$"
+                                #ownerId="ngModel"
+                                [disabled]="true"
+                              >
+                              </ng-select>
+                              <div *ngIf="ownerId.invalid && (ownerId.dirty || ownerId.touched)" class="alert alert-danger">
+                                <div *ngIf="ownerId.errors?.required">
+                                  Owner can not be blank
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6" *ngIf="isNotGovernmentAndIndividualInstitute()">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileOwnershipPercentage">Ownership percentage</label>
+                            <div class="col-sm-9">
+                              <input [name]="getName('share', j)" maxlength="6" required="true" type="text" class="form-control" [(ngModel)]="owner.share" #share="ngModel" numbersOnly precision="2" [disabled]="true">
+                              <div class="alert alert-danger" *ngIf="share.invalid && (share.dirty || share.touched) && share.errors?.required">
+                                Ownership Percentage can not be blank
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfilePhoneNumber">Phone Number
+                              <span>*</span>
+                            </label>
+                            <div class="col-sm-9">
+                              <input name="phoneNumber" type="text" class="form-control" required="true" [maxLength]="17" [(ngModel)]="formData.phoneNumber" #phoneNumber="ngModel" numbersOnly precision="0" pattern="[0-9]*">
+                              <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)" class="alert alert-danger">
+                                <div *ngIf="phoneNumber.errors?.required">
+                                  Phone Number can not be blank
+                                </div>
+
+                                <div *ngIf="phoneNumber.errors?.pattern">
+                                  Enter Valid Phone Number
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileMakaniNumber">Makani Number</label>
+                            <div class="col-sm-9">
+                              <input name="makaniNumber" type="text" class="form-control" [(ngModel)]="companyDetails.makaniNumber" #makaniNumber="ngModel" numbersOnly precision="0">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileEmail">Email</label>
+                            <div class="col-sm-9">
+                              <input name="email" type="email" class="form-control" [(ngModel)]="formData.email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #email="ngModel">
+                              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                                <div *ngIf="email.errors?.pattern">
+                                  Enter valid Email
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileWebsite">Website</label>
+                            <div class="col-sm-9">
+                              <input name="website" type="text" class="form-control" [(ngModel)]="formData.website" #website="ngModel">
+                              <div *ngIf="website.invalid && (website.dirty || website.touched)" class="alert alert-danger">
+                                <div *ngIf="website.errors?.pattern">
+                                  Enter Valid Website
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileAddress">Address</label>
+                            <div class="col-sm-9">
+                              <textarea
+                                name="address"
+                                class="form-control"
+                                rows="3"
+                                [(ngModel)]="formData.address"
+                              ></textarea>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfilePOBox">P.O.box.</label>
+                            <div class="col-sm-9">
+                              <input name="pobox" type="text" class="form-control" [(ngModel)]="formData.POBox" #POBox="ngModel">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row" *ngIf="isNotGovernmentAndIndividualInstitute()">
+                        <div class="col-sm-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" i18n="@@developerProfileEstablishmentContractFile">Establishment Contract File
+                              <span>*</span>
+                            </label>
+                            <div class="col-sm-9">
+                              <app-file-upload [field]="prepareEstablishmentContractFileField()" [formData]="formData"></app-file-upload>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                        </div>
+                      </div>
+                    </ng-container>
+
+                    <ng-container *ngIf="!companyDetails.id">
+                        Please Select a Company
+                    </ng-container>
+
+                    <div class="form-group row">
+                      <h5 i18n="@@developerProfileDeveloperDetails">Developer Details</h5>
+                    </div>
+
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" i18n="@@developerProfileDeveloperType">
+                            Developer Type
+                            <span>*</span>
+                          </label>
+                          <div class="col-sm-9">
+                            <ng-select
+                              class="rtl"
+                              required="true"
+                              [items]="developerTypeOptions"
+                              name="developerType"
+                              [(ngModel)]="formData.isMain"
+                              bindLabel="value.ar"
+                              bindValue="key"
+                              notFoundText="لا يوجد نتائج للبحث"
+                              #developerType="ngModel"
+                            >
+                            </ng-select>
+                            <div *ngIf="developerType.invalid && (developerType.dirty || developerType.touched)" class="alert alert-danger">
+                              <div *ngIf="developerType.errors?.required">
+                                Developer Type can not be blank
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                      </div>
+
+                    </div>
+
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" i18n="@@developerProfileRegistrationDate">Registration date
+                            <span>*</span>
+                          </label>
+                          <div class="col-sm-9">
+                            <input type="text"
+                              class="form-control"
+                              name="registrationDate"
+                              [(ngModel)]="formData.registrationDate"
+                              (dateTimeChange)="formatDevelopersDate('registrationDate')"
+                              required="true"
+                              [max]="minDate"
+                              [owlDateTime]="dt7"
+                              [owlDateTimeTrigger]="dt7"
+                              (dateTimeChange)="calculateExpiryDate($event)"
+                              #registrationDate="ngModel"
+                            >
+                            <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+                            <div class="alert alert-danger" *ngIf="registrationDate.invalid && (registrationDate.dirty || registrationDate.touched) && registrationDate.errors?.required">
+                              Registration date can not be blank
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" i18n="@@developerProfileRegistrationExpiryDate">Registration Expiry date
+                            <span>*</span>
+                          </label>
+                          <div class="col-sm-9">
+                            <input type="text"
+                              class="form-control"
+                              name="registrationExpiryDate"
+                              [(ngModel)]="formData.registrationExpiryDate"
+                              (dateTimeChange)="formatDevelopersDate('registrationExpiryDate')"
+                              required="true"
+                              [min]="minDate"
+                              [owlDateTime]="dt5"
+                              [owlDateTimeTrigger]="dt5"
+                              #registrationExpiryDate="ngModel"
+                            >
+                            <owl-date-time [pickerType]="'calendar'" #dt5></owl-date-time>
+                            <div class="alert alert-danger" *ngIf="registrationExpiryDate.invalid && (registrationExpiryDate.dirty || registrationExpiryDate.touched) && registrationExpiryDate.errors?.required">
+                              Registration Expiry date can not be blank
+                            </div>
+                            <!-- <div class="alert alert-danger" *ngIf="RegistrationExpiryDate.invalid && RegistrationExpiryDate.errors?.owlDateTimeMin">
+                              Enter valid Registration Expiry date
+                            </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid" i18n="@@formSubmitLabel">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,53 @@
+<div class="col-sm-12">
+  <div class="row">
+    <div class="col-sm-12 form-group" *ngIf="getUploadedFiles()?.length > 0">
+      <label class="d-block">Preview</label>
+      <div class="image-preview m-2 d-inline-block text-center" *ngFor="let item of getUploadedFiles(); let i = index;">
+        <span class="close-button" title="Remove" (click)="removeFile(i)" *ngIf="item">X</span>
+        <img class="inherit-height" [src]="item" *ngIf="item && !notImage(item)"/>
+        <a class="veryLargeFont" [href]="item" target="_blank" *ngIf="item && notImage(item)">
+          <i class="far fa-{{getIconClass(item)}}"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="custom-file">
+        <input type="file"
+          class="custom-file-input"
+          [class]="customClass"
+          [accept]="field.auxInfo?.acceptedFileTypes"
+          [name]="getName(field.fieldName.en)"
+          [id]="field.fieldID"
+          [multiple]="isMultiple()"
+          (change)="updateControlLabel($event)"
+          [disabled]="isActiveEditStep()"
+          />
+        <label class="custom-file-label" [for]="field.fieldID" #labelImport>choose file</label>
+
+        <div class="progress mt-2 d-none" #progressBarWrapper>
+          <div class="progress-bar bg-primary progress-bar-striped" role="progressbar"
+              aria-valuemin="0" aria-valuemax="100" #progressBar>
+            <span class="sr-only"></span>
+          </div>
+        </div>
+
+        <input type="hidden" [name]="getName(field.fieldName.en)" [required]="isRequired()" #ngModel="ngModel" [(ngModel)]="formData[field.fieldID]">
+
+        <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
+          class="alert alert-danger">
+
+          <div *ngIf="ngModel.errors?.required || ngModel.errors?.minlength">
+            {{getText(field, 'errorMsg')}}
+          </div>
+
+          <div *ngIf="showErrors(field.fieldID)">
+            {{getErrors(field.fieldID)}}
+          </div>    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,935 @@
+{
+  "fields": [
+    {
+      "fieldID": "secondPartyNameArabic",
+      "fieldType": "text",
+      "required": "true",
+      "fieldName": {
+        "ar": "الاسم العربي للطرف الثاني",
+        "en": "Arabic Name for Second Party (ar)"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "secondPartyNameEnglish",
+      "fieldType": "text",
+      "required": "true",
+      "fieldName": {
+        "ar": "الاسم الانجليزي للطرف الثاني",
+        "en": "Name in English for Second Party"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "nationality",
+      "fieldType": "dropdown",
+      "required": "true",
+      "fieldName": {
+        "ar": "الجنسية",
+        "en": "Nationality"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "http://localhost/fikra/index.php/it/getCountries"
+      }
+    },
+    {
+      "fieldID": "passportNumber",
+      "fieldType": "text",
+      "required": "true",
+      "fieldName": {
+        "ar": "رقم جواز السفر",
+        "en": "Passport Number"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "emiratesIDNumber",
+      "fieldType": "number",
+      "required": "false",
+      "fieldName": {
+        "ar": "رقم الهوية",
+        "en": "Emirates ID #"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "email",
+      "fieldType": "text",
+      "required": "true",
+      "fieldName": {
+        "ar": "البريد الالكتروني",
+        "en": "Email"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "phone",
+      "fieldType": "number",
+      "required": "true",
+      "fieldName": {
+        "ar": "الهاتف",
+        "en": "Phone "
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "fax",
+      "fieldType": "number",
+      "required": "false",
+      "fieldName": {
+        "ar": "الفاكس",
+        "en": "Fax"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "pobox",
+      "fieldType": "text",
+      "required": "false",
+      "fieldName": {
+        "ar": "صندوق البريد",
+        "en": "PO Box"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "projectName",
+      "fieldType": "dropdown",
+      "required": "true",
+      "fieldName": {
+        "ar": "اسم المشروع الرئيسي / البرج",
+        "en": "Project Name"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "localhost/fikra/index.php/it/getDeveloperProjects"
+      }
+    },
+    {
+      "fieldID": "towerName",
+      "fieldType": "dropdown",
+      "required": "true",
+      "fieldName": {
+        "ar": "اسم البرج",
+        "en": "Tower Name"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "unitNumber",
+      "fieldType": "dropdown",
+      "required": "true",
+      "fieldName": {
+        "ar": "رقم الوحدة العقارية",
+        "en": "Real Estate Unit Number"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "apiParams":["projectname"],
+        "sourceDetails": "http://localhost/fikra/index.php/it/getRealEstateUnits"
+      }
+    },
+    {
+      "fieldID": "parkingNumber",
+      "fieldType": "number",
+      "required": "false",
+      "fieldName": {
+        "ar": "رقم الموقف",
+        "en": "Parking Number"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "propertyType",
+      "fieldType": "radio",
+      "required": "true",
+      "fieldName": {
+        "ar": "نوع العقار",
+        "en": "Property Type"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "list",
+        "sourceDetails": [
+          {
+            "key": "commercial",
+            "value": {
+              "ar": "تجاري",
+              "en": "Commercial"
+            }
+          },
+          {
+            "key": "residential",
+            "value": {
+              "ar": "سكني",
+              "en": "Residential"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fieldID": "numberOfRooms",
+      "fieldType": "number",
+      "required": "true",
+      "fieldName": {
+        "ar": "عدد الغرف",
+        "en": "Number Of Rooms"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "netArea",
+      "fieldType": "number",
+      "required": "true",
+      "fieldName": {
+        "ar": "المساحة الصافية",
+        "en": "Net Area"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "totalArea",
+      "fieldType": "number",
+      "required": "true",
+      "fieldName": {
+        "ar": "المساحة الكلية",
+        "en": "Total Area"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "projectCompletionDate",
+      "fieldType": "datetime",
+      "required": "true",
+      "fieldName": {
+        "ar": "تاريخ إنجاز المشروع",
+        "en": "Project completion date"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "mainAccountNumber",
+      "fieldType": "dropdown",
+      "required": "true",
+      "fieldName": {
+        "ar": "رقم الحساب الرئيسي",
+        "en": "Main account number"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api","apiParams":["subaccountnumber"],
+        "sourceDetails": "http://localhost/fikra/index.php/it/getMainAccountNumber"
+      }
+    },
+    {
+      "fieldID": "subAccountNumber",
+      "fieldType": "dropdown",
+      "required": "true",
+      "fieldName": {
+        "ar": "رقم الحساب الفرعي",
+        "en": "Sub Account Number"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+"apiParams":["unitnumber"],
+        "sourceDetails": "http://localhost/fikra/index.php/it/getSubAccount"
+      }
+    },
+    {
+      "fieldID": "basicPrice",
+      "fieldType": "number",
+      "required": "true",
+      "fieldName": {
+        "ar": "السعر الأساسي",
+        "en": "Basic Price"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "numberOfParking",
+      "fieldType": "number",
+      "required": "true",
+      "fieldName": {
+        "ar": "عدد مواقف السيارات",
+        "en": "Number of Parking"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "parkingPrice",
+      "fieldType": "number",
+      "required": "true",
+      "fieldName": {
+        "ar": "قيمة مواقف السيارات",
+        "en": "Parking price"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "totalAmount",
+      "fieldType": "number",
+      "required": "true",
+      "fieldName": {
+        "ar": "القيمة الإجمالية",
+        "en": "Total Amount"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "paymentPla",
+      "fieldType": "fileupload",
+      "required": "true",
+      "fieldName": {
+        "ar": "خطة الدفع",
+        "en": "Payment Plan"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "application/pdf,.xlsx,.ods",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "customerIDAttachment",
+      "fieldType": "fileupload",
+      "required": "true",
+      "fieldName": {
+        "ar": "اثباتات الشخصية",
+        "en": "Customer ID Attachment"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "application/pdf,image/*",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "tradeLicense",
+      "fieldType": "fileupload",
+      "required": "true",
+      "fieldName": {
+        "ar": "الرخصة التجارية",
+        "en": "Trade Licens"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "application/pdf,image/*",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "terms",
+      "fieldType": "textarea",
+      "required": "false",
+      "fieldName": {
+        "ar": "الشروط الخاصة بين الاطراف",
+        "en": "Terms & Conditions"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "secondPartySignature",
+      "fieldType": "signature",
+      "required": "true",
+      "fieldName": {
+        "ar": "توقيع المشتري",
+        "en": "Second party Signature"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    },
+    {
+      "fieldID": "firstPartySignature",
+      "fieldType": "signature",
+      "required": "true",
+      "fieldName": {
+        "ar": "توقيع البائع",
+        "en": "First Party Signature"
+      },
+      "placeholder": {
+        "ar": "",
+        "en": ""
+      },
+      "errorMsg": {
+        "ar": "",
+        "en": ""
+      },
+      "auxInfo": {
+        "acceptedFileTypes": "",
+        "minLength": "",
+        "maxLength": "",
+        "type": "Date",
+        "source": "api",
+        "sourceDetails": "it/getAllEmployees"
+      }
+    }
+  ],
+  "fieldOrder": [
+    {
+      "row": "row1",
+      "allowMultiple": "true",
+      "rowFields": [
+        {
+          "fieldID": "secondPartyNameArabic",
+          "fieldWidth": "six"
+        },
+        {
+          "fieldID": "secondPartyNameEnglish",
+          "fieldWidth": "six"
+        },
+        {
+          "fieldID": "nationality",
+          "fieldWidth": "three"
+        },
+        {
+          "fieldID": "passportNumber",
+          "fieldWidth": "three"
+        },
+        {
+          "fieldID": "emiratesIDnumber",
+          "fieldWidth": "three"
+        },
+        {
+          "fieldID": "email",
+          "fieldWidth": "three"
+        },
+        {
+          "fieldID": "phone",
+          "fieldWidth": "six"
+        },
+        {
+          "fieldID": "fax",
+          "fieldWidth": "six"
+        },
+        {
+          "fieldID": "pobox",
+          "fieldWidth": "twelve"
+        },
+        {
+          "fieldID": "customerIDAttachment",
+          "fieldWidth": "twelve"
+        },
+        {
+          "fieldID": "secondPartySignature",
+          "fieldWidth": "twelve"
+        }
+      ]
+    },
+    {
+      "row": "row2",
+      "rowFields": [
+        {
+          "fieldID": "projectName",
+          "fieldWidth": "six"
+        },
+        {
+          "fieldID": "unitNumber",
+          "fieldWidth": "six"
+        }
+      ]
+    },
+    {
+      "row": "row3",
+      "rowFields": [
+        {
+          "fieldID": "parkingNumber",
+          "fieldWidth": "three"
+        },
+        {
+          "fieldID": "propertyType",
+          "fieldWidth": "four"
+        }
+      ]
+    },
+    {
+      "row": "row4",
+      "rowFields": [
+        {
+          "fieldID": "numberOfRooms",
+          "fieldWidth": "four"
+        },
+        {
+          "fieldID": "netArea",
+          "fieldWidth": "four"
+        },
+        {
+          "fieldID": "totalArea",
+          "fieldWidth": "four"
+        }
+      ]
+    },
+    {
+      "row": "row5",
+      "rowFields": [
+        {
+          "fieldID": "projectCompletionDate",
+          "fieldWidth": "four"
+        },
+        {
+          "fieldID": "mainAccountNumber",
+          "fieldWidth": "four"
+        },
+        {
+          "fieldID": "subAccountNumber",
+          "fieldWidth": "four"
+        }
+      ]
+    },
+    {
+      "row": "row6",
+      "rowFields": [
+        {
+          "fieldID": "basicPrice",
+          "fieldWidth": "four"
+        },
+        {
+          "fieldID": "numberOfParking",
+          "fieldWidth": "four"
+        },
+        {
+          "fieldID": "parkingPrice",
+          "fieldWidth": "four"
+        }
+      ]
+    },
+    {
+      "row": "row7",
+      "rowFields": [
+        {
+          "fieldID": "totalAmount",
+          "fieldWidth": "six"
+        },
+        {
+          "fieldID": "paymentPla",
+          "fieldWidth": "six"
+        }
+      ]
+    },
+    {
+      "row": "row8",
+      "rowFields": [
+        {
+          "fieldID": "tradeLicense",
+          "fieldWidth": "six"
+        },
+        {
+          "fieldID": "firstPartySignature",
+          "fieldWidth": "six"
+        }
+      ]
+    },
+    {
+      "row": "row9",
+      "rowFields": [
+        {
+          "fieldID": "terms",
+          "fieldWidth": "twelve"
+        }
+      ]
+    }
+  ]
+}

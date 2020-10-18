@@ -1,0 +1,17 @@
+<div class="card d-inline-flex" [ngClass]="getClass('col-sm-', data)">
+  <div class="card-header border-0">
+    <div class="card-tools">
+      <button type="button" class="btn btn-sm" data-card-widget="collapse">
+          <i class="fas fa-minus"></i>
+      </button>
+    </div>
+    <h3 class="card-title float-right font-weight-bold">{{ getText(data, 'fieldGroupName')}}</h3>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let field of data.fields">
+        <app-display-field-data [data]="field" [customClass]="customClass"></app-display-field-data>
+      </div>
+    </div>
+  </div>
+</div>

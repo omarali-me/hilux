@@ -1,0 +1,28 @@
+<input
+  type="text"
+  class="form-control"
+  [class]="customClass"
+  [placeholder]="getText(field, 'placeholder')"
+  [required]="isRequired()"
+  [name]="getName(field.fieldName.en)"
+  [id]="field.fieldID"
+  [minlength]="field.auxInfo?.minLength"
+  [maxlength]="field.auxInfo?.maxLength"
+  [(ngModel)]="formData[field.fieldID]"
+  [disabled]="isActiveEditStep()"
+  numbersOnly
+  precision="2"
+  #ngModel="ngModel"
+/>
+
+<div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
+    class="alert alert-danger">
+
+  <div *ngIf="ngModel.errors?.required || ngModel.errors?.minlength">
+    {{getText(field, 'errorMsg')}}
+  </div>
+
+  <div *ngIf="showErrors(field.fieldID)">
+    {{getErrors(field.fieldID)}}
+  </div>    
+</div>

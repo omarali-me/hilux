@@ -1,0 +1,30 @@
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-sm-12">
+      <label>Display Data</label>
+      <button type="button" (click)="addRow()" class="btn btn-sm btn-primary">add</button>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="formData.displayData as displayData">
+    <div class="col-sm-12" *ngIf="isEnumerator(displayData)">
+      <div class="row" *ngFor="let item of displayData; let i = index;">
+        <div class="col-sm-12">
+          <app-display-keys-generator [formData]="displayData" [key]="i"></app-display-keys-generator>
+        </div>
+        <div class="col-sm-12 mt-2">
+          <button type="button" (click)="deleteRow(i)" class="btn btn-sm btn-danger">Remove</button>
+          <hr *ngIf="(displayData?.length - 1) !== i"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12" *ngIf="!isEnumerator(displayData)">
+      <div class="row" *ngIf="displayData">
+        <div class="col-sm-12">
+          <app-display-keys-generator [formData]="formData" [key]="'displayData'"></app-display-keys-generator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

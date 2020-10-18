@@ -1,0 +1,647 @@
+<app-sidebar></app-sidebar>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="m-2 text-dark">
+          <h1 i18n="@@searchPageHeaderLabel">Search</h1>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="card card-purple">
+        <div class="card-header">
+          <h3 class="card-title">قائمة البحث</h3>
+        </div>
+        <app-alerts [errors]="formErrors"></app-alerts>
+
+        <div class="col-sm-12">
+          <div class="mt-4">
+            <form class="form-horizontal" (ngSubmit)="searchData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label" i18n="@@searchPageDeveloperName">Developer Name
+                        <span *ngIf="isSearchByUnit()">*</span>
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          [items]="developerOptions | async"
+                          required="isSearchByUnit()"
+                          name="developerId"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.developerId"
+                          [typeahead]="developerSearchInput$"
+                          bindLabel="value.ar"
+                          [minTermLength]="1"
+                          bindValue="key"
+                          [loading]="developerDataOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #developer="ngModel"
+                          [disabled]="isNotSearchTypeUnit()"
+                          (keyup)="setSearchType('developerId', $event)"
+                          (blur)="checkTypeAndValues('developerId')"
+                          (change)="resetProjectAndUnit()"
+                        >
+                        </ng-select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label" i18n="@@searchPageProjectName">Project Name
+                        <span *ngIf="isSearchByUnit()">*</span>
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          required="isSearchByUnit()"
+                          [items]="projectsOptions | async"
+                          name="project"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.projectId"
+                          [minTermLength]="1"
+                          bindLabel="value.ar"
+                          typeToSearchText="Please enter 1 or more characters"
+                          bindValue="key"
+                          [typeahead]="projectsSearchInput$"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          [loading]="projectDataOptionsLoading"
+                          #project="ngModel"
+                          [disabled]="isNotSearchTypeUnit() || isEmpty('developerId')"
+                          (keyup)="setSearchType('unitId', $event)"
+                          (blur)="checkTypeAndValues('projectId')"
+                          (change)="resetUnit()"
+                        >
+                        </ng-select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label" i18n="@@searchPageUnitID">Unit ID
+                        <span *ngIf="isSearchByUnit()">*</span>
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          required="isSearchByUnit()"
+                          [items]="unitsOptions"
+                          name="units"
+                          [(ngModel)]="formData.unitId"
+                          bindLabel="value.ar"
+                          bindValue="key"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          #unitId="ngModel"
+                          [disabled]="isNotSearchTypeUnit() || isEmpty('projectId')"
+                          (open)="loadUnitsOptions()"
+                        >
+                        </ng-select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label" i18n="@@searchPageLandID">Land ID
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          required="true"
+                          [items]="landsOptions | async"
+                          name="land"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.landId"
+                          [typeahead]="landSearchInput$"
+                          bindLabel="value.ar"
+                          [minTermLength]="1"
+                          bindValue="key"
+                          [loading]="landDataOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #land="ngModel"
+                          [disabled]="isNotSearchTypeLand() || isNotSearchBy('landId')"
+                          (blur)="checkTypeAndValues('landId')"
+                          (keyup)="setSearchType('landId', $event)">
+                        </ng-select>
+                      </div>
+                    </div>
+                  
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label" i18n="@@searchPageOldLandID">Old Land ID
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          required="true"
+                          [items]="oldLandsOptions | async"
+                          name="oldLand"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.oldLandId"
+                          [typeahead]="oldLandSearchInput$"
+                          bindLabel="value.ar"
+                          [minTermLength]="1"
+                          bindValue="key"
+                          [loading]="oldLandDataOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #oldLand="ngModel"
+                          [disabled]="isNotSearchTypeLand() || isNotSearchBy('oldLandId')"
+                          (blur)="checkTypeAndValues('oldLandId')"
+                          (keyup)="setSearchType('oldLandId', $event)">
+                        </ng-select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label" i18n="@@searchPageOwner">Owner
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          required="true"
+                          [items]="ownersOptions | async"
+                          [(ngModel)]="formData.owner"
+                          [hideSelected]="true"
+                          name="Owner"
+                          bindLabel="value.ar"
+                          bindValue="key"
+                          [minTermLength]="1"
+                          [typeahead]="ownersSearchInput$"
+                          [loading]="ownersOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #owner="ngModel"
+                          [disabled]="isNotSearchTypeOwner() || isNotSearchBy('owner')"
+                          (blur)="checkTypeAndValues('owner')"
+                          (keyup)="setSearchType('owner', $event)">
+                        </ng-select>
+                      </div>
+                    </div>
+                  
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label" i18n="@@searchPageOwnerID">Owner ID
+                      </label>
+                      <div class="col-sm-9">
+                        <input name="ownerId"
+                          required="true"
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="formData.ownerId"
+                          #ownerId="ngModel"
+                          [disabled]="isNotSearchTypeOwner() || isNotSearchBy('ownerId')"
+                          (blur)="checkTypeAndValues('ownerId')"
+                          (keyup)="setSearchType('ownerId', $event)">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="row ">
+                  <div class="col-sm-12 text-center">
+                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid" i18n="@@searchPageSearchButton">Search</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <hr/>
+
+          <div class="resultsWrapper rtl" *ngIf="response">
+            <div class="searchbyOwner" *ngIf="isOwnerResponse()">
+              <label i18n="@@searchPageTableOwner">Owner:</label>
+              <table class="table table-bordered ownerTable">
+                <thead>
+                  <tr class="bg-grey">
+                    <th i18n="@@searchPageTableHeaderCustomerID">Customer ID</th>
+                    <th i18n="@@searchPageTableHeaderNameArabic">Name Arabic</th>
+                    <th i18n="@@searchPageTableHeaderNameEnglish">Name English</th>
+                    <th i18n="@@searchPageTableHeaderOwnerID">Owner ID</th>
+                    <th i18n="@@searchPageTableHeaderPhoneNumber">Phone Number</th>
+                    <th i18n="@@searchPageTableHeaderNationality">Nationality</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="getfirstOwner(response.deeds) as owner_detail">
+                    <td>{{owner_detail?.profile?.id}}</td>
+                    <td>{{owner_detail?.profile?.nameAr}}</td>
+                    <td>{{owner_detail?.profile?.nameEn}}</td>
+                    <td>{{owner_detail?.profile?.ownerId}}</td>
+                    <td>{{owner_detail?.profile?.phone}}</td>
+                    <td>{{ getNationalityName(owner_detail?.profile, 'nationalityCode') }}</td>
+                  </tr>
+                </tbody>
+              </table>
+  
+              <label i18n="@@searchPageTableLands">Lands:</label>
+              <div class="card bg-seagreen">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold" i18n="@@searchPageTableCurrentlyOwnedLands">Currently Owned Lands</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered landTable bg-white">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>#</th>
+                        <th i18n="@@searchPageTableHeaderLandID">Land ID</th>
+                        <th i18n="@@searchPageTableHeaderOldLandID">Old Land ID</th>
+                        <th i18n="@@searchPageTableHeaderSector">Sector</th>
+                        <th i18n="@@searchPageTableHeaderDistrict">District</th>
+                        <th i18n="@@searchPageTableHeaderOwnershipTransferMethod">Ownership Transfer Method</th>
+                        <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
+                        <th i18n="@@searchPageTableHeaderDate">Date</th>
+                        <th i18n="@@searchPageTableHeaderBans">Bans</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let current_land_detail of getCurrentOwnedLands(response.deeds); let i = index">
+                        <td>{{ i + 1}}</td>
+                        <td>{{ current_land_detail?.land?.land?.landId }}</td>
+                        <td>{{ current_land_detail?.land?.land?.oldLandId }}</td>
+                        <td>{{ getFieldNameorId(current_land_detail?.land?.land, 'sector') }}</td>
+                        <td>{{ getFieldNameorId(current_land_detail?.land?.land, 'section') }}</td>
+                        <td>{{ getFieldNameorId(current_land_detail?.childDeed, 'ownershipType') }}</td>
+                        <td>{{ getItemShare(current_land_detail) }}</td>
+                        <td>{{ current_land_detail?.deed?.createdAt }}</td>
+                        <td>
+                          <ng-container *ngFor="let blockage of current_land_detail.land.blockages">
+                            <li class="ban red" *ngIf="blockage.remarks">
+                              {{blockage.remarks}}
+                            </li>
+                          </ng-container>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold" i18n="@@searchPageTablePreviouslyOwnedLands">Previously Owned Lands</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered landTable bg-light-red">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>#</th>
+                        <th i18n="@@searchPageTableHeaderLandID">Land ID</th>
+                        <th i18n="@@searchPageTableHeaderOldLandID">Old Land ID</th>
+                        <th i18n="@@searchPageTableHeaderSector">Sector</th>
+                        <th i18n="@@searchPageTableHeaderDistrict">District</th>
+                        <th i18n="@@searchPageTableHeaderOwnershipTransferMethod">Ownership Transfer Method</th>
+                        <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
+                        <th i18n="@@searchPageTableHeaderDate">Date</th>
+                        <th i18n="@@searchPageTableHeaderBans">Bans</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let previous_land_detail of getPreviouslyOwnedLands(response.deeds); let i = index">
+                        <td>{{ i + 1}}</td>
+                        <td>{{ previous_land_detail?.land?.land?.landId }}</td>
+                        <td>{{ previous_land_detail?.land?.land?.oldLandId }}</td>
+                        <td>{{ getFieldNameorId(previous_land_detail?.land?.land, 'sector') }}</td>
+                        <td>{{ getFieldNameorId(previous_land_detail?.land?.land, 'section') }}</td>
+                        <td>{{ getFieldNameorId(previous_land_detail?.childDeed, 'ownershipType') }}</td>
+                        <td>{{ getItemShare(previous_land_detail) }}</td>
+                        <td>{{ previous_land_detail?.deed?.createdAt }}</td>
+                        <td>
+                          <ng-container *ngFor="let blockage of previous_land_detail.land.blockages">
+                            <li class="ban red" *ngIf="blockage.remarks">
+                              {{blockage.remarks}}
+                            </li>
+                          </ng-container>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <label i18n="@@searchPageTableRealEstateUnits">Real Estate Units:</label>
+              <div class="card bg-seagreen">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold" i18n="@@searchPageTableCurrentlyOwnedUnits">Currently Owned Units</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered unitTable bg-white">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>#</th>
+                        <th i18n="@@searchPageTableHeaderUnitID">Unit ID</th>
+                        <th i18n="@@searchPageTableHeaderProjectName">Project Name</th>
+                        <th i18n="@@searchPageTableHeaderDeveloperName">Developer Name</th>
+                        <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
+                        <th i18n="@@searchPageTableHeaderDate">Date</th>
+                        <th i18n="@@searchPageTableHeaderBans">Bans</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let current_unit_detail of getCurrentOwnedUnits(response.deeds); let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{current_unit_detail?.unitData?.unit?.unitNumber}}</td>
+                        <td>{{current_unit_detail?.unitData?.project?.nameAr}}</td>
+                        <td>{{current_unit_detail?.unitData?.developer?.nameAr}}</td>
+                        <td>{{ getItemShare(current_unit_detail) }}</td>
+                        <td>{{current_unit_detail?.deed?.createdAt}}</td>
+                        <td>
+                          <ul class="bans-wrapper">
+                            <ng-container *ngFor="let blockage of current_unit_detail.unitData.blockages">
+                              <li class="ban red" *ngIf="blockage.remarks">
+                                {{blockage.remarks}}
+                              </li>
+                            </ng-container>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold" i18n="@@searchPageTablePreviouslyOwnedUnits">Previously Owned Units</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered unitTable bg-light-red">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>#</th>
+                        <th i18n="@@searchPageTableHeaderUnitID">Unit ID</th>
+                        <th i18n="@@searchPageTableHeaderProjectName">Project Name</th>
+                        <th i18n="@@searchPageTableHeaderDeveloperName">Developer Name</th>
+                        <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
+                        <th i18n="@@searchPageTableHeaderDate">Date</th>
+                        <th i18n="@@searchPageTableHeaderBans">Bans</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let previous_unit_detail of getPreviouslyOwnedUnits(response.deeds); let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{previous_unit_detail?.unitData?.unit?.unitNumber}}</td>
+                        <td>{{previous_unit_detail?.unitData?.project?.nameAr}}</td>
+                        <td>{{previous_unit_detail?.unitData?.developer?.nameAr}}</td>
+                        <td>{{ getItemShare(previous_unit_detail) }}</td>
+                        <td>{{previous_unit_detail?.deed?.createdAt}}</td>
+                        <td>
+                          <ul class="bans-wrapper">
+                            <ng-container *ngFor="let blockage of previous_unit_detail.unitData.blockages">
+                              <li class="ban red" *ngIf="blockage.remarks">
+                                {{blockage.remarks}}
+                              </li>
+                            </ng-container>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+  
+            <div class="searchbyLand" *ngIf="isLandResponse()">
+              <label i18n="@@searchPageTableLand">Land:</label>
+              <table class="table table-bordered landTable">
+                <thead>
+                  <tr class="bg-grey">
+                    <th i18n="@@searchPageTableHeaderLandID">Land ID</th>
+                    <th i18n="@@searchPageTableHeaderOldLandID">Old Land ID</th>
+                    <th i18n="@@searchPageTableHeaderSector">Sector</th>
+                    <th i18n="@@searchPageTableHeaderDistrict">District</th>
+                    <th i18n="@@searchPageTableHeaderBans">Bans</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="getfirstLand(response.deeds) as land_detail">
+                    <td>{{land_detail.land.landId}}</td>
+                    <td>{{land_detail.land.oldLandId}}</td>
+                    <td>{{ getFieldNameorId(land_detail.land, 'sector') }}</td>
+                    <td>{{ getFieldNameorId(land_detail.land, 'section') }}</td>
+                    <td>
+                      <ng-container *ngFor="let blockage of land_detail.blockages">
+                        <li class="ban red" *ngIf="blockage.remarks">
+                          {{blockage.remarks}}
+                        </li>
+                      </ng-container>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+  
+              <label i18n="@@searchPageTableOwners">Owners:</label>
+              <div class="card" [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-seagreen' : ''" *ngFor="let item of getCurrentOwnedLands(response.deeds); let i = index">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">{{getOwnerHeader(item)}}</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered ownerTable">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th i18n="@@searchPageTableHeaderCustomerID">Customer ID</th>
+                        <th i18n="@@searchPageTableHeaderNameArabic">Name Arabic</th>
+                        <th i18n="@@searchPageTableHeaderNameEnglish">Name English</th>
+                        <th i18n="@@searchPageTableHeaderOwnerID">Owner ID</th>
+                        <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
+                        <th i18n="@@searchPageTableHeaderNationality">Nationality</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-white' : getOwnerClass(item)" *ngFor="let deed_detail_item of item.deedDetails; let i = index">
+                        <td>{{deed_detail_item.profile?.id}}</td>
+                        <td>{{deed_detail_item.profile?.nameAr}}</td>
+                        <td>{{deed_detail_item.profile?.nameEn}}</td>
+                        <td>{{deed_detail_item.details?.ownerId}}</td>
+                        <td>{{deed_detail_item.details?.share}}</td>
+                        <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card" [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-seagreen' : ''" *ngFor="let item of getPreviouslyOwnedLands(response.deeds); let i = index">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">{{getOwnerHeader(item)}}</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered ownerTable">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th i18n="@@searchPageTableHeaderCustomerID">Customer ID</th>
+                        <th i18n="@@searchPageTableHeaderNameArabic">Name Arabic</th>
+                        <th i18n="@@searchPageTableHeaderNameEnglish">Name English</th>
+                        <th i18n="@@searchPageTableHeaderOwnerID">Owner ID</th>
+                        <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
+                        <th i18n="@@searchPageTableHeaderNationality">Nationality</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-white' : getOwnerClass(item)" *ngFor="let deed_detail_item of item.deedDetails; let i = index">
+                        <td>{{deed_detail_item.profile?.id}}</td>
+                        <td>{{deed_detail_item.profile?.nameAr}}</td>
+                        <td>{{deed_detail_item.profile?.nameEn}}</td>
+                        <td>{{deed_detail_item.details?.ownerId}}</td>
+                        <td>{{deed_detail_item.details?.share}}</td>
+                        <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            
+            <div class="searchbyUnit" *ngIf="isUnitResponse()">
+              <label i18n="@@searchPageTableRealEstateUnit">Real Estate Unit:</label>
+              <table class="table table-bordered unitTable">
+                <thead>
+                  <tr class="bg-grey">
+                    <th i18n="@@searchPageTableHeaderUnitID">Unit ID</th>
+                    <th i18n="@@searchPageTableHeaderProjectName">Project Name</th>
+                    <th i18n="@@searchPageTableHeaderDeveloperName">Developer Name</th>
+                    <th i18n="@@searchPageTableHeaderBans">Bans</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="getfirstUnit(response.deeds) as unit_detail">
+                    <td>{{unit_detail?.unit?.unitNumber}}</td>
+                    <td>{{unit_detail?.project?.nameAr}}</td>
+                    <td>{{unit_detail?.developer?.nameAr}}</td>
+                    <td>
+                      <ul class="bans-wrapper">
+                        <ng-container *ngFor="let blockage of unit_detail.blockages">
+                          <li class="ban red" *ngIf="blockage.remarks">
+                            {{blockage.remarks}}
+                          </li>
+                        </ng-container>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+  
+              <label i18n="@@searchPageTableOwners">Owners:</label>
+              <div class="card" [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-seagreen' : ''" *ngFor="let item of getCurrentOwnedUnits(response.deeds); let i = index">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">{{getUnitOwnerHeader(item)}}</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered ownerTable">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th i18n="@@searchPageTableHeaderCustomerID">Customer ID</th>
+                        <th i18n="@@searchPageTableHeaderNameArabic">Name Arabic</th>
+                        <th i18n="@@searchPageTableHeaderNameEnglish">Name English</th>
+                        <th i18n="@@searchPageTableHeaderOwnerID">Owner ID</th>
+                        <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
+                        <th i18n="@@searchPageTableHeaderNationality">Nationality</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-white' : getOwnerClass(item)" *ngFor="let deed_detail_item of item.deedDetails; let i = index">
+                        <td>{{deed_detail_item.profile?.id}}</td>
+                        <td>{{deed_detail_item.profile?.nameAr}}</td>
+                        <td>{{deed_detail_item.profile?.nameEn}}</td>
+                        <td>{{deed_detail_item.details?.ownerId}}</td>
+                        <td>{{deed_detail_item.details?.share}}</td>
+                        <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card" [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-seagreen' : ''" *ngFor="let item of getPreviouslyOwnedUnits(response.deeds); let i = index">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">{{getUnitOwnerHeader(item)}}</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered ownerTable">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th i18n="@@searchPageTableHeaderCustomerID">Customer ID</th>
+                        <th i18n="@@searchPageTableHeaderNameArabic">Name Arabic</th>
+                        <th i18n="@@searchPageTableHeaderNameEnglish">Name English</th>
+                        <th i18n="@@searchPageTableHeaderOwnerID">Owner ID</th>
+                        <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
+                        <th i18n="@@searchPageTableHeaderNationality">Nationality</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-white' : getOwnerClass(item)" *ngFor="let deed_detail_item of item.deedDetails; let i = index">
+                        <td>{{deed_detail_item.profile?.id}}</td>
+                        <td>{{deed_detail_item.profile?.nameAr}}</td>
+                        <td>{{deed_detail_item.profile?.nameEn}}</td>
+                        <td>{{deed_detail_item.details?.ownerId}}</td>
+                        <td>{{deed_detail_item.details?.share}}</td>
+                        <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" *ngIf="!response">
+            <div class="col-sm-12 text-center">
+              <h4>No data Found for this Search, Try again by changing Search Criteria</h4>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>

@@ -1,0 +1,53 @@
+<div class="col-md-12">
+  <div class="row">
+    <div class="col-sm-12">
+      <label>Fields Order</label>
+      <button type="button" (click)="addRow()" class="btn btn-sm btn-primary">add</button>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="formData.fieldOrder as fieldOrder">
+    <div class="col-sm-12" *ngIf="isEnumerator(fieldOrder)">
+      <div class="row" *ngFor="let row of fieldOrder; let i = index;">
+        <label>Row {{i + 1}}</label>
+        <div class="col-sm-12" >
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label class="">Row</label>
+              <input class="form-control" type="text" placeholder="Enter row" [name]="'row_' + i" [(ngModel)]="row.row"/>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="col-sm-6">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" [name]="'allowMultiple_'+ i" [(ngModel)]="row.allowMultiple"/>
+                  <label class="form-check-label">Allow Multiple</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <app-row-fields [formData]="row"></app-row-fields>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-12 mt-2">
+          <button type="button" (click)="deleteRow(i)" class="btn btn-sm btn-danger" *ngIf="i != 0">Remove</button>
+          <hr *ngIf="(fieldOrder?.length - 1) !== i"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- "row": "row2",
+"allowMultiple": "true",
+"rowFields": [
+{
+  "fieldID": "password",
+  "fieldWidth": "twelve"
+}
+] -->

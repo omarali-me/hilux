@@ -1,0 +1,62 @@
+<aside class="main-sidebar sidebar-dark-teal text-white bg-victoria elevation-5">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <!-- <img src="assets/images/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
+            </div>
+            <div class="info">
+                <a
+                    href="#"
+                    class="d-block"
+                >
+                    محمد الغول
+                </a>
+            </div>
+        </div>
+        <nav class="mt-4">
+            <ul
+                class="nav nav-sidebar nav-pills flex-column nav-child-indent nav-collapse-hide-child"
+                data-widget="treeview"
+                role="menu"
+                data-accordion="false"
+                *ngIf="menuItems$ | async as menuItems"
+            >
+                <!-- Add icons to the links using the .nav-icon class
+              with font-awesome or any other icon font library -->
+                <li
+                    class="nav-item has-treeview"
+                    (click)="toggleClass($event)"
+                    [ngClass]="hideRoot(item.value) ? 'd-none' : 'block'"
+                    *ngFor="let item of menuItems | keyvalue; let i = index"
+                >
+                    <a class="nav-link">
+                      <!-- <i class="nav-icon fas fa-building"></i> -->
+                      <p class="item-name text-wrap">
+                            {{getServiceProviderItem(item.value)}}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul
+                        class="nav nav-treeview"
+                        id
+                        *ngIf="item.value.services"
+                    >
+                        <li
+                            class="nav-item"
+                            [routerLink]="['/service', subItem.key]"
+                            *ngFor="let subItem of item.value.services | keyvalue"
+                        >
+                            <a class="nav-link">
+                              <!-- <li class="fas fa-circle nav-icon align-middle"></li> -->
+                                <p class="item-name text-wrap">{{getServiceName(subItem.value)}}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>

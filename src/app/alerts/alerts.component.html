@@ -1,0 +1,12 @@
+<div class="row mt-4">
+  <div class="col-sm-12">
+    <div class="alert alert-danger" role="alert" *ngIf="hasErrors()">
+      <h5 class="">
+        Following Errors Prohibited this form to be Submitted!.
+      </h5>
+      <div class="" *ngFor="let error of errors | keyvalue">
+        {{prepareErrorMessage(error)}}
+      </div>
+    </div>
+  </div>
+</div>

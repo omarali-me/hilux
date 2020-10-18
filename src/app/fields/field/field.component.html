@@ -1,0 +1,31 @@
+<ng-container ngModelGroup="app-field">
+
+  <app-input-field [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="['text', 'password'].includes(getField(rowField.fieldID)?.fieldType)"></app-input-field>
+
+  <app-date-field [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'datetime'" ></app-date-field>
+
+  <app-number-field [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'number'" ></app-number-field>
+
+  <app-select-field [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'dropdown'" ></app-select-field>
+
+  <app-text-area-field [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'textarea'" ></app-text-area-field>
+
+  <app-file-upload [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'fileupload'" ></app-file-upload>
+
+  <app-radio-button-field [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'radio'" ></app-radio-button-field>
+
+  <app-currency-field [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'currency'" ></app-currency-field>
+
+  <app-checkbox-field [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'checkbox'" ></app-checkbox-field>
+
+  <app-entity-select [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'entitySelect'"></app-entity-select>
+
+  <app-step-select [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'stepSelect'"></app-step-select>
+
+  <app-autocomplete-field [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'autocomplete'"></app-autocomplete-field>
+
+  <app-ajax-button [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'ajaxButton'"></app-ajax-button>
+
+  <app-hidden-field [defaultValues]="defaultValues" [field]="getField(rowField.fieldID)" [customClass]="customClass" [formData]="formData" [row]="row" [index]="index" [fullFormData]="fullFormData" [formErrors]="formErrors" *ngIf="getField(rowField.fieldID)?.fieldType == 'hidden'"></app-hidden-field>
+
+</ng-container>

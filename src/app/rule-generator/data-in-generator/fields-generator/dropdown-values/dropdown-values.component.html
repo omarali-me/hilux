@@ -1,0 +1,53 @@
+<div class="col-md-12" *ngIf="formData.source == 'list'">
+  <div class="row">
+    <div class="col-sm-12">
+      <label>List Options Data</label>
+      <button type="button" (click)="addRow()" class="btn btn-sm btn-primary">add</button>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="formData.sourceDetails as sourceDetails">
+    <div class="col-sm-12" *ngIf="isEnumerator(sourceDetails)">
+      <div class="row" *ngFor="let field of sourceDetails; let i = index;">
+        <label>List Option {{i + 1}}</label>
+        <div class="col-sm-12" >
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <label class="">Key</label>
+              <input class="form-control" type="text" placeholder="Enter Field Id" [name]="'key_' + i" [(ngModel)]="field.key"/>
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label class="">Value</label>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label class="">Arabic</label>
+                  <input class="form-control" type="text" placeholder="Enter value" [name]="'ar_'+ i" [(ngModel)]="field.value.ar"/>
+                </div>
+                <div class="col-sm-6">
+                  <label class="">English</label>
+                  <input class="form-control" type="text" placeholder="Enter value" [name]="'en_' + i" [(ngModel)]="field.value.en"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 mt-2">
+          <button type="button" (click)="deleteRow(i)" class="btn btn-sm btn-danger" *ngIf="i != 0">Remove</button>
+          <hr *ngIf="(sourceDetails?.length - 1) !== i"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12" *ngIf="formData.source != 'list'">
+  <div class="form-group row">
+    <div class="col-sm-12">
+      <label class="">Source Details</label>
+      <input class="form-control" type="text" placeholder="Enter Source Details" name="'sourceDetails'" [(ngModel)]="formData.sourceDetails"/>
+    </div>
+  </div>
+</div>

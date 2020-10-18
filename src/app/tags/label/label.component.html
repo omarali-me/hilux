@@ -1,0 +1,4 @@
+<label [for]="getField(rowField.fieldID)?.fieldName.ar" [class]="customClass" *ngIf="notHiddenField(rowField.fieldID)">
+  {{getField(rowField.fieldID)?.fieldName.ar}}
+  <span *ngIf="showRequired(rowField.fieldID)">*</span>
+</label>

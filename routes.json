@@ -1,0 +1,22 @@
+{
+  "/AjmanLandProperty/index.php/ServiceCategories/getServices": "/getServices",
+  "/AjmanLandProperty/index.php/applications/myTasks": "/myTasks",
+  "/AjmanLandProperty/index.php/lookups/projectsStatuses": "/projectsStatuses",
+  "/AjmanLandProperty/index.php/Lookups/projetcsAccountTrusteeBanks": "/projetcsAccountTrusteeBanks",
+  "/AjmanLandProperty/index.php/Lookups/projetcsConsultants": "/projetcsConsultants",
+  "/AjmanLandProperty/index.php/lookups/projectsUsageTypes": "/projectsUsageTypes",
+  "/AjmanLandProperty/index.php/lookups/projectstypes": "/projectstypes",
+  "/AjmanLandProperty/index.php/applications/isLoggedIn": "/isLoggedIn",
+  "/AjmanLandProperty/index.php/properties/search": "/search",
+  "/AjmanLandProperty/index.php/lookups/lands?term=1": "/lands?term=1",
+  "/AjmanLandProperty/index.php/applications/logOut": "/logOut",
+  "/AjmanLandProperty/index.php/Lookups/licensesTypes": "/licensesTypes",
+  "/AjmanLandProperty/index.php/Lookups/companiesLicensesIssuers": "/companiesLicensesIssuers",
+  "/AjmanLandProperty/index.php/Lookups/companiesTypes": "/companiesTypes",
+  "/AjmanLandProperty/index.php/Lookups/emirates": "/emirates",
+  "/AjmanLandProperty/index.php/Lookups/otherIdTypes": "/otherIdTypes",
+  "/AjmanLandProperty/index.php/Lookups/disabilityTypes": "/disabilityTypes",
+  "/AjmanLandProperty/index.php/Lookups/contractTypes": "/contractTypes",
+  "/AjmanLandProperty/index.php/Lookups/timeToContactPreferences": "/timeToContactPreferences",
+  "/AjmanLandProperty/index.php/applications/startService":"/startService"
+}

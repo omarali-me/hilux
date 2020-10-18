@@ -1,0 +1,5 @@
+<div class="row d-inline-flex" [ngClass]="getClass('col-sm-', data)">
+  <div class="col-sm-3" *ngFor="let buttonData of data">
+    <app-display-button [data]="buttonData" [customClass]="customClass"></app-display-button>
+  </div>
+</div>

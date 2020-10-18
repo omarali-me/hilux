@@ -1,0 +1,24 @@
+<div class="row" *ngIf="formData[key] as dataLogic">
+  <div class="col-sm-12">
+    <div class="form-group row">
+      <div class="col-sm-12">
+        <label class="">Title</label>
+        <input class="form-control" type="text" placeholder="Enter Title" name="step" [(ngModel)]="dataLogic.title"/>
+      </div>
+    </div>
+    <div class="form-group row" *ngFor="let item of dataLogic | keyvalue:nonsort ; let i = index">
+      <div class="col-sm-12">
+        <div class="row" *ngIf="item.key == 'thead'">
+          <div class="col-sm-12">
+            <app-header-generator [formData]="dataLogic" [key]="'thead'"></app-header-generator>
+          </div>
+        </div>
+        <div class="row" *ngIf="item.key == 'tbody'">
+          <div class="col-sm-12">
+            <app-body-generator [formData]="dataLogic" [key]="'tbody'"></app-body-generator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

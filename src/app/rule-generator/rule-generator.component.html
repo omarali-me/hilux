@@ -1,0 +1,139 @@
+<app-sidebar></app-sidebar>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-12 text-center">
+          <h1>Rule Generator</h1>
+        </div>
+        <!-- <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active">Rule Generator</li>
+          </ol>
+        </div> -->
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <div class="row">
+    <section class="content col-sm-8">
+      <div class="container-fluid">
+        <div class="card card-primary card-outline">
+          <div class="card-body">
+            <!-- <app-form [response]="response" *ngIf="response.fieldOrder"></app-form> -->
+            <form class="form-horizontal rtl" (ngSubmit)="saveData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+              <div class="card-body" *ngIf="formData.steps as steps">
+                <div class="form-group row" #stepReference *ngFor="let step of steps; let i = index; ">
+                  <div class="col-sm-12">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <label class="stepName">Step Name</label>
+                            <input class="form-control" type="text" placeholder="Enter Step Name" [name]="'stepName_' + i" [(ngModel)]="steps[i].stepName"/>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <label class="statusName">Status Name</label>
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <label class="statusName">Arabic</label>
+                                <input class="form-control" type="text" placeholder="Enter Status Name" [name]="'ar_'+ i" [(ngModel)]="steps[i].statusName.ar"/>
+                              </div>
+                              <div class="col-sm-6">
+                                <label class="statusName">English</label>
+                                <input class="form-control" type="text" placeholder="Enter Status Name" [name]="'en_' + i" [(ngModel)]="steps[i].statusName.en"/>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <div class="col-sm-4">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" [name]="'isStart_' + i" [(ngModel)]="steps[i].isStart"/>
+                              <label class="form-check-label">isStart</label>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-4">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" [name]="'isLast_' + i" [(ngModel)]="steps[i].isLast"/>
+                              <label class="form-check-label">isLast</label>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-4">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" [name]="'isAPIstep_' + i" [(ngModel)]="steps[i].isAPIstep"/>
+                              <label class="form-check-label">isAPIstep</label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <app-start-criteria-generator [formData]="steps[i]"></app-start-criteria-generator>
+                          </div>
+                        </div>
+  
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <app-end-criteria-generator [formData]="steps[i]"></app-end-criteria-generator>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <app-data-in-generator [formData]="steps[i]"></app-data-in-generator>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <app-data-display-generator [formData]="steps[i]"></app-data-display-generator>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <app-commit-data-generator [formData]="steps[i]"></app-commit-data-generator>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 mt-2">
+                    <button type="button" (click)="deleteRow(i)" class="btn btn-sm btn-danger" *ngIf="i != 0">Remove</button>
+                    <hr *ngIf="(formData.steps?.length - 1) !== i"/>
+                  </div>
+                </div>
+                <button type="button" (click)="addRow()" class="btn btn-sm btn-primary">add</button>
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid">Submit</button>
+                <button type="submit" class="btn btn-default">Cancel</button>
+              </div>
+            </form>
+          </div><!-- /.card-body -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <section class="content col-sm-4">
+      <div class="container-fluid">
+        <h3>Generated Json</h3>
+        <div class="card card-primary card-outline">
+          <pre class="custom-direction" [innerHtml]="getFormData() | prettyjson:4">
+          </pre>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- /.content -->
+</div>
