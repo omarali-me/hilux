@@ -148,6 +148,18 @@
             </div>
         </li>
         <li
+            [routerLink]="['/search']"
+            class="nav-item d-none d-sm-inline-block"
+            [routerLinkActive]="['active']"
+        >
+            <a
+                href="/search"
+                class="nav-link"
+            >
+                بحث
+            </a>
+        </li>
+        <li
             [routerLink]="['/my_tasks']"
             class="nav-item d-none d-sm-inline-block"
             [routerLinkActive]="['active']"
@@ -160,6 +172,7 @@
                 My Tasks
             </a>
         </li>
+
         <!-- <li
             [routerLink]="['/login']"
             class="nav-item d-none d-sm-inline-block btn-danger "
@@ -226,7 +239,6 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
 
-    
         <app-notifications></app-notifications>
         <li
             [routerLink]="['/login']"
@@ -273,3 +285,5 @@
     </ul>
 
 </nav>
+
+

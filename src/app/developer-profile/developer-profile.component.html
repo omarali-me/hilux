@@ -18,8 +18,10 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12" *ngIf="profile$ | async as profile">
-          <div class="card rtl">
-            <router-outlet></router-outlet>
+          <div class="card card-purple">
+            <div class="card-header">
+                <h3 class="card-title">إضافة حساب مطور جديد</h3>
+            </div>
             <section class="content" *ngIf="formData && !formData.id">
               <div class="container-fluid">
                 <app-alerts [errors]="formErrors"></app-alerts>
