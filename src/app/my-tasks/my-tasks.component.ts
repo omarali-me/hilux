@@ -4,6 +4,7 @@ import { FieldsService } from '../shared/fields.service';
 import { Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
 
+
 declare var $;
 
 @Component({
@@ -17,7 +18,7 @@ export class MyTasksComponent implements OnDestroy, OnInit {
   // @ViewChild('dataTable') dataTable: ElementRef;
   response: any;
 
-  dtOptions: DataTables.Settings = {};
+  dtOptions = {};
   dtTrigger: Subject<any> = new Subject();
 
 
@@ -62,7 +63,7 @@ export class MyTasksComponent implements OnDestroy, OnInit {
         }
       }
     };
-    
+
     this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/myTasks`).subscribe(
       dataResponse => {
         this.response = dataResponse;
