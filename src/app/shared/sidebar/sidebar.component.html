@@ -1,46 +1,89 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4 rtl">
-  <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
-    <img src="assets/images/AdminLTELogo.png" alt="Hilux Logo" class="brand-image img-circle elevation-3"
-          style="opacity: .8">
-    <span class="brand-text font-weight-light" i18n="@@sidebarHiluxLabel">Hilux</span>
-  </a>
+<aside class="main-sidebar sidebar-dark-primary elevation-4 bg-victoria">
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <!-- Sidebar user panel (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-      <div class="image">
-        <!-- <img src="assets/images/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
-      </div>
-      <div class="info">
-        <a href="#" class="d-block"></a>
-      </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-5 pb-3 mb-5 d-flex">
+            <div class="info">
+                <a
+                    href="#"
+                    class="d-block"
+                >
+                    اسم الموظف
+                </a>
+            </div>
+        </div>
+        <form
+            action="#"
+            method="get"
+            class="sidebar-form"
+        >
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button
+                        type="submit"
+                        name="search"
+                        id="search-btn"
+                        class="btn btn-flat"
+                    >
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+                <input
+                    [(ngModel)]="searchInput$"
+                    [ngModelOptions]="{standalone: true}"
+                    type="text"
+                    class="form-control"
+                    placeholder="بحث"
+                    (keyup)="searchtServices()"
+                >
+            </div>
+        </form>
+        <nav class="mt-2">
+            <ul
+                class="nav nav-sidebar nav-pills flex-column nav-child-indent nav-collapse-hide-child nav-flat"
+                data-widget="treeview"
+                role="menu"
+                data-accordion="false"
+                *ngIf="menuItems$ | async as menuItems"
+            >
+                <li
+                    class="nav-item has-treeview"
+                    (click)="toggleClass($event)"
+                    [ngClass]="hideRoot(item.value) ? 'd-none' : 'block'"
+                    *ngFor="let item of menuItems | keyvalue; let i = index"
+                >
+                    <a class="nav-link">
+                        <img
+                            class="nav-icon fas align-top"
+                            src="{{getServiceProviderIcon(item.value)}}"
+                        >
+                        <p class="text-wrap">
+                            {{getServiceProviderItem(item.value)}}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul
+                        class="nav nav-treeview text-sm"
+                        *ngIf="item.value.services"
+                    >
+                        <li
+                            class="nav-item"
+                            [routerLink]="['/service', subItem.key]"
+                            *ngFor="let subItem of item.value.services | keyvalue"
+                        >
+                            <a class="nav-link">
+                                <img
+                                    class="nav-icon fas align-top ml-3"
+                                    src="{{getServiceIcon(subItem.value)}}"
+                                >
+
+                                <p class="text-wrap pl-1">{{getServiceName(subItem.value)}}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
-
-    <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" *ngIf="menuItems$ | async as menuItems">
-        <!-- Add icons to the links using the .nav-icon class
-              with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview" (click)="toggleClass($event)" [ngClass]="hideRoot(item.value) ? 'd-none' : ''" *ngFor="let item of menuItems | keyvalue; let i = index">
-          <a class="nav-link">
-            <!-- <i class="nav-icon fas fa-angle-left"></i> -->
-            <p class="item-name text-truncate">
-              {{getServiceProviderItem(item.value)}}
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview" id="" *ngIf="item.value.services">
-            <li class="nav-item" [routerLink]="['/service', subItem.key]" *ngFor="let subItem of item.value.services | keyvalue">
-              <a class="nav-link">
-                <p class="item-name text-truncate">
-                  {{getServiceName(subItem.value)}}
-                </p>
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </div>
 </aside>

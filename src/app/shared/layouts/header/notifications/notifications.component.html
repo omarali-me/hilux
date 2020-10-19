@@ -4,19 +4,20 @@
     <span class="badge badge-danger navbar-badge" *ngIf="notifications?.length >0">{{notifications.length}}</span>
   </a>
 
-  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right notifications-menu" *ngIf="notifications?.length > 0">
+  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right notifications-menu" >
     <div class="" *ngFor="let notification of notifications">
       <a (click)="performActionPerStatus(notification)" class="dropdown-item">
         <div class="media">
-          <!-- <img src="assets/images/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle"> -->
-          <span class="float-right text-sm mr-3" [ngClass]="getStatusClass(notification)"><i class="fas fa-star"></i></span>
           <div class="media-body">
-            <div class="d-flex">
+            <div class="d-flex justify-content-between align-items-center">
               <h3 class="dropdown-item-title">
                 {{getItemText(notification.serviceDetails, 'serviceName')}}
               </h3>
+              <div class="text-center align-middle">
+                
+                <span class="badge" [ngClass]="getStatusClass(notification)">{{notification.stepDetails.status}}</span>
+              </div>
             </div>
-            <p class="text-sm">{{notification.stepDetails.status}}</p>
             <p class="text-sm text-muted">
               <i class="far fa-clock mr-1"></i>
               {{getTimeAvailable(notification) | timeAgo}}
@@ -30,7 +31,6 @@
   <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right notifications-menu" *ngIf="notifications?.length == 0">
       <a class="dropdown-item">
         <div class="media">
-          <!-- <span class="float-right text-sm mr-3" [ngClass]="getStatusClass(notification)"><i class="fas fa-star"></i></span> -->
           <div class="media-body">
             <div class="d-flex">
               <h3 class="dropdown-item-title">
