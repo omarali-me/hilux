@@ -13,7 +13,7 @@
                 </a>
             </div>
         </div>
-        <nav class="mt-4">
+        <nav class="mt-2">
             <ul
                 class="nav nav-sidebar nav-pills flex-column nav-child-indent nav-collapse-hide-child"
                 data-widget="treeview"
@@ -31,14 +31,13 @@
                 >
                     <a class="nav-link">
                         <!-- <i class="nav-icon fas fa-building"></i> -->
-                        <p class="item-name text-wrap">
+                        <p class="text-wrap">
                             {{getServiceProviderItem(item.value)}}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul
                         class="nav nav-treeview"
-                        id
                         *ngIf="item.value.services"
                     >
                         <li
@@ -48,7 +47,7 @@
                         >
                             <a class="nav-link">
                                 <!-- <li class="fas fa-circle nav-icon align-middle"></li> -->
-                                <p class="item-name text-wrap">{{getServiceName(subItem.value)}}</p>
+                                <p class="text-wrap">{{getServiceName(subItem.value)}}</p>
                             </a>
                         </li>
                     </ul>
