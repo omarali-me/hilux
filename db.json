@@ -1,4 +1,53 @@
 {
+  "27799": {
+    "id": "27799",
+    "nameAr": "test3",
+    "nameEn": "",
+    "normalizedArabicName": "test3",
+    "emiratesId": null,
+    "passportNumber": "",
+    "otherId": null,
+    "otherIdTypeId": null,
+    "gender": null,
+    "dateOfBirth": null,
+    "nationalityCode": null,
+    "emiratesIdIssueDate": null,
+    "emiratesIdExpiryDate": null,
+    "passportIssueDate": null,
+    "passportExpiryDate": null,
+    "phone": "0",
+    "phone2": null,
+    "email": "",
+    "address": null,
+    "homePhone": "0",
+    "trxId": null,
+    "hasTrx": "0",
+    "trxEmirateId": null,
+    "contactPreferencesTypeId": null,
+    "timeToContactPreferencesId": null,
+    "customerCategoryId": null,
+    "customerTypeId": "9",
+    "isDead": null,
+    "jobTitle": null,
+    "emirateId": null,
+    "countryOfResidence": null,
+    "employer": null,
+    "remarks": null,
+    "ownerId": "27795",
+    "tempCustomerId": "24928",
+    "tempArraId": null,
+    "tempArraIds": null,
+    "moiUnifiedNumber": null,
+    "createdAt": "2020-06-12 14:19:44",
+    "createdBy": "1",
+    "modifiedAt": "2020-06-12 14:19:44",
+    "modifiedBy": "1"
+  },
+  "loginAPI": {
+    "status": "success",
+    "message": "Successfully logged in admin",
+    "data": []
+  },
   "myTasks": [
     {
       "serviceDetails": {
@@ -3198,5 +3247,2078 @@
     }
   ],
   "startService": {},
-  "search": {}
+  "search": {},
+  "customerTypes": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "aalmatrooshi",
+        "en": "aalmatrooshi"
+      }
+    },
+    {
+      "key": "2",
+      "value": {
+        "ar": "aalzaabi",
+        "en": "aalzaabi"
+      }
+    },
+    {
+      "key": "3",
+      "value": {
+        "ar": "asalama",
+        "en": "asalama"
+      }
+    },
+    {
+      "key": "4",
+      "value": {
+        "ar": "EIDUpdated",
+        "en": "EIDUpdated"
+      }
+    },
+    {
+      "key": "5",
+      "value": {
+        "ar": "Investor",
+        "en": "Investor"
+      }
+    },
+    {
+      "key": "6",
+      "value": {
+        "ar": "maldhahri",
+        "en": "maldhahri"
+      }
+    },
+    {
+      "key": "7",
+      "value": {
+        "ar": "nbueissa",
+        "en": "nbueissa"
+      }
+    },
+    {
+      "key": "8",
+      "value": {
+        "ar": "R",
+        "en": "R"
+      }
+    },
+    {
+      "key": "9",
+      "value": {
+        "ar": "Regular",
+        "en": "Regular"
+      }
+    },
+    {
+      "key": "10",
+      "value": {
+        "ar": "sadfasdfasd",
+        "en": "sadfasdfasd"
+      }
+    },
+    {
+      "key": "11",
+      "value": {
+        "ar": "salbedwawi",
+        "en": "salbedwawi"
+      }
+    },
+    {
+      "key": "12",
+      "value": {
+        "ar": "yabdulqader",
+        "en": "yabdulqader"
+      }
+    },
+    {
+      "key": "13",
+      "value": {
+        "ar": "yalshamsi",
+        "en": "yalshamsi"
+      }
+    },
+    {
+      "key": "14",
+      "value": {
+        "ar": "الأفرااد",
+        "en": "الأفرااد"
+      }
+    },
+    {
+      "key": "15",
+      "value": {
+        "ar": "الأفراد ",
+        "en": "الأفراد "
+      }
+    },
+    {
+      "key": "16",
+      "value": {
+        "ar": "الإفراد",
+        "en": "الإفراد"
+      }
+    },
+    {
+      "key": "17",
+      "value": {
+        "ar": "الإمارات",
+        "en": "الإمارات"
+      }
+    },
+    {
+      "key": "18",
+      "value": {
+        "ar": "الافراد",
+        "en": "الافراد"
+      }
+    },
+    {
+      "key": "19",
+      "value": {
+        "ar": "شركة ",
+        "en": "شركة "
+      }
+    },
+    {
+      "key": "20",
+      "value": {
+        "ar": "شركة ذات مسؤولية محدودة ",
+        "en": "شركة ذات مسؤولية محدودة "
+      }
+    },
+    {
+      "key": "21",
+      "value": {
+        "ar": "فرد",
+        "en": "فرد"
+      }
+    },
+    {
+      "key": "22",
+      "value": {
+        "ar": "لأفراد",
+        "en": "لأفراد"
+      }
+    },
+    {
+      "key": "23",
+      "value": {
+        "ar": "متعامل",
+        "en": "متعامل"
+      }
+    },
+    {
+      "key": "24",
+      "value": {
+        "ar": "مستثمر",
+        "en": "مستثمر"
+      }
+    },
+    {
+      "key": "25",
+      "value": {
+        "ar": "مستثمر\\",
+        "en": "مستثمر\\"
+      }
+    },
+    {
+      "key": "26",
+      "value": {
+        "ar": "منشات",
+        "en": "منشات"
+      }
+    }
+  ],
+  "customersCategories": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "أصحاب الهمم",
+        "en": "People of determination"
+      }
+    },
+    {
+      "key": "2",
+      "value": {
+        "ar": "اخرى",
+        "en": "اخرى"
+      }
+    },
+    {
+      "key": "3",
+      "value": {
+        "ar": "الدوائر الحكومية وشبه الحكومية",
+        "en": "الدوائر الحكومية وشبه الحكومية"
+      }
+    },
+    {
+      "key": "4",
+      "value": {
+        "ar": "الشركات والمؤسسات الفردية",
+        "en": "الشركات والمؤسسات الفردية"
+      }
+    },
+    {
+      "key": "5",
+      "value": {
+        "ar": "المطور العقاري",
+        "en": "المطور العقاري"
+      }
+    },
+    {
+      "key": "6",
+      "value": {
+        "ar": "المكاتب العقارية",
+        "en": "المكاتب العقارية"
+      }
+    },
+    {
+      "key": "7",
+      "value": {
+        "ar": "ذوي احتياجات خاصة",
+        "en": "ذوي احتياجات خاصة"
+      }
+    },
+    {
+      "key": "8",
+      "value": {
+        "ar": "كبار السن",
+        "en": "Elderly"
+      }
+    },
+    {
+      "key": "9",
+      "value": {
+        "ar": "كبار الشخصيات",
+        "en": "VIP"
+      }
+    },
+    {
+      "key": "10",
+      "value": {
+        "ar": "كبار المستثمرين",
+        "en": "Major investors"
+      }
+    },
+    {
+      "key": "11",
+      "value": {
+        "ar": "مؤسسات خيرية و ذات نفع عام",
+        "en": "مؤسسات خيرية و ذات نفع عام"
+      }
+    },
+    {
+      "key": "12",
+      "value": {
+        "ar": "متعاملون",
+        "en": "Customers"
+      }
+    },
+    {
+      "key": "13",
+      "value": {
+        "ar": "نساء",
+        "en": "نساء"
+      }
+    }
+  ],
+  "nationalities": [
+    {
+      "key": "ABW",
+      "value": {
+        "ar": "أروبا",
+        "en": "Aruba"
+      }
+    },
+    {
+      "key": "AFG",
+      "value": {
+        "ar": "أفغانستان الإسلامية",
+        "en": "أفغانستان الإسلامية"
+      }
+    },
+    {
+      "key": "AGO",
+      "value": {
+        "ar": "أنغولا",
+        "en": "Angola"
+      }
+    },
+    {
+      "key": "AIA",
+      "value": {
+        "ar": "أنغيلا",
+        "en": "Anguilla"
+      }
+    },
+    {
+      "key": "ALA",
+      "value": {
+        "ar": "جزر أولان",
+        "en": "جزر أولان"
+      }
+    },
+    {
+      "key": "ALB",
+      "value": {
+        "ar": "ألبانيا",
+        "en": "Albania"
+      }
+    },
+    {
+      "key": "AND",
+      "value": {
+        "ar": "إمارة أندورا",
+        "en": "إمارة أندورا"
+      }
+    },
+    {
+      "key": "ANT",
+      "value": {
+        "ar": "جزر الأنتيل الهولندية",
+        "en": "Netherlands Antilles"
+      }
+    },
+    {
+      "key": "ARE",
+      "value": {
+        "ar": "الإمارات العربية المتحدة",
+        "en": "United Arab Emirates"
+      }
+    },
+    {
+      "key": "ARG",
+      "value": {
+        "ar": "الأرجنتين",
+        "en": "Argentina"
+      }
+    },
+    {
+      "key": "ARM",
+      "value": {
+        "ar": "أرمينيا",
+        "en": "Armenia"
+      }
+    },
+    {
+      "key": "ASM",
+      "value": {
+        "ar": "ساموا الأمريكية",
+        "en": "American Samoa"
+      }
+    },
+    {
+      "key": "ATA",
+      "value": {
+        "ar": "القارة القطبية الجنوبية",
+        "en": "Antarctica"
+      }
+    },
+    {
+      "key": "ATF",
+      "value": {
+        "ar": "المقاطعات الجنوبية الفرنسية",
+        "en": "French Southern Territories"
+      }
+    },
+    {
+      "key": "ATG",
+      "value": {
+        "ar": "أنتيغوا وبربودا",
+        "en": "أنتيغوا وبربودا"
+      }
+    },
+    {
+      "key": "AUS",
+      "value": {
+        "ar": "أستراليا",
+        "en": "Australia"
+      }
+    },
+    {
+      "key": "AUT",
+      "value": {
+        "ar": "النمسا",
+        "en": "Austria"
+      }
+    },
+    {
+      "key": "AZE",
+      "value": {
+        "ar": "أذربيجان",
+        "en": "Azerbaijan"
+      }
+    },
+    {
+      "key": "BDI",
+      "value": {
+        "ar": "بوروندي",
+        "en": "Burundi"
+      }
+    },
+    {
+      "key": "BEL",
+      "value": {
+        "ar": "بلجيكا",
+        "en": "Belgium"
+      }
+    },
+    {
+      "key": "BEN",
+      "value": {
+        "ar": "بنين",
+        "en": "Benin"
+      }
+    },
+    {
+      "key": "BES",
+      "value": {
+        "ar": "بونير، وسانت أوستا تيوس وسابا",
+        "en": "بونير، وسانت أوستا تيوس وسابا"
+      }
+    },
+    {
+      "key": "BFA",
+      "value": {
+        "ar": "بوركينا فاسو",
+        "en": "Burkina Faso"
+      }
+    },
+    {
+      "key": "BGD",
+      "value": {
+        "ar": "بنغلاديش",
+        "en": "Bangladesh"
+      }
+    },
+    {
+      "key": "BGR",
+      "value": {
+        "ar": "بلغاريا",
+        "en": "Bulgaria"
+      }
+    },
+    {
+      "key": "BHR",
+      "value": {
+        "ar": "البحرين",
+        "en": "Bahrain"
+      }
+    },
+    {
+      "key": "BHS",
+      "value": {
+        "ar": "كمنولث جزر البهاما",
+        "en": "كمنولث جزر البهاما"
+      }
+    },
+    {
+      "key": "BIH",
+      "value": {
+        "ar": "البوسنة والهرسك",
+        "en": "البوسنة والهرسك"
+      }
+    },
+    {
+      "key": "BLM",
+      "value": {
+        "ar": "سان بارت ليمي",
+        "en": "سان بارت ليمي"
+      }
+    },
+    {
+      "key": "BLR",
+      "value": {
+        "ar": "روسيا البيضاء",
+        "en": "روسيا البيضاء"
+      }
+    },
+    {
+      "key": "BLZ",
+      "value": {
+        "ar": "بليز",
+        "en": "Belize"
+      }
+    },
+    {
+      "key": "BMU",
+      "value": {
+        "ar": "برمودا",
+        "en": "Bermuda"
+      }
+    },
+    {
+      "key": "BOL",
+      "value": {
+        "ar": "بوليفيا",
+        "en": "Bolivia"
+      }
+    },
+    {
+      "key": "BRA",
+      "value": {
+        "ar": "الاتحادية البرازيلية",
+        "en": "الاتحادية البرازيلية"
+      }
+    },
+    {
+      "key": "BRB",
+      "value": {
+        "ar": "بربادوس",
+        "en": "Barbados"
+      }
+    },
+    {
+      "key": "BRN",
+      "value": {
+        "ar": "بروناي",
+        "en": "Brunei"
+      }
+    },
+    {
+      "key": "BTN",
+      "value": {
+        "ar": "بوتان",
+        "en": "Bhutan"
+      }
+    },
+    {
+      "key": "BVT",
+      "value": {
+        "ar": "جزيرة بوفيت",
+        "en": "Bouvet Island"
+      }
+    },
+    {
+      "key": "BWA",
+      "value": {
+        "ar": "بوتسوانا",
+        "en": "Botswana"
+      }
+    },
+    {
+      "key": "CAF",
+      "value": {
+        "ar": "جمهورية أفريقيا الوسطى",
+        "en": "Central African Republic"
+      }
+    },
+    {
+      "key": "CAN",
+      "value": {
+        "ar": "كندا",
+        "en": "Canada"
+      }
+    },
+    {
+      "key": "CCK",
+      "value": {
+        "ar": "جزر كوكوس",
+        "en": "Cocos Islands"
+      }
+    },
+    {
+      "key": "CHE",
+      "value": {
+        "ar": "سويسرا",
+        "en": "Switzerland"
+      }
+    },
+    {
+      "key": "CHL",
+      "value": {
+        "ar": "شيلي",
+        "en": "Chile"
+      }
+    },
+    {
+      "key": "CHN",
+      "value": {
+        "ar": "الصين",
+        "en": "China"
+      }
+    },
+    {
+      "key": "CIV",
+      "value": {
+        "ar": "ساحل العاج",
+        "en": "ساحل العاج"
+      }
+    },
+    {
+      "key": "CMR",
+      "value": {
+        "ar": "الكاميرون",
+        "en": "Cameroon"
+      }
+    },
+    {
+      "key": "COD",
+      "value": {
+        "ar": "جمهورية الكونغو الديمقراطية",
+        "en": "جمهورية الكونغو الديمقراطية"
+      }
+    },
+    {
+      "key": "COG",
+      "value": {
+        "ar": "الكونغو",
+        "en": "Congo"
+      }
+    },
+    {
+      "key": "COK",
+      "value": {
+        "ar": "جزر كوك",
+        "en": "Cook Islands"
+      }
+    },
+    {
+      "key": "COL",
+      "value": {
+        "ar": "كولومبيا",
+        "en": "Colombia"
+      }
+    },
+    {
+      "key": "COM",
+      "value": {
+        "ar": "جزر القمر",
+        "en": "Comoros"
+      }
+    },
+    {
+      "key": "CPV",
+      "value": {
+        "ar": "الرأس الأخضر",
+        "en": "Cape Verde"
+      }
+    },
+    {
+      "key": "CRI",
+      "value": {
+        "ar": "كوستاريكا",
+        "en": "Costa Rica"
+      }
+    },
+    {
+      "key": "CUB",
+      "value": {
+        "ar": "كوبا",
+        "en": "Cuba"
+      }
+    },
+    {
+      "key": "CUW",
+      "value": {
+        "ar": "كورا ساو",
+        "en": "كورا ساو"
+      }
+    },
+    {
+      "key": "CXR",
+      "value": {
+        "ar": "جزيرة كريسماس",
+        "en": "Christmas Island"
+      }
+    },
+    {
+      "key": "CYM",
+      "value": {
+        "ar": "جزر كايمان",
+        "en": "Cayman Islands"
+      }
+    },
+    {
+      "key": "CYP",
+      "value": {
+        "ar": "قبرص",
+        "en": "Cyprus"
+      }
+    },
+    {
+      "key": "CZE",
+      "value": {
+        "ar": "جمهورية التشيك",
+        "en": "Czech Republic"
+      }
+    },
+    {
+      "key": "DEU",
+      "value": {
+        "ar": "ألمانيا",
+        "en": "Germany"
+      }
+    },
+    {
+      "key": "DJI",
+      "value": {
+        "ar": "جيبوتي",
+        "en": "Djibouti"
+      }
+    },
+    {
+      "key": "DMA",
+      "value": {
+        "ar": "دومينيكا",
+        "en": "Dominica"
+      }
+    },
+    {
+      "key": "DNK",
+      "value": {
+        "ar": "الدنمارك",
+        "en": "Denmark"
+      }
+    },
+    {
+      "key": "DOM",
+      "value": {
+        "ar": "جمهورية الدومينيكان",
+        "en": "Dominican Republic"
+      }
+    },
+    {
+      "key": "DZA",
+      "value": {
+        "ar": "الجزائر",
+        "en": "Algeria"
+      }
+    },
+    {
+      "key": "ECU",
+      "value": {
+        "ar": "إكوادور",
+        "en": "إكوادور"
+      }
+    },
+    {
+      "key": "EGY",
+      "value": {
+        "ar": "مصر",
+        "en": "Egypt"
+      }
+    },
+    {
+      "key": "ERI",
+      "value": {
+        "ar": "إريتريا",
+        "en": "Eritrea"
+      }
+    },
+    {
+      "key": "ESH",
+      "value": {
+        "ar": "منطقة الصحراء الغربية",
+        "en": "منطقة الصحراء الغربية"
+      }
+    },
+    {
+      "key": "ESP",
+      "value": {
+        "ar": "إسبانيا",
+        "en": "Spain"
+      }
+    },
+    {
+      "key": "EST",
+      "value": {
+        "ar": "إستونيا",
+        "en": "إستونيا"
+      }
+    },
+    {
+      "key": "ETH",
+      "value": {
+        "ar": "إثيوبيا",
+        "en": "Ethiopia"
+      }
+    },
+    {
+      "key": "FIN",
+      "value": {
+        "ar": "فنلندا",
+        "en": "Finland"
+      }
+    },
+    {
+      "key": "FJI",
+      "value": {
+        "ar": "فيجي",
+        "en": "Fiji"
+      }
+    },
+    {
+      "key": "FLK",
+      "value": {
+        "ar": "جزر فوكلاند",
+        "en": "Falkland Islands"
+      }
+    },
+    {
+      "key": "FRA",
+      "value": {
+        "ar": "فرنسا",
+        "en": "France"
+      }
+    },
+    {
+      "key": "FRO",
+      "value": {
+        "ar": "جزر فارو",
+        "en": "Faroe Islands"
+      }
+    },
+    {
+      "key": "FSM",
+      "value": {
+        "ar": "ميكرونيزيا",
+        "en": "Micronesia"
+      }
+    },
+    {
+      "key": "GAB",
+      "value": {
+        "ar": "الغابونية",
+        "en": "الغابونية"
+      }
+    },
+    {
+      "key": "GBR",
+      "value": {
+        "ar": "المملكة المتحدة",
+        "en": "United Kingdom"
+      }
+    },
+    {
+      "key": "GEO",
+      "value": {
+        "ar": "جورجيا",
+        "en": "Georgia"
+      }
+    },
+    {
+      "key": "GGY",
+      "value": {
+        "ar": "غيرنسي",
+        "en": "Guernsey"
+      }
+    },
+    {
+      "key": "GHA",
+      "value": {
+        "ar": "غانا",
+        "en": "Ghana"
+      }
+    },
+    {
+      "key": "GIB",
+      "value": {
+        "ar": "جبل طارق",
+        "en": "Gibraltar"
+      }
+    },
+    {
+      "key": "GIN",
+      "value": {
+        "ar": "غينيا",
+        "en": "Guinea"
+      }
+    },
+    {
+      "key": "GLP",
+      "value": {
+        "ar": "غوادلوب",
+        "en": "Guadeloupe"
+      }
+    },
+    {
+      "key": "GMB",
+      "value": {
+        "ar": "غامبيا",
+        "en": "Gambia"
+      }
+    },
+    {
+      "key": "GNB",
+      "value": {
+        "ar": "غينيا بيساو",
+        "en": "Guinea-Bissau"
+      }
+    },
+    {
+      "key": "GNQ",
+      "value": {
+        "ar": "غينيا الاستوائية",
+        "en": "Equatorial Guinea"
+      }
+    },
+    {
+      "key": "GRC",
+      "value": {
+        "ar": "اليونان",
+        "en": "Greece"
+      }
+    },
+    {
+      "key": "GRD",
+      "value": {
+        "ar": "غرينادا",
+        "en": "Grenada"
+      }
+    },
+    {
+      "key": "GRL",
+      "value": {
+        "ar": "غرينلاند",
+        "en": "Greenland"
+      }
+    },
+    {
+      "key": "GTM",
+      "value": {
+        "ar": "غواتيمالا",
+        "en": "Guatemala"
+      }
+    },
+    {
+      "key": "GUF",
+      "value": {
+        "ar": "جويانا الفرنسية",
+        "en": "French Guiana"
+      }
+    },
+    {
+      "key": "GUM",
+      "value": {
+        "ar": "غوام",
+        "en": "Guam"
+      }
+    },
+    {
+      "key": "GUY",
+      "value": {
+        "ar": "غيانا",
+        "en": "Guyana"
+      }
+    },
+    {
+      "key": "HKG",
+      "value": {
+        "ar": "هونغ كونغ الصين",
+        "en": "Hong Kong SAR China"
+      }
+    },
+    {
+      "key": "HMD",
+      "value": {
+        "ar": "جزيرة هيرد وجزر ماكدونالد",
+        "en": "Heard Island and McDonald Islands"
+      }
+    },
+    {
+      "key": "HND",
+      "value": {
+        "ar": "هندوراس",
+        "en": "Honduras"
+      }
+    },
+    {
+      "key": "HRV",
+      "value": {
+        "ar": "كرواتيا",
+        "en": "Croatia"
+      }
+    },
+    {
+      "key": "HTI",
+      "value": {
+        "ar": "هايتي",
+        "en": "Haiti"
+      }
+    },
+    {
+      "key": "HUN",
+      "value": {
+        "ar": "المجر",
+        "en": "Hungary"
+      }
+    },
+    {
+      "key": "IDN",
+      "value": {
+        "ar": "إندونيسيا",
+        "en": "Indonesia"
+      }
+    },
+    {
+      "key": "IMN",
+      "value": {
+        "ar": "جزيرة مان",
+        "en": "Isle of Man"
+      }
+    },
+    {
+      "key": "IND",
+      "value": {
+        "ar": "الهند",
+        "en": "India"
+      }
+    },
+    {
+      "key": "IOT",
+      "value": {
+        "ar": "إقليم المحيط الهندي البريطاني",
+        "en": "British Indian Ocean Territory"
+      }
+    },
+    {
+      "key": "IRL",
+      "value": {
+        "ar": "آيرلندا",
+        "en": "آيرلندا"
+      }
+    },
+    {
+      "key": "IRN",
+      "value": {
+        "ar": "إيران",
+        "en": "Iran"
+      }
+    },
+    {
+      "key": "IRQ",
+      "value": {
+        "ar": "العراق",
+        "en": "Iraq"
+      }
+    },
+    {
+      "key": "ISL",
+      "value": {
+        "ar": "آيسلندا",
+        "en": "آيسلندا"
+      }
+    },
+    {
+      "key": "ISR",
+      "value": {
+        "ar": "دولة إسرائيل",
+        "en": "دولة إسرائيل"
+      }
+    },
+    {
+      "key": "ITA",
+      "value": {
+        "ar": "ايطاليا",
+        "en": "Italy"
+      }
+    },
+    {
+      "key": "JAM",
+      "value": {
+        "ar": "جامايكا",
+        "en": "Jamaica"
+      }
+    },
+    {
+      "key": "JEY",
+      "value": {
+        "ar": "جيرسي",
+        "en": "Jersey"
+      }
+    },
+    {
+      "key": "JOR",
+      "value": {
+        "ar": "الأردن",
+        "en": "Jordan"
+      }
+    },
+    {
+      "key": "JPN",
+      "value": {
+        "ar": "اليابان",
+        "en": "Japan"
+      }
+    },
+    {
+      "key": "KAZ",
+      "value": {
+        "ar": "كازاخستان",
+        "en": "Kazakhstan"
+      }
+    },
+    {
+      "key": "KEN",
+      "value": {
+        "ar": "كينيا",
+        "en": "Kenya"
+      }
+    },
+    {
+      "key": "KGZ",
+      "value": {
+        "ar": "قرغيزستان",
+        "en": "قرغيزستان"
+      }
+    },
+    {
+      "key": "KHM",
+      "value": {
+        "ar": "كمبوديا",
+        "en": "Cambodia"
+      }
+    },
+    {
+      "key": "KIR",
+      "value": {
+        "ar": "كيريباتي",
+        "en": "Kiribati"
+      }
+    },
+    {
+      "key": "KNA",
+      "value": {
+        "ar": "سانت كيتس ونيفيس",
+        "en": "Saint Kitts and Nevis"
+      }
+    },
+    {
+      "key": "KOR",
+      "value": {
+        "ar": "كوريا الجنوبية",
+        "en": "South Korea"
+      }
+    },
+    {
+      "key": "KRW",
+      "value": {
+        "ar": "كوريا",
+        "en": "كوريا"
+      }
+    },
+    {
+      "key": "KWT",
+      "value": {
+        "ar": "الكويت",
+        "en": "Kuwait"
+      }
+    },
+    {
+      "key": "LAO",
+      "value": {
+        "ar": "لاوس",
+        "en": "Laos"
+      }
+    },
+    {
+      "key": "LBN",
+      "value": {
+        "ar": "لبنان",
+        "en": "Lebanon"
+      }
+    },
+    {
+      "key": "LBR",
+      "value": {
+        "ar": "ليبيريا",
+        "en": "ليبيريا"
+      }
+    },
+    {
+      "key": "LBY",
+      "value": {
+        "ar": "ليبيا",
+        "en": "Libya"
+      }
+    },
+    {
+      "key": "LCA",
+      "value": {
+        "ar": "سانت لوسيا",
+        "en": "Saint Lucia"
+      }
+    },
+    {
+      "key": "LIE",
+      "value": {
+        "ar": "ليختنشتاين",
+        "en": "Liechtenstein"
+      }
+    },
+    {
+      "key": "LKA",
+      "value": {
+        "ar": "سريلانكا",
+        "en": "Sri Lanka"
+      }
+    },
+    {
+      "key": "LSO",
+      "value": {
+        "ar": "ليسوتو",
+        "en": "Lesotho"
+      }
+    },
+    {
+      "key": "LTU",
+      "value": {
+        "ar": "ليتوانيا",
+        "en": "Lithuania"
+      }
+    },
+    {
+      "key": "LUX",
+      "value": {
+        "ar": "لوكسمبورغ",
+        "en": "Luxembourg"
+      }
+    },
+    {
+      "key": "LVA",
+      "value": {
+        "ar": "لاتفيا",
+        "en": "Latvia"
+      }
+    },
+    {
+      "key": "MAC",
+      "value": {
+        "ar": "ماكاو الصينية",
+        "en": "ماكاو الصينية"
+      }
+    },
+    {
+      "key": "MAF",
+      "value": {
+        "ar": "سانت مارتن",
+        "en": "Saint Martin"
+      }
+    },
+    {
+      "key": "MAR",
+      "value": {
+        "ar": "المغرب",
+        "en": "Morocco"
+      }
+    },
+    {
+      "key": "MCO",
+      "value": {
+        "ar": "موناكو",
+        "en": "Monaco"
+      }
+    },
+    {
+      "key": "MDA",
+      "value": {
+        "ar": "مولدوفا",
+        "en": "Moldova"
+      }
+    },
+    {
+      "key": "MDG",
+      "value": {
+        "ar": "مدغشقر",
+        "en": "Madagascar"
+      }
+    },
+    {
+      "key": "MDV",
+      "value": {
+        "ar": "جزر المالديف",
+        "en": "Maldives"
+      }
+    },
+    {
+      "key": "MEX",
+      "value": {
+        "ar": "المكسيك",
+        "en": "Mexico"
+      }
+    },
+    {
+      "key": "MHL",
+      "value": {
+        "ar": "جزر مارشال",
+        "en": "Marshall Islands"
+      }
+    },
+    {
+      "key": "MKD",
+      "value": {
+        "ar": "مقدونيا",
+        "en": "Macedonia"
+      }
+    },
+    {
+      "key": "MLI",
+      "value": {
+        "ar": "مالي",
+        "en": "Mali"
+      }
+    },
+    {
+      "key": "MLT",
+      "value": {
+        "ar": "مالطة",
+        "en": "Malta"
+      }
+    },
+    {
+      "key": "MMR",
+      "value": {
+        "ar": "ميانمار",
+        "en": "Myanmar"
+      }
+    },
+    {
+      "key": "MNE",
+      "value": {
+        "ar": "الجبل الأسود",
+        "en": "Montenegro"
+      }
+    },
+    {
+      "key": "MNG",
+      "value": {
+        "ar": "منغوليا",
+        "en": "Mongolia"
+      }
+    },
+    {
+      "key": "MNP",
+      "value": {
+        "ar": "جزر ماريانا الشمالية",
+        "en": "Northern Mariana Islands"
+      }
+    },
+    {
+      "key": "MOZ",
+      "value": {
+        "ar": "موزمبيق",
+        "en": "Mozambique"
+      }
+    },
+    {
+      "key": "MRT",
+      "value": {
+        "ar": "موريتانيا",
+        "en": "Mauritania"
+      }
+    },
+    {
+      "key": "MSR",
+      "value": {
+        "ar": "مونتسيرات",
+        "en": "Montserrat"
+      }
+    },
+    {
+      "key": "MTQ",
+      "value": {
+        "ar": "مارتينيك",
+        "en": "Martinique"
+      }
+    },
+    {
+      "key": "MUS",
+      "value": {
+        "ar": "موريشيوس",
+        "en": "Mauritius"
+      }
+    },
+    {
+      "key": "MWI",
+      "value": {
+        "ar": "مالاوي",
+        "en": "Malawi"
+      }
+    },
+    {
+      "key": "MYS",
+      "value": {
+        "ar": "ماليزيا",
+        "en": "Malaysia"
+      }
+    },
+    {
+      "key": "MYT",
+      "value": {
+        "ar": "مايوت",
+        "en": "مايوت"
+      }
+    },
+    {
+      "key": "NAM",
+      "value": {
+        "ar": "ناميبيا",
+        "en": "Namibia"
+      }
+    },
+    {
+      "key": "NCL",
+      "value": {
+        "ar": "كاليدونيا الجديدة",
+        "en": "New Caledonia"
+      }
+    },
+    {
+      "key": "NER",
+      "value": {
+        "ar": "النيجر",
+        "en": "Niger"
+      }
+    },
+    {
+      "key": "NFK",
+      "value": {
+        "ar": "جزيرة نورفولك",
+        "en": "Norfolk Island"
+      }
+    },
+    {
+      "key": "NGA",
+      "value": {
+        "ar": "نيجيريا",
+        "en": "Nigeria"
+      }
+    },
+    {
+      "key": "NIC",
+      "value": {
+        "ar": "نيكاراغوا",
+        "en": "Nicaragua"
+      }
+    },
+    {
+      "key": "NIU",
+      "value": {
+        "ar": "نيوي",
+        "en": "Niue"
+      }
+    },
+    {
+      "key": "NLD",
+      "value": {
+        "ar": "هولندا",
+        "en": "Netherlands"
+      }
+    },
+    {
+      "key": "NOR",
+      "value": {
+        "ar": "النرويج",
+        "en": "Norway"
+      }
+    },
+    {
+      "key": "NPL",
+      "value": {
+        "ar": "نيبال",
+        "en": "Nepal"
+      }
+    },
+    {
+      "key": "NRU",
+      "value": {
+        "ar": "ناورو",
+        "en": "Nauru"
+      }
+    },
+    {
+      "key": "NZL",
+      "value": {
+        "ar": "نيوزيلندا",
+        "en": "New Zealand"
+      }
+    },
+    {
+      "key": "OMN",
+      "value": {
+        "ar": "عمان",
+        "en": "Oman"
+      }
+    },
+    {
+      "key": "PAK",
+      "value": {
+        "ar": "باكستان",
+        "en": "Pakistan"
+      }
+    },
+    {
+      "key": "PAN",
+      "value": {
+        "ar": "بنما",
+        "en": "Panama"
+      }
+    },
+    {
+      "key": "PCN",
+      "value": {
+        "ar": "جزر بيتكيرن",
+        "en": "Pitcairn Islands"
+      }
+    },
+    {
+      "key": "PER",
+      "value": {
+        "ar": "بيرو",
+        "en": "Peru"
+      }
+    },
+    {
+      "key": "PHL",
+      "value": {
+        "ar": "الفلبين",
+        "en": "Philippines"
+      }
+    },
+    {
+      "key": "PLW",
+      "value": {
+        "ar": "بالاو",
+        "en": "Palau"
+      }
+    },
+    {
+      "key": "PNG",
+      "value": {
+        "ar": "بابوا غينيا الجديدة",
+        "en": "Papua New Guinea"
+      }
+    },
+    {
+      "key": "POL",
+      "value": {
+        "ar": "بولندا",
+        "en": "Poland"
+      }
+    },
+    {
+      "key": "PRI",
+      "value": {
+        "ar": "بويرتو ريكو",
+        "en": "Puerto Rico"
+      }
+    },
+    {
+      "key": "PRK",
+      "value": {
+        "ar": "كوريا الشمالية",
+        "en": "North Korea"
+      }
+    },
+    {
+      "key": "PRT",
+      "value": {
+        "ar": "البرتغال",
+        "en": "Portugal"
+      }
+    },
+    {
+      "key": "PRY",
+      "value": {
+        "ar": "باراغواي",
+        "en": "Paraguay"
+      }
+    },
+    {
+      "key": "PSE",
+      "value": {
+        "ar": "فلسطين",
+        "en": "Palestine"
+      }
+    },
+    {
+      "key": "PYF",
+      "value": {
+        "ar": "بولينيزيا الفرنسية",
+        "en": "French Polynesia"
+      }
+    },
+    {
+      "key": "QAT",
+      "value": {
+        "ar": "قطر",
+        "en": "Qatar"
+      }
+    },
+    {
+      "key": "REU",
+      "value": {
+        "ar": "ريونيون",
+        "en": "Réunion"
+      }
+    },
+    {
+      "key": "ROU",
+      "value": {
+        "ar": "رومانيا",
+        "en": "Romania"
+      }
+    },
+    {
+      "key": "RUS",
+      "value": {
+        "ar": "روسيا",
+        "en": "Russia"
+      }
+    },
+    {
+      "key": "RWA",
+      "value": {
+        "ar": "رواندا",
+        "en": "Rwanda"
+      }
+    },
+    {
+      "key": "SAU",
+      "value": {
+        "ar": "السعودية",
+        "en": "Saudi Arabia"
+      }
+    },
+    {
+      "key": "SDN",
+      "value": {
+        "ar": "السودان",
+        "en": "Sudan"
+      }
+    },
+    {
+      "key": "SEN",
+      "value": {
+        "ar": "السنغال",
+        "en": "Senegal"
+      }
+    },
+    {
+      "key": "SGP",
+      "value": {
+        "ar": "سنغافورة",
+        "en": "Singapore"
+      }
+    },
+    {
+      "key": "SGS",
+      "value": {
+        "ar": "جورجيا الجنوبية و جزر ساندويتش الجنوبية",
+        "en": "South Georgia and the South Sandwich Islands"
+      }
+    },
+    {
+      "key": "SHN",
+      "value": {
+        "ar": "سانت هيلانة",
+        "en": "Saint Helena"
+      }
+    },
+    {
+      "key": "SJM",
+      "value": {
+        "ar": "سفالبارد وجان مايان",
+        "en": "Svalbard and Jan Mayen"
+      }
+    },
+    {
+      "key": "SLB",
+      "value": {
+        "ar": "جزر سليمان",
+        "en": "Solomon Islands"
+      }
+    },
+    {
+      "key": "SLE",
+      "value": {
+        "ar": "سيراليون",
+        "en": "Sierra Leone"
+      }
+    },
+    {
+      "key": "SLV",
+      "value": {
+        "ar": "سوازيلاند",
+        "en": "Swaziland"
+      }
+    },
+    {
+      "key": "SMR",
+      "value": {
+        "ar": "سان مارينو",
+        "en": "San Marino"
+      }
+    },
+    {
+      "key": "SOM",
+      "value": {
+        "ar": "الصومال",
+        "en": "Somalia"
+      }
+    },
+    {
+      "key": "SPM",
+      "value": {
+        "ar": "سانت بارتيليمي",
+        "en": "Saint Barthélemy"
+      }
+    },
+    {
+      "key": "SRB",
+      "value": {
+        "ar": "صربيا",
+        "en": "Serbia"
+      }
+    },
+    {
+      "key": "ssd",
+      "value": {
+        "ar": "جنوب السودان",
+        "en": "جنوب السودان"
+      }
+    },
+    {
+      "key": "STP",
+      "value": {
+        "ar": "ساو تومي وبرينسيبي",
+        "en": "São Tomé and Príncipe"
+      }
+    },
+    {
+      "key": "SUR",
+      "value": {
+        "ar": "سورينام",
+        "en": "Suriname"
+      }
+    },
+    {
+      "key": "SVK",
+      "value": {
+        "ar": "سلوفاكيا",
+        "en": "Slovakia"
+      }
+    },
+    {
+      "key": "SVN",
+      "value": {
+        "ar": "سلوفينيا",
+        "en": "Slovenia"
+      }
+    },
+    {
+      "key": "SWE",
+      "value": {
+        "ar": "السويد",
+        "en": "Sweden"
+      }
+    },
+    {
+      "key": "SWZ",
+      "value": {
+        "ar": "سوازيلند",
+        "en": "سوازيلند"
+      }
+    },
+    {
+      "key": "SXM",
+      "value": {
+        "ar": "سانت مارتن (الجزء الهولندي)",
+        "en": "سانت مارتن (الجزء الهولندي)"
+      }
+    },
+    {
+      "key": "SYC",
+      "value": {
+        "ar": "سيشيل",
+        "en": "Seychelles"
+      }
+    },
+    {
+      "key": "SYR",
+      "value": {
+        "ar": "الجمهورية العربية السورية",
+        "en": "Syria"
+      }
+    },
+    {
+      "key": "TCA",
+      "value": {
+        "ar": "جزر تركس وكايكوس",
+        "en": "Turks and Caicos Islands"
+      }
+    },
+    {
+      "key": "TCD",
+      "value": {
+        "ar": "تشاد",
+        "en": "Chad"
+      }
+    },
+    {
+      "key": "TGO",
+      "value": {
+        "ar": "توغو",
+        "en": "Togo"
+      }
+    },
+    {
+      "key": "THA",
+      "value": {
+        "ar": "تايلاند",
+        "en": "Thailand"
+      }
+    },
+    {
+      "key": "TJK",
+      "value": {
+        "ar": "طاجيكستان",
+        "en": "Tajikistan"
+      }
+    },
+    {
+      "key": "TKL",
+      "value": {
+        "ar": "توكيلاو",
+        "en": "Tokelau"
+      }
+    },
+    {
+      "key": "TKM",
+      "value": {
+        "ar": "تركمانستان",
+        "en": "Turkmenistan"
+      }
+    },
+    {
+      "key": "TLS",
+      "value": {
+        "ar": "تيمور الشرقية",
+        "en": "Timor-Leste"
+      }
+    },
+    {
+      "key": "TON",
+      "value": {
+        "ar": "تونغا",
+        "en": "Tonga"
+      }
+    },
+    {
+      "key": "TTO",
+      "value": {
+        "ar": "ترينيداد وتوباغو",
+        "en": "Trinidad and Tobago"
+      }
+    },
+    {
+      "key": "TUN",
+      "value": {
+        "ar": "تونس",
+        "en": "Tunisia"
+      }
+    },
+    {
+      "key": "TUR",
+      "value": {
+        "ar": "تركيا",
+        "en": "Turkey"
+      }
+    },
+    {
+      "key": "TUV",
+      "value": {
+        "ar": "توفالو",
+        "en": "Tuvalu"
+      }
+    },
+    {
+      "key": "TWN",
+      "value": {
+        "ar": "تايوان",
+        "en": "Taiwan"
+      }
+    },
+    {
+      "key": "TZA",
+      "value": {
+        "ar": "تنزانيا",
+        "en": "Tanzania"
+      }
+    },
+    {
+      "key": "UGA",
+      "value": {
+        "ar": "أوغندا",
+        "en": "Uganda"
+      }
+    },
+    {
+      "key": "UKR",
+      "value": {
+        "ar": "أوكرانيا",
+        "en": "Ukraine"
+      }
+    },
+    {
+      "key": "UMI",
+      "value": {
+        "ar": "الامريكى جزر البعيدة الصغيرة",
+        "en": "U.S. Minor Outlying Islands"
+      }
+    },
+    {
+      "key": "URY",
+      "value": {
+        "ar": "أوروغواي",
+        "en": "Uruguay"
+      }
+    },
+    {
+      "key": "USA",
+      "value": {
+        "ar": "الولايات المتحدة الأمريكية",
+        "en": "United States"
+      }
+    },
+    {
+      "key": "UZB",
+      "value": {
+        "ar": "أوزبكستان",
+        "en": "Uzbekistan"
+      }
+    },
+    {
+      "key": "VAT",
+      "value": {
+        "ar": "الفاتيكان",
+        "en": "Vatican City"
+      }
+    },
+    {
+      "key": "VCT",
+      "value": {
+        "ar": "سانت فنسنت وجزر غرينادين",
+        "en": "Saint Vincent and the Grenadines"
+      }
+    },
+    {
+      "key": "VEN",
+      "value": {
+        "ar": "فنزويلا",
+        "en": "Venezuela"
+      }
+    },
+    {
+      "key": "VGB",
+      "value": {
+        "ar": "جزر العذراء البريطانية",
+        "en": "British Virgin Islands"
+      }
+    },
+    {
+      "key": "VIR",
+      "value": {
+        "ar": "جزر العذراء الأمريكية",
+        "en": "U.S. Virgin Islands"
+      }
+    },
+    {
+      "key": "VNM",
+      "value": {
+        "ar": "فيتنام",
+        "en": "Vietnam"
+      }
+    },
+    {
+      "key": "VUT",
+      "value": {
+        "ar": "فانواتو",
+        "en": "Vanuatu"
+      }
+    },
+    {
+      "key": "WLF",
+      "value": {
+        "ar": "واليس و فوتونا",
+        "en": "Wallis and Futuna"
+      }
+    },
+    {
+      "key": "WSM",
+      "value": {
+        "ar": "ساموا",
+        "en": "Samoa"
+      }
+    },
+    {
+      "key": "XKX",
+      "value": {
+        "ar": "كوسوفو",
+        "en": "كوسوفو"
+      }
+    },
+    {
+      "key": "YEM",
+      "value": {
+        "ar": "اليمن",
+        "en": "Yemen"
+      }
+    },
+    {
+      "key": "ZAF",
+      "value": {
+        "ar": "جنوب أفريقيا",
+        "en": "South Africa"
+      }
+    },
+    {
+      "key": "ZMB",
+      "value": {
+        "ar": "زامبيا",
+        "en": "Zambia"
+      }
+    },
+    {
+      "key": "ZWE",
+      "value": {
+        "ar": "زيمبابوي",
+        "en": "Zimbabwe"
+      }
+    },
+    {
+      "key": "ZZZ",
+      "value": {
+        "ar": "غير معلوم",
+        "en": "unknown"
+      }
+    }
+  ],
+  "contactPreferencesTypes": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "الاتصال",
+        "en": "الاتصال"
+      }
+    },
+    {
+      "key": "2",
+      "value": {
+        "ar": "البريد الالكتروني",
+        "en": "البريد الالكتروني"
+      }
+    },
+    {
+      "key": "3",
+      "value": {
+        "ar": "الرسائل النصية القصيرة",
+        "en": "الرسائل النصية القصيرة"
+      }
+    }
+  ]
 }

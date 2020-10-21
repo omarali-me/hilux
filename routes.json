@@ -18,5 +18,11 @@
   "/AjmanLandProperty/index.php/Lookups/disabilityTypes": "/disabilityTypes",
   "/AjmanLandProperty/index.php/Lookups/contractTypes": "/contractTypes",
   "/AjmanLandProperty/index.php/Lookups/timeToContactPreferences": "/timeToContactPreferences",
-  "/AjmanLandProperty/index.php/applications/startService":"/startService"
+  "/AjmanLandProperty/index.php/applications/startService": "/startService",
+  "/AjmanLandProperty/index.php/applications/loginAPI": "/loginAPI",
+  "/AjmanLandProperty/index.php/customers/get/27799": "/27799",
+  "/AjmanLandProperty/index.php/Lookups/nationalities": "/nationalities",
+  "/AjmanLandProperty/index.php/Lookups/customersCategories": "/customersCategories",
+  "/AjmanLandProperty/index.php/Lookups/customerTypes": "/customerTypes",
+  "/AjmanLandProperty/index.php/Lookups/contactPreferencesTypes": "/contactPreferencesTypes"
 }
