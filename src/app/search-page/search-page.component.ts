@@ -74,32 +74,33 @@ export class SearchPageComponent implements OnInit {
           this.response = data.data;
         } else {
           this.formErrors = data.data;
-          this.toastr.error(JSON.stringify(data.message), 'Error')
+          this.toastr.error(JSON.stringify(data.message), 'Error');
         }
-    }, (error) => {
-      this.toastr.error('Something went Wrong', 'Error')
-      this.router.navigate(['error'])
-    })
+      }, (error) => {
+        this.toastr.error('Something went Wrong', 'Error');
+        this.router.navigate(['error']);
+      });
   }
 
   loadUnitsOptions() {
     this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/units`, { projectId: this.formData.projectId })
-    .subscribe((data) => {
-      this.unitsOptions = data;
-    })
+      .subscribe((data) => {
+        this.unitsOptions = data;
+      })
   }
 
   loadOwnersOptions() {
     this.ownersOptions = concat(
       of([]), // default items
       this.ownersSearchInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.ownersOptionsLoading = true),
-          switchMap(term => {
-            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/owners`, { term } ).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.ownersOptionsLoading = false)
-          )})
+        distinctUntilChanged(),
+        tap(() => this.ownersOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/owners`, { term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.ownersOptionsLoading = false)
+          )
+        })
       )
     );
   }
@@ -108,13 +109,14 @@ export class SearchPageComponent implements OnInit {
     this.developerOptions = concat(
       of([]), // default items
       this.developerSearchInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.developerDataOptionsLoading = true),
-          switchMap(term => {
-            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/developers`, { term } ).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.developerDataOptionsLoading = false)
-          )})
+        distinctUntilChanged(),
+        tap(() => this.developerDataOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/developers`, { term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.developerDataOptionsLoading = false)
+          )
+        })
       )
     );
   }
@@ -123,13 +125,14 @@ export class SearchPageComponent implements OnInit {
     this.projectsOptions = concat(
       of([]), // default items
       this.projectsSearchInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.projectDataOptionsLoading = true),
-          switchMap(term => {
-            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projects`, { term, developerId: this.formData.developerId } ).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.projectDataOptionsLoading = false)
-          )})
+        distinctUntilChanged(),
+        tap(() => this.projectDataOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projects`, { term, developerId: this.formData.developerId }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.projectDataOptionsLoading = false)
+          )
+        })
       )
     );
   }
@@ -138,13 +141,14 @@ export class SearchPageComponent implements OnInit {
     this.landsOptions = concat(
       of([]), // default items
       this.landSearchInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.landDataOptionsLoading = true),
-          switchMap(term => {
-            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/lands`, { term } ).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.landDataOptionsLoading = false)
-          )})
+        distinctUntilChanged(),
+        tap(() => this.landDataOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/lands`, { term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.landDataOptionsLoading = false)
+          )
+        })
       )
     );
   }
@@ -153,13 +157,14 @@ export class SearchPageComponent implements OnInit {
     this.oldLandsOptions = concat(
       of([]), // default items
       this.oldLandSearchInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.oldLandDataOptionsLoading = true),
-          switchMap(term => {
-            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/oldLands`, { term } ).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.oldLandDataOptionsLoading = false)
-          )})
+        distinctUntilChanged(),
+        tap(() => this.oldLandDataOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/oldLands`, { term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.oldLandDataOptionsLoading = false)
+          )
+        })
       )
     );
   }
@@ -287,7 +292,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   getOwnerHeader(item: any) {
-    return `نوع الملكية: ${ this.getFieldNameorId(item.childDeed, 'ownershipType') }, Created At: ${item.deed?.createdAt}, طريقة انتقال الملكية: ${item.childDeed?.transferServiceNameAr}`
+    return `نوع الملكية: ${this.getFieldNameorId(item.childDeed, 'ownershipType')}, Created At: ${item.deed?.createdAt}, طريقة انتقال الملكية: ${item.childDeed?.transferServiceNameAr}`
   }
 
   getUnitOwnerHeader(item: any) {

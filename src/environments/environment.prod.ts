@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiHost: 'http://192.168.5.113',
+  apiHost: 'https://wfe.ajm.re',
   token: 'sy3rHBHVD3U7VxMs6vuSLU32'
 };
