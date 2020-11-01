@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiHost: 'http://localhost:3000',
+  apiHost: 'https://wfe.ajm.re',
   token: 'sy3rHBHVD3U7VxMs6vuSLU32'
 };
 

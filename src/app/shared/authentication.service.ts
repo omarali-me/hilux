@@ -25,7 +25,7 @@ export class AuthenticationService {
   }
 
   checkAuthentication() {
-    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/isLoggedIn`)
+    return this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/applications/isLoggedIn`)
     .pipe(tap(p => {
       this.isLoggedIn$.next(p.status == 'success')
     }))

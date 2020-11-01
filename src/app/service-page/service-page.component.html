@@ -2,9 +2,9 @@
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
-    <div class="container-fluid">
+    <div class="container-fluid col-lg-10">
       <div class="row mb-2">
-        <div class="col-sm-12 text-center">
+        <div class="m-2 text-dark">
           <h1>{{getServiceText()}}</h1>
         </div>
         <!-- <div class="col-sm-6">
@@ -19,14 +19,14 @@
 
   <!-- Main content -->
   <section class="content">
-    <div class="container-fluid">
-      <div class="card card-primary card-outline">
+    <div class="container-fluid col-lg-10">
+      <div class="card card-purple card-outline border-purple" *ngIf="response">
         <!-- <div class="card-header">
           <h3 class="card-title"></h3>
         </div> -->
-        <div class="card-body" *ngIf="response">
+        <!-- <div class="card-body" > -->
           <app-display-data-form-generator [response]="response"></app-display-data-form-generator>
-        </div><!-- /.card-body -->
+        <!-- </div>/.card-body -->
       </div>
     </div><!-- /.container-fluid -->
   </section>

@@ -52,7 +52,7 @@ export class ServicePageComponent implements OnInit {
         _.values(data).forEach(category => {
           services = Object.assign({}, services, category.services);
         });
-
+        // console.log(services);   
         this.selectedService = services[serviceId];
       })
   }

@@ -63,9 +63,11 @@ body {
   padding-left: 50px;
   padding-right: 10px;
 }
+
 .dataTables_filter{
   float: left;
 }
+
 @media (min-width: 992px){
 
   .sidebar-mini.sidebar-collapse .nav-sidebar .nav-link p {
