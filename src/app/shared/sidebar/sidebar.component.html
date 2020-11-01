@@ -1,10 +1,10 @@
-<aside class="main-sidebar sidebar-dark-teal text-white bg-victoria elevation-5">
+<aside class="main-sidebar sidebar-dark-primary elevation-4 bg-victoria">
 
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-5 pb-3 mb-5 d-flex">
-              <div class="info">
+            <div class="info">
                 <a
                     href="#"
                     class="d-block"
@@ -13,6 +13,7 @@
                 </a>
             </div>
         </div>
+
         <nav class="mt-2">
             <ul
                 class="nav nav-sidebar nav-pills flex-column nav-child-indent nav-collapse-hide-child"
@@ -30,7 +31,7 @@
                     *ngFor="let item of menuItems | keyvalue; let i = index"
                 >
                     <a class="nav-link">
-                        <!-- <i class="nav-icon fas fa-building"></i> -->
+                        <i class="nav-icon fas fa-building align-top"></i>
                         <p class="text-wrap">
                             {{getServiceProviderItem(item.value)}}
                             <i class="right fas fa-angle-left"></i>
@@ -42,12 +43,16 @@
                     >
                         <li
                             class="nav-item"
+                            style="
+                              background: #00000024;
+                              border-radius: 0.25rem;
+                          "
                             [routerLink]="['/service', subItem.key]"
                             *ngFor="let subItem of item.value.services | keyvalue"
                         >
                             <a class="nav-link">
-                                <!-- <li class="fas fa-circle nav-icon align-middle"></li> -->
-                                <p class="text-wrap">{{getServiceName(subItem.value)}}</p>
+                                <li class="fas fa-circle nav-icon align-top"></li>
+                                <p class="text-wrap pl-1">{{getServiceName(subItem.value)}}</p>
                             </a>
                         </li>
                     </ul>
