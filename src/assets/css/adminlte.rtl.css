@@ -14183,10 +14183,10 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 .nav-flat.nav-sidebar > .nav-item > .nav-treeview {
   background: rgba(255, 255, 255, 0.05);
 }
-
+/* Change border location */
 .nav-flat.nav-sidebar > .nav-item .nav-treeview .nav-item > .nav-link,
 .nav-flat.nav-sidebar > .nav-item > .nav-treeview .nav-item > .nav-link {
-  border-left: .2rem solid;
+  border-right: .3rem solid;
 }
 
 .sidebar-mini.sidebar-collapse .nav-flat.nav-compact .nav-icon,
