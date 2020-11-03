@@ -25,9 +25,15 @@ export class SidebarComponent implements OnInit {
   getServiceProviderItem(data: any) {
     return data.serviceCategoryName && data.serviceCategoryName.ar;
   }
+  getServiceProviderIcon(data: any) {
+    return data.serviceCategoryName && data.serviceCategoryName.icon;
+  }
 
   getServiceName(data: any) {
     return data && data.ar;
+  }
+  getServiceIcon(data: any) {
+    return data && data.icon;
   }
 
   hideRoot(data: any) {

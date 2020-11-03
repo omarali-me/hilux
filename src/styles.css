@@ -135,6 +135,7 @@ body {
 
 .nav-treeview > .nav-item .nav-icon {
   margin-right: 1.1rem;
+  margin-left: .2rem;
 }
 
 [class*='sidebar-dark-'] .nav-sidebar > .nav-item.menu-open > .nav-link, [class*='sidebar-dark-'] .nav-sidebar > .nav-item:hover > .nav-link, [class*='sidebar-dark-'] .nav-sidebar > .nav-item > .nav-link:focus {
@@ -203,3 +204,7 @@ body {
   margin-left: -1px;
 }
 
+.nav-sidebar .nav-treeview > .nav-item > .nav-link > .nav-icon,.nav-sidebar > .nav-item .nav-icon {
+  width: 1.3rem;
+  margin-left: .2rem;
+}

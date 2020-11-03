@@ -1980,414 +1980,507 @@
   },
   "getServices": {
     "1": {
-      "serviceCategoryName": {
-        "ar": "root",
-        "en": "root"
-      },
-      "services": {
-        "1": {
-          "ar": "testService",
-          "en": "testService"
+        "serviceCategoryName": {
+            "ar": "root",
+            "en": "root"
+        },
+        "services": {
+            "1": {
+                "ar": "إلغاء القسمة بين الشركاء ( تكميلية)",
+                "en": "The Cancelling Of A Distribution Between Partners (Complementary)",
+                "icon": "trans_cancellingDistPartners.png"
+            }
         }
-      }
     },
     "3": {
-      "serviceCategoryName": {
-        "ar": "الافادات",
-        "en": "Testimonies"
-      },
-      "services": {
-        "37": {
-          "ar": "اصدار شهادة لمن يهمه الأمر",
-          "en": "Issuance of a `To Whomsoever It May Concern` certificate"
+        "serviceCategoryName": {
+            "ar": "الافادات",
+            "en": "Testimonies",
+            "icon": "https://wfe.ajm.re/serviceIcons/test.png"
         },
-        "38": {
-          "ar": "صورة طبق الأصل",
-          "en": "Identical copy of the original"
+        "services": {
+            "37": {
+                "ar": "اصدار شهادة لمن يهمه الأمر",
+                "en": "Issuance Of A `To Whomsoever It May Concern` Certificate",
+                "icon": "https://wfe.ajm.re/serviceIcons/test_issueWhomConcernCert.png"
+            },
+            "38": {
+                "ar": "صورة طبق الأصل",
+                "en": "Identical Copy Of The Original",
+                "icon": "https://wfe.ajm.re/serviceIcons/test_IdentCopyOrig.png"
+            }
         }
-      }
     },
     "4": {
-      "serviceCategoryName": {
-        "ar": "التحوط",
-        "en": "Hedge Services"
-      },
-      "services": {
-        "45": {
-          "ar": "إلغاء التحوط في السجل ( تكميلية)",
-          "en": "Cancellation of security (Complementary)"
+        "serviceCategoryName": {
+            "ar": "التحوط",
+            "en": "Hedge Services",
+            "icon": "https://wfe.ajm.re/serviceIcons/hedge.png"
         },
-        "46": {
-          "ar": "التحوط",
-          "en": "Security"
+        "services": {
+            "45": {
+                "ar": "إلغاء التحوط في السجل ( تكميلية)",
+                "en": "Cancellation Of Security (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/hedge_cancelSecurity.png"
+            },
+            "46": {
+                "ar": "التحوط",
+                "en": "Hedge Services",
+                "icon": "https://wfe.ajm.re/serviceIcons/hedge_security.png"
+            }
         }
-      }
     },
     "5": {
-      "serviceCategoryName": {
-        "ar": "التراخيص العقارية",
-        "en": "Real estate permits"
-      },
-      "services": {
-        "48": {
-          "ar": "اصدار بدل تالف أو فاقد بطاقة مزاولة نشاط عقاري ( تكميلية)",
-          "en": "Issuance of a replacement of a damaged or lost real estate activities practicing card (Complementary)"
+        "serviceCategoryName": {
+            "ar": "التراخيص العقارية",
+            "en": "Real estate permits",
+            "icon": "https://wfe.ajm.re/serviceIcons/.png"
         },
-        "49": {
-          "ar": "اصدار بطاقة مزاولة نشاط عقاري",
-          "en": "Issuance of a real estate activity practice card"
-        },
-        "50": {
-          "ar": "اصدار شهادة قيد مطور عقاري",
-          "en": "Issuance of a real estate developer registration certificate"
-        },
-        "51": {
-          "ar": "اصدار شهادة قيد مكتب عقاري",
-          "en": "Issuance of a real estate office registration certificate"
-        },
-        "52": {
-          "ar": "الغاء بطاقة مزاولة نشاط عقاري ( تكميلية)",
-          "en": "Cancellation of a real estate activity practice card (Complementary)"
-        },
-        "53": {
-          "ar": "تجديد  شهادة قيد ( تكميلية)",
-          "en": "Renewal of registration certificate (Complementary)"
-        },
-        "54": {
-          "ar": "تجديد بطاقة مزاولة نشاط عقاري ( تكميلية)",
-          "en": "Renewal of a real estate activity practice card (Complementary)"
-        },
-        "55": {
-          "ar": "تحديث شهادة قيد ( تكميلية)",
-          "en": "Updating of registration certificate (Complementary)"
-        },
-        "56": {
-          "ar": "تصديق عقد الإدارة للمكتب العقاري",
-          "en": "Attestation of management contract of the Real estate office (Complementary)"
-        },
-        "58": {
-          "ar": "تصريح إعلان عقاري / باقة الاعلانات العقارية",
-          "en": "Real Estate advertisement permission / Real Estate advertisements plan"
+        "services": {
+            "48": {
+                "ar": "اصدار بدل تالف أو فاقد بطاقة مزاولة نشاط عقاري ( تكميلية)",
+                "en": "Issuance Of A Replacement Of A Damaged Or Lost Real Estate Activities Practicing Card (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_issueReplaceDamageLostREcard.png"
+            },
+            "49": {
+                "ar": "اصدار بطاقة مزاولة نشاط عقاري",
+                "en": "Issuance Of A Real Estate Activity Practice Card",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_issueREcard.png"
+            },
+            "50": {
+                "ar": "اصدار شهادة قيد مطور عقاري",
+                "en": "Issuance Of A Real Estate Developer Registration Certificate",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_issueREdevRegCert.png"
+            },
+            "51": {
+                "ar": "اصدار شهادة قيد مكتب عقاري",
+                "en": "Issuance Of A Real Estate Office Registration Certificate",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_issueREofficeRegCert.png"
+            },
+            "52": {
+                "ar": "الغاء بطاقة مزاولة نشاط عقاري ( تكميلية)",
+                "en": "Cancellation Of A Real Estate Activity Practice Card (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_cancelRECard.png"
+            },
+            "53": {
+                "ar": "تجديد  شهادة قيد ( تكميلية)",
+                "en": "Renewal Of Registration Certificate (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_renewRegCert.png"
+            },
+            "54": {
+                "ar": "تجديد بطاقة مزاولة نشاط عقاري ( تكميلية)",
+                "en": "Renewal Of A Real Estate Activity Practice Card (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_renewREcard.png"
+            },
+            "55": {
+                "ar": "تحديث شهادة قيد ( تكميلية)",
+                "en": "Updating Of Registration Certificate (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_updateRegCert.png"
+            },
+            "56": {
+                "ar": "تصديق عقد الإدارة للمكتب العقاري",
+                "en": "Attestation Of Management Contract Of The Real Estate Office (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_attesetMgmtContractREoffice.png"
+            },
+            "58": {
+                "ar": "تصريح إعلان عقاري / باقة الاعلانات العقارية",
+                "en": "Real Estate Advertisement Permission / Real Estate Advertisements Plan",
+                "icon": "https://wfe.ajm.re/serviceIcons/reads_permPlan.png"
+            }
         }
-      }
     },
     "6": {
-      "serviceCategoryName": {
-        "ar": "التسجيل والتمليك",
-        "en": "Registration and Ownership"
-      },
-      "services": {
-        "25": {
-          "ar": "إصدار بدل فاقد / بدل تالف لشهادة / سند ملكية / عقد رهن (تكميلية)",
-          "en": "Issuance of a replacement of a lost/damaged certificate/title deed/mortgage contract (Complementary)"
+        "serviceCategoryName": {
+            "ar": "التسجيل والتمليك",
+            "en": "Registration and Ownership",
+            "icon": "https://wfe.ajm.re/serviceIcons/regown.png"
         },
-        "26": {
-          "ar": "إلغاء التسجيل المبدئى للوحدة العقارية ( تكميلية)",
-          "en": "Cancellation of the tentative registration of the real estate unit (Complementary)"
-        },
-        "27": {
-          "ar": "تحديث بيانات سند ملكية / شهادة ملكية  ( تكميلية)",
-          "en": "Updating of information of Title Deed / Ownership Certificate (Complementary)"
-        },
-        "28": {
-          "ar": "تسجيل إلغاء سند ملكية  ( تكميليه)",
-          "en": "Registration of cancellation of title deed (Complementary)"
-        },
-        "29": {
-          "ar": "تسجيل تبديل سند ملكية ( تكميلية)",
-          "en": "Registration of exchange of title deed (Complementary)"
-        },
-        "30": {
-          "ar": "تسجيل دمج  لعقار لذات المالك",
-          "en": "Registration of merging or allotment of a real estate to the same owner"
-        },
-        "31": {
-          "ar": "تسجيل عقار أو  وحدة عقارية  بالتعويض",
-          "en": "Registration of a real estate or a real estate unit by way of compensation"
-        },
-        "32": {
-          "ar": "تسجيل عقار بإفرازه بين الملاك",
-          "en": "Registration of a real estate by distributing it between owners"
-        },
-        "33": {
-          "ar": "تسجيل عقار جديد",
-          "en": "Registration of a new real estate"
-        },
-        "34": {
-          "ar": "تسجيل مبدئى لبيع وحدة عقارية",
-          "en": "Tentative registration of sale of a real estate unit"
-        },
-        "35": {
-          "ar": "تسجيل نهائى لبيع وحدة عقارية",
-          "en": "Final registration of sale of a real estate unit"
-        },
-        "36": {
-          "ar": "تمليك عقار بالشراء لذات المالك",
-          "en": "Owning of a real estate by way of purchasing to the same owner"
-        },
-        "66": {
-          "ar": "تحديث بيانات وحدة عقارية( تكميلية)",
-          "en": "Updating of information of Title Deed / Ownership Certificate (Complementary)"
-        },
-        "67": {
-          "ar": "تسجيل  فرز لعقار لذات المالك",
-          "en": "Registration of merging or allotment of a real estate to the same owner"
-        },
-        "68": {
-          "ar": "تسجيل online  فرز لعقار لذات المالك",
-          "en": "Registration of merging or allotment of a real estate to the same owner"
-        },
-        "69": {
-          "ar": "تسجيل online دمج  لعقار لذات المالك",
-          "en": "Registration of merging or allotment of a real estate to the same owner"
-        },
-        "70": {
-          "ar": "تحديث بيانات online سند ملكية ( تكميلية)",
-          "en": "Updating of information of Title Deed / Ownership Certificate (Complementary)"
-        },
-        "71": {
-          "ar": "تحديث بيانات وحدة عقارية online ( تكميلية)",
-          "en": "Updating of information of Title Deed / Ownership Certificate (Complementary)"
-        },
-        "72": {
-          "ar": "تمليك عقار online بالشراء لذات المالك",
-          "en": "Owning of a real estate by way of purchasing to the same owner"
-        },
-        "73": {
-          "ar": "إصدار بدل فاقد / بدل تالف لشهادة / سند ملكية / عقد رهن (المتعامل)",
-          "en": "Issuance of a replacement of a lost/damaged certificate/title deed/mortgage contract (Complementary)"
-        },
-        "74": {
-          "ar": "إلغاء التسجيل المبدئى للوحدة العقارية ( المتعامل)",
-          "en": "Cancellation of the tentative registration of the real estate unit (Complementary)"
+        "services": {
+            "25": {
+                "ar": "إصدار بدل فاقد / بدل تالف لشهادة / سند ملكية / عقد رهن (تكميلية)",
+                "en": "Issuance Of A Replacement Of A Lost/Damaged Certificate/Title Deed/Mortgage Contract (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_issuanceReplacementLostCertDeedMort.png"
+            },
+            "26": {
+                "ar": "إلغاء التسجيل المبدئى للوحدة العقارية ( تكميلية)",
+                "en": "Cancellation Of The Tentative Registration Of The Real Estate Unit (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_cancelTentRegistrationREU.png"
+            },
+            "27": {
+                "ar": "تحديث بيانات سند ملكية / شهادة ملكية  ( تكميلية)",
+                "en": "Updating Of Information Of Title Deed / Ownership Certificate (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_updateInfoTitleOwn.png"
+            },
+            "28": {
+                "ar": "تسجيل إلغاء سند ملكية  ( تكميليه)",
+                "en": "Registration Of Cancellation Of Title Deed (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regCancelTitleDeed.png"
+            },
+            "29": {
+                "ar": "تسجيل تبديل سند ملكية ( تكميلية)",
+                "en": "Registration Of Exchange Of Title Deed (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regExchangeTitleDeed.png"
+            },
+            "30": {
+                "ar": "تسجيل دمج لعقار لذات المالك",
+                "en": "Registration Of Merging Of A Real Estate To The Same Owner",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regMergeAllotmentRESameOwner.png"
+            },
+            "31": {
+                "ar": "تسجيل عقار أو  وحدة عقارية  بالتعويض",
+                "en": "Registration of a real estate or a real estate unit by way of compensation",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regREUbyCompensation.png"
+            },
+            "32": {
+                "ar": "تسجيل عقار بإفرازه بين الملاك",
+                "en": "Registration Of A Real Estate By Distributing It Between Owners",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regREUbyDistributeOwners.png"
+            },
+            "33": {
+                "ar": "تسجيل عقار جديد",
+                "en": "Registration Of A New Real Estate",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regNewRE.png"
+            },
+            "34": {
+                "ar": "تسجيل مبدئى لبيع وحدة عقارية",
+                "en": "Tentative Registration Of Sale Of A Real Estate Unit",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_tentRegSaleNewRE.png"
+            },
+            "35": {
+                "ar": "تسجيل نهائى لبيع وحدة عقارية",
+                "en": "Final Registration Of Sale Of A Real Estate Unit",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_finalRegSaleNewREU.png"
+            },
+            "36": {
+                "ar": "تمليك عقار بالشراء لذات المالك",
+                "en": "Owning Of A Real Estate By Way Of Purchasing To The Same Owner",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_OwnREbyWayPurchaseSameOwn.png"
+            },
+            "66": {
+                "ar": "تحديث بيانات شهادة ملكية وحدة عقارية( تكميلية)",
+                "en": "Updating of information of Ownership Certificate for a realestate unit (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_updateInfoTitleOwn.png"
+            },
+            "67": {
+                "ar": "تسجيل فرز لعقار لذات المالك",
+                "en": "Registration of allotment of a real estate to the same owner",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regMergeAllotmentRESameOwner.png"
+            },
+            "68": {
+                "ar": "تسجيل online  فرز لعقار لذات المالك",
+                "en": "Registration of merging or allotment of a real estate to the same owner"
+            },
+            "69": {
+                "ar": "تسجيل online دمج  لعقار لذات المالك",
+                "en": "Registration of merging or allotment of a real estate to the same owner"
+            },
+            "70": {
+                "ar": "تحديث بيانات online سند ملكية ( تكميلية)",
+                "en": "Updating of information of Title Deed / Ownership Certificate (Complementary)"
+            },
+            "71": {
+                "ar": "تحديث بيانات وحدة عقارية online ( تكميلية)",
+                "en": "Updating of information of Title Deed / Ownership Certificate (Complementary)"
+            },
+            "72": {
+                "ar": "تمليك عقار online بالشراء لذات المالك",
+                "en": "Owning of a real estate by way of purchasing to the same owner"
+            },
+            "73": {
+                "ar": "إصدار بدل فاقد / بدل تالف لشهادة / سند ملكية / عقد رهن (المتعامل)",
+                "en": "Issuance of a replacement of a lost/damaged certificate/title deed/mortgage contract (Complementary)"
+            },
+            "74": {
+                "ar": "إلغاء التسجيل المبدئى للوحدة العقارية ( المتعامل)",
+                "en": "Cancellation of the tentative registration of the real estate unit (Complementary)"
+            }
         }
-      }
     },
     "7": {
-      "serviceCategoryName": {
-        "ar": "التصرفات",
-        "en": "Transactions"
-      },
-      "services": {
-        "2": {
-          "ar": "إلغاء القسمة بين الشركاء ( تكميلية)",
-          "en": "The cancelling of a distribution between partners (Complementary)"
+        "serviceCategoryName": {
+            "ar": "التصرفات",
+            "en": "Transactions",
+            "icon": "https://wfe.ajm.re/serviceIcons/trans.png"
         },
-        "3": {
-          "ar": "تسجيل  بالتخارج",
-          "en": "Registration by way of exit."
-        },
-        "4": {
-          "ar": "تسجيل  بالوراثة",
-          "en": "Registration by inheritance."
-        },
-        "5": {
-          "ar": "تسجيل إلغاء / تعديل الهبة ( تكميلية)",
-          "en": "Registration of the cancellation/modification of the grant (Complementary)"
-        },
-        "6": {
-          "ar": "تسجيل إلغاء الوقف الذري (تكميلية)",
-          "en": "Registration of the cancellation of the descendant endowment (Complementary)"
-        },
-        "7": {
-          "ar": "تسجيل إلغاء/ تعديل الوصية ( تكميلية)",
-          "en": "Registration of the cancellation/modification of the will (Complementary)"
-        },
-        "8": {
-          "ar": "تسجيل إنهاء إيجار طويل المدة ( تكميلية)",
-          "en": "Registration of termination of a long term lease (Complementary)"
-        },
-        "9": {
-          "ar": "تسجيل إنهاء حق انتفاع / مساطحة ( تكميلية)",
-          "en": "Registration of termination of right for benefit / right for `Mosataha` (Complementary)"
-        },
-        "10": {
-          "ar": "تسجيل إنهاء عقد إيجار  ينتهي بالتملك ( تكميلية)",
-          "en": "Registration of termination of lease contract ending with ownership (Complementary)"
-        },
-        "11": {
-          "ar": "تسجيل إيجار طويل المدة",
-          "en": "Registration of a long term lease"
-        },
-        "12": {
-          "ar": "تسجيل إيجار ينتهي بالتملك",
-          "en": "Registration of lease ending with ownershi"
-        },
-        "13": {
-          "ar": "تسجيل بالمبادلة",
-          "en": "Registration by way of exchange"
-        },
-        "14": {
-          "ar": "تسجيل بيع عقار / وحدة عقارية",
-          "en": "Sale Registration of a Real Estate/ Real Estate unit"
-        },
-        "15": {
-          "ar": "تسجيل تعديل أو تحويل حق انتفاع / مساطحة ( تكميليه)",
-          "en": "Registration of amendment or transfer of right for benefit / right for `Mosataha` (Complementary)"
-        },
-        "16": {
-          "ar": "تسجيل تعديل إيجار طويل المدة ( تكميلية)",
-          "en": "Registration of amendment of a long term lease (Complementary)"
-        },
-        "17": {
-          "ar": "تسجيل تعديل وقف خيري/ ذري ( تكميلية)",
-          "en": "Registration of amendment of charity / descendant endowment (Complementary)"
-        },
-        "18": {
-          "ar": "تسجيل تعديل/تحويل إيجار ينتهي بالتملك ( تكميلية)",
-          "en": " Registration of amendment/transfer of lease ending with ownership (Complementary)"
-        },
-        "19": {
-          "ar": "تسجيل حق إنتفاع / مساطحة",
-          "en": "Registration of right to benefit / `Mosataha`"
-        },
-        "20": {
-          "ar": "تسجيل عقار / و حدة عقارية بالقسمة بين الشركاء",
-          "en": "Registration of a real estate or a real estate unit by distribution between partners"
-        },
-        "21": {
-          "ar": "تسجيل عقار أو  وحدة عقارية بالهبة",
-          "en": "Registration of a Real Estate/ Real Estate unit by way of grant"
-        },
-        "22": {
-          "ar": "تسجيل عقار أو وحدة عقارية  بالوصية",
-          "en": "Registration of a Real Estate/ Real Estate unit by way of a will"
-        },
-        "23": {
-          "ar": "تسجيل وقف خيري/ ذري",
-          "en": "Registration of charity / descendant endowment"
-        },
-        "24": {
-          "ar": "نقل ملكية من مالك المؤسسة الفردية أو الشركة وبالعكس",
-          "en": "transfer of ownership from the owner of the individual establishment or the company and vice-versa"
+        "services": {
+            "2": {
+                "ar": "إلغاء القسمة بين الشركاء ( تكميلية)",
+                "en": "The Cancelling Of A Distribution Between Partners (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_cancellingDistPartners.png"
+            },
+            "3": {
+                "ar": "تسجيل  بالتخارج",
+                "en": "Registration By Way Of Exit.",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regByWayExit.png"
+            },
+            "4": {
+                "ar": "تسجيل  بالوراثة",
+                "en": "Registration By Inheritance.",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regByInheritance.png"
+            },
+            "5": {
+                "ar": "تسجيل إلغاء / تعديل الهبة ( تكميلية)",
+                "en": "Registration Of The Cancellation/Modification Of The Grant (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regCancellationModGrant.png"
+            },
+            "6": {
+                "ar": "تسجيل إلغاء الوقف الذري (تكميلية)",
+                "en": "Registration Of The Cancellation Of The Descendant Endowment (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regCancellationDescEnd.png"
+            },
+            "7": {
+                "ar": "تسجيل إلغاء/ تعديل الوصية ( تكميلية)",
+                "en": "Registration Of The Cancellation/Modification Of The Will (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regCancellationModWill.png"
+            },
+            "8": {
+                "ar": "تسجيل إنهاء إيجار طويل المدة ( تكميلية)",
+                "en": "Registration Of Termination Of A Long Term Lease (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regTermLongLease.png"
+            },
+            "9": {
+                "ar": "تسجيل إنهاء حق انتفاع / مساطحة ( تكميلية)",
+                "en": "Registration Of Termination Of Right For Benefit / Right For `Mosataha` (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regTermRightBenefitMosataha.png"
+            },
+            "10": {
+                "ar": "تسجيل إنهاء عقد إيجار  ينتهي بالتملك ( تكميلية)",
+                "en": "Registration Of Termination Of Lease Contract Ending With Ownership (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regTermLeaseContractEndingOwnership.png"
+            },
+            "11": {
+                "ar": "تسجيل إيجار طويل المدة",
+                "en": "Registration Of A Long Term Lease",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regLongTermLease.png"
+            },
+            "12": {
+                "ar": "تسجيل إيجار ينتهي بالتملك",
+                "en": "Registration Of Lease Ending With Ownership",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regLeaseEndingOwnership.png"
+            },
+            "13": {
+                "ar": "تسجيل بالمبادلة",
+                "en": "Registration By Way Of Exchange",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regByWayExchange.png"
+            },
+            "14": {
+                "ar": "تسجيل بيع عقار / وحدة عقارية",
+                "en": "Sale Registration Of A Real Estate/ Real Estate Unit",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_saleRegRealEstateUnit.png"
+            },
+            "15": {
+                "ar": "تسجيل تعديل أو تحويل حق انتفاع / مساطحة ( تكميليه)",
+                "en": "Registration Of Amendment Or Transfer Of Right For Benefit / Right For `Mosataha` (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regAmendmentTransferRidhgBenefitRightMosataha.png"
+            },
+            "16": {
+                "ar": "تسجيل تعديل إيجار طويل المدة ( تكميلية)",
+                "en": "Registration Of Amendment Of A Long Term Lease (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regAmendmentLongTermLease.png"
+            },
+            "17": {
+                "ar": "تسجيل تعديل وقف خيري/ ذري ( تكميلية)",
+                "en": "Registration Of Amendment Of Charity / Descendant Endowment (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regAmendmentCharityDescEndowment.png"
+            },
+            "18": {
+                "ar": "تسجيل تعديل/تحويل إيجار ينتهي بالتملك ( تكميلية)",
+                "en": " Registration Of Amendment/Transfer Of Lease Ending With Ownership (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regAmendmentTransferLeaseEndingWithOwnership.png"
+            },
+            "19": {
+                "ar": "تسجيل حق إنتفاع / مساطحة",
+                "en": "Registration Of Right To Benefit / `Mosataha`",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regRightBenefitMosataha.png"
+            },
+            "20": {
+                "ar": "تسجيل عقار / و حدة عقارية بالقسمة بين الشركاء",
+                "en": "Registration Of A Real Estate Or A Real Estate Unit By Distribution Between Partners",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regRealEstateUnitByDistPartners.png"
+            },
+            "21": {
+                "ar": "تسجيل عقار أو  وحدة عقارية بالهبة",
+                "en": "Registration Of A Real Estate/ Real Estate Unit By Way Of Grant",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regRealEstateUnitByGrant.png"
+            },
+            "22": {
+                "ar": "تسجيل عقار أو وحدة عقارية  بالوصية",
+                "en": "Registration Of A Real Estate/ Real Estate Unit By Way Of A Will",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regRealEstateUnitByWill.png"
+            },
+            "23": {
+                "ar": "تسجيل وقف خيري/ ذري",
+                "en": "Registration Of Charity / Descendant Endowment",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regCharityDescEndowment.png"
+            },
+            "24": {
+                "ar": "نقل ملكية من مالك المؤسسة الفردية أو الشركة وبالعكس",
+                "en": "Transfer Of Ownership From The Owner Of The Individual Establishment Or The Company And Vice-Versa",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_transferOwnerIndivisualEstOrCompVV.png"
+            }
         }
-      }
     },
     "8": {
-      "serviceCategoryName": {
-        "ar": "التفتيش",
-        "en": "Inspection"
-      },
-      "services": {
-        "57": {
-          "ar": "دفع المخالفات",
-          "en": "payment of fines of violations"
+        "serviceCategoryName": {
+            "ar": "التفتيش",
+            "en": "Inspection",
+            "icon": "https://wfe.ajm.re/serviceIcons/inspect.png"
         },
-        "75": {
-          "ar": "انشاء المخالفات",
-          "en": "Create violtion ticket"
+        "services": {
+            "57": {
+                "ar": "دفع المخالفات",
+                "en": "Payment Of Fines Of Violations",
+                "icon": "https://wfe.ajm.re/serviceIcons/inspect_payFines.png"
+            },
+            "75": {
+                "ar": "انشاء المخالفات",
+                "en": "Create violtion ticket"
+            }
         }
-      }
     },
     "9": {
-      "serviceCategoryName": {
-        "ar": "التقارير الهندسية والمسح العقاري",
-        "en": "Engineering reports and real estate survey"
-      },
-      "services": {
-        "64": {
-          "ar": "إصدار تقرير هندسي",
-          "en": "Issuance of an engineering report "
+        "serviceCategoryName": {
+            "ar": "التقارير الهندسية والمسح العقاري",
+            "en": "Engineering reports and real estate survey",
+            "icon": "https://wfe.ajm.re/serviceIcons/engr.png"
         },
-        "65": {
-          "ar": "تسجيل إستشاري هندسي متخصص",
-          "en": "Registration of specialized engineering consultnant"
+        "services": {
+            "64": {
+                "ar": "إصدار تقرير هندسي",
+                "en": "Issuance Of An Engineering Report ",
+                "icon": "https://wfe.ajm.re/serviceIcons/engr_issueEngRep.png"
+            },
+            "65": {
+                "ar": "تسجيل إستشاري هندسي متخصص",
+                "en": "Registration Of Specialized Engineering Consultnant",
+                "icon": "https://wfe.ajm.re/serviceIcons/engr_regEngConsult.png"
+            }
         }
-      }
     },
     "10": {
-      "serviceCategoryName": {
-        "ar": "التقييم العقاري",
-        "en": "Real estate valuation"
-      },
-      "services": {
-        "47": {
-          "ar": "التقييم العقاري",
-          "en": "Real estate valuation"
+        "serviceCategoryName": {
+            "ar": "التقييم العقاري",
+            "en": "Real estate valuation",
+            "icon": "https://wfe.ajm.re/serviceIcons/reval.png"
+        },
+        "services": {
+            "47": {
+                "ar": "التقييم العقاري",
+                "en": "Real Estate Valuation",
+                "icon": "https://wfe.ajm.re/serviceIcons/reval_reval.png"
+            }
         }
-      }
     },
     "11": {
-      "serviceCategoryName": {
-        "ar": "الرهن",
-        "en": "Mortgage"
-      },
-      "services": {
-        "39": {
-          "ar": "تسجيل الرهن",
-          "en": "Mortgage registration"
+        "serviceCategoryName": {
+            "ar": "الرهن",
+            "en": "Mortgage",
+            "icon": "https://wfe.ajm.re/serviceIcons/mort.png"
         },
-        "40": {
-          "ar": "تسجيل تحويل الرهن ( تكميلية)",
-          "en": "Registration of mortgage transfer (Complementary)"
-        },
-        "41": {
-          "ar": "تسجيل تحويل الرهن بين جهات التمويل( تكميلية)",
-          "en": "Registration of mortgage amendment by transferring between financers (Complementary)"
-        },
-        "42": {
-          "ar": "تسجيل تعديل الرهن (تكميلية)",
-          "en": "Registration of amendment of mortgage (Complementary)"
-        },
-        "43": {
-          "ar": "تسجيل تعديل الرهن من مالك إلى أخر دون المساس بالرهن ( تكميلية)",
-          "en": "Registration of amendment of mortgage from an owner to another without prejudice to the mortgage (Complementary)"
-        },
-        "44": {
-          "ar": "تسجيل فك الرهن ( تكميلية)",
-          "en": "Registration of Release fo mortgage (Complementary)"
-        },
-        "77": {
-          "ar": "تسجيل الرهن  - اسكان",
-          "en": "Mortgage registration - Housing program"
+        "services": {
+            "39": {
+                "ar": "تسجيل الرهن",
+                "en": "Mortgage Registration",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_reg.png"
+            },
+            "40": {
+                "ar": "تسجيل تحويل الرهن ( تكميلية)",
+                "en": "Registration Of Mortgage Transfer (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_regMortTransfer.png"
+            },
+            "41": {
+                "ar": "تسجيل تحويل الرهن بين جهات التمويل( تكميلية)",
+                "en": "Registration Of Mortgage Amendment By Transferring Between Financers (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_regMortAmendByTransferFinance.png"
+            },
+            "42": {
+                "ar": "تسجيل تعديل الرهن (تكميلية)",
+                "en": "Registration Of Amendment Of Mortgage From An Owner To Another Without Prejudice To The Mortgage (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_regAmendMort.png"
+            },
+            "43": {
+                "ar": "تسجيل تعديل الرهن من مالك إلى أخر دون المساس بالرهن ( تكميلية)",
+                "en": "Registration Of Amendment Of Mortgage From An Owner To Another Without Prejudice To The Mortgage (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_regAmendMortFromOwnerOtherWOprejMort.png"
+            },
+            "44": {
+                "ar": "تسجيل فك الرهن ( تكميلية)",
+                "en": "Registration Of Release Fo Mortgage (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_regReleaseMort.png"
+            },
+            "77": {
+                "ar": "تسجيل الرهن  - برامج الإسكان",
+                "en": "Mortgage registration - Housing program",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_reg.png"
+            }
         }
-      }
     },
     "12": {
-      "serviceCategoryName": {
-        "ar": "المشروعات العقارية",
-        "en": "Real estate projects"
-      },
-      "services": {
-        "60": {
-          "ar": "تعديل بيانات مشروع( تكميلية)",
-          "en": "Modify project data (Complementary)"
+        "serviceCategoryName": {
+            "ar": "المشروعات العقارية",
+            "en": "Real estate projects",
+            "icon": "https://wfe.ajm.re/serviceIcons/reproj.png"
         },
-        "61": {
-          "ar": "قيد مشروع عقاري",
-          "en": "Real estate project registration"
+        "services": {
+            "60": {
+                "ar": "تعديل بيانات مشروع( تكميلية)",
+                "en": "Modify Project Data (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/reproj_modifyData.png"
+            },
+            "61": {
+                "ar": "قيد مشروع عقاري",
+                "en": "Real Estate Project Registration",
+                "icon": "https://wfe.ajm.re/serviceIcons/reproj_reg.png"
+            }
         }
-      }
     },
     "13": {
-      "serviceCategoryName": {
-        "ar": "النزاعات العقارية",
-        "en": "Real estate complaints"
-      },
-      "services": {
-        "59": {
-          "ar": "طلب فض نزاع عقاري",
-          "en": "Application for resolution of a real estate dispute"
+        "serviceCategoryName": {
+            "ar": "النزاعات العقارية",
+            "en": "Real estate complaints",
+            "icon": "https://wfe.ajm.re/serviceIcons/recomp.png"
+        },
+        "services": {
+            "59": {
+                "ar": "طلب فض نزاع عقاري",
+                "en": "Application For Resolution Of A Real Estate Dispute",
+                "icon": "https://wfe.ajm.re/serviceIcons/recomp_appResolveREdispute.png"
+            }
         }
-      }
     },
     "14": {
-      "serviceCategoryName": {
-        "ar": "حسابات الضمان",
-        "en": "Escrow accounts"
-      },
-      "services": {
-        "62": {
-          "ar": "تسجيل مدقق مالي لمشروع عقاري",
-          "en": "Registration of a financial auditor for a real estate project"
+        "serviceCategoryName": {
+            "ar": "حسابات الضمان",
+            "en": "Escrow accounts",
+            "icon": "https://wfe.ajm.re/serviceIcons/escrow.png"
         },
-        "63": {
-          "ar": "طلب إعتماد أمين حساب",
-          "en": "Accreditation of Escrow accounts"
+        "services": {
+            "62": {
+                "ar": "تسجيل مدقق مالي لمشروع عقاري",
+                "en": "Registration Of A Financial Auditor For A Real Estate Project",
+                "icon": "https://wfe.ajm.re/serviceIcons/escrow_regFinAuditREproj.png"
+            },
+            "63": {
+                "ar": "طلب إعتماد أمين حساب",
+                "en": "Accreditation Of Escrow Accounts",
+                "icon": "https://wfe.ajm.re/serviceIcons/escrow_accreditEscAcct.png"
+            }
         }
-      }
+    },
+    "15": {
+        "serviceCategoryName": {
+            "ar": "الإعلانات العقارية",
+            "en": "Real-Estate Advertisement services",
+            "icon": "https://wfe.ajm.re/serviceIcons/reads.png"
+        },
+        "services": {
+            "78": {
+                "ar": "تصريح اعلان",
+                "en": "List an ad"
+            }
+        }
     }
-  },
+},
   "projectstypes": [
     {
       "key": "1",

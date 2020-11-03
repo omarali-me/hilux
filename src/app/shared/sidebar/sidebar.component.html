@@ -13,15 +13,29 @@
                 </a>
             </div>
         </div>
-        <form action="#" method="get" class="sidebar-form">
-          <div class="input-group">
-            <span class="input-group-btn">
-                  <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                    <i class="fa fa-search"></i>
-                  </button>
+        <form
+            action="#"
+            method="get"
+            class="sidebar-form"
+        >
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button
+                        type="submit"
+                        name="search"
+                        id="search-btn"
+                        class="btn btn-flat"
+                    >
+                        <i class="fa fa-search"></i>
+                    </button>
                 </span>
-            <input type="text" name="q" class="form-control" placeholder="Search...">
-          </div>
+                <input
+                    type="text"
+                    name="q"
+                    class="form-control"
+                    placeholder="بحث"
+                >
+            </div>
         </form>
         <nav class="mt-2">
             <ul
@@ -31,8 +45,6 @@
                 data-accordion="false"
                 *ngIf="menuItems$ | async as menuItems"
             >
-                <!-- Add icons to the links using the .nav-icon class
-              with font-awesome or any other icon font library -->
                 <li
                     class="nav-item has-treeview"
                     (click)="toggleClass($event)"
@@ -40,7 +52,10 @@
                     *ngFor="let item of menuItems | keyvalue; let i = index"
                 >
                     <a class="nav-link">
-                        <i class="nav-icon fas fa-building align-top"></i>
+                        <img
+                            class="nav-icon fas align-top"
+                            src="{{getServiceProviderIcon(item.value)}}"
+                        >
                         <p class="text-wrap">
                             {{getServiceProviderItem(item.value)}}
                             <i class="right fas fa-angle-left"></i>
@@ -52,12 +67,15 @@
                     >
                         <li
                             class="nav-item"
-
                             [routerLink]="['/service', subItem.key]"
                             *ngFor="let subItem of item.value.services | keyvalue"
                         >
                             <a class="nav-link">
-                                <li class="fas fa-circle nav-icon align-top"></li>
+                                <img
+                                    class="nav-icon fas align-top"
+                                    src="{{getServiceIcon(subItem.value)}}"
+                                >
+
                                 <p class="text-wrap pl-1">{{getServiceName(subItem.value)}}</p>
                             </a>
                         </li>
