@@ -30,10 +30,12 @@
                     </button>
                 </span>
                 <input
+                    [(ngModel)]="searchInput$"
+                    [ngModelOptions]="{standalone: true}"
                     type="text"
-                    name="q"
                     class="form-control"
                     placeholder="بحث"
+                    (keyup)="searchtServices()"
                 >
             </div>
         </form>

@@ -15,6 +15,7 @@ export class SidebarComponent implements OnInit {
   items: any;
   openSubMenu: boolean = false;
   openSubmenuIndex: any;
+  searchInput$ = '';
 
   constructor(private fieldsService: FieldsService, private http: HttpClient) { }
 
@@ -22,6 +23,9 @@ export class SidebarComponent implements OnInit {
     this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`);
   }
 
+  searchtServices() {
+    this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`, { search: this.searchInput$ });
+  }
   getServiceProviderItem(data: any) {
     return data.serviceCategoryName && data.serviceCategoryName.ar;
   }
@@ -37,7 +41,7 @@ export class SidebarComponent implements OnInit {
   }
 
   hideRoot(data: any) {
-    return (this.getServiceProviderItem(data) == 'root') ;
+    return (this.getServiceProviderItem(data) == 'root');
   }
 
   callServicehandler(item: any) {
