@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
   constructor(private fieldsService: FieldsService, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`);
+    this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices/channel/hilux`);
   }
 
   getServiceProviderItem(data: any) {
