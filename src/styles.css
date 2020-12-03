@@ -214,3 +214,12 @@ body {
   margin-left: .2rem;
   
 }
+
+
+label > span {
+    color: red;
+}
+
+.red {
+    color: red;
+}

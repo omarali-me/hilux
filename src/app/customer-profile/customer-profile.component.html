@@ -23,8 +23,10 @@
                 >
                     <div class="card card-purple">
                         <div class="card-header">
-                            <h3 class="card-title">إنشاء حساب عميل جديد</h3>
+                            <h3 class="card-title"> حساب عميل </h3>
                         </div>
+                        <router-outlet></router-outlet>
+
                         <section
                             class="content"
                             *ngIf="formData && !formData.id"

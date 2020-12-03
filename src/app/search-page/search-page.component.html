@@ -280,7 +280,7 @@
                         <td>{{ current_land_detail?.deed?.createdAt }}</td>
                         <td>
                           <ng-container *ngFor="let blockage of current_land_detail.land.blockages">
-                            <li class="ban red" *ngIf="blockage.remarks">
+                            <li class="text-danger" *ngIf="blockage.remarks">
                               {{blockage.remarks}}
                             </li>
                           </ng-container>
@@ -327,7 +327,7 @@
                         <td>{{ previous_land_detail?.deed?.createdAt }}</td>
                         <td>
                           <ng-container *ngFor="let blockage of previous_land_detail.land.blockages">
-                            <li class="ban red" *ngIf="blockage.remarks">
+                            <li class="text-danger" *ngIf="blockage.remarks">
                               {{blockage.remarks}}
                             </li>
                           </ng-container>
@@ -372,7 +372,7 @@
                         <td>
                           <ul class="bans-wrapper">
                             <ng-container *ngFor="let blockage of current_unit_detail.unitData.blockages">
-                              <li class="ban red" *ngIf="blockage.remarks">
+                              <li class="text-danger" *ngIf="blockage.remarks">
                                 {{blockage.remarks}}
                               </li>
                             </ng-container>
@@ -417,7 +417,7 @@
                         <td>
                           <ul class="bans-wrapper">
                             <ng-container *ngFor="let blockage of previous_unit_detail.unitData.blockages">
-                              <li class="ban red" *ngIf="blockage.remarks">
+                              <li class="text-danger" *ngIf="blockage.remarks">
                                 {{blockage.remarks}}
                               </li>
                             </ng-container>
@@ -450,7 +450,7 @@
                     <td>{{ getFieldNameorId(land_detail.land, 'section') }}</td>
                     <td>
                       <ng-container *ngFor="let blockage of land_detail.blockages">
-                        <li class="ban red" *ngIf="blockage.remarks">
+                        <li class="text-danger" *ngIf="blockage.remarks">
                           {{blockage.remarks}}
                         </li>
                       </ng-container>
@@ -550,7 +550,7 @@
                     <td>
                       <ul class="bans-wrapper">
                         <ng-container *ngFor="let blockage of unit_detail.blockages">
-                          <li class="ban red" *ngIf="blockage.remarks">
+                          <li class="text-danger" *ngIf="blockage.remarks">
                             {{blockage.remarks}}
                           </li>
                         </ng-container>

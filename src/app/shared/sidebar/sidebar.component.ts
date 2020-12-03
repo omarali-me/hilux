@@ -24,8 +24,13 @@ export class SidebarComponent implements OnInit {
   }
 
   searchtServices() {
-    this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`, { search: this.searchInput$ });
+    if (this.searchInput$ === '') {
+      this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`);
+    } else {
+      this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`, { search: this.searchInput$ });
+    }
   }
+
   getServiceProviderItem(data: any) {
     return data.serviceCategoryName && data.serviceCategoryName.ar;
   }
