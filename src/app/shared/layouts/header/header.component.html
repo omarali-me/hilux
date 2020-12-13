@@ -171,6 +171,19 @@
                 My Tasks
             </a>
         </li>
+        <li
+            [routerLink]="['/my_tasks']"
+            class="nav-item d-none d-sm-inline-block"
+            [routerLinkActive]="['active']"
+        >
+            <a
+                href="/my_tasks"
+                class="nav-link"
+            >
+                My Tasks
+                <i class="nav-icon fas fa-plus"></i>
+            </a>
+        </li>
 
         <!-- <li
             [routerLink]="['/login']"
@@ -286,7 +299,3 @@
 </nav>
 
 <app-sidebar *ngIf="userloggedIn"></app-sidebar>
-
-
-
-

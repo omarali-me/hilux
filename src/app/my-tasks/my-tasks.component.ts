@@ -21,6 +21,7 @@ export class MyTasksComponent implements OnDestroy, OnInit {
   dtOptions = {};
   dtTrigger: Subject<any> = new Subject();
 
+  expand=[]
 
   constructor(
     private fieldsService: FieldsService,
@@ -103,6 +104,18 @@ export class MyTasksComponent implements OnDestroy, OnInit {
     }
   }
 
+  toggleClass(event: any) {
+    let target = event.currentTarget;
+    let attrs = target.attributes;
+    var value = attrs.class.nodeValue;
+
+    if (value.match(/expanding/)) {
+      $(target).removeClass('expanding');
+    } else {
+      $(target).addClass('expanding');
+    }
+  }
+
   performActionPerStatus(item: any) {
     if (item.stepDetails.status.toLowerCase() === 'pending') {
       this.router.navigate(['/notifications', item.stepDetails.applicationWorkflowStepID]);
@@ -111,5 +124,8 @@ export class MyTasksComponent implements OnDestroy, OnInit {
 
   getStepDetails(item: any) {
     return JSON.parse(item.applicationDetails.stepsExecuted);
+  }
+  getStepDetailsFirst(item: any) {
+    return JSON.parse(item.applicationDetails.stepsExecuted)[0];
   }
 }

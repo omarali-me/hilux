@@ -55,8 +55,8 @@
     var Default = {
       controlsidebarSlide: true,
       scrollbarTheme: 'os-theme-light',
-      scrollbarAutoHide: '1'
-        };
+      scrollbarAutoHide: 'l'
+    };
     /**
      * Class Definition
      * ====================================================
@@ -326,8 +326,8 @@
     };
     var Default = {
       scrollbarTheme: 'os-theme-light',
-      scrollbarAutoHide: '1'
-        };
+      scrollbarAutoHide: 'l'
+    };
     /**
      * Class Definition
      * ====================================================
