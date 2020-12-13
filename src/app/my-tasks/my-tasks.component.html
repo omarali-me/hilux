@@ -67,13 +67,16 @@
                                     >
                                         الحالة
                                     </th>
+                                    <th
+                                    scope="col"
+                                    style="width: 10%;"
+                                    class="text-center"
+                                >
+                                </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr
-                                    (click)="performActionPerStatus(item)"
-                                    *ngFor="let item of response; let i = index"
-                                >
+                                <tr *ngFor="let item of response; let i = index">
                                     <td>{{i +1}}</td>
                                     <td>
                                         {{item.applicationDetails?.applicationID}}
@@ -81,7 +84,7 @@
                                     <td>
                                         {{getItemText(item.serviceDetails, 'serviceName')}}
                                     </td>
-                                    <td (click)="toggleClass($event)">
+                                    <td (click)="expand[i] = !expand[i]">
 
                                         <!-- The time line -->
                                         <div
@@ -107,19 +110,22 @@
                                                     </h3>
                                                 </div>
                                             </div>
-                                                <div [hidden]="!expand[i]" *ngFor="let rowItem of getStepDetails(item); let j = index">
-                                                    <i class="fas fa-user bg-green"></i>
-                                                    <div class="timeline-item">
-                                                        <span class="time">
-                                                            <i class="fas fa-clock"></i>
-                                                            {{rowItem.timeExecuted | date:'medium'}}
-                                                        </span>
-                                                        <h3 class="timeline-header no-border">
-                                                            Step Name: {{rowItem.stepName}}
+                                            <div
+                                                [hidden]="!expand[i]"
+                                                *ngFor="let rowItem of getStepDetails(item); let j = index"
+                                            >
+                                                <i class="fas fa-user bg-green"></i>
+                                                <div class="timeline-item">
+                                                    <span class="time">
+                                                        <i class="fas fa-clock"></i>
+                                                        {{rowItem.timeExecuted | date:'medium'}}
+                                                    </span>
+                                                    <h3 class="timeline-header no-border">
+                                                        Step Name: {{rowItem.stepName}}
                                                             UserID:{{rowItem.userID}}
-                                                        </h3>
-                                                    </div>
+                                                    </h3>
                                                 </div>
+                                            </div>
                                             <!-- END timeline item -->
                                             <div>
                                                 <i
@@ -144,6 +150,16 @@
                                         >
                                             {{item.stepDetails?.status}}
                                         </span>
+                                    </td>
+                                    <td class="text-center align-middle">
+                                        <button
+                                          *ngIf="checkStatusClass(item)"
+                                            type="button"
+                                            (click)="performActionPerStatus(item)"
+                                            class="btn btn-block bg-truev text-white"
+                                        >
+                                            متابعة الخدمة
+                                        </button>
                                     </td>
 
                                 </tr>

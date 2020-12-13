@@ -104,17 +104,19 @@ export class MyTasksComponent implements OnDestroy, OnInit {
     }
   }
 
-  toggleClass(event: any) {
-    let target = event.currentTarget;
-    let attrs = target.attributes;
-    var value = attrs.class.nodeValue;
-
-    if (value.match(/expanding/)) {
-      $(target).removeClass('expanding');
-    } else {
-      $(target).addClass('expanding');
+  checkStatusClass(item: any) {
+    switch (item.stepDetails.status.toLowerCase()) {
+      case 'pending':
+        return true;
+      case 'completed':
+      case 'locked':
+        return false;
+      default:
+        return true;
     }
   }
+
+
 
   performActionPerStatus(item: any) {
     if (item.stepDetails.status.toLowerCase() === 'pending') {
