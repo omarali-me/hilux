@@ -231,3 +231,19 @@ label > span {
 
 .expanding { display: none; }
 
+.gallery-wrapper {
+    min-height: 150px;
+    max-width: 150px;
+}
+
+.img-circle {
+    border-radius: 5%;
+}
+
+.profile-user-img {
+    border: 3px solid #adb5bd;
+    margin: 0 auto;
+    padding: 3px;
+    width: 150px;
+    min-height: 150px;
+}
