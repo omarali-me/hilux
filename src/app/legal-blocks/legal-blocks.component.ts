@@ -73,12 +73,7 @@ export class LegalBlocksComponent implements OnInit {
   }
 
   searchData(formData: any) {
-    // let prepapedData = this.prepareFormData(formData)
-    // let fd = new FormData();
-    // fd.append('data', JSON.stringify(prepapedData));
-
-    // this.http.post(`http://localhost:3000/AjmanLandProperty/index.php/properties/search`, fd)
-    this.http.get(`http://localhost:3000/legal_blockages`)
+    this.http.get(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/getByPropertyId/${this.getPropertyId(formData)}`)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.response = data.data;
@@ -93,7 +88,7 @@ export class LegalBlocksComponent implements OnInit {
   }
 
   loadUnitsOptions() {
-    this.fieldsService.getUrl(`http://localhost:3000/units`, { projectId: this.formData.projectId })
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/units`, { projectId: this.formData.projectId })
       .subscribe((data) => {
         this.unitsOptions = data;
       })
@@ -106,7 +101,7 @@ export class LegalBlocksComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.developerDataOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`http://localhost:3000/developers`, { term }).pipe(
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/developers`, { term }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.developerDataOptionsLoading = false)
           )
@@ -122,7 +117,7 @@ export class LegalBlocksComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.projectDataOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`http://localhost:3000/projects`, { term, developerId: this.formData.developerId }).pipe(
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, { term, developerId: this.formData.developerId }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.projectDataOptionsLoading = false)
           )
@@ -138,7 +133,7 @@ export class LegalBlocksComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.landDataOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`http://localhost:3000/lands`, { term }).pipe(
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/lands`, { term }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.landDataOptionsLoading = false)
           )
@@ -154,7 +149,7 @@ export class LegalBlocksComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.oldLandDataOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`http://localhost:3000/oldLands`, { term }).pipe(
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/oldLands`, { term }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.oldLandDataOptionsLoading = false)
           )
@@ -348,7 +343,7 @@ export class LegalBlocksComponent implements OnInit {
 
   prepareProjectValueOptions(params: any) {
     if(!!params.projectId) {
-      this.fieldsService.getUrl(`http://localhost:3000/lookup_single_project`, { id: params.projectId })
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, { id: params.projectId })
       .subscribe((option)=> {
         this.projectsSearchInput$.next(option.value && option.value.en);
       })
@@ -357,7 +352,7 @@ export class LegalBlocksComponent implements OnInit {
 
   prepareDeveloperValueOptions(params: any) {
     if(!!params.developerId) {
-      this.fieldsService.getUrl(`http://localhost:3000/lookup_single_developer`, { id: params.developerId })
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/developers`, { id: params.developerId })
       .subscribe((option)=> {
         this.developerSearchInput$.next(option.value && option.value.en);
       })
@@ -366,7 +361,7 @@ export class LegalBlocksComponent implements OnInit {
 
   prepareLandValueOptions(params: any) {
     if(!!params.landId) {
-      this.fieldsService.getUrl(`http://localhost:3000/lookup_single_land`, { id: params.landId })
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/lands`, { id: params.landId })
       .subscribe((option)=> {
         this.landSearchInput$.next(option.value && option.value.en);
       })
@@ -375,7 +370,7 @@ export class LegalBlocksComponent implements OnInit {
 
   prepareOldLandValueOptions(params: any) {
     if(!!params.oldLandId) {
-      this.fieldsService.getUrl(`http://localhost:3000/lookup_single_oldland`, { id: params.oldLandId })
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/oldLands`, { id: params.oldLandId })
       .subscribe((option)=> {
         this.oldLandSearchInput$.next(option.value && option.value.en);
       })
@@ -384,10 +379,17 @@ export class LegalBlocksComponent implements OnInit {
 
   prepareUnitValueOptions(params: any) {
     if(!!params.unitId) {
-      this.fieldsService.getUrl(`http://localhost:3000/lookup_single_unit`, { id: params.unitId })
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/units`, { id: params.unitId })
       .subscribe((option)=> {
       })
     }
   }
 
+  getPropertyId(formData: any) {
+    if (formData.type == '1') {
+      return formData.landId || formData.oldLandId;
+    } else {
+      return formData.unitId;
+    }
+  }
 }
