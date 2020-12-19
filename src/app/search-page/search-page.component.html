@@ -319,9 +319,12 @@
                             <a [href]="getViewResourceUrl(current_land_detail?.land?.land?.landId, 'land')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
                             </a>
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewLegalBlocks(current_land_detail?.land?.land?.landId , 'landId')" target="_blank" class="fs-30 p-1" *ngIf="current_land_detail?.land?.land?.landId">
                               <i class="fas fa-balance-scale"></i>
-                            </span>
+                            </a>
+                            <a [href]="getViewLegalBlocks(current_land_detail?.land?.land?.landId , 'oldLandId')" target="_blank" class="fs-30 p-1" *ngIf="!current_land_detail?.land?.land?.landId">
+                              <i class="fas fa-balance-scale"></i>
+                            </a>
                             <span class="fs-30 p-1 icon-pointer">
                               <i class="fas fa-drafting-compass"></i>
                             </span>
@@ -380,9 +383,12 @@
                             <a [href]="getViewResourceUrl(previous_land_detail?.land?.land?.landId, 'land')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
                             </a>
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewLegalBlocks(previous_land_detail?.land?.land?.landId , 'landId')" target="_blank" class="fs-30 p-1" *ngIf="previous_land_detail?.land?.land?.landId">
                               <i class="fas fa-balance-scale"></i>
-                            </span>
+                            </a>
+                            <a [href]="getViewLegalBlocks(previous_land_detail?.land?.land?.landId , 'oldLandId')" target="_blank" class="fs-30 p-1" *ngIf="!previous_land_detail?.land?.land?.landId">
+                              <i class="fas fa-balance-scale"></i>
+                            </a>
                             <span class="fs-30 p-1 icon-pointer">
                               <i class="fas fa-drafting-compass"></i>
                             </span>
@@ -440,9 +446,9 @@
                             <a [href]="getViewResourceUrl(current_unit_detail?.unitData?.unit?.unitNumber, 'unit')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
                             </a>
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewLegalBlocks(current_unit_detail?.unitData?.unit?.unitNumber, 'unitId')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-balance-scale"></i>
-                            </span>
+                            </a>
                             <span class="fs-30 p-1 icon-pointer">
                               <i class="fas fa-drafting-compass"></i>
                             </span>
@@ -499,9 +505,9 @@
                             <a [href]="getViewResourceUrl(previous_unit_detail?.unitData?.unit?.unitNumber, 'unit')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
                             </a>
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewLegalBlocks(previous_unit_detail?.unitData?.unit?.unitNumber, 'unitId')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-balance-scale"></i>
-                            </span>
+                            </a>
                             <span class="fs-30 p-1 icon-pointer">
                               <i class="fas fa-drafting-compass"></i>
                             </span>
@@ -545,9 +551,12 @@
                         <a [href]="getViewResourceUrl(land_detail.land.landId, 'land')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-eye"></i>
                         </a>
-                        <span class="fs-30 p-1 icon-pointer">
+                        <a [href]="getViewLegalBlocks(land_detail.land.landId , 'landId')" target="_blank" class="fs-30 p-1" *ngIf="land_detail.land.landId">
                           <i class="fas fa-balance-scale"></i>
-                        </span>
+                        </a>
+                        <a [href]="getViewLegalBlocks(land_detail.land.landId , 'oldLandId')" target="_blank" class="fs-30 p-1" *ngIf="!land_detail.land.landId">
+                          <i class="fas fa-balance-scale"></i>
+                        </a>
                         <span class="fs-30 p-1 icon-pointer">
                           <i class="fas fa-drafting-compass"></i>
                         </span>
@@ -682,9 +691,9 @@
                         <a [href]="getViewResourceUrl(unit_detail?.unit?.unitNumber, 'unit')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-eye"></i>
                         </a>
-                        <span class="fs-30 p-1 icon-pointer">
+                        <a [href]="getViewLegalBlocks(unit_detail?.unit?.unitNumber, 'unitId')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-balance-scale"></i>
-                        </span>
+                        </a>
                         <span class="fs-30 p-1 icon-pointer">
                           <i class="fas fa-drafting-compass"></i>
                         </span>
