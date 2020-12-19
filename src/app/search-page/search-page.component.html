@@ -259,9 +259,9 @@
                     <td>{{ getNationalityName(owner_detail?.profile, 'nationalityCode') }}</td>
                     <td>
                       <div class="d-flex">
-                        <span class="fs-30 p-1 icon-pointer">
+                        <a [href]="getViewResourceUrl(owner_detail?.profile?.id, 'owner')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-eye"></i>
-                        </span>
+                        </a>
                         <span class="fs-30 p-1 icon-pointer">
                           <i class="fas fa-gavel fa-rotate-270"></i>
                         </span>
@@ -316,9 +316,9 @@
                         </td>
                         <td>
                           <div class="d-flex">
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewResourceUrl(current_land_detail?.land?.land?.landId, 'land')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
-                            </span>
+                            </a>
                             <span class="fs-30 p-1 icon-pointer">
                               <i class="fas fa-balance-scale"></i>
                             </span>
@@ -377,9 +377,9 @@
                         </td>
                         <td>
                           <div class="d-flex">
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewResourceUrl(previous_land_detail?.land?.land?.landId, 'land')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
-                            </span>
+                            </a>
                             <span class="fs-30 p-1 icon-pointer">
                               <i class="fas fa-balance-scale"></i>
                             </span>
@@ -437,9 +437,9 @@
                         </td>
                         <td>
                           <div class="d-flex">
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewResourceUrl(current_unit_detail?.unitData?.unit?.unitNumber, 'unit')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
-                            </span>
+                            </a>
                             <span class="fs-30 p-1 icon-pointer">
                               <i class="fas fa-balance-scale"></i>
                             </span>
@@ -496,9 +496,9 @@
                         </td>
                         <td>
                           <div class="d-flex">
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewResourceUrl(previous_unit_detail?.unitData?.unit?.unitNumber, 'unit')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
-                            </span>
+                            </a>
                             <span class="fs-30 p-1 icon-pointer">
                               <i class="fas fa-balance-scale"></i>
                             </span>
@@ -542,9 +542,9 @@
                     </td>
                     <td>
                       <div class="d-flex">
-                        <span class="fs-30 p-1 icon-pointer">
+                        <a [href]="getViewResourceUrl(land_detail.land.landId, 'land')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-eye"></i>
-                        </span>
+                        </a>
                         <span class="fs-30 p-1 icon-pointer">
                           <i class="fas fa-balance-scale"></i>
                         </span>
@@ -590,9 +590,9 @@
                         <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
                         <td>
                           <div class="d-flex">
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewResourceUrl(deed_detail_item.profile?.id, 'owner')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
-                            </span>
+                            </a>
                             <span class="fs-30 p-1 icon-pointer">
                               <i class="fas fa-gavel fa-rotate-270"></i>
                             </span>
@@ -636,9 +636,9 @@
                         <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
                         <td>
                           <div class="d-flex">
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewResourceUrl(deed_detail_item.profile?.id, 'owner')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
-                            </span>
+                            </a>
                             <span class="fs-30 p-1 icon-pointer">
                               <i class="fas fa-gavel fa-rotate-270"></i>
                             </span>
@@ -679,9 +679,9 @@
                     </td>
                     <td>
                       <div class="d-flex">
-                        <span class="fs-30 p-1 icon-pointer">
+                        <a [href]="getViewResourceUrl(unit_detail?.unit?.unitNumber, 'unit')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-eye"></i>
-                        </span>
+                        </a>
                         <span class="fs-30 p-1 icon-pointer">
                           <i class="fas fa-balance-scale"></i>
                         </span>
@@ -727,9 +727,9 @@
                         <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
                         <td>
                           <div class="d-flex">
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewResourceUrl(deed_detail_item.profile?.id, 'owner')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
-                            </span>
+                            </a>
                             <span class="fs-30 p-1 icon-pointer">
                               <i class="fas fa-gavel fa-rotate-270"></i>
                             </span>
@@ -773,9 +773,9 @@
                         <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
                         <td>
                           <div class="d-flex">
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewResourceUrl(deed_detail_item.profile?.id, 'owner')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
-                            </span>
+                            </a>
                             <span class="fs-30 p-1 icon-pointer">
                               <i class="fas fa-gavel fa-rotate-270"></i>
                             </span>

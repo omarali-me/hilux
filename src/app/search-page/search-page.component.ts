@@ -349,4 +349,8 @@ export class SearchPageComponent implements OnInit {
         break;
     }
   }
+
+  getViewResourceUrl(resourceId: any, resourceType: any) {
+    return `/${resourceType}/profile/${resourceId}/edit`;
+  }
 }
