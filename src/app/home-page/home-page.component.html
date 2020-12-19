@@ -1,50 +1,289 @@
 <!-- Main Sidebar Container -->
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <div class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-12 text-center">
-          <h1 class="m-0 text-dark">لوحة التحكم</h1>
-        </div><!-- /.col -->
-        <!-- <div class="col-sm-6">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-12 text-center">
+                    <h1 class="m-0 text-dark">لوحة التحكم</h1>
+                </div>
+                <!-- /.col -->
+                <!-- <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
             <li class="breadcrumb-item active">Dashboard v1</li>
           </ol>
         </div> -->
-        <!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </div>
-  <!-- /.content-header -->
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 
-  <!-- Main content -->
-  <section class="content">
-    <div class="container-fluid">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-          <div class="col-lg-3 col-6" *ngFor="let item of response; let i = index">
-              <!-- small box -->
-              <div class="small-box bg-info">
-                  <div class="inner">
-                      <h3>{{item.value}}</h3>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">تصفية العرض</h5>
 
-                      <p>{{item.ar}}</p>
+                            <div class="card-tools">
+                                <button
+                                    type="button"
+                                    class="btn btn-tool"
+                                    data-card-widget="collapse"
+                                >
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-tool"
+                                    data-card-widget="remove"
+                                >
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <app-alerts [errors]="formErrors"></app-alerts>
+                        <!-- /.card-header -->
+                        <div
+                            class="card-body"
+                            style="display: block;"
+                        >
+                            <div
+                                class="row"
+                                data-select2-id="30"
+                            >
+                                <div
+                                    class="col-md-6"
+                                    data-select2-id="29"
+                                >
+                                    <div class="form-group">
+                                        <label>المستخدمون</label>
+                                        <ng-select
+                                            [items]="people$ | async"
+                                            [multiple]="true"
+                                            [closeOnSelect]="false"
+                                            [searchable]="false"
+                                            bindLabel="name"
+                                            placeholder="المستخدمون"
+                                            notFoundText="لا يوجد بيانات"
+                                            [(ngModel)]="selectedPeople"
+                                        >
+                                        </ng-select>
+                                    </div>
+                                    <!-- /.form-group -->
+
+                                </div>
+                                <div
+                                    class="col-md-6"
+                                    data-select2-id="29"
+                                >
+                                    <div class="form-group">
+                                        <label>الأقسام</label>
+                                        <ng-select
+                                            [items]="people$ | async"
+                                            [multiple]="true"
+                                            [closeOnSelect]="false"
+                                            [hideSelected]="true"
+                                            bindLabel="name"
+                                            placeholder="Select people"
+                                            notFoundText="الأقسام"
+                                            [clearSearchOnAdd]="true"
+                                            [(ngModel)]="selectedPeople"
+                                        >
+                                        </ng-select>
+                                    </div>
+                                    <!-- /.form-group -->
+
+                                </div>
+
+                                <!-- <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" i18n="@@searchPageOwner">Owner
+                    </label>
+                    <div class="col-sm-9">
+                      <ng-select
+                        
+                        required="true"
+                        [items]="ownersOptions | async"
+                        [(ngModel)]="formData.owner"
+                        [hideSelected]="true"
+                        name="Owner"
+                        bindLabel="value.ar"
+                        bindValue="key"
+                        [minTermLength]="1"
+                        [typeahead]="ownersSearchInput$"
+                        [loading]="ownersOptionsLoading"
+                        notFoundText="لا يوجد نتائج للبحث"
+                        typeToSearchText="Please enter 1 or more characters"
+                        #owner="ngModel"
+                        >
+                      </ng-select>
+                    </div>
                   </div>
-                  <div class="icon">
-                      <i class="ion ion-podium"></i>
-                      <!-- <span class="iconify" data-icon="ion:podium-sharp" data-inline="false"></span> -->
-                  </div>
-                  <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
-              </div>
-          </div>
+                </div> -->
+                                <!-- /.col -->
+                            </div>
+                            <div
+                                class="row"
+                                data-select2-id="30"
+                            >
+                                <div
+                                    class="col-md-6"
+                                    data-select2-id="29"
+                                >
+                                    <div class="form-group">
+                                        <label>الخدمات الرئيسية</label>
+                                        <ng-select
+                                            [items]="people$ | async"
+                                            [multiple]="true"
+                                            [closeOnSelect]="false"
+                                            [searchable]="false"
+                                            bindLabel="name"
+                                            placeholder="الخدمات الرئيسية"
+                                            notFoundText="لا يوجد بيانات"
+                                            [(ngModel)]="selectedPeople"
+                                        >
+                                        </ng-select>
+                                    </div>
+                                    <!-- /.form-group -->
 
+                                </div>
+                                <div
+                                    class="col-md-6"
+                                    data-select2-id="29"
+                                >
+                                    <div class="form-group">
+                                        <label>الخدمات</label>
+                                        <ng-select
+                                            [items]="people$ | async"
+                                            [multiple]="true"
+                                            [closeOnSelect]="false"
+                                            [hideSelected]="true"
+                                            bindLabel="name"
+                                            placeholder="الخدمات"
+                                            notFoundText="لا يوجد بيانات"
+                                            [clearSearchOnAdd]="true"
+                                            [(ngModel)]="selectedPeople"
+                                        >
+                                        </ng-select>
+                                    </div>
+                                    <!-- /.form-group -->
 
-        <!-- ./col -->
-      </div>
-      <!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </section>
-  <!-- /.content -->
+                                </div>
+
+                            </div>
+                            <div
+                                class="row"
+                                data-select2-id="30"
+                            >
+                                <div
+                                    class="col-md-6"
+                                    data-select2-id="29"
+                                >
+                                    <div class="form-group">
+                                        <label>الفترة</label>
+
+                                        <div class="d-flex">
+                                          <input type="text"
+                                            class="form-control"
+                                            [placeholder]="'من تاريخ - إلى تاريخ'"
+                                            [required]="false"
+                                            [name]="'dateFrom'"
+                                            [id]="'dateFrom'"
+                                            [owlDateTime]="dt3"
+                                            [owlDateTimeTrigger]="dt3"
+                                            [selectMode]="'range'"
+                                          >
+                                          <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+                                        </div>
+
+                                      
+
+                                    </div>
+                                    <!-- /.form-group -->
+
+                                </div>
+                                <div
+                                    class="col-md-6"
+                                    data-select2-id="29"
+                                >
+                                    <div class="form-group">
+                                        <label>المصدر</label>
+                                        <ng-select
+                                            [items]="people$ | async"
+                                            [multiple]="true"
+                                            [closeOnSelect]="false"
+                                            [hideSelected]="true"
+                                            bindLabel="name"
+                                            placeholder="المصدر"
+                                            notFoundText="لا يوجد بيانات"
+                                            [clearSearchOnAdd]="true"
+                                            [(ngModel)]="selectedPeople"
+                                        >
+                                        </ng-select>
+                                    </div>
+                                    <!-- /.form-group -->
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- ./card-body -->
+                        <div
+                            class="card-footer"
+                            style="display: block;"
+                        >
+                            <div class="col-sm-12">
+                                <div class="row ">
+                                    <div class="col-sm-12 text-center">
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary col-5"
+                                        >
+                                            عرض
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <div class="row">
+                <div
+                    class="col-lg-3 col-6"
+                    *ngFor="let item of response; let i = index"
+                >
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>{{item.value}}</h3>
+
+                            <p>{{item.ar}}</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-podium"></i>
+                            <!-- <span class="iconify" data-icon="ion:podium-sharp" data-inline="false"></span> -->
+                        </div>
+                        <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
+                    </div>
+                </div>
+
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 </div>

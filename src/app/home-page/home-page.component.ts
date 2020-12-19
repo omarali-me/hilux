@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Subscription, concat, of, Observable, Subject } from 'rxjs';
+import { distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
+
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { FieldsService } from '../shared/fields.service';
@@ -18,6 +20,20 @@ export class HomePageComponent implements OnInit {
   formErrors: any = {};
   response: any;
 
+
+  ownersOptions: Observable<any>;
+  ownersSearchInput$ = new Subject<string>();
+  ownersOptionsLoading = false;
+
+
+  //Testing
+  people$: Observable<any[]>;
+  selectedPeople = [];
+
+
+
+
+
   constructor(
     private fieldsService: FieldsService,
     private http: HttpClient,
@@ -26,7 +42,7 @@ export class HomePageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.dashboardItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Applications/dashboard`);
+    this.people$ = this.fieldsService.getUrl(`https://jsonplaceholder.typicode.com/users`);
     // this.dashboardItems$ = 
     this.searchData();
   }
@@ -65,5 +81,24 @@ export class HomePageComponent implements OnInit {
     this.formData.value = null;
     return formData
   }
+
+
+  loadOwnersOptions() {
+    this.ownersOptions = concat(
+      of([]), // default items
+      this.ownersSearchInput$.pipe(
+        distinctUntilChanged(),
+        tap(() => this.ownersOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/owners`, { term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.ownersOptionsLoading = false)
+          )
+        })
+      )
+    );
+  }
+
+  
 
 }
