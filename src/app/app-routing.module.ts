@@ -35,7 +35,7 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { DeveloperProfileComponent } from './developer-profile/developer-profile.component';
 import { DeveloperProfileResolver } from './shared/developer-profile.resolver';
 import { DeveloperDetailsComponent } from './developer-profile/developer-details/developer-details.component';
-
+import { LegalBlocksComponent } from './legal-blocks/legal-blocks.component';
 
 const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [AuthenticationGuard] },
@@ -108,7 +108,8 @@ const routes: Routes = [
     resolve: { profile: PropertiesProfileResolver},
     canActivate: [AuthenticationGuard]
   },
-  { path: 'search', component: SearchPageComponent, canActivate: [AuthenticationGuard] }
+  { path: 'search', component: SearchPageComponent, canActivate: [AuthenticationGuard] },
+  { path: 'legal_blocks', component: LegalBlocksComponent, canActivate: [AuthenticationGuard] }
 ];
 
 @NgModule({

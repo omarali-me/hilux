@@ -246,6 +246,7 @@
                     <th i18n="@@searchPageTableHeaderOwnerID">Owner ID</th>
                     <th i18n="@@searchPageTableHeaderPhoneNumber">Phone Number</th>
                     <th i18n="@@searchPageTableHeaderNationality">Nationality</th>
+                    <th i18n="@@searchPageTableActions">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -256,6 +257,16 @@
                     <td>{{owner_detail?.profile?.ownerId}}</td>
                     <td>{{owner_detail?.profile?.phone}}</td>
                     <td>{{ getNationalityName(owner_detail?.profile, 'nationalityCode') }}</td>
+                    <td>
+                      <div class="d-flex">
+                        <span class="fs-30 p-1 icon-pointer">
+                          <i class="fas fa-eye"></i>
+                        </span>
+                        <span class="fs-30 p-1 icon-pointer">
+                          <i class="fas fa-gavel fa-rotate-270"></i>
+                        </span>
+                      </div>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -283,6 +294,7 @@
                         <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
                         <th i18n="@@searchPageTableHeaderDate">Date</th>
                         <th i18n="@@searchPageTableHeaderBans">Bans</th>
+                        <th i18n="@@searchPageTableActions">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -301,6 +313,19 @@
                               {{blockage.remarks}}
                             </li>
                           </ng-container>
+                        </td>
+                        <td>
+                          <div class="d-flex">
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-eye"></i>
+                            </span>
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-balance-scale"></i>
+                            </span>
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-drafting-compass"></i>
+                            </span>
+                          </div>
                         </td>
                       </tr>
                     </tbody>
@@ -330,6 +355,7 @@
                         <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
                         <th i18n="@@searchPageTableHeaderDate">Date</th>
                         <th i18n="@@searchPageTableHeaderBans">Bans</th>
+                        <th i18n="@@searchPageTableActions">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -348,6 +374,19 @@
                               {{blockage.remarks}}
                             </li>
                           </ng-container>
+                        </td>
+                        <td>
+                          <div class="d-flex">
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-eye"></i>
+                            </span>
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-balance-scale"></i>
+                            </span>
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-drafting-compass"></i>
+                            </span>
+                          </div>
                         </td>
                       </tr>
                     </tbody>
@@ -376,6 +415,7 @@
                         <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
                         <th i18n="@@searchPageTableHeaderDate">Date</th>
                         <th i18n="@@searchPageTableHeaderBans">Bans</th>
+                        <th i18n="@@searchPageTableActions">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -394,6 +434,19 @@
                               </li>
                             </ng-container>
                           </ul>
+                        </td>
+                        <td>
+                          <div class="d-flex">
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-eye"></i>
+                            </span>
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-balance-scale"></i>
+                            </span>
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-drafting-compass"></i>
+                            </span>
+                          </div>
                         </td>
                       </tr>
                     </tbody>
@@ -421,6 +474,7 @@
                         <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
                         <th i18n="@@searchPageTableHeaderDate">Date</th>
                         <th i18n="@@searchPageTableHeaderBans">Bans</th>
+                        <th i18n="@@searchPageTableActions">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -440,6 +494,19 @@
                             </ng-container>
                           </ul>
                         </td>
+                        <td>
+                          <div class="d-flex">
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-eye"></i>
+                            </span>
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-balance-scale"></i>
+                            </span>
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-drafting-compass"></i>
+                            </span>
+                          </div>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -457,6 +524,7 @@
                     <th i18n="@@searchPageTableHeaderSector">Sector</th>
                     <th i18n="@@searchPageTableHeaderDistrict">District</th>
                     <th i18n="@@searchPageTableHeaderBans">Bans</th>
+                    <th i18n="@@searchPageTableActions">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -471,6 +539,19 @@
                           {{blockage.remarks}}
                         </li>
                       </ng-container>
+                    </td>
+                    <td>
+                      <div class="d-flex">
+                        <span class="fs-30 p-1 icon-pointer">
+                          <i class="fas fa-eye"></i>
+                        </span>
+                        <span class="fs-30 p-1 icon-pointer">
+                          <i class="fas fa-balance-scale"></i>
+                        </span>
+                        <span class="fs-30 p-1 icon-pointer">
+                          <i class="fas fa-drafting-compass"></i>
+                        </span>
+                      </div>
                     </td>
                   </tr>
                 </tbody>
@@ -496,6 +577,7 @@
                         <th i18n="@@searchPageTableHeaderOwnerID">Owner ID</th>
                         <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
                         <th i18n="@@searchPageTableHeaderNationality">Nationality</th>
+                        <th i18n="@@searchPageTableActions">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -506,6 +588,16 @@
                         <td>{{deed_detail_item.details?.ownerId}}</td>
                         <td>{{deed_detail_item.details?.share}}</td>
                         <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
+                        <td>
+                          <div class="d-flex">
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-eye"></i>
+                            </span>
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-gavel fa-rotate-270"></i>
+                            </span>
+                          </div>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -531,6 +623,7 @@
                         <th i18n="@@searchPageTableHeaderOwnerID">Owner ID</th>
                         <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
                         <th i18n="@@searchPageTableHeaderNationality">Nationality</th>
+                        <th i18n="@@searchPageTableActions">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -541,6 +634,16 @@
                         <td>{{deed_detail_item.details?.ownerId}}</td>
                         <td>{{deed_detail_item.details?.share}}</td>
                         <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
+                        <td>
+                          <div class="d-flex">
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-eye"></i>
+                            </span>
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-gavel fa-rotate-270"></i>
+                            </span>
+                          </div>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -557,6 +660,7 @@
                     <th i18n="@@searchPageTableHeaderProjectName">Project Name</th>
                     <th i18n="@@searchPageTableHeaderDeveloperName">Developer Name</th>
                     <th i18n="@@searchPageTableHeaderBans">Bans</th>
+                    <th i18n="@@searchPageTableActions">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -572,6 +676,19 @@
                           </li>
                         </ng-container>
                       </ul>
+                    </td>
+                    <td>
+                      <div class="d-flex">
+                        <span class="fs-30 p-1 icon-pointer">
+                          <i class="fas fa-eye"></i>
+                        </span>
+                        <span class="fs-30 p-1 icon-pointer">
+                          <i class="fas fa-balance-scale"></i>
+                        </span>
+                        <span class="fs-30 p-1 icon-pointer">
+                          <i class="fas fa-drafting-compass"></i>
+                        </span>
+                      </div>
                     </td>
                   </tr>
                 </tbody>
@@ -597,6 +714,7 @@
                         <th i18n="@@searchPageTableHeaderOwnerID">Owner ID</th>
                         <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
                         <th i18n="@@searchPageTableHeaderNationality">Nationality</th>
+                        <th i18n="@@searchPageTableActions">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -607,6 +725,16 @@
                         <td>{{deed_detail_item.details?.ownerId}}</td>
                         <td>{{deed_detail_item.details?.share}}</td>
                         <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
+                        <td>
+                          <div class="d-flex">
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-eye"></i>
+                            </span>
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-gavel fa-rotate-270"></i>
+                            </span>
+                          </div>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -632,6 +760,7 @@
                         <th i18n="@@searchPageTableHeaderOwnerID">Owner ID</th>
                         <th i18n="@@searchPageTableHeaderOwnershipPercentage">Ownership Percentage</th>
                         <th i18n="@@searchPageTableHeaderNationality">Nationality</th>
+                        <th i18n="@@searchPageTableActions">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -642,6 +771,16 @@
                         <td>{{deed_detail_item.details?.ownerId}}</td>
                         <td>{{deed_detail_item.details?.share}}</td>
                         <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
+                        <td>
+                          <div class="d-flex">
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-eye"></i>
+                            </span>
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i class="fas fa-gavel fa-rotate-270"></i>
+                            </span>
+                          </div>
+                        </td>
                       </tr>
                     </tbody>
                   </table>

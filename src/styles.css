@@ -214,3 +214,7 @@ label > span {
 .bg-white {
     background-color: #ffffff;
 }
+
+.icon-pointer {
+    cursor: pointer;
+}

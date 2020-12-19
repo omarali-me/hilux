@@ -1,0 +1,320 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="m-2 text-dark">
+          <h1>Legal Blocks</h1>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="card card-primary card-outline">
+        <!-- <div class="card-header">
+          <h3 class="card-title">قائمة البحث</h3>
+        </div> -->
+        <app-alerts [errors]="formErrors"></app-alerts>
+
+        <div class="col-sm-12">
+          <div class="mt-4">
+            <form class="form-horizontal" (ngSubmit)="searchData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Developer Name
+                        <span *ngIf="isSearchByUnit()">*</span>
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          [items]="developerOptions | async"
+                          required="isSearchByUnit()"
+                          name="developerId"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.developerId"
+                          [typeahead]="developerSearchInput$"
+                          bindLabel="value.en"
+                          [minTermLength]="1"
+                          bindValue="key"
+                          [loading]="developerDataOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #developer="ngModel"
+                          [disabled]="isNotSearchTypeUnit()"
+                          (keyup)="setSearchType('developerId', $event)"
+                          (blur)="checkTypeAndValues('developerId')"
+                          (change)="resetProjectAndUnit()"
+                        >
+                        </ng-select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Project Name
+                        <span *ngIf="isSearchByUnit()">*</span>
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          required="isSearchByUnit()"
+                          [items]="projectsOptions | async"
+                          name="project"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.projectId"
+                          [minTermLength]="1"
+                          bindLabel="value.en"
+                          typeToSearchText="Please enter 1 or more characters"
+                          bindValue="key"
+                          [typeahead]="projectsSearchInput$"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          [loading]="projectDataOptionsLoading"
+                          #project="ngModel"
+                          [disabled]="isNotSearchTypeUnit() || isEmpty('developerId')"
+                          (keyup)="setSearchType('unitId', $event)"
+                          (blur)="checkTypeAndValues('projectId')"
+                          (change)="resetUnit()"
+                        >
+                        </ng-select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Unit ID
+                        <span *ngIf="isSearchByUnit()">*</span>
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          required="isSearchByUnit()"
+                          [items]="unitsOptions"
+                          name="units"
+                          [(ngModel)]="formData.unitId"
+                          bindLabel="value.en"
+                          bindValue="key"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          #unitId="ngModel"
+                          [disabled]="isNotSearchTypeUnit() || isEmpty('projectId')"
+                          (open)="loadUnitsOptions()"
+                        >
+                        </ng-select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Land ID
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          required="true"
+                          [items]="landsOptions | async"
+                          name="land"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.landId"
+                          [typeahead]="landSearchInput$"
+                          bindLabel="value.en"
+                          [minTermLength]="1"
+                          bindValue="key"
+                          [loading]="landDataOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #land="ngModel"
+                          [disabled]="isNotSearchTypeLand() || isNotSearchBy('landId')"
+                          (blur)="checkTypeAndValues('landId')"
+                          (keyup)="setSearchType('landId', $event)">
+                        </ng-select>
+                      </div>
+                    </div>
+                  
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Old Land ID
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          required="true"
+                          [items]="oldLandsOptions | async"
+                          name="oldLand"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.oldLandId"
+                          [typeahead]="oldLandSearchInput$"
+                          bindLabel="value.en"
+                          [minTermLength]="1"
+                          bindValue="key"
+                          [loading]="oldLandDataOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #oldLand="ngModel"
+                          [disabled]="isNotSearchTypeLand() || isNotSearchBy('oldLandId')"
+                          (blur)="checkTypeAndValues('oldLandId')"
+                          (keyup)="setSearchType('oldLandId', $event)">
+                        </ng-select>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="row ">
+                  <div class="col-sm-12 text-center">
+                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Search</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <hr/>
+
+          <div class="resultsWrapper rtl" *ngIf="response">
+            <div class="searchBlockages">
+              <label>Legal Blockages:</label>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Land ID: </label><span>{{ getfirstLand(response)?.landId }}</span>
+                </div>
+                <div class="col-sm-6">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Unit Number: </label><span>{{ getUnitNumber(response) }}</span>
+                </div>
+                <div class="col-sm-6">
+                  <label>Project Name: </label><span>{{ getProjectName(response) }}</span>
+                </div>
+              </div>
+              <div class="card bg-seagreen">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">Current Legal Blockages</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered landTable bg-white">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>#</th>
+                        <th>Blockage Type</th>
+                        <th>Block Entity Name Ar</th>
+                        <th>Remarks</th>
+                        <th>Attachments</th>
+                        <th>Created At / Modified At</th>
+                        <th>Created By / Modified By</th>
+                        <th>Unblock Remarks</th>
+                        <th>Ended At</th>
+                        <th>Ended By</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let current_block_detail of getCurrentOwnedBlocks(response); let i = index">
+                        <td>{{ i + 1}}</td>
+                        <td>{{ current_block_detail?.typeAr }}</td>
+                        <td>{{ current_block_detail?.blockEntityNameAr }}</td>
+                        <td>{{ current_block_detail?.remarks }}</td>
+                        <td>{{ getAttachmentsName(current_block_detail?.attachments) }}</td>
+
+                        <td>{{ getCreatesAtModifiedAt(current_block_detail) }}</td>
+                        <td>{{ getCreatesByModifiedBy(current_block_detail) }}</td>
+
+                        <td>{{ current_block_detail?.endRemarks }}</td>
+
+                        <td>{{ current_block_detail?.endedAt }}</td>
+                        <td>{{ current_block_detail?.endedBy }}</td>
+                        <td>
+                          <div class="d-flex">
+                            <span class="fs-30 p-1" (click)="deleteBlockage(current_block_detail)">
+                              <i class="fas fa-times red"></i>
+                            </span>
+                            <span class="fs-30 p-1" (click)="editBlockage(current_block_detail)">
+                              <i class="fas fa-pen"></i>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">Previous Legal Blockages</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered landTable bg-light-red">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>#</th>
+                        <th>Blockage Type</th>
+                        <th>Block Entity Name Ar</th>
+                        <th>Remarks</th>
+                        <th>Attachments</th>
+                        <th>Created At / Modified At</th>
+                        <th>Created By / Modified By</th>
+                        <th>Unblock Remarks</th>
+                        <th>Ended At</th>
+                        <th>Ended By</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let previous_block_detail of getPreviouslyOwnedBlocks(response); let i = index">
+                        <td>{{ i + 1}}</td>
+                        <td>{{ previous_block_detail?.typeAr }}</td>
+                        <td>{{ previous_block_detail?.blockEntityNameAr }}</td>
+                        <td>{{ previous_block_detail?.remarks  }}</td>
+                        <td>{{ getAttachmentsName(previous_block_detail?.attachments) }}</td>
+
+                        <td>{{ getCreatesAtModifiedAt(previous_block_detail) }}</td>
+                        <td>{{ getCreatesByModifiedBy(previous_block_detail) }}</td>
+
+                        <td>{{ previous_block_detail?.endRemarks }}</td>
+                        <td>{{ previous_block_detail?.endedAt }}</td>
+                        <td>{{ previous_block_detail?.endedBy }}</td>
+                        <td>
+                          <div class="d-flex">
+                            <span class="fs-30 p-1" (click)="deleteBlockage(previous_block_detail)">
+                              <i class="fas fa-times red"></i>
+                            </span>
+                            <span class="fs-30 p-1" (click)="editBlockage(previous_block_detail)">
+                              <i class="fas fa-pen"></i>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" *ngIf="!response">
+            <div class="col-sm-12 text-center">
+              <h4>No data Found for this Search, Try again by changing Search Criteria</h4>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
