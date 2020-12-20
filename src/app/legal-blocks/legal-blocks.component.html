@@ -178,17 +178,18 @@
             <div class="searchBlockages">
               <label>Legal Blockages:</label>
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6" *ngIf="isLandBlockage(response)">
                   <label>Land ID: </label><span>{{ getfirstLand(response)?.landId }}</span>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6" *ngIf="!isLandBlockage(response)">
+                  <label>Developer Name: </label><span>{{ getDeveloperName(response) }}</span>
                 </div>
               </div>
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6" *ngIf="!isLandBlockage(response)">
                   <label>Unit Number: </label><span>{{ getUnitNumber(response) }}</span>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6" *ngIf="!isLandBlockage(response)">
                   <label>Project Name: </label><span>{{ getProjectName(response) }}</span>
                 </div>
               </div>

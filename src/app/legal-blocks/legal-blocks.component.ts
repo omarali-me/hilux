@@ -258,6 +258,10 @@ export class LegalBlocksComponent implements OnInit {
     return response.length > 0 ? response[0].land : {}
   }
 
+  getFirstResponse(response: any) {
+    return response.length > 0 ? response[0] : {}
+  }
+
   getfirstUnit(deeds: any) {
     return deeds.length > 0 ? deeds[0].unitData : {}
   }
@@ -336,11 +340,18 @@ export class LegalBlocksComponent implements OnInit {
   }
 
   getProjectName(response: any) {
-    return "Project Name";
+    const firstResponse = this.getFirstResponse(response);
+    return !!firstResponse && firstResponse?.unit?.projectNameAr;
   }
 
   getUnitNumber(response: any) {
-    return "unit Number";
+    const firstResponse = this.getFirstResponse(response);
+    return !!firstResponse && firstResponse?.unit?.unitNumber;
+  }
+
+  getDeveloperName(response: any) {
+    const firstResponse = this.getFirstResponse(response);
+    return !!firstResponse && firstResponse?.unit?.developerNameAr;
   }
 
   prepareProjectValueOptions(params: any) {
@@ -395,5 +406,11 @@ export class LegalBlocksComponent implements OnInit {
     } else {
       return formData.propertyId;
     }
+  }
+
+  isLandBlockage(response: any) {
+    const firstLand = this.getfirstLand(response);
+    console.log('is landResponse', !!firstLand && !!firstLand.landId);
+    return  !!firstLand && !!firstLand.landId;
   }
 }
