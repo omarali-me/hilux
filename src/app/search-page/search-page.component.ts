@@ -354,7 +354,7 @@ export class SearchPageComponent implements OnInit {
     return `/${resourceType}/profile/${resourceId}/edit`;
   }
 
-  getViewLegalBlocks(propertyId: any, resourceType: any) {
+  getViewLegalBlocks(propertyId: any, resourceType: any = 'propertyId') {
     return `/legal_blocks?${resourceType}=${propertyId}`;
   }
 }

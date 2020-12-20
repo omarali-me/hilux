@@ -62,11 +62,11 @@ export class LegalBlocksComponent implements OnInit {
     this.route.queryParams.subscribe(async (params) => {
       if (!_.isEqual(params, {})) {
         this.formData = params;
-        await this.prepareDeveloperValueOptions(params);
-        await this.prepareProjectValueOptions(params);
-        await this.prepareUnitValueOptions(params);
-        await this.prepareLandValueOptions(params);
-        await this.prepareOldLandValueOptions(params);
+        // await this.prepareDeveloperValueOptions(params);
+        // await this.prepareProjectValueOptions(params);
+        // await this.prepareUnitValueOptions(params);
+        // await this.prepareLandValueOptions(params);
+        // await this.prepareOldLandValueOptions(params);
         await this.searchData(this.formData);
       }
     });
@@ -77,8 +77,10 @@ export class LegalBlocksComponent implements OnInit {
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.response = data.data;
+          this.formData.propertyId = null;
         } else {
           this.formErrors = data.data;
+          this.formData.propertyId = null;
           this.toastr.error(JSON.stringify(data.message), 'Error');
         }
       }, (error) => {
@@ -388,8 +390,10 @@ export class LegalBlocksComponent implements OnInit {
   getPropertyId(formData: any) {
     if (formData.type == '1') {
       return formData.landId || formData.oldLandId;
-    } else {
+    } else if (formData.type == '2') {
       return formData.unitId;
+    } else {
+      return formData.propertyId;
     }
   }
 }
