@@ -13,6 +13,7 @@ import { TimeAgoPipe } from './time-ago.pipe';
 import { RouterModule } from '@angular/router';
 import {NgxGalleryModule} from '@kolkov/ngx-gallery';
 import { MediaGalleryComponent } from './media-gallery/media-gallery.component';
+import {NgxSmartModalModule} from 'ngx-smart-modal';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { MediaGalleryComponent } from './media-gallery/media-gallery.component';
     CommonModule,
     RouterModule,
     NgxGalleryModule,
+    NgxSmartModalModule.forRoot(), // smartModal added
   ],
   providers: [AuthenticationService, FieldsService, DecimalPipe, CurrencyPipe, TimeAgoPipe, DatePipe],
   declarations: [
@@ -38,7 +40,8 @@ import { MediaGalleryComponent } from './media-gallery/media-gallery.component';
     NumbersOnlyDirective,
     NumbersformatterDirective,
     SidebarComponent,
-    MediaGalleryComponent
+    MediaGalleryComponent,
+    NgxSmartModalModule
   ]
 })
 export class SharedModule {}

@@ -11,6 +11,7 @@
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import "~ng-pick-datetime/assets/style/picker.min.css";
 @import '~ngx-toastr/toastr';
+@import "~ngx-smart-modal/ngx-smart-modal";
 
 *{
     direction: rtl !important;
@@ -217,4 +218,14 @@ label > span {
 
 .icon-pointer {
     cursor: pointer;
+}
+
+.nsm-dialog {
+    min-width: 50%;
+    max-width: 80%;
+}
+
+.nsm-dialog-btn-close {
+    left: 8px;
+    right: unset;
 }
