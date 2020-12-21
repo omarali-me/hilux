@@ -7,6 +7,7 @@ import { catchError, distinctUntilChanged, switchMap, tap } from 'rxjs/operators
 import { environment } from '../../environments/environment';
 import { FieldsService } from '../shared/fields.service';
 import * as _ from 'lodash';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 interface SearchParams {
   query?: string;
@@ -20,6 +21,7 @@ interface SearchParams {
 })
 export class LegalBlocksComponent implements OnInit {
   formData: any = {};
+  addBlockData: any = {};
   formErrors: any = {};
   currentSearchParams: SearchParams = {};
   paramsSubscription = new Subscription();
@@ -41,6 +43,10 @@ export class LegalBlocksComponent implements OnInit {
   unitsOptions: any;
   ownersOptions: Observable<any>;
   response: any;
+  blockageTypesOptions: any;
+  blockageEntitiesOptions: Observable<any>;
+  blockageEntitySearchInput$ = new Subject<string>();
+  blockageEntityOptionsLoading = false;
 
   searchby: any;
 
@@ -49,7 +55,8 @@ export class LegalBlocksComponent implements OnInit {
     private router: Router,
     private fieldsService: FieldsService,
     private http: HttpClient,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private ngxSmartModalService: NgxSmartModalService
   ) { }
 
   ngOnInit(): void {
@@ -58,6 +65,7 @@ export class LegalBlocksComponent implements OnInit {
     this.loadProjectsOptions();
     this.loadLandsoptions();
     this.loadOldLandsoptions();
+    this.loadBlockageEntities();
 
     this.route.queryParams.subscribe(async (params) => {
       if (!_.isEqual(params, {})) {
@@ -410,7 +418,76 @@ export class LegalBlocksComponent implements OnInit {
 
   isLandBlockage(response: any) {
     const firstLand = this.getfirstLand(response);
-    console.log('is landResponse', !!firstLand && !!firstLand.landId);
     return  !!firstLand && !!firstLand.landId;
   }
+
+  openAddBlockModal() {
+    this.setPropertyId(this.addBlockData);
+    this.ngxSmartModalService.getModal('addBlockModal').open();
+  }
+
+  addNewBlock(formData: any) {
+    let fd = new FormData();
+    fd.append('data', JSON.stringify(formData));
+
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/create`, fd)
+      .subscribe((data: any) => {
+        if (data.status == 'success') {
+          this.ngxSmartModalService.closeLatestModal();
+          this.searchData(formData);
+          this.addBlockData = {};
+        } else {
+          this.formErrors = data.data;
+          this.toastr.error(JSON.stringify(data.message), 'Error')
+        }
+    }, (error) => {
+      this.toastr.error('Something went Wrong', 'Error')
+      this.router.navigate(['error'])
+    })
+  }
+
+  prepareAttachments() {
+    return {
+      fieldID: "attachments",
+      fieldType: "fileupload",
+      required: false,
+      fieldName: {
+        "ar": "attachments",
+        "en": "attachments"
+      },
+      auxInfo: {
+        multiple: true
+      }
+    }
+  }
+
+  loadBlockageTypesOptions() {
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/blockagesTypes`)
+      .subscribe((data) => {
+        this.blockageTypesOptions = data;
+      })
+  }
+
+  loadBlockageEntities() {
+    this.blockageEntitiesOptions = concat(
+      of([]), // default items
+      this.blockageEntitySearchInput$.pipe(
+        distinctUntilChanged(),
+        tap(() => this.blockageEntityOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/blockagesEntities`, { term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.blockageEntityOptionsLoading = false)
+          )
+        })
+      )
+    );
+  }
+
+  setPropertyId(data: any) {
+    const firstResponse = this.getFirstResponse(this.response);
+    data.propertyId = firstResponse && firstResponse.propertyId;
+  }
+
+
 }

@@ -176,7 +176,14 @@
 
           <div class="resultsWrapper rtl" *ngIf="response">
             <div class="searchBlockages">
-              <label>Legal Blockages:</label>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Legal Blockages:</label>
+                </div>
+                <div class="col-sm-6">
+                  <button class="btn btn-primary float-left" (click)="openAddBlockModal()">Add Block</button>
+                </div>
+              </div>
               <div class="row">
                 <div class="col-sm-6" *ngIf="isLandBlockage(response)">
                   <label>Land ID: </label><span>{{ getfirstLand(response)?.landId }}</span>
@@ -319,3 +326,108 @@
   </section>
   <!-- /.content -->
 </div>
+
+<ngx-smart-modal #addBlockModal identifier="addBlockModal">
+  <div class="modal-header pt-0">
+    <div class="modal-title">
+      <h4>Add New Block</h4>
+    </div>
+  </div>
+  <form #addBlockForm="ngForm" (ngSubmit)="addNewBlock(addBlockData);" novalidate>
+    <div class="modal-body">
+      <div class="conatiner">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Blockage Type
+                <span>*</span>
+              </label>
+              <div class="col-sm-9">
+                <ng-select
+                  required="true"
+                  [items]="blockageTypesOptions"
+                  name="typeId"
+                  [(ngModel)]="addBlockData.typeId"
+                  bindLabel="value.en"
+                  bindValue="key"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  #typeId="ngModel"
+                  (open)="loadBlockageTypesOptions()"
+                >
+                </ng-select>
+                <div *ngIf="typeId.invalid && (typeId.dirty || typeId.touched)" class="alert alert-danger">
+                  <div *ngIf="typeId.errors?.required">
+                    Blockage Type can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Block Entity Name
+                <span>*</span>
+              </label>
+              <div class="col-sm-9">
+                <ng-select
+                  required="true"
+                  [items]="blockageEntitiesOptions | async"
+                  name="blockEntityId"
+                  [hideSelected]="true"
+                  [(ngModel)]="addBlockData.blockEntityId"
+                  [typeahead]="blockageEntitySearchInput$"
+                  bindLabel="value.en"
+                  [minTermLength]="1"
+                  bindValue="key"
+                  [loading]="blockageEntityOptionsLoading"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  typeToSearchText="Please enter 1 or more characters"
+                  #blockEntityId="ngModel">
+                </ng-select>
+
+                <div *ngIf="blockEntityId.invalid && (blockEntityId.dirty || blockEntityId.touched)" class="alert alert-danger">
+                  <div *ngIf="blockEntityId.errors?.required">
+                    Block Entity Name can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Remarks</label>
+              <div class="col-sm-9">
+                <textarea
+                  name="remarks"
+                  class="form-control"
+                  rows="3"
+                  [(ngModel)]="addBlockData.remarks"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Attachments
+              </label>
+              <div class="col-sm-9">
+                <app-file-upload [field]="prepareAttachments()" [formData]="addBlockData"></app-file-upload>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer pb-0">
+      <div class="col-sm-12">
+        <button class="btn btn-secondary float-right" (click)="addBlockModal.close()">Close</button>
+        <button type="submit" [disabled]="addBlockForm.invalid" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</ngx-smart-modal>
