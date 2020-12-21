@@ -22,6 +22,8 @@ interface SearchParams {
 export class LegalBlocksComponent implements OnInit {
   formData: any = {};
   addBlockData: any = {};
+  updateBlockData: any = {};
+  removeBlockData: any = {};
   formErrors: any = {};
   currentSearchParams: SearchParams = {};
   paramsSubscription = new Subscription();
@@ -47,7 +49,6 @@ export class LegalBlocksComponent implements OnInit {
   blockageEntitiesOptions: Observable<any>;
   blockageEntitySearchInput$ = new Subject<string>();
   blockageEntityOptionsLoading = false;
-
   searchby: any;
 
   constructor(
@@ -339,12 +340,12 @@ export class LegalBlocksComponent implements OnInit {
     }
   }
 
-  deleteBlockage(blockage: any) {
-    console.log('delete blockage', blockage);
+  async deleteBlockage(blockage: any) {
+    await this.openRemoveBlockModal(blockage);
   }
 
-  editBlockage(blockage: any) {
-    console.log('edit blockage', blockage);
+  async editBlockage(blockage: any) {
+    await this.openUpdateBlockModal(blockage);
   }
 
   getProjectName(response: any) {
@@ -406,6 +407,21 @@ export class LegalBlocksComponent implements OnInit {
     }
   }
 
+  prepareBlockagesEntitiesValueOptions(params: any) {
+    if(!!params.blockEntityId) {
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/blockagesEntities`, { id: params.blockEntityId })
+      .subscribe((option)=> {
+        this.blockageEntitySearchInput$.next(option.value && option.value.en);
+      })
+    }
+  }
+
+  prepareBlockageTypesValueOptions(params: any) {
+    if(!!params.typeId) {
+      this.loadBlockageTypesOptions();
+    }
+  }
+
   getPropertyId(formData: any) {
     if (formData.type == '1') {
       return formData.landId || formData.oldLandId;
@@ -424,6 +440,44 @@ export class LegalBlocksComponent implements OnInit {
   openAddBlockModal() {
     this.setPropertyId(this.addBlockData);
     this.ngxSmartModalService.getModal('addBlockModal').open();
+  }
+
+  async openUpdateBlockModal(blockage: any) {
+    this.setPropertyId(this.updateBlockData);
+    this.getBlockage(blockage.id)
+      .subscribe(async (data: any) => {
+        if (data.status == 'success') {
+          this.updateBlockData = data.data
+          await this.prepareBlockageTypesValueOptions(this.updateBlockData);
+          await this.prepareBlockagesEntitiesValueOptions(this.updateBlockData);
+        } else {
+          this.formErrors = data.data;
+          this.toastr.error(JSON.stringify(data.message), 'Error')
+        }
+    }, (error) => {
+      this.toastr.error('Something went Wrong', 'Error')
+      this.router.navigate(['error'])
+    })
+    this.ngxSmartModalService.getModal('updateBlockModal').open();
+  }
+
+  async openRemoveBlockModal(blockage: any) {
+    this.setPropertyId(this.removeBlockData);
+    this.getBlockage(blockage.id)
+      .subscribe(async (data: any) => {
+        if (data.status == 'success') {
+          this.removeBlockData = data.data
+          await this.prepareBlockageTypesValueOptions(this.removeBlockData);
+          await this.prepareBlockagesEntitiesValueOptions(this.removeBlockData);
+        } else {
+          this.formErrors = data.data;
+          this.toastr.error(JSON.stringify(data.message), 'Error')
+        }
+    }, (error) => {
+      this.toastr.error('Something went Wrong', 'Error')
+      this.router.navigate(['error'])
+    })
+    this.ngxSmartModalService.getModal('removeBlockModal').open();
   }
 
   addNewBlock(formData: any) {
@@ -489,5 +543,59 @@ export class LegalBlocksComponent implements OnInit {
     data.propertyId = firstResponse && firstResponse.propertyId;
   }
 
+  resetAddBlockModal() {
+    this.addBlockData = {};
+  }
 
+  resetUpdateBlockModal() {
+    this.updateBlockData = {};
+  }
+
+  resetRemoveBlockModal() {
+    this.removeBlockData = {};
+  }
+
+  updateBlock(formData: any) {
+    let fd = new FormData();
+    fd.append('data', JSON.stringify(formData));
+
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/update/${formData.id}`, fd)
+      .subscribe((data: any) => {
+        if (data.status == 'success') {
+          this.ngxSmartModalService.closeLatestModal();
+          this.searchData(formData);
+          this.addBlockData = {};
+        } else {
+          this.formErrors = data.data;
+          this.toastr.error(JSON.stringify(data.message), 'Error')
+        }
+    }, (error) => {
+      this.toastr.error('Something went Wrong', 'Error')
+      this.router.navigate(['error'])
+    })
+  }
+
+  removeBlock(formData: any) {
+    let fd = new FormData();
+    fd.append('data', JSON.stringify(formData));
+
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/deactivate/${formData.id}`, fd)
+      .subscribe((data: any) => {
+        if (data.status == 'success') {
+          this.ngxSmartModalService.closeLatestModal();
+          this.searchData(formData);
+          this.addBlockData = {};
+        } else {
+          this.formErrors = data.data;
+          this.toastr.error(JSON.stringify(data.message), 'Error')
+        }
+    }, (error) => {
+      this.toastr.error('Something went Wrong', 'Error')
+      this.router.navigate(['error'])
+    })
+  }
+
+  getBlockage(blockageId: any) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/get/${blockageId}`);
+  }
 }
