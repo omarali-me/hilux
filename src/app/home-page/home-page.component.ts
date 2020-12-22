@@ -14,6 +14,8 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
+
+
 export class HomePageComponent implements OnInit {
   dashboardItems$: Observable<any>;
   formData: any = {};
@@ -30,6 +32,12 @@ export class HomePageComponent implements OnInit {
   people$: Observable<any[]>;
   selectedPeople = [];
 
+source$ = [
+  {id: 'hilux', name: 'النظام الداخلي'},
+  {id: 'mobile', name: 'موقع الخدمات الإلكترونية'},
+  {id: 'web', name: 'تطبيقات الهواتف الذكية'}
+];
+selectedSource = [];
 
 
 

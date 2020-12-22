@@ -211,7 +211,7 @@
                                     <div class="form-group">
                                         <label>المصدر</label>
                                         <ng-select
-                                            [items]="people$ | async"
+                                            [items]="source$"
                                             [multiple]="true"
                                             [closeOnSelect]="false"
                                             [hideSelected]="true"
@@ -219,7 +219,7 @@
                                             placeholder="المصدر"
                                             notFoundText="لا يوجد بيانات"
                                             [clearSearchOnAdd]="true"
-                                            [(ngModel)]="selectedPeople"
+                                            [(ngModel)]="selectedSource"
                                         >
                                         </ng-select>
                                     </div>
