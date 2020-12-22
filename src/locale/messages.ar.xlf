@@ -15,7 +15,7 @@
         More Links
       </source>
       <target>
-        More Links Arabic
+        المزيد
       </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
@@ -27,7 +27,7 @@
           <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Customer
         </source>
         <target>
-          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Customer
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> عميل
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
@@ -39,7 +39,7 @@
           <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Project
         </source>
         <target>
-          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Project
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> مشروع
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
@@ -51,7 +51,7 @@
           <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Unit
         </source>
         <target>
-          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Unit
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> وحدة
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
@@ -63,7 +63,7 @@
           <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Company
         </source>
         <target>
-          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Company
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> شركة
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
@@ -87,7 +87,7 @@
           <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Developer
         </source>
         <target>
-          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Developer
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> مطور
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
@@ -108,7 +108,7 @@
       </trans-unit>
       <trans-unit id="headerMyTaskLabel" datatype="html">
         <source>My Tasks</source>
-        <target>My Tasks Arabic</target>
+        <target>مهامي</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
           <context context-type="linenumber">51</context>
@@ -116,7 +116,7 @@
       </trans-unit>
       <trans-unit id="headerLooutLabel" datatype="html">
         <source>Logout</source>
-        <target>Logout Arabic</target>
+        <target>تسجيل خروج</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
           <context context-type="linenumber">53</context>
@@ -261,7 +261,7 @@
       </trans-unit>
       <trans-unit id="myTaskpageHeadingLabel" datatype="html">
         <source>My Tasks</source>
-        <target>My Tasks</target>
+        <target>قائمة مهامي</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/my-tasks/my-tasks.component.html</context>
           <context context-type="linenumber">8</context>
