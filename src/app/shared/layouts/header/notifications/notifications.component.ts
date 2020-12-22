@@ -32,12 +32,12 @@ export class NotificationsComponent implements OnInit {
 
   getStatusClass(notification: any) {
     switch (notification.stepDetails.status.toLowerCase()) {
-      case 'locked':
-        return 'text-warning';
-      case 'completed':
-        return 'text-success';
       case 'pending':
-        return 'text-danger';
+        return 'badge-danger';
+      case 'completed':
+        return 'badge-success';
+      case 'locked':
+        return 'badge-warning';
       default:
         return 'text-info';
     }

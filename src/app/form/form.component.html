@@ -1,4 +1,4 @@
-<form class="form-horizontal rtl" (ngSubmit)="saveData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+<form class="form-horizontal" (ngSubmit)="saveData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
   <div class="card-body">
     <small id="requiredHelp" class="form-text text-muted mb-2" i18n='@@formHelpText'>Fields marked with '*' are mandatory fields.</small>
     <div class="form-group row" *ngFor="let row of response.stepDetails?.dataIn?.fieldOrder; let i = index;">
@@ -30,7 +30,7 @@
       <div class="col-sm-12" *ngIf="!row.allowMultiple">
         <div [class]="getClass('col-sm-',field)" #rowReference [id]="getrowId(row)" *ngFor="let field of row.rowFields">
           <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 pt-2">
               <app-label [rowField]="field" [fields]="response.stepDetails?.dataIn?.fields"></app-label>
               <app-field [rowField]="field"
                          [fields]="response.stepDetails?.dataIn?.fields"
@@ -45,8 +45,8 @@
       </div>
     </div>
   </div>
-  <div class="card-footer">
-    <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid" i18n="@@formSubmitLabel">Submit</button>
-    <button type="button" class="btn btn-default" i18n="@@formCancelLabel" (click)="backToMytask()">Cancel</button>
+  <div class="card-footer text-center">
+    <button type="submit" class="btn btn-primary px-5 py-2" [disabled]="f.invalid" i18n="@@formSubmitLabel">Submit</button>
+    <!-- <button type="button" class="btn btn-default  float-left" i18n="@@formCancelLabel" (click)="backToMytask()">Cancel</button> -->
   </div>
 </form>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DataTablesModule } from 'angular-datatables';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -191,7 +192,8 @@ import { LegalBlocksComponent } from './legal-blocks/legal-blocks.component';
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
     PrettyJsonModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({ positionClass: 'toast-top-left'}),
+    DataTablesModule
   ],
   providers: [
     AuthenticationGuard,

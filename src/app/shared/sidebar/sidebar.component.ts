@@ -15,23 +15,38 @@ export class SidebarComponent implements OnInit {
   items: any;
   openSubMenu: boolean = false;
   openSubmenuIndex: any;
+  searchInput$ = '';
 
   constructor(private fieldsService: FieldsService, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices/channel/hilux`);
+    this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`);
+  }
+
+  searchtServices() {
+    if (this.searchInput$ === '') {
+      this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`);
+    } else {
+      this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`, { search: this.searchInput$ });
+    }
   }
 
   getServiceProviderItem(data: any) {
     return data.serviceCategoryName && data.serviceCategoryName.ar;
   }
+  getServiceProviderIcon(data: any) {
+    return data.serviceCategoryName && data.serviceCategoryName.icon;
+  }
 
   getServiceName(data: any) {
     return data && data.ar;
   }
+  getServiceIcon(data: any) {
+    return data && data.icon;
+  }
 
   hideRoot(data: any) {
-    return (this.getServiceProviderItem(data) == 'root') ;
+    return (this.getServiceProviderItem(data) == 'root');
   }
 
   callServicehandler(item: any) {
