@@ -311,8 +311,11 @@ export class LegalBlocksComponent implements OnInit {
     return item && (item[`${field_name}NameAr`] || item[`${field_name}`])
   }
 
-  getAttachmentsName(attachments: any[]) {
-    return _.join(attachments.map(a=> a.name), ', ');
+  getAttachments(attachments: any[]) {
+    return !!attachments && attachments.map((a, i) => ({
+      name: `attachment ${i + 1}`,
+      link: a
+    }))
   }
 
   getCreatesAtModifiedAt(block: any) {

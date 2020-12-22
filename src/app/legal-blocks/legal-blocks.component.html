@@ -232,7 +232,15 @@
                         <td>{{ current_block_detail?.typeAr }}</td>
                         <td>{{ current_block_detail?.blockEntityNameAr }}</td>
                         <td>{{ current_block_detail?.remarks }}</td>
-                        <td>{{ getAttachmentsName(current_block_detail?.attachments) }}</td>
+                        <td>
+                          <ng-container *ngFor="let attachment of getAttachments(current_block_detail?.attachments)">
+                            <li class="no-style-attachment" *ngIf="attachment.link">
+                              <a [href]="attachment.link" target="_blank">
+                                {{attachment.name}}
+                              </a>
+                            </li>
+                          </ng-container>
+                        </td>
 
                         <td>{{ getCreatesAtModifiedAt(current_block_detail) }}</td>
                         <td>{{ getCreatesByModifiedBy(current_block_detail) }}</td>
@@ -289,7 +297,15 @@
                         <td>{{ previous_block_detail?.typeAr }}</td>
                         <td>{{ previous_block_detail?.blockEntityNameAr }}</td>
                         <td>{{ previous_block_detail?.remarks  }}</td>
-                        <td>{{ getAttachmentsName(previous_block_detail?.attachments) }}</td>
+                        <td>
+                          <ng-container *ngFor="let attachment of getAttachments(previous_block_detail?.attachments)">
+                            <li class="no-style-attachment" *ngIf="attachment.link">
+                              <a [href]="attachment.link" target="_blank">
+                                {{attachment.name}}
+                              </a>
+                            </li>
+                          </ng-container>
+                        </td>
 
                         <td>{{ getCreatesAtModifiedAt(previous_block_detail) }}</td>
                         <td>{{ getCreatesByModifiedBy(previous_block_detail) }}</td>
