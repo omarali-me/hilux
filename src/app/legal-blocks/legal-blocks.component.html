@@ -415,14 +415,23 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Remarks</label>
+              <label class="col-sm-3 col-form-label">Remarks
+                <span>*</span>
+              </label>
               <div class="col-sm-9">
                 <textarea
                   name="remarks"
                   class="form-control"
                   rows="3"
+                  required="true"
                   [(ngModel)]="addBlockData.remarks"
+                  #remarks="ngModel"
                 ></textarea>
+                <div *ngIf="remarks.invalid && (remarks.dirty || remarks.touched)" class="alert alert-danger">
+                  <div *ngIf="remarks.errors?.required">
+                    Remarks can not be blank
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -430,6 +439,7 @@
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Attachments
+                <span>*</span>
               </label>
               <div class="col-sm-9">
                 <app-file-upload [field]="prepareAttachments()" [formData]="addBlockData"></app-file-upload>
@@ -536,14 +546,23 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Remarks</label>
+              <label class="col-sm-3 col-form-label">Remarks
+                <span>*</span>
+              </label>
               <div class="col-sm-9">
                 <textarea
                   name="remarks"
                   class="form-control"
                   rows="3"
+                  required="true"
                   [(ngModel)]="updateBlockData.remarks"
+                  #remarks="ngModel"
                 ></textarea>
+                <div *ngIf="remarks.invalid && (remarks.dirty || remarks.touched)" class="alert alert-danger">
+                  <div *ngIf="remarks.errors?.required">
+                    Remarks can not be blank
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -551,6 +570,7 @@
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Attachments
+                <span>*</span>
               </label>
               <div class="col-sm-9">
                 <app-file-upload [field]="prepareAttachments()" [formData]="updateBlockData"></app-file-upload>
@@ -658,12 +678,11 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Remarks</label>
               <div class="col-sm-9">
-                <textarea
-                  name="remarks"
-                  class="form-control"
-                  rows="3"
-                  [(ngModel)]="removeBlockData.remarks"
-                ></textarea>
+                <ng-container>
+                  <li class="no-style-attachment rtl">
+                    {{removeBlockData.remarks}}
+                  </li>
+                </ng-container>
               </div>
             </div>
           </div>
@@ -671,6 +690,7 @@
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Attachments
+                <span>*</span>
               </label>
               <div class="col-sm-9">
                 <app-file-upload [field]="prepareAttachments()" [formData]="removeBlockData"></app-file-upload>
@@ -682,14 +702,23 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Unblock Remarks</label>
+              <label class="col-sm-3 col-form-label">Unblock Remarks
+                <span>*</span>
+              </label>
               <div class="col-sm-9">
                 <textarea
                   name="endRemarks"
                   class="form-control"
                   rows="3"
+                  required="true"
                   [(ngModel)]="removeBlockData.endRemarks"
+                  #endRemarks="ngModel"
                 ></textarea>
+                <div *ngIf="endRemarks.invalid && (endRemarks.dirty || endRemarks.touched)" class="alert alert-danger">
+                  <div *ngIf="endRemarks.errors?.required">
+                    End Remarks can not be blank
+                  </div>
+                </div>
               </div>
             </div>
           </div>

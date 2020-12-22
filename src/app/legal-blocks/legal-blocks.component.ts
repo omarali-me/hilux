@@ -507,7 +507,7 @@ export class LegalBlocksComponent implements OnInit {
     return {
       fieldID: "attachments",
       fieldType: "fileupload",
-      required: false,
+      required: true,
       fieldName: {
         "ar": "attachments",
         "en": "attachments"

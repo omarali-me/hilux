@@ -229,3 +229,7 @@ label > span {
     left: 8px;
     right: unset;
 }
+
+.no-style-attachment{
+    list-style: none;;
+}
