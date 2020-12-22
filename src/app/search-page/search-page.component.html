@@ -316,7 +316,7 @@
                         </td>
                         <td>
                           <div class="d-flex">
-                            <a [href]="getViewResourceUrl(current_land_detail?.land?.land?.landId, 'land')" target="_blank" class="fs-30 p-1">
+                            <a [href]="getViewResourceUrl(current_land_detail?.land?.land?.propertyId, 'land')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
                             </a>
                             <a [href]="getViewLegalBlocks(current_land_detail?.land?.land?.propertyId , 'propertyId')" target="_blank" class="fs-30 p-1">
@@ -380,7 +380,7 @@
                         </td>
                         <td>
                           <div class="d-flex">
-                            <a [href]="getViewResourceUrl(previous_land_detail?.land?.land?.landId, 'land')" target="_blank" class="fs-30 p-1">
+                            <a [href]="getViewResourceUrl(previous_land_detail?.land?.land?.propertyId, 'land')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
                             </a>
                             <a [href]="getViewLegalBlocks(previous_land_detail?.land?.land?.propertyId , 'propertyId')" target="_blank" class="fs-30 p-1">
@@ -443,7 +443,7 @@
                         </td>
                         <td>
                           <div class="d-flex">
-                            <a [href]="getViewResourceUrl(current_unit_detail?.unitData?.unit?.unitNumber, 'unit')" target="_blank" class="fs-30 p-1">
+                            <a [href]="getViewResourceUrl(current_unit_detail?.unitData?.unit?.propertyId, 'unit')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
                             </a>
                             <a [href]="getViewLegalBlocks(current_unit_detail?.unitData?.unit?.propertyId, 'propertyId')" target="_blank" class="fs-30 p-1">
@@ -502,7 +502,7 @@
                         </td>
                         <td>
                           <div class="d-flex">
-                            <a [href]="getViewResourceUrl(previous_unit_detail?.unitData?.unit?.unitNumber, 'unit')" target="_blank" class="fs-30 p-1">
+                            <a [href]="getViewResourceUrl(previous_unit_detail?.unitData?.unit?.propertyId, 'unit')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
                             </a>
                             <a [href]="getViewLegalBlocks(previous_unit_detail?.unitData?.unit?.propertyId, 'propertyId')" target="_blank" class="fs-30 p-1">
@@ -548,7 +548,7 @@
                     </td>
                     <td>
                       <div class="d-flex">
-                        <a [href]="getViewResourceUrl(land_detail.land.landId, 'land')" target="_blank" class="fs-30 p-1">
+                        <a [href]="getViewResourceUrl(land_detail.land.propertyId, 'land')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-eye"></i>
                         </a>
                         <a [href]="getViewLegalBlocks(land_detail.land.propertyId , 'propertyId')" target="_blank" class="fs-30 p-1">
@@ -688,7 +688,7 @@
                     </td>
                     <td>
                       <div class="d-flex">
-                        <a [href]="getViewResourceUrl(unit_detail?.unit?.unitNumber, 'unit')" target="_blank" class="fs-30 p-1">
+                        <a [href]="getViewResourceUrl(unit_detail?.unit?.propertyId, 'unit')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-eye"></i>
                         </a>
                         <a [href]="getViewLegalBlocks(unit_detail?.unit?.propertyId, 'propertyId')" target="_blank" class="fs-30 p-1">
