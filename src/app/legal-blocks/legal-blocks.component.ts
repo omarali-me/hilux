@@ -70,7 +70,7 @@ export class LegalBlocksComponent implements OnInit {
 
     this.route.queryParams.subscribe(async (params) => {
       if (!_.isEqual(params, {})) {
-        this.formData = params;
+        this.formData.propertyId = params.propertyId;
         // await this.prepareDeveloperValueOptions(params);
         // await this.prepareProjectValueOptions(params);
         // await this.prepareUnitValueOptions(params);
