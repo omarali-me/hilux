@@ -44,6 +44,9 @@
                             </div>
                         </div>
                         <app-alerts [errors]="formErrors"></app-alerts>
+
+                        <!-- <form class="form-horizontal" (ngSubmit)="searchData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate> -->
+
                         <!-- /.card-header -->
                         <div
                             class="card-body"
@@ -60,14 +63,16 @@
                                     <div class="form-group">
                                         <label>المستخدمون</label>
                                         <ng-select
-                                            [items]="people$ | async"
+                                            [items]="users$ | async"
                                             [multiple]="true"
-                                            [closeOnSelect]="false"
-                                            [searchable]="false"
-                                            bindLabel="name"
+                                            [closeOnSelect]="true"
+                                            [hideSelected]="true"
+                                            bindLabel="firstname"
+                                            bindValue="user_id"
                                             placeholder="المستخدمون"
                                             notFoundText="لا يوجد بيانات"
-                                            [(ngModel)]="selectedPeople"
+                                            [clearSearchOnAdd]="true"
+                                            [(ngModel)]="selectedUsers"
                                         >
                                         </ng-select>
                                     </div>
@@ -81,48 +86,21 @@
                                     <div class="form-group">
                                         <label>الأقسام</label>
                                         <ng-select
-                                            [items]="people$ | async"
+                                            [items]="listOfDepartments$ | async"
                                             [multiple]="true"
-                                            [closeOnSelect]="false"
+                                            [closeOnSelect]="true"
                                             [hideSelected]="true"
-                                            bindLabel="name"
-                                            placeholder="Select people"
-                                            notFoundText="الأقسام"
+                                            bindLabel="DepartmentName"
+                                            bindValue="id"
+                                            placeholder="الأقسام"
+                                            notFoundText="لا يوجد نتائج للبحث"
                                             [clearSearchOnAdd]="true"
-                                            [(ngModel)]="selectedPeople"
+                                            [(ngModel)]="selectedListOfDepartments"
                                         >
                                         </ng-select>
                                     </div>
-                                    <!-- /.form-group -->
 
                                 </div>
-
-                                <!-- <div class="col-md-6">
-                  <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" i18n="@@searchPageOwner">Owner
-                    </label>
-                    <div class="col-sm-9">
-                      <ng-select
-                        
-                        required="true"
-                        [items]="ownersOptions | async"
-                        [(ngModel)]="formData.owner"
-                        [hideSelected]="true"
-                        name="Owner"
-                        bindLabel="value.ar"
-                        bindValue="key"
-                        [minTermLength]="1"
-                        [typeahead]="ownersSearchInput$"
-                        [loading]="ownersOptionsLoading"
-                        notFoundText="لا يوجد نتائج للبحث"
-                        typeToSearchText="Please enter 1 or more characters"
-                        #owner="ngModel"
-                        >
-                      </ng-select>
-                    </div>
-                  </div>
-                </div> -->
-                                <!-- /.col -->
                             </div>
                             <div
                                 class="row"
@@ -135,14 +113,16 @@
                                     <div class="form-group">
                                         <label>الخدمات الرئيسية</label>
                                         <ng-select
-                                            [items]="people$ | async"
+                                            [items]="listOfServiceCategories$ | async"
                                             [multiple]="true"
-                                            [closeOnSelect]="false"
-                                            [searchable]="false"
-                                            bindLabel="name"
+                                            [closeOnSelect]="true"
+                                            [hideSelected]="true"
+                                            [clearSearchOnAdd]="true"
+                                            bindLabel="serviceCategoryName"
+                                            bindValue="serviceCategoryID"
                                             placeholder="الخدمات الرئيسية"
                                             notFoundText="لا يوجد بيانات"
-                                            [(ngModel)]="selectedPeople"
+                                            [(ngModel)]="selectedListOfServiceCategories"
                                         >
                                         </ng-select>
                                     </div>
@@ -156,15 +136,16 @@
                                     <div class="form-group">
                                         <label>الخدمات</label>
                                         <ng-select
-                                            [items]="people$ | async"
+                                            [items]="listOfServices$ | async"
                                             [multiple]="true"
-                                            [closeOnSelect]="false"
+                                            [closeOnSelect]="true"
                                             [hideSelected]="true"
-                                            bindLabel="name"
+                                            [clearSearchOnAdd]="true"
+                                            bindLabel="serviceName"
+                                            bindValue="serviceID"
                                             placeholder="الخدمات"
                                             notFoundText="لا يوجد بيانات"
-                                            [clearSearchOnAdd]="true"
-                                            [(ngModel)]="selectedPeople"
+                                            [(ngModel)]="selectedlistOfServices"
                                         >
                                         </ng-select>
                                     </div>
@@ -185,20 +166,23 @@
                                         <label>الفترة</label>
 
                                         <div class="d-flex">
-                                          <input type="text"
-                                            class="form-control"
-                                            [placeholder]="'من تاريخ - إلى تاريخ'"
-                                            [required]="false"
-                                            [name]="'dateFrom'"
-                                            [id]="'dateFrom'"
-                                            [owlDateTime]="dt3"
-                                            [owlDateTimeTrigger]="dt3"
-                                            [selectMode]="'range'"
-                                          >
-                                          <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                [placeholder]="'من تاريخ - إلى تاريخ'"
+                                                [required]="false"
+                                                [name]="'dateFrom'"
+                                                [id]="'dateFrom'"
+                                                [owlDateTime]="dt3"
+                                                [owlDateTimeTrigger]="dt3"
+                                                [selectMode]="'range'"
+                                                [(ngModel)]="dateRange"
+                                            >
+                                            <owl-date-time
+                                                [pickerType]="'calendar'"
+                                                #dt3
+                                            ></owl-date-time>
                                         </div>
-
-                                      
 
                                     </div>
                                     <!-- /.form-group -->
@@ -211,15 +195,16 @@
                                     <div class="form-group">
                                         <label>المصدر</label>
                                         <ng-select
-                                            [items]="source$"
+                                            [items]="applicationSource"
                                             [multiple]="true"
-                                            [closeOnSelect]="false"
+                                            [closeOnSelect]="true"
                                             [hideSelected]="true"
+                                            [clearSearchOnAdd]="true"
                                             bindLabel="name"
+                                            bindValue="id"
                                             placeholder="المصدر"
                                             notFoundText="لا يوجد بيانات"
-                                            [clearSearchOnAdd]="true"
-                                            [(ngModel)]="selectedSource"
+                                            [(ngModel)]="selectedApplicationSource"
                                         >
                                         </ng-select>
                                     </div>
@@ -238,6 +223,7 @@
                                 <div class="row ">
                                     <div class="col-sm-12 text-center">
                                         <button
+                                            (click)="onSubmit()"
                                             type="submit"
                                             class="btn btn-primary col-5"
                                         >
@@ -247,6 +233,8 @@
                                 </div>
                             </div>
                         </div>
+              <!-- </form> -->
+
                         <!-- /.card-footer -->
                     </div>
                     <!-- /.card -->

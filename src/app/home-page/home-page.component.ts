@@ -7,6 +7,8 @@ import { environment } from '../../environments/environment';
 import { FieldsService } from '../shared/fields.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { DatePipe } from '@angular/common';
+
 
 
 @Component({
@@ -32,12 +34,40 @@ export class HomePageComponent implements OnInit {
   people$: Observable<any[]>;
   selectedPeople = [];
 
-source$ = [
-  {id: 'hilux', name: 'النظام الداخلي'},
-  {id: 'mobile', name: 'موقع الخدمات الإلكترونية'},
-  {id: 'web', name: 'تطبيقات الهواتف الذكية'}
-];
-selectedSource = [];
+  users$: Observable<any[]>;
+  selectedUsers = [];
+
+  listOfServices$: Observable<any[]>;
+  selectedlistOfServices = [];
+
+  listOfServiceCategories$: Observable<any[]>;
+  selectedListOfServiceCategories = [];
+
+  listOfDepartments$: Observable<any[]>;
+  selectedListOfDepartments = [];
+
+  dateRange = "";
+  dateFrom = "";
+  dateTo = "";
+
+  applicationSource = [
+    { id: 'hilux', name: 'النظام الداخلي' },
+    { id: 'mobile', name: 'موقع الخدمات الإلكترونية' },
+    { id: 'web', name: 'تطبيقات الهواتف الذكية' }
+  ];
+  selectedApplicationSource = [];
+
+  data = {
+    userID: this.selectedUsers,
+    departmentID: this.selectedListOfDepartments,
+    serviceID: this.selectedlistOfServices,
+    serviceCategoryID: this.selectedListOfServiceCategories,
+    dateFrom: this.dateFrom,
+    dateTo: this.dateTo,
+    applicationSource: this.selectedApplicationSource
+  };
+
+
 
 
 
@@ -46,22 +76,39 @@ selectedSource = [];
     private fieldsService: FieldsService,
     private http: HttpClient,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private datePipe: DatePipe
   ) { }
 
   ngOnInit(): void {
     this.people$ = this.fieldsService.getUrl(`https://jsonplaceholder.typicode.com/users`);
-    // this.dashboardItems$ = 
-    this.searchData();
+    this.listOfServices$ = this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/ServiceCategories/listOfServices`);
+    this.users$ = this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/ServiceCategories/listOfHiluxUsers`);
+    this.listOfServiceCategories$ = this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/ServiceCategories/listOfServiceCategories`);
+    this.listOfDepartments$ = this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/ServiceCategories/listOfDepartments`);
+    this.getDashboard(this.data);
+
   }
 
-  // searchData(formData: any) {
-  searchData() {
-    // let prepapedData = this.prepareFormData(formData)
-    let fd = new FormData();
-    // fd.append('data', JSON.stringify(prepapedData));
-    fd.append('data', '{"userID":["5","8","11"],"departmentID":[],"serviceID":["5"],"serviceCategoryID":[],"dateFrom":"Y-m-d H:i:s","dateTo":"Y-m-d H:i:s","applicationSource":["hilux","web","mobile"]}');
+  onSubmit() {
+    this.setDateRange(this.dateRange);
+    this.data.userID = this.selectedUsers;
+    this.data.departmentID = this.selectedListOfDepartments;
+    this.data.serviceID = this.selectedlistOfServices;
+    this.data.serviceCategoryID = this.selectedListOfServiceCategories;
+    this.data.dateFrom = this.dateFrom;
+    this.data.dateTo = this.dateTo;
+    this.data.applicationSource = this.selectedApplicationSource;
+    this.getDashboard(this.data);
+  }
 
+  getDashboard(fiteredData: any) {
+    console.log(fiteredData);
+
+    let fd = new FormData();
+    console.log('fs',fd);
+    
+    fd.append('data', JSON.stringify(fiteredData));
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/Applications/dashboard`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
@@ -76,37 +123,13 @@ selectedSource = [];
         this.toastr.error('Something went Wrong', 'Error');
         this.router.navigate(['error']);
       });
+
   }
 
-  prepareFormData(formData: any) {
-    this.formData.value = this.formData.userID
-    this.formData.value = this.formData.departmentID
-    this.formData.value = this.formData.serviceID
-    this.formData.value = this.formData.serviceCategoryID
-    this.formData.value = this.formData.dateFrom
-    this.formData.value = this.formData.dateTo
-    this.formData.value = this.formData.applicationSource
-    this.formData.value = null;
-    return formData
+  setDateRange(name: any) {
+    this.dateFrom = this.datePipe.transform(name[0], "yyyy-MM-dd hh:mm:ss")
+    this.dateTo = this.datePipe.transform(name[1], "yyyy-MM-dd hh:mm:ss")
   }
 
-
-  loadOwnersOptions() {
-    this.ownersOptions = concat(
-      of([]), // default items
-      this.ownersSearchInput$.pipe(
-        distinctUntilChanged(),
-        tap(() => this.ownersOptionsLoading = true),
-        switchMap(term => {
-          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/owners`, { term }).pipe(
-            catchError(() => of([])), // empty list on error
-            tap(() => this.ownersOptionsLoading = false)
-          )
-        })
-      )
-    );
-  }
-
-  
 
 }
