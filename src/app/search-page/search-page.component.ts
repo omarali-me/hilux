@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 interface SearchParams {
   query?: string;
@@ -19,6 +20,7 @@ interface SearchParams {
 })
 export class SearchPageComponent implements OnInit {
   formData: any = {};
+  addBlockData: any = {};
   formErrors: any = {};
   currentSearchParams: SearchParams = {};
   paramsSubscription = new Subscription();
@@ -40,6 +42,10 @@ export class SearchPageComponent implements OnInit {
   unitsOptions: any;
   ownersOptions: Observable<any>;
   response: any;
+  blockageTypesOptions: any;
+  blockageEntitiesOptions: Observable<any>;
+  blockageEntitySearchInput$ = new Subject<string>();
+  blockageEntityOptionsLoading = false;
 
   searchby: any;
 
@@ -48,7 +54,8 @@ export class SearchPageComponent implements OnInit {
     private router: Router,
     private fieldsService: FieldsService,
     private http: HttpClient,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private ngxSmartModalService: NgxSmartModalService
   ) { }
 
   ngOnInit(): void {
@@ -58,6 +65,7 @@ export class SearchPageComponent implements OnInit {
     this.loadProjectsOptions();
     this.loadLandsoptions();
     this.loadOldLandsoptions();
+    this.loadBlockageEntities();
 
     // this.paramsSubscription = this.route.queryParams
     //   .subscribe(params => this.search(params));
@@ -361,5 +369,72 @@ export class SearchPageComponent implements OnInit {
 
   getViewLegalBlocks(propertyId: any, resourceType: any = 'propertyId') {
     return `/legal_blocks?${resourceType}=${propertyId}`;
+  }
+
+  openAddBlockToOwnerPropertiesModal(ownerId: string, currentProperties?: any) {
+    this.addBlockData.ownerId = ownerId;
+    console.log('here currently owned properties are', currentProperties);
+    this.ngxSmartModalService.getModal('addBlockToOwnerPropertiesModal').open();
+  }
+
+  addBlockTocurrentlyOwnedOwnerProperties(data: any) {
+    let fd = new FormData();
+    fd.append('data', JSON.stringify(data));
+
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/createForAllOwnerProperties`, fd)
+      .subscribe((data: any) => {
+        if (data.status == 'success') {
+          this.ngxSmartModalService.closeLatestModal();
+          this.addBlockData = {};
+        } else {
+          this.formErrors = data.data;
+          this.toastr.error(JSON.stringify(data.message), 'Error')
+        }
+    }, (error) => {
+      this.toastr.error('Something went Wrong', 'Error')
+      this.router.navigate(['error'])
+    })
+  }
+
+  resetAddBlockToOwnerPropertiesModal() {
+    this.addBlockData = {};
+  }
+
+  loadBlockageTypesOptions() {
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/blockagesTypes`)
+      .subscribe((data) => {
+        this.blockageTypesOptions = data;
+      })
+  }
+
+  loadBlockageEntities() {
+    this.blockageEntitiesOptions = concat(
+      of([]), // default items
+      this.blockageEntitySearchInput$.pipe(
+        distinctUntilChanged(),
+        tap(() => this.blockageEntityOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/blockagesEntities`, { term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.blockageEntityOptionsLoading = false)
+          )
+        })
+      )
+    );
+  }
+
+  prepareAttachments() {
+    return {
+      fieldID: "attachments",
+      fieldType: "fileupload",
+      required: true,
+      fieldName: {
+        "ar": "attachments",
+        "en": "attachments"
+      },
+      auxInfo: {
+        multiple: true
+      }
+    }
   }
 }
