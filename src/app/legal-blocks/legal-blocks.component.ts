@@ -446,13 +446,13 @@ export class LegalBlocksComponent implements OnInit {
   }
 
   async openUpdateBlockModal(blockage: any) {
-    this.setPropertyId(this.updateBlockData);
     this.getBlockage(blockage.id)
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.updateBlockData = data.data
           await this.prepareBlockageTypesValueOptions(this.updateBlockData);
           await this.prepareBlockagesEntitiesValueOptions(this.updateBlockData);
+          this.setPropertyId(this.updateBlockData);
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -465,13 +465,13 @@ export class LegalBlocksComponent implements OnInit {
   }
 
   async openRemoveBlockModal(blockage: any) {
-    this.setPropertyId(this.removeBlockData);
     this.getBlockage(blockage.id)
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.removeBlockData = data.data
           await this.prepareBlockageTypesValueOptions(this.removeBlockData);
           await this.prepareBlockagesEntitiesValueOptions(this.removeBlockData);
+          this.setPropertyId(this.removeBlockData);
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
