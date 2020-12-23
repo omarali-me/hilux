@@ -229,7 +229,7 @@ export class DeveloperProfileComponent implements OnInit {
   }
 
   getCompanyProfile(company_id: any) {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/company?${company_id}`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companies?${company_id}`)
       .subscribe(async (profile) => {
         await this.prepareOwnerValueOptions(profile);
         this.companyDetails = profile
