@@ -258,3 +258,179 @@ label > span {
 .no-style-attachment{
     list-style: none;;
 }
+
+/* .layout-fixed .main-sidebar {
+    right: 0;
+}
+.brand-image {
+    float: right;
+}
+.content-wrapper, .main-footer, .main-header {
+    margin-left: 0px !important;
+    margin-right: 250px;
+}
+.mr-auto-navbav{
+    margin-right: auto!important;
+}
+.navbar-expand .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+[class*=icheck-]>input:first-child:checked+input[type=hidden]+label::after, 
+[class*=icheck-]>input:first-child:checked+label::after {
+    right: 15px;
+    left: auto;
+}
+.nav-sidebar .nav-link>.right, 
+.nav-sidebar .nav-link>p>.right {
+    left: 1rem;
+    right: auto;
+}
+.nav-sidebar .nav-link>.right:nth-child(2), 
+.nav-sidebar .nav-link>p>.right:nth-child(2) {
+    left: 2.2rem;
+    right: auto;
+}
+.small-box .icon>i {
+    left: 15px;
+    right: auto;
+}
+@media (min-width: 992px){
+    .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .main-footer, .sidebar-mini.sidebar-collapse .main-header {
+        margin-right: 4.6rem!important;
+    }
+    .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .main-footer, .sidebar-mini.sidebar-collapse .main-header {
+        margin-right: 4.6rem!important;
+        margin-left: 0!important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .main-sidebar, .main-sidebar::before {
+        box-shadow: none !important;
+        margin-left: -250px;
+    }
+
+    .content-wrapper, .content-wrapper::before, .main-footer, .main-footer::before, .main-header, .main-header::before {
+        margin-left: 0;
+    }
+
+    .sidebar-open .main-sidebar, .sidebar-open .main-sidebar::before {
+        margin-left: 0;
+    }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.sidebar-mini.sidebar-collapse .nav-sidebar .nav-link p {
+    width: 200px;
+}
+
+@media (min-width: 992px) {
+    .sidebar-mini.sidebar-collapse .main-footer {
+        margin-right: 0rem!important;
+        padding-right: 5rem!important;
+    }
+}
+.rtl .ml-auto, [dir=rtl] .ml-auto {
+    margin-left: auto!important;
+    margin-right: 0!important;
+}
+
+.custom-direction {
+    direction: ltr !important;
+} */
+
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+    color: transparent;
+}
+
+.form-check {
+    padding-left: 0;
+    padding-right: 1.25rem;
+}
+
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+    padding-left: 50px;
+    padding-right: 10px;
+}
+
+.ng-select .ng-select-container .ng-value-container {
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+.owl-dt-timer-divider {
+    right: -.3em;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-in-range.owl-dt-calendar-cell-range-from {
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-in-range.owl-dt-calendar-cell-range-to {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 999px;
+    border-bottom-left-radius: 999px;
+}
+
+.ngx-toastr {
+    text-align: right;
+    direction: rtl;
+}
+
+.dropdown-menu-lg {
+    max-width: 500px;
+}
+
+.card-header>.card-tools {
+    float: left;
+    margin-left: -.625rem;
+    margin-right: 0;
+}
+
+.veryLargeFont {
+    font-size: 70px;
+}
+
+.profile-user-img {
+    border: 3px solid #adb5bd;
+    margin: 0 auto;
+    padding: 3px;
+    width: 150px;
+    min-height: 150px;
+}
+
+.img-circle {
+    border-radius: 5%;
+}
+
+.placeholder {
+    min-height: 38px;
+}
+
+.ngx-gallery { display: inline-block; margin-bottom: 20px; }
+
+.gallery-wrapper {
+    min-height: 150px;
+    max-width: 150px;
+}
+.ngx-gallery-thumbnail.ngx-gallery-active.ngx-gallery-clickable {  
+    border-color: none !important;
+    border: none !important;
+}
+
+ngx-gallery-thumbnails {
+    margin-top: 0px !important;
+}
+
+.fs-30 {
+    font-size: 30px;
+}
