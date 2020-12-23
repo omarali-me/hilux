@@ -452,7 +452,6 @@ export class LegalBlocksComponent implements OnInit {
           this.updateBlockData = data.data
           await this.prepareBlockageTypesValueOptions(this.updateBlockData);
           await this.prepareBlockagesEntitiesValueOptions(this.updateBlockData);
-          this.setPropertyId(this.updateBlockData);
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -471,7 +470,6 @@ export class LegalBlocksComponent implements OnInit {
           this.removeBlockData = data.data
           await this.prepareBlockageTypesValueOptions(this.removeBlockData);
           await this.prepareBlockagesEntitiesValueOptions(this.removeBlockData);
-          this.setPropertyId(this.removeBlockData);
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -543,7 +541,7 @@ export class LegalBlocksComponent implements OnInit {
 
   setPropertyId(data: any) {
     const firstResponse = this.getFirstResponse(this.response);
-    data.propertyId = firstResponse && firstResponse.propertyId;
+    data.propertyId = firstResponse && (firstResponse.propertyId || this.getPropertyId(this.formData));
   }
 
   resetAddBlockModal() {
