@@ -461,10 +461,12 @@ export class SearchPageComponent implements OnInit {
   }
 
   getActiveLandDetails(land: any) {
-    return this.getOwnerHeader(land);
+    let ownerInfo = this.getOwnerHeader(land)
+    return ownerInfo + `, رقم الأرض : ${land?.land?.land?.landId}`;
   }
 
   getActiveUnitDetails(unit: any) {
-    return this.getUnitOwnerHeader(unit);
+    let ownerInfo = this.getUnitOwnerHeader(unit)
+    return ownerInfo + `, المطور العقاري: ${unit?.unitData?.developer?.nameAr}, المشروع: ${unit?.unitData?.project?.nameAr}, رقم الوحدة العقارية: ${unit?.unitData?.unit?.unitNumber}`;
   }
 }
