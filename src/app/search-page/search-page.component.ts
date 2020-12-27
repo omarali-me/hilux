@@ -386,6 +386,7 @@ export class SearchPageComponent implements OnInit {
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.ngxSmartModalService.closeLatestModal();
+          this.searchData(this.formData);
           this.addBlockData = {};
           this.currentlyOwnedPropertiesByOwner = [];
         } else {
