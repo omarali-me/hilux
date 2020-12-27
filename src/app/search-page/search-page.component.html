@@ -813,7 +813,7 @@
 <ngx-smart-modal #addBlockToOwnerPropertiesModal identifier="addBlockToOwnerPropertiesModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetAddBlockToOwnerPropertiesModal()">
   <div class="modal-header pt-0">
     <div class="modal-title">
-      <h4>Add New Block</h4>
+      <h4 i18n="@@searchPageAddNewBlockHeader">Add New Block</h4>
     </div>
   </div>
   <form #addBlockToOwnerPropertiesForm="ngForm" (ngSubmit)="addBlockTocurrentlyOwnedOwnerProperties(addBlockData);" novalidate>
@@ -822,7 +822,7 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Blockage Type
+              <label class="col-sm-3 col-form-label" i18n="@@searchPageBlockType">Blockage Type
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -849,7 +849,7 @@
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Block Entity Name
+              <label class="col-sm-3 col-form-label" i18n="@@searchPageBlockEntityName">Block Entity Name
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -882,7 +882,7 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Remarks
+              <label class="col-sm-3 col-form-label" i18n="@@searchPageRemarks">Remarks
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -905,7 +905,7 @@
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Attachments
+              <label class="col-sm-3 col-form-label" i18n="@@searchPageAttachments">Attachments
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -918,7 +918,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="row">
-              <label class="col-sm-3 col-form-label">Currently Owned Properties</label>
+              <label class="col-sm-3 col-form-label" i18n="@@searchPageCurrentlyOwnedProperties">Currently Owned Properties</label>
             </div>
             <div class="col-sm-9">
               <ul class="bans-wrapper">
@@ -940,8 +940,8 @@
     </div>
     <div class="modal-footer pb-0">
       <div class="col-sm-12">
-        <button type="button" class="btn btn-default float-right" (click)="addBlockToOwnerPropertiesModal.close()">Close</button>
-        <button type="submit" [disabled]="addBlockToOwnerPropertiesForm.invalid" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-default" i18n="@@searchPageBlockCancel" (click)="addBlockToOwnerPropertiesModal.close()">Close</button>
+        <button type="submit" [disabled]="addBlockToOwnerPropertiesForm.invalid" i18n="@@searchPageBlockSubmit" class="btn btn-primary float-left">Submit</button>
       </div>
     </div>
   </form>

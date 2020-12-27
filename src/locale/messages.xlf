@@ -2967,6 +2967,70 @@
           <context context-type="linenumber">664</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="searchPageAddNewBlockHeader" datatype="html">
+        <source>Add New Block</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">816</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageBlockType" datatype="html">
+        <source>Blockage Type
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">825</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageBlockEntityName" datatype="html">
+        <source>Block Entity Name
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">852</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageRemarks" datatype="html">
+        <source>Remarks
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">885</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageAttachments" datatype="html">
+        <source>Attachments
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">908</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageCurrentlyOwnedProperties" datatype="html">
+        <source>Currently Owned Properties</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">921</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageBlockCancel" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">943</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="searchPageBlockSubmit" datatype="html">
+        <source>Submit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
+          <context context-type="linenumber">944</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="developerProfileCompanyName" datatype="html">
         <source>
                             Company Name
@@ -3294,6 +3358,370 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
           <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlockssearchDeveloperName" datatype="html">
+        <source>Developer Name
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlockssearchProjectName" datatype="html">
+        <source>Project Name
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlockssearchUnitId" datatype="html">
+        <source>Unit ID
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlockssearchLandId" datatype="html">
+        <source>Land ID
+                      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlockssearchOldLandID" datatype="html">
+        <source>Old Land ID
+                      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlockssearchSearchButton" datatype="html">
+        <source>Search</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">168</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsLegalBlockages" datatype="html">
+        <source>Legal Blockages:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">181</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsAddBlock" datatype="html">
+        <source>Add Block</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">184</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsLandId" datatype="html">
+        <source>Land ID: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">189</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsDeveloperName" datatype="html">
+        <source>Developer Name: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">192</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsUnitNumber" datatype="html">
+        <source>Unit Number: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">197</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsProjectName" datatype="html">
+        <source>Project Name: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">200</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsCurrentLegalBlockages" datatype="html">
+        <source>Current Legal Blockages</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">210</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsTableBlockageType" datatype="html">
+        <source>Blockage Type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">217</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">282</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsTableBlockEntityNameAr" datatype="html">
+        <source>Block Entity Name Ar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">218</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">283</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsTableRemarks" datatype="html">
+        <source>Remarks</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">219</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">284</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsTableAttachments" datatype="html">
+        <source>Attachments</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">220</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">285</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsTableCreatedAtModifiedAt" datatype="html">
+        <source>Created At / Modified At</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">221</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">286</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsTableCreatedByModifiedBy" datatype="html">
+        <source>Created By / Modified By</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">222</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">287</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsTableUnblockRemarks" datatype="html">
+        <source>Unblock Remarks</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">223</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">288</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsTableEndedAt" datatype="html">
+        <source>Ended At</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">224</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">289</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsTableEndedBy" datatype="html">
+        <source>Ended By</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">225</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">290</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsTableActions" datatype="html">
+        <source>Actions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">226</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">291</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsPreviousLegalBlockages" datatype="html">
+        <source>Previous Legal Blockages</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">275</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupAddNewBlockHeader" datatype="html">
+        <source>Add New Block</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">349</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupBlockageType" datatype="html">
+        <source>Blockage Type
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">358</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">474</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">604</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupBlockEntityName" datatype="html">
+        <source>Block Entity Name
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">385</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">502</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">632</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupRemarks" datatype="html">
+        <source>Remarks
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">418</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">549</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupAttachments" datatype="html">
+        <source>Attachments
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">441</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">572</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">692</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupCancel" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">454</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">585</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">733</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupSubmit" datatype="html">
+        <source>Submit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">455</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupHeaderUpdateBlock" datatype="html">
+        <source>Update Block</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">465</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupCreatedAt" datatype="html">
+        <source>Created At</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">536</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">666</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupUpdate" datatype="html">
+        <source>Update</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">586</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupHeaderRemoveBlock" datatype="html">
+        <source>Remove Block</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">595</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupRemarksReadOnly" datatype="html">
+        <source>Remarks</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">679</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupUnblockRemarks" datatype="html">
+        <source>Unblock Remarks
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">705</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupRemove" datatype="html">
+        <source>Remove</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">734</context>
         </context-group>
       </trans-unit>
     </body>
