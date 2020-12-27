@@ -262,7 +262,7 @@
                         <a [href]="getViewResourceUrl(owner_detail?.profile?.ownerId, 'owner')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-eye"></i>
                         </a>
-                        <span (click)="openAddBlockToOwnerPropertiesModal(owner_detail?.profile?.ownerId, getCurrentOwnedLands(response.deeds))" class="fs-30 p-1 icon-pointer">
+                        <span (click)="openAddBlockToOwnerPropertiesModal(owner_detail?.profile?.ownerId)" class="fs-30 p-1 icon-pointer">
                           <i class="fas fa-gavel fa-rotate-270"></i>
                         </span>
                       </div>
@@ -911,6 +911,28 @@
               <div class="col-sm-9">
                 <app-file-upload [field]="prepareAttachments()" [formData]="addBlockData"></app-file-upload>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="row">
+              <label class="col-sm-3 col-form-label">Currently Owned Properties</label>
+            </div>
+            <div class="col-sm-9">
+              <ul class="bans-wrapper">
+                <ng-container *ngFor="let land of getCurrentOwnedLands(currentlyOwnedPropertiesByOwner.deeds)">
+                  <li class="text-danger">
+                    {{ getActiveLandDetails(land) }}
+                  </li>
+                </ng-container>
+                <ng-container *ngFor="let unit of getCurrentOwnedUnits(currentlyOwnedPropertiesByOwner.deeds)">
+                  <li class="text-danger">
+                    {{ getActiveUnitDetails(unit) }}
+                  </li>
+                </ng-container>
+              </ul>
             </div>
           </div>
         </div>

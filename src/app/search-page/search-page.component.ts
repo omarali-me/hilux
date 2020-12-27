@@ -46,6 +46,7 @@ export class SearchPageComponent implements OnInit {
   blockageEntitiesOptions: Observable<any>;
   blockageEntitySearchInput$ = new Subject<string>();
   blockageEntityOptionsLoading = false;
+  currentlyOwnedPropertiesByOwner: any = [];
 
   searchby: any;
 
@@ -324,11 +325,11 @@ export class SearchPageComponent implements OnInit {
   }
 
   filterLandsWithStatus(deeds: any, status: any) {
-    return deeds.filter(d => d.land && d.deed?.status == status);
+    return deeds && deeds.filter(d => d.land && d.deed?.status == status);
   }
 
   filterUnitsWithStatus(deeds: any, status: any) {
-    return deeds.filter(d => d.unitData && d.deed?.status == status);
+    return deeds && deeds.filter(d => d.unitData && d.deed?.status == status);
   }
 
   getItemShare(deed: any) {
@@ -371,9 +372,9 @@ export class SearchPageComponent implements OnInit {
     return `/legal_blocks?${resourceType}=${propertyId}`;
   }
 
-  openAddBlockToOwnerPropertiesModal(ownerId: string, currentProperties?: any) {
+  async openAddBlockToOwnerPropertiesModal(ownerId: string) {
     this.addBlockData.ownerId = ownerId;
-    console.log('here currently owned properties are', currentProperties);
+    await this.getCurrentlyOwnedPropertiesFor(ownerId);
     this.ngxSmartModalService.getModal('addBlockToOwnerPropertiesModal').open();
   }
 
@@ -386,6 +387,7 @@ export class SearchPageComponent implements OnInit {
         if (data.status == 'success') {
           this.ngxSmartModalService.closeLatestModal();
           this.addBlockData = {};
+          this.currentlyOwnedPropertiesByOwner = [];
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -398,6 +400,7 @@ export class SearchPageComponent implements OnInit {
 
   resetAddBlockToOwnerPropertiesModal() {
     this.addBlockData = {};
+    this.currentlyOwnedPropertiesByOwner = [];
   }
 
   loadBlockageTypesOptions() {
@@ -436,5 +439,31 @@ export class SearchPageComponent implements OnInit {
         multiple: true
       }
     }
+  }
+
+  getCurrentlyOwnedPropertiesFor(ownerId: any) {
+    let fd = new FormData();
+    fd.append('data', JSON.stringify({ "ownerId": ownerId }));
+
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/properties/ownerActiveProperties`, fd)
+      .subscribe((data: any) => {
+        if (data.status == 'success') {
+          this.currentlyOwnedPropertiesByOwner = data.data;
+        } else {
+          this.formErrors = data.data;
+          this.toastr.error(JSON.stringify(data.message), 'Error')
+        }
+    }, (error) => {
+      this.toastr.error('Something went Wrong', 'Error')
+      this.router.navigate(['error'])
+    })
+  }
+
+  getActiveLandDetails(land: any) {
+    return this.getOwnerHeader(land);
+  }
+
+  getActiveUnitDetails(unit: any) {
+    return this.getUnitOwnerHeader(unit);
   }
 }
