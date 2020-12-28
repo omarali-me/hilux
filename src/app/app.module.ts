@@ -95,6 +95,7 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { DeveloperProfileComponent } from './developer-profile/developer-profile.component';
 import { DeveloperDetailsComponent } from './developer-profile/developer-details/developer-details.component';
 import { LegalBlocksComponent } from './legal-blocks/legal-blocks.component';
+import { EngineeringBlocksComponent } from './engineering-blocks/engineering-blocks.component';
 
 @NgModule({
   declarations: [
@@ -178,7 +179,8 @@ import { LegalBlocksComponent } from './legal-blocks/legal-blocks.component';
     SearchPageComponent,
     DeveloperProfileComponent,
     DeveloperDetailsComponent,
-    LegalBlocksComponent
+    LegalBlocksComponent,
+    EngineeringBlocksComponent
   ],
   imports: [
     FormsModule,
