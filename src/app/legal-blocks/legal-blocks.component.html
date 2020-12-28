@@ -254,9 +254,9 @@
                             <span class="fs-30 p-1 icon-pointer" (click)="deleteBlockage(current_block_detail)">
                               <i class="fas fa-times red"></i>
                             </span>
-                            <span class="fs-30 p-1 icon-pointer" (click)="editBlockage(current_block_detail)">
+                            <a href="javascript:void(0);" class="fs-30 p-1 icon-pointer" (click)="editBlockage(current_block_detail)">
                               <i class="fas fa-pen"></i>
-                            </span>
+                            </a>
                           </div>
                         </td>
                       </tr>
@@ -288,7 +288,7 @@
                         <th i18n="@@legalBlocksResultsTableUnblockRemarks" >Unblock Remarks</th>
                         <th i18n="@@legalBlocksResultsTableEndedAt" >Ended At</th>
                         <th i18n="@@legalBlocksResultsTableEndedBy" >Ended By</th>
-                        <th i18n="@@legalBlocksResultsTableActions" >Actions</th>
+                        <!-- <th i18n="@@legalBlocksResultsTableActions" >Actions</th> -->
                       </tr>
                     </thead>
                     <tbody>
@@ -313,7 +313,7 @@
                         <td>{{ previous_block_detail?.endRemarks }}</td>
                         <td>{{ previous_block_detail?.endedAt }}</td>
                         <td>{{ previous_block_detail?.endedBy }}</td>
-                        <td>
+                        <!-- <td>
                           <div class="d-flex">
                             <span class="fs-30 p-1 icon-pointer" (click)="deleteBlockage(previous_block_detail)">
                               <i class="fas fa-times red"></i>
@@ -322,7 +322,7 @@
                               <i class="fas fa-pen"></i>
                             </span>
                           </div>
-                        </td>
+                        </td> -->
                       </tr>
                     </tbody>
                   </table>
