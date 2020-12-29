@@ -50,6 +50,7 @@ export class LegalBlocksComponent implements OnInit {
   blockageEntitySearchInput$ = new Subject<string>();
   blockageEntityOptionsLoading = false;
   searchby: any;
+  hideAttachmentsControl;
 
   constructor(
     private route: ActivatedRoute,
@@ -61,6 +62,7 @@ export class LegalBlocksComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.toggleControl(false);
     this.loadUnitsOptions();
     this.loadDeveloperOptions();
     this.loadProjectsOptions();
@@ -441,11 +443,13 @@ export class LegalBlocksComponent implements OnInit {
   }
 
   openAddBlockModal() {
+    this.toggleControl(false);
     this.setPropertyId(this.addBlockData);
     this.ngxSmartModalService.getModal('addBlockModal').open();
   }
 
   async openUpdateBlockModal(blockage: any) {
+    this.toggleControl(false);
     this.getBlockage(blockage.id)
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
@@ -464,6 +468,7 @@ export class LegalBlocksComponent implements OnInit {
   }
 
   async openRemoveBlockModal(blockage: any) {
+    this.toggleControl(false);
     this.getBlockage(blockage.id)
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
@@ -546,14 +551,17 @@ export class LegalBlocksComponent implements OnInit {
 
   resetAddBlockModal() {
     this.addBlockData = {};
+    this.toggleControl(true);
   }
 
   resetUpdateBlockModal() {
     this.updateBlockData = {};
+    this.toggleControl(true);
   }
 
   resetRemoveBlockModal() {
     this.removeBlockData = {};
+    this.toggleControl(true);
   }
 
   updateBlock(formData: any) {
@@ -598,5 +606,10 @@ export class LegalBlocksComponent implements OnInit {
 
   getBlockage(blockageId: any) {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/get/${blockageId}`);
+  }
+
+  toggleControl(value?: boolean) {
+    this.hideAttachmentsControl = (!!value ? value : !this.hideAttachmentsControl)
+    return this.hideAttachmentsControl;
   }
 }

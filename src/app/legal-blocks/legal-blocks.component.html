@@ -441,7 +441,7 @@
               <label class="col-sm-3 col-form-label" i18n="@@legalBlocksPopupAttachments">Attachments
                 <span>*</span>
               </label>
-              <div class="col-sm-9">
+              <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
                 <app-file-upload [field]="prepareAttachments()" [formData]="addBlockData"></app-file-upload>
               </div>
             </div>
@@ -572,7 +572,7 @@
               <label class="col-sm-3 col-form-label" i18n="@@legalBlocksPopupAttachments">Attachments
                 <span>*</span>
               </label>
-              <div class="col-sm-9">
+              <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
                 <app-file-upload [field]="prepareAttachments()" [formData]="updateBlockData"></app-file-upload>
               </div>
             </div>
@@ -692,7 +692,7 @@
               <label class="col-sm-3 col-form-label" i18n="@@legalBlocksPopupAttachments">Attachments
                 <span>*</span>
               </label>
-              <div class="col-sm-9">
+              <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
                 <app-file-upload [field]="prepareAttachments()" [formData]="removeBlockData"></app-file-upload>
               </div>
             </div>

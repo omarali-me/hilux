@@ -47,6 +47,7 @@ export class SearchPageComponent implements OnInit {
   blockageEntitySearchInput$ = new Subject<string>();
   blockageEntityOptionsLoading = false;
   currentlyOwnedPropertiesByOwner: any = [];
+  hideAttachmentsControl;
 
   searchby: any;
 
@@ -60,6 +61,7 @@ export class SearchPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.toggleControl(false);
     this.loadUnitsOptions();
     this.loadOwnersOptions();
     this.loadDeveloperOptions();
@@ -374,6 +376,7 @@ export class SearchPageComponent implements OnInit {
 
   async openAddBlockToOwnerPropertiesModal(ownerId: string) {
     this.addBlockData.ownerId = ownerId;
+    this.toggleControl(false);
     await this.getCurrentlyOwnedPropertiesFor(ownerId);
     this.ngxSmartModalService.getModal('addBlockToOwnerPropertiesModal').open();
   }
@@ -402,6 +405,7 @@ export class SearchPageComponent implements OnInit {
   resetAddBlockToOwnerPropertiesModal() {
     this.addBlockData = {};
     this.currentlyOwnedPropertiesByOwner = [];
+    this.toggleControl(true);
   }
 
   loadBlockageTypesOptions() {
@@ -468,5 +472,10 @@ export class SearchPageComponent implements OnInit {
   getActiveUnitDetails(unit: any) {
     let ownerInfo = this.getUnitOwnerHeader(unit)
     return ownerInfo + `, المطور العقاري: ${unit?.unitData?.developer?.nameAr}, المشروع: ${unit?.unitData?.project?.nameAr}, رقم الوحدة العقارية: ${unit?.unitData?.unit?.unitNumber}`;
+  }
+
+  toggleControl(value?: boolean) {
+    this.hideAttachmentsControl = (!!value ? value : !this.hideAttachmentsControl)
+    return this.hideAttachmentsControl;
   }
 }

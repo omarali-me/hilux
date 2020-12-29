@@ -908,7 +908,7 @@
               <label class="col-sm-3 col-form-label" i18n="@@searchPageAttachments">Attachments
                 <span>*</span>
               </label>
-              <div class="col-sm-9">
+              <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
                 <app-file-upload [field]="prepareAttachments()" [formData]="addBlockData"></app-file-upload>
               </div>
             </div>
