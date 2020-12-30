@@ -319,11 +319,11 @@ export class LegalBlocksComponent implements OnInit {
   }
 
   getCreatesAtModifiedAt(block: any) {
-    return `${block.modifiedAt} ${block.createdAt}`
+    return `${block.createdAt} \n ${block.modifiedAt}`
   }
 
   getCreatesByModifiedBy(block: any) {
-    return `${block.modifiedBy} ${block.createdBy}`
+    return `${block.createdByNameAr} \n ${block.modifiedBy}`
   }
 
   resetSearch(field_name: any) {
@@ -452,7 +452,7 @@ export class LegalBlocksComponent implements OnInit {
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.updateBlockData = data.data
-          this.updateBlockData.attachments = [];
+          this.updateBlockData.attachments = undefined;
           await this.prepareBlockageTypesValueOptions(this.updateBlockData);
           await this.prepareBlockagesEntitiesValueOptions(this.updateBlockData);
         } else {
@@ -472,7 +472,7 @@ export class LegalBlocksComponent implements OnInit {
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.removeBlockData = data.data
-          this.removeBlockData.attachments = [];
+          this.removeBlockData.attachments = undefined;
           await this.prepareBlockageTypesValueOptions(this.removeBlockData);
           await this.prepareBlockagesEntitiesValueOptions(this.removeBlockData);
         } else {
