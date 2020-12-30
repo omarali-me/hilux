@@ -3489,7 +3489,7 @@
       </trans-unit>
       <trans-unit id="searchPageCurrentlyOwnedProperties" datatype="html">
         <source>Currently Owned Properties</source>
-        <target>Currently Owned Properties</target>
+        <target>الأملاك الحالية</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
           <context context-type="linenumber">921</context>
@@ -3497,7 +3497,7 @@
       </trans-unit>
       <trans-unit id="searchPageBlockCancel" datatype="html">
         <source>Close</source>
-        <target>Close</target>
+        <target>إلغاء</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/search-page/search-page.component.html</context>
           <context context-type="linenumber">943</context>
