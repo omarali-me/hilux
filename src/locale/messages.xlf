@@ -3564,10 +3564,6 @@
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
           <context context-type="linenumber">226</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">291</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksResultsPreviousLegalBlockages" datatype="html">
         <source>Previous Legal Blockages</source>
@@ -3597,7 +3593,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">604</context>
+          <context context-type="linenumber">603</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupBlockEntityName" datatype="html">
@@ -3614,7 +3610,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">632</context>
+          <context context-type="linenumber">631</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupRemarks" datatype="html">
@@ -3640,11 +3636,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">572</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">692</context>
+          <context context-type="linenumber">691</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupCancel" datatype="html">
@@ -3655,11 +3647,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">585</context>
+          <context context-type="linenumber">584</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">733</context>
+          <context context-type="linenumber">732</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupSubmit" datatype="html">
@@ -3684,28 +3676,36 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">666</context>
+          <context context-type="linenumber">665</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksUpdatePopupAttachments" datatype="html">
+        <source>Attachments
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
+          <context context-type="linenumber">572</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupUpdate" datatype="html">
         <source>Update</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">586</context>
+          <context context-type="linenumber">585</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupHeaderRemoveBlock" datatype="html">
         <source>Remove Block</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">595</context>
+          <context context-type="linenumber">594</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupRemarksReadOnly" datatype="html">
         <source>Remarks</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">679</context>
+          <context context-type="linenumber">678</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupUnblockRemarks" datatype="html">
@@ -3714,14 +3714,14 @@
               </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">705</context>
+          <context context-type="linenumber">704</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupRemove" datatype="html">
         <source>Remove</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
-          <context context-type="linenumber">734</context>
+          <context context-type="linenumber">733</context>
         </context-group>
       </trans-unit>
     </body>

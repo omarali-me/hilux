@@ -451,8 +451,8 @@
     </div>
     <div class="modal-footer pb-0">
       <div class="col-sm-12">
-        <button type="button" class="btn btn-default float-right" (click)="addBlockModal.close()" i18n="@@legalBlocksPopupCancel">Close</button>
-        <button type="submit" [disabled]="addBlockForm.invalid" class="btn btn-primary" i18n="@@legalBlocksPopupSubmit">Submit</button>
+        <button type="button" class="btn btn-default" (click)="addBlockModal.close()" i18n="@@legalBlocksPopupCancel">Close</button>
+        <button type="submit" [disabled]="addBlockForm.invalid" class="btn btn-primary float-left" i18n="@@legalBlocksPopupSubmit">Submit</button>
       </div>
     </div>
   </form>
@@ -569,11 +569,10 @@
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@legalBlocksPopupAttachments">Attachments
-                <span>*</span>
+              <label class="col-sm-3 col-form-label" i18n="@@legalBlocksUpdatePopupAttachments">Attachments
               </label>
               <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
-                <app-file-upload [field]="prepareAttachments()" [formData]="updateBlockData"></app-file-upload>
+                <app-file-upload [field]="prepareUpdateAttachments()" [formData]="updateBlockData"></app-file-upload>
               </div>
             </div>
           </div>
@@ -582,8 +581,8 @@
     </div>
     <div class="modal-footer pb-0">
       <div class="col-sm-12">
-        <button type="button" class="btn btn-default float-right" (click)="updateBlockModal.close()" i18n="@@legalBlocksPopupCancel">Close</button>
-        <button type="submit" [disabled]="updateBlockForm.invalid" class="btn btn-primary" i18n="@@legalBlocksPopupUpdate">Update</button>
+        <button type="button" class="btn btn-default" (click)="updateBlockModal.close()" i18n="@@legalBlocksPopupCancel">Close</button>
+        <button type="submit" [disabled]="updateBlockForm.invalid" class="btn btn-primary float-left" i18n="@@legalBlocksPopupUpdate">Update</button>
       </div>
     </div>
   </form>
@@ -730,8 +729,8 @@
     </div>
     <div class="modal-footer pb-0">
       <div class="col-sm-12">
-        <button type="button" class="btn btn-default float-right" (click)="removeBlockModal.close()" i18n="@@legalBlocksPopupCancel">Close</button>
-        <button type="submit" [disabled]="removeBlockForm.invalid" class="btn btn-primary" i18n="@@legalBlocksPopupRemove">Remove</button>
+        <button type="button" class="btn btn-default" (click)="removeBlockModal.close()" i18n="@@legalBlocksPopupCancel">Close</button>
+        <button type="submit" [disabled]="removeBlockForm.invalid" class="btn btn-primary float-left" i18n="@@legalBlocksPopupRemove">Remove</button>
       </div>
     </div>
   </form>

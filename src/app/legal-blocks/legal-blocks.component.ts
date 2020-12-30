@@ -88,10 +88,8 @@ export class LegalBlocksComponent implements OnInit {
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.response = data.data;
-          this.formData.propertyId = null;
         } else {
           this.formErrors = data.data;
-          this.formData.propertyId = null;
           this.toastr.error(JSON.stringify(data.message), 'Error');
         }
       }, (error) => {
@@ -454,6 +452,7 @@ export class LegalBlocksComponent implements OnInit {
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.updateBlockData = data.data
+          this.updateBlockData.attachments = [];
           await this.prepareBlockageTypesValueOptions(this.updateBlockData);
           await this.prepareBlockagesEntitiesValueOptions(this.updateBlockData);
         } else {
@@ -473,6 +472,7 @@ export class LegalBlocksComponent implements OnInit {
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.removeBlockData = data.data
+          this.removeBlockData.attachments = [];
           await this.prepareBlockageTypesValueOptions(this.removeBlockData);
           await this.prepareBlockagesEntitiesValueOptions(this.removeBlockData);
         } else {
@@ -521,6 +521,21 @@ export class LegalBlocksComponent implements OnInit {
     }
   }
 
+  prepareUpdateAttachments() {
+    return {
+      fieldID: "attachments",
+      fieldType: "fileupload",
+      required: false,
+      fieldName: {
+        "ar": "attachments",
+        "en": "attachments"
+      },
+      auxInfo: {
+        multiple: true
+      }
+    }
+  }
+
   loadBlockageTypesOptions() {
     this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/blockagesTypes`)
       .subscribe((data) => {
@@ -546,7 +561,7 @@ export class LegalBlocksComponent implements OnInit {
 
   setPropertyId(data: any) {
     const firstResponse = this.getFirstResponse(this.response);
-    data.propertyId = firstResponse && (firstResponse.propertyId || this.getPropertyId(this.formData));
+    data.propertyId = firstResponse && (firstResponse.propertyId || (firstResponse.land && firstResponse.land.propertyId) || this.getPropertyId(this.formData));
   }
 
   resetAddBlockModal() {
