@@ -4310,10 +4310,6 @@
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
           <context context-type="linenumber">384</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">451</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupAttachments" datatype="html">
         <source>Attachments
@@ -4459,6 +4455,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
           <context context-type="linenumber">678</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
+          <context context-type="linenumber">451</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupUnblockRemarks" datatype="html">
