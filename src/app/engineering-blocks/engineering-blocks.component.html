@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="m-2 text-dark">
-          <h1>Engineering Blocks</h1>
+          <h1>Engineering Bans</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -178,7 +178,7 @@
             <div class="searchBlockages">
               <div class="row">
                 <div class="col-sm-6">
-                  <label>Legal Blockages:</label>
+                  <label>Engineering Bans:</label>
                 </div>
                 <div class="col-sm-6">
                   <button class="btn btn-primary float-left" (click)="openAddBlockModal()">Add Block</button>
@@ -207,17 +207,14 @@
                         <i class="fas fa-minus"></i>
                     </button>
                   </div>
-                  <h3 class="card-title float-right font-weight-bold">Current Legal Blockages</h3>
+                  <h3 class="card-title float-right font-weight-bold">Current Engineering Bans</h3>
                 </div>
                 <div class="card-body">
                   <table class="table table-bordered landTable bg-white">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
-                        <th>Blockage Type</th>
-                        <th>Block Entity Name Ar</th>
                         <th>Remarks</th>
-                        <th>Attachments</th>
                         <th>Created At / Modified At</th>
                         <th>Created By / Modified By</th>
                         <th>Unblock Remarks</th>
@@ -229,21 +226,10 @@
                     <tbody>
                       <tr *ngFor="let current_block_detail of getCurrentOwnedBlocks(response); let i = index">
                         <td>{{ i + 1}}</td>
-                        <td>{{ current_block_detail?.typeAr }}</td>
-                        <td>{{ current_block_detail?.blockEntityNameAr }}</td>
                         <td>{{ current_block_detail?.remarks }}</td>
-                        <td>
-                          <ng-container *ngFor="let attachment of getAttachments(current_block_detail?.attachments)">
-                            <li class="no-style-attachment" *ngIf="attachment.link">
-                              <a [href]="attachment.link" target="_blank">
-                                {{attachment.name}}
-                              </a>
-                            </li>
-                          </ng-container>
-                        </td>
 
-                        <td>{{ getCreatesAtModifiedAt(current_block_detail) }}</td>
-                        <td>{{ getCreatesByModifiedBy(current_block_detail) }}</td>
+                        <td>{{ getCreatedAtModifiedAt(current_block_detail) }}</td>
+                        <td>{{ getCreatedByModifiedBy(current_block_detail) }}</td>
 
                         <td>{{ current_block_detail?.endRemarks }}</td>
 
@@ -253,9 +239,6 @@
                           <div class="d-flex">
                             <span class="fs-30 p-1 icon-pointer" (click)="deleteBlockage(current_block_detail)">
                               <i class="fas fa-times red"></i>
-                            </span>
-                            <span class="fs-30 p-1 icon-pointer" (click)="editBlockage(current_block_detail)">
-                              <i class="fas fa-pen"></i>
                             </span>
                           </div>
                         </td>
@@ -272,57 +255,32 @@
                         <i class="fas fa-minus"></i>
                     </button>
                   </div>
-                  <h3 class="card-title float-right font-weight-bold">Previous Legal Blockages</h3>
+                  <h3 class="card-title float-right font-weight-bold">Previous Engineering Bans</h3>
                 </div>
                 <div class="card-body">
                   <table class="table table-bordered landTable bg-light-red">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
-                        <th >Blockage Type</th>
-                        <th >Block Entity Name Ar</th>
-                        <th >Remarks</th>
-                        <th >Attachments</th>
-                        <th >Created At / Modified At</th>
-                        <th >Created By / Modified By</th>
-                        <th >Unblock Remarks</th>
-                        <th >Ended At</th>
-                        <th >Ended By</th>
-                        <th >Actions</th>
+                        <th>Remarks</th>
+                        <th>Created At / Modified At</th>
+                        <th>Created By / Modified By</th>
+                        <th>Unblock Remarks</th>
+                        <th>Ended At</th>
+                        <th>Ended By</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let previous_block_detail of getPreviouslyOwnedBlocks(response); let i = index">
                         <td>{{ i + 1}}</td>
-                        <td>{{ previous_block_detail?.typeAr }}</td>
-                        <td>{{ previous_block_detail?.blockEntityNameAr }}</td>
                         <td>{{ previous_block_detail?.remarks  }}</td>
-                        <td>
-                          <ng-container *ngFor="let attachment of getAttachments(previous_block_detail?.attachments)">
-                            <li class="no-style-attachment" *ngIf="attachment.link">
-                              <a [href]="attachment.link" target="_blank">
-                                {{attachment.name}}
-                              </a>
-                            </li>
-                          </ng-container>
-                        </td>
 
-                        <td>{{ getCreatesAtModifiedAt(previous_block_detail) }}</td>
-                        <td>{{ getCreatesByModifiedBy(previous_block_detail) }}</td>
+                        <td>{{ getCreatedAtModifiedAt(previous_block_detail) }}</td>
+                        <td>{{ getCreatedByModifiedBy(previous_block_detail) }}</td>
 
                         <td>{{ previous_block_detail?.endRemarks }}</td>
                         <td>{{ previous_block_detail?.endedAt }}</td>
                         <td>{{ previous_block_detail?.endedBy }}</td>
-                        <td>
-                          <div class="d-flex">
-                            <span class="fs-30 p-1 icon-pointer" (click)="deleteBlockage(previous_block_detail)">
-                              <i class="fas fa-times red"></i>
-                            </span>
-                            <span class="fs-30 p-1 icon-pointer" (click)="editBlockage(previous_block_detail)">
-                              <i class="fas fa-pen"></i>
-                            </span>
-                          </div>
-                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -343,13 +301,13 @@
   <!-- /.content -->
 </div>
 
-<ngx-smart-modal #addBlockModal identifier="addBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetAddBlockModal()">
+<ngx-smart-modal #addEngineeringBlockModal identifier="addEngineeringBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetAddBlockModal()">
   <div class="modal-header pt-0">
     <div class="modal-title">
       <h4>Add New Block</h4>
     </div>
   </div>
-  <form #addBlockForm="ngForm" (ngSubmit)="addNewBlock(addBlockData);" novalidate>
+  <form #addEngineeringBlockForm="ngForm" (ngSubmit)="addNewBlock(addBlockData);" novalidate>
     <div class="modal-body">
       <div class="conatiner">
         <div class="row">
@@ -379,9 +337,9 @@
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Attachments
-                <span>*</span>
+                <!-- <span>*</span> -->
               </label>
-              <div class="col-sm-9">
+              <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
                 <app-file-upload [field]="prepareAttachments()" [formData]="addBlockData"></app-file-upload>
               </div>
             </div>
@@ -391,21 +349,21 @@
     </div>
     <div class="modal-footer pb-0">
       <div class="col-sm-12">
-        <button type="button" class="btn btn-default float-right" (click)="addBlockModal.close()">Close</button>
-        <button type="submit" [disabled]="addBlockForm.invalid" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-default" (click)="addEngineeringBlockModal.close()">Close</button>
+        <button type="submit" [disabled]="addEngineeringBlockForm.invalid" class="btn btn-primary float-left">Submit</button>
       </div>
     </div>
   </form>
 </ngx-smart-modal>
 
 
-<!-- <ngx-smart-modal #updateBlockModal identifier="updateBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetUpdateBlockModal()">
+<ngx-smart-modal #updateEngineeringBlockModal identifier="updateEngineeringBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetUpdateBlockModal()">
   <div class="modal-header pt-0">
     <div class="modal-title">
       <h4>Update Block</h4>
     </div>
   </div>
-  <form #updateBlockForm="ngForm" (ngSubmit)="updateBlock(updateBlockData);" novalidate>
+  <form #updateEngineeringBlockForm="ngForm" (ngSubmit)="updateBlock(updateBlockData);" novalidate>
     <div class="modal-body">
       <div class="conatiner">
         <div class="row">
@@ -512,7 +470,7 @@
               <label class="col-sm-3 col-form-label">Attachments
                 <span>*</span>
               </label>
-              <div class="col-sm-9">
+              <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
                 <app-file-upload [field]="prepareAttachments()" [formData]="updateBlockData"></app-file-upload>
               </div>
             </div>
@@ -522,20 +480,20 @@
     </div>
     <div class="modal-footer pb-0">
       <div class="col-sm-12">
-        <button type="button" class="btn btn-default float-right" (click)="updateBlockModal.close()">Close</button>
-        <button type="submit" [disabled]="updateBlockForm.invalid" class="btn btn-primary">Update</button>
+        <button type="button" class="btn btn-default" (click)="updateEngineeringBlockModal.close()">Close</button>
+        <button type="submit" [disabled]="updateEngineeringBlockForm.invalid" class="btn btn-primary float-left">Update</button>
       </div>
     </div>
   </form>
-</ngx-smart-modal> -->
+</ngx-smart-modal>
 
-<ngx-smart-modal #removeBlockModal identifier="removeBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetRemoveBlockModal()">
+<ngx-smart-modal #removeEngineeringBlockModal identifier="removeEngineeringBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetRemoveBlockModal()">
   <div class="modal-header pt-0">
     <div class="modal-title">
       <h4>Remove Block</h4>
     </div>
   </div>
-  <form #removeBlockForm="ngForm" (ngSubmit)="removeBlock(removeBlockData);" novalidate>
+  <form #removeEngineeringBlockForm="ngForm" (ngSubmit)="removeBlock(removeBlockData);" novalidate>
     <div class="modal-body">
       <div class="conatiner">
         <div class="row">
@@ -568,9 +526,9 @@
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label">Attachments
-                <span>*</span>
+                <!-- <span>*</span> -->
               </label>
-              <div class="col-sm-9">
+              <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
                 <app-file-upload [field]="prepareAttachments()" [formData]="removeBlockData"></app-file-upload>
               </div>
             </div>
@@ -608,8 +566,8 @@
     </div>
     <div class="modal-footer pb-0">
       <div class="col-sm-12">
-        <button type="button" class="btn btn-default float-right" (click)="removeBlockModal.close()">Close</button>
-        <button type="submit" [disabled]="removeBlockForm.invalid" class="btn btn-primary">Remove</button>
+        <button type="button" class="btn btn-default" (click)="removeEngineeringBlockModal.close()">Close</button>
+        <button type="submit" [disabled]="removeEngineeringBlockForm.invalid" class="btn btn-primary float-left">Remove</button>
       </div>
     </div>
   </form>

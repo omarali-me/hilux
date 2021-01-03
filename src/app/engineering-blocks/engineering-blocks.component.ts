@@ -50,6 +50,7 @@ export class EngineeringBlocksComponent implements OnInit {
   blockageEntitySearchInput$ = new Subject<string>();
   blockageEntityOptionsLoading = false;
   searchby: any;
+  hideAttachmentsControl;
 
   constructor(
     private route: ActivatedRoute,
@@ -61,12 +62,13 @@ export class EngineeringBlocksComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.toggleControl(false);
     this.loadUnitsOptions();
     this.loadDeveloperOptions();
     this.loadProjectsOptions();
     this.loadLandsoptions();
     this.loadOldLandsoptions();
-    this.loadBlockageEntities();
+    // this.loadBlockageEntities();
 
     this.route.queryParams.subscribe(async (params) => {
       if (!_.isEqual(params, {})) {
@@ -82,14 +84,12 @@ export class EngineeringBlocksComponent implements OnInit {
   }
 
   searchData(formData: any) {
-    this.http.get(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/getByPropertyId/${this.getPropertyId(formData)}`)
+    this.http.get(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/engineeringgetByPropertyId/${this.getPropertyId(formData)}`)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.response = data.data;
-          this.formData.propertyId = null;
         } else {
           this.formErrors = data.data;
-          this.formData.propertyId = null;
           this.toastr.error(JSON.stringify(data.message), 'Error');
         }
       }, (error) => {
@@ -318,12 +318,12 @@ export class EngineeringBlocksComponent implements OnInit {
     }))
   }
 
-  getCreatesAtModifiedAt(block: any) {
-    return `${block.modifiedAt} ${block.createdAt}`
+  getCreatedAtModifiedAt(block: any) {
+    return `${block.createdAt} \n ${block.modifiedAt}`
   }
 
-  getCreatesByModifiedBy(block: any) {
-    return `${block.modifiedBy} ${block.createdBy}`
+  getCreatedByModifiedBy(block: any) {
+    return `${block.createdByNameAr} \n ${block.modifiedBy}`
   }
 
   resetSearch(field_name: any) {
@@ -441,17 +441,20 @@ export class EngineeringBlocksComponent implements OnInit {
   }
 
   openAddBlockModal() {
+    this.toggleControl(false);
     this.setPropertyId(this.addBlockData);
-    this.ngxSmartModalService.getModal('addBlockModal').open();
+    this.ngxSmartModalService.getModal('addEngineeringBlockModal').open();
   }
 
   async openUpdateBlockModal(blockage: any) {
+    this.toggleControl(false);
     this.getBlockage(blockage.id)
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.updateBlockData = data.data
-          await this.prepareBlockageTypesValueOptions(this.updateBlockData);
-          await this.prepareBlockagesEntitiesValueOptions(this.updateBlockData);
+          this.updateBlockData.attachments = undefined;
+          // await this.prepareBlockageTypesValueOptions(this.updateBlockData);
+          // await this.prepareBlockagesEntitiesValueOptions(this.updateBlockData);
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -460,16 +463,18 @@ export class EngineeringBlocksComponent implements OnInit {
       this.toastr.error('Something went Wrong', 'Error')
       this.router.navigate(['error'])
     })
-    this.ngxSmartModalService.getModal('updateBlockModal').open();
+    this.ngxSmartModalService.getModal('updateEngineeringBlockModal').open();
   }
 
   async openRemoveBlockModal(blockage: any) {
+    this.toggleControl(false);
     this.getBlockage(blockage.id)
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.removeBlockData = data.data
-          await this.prepareBlockageTypesValueOptions(this.removeBlockData);
-          await this.prepareBlockagesEntitiesValueOptions(this.removeBlockData);
+          this.removeBlockData.attachments = undefined;
+          // await this.prepareBlockageTypesValueOptions(this.removeBlockData);
+          // await this.prepareBlockagesEntitiesValueOptions(this.removeBlockData);
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -478,14 +483,14 @@ export class EngineeringBlocksComponent implements OnInit {
       this.toastr.error('Something went Wrong', 'Error')
       this.router.navigate(['error'])
     })
-    this.ngxSmartModalService.getModal('removeBlockModal').open();
+    this.ngxSmartModalService.getModal('removeEngineeringBlockModal').open();
   }
 
   addNewBlock(formData: any) {
     let fd = new FormData();
     fd.append('data', JSON.stringify(formData));
 
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/create`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/engineeringcreate`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.ngxSmartModalService.closeLatestModal();
@@ -505,7 +510,7 @@ export class EngineeringBlocksComponent implements OnInit {
     return {
       fieldID: "attachments",
       fieldType: "fileupload",
-      required: true,
+      required: false,
       fieldName: {
         "ar": "attachments",
         "en": "attachments"
@@ -541,26 +546,29 @@ export class EngineeringBlocksComponent implements OnInit {
 
   setPropertyId(data: any) {
     const firstResponse = this.getFirstResponse(this.response);
-    data.propertyId = firstResponse && (firstResponse.propertyId || this.getPropertyId(this.formData));
+    data.propertyId = firstResponse && (firstResponse.propertyId || (firstResponse.land && firstResponse.land.propertyId) || this.getPropertyId(this.formData));
   }
 
   resetAddBlockModal() {
     this.addBlockData = {};
+    this.toggleControl(true);
   }
 
   resetUpdateBlockModal() {
     this.updateBlockData = {};
+    this.toggleControl(true);
   }
 
   resetRemoveBlockModal() {
     this.removeBlockData = {};
+    this.toggleControl(true);
   }
 
   updateBlock(formData: any) {
     let fd = new FormData();
     fd.append('data', JSON.stringify(formData));
 
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/update/${formData.id}`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/EngineeringUpdate/${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.ngxSmartModalService.closeLatestModal();
@@ -580,7 +588,7 @@ export class EngineeringBlocksComponent implements OnInit {
     let fd = new FormData();
     fd.append('data', JSON.stringify(formData));
 
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/deactivate/${formData.id}`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/engineeringdeactivate/${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.ngxSmartModalService.closeLatestModal();
@@ -598,5 +606,10 @@ export class EngineeringBlocksComponent implements OnInit {
 
   getBlockage(blockageId: any) {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/get/${blockageId}`);
+  }
+
+  toggleControl(value?: boolean) {
+    this.hideAttachmentsControl = (!!value ? value : !this.hideAttachmentsControl)
+    return this.hideAttachmentsControl;
   }
 }
