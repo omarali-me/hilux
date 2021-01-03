@@ -325,9 +325,9 @@
                             <!-- <a [href]="getViewLegalBlocks(current_land_detail?.land?.land?.propertyId , 'propertyId')" target="_blank" class="fs-30 p-1" *ngIf="!current_land_detail?.land?.land?.landId">
                               <i class="fas fa-balance-scale"></i>
                             </a> -->
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewEngineeringBlocks(current_land_detail?.land?.land?.propertyId , 'propertyId')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-drafting-compass"></i>
-                            </span>
+                            </a>
                           </div>
                         </td>
                       </tr>
@@ -389,9 +389,9 @@
                             <!-- <a [href]="getViewLegalBlocks(previous_land_detail?.land?.land?.landId , 'propertyId')" target="_blank" class="fs-30 p-1" *ngIf="!previous_land_detail?.land?.land?.landId">
                               <i class="fas fa-balance-scale"></i>
                             </a> -->
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewEngineeringBlocks(previous_land_detail?.land?.land?.propertyId , 'propertyId')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-drafting-compass"></i>
-                            </span>
+                            </a>
                           </div>
                         </td>
                       </tr>
@@ -449,9 +449,9 @@
                             <a [href]="getViewLegalBlocks(current_unit_detail?.unitData?.unit?.propertyId, 'propertyId')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-balance-scale"></i>
                             </a>
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewEngineeringBlocks(current_unit_detail?.unitData?.unit?.propertyId, 'propertyId')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-drafting-compass"></i>
-                            </span>
+                            </a>
                           </div>
                         </td>
                       </tr>
@@ -508,9 +508,9 @@
                             <a [href]="getViewLegalBlocks(previous_unit_detail?.unitData?.unit?.propertyId, 'propertyId')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-balance-scale"></i>
                             </a>
-                            <span class="fs-30 p-1 icon-pointer">
+                            <a [href]="getViewEngineeringBlocks(previous_unit_detail?.unitData?.unit?.propertyId, 'propertyId')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-drafting-compass"></i>
-                            </span>
+                            </a>
                           </div>
                         </td>
                       </tr>
@@ -557,9 +557,9 @@
                         <!-- <a [href]="getViewLegalBlocks(land_detail.land.propertyId , 'propertyId')" target="_blank" class="fs-30 p-1" *ngIf="!land_detail.land.landId">
                           <i class="fas fa-balance-scale"></i>
                         </a> -->
-                        <span class="fs-30 p-1 icon-pointer">
+                        <a [href]="getViewEngineeringBlocks(land_detail.land.propertyId , 'propertyId')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-drafting-compass"></i>
-                        </span>
+                        </a>
                       </div>
                     </td>
                   </tr>
@@ -694,9 +694,9 @@
                         <a [href]="getViewLegalBlocks(unit_detail?.unit?.propertyId, 'propertyId')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-balance-scale"></i>
                         </a>
-                        <span class="fs-30 p-1 icon-pointer">
+                        <a [href]="getViewLegalBlocks(unit_detail?.unit?.propertyId, 'propertyId')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-drafting-compass"></i>
-                        </span>
+                        </a>
                       </div>
                     </td>
                   </tr>

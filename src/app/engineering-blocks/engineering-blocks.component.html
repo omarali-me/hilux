@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="m-2 text-dark">
-          <h1>Engineering Bans</h1>
+          <h1>الموانع و الحجوزات الهندسية</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -26,7 +26,7 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Developer Name
+                      <label class="col-sm-3 col-form-label" i18n="@@legalBlockssearchDeveloperName">Developer Name
                         <span *ngIf="isSearchByUnit()">*</span>
                       </label>
                       <div class="col-sm-9">
@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Project Name
+                      <label class="col-sm-3 col-form-label" i18n="@@legalBlockssearchProjectName">Project Name
                         <span *ngIf="isSearchByUnit()">*</span>
                       </label>
                       <div class="col-sm-9">
@@ -84,7 +84,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Unit ID
+                      <label class="col-sm-3 col-form-label" i18n="@@legalBlockssearchUnitId">Unit ID
                         <span *ngIf="isSearchByUnit()">*</span>
                       </label>
                       <div class="col-sm-9">
@@ -108,7 +108,7 @@
 
                   <div class="col-sm-6">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Land ID
+                      <label class="col-sm-3 col-form-label" i18n="@@legalBlockssearchLandId">Land ID
                       </label>
                       <div class="col-sm-9">
                         <ng-select
@@ -134,7 +134,7 @@
                     </div>
                   
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Old Land ID
+                      <label class="col-sm-3 col-form-label" i18n="@@legalBlockssearchOldLandID">Old Land ID
                       </label>
                       <div class="col-sm-9">
                         <ng-select
@@ -165,7 +165,7 @@
               <div class="col-sm-12">
                 <div class="row ">
                   <div class="col-sm-12 text-center">
-                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Search</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid" i18n="@@legalBlockssearchSearchButton">Search</button>
                   </div>
                 </div>
               </div>
@@ -178,26 +178,26 @@
             <div class="searchBlockages">
               <div class="row">
                 <div class="col-sm-6">
-                  <label>Engineering Bans:</label>
+                  <label i18n="@@engineeringBlocksResultsEngineeringBans">Engineering Bans:</label>
                 </div>
                 <div class="col-sm-6">
-                  <button class="btn btn-primary float-left" (click)="openAddBlockModal()">Add Block</button>
+                  <button class="btn btn-primary float-left" (click)="openAddBlockModal()" i18n="@@legalBlocksResultsAddBlock">Add Block</button>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6" *ngIf="isLandBlockage(response)">
-                  <label>Land ID: </label><span>{{ getfirstLand(response)?.landId }}</span>
+                  <label i18n="@@legalBlocksResultsLandId">Land ID: </label><span>{{ getfirstLand(response)?.landId }}</span>
                 </div>
                 <div class="col-sm-6" *ngIf="!isLandBlockage(response)">
-                  <label>Developer Name: </label><span>{{ getDeveloperName(response) }}</span>
+                  <label i18n="@@legalBlocksResultsDeveloperName">Developer Name: </label><span>{{ getDeveloperName(response) }}</span>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6" *ngIf="!isLandBlockage(response)">
-                  <label>Unit Number: </label><span>{{ getUnitNumber(response) }}</span>
+                  <label i18n="@@legalBlocksResultsUnitNumber">Unit Number: </label><span>{{ getUnitNumber(response) }}</span>
                 </div>
                 <div class="col-sm-6" *ngIf="!isLandBlockage(response)">
-                  <label>Project Name: </label><span>{{ getProjectName(response) }}</span>
+                  <label i18n="@@legalBlocksResultsProjectName">Project Name: </label><span>{{ getProjectName(response) }}</span>
                 </div>
               </div>
               <div class="card bg-seagreen">
@@ -207,20 +207,20 @@
                         <i class="fas fa-minus"></i>
                     </button>
                   </div>
-                  <h3 class="card-title float-right font-weight-bold">Current Engineering Bans</h3>
+                  <h3 class="card-title float-right font-weight-bold" i18n="@@engineeringBlocksResultsCurrentEngineeringBans">Current Engineering Bans</h3>
                 </div>
                 <div class="card-body">
                   <table class="table table-bordered landTable bg-white">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
-                        <th>Remarks</th>
-                        <th>Created At / Modified At</th>
-                        <th>Created By / Modified By</th>
-                        <th>Unblock Remarks</th>
-                        <th>Ended At</th>
-                        <th>Ended By</th>
-                        <th>Actions</th>
+                        <th i18n="@@legalBlocksResultsTableRemarks">Remarks</th>
+                        <th i18n="@@legalBlocksResultsTableCreatedAtModifiedAt">Created At / Modified At</th>
+                        <th i18n="@@legalBlocksResultsTableCreatedByModifiedBy">Created By / Modified By</th>
+                        <th i18n="@@legalBlocksResultsTableUnblockRemarks">Unblock Remarks</th>
+                        <th i18n="@@legalBlocksResultsTableEndedAt">Ended At</th>
+                        <th i18n="@@legalBlocksResultsTableEndedBy">Ended By</th>
+                        <th i18n="@@legalBlocksResultsTableActions">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -255,19 +255,19 @@
                         <i class="fas fa-minus"></i>
                     </button>
                   </div>
-                  <h3 class="card-title float-right font-weight-bold">Previous Engineering Bans</h3>
+                  <h3 class="card-title float-right font-weight-bold" i18n="@@engineeringBlocksResultsPreviousEngineeringBans">Previous Engineering Bans</h3>
                 </div>
                 <div class="card-body">
                   <table class="table table-bordered landTable bg-light-red">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
-                        <th>Remarks</th>
-                        <th>Created At / Modified At</th>
-                        <th>Created By / Modified By</th>
-                        <th>Unblock Remarks</th>
-                        <th>Ended At</th>
-                        <th>Ended By</th>
+                        <th i18n="@@legalBlocksResultsTableRemarks">Remarks</th>
+                        <th i18n="@@legalBlocksResultsTableCreatedAtModifiedAt">Created At / Modified At</th>
+                        <th i18n="@@legalBlocksResultsTableCreatedByModifiedBy">Created By / Modified By</th>
+                        <th i18n="@@legalBlocksResultsTableUnblockRemarks">Unblock Remarks</th>
+                        <th i18n="@@legalBlocksResultsTableEndedAt">Ended At</th>
+                        <th i18n="@@legalBlocksResultsTableEndedBy">Ended By</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -304,7 +304,7 @@
 <ngx-smart-modal #addEngineeringBlockModal identifier="addEngineeringBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetAddBlockModal()">
   <div class="modal-header pt-0">
     <div class="modal-title">
-      <h4>Add New Block</h4>
+      <h4 i18n="@@legalBlocksPopupAddNewBlockHeader">Add New Block</h4>
     </div>
   </div>
   <form #addEngineeringBlockForm="ngForm" (ngSubmit)="addNewBlock(addBlockData);" novalidate>
@@ -313,7 +313,7 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Remarks
+              <label class="col-sm-3 col-form-label" i18n="@@legalBlocksPopupRemarks">Remarks
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -336,8 +336,7 @@
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Attachments
-                <!-- <span>*</span> -->
+              <label class="col-sm-3 col-form-label" i18n="@@legalBlocksUpdatePopupAttachments">Attachments
               </label>
               <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
                 <app-file-upload [field]="prepareAttachments()" [formData]="addBlockData"></app-file-upload>
@@ -349,8 +348,8 @@
     </div>
     <div class="modal-footer pb-0">
       <div class="col-sm-12">
-        <button type="button" class="btn btn-default" (click)="addEngineeringBlockModal.close()">Close</button>
-        <button type="submit" [disabled]="addEngineeringBlockForm.invalid" class="btn btn-primary float-left">Submit</button>
+        <button type="button" class="btn btn-default" (click)="addEngineeringBlockModal.close()" i18n="@@legalBlocksPopupCancel">Close</button>
+        <button type="submit" [disabled]="addEngineeringBlockForm.invalid" class="btn btn-primary float-left" i18n="@@legalBlocksPopupSubmit">Submit</button>
       </div>
     </div>
   </form>
@@ -360,7 +359,7 @@
 <ngx-smart-modal #updateEngineeringBlockModal identifier="updateEngineeringBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetUpdateBlockModal()">
   <div class="modal-header pt-0">
     <div class="modal-title">
-      <h4>Update Block</h4>
+      <h4 i18n="@@legalBlocksPopupHeaderUpdateBlock"> Update Block</h4>
     </div>
   </div>
   <form #updateEngineeringBlockForm="ngForm" (ngSubmit)="updateBlock(updateBlockData);" novalidate>
@@ -369,69 +368,7 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Blockage Type
-                <span>*</span>
-              </label>
-              <div class="col-sm-9">
-                <ng-select
-                  required="true"
-                  [items]="blockageTypesOptions"
-                  name="typeId"
-                  [(ngModel)]="updateBlockData.typeId"
-                  bindLabel="value.ar"
-                  bindValue="key"
-                  notFoundText="لا يوجد نتائج للبحث"
-                  #typeId="ngModel"
-                  disabled="true"
-                  (open)="loadBlockageTypesOptions()"
-                >
-                </ng-select>
-                <div *ngIf="typeId.invalid && (typeId.dirty || typeId.touched)" class="alert alert-danger">
-                  <div *ngIf="typeId.errors?.required">
-                    Blockage Type can not be blank
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Block Entity Name
-                <span>*</span>
-              </label>
-              <div class="col-sm-9">
-                <ng-select
-                  required="true"
-                  [items]="blockageEntitiesOptions | async"
-                  name="blockEntityId"
-                  [hideSelected]="true"
-                  [(ngModel)]="updateBlockData.blockEntityId"
-                  [typeahead]="blockageEntitySearchInput$"
-                  bindLabel="value.ar"
-                  [minTermLength]="1"
-                  bindValue="key"
-                  [loading]="blockageEntityOptionsLoading"
-                  notFoundText="لا يوجد نتائج للبحث"
-                  typeToSearchText="Please enter 1 or more characters"
-                  disabled="true"
-                  #blockEntityId="ngModel">
-                </ng-select>
-
-                <div *ngIf="blockEntityId.invalid && (blockEntityId.dirty || blockEntityId.touched)" class="alert alert-danger">
-                  <div *ngIf="blockEntityId.errors?.required">
-                    Block Entity Name can not be blank
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Created At</label>
+              <label class="col-sm-3 col-form-label" i18n="@@legalBlocksPopupCreatedAt">Created At</label>
               <div class="col-sm-9">
                 <input name="createdAt" type="text" class="form-control" [(ngModel)]="updateBlockData.createdAt" #createdAt="ngModel" disabled="true">
               </div>
@@ -444,7 +381,7 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Remarks
+              <label class="col-sm-3 col-form-label" i18n="@@legalBlocksPopupRemarks">Remarks
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -467,8 +404,7 @@
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Attachments
-                <span>*</span>
+              <label class="col-sm-3 col-form-label" i18n="@@legalBlocksUpdatePopupAttachments">Attachments
               </label>
               <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
                 <app-file-upload [field]="prepareAttachments()" [formData]="updateBlockData"></app-file-upload>
@@ -480,8 +416,8 @@
     </div>
     <div class="modal-footer pb-0">
       <div class="col-sm-12">
-        <button type="button" class="btn btn-default" (click)="updateEngineeringBlockModal.close()">Close</button>
-        <button type="submit" [disabled]="updateEngineeringBlockForm.invalid" class="btn btn-primary float-left">Update</button>
+        <button type="button" class="btn btn-default" (click)="updateEngineeringBlockModal.close()" i18n="@@legalBlocksPopupCancel">Close</button>
+        <button type="submit" [disabled]="updateEngineeringBlockForm.invalid" class="btn btn-primary float-left" i18n="@@legalBlocksPopupUpdate">Update</button>
       </div>
     </div>
   </form>
@@ -490,7 +426,7 @@
 <ngx-smart-modal #removeEngineeringBlockModal identifier="removeEngineeringBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetRemoveBlockModal()">
   <div class="modal-header pt-0">
     <div class="modal-title">
-      <h4>Remove Block</h4>
+      <h4 i18n="@@legalBlocksPopupHeaderRemoveBlock">Remove Block</h4>
     </div>
   </div>
   <form #removeEngineeringBlockForm="ngForm" (ngSubmit)="removeBlock(removeBlockData);" novalidate>
@@ -499,7 +435,7 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Created At</label>
+              <label class="col-sm-3 col-form-label" i18n="@@legalBlocksPopupCreatedAt">Created At</label>
               <div class="col-sm-9">
                 <input name="createdAt" type="text" class="form-control" [(ngModel)]="removeBlockData.createdAt" #createdAt="ngModel" disabled="true">
               </div>
@@ -512,7 +448,7 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Remarks</label>
+              <label class="col-sm-3 col-form-label" i18n="@@legalBlocksPopupRemarks">Remarks</label>
               <div class="col-sm-9">
                 <ng-container>
                   <li class="no-style-attachment rtl">
@@ -525,8 +461,7 @@
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Attachments
-                <!-- <span>*</span> -->
+              <label class="col-sm-3 col-form-label" i18n="@@legalBlocksUpdatePopupAttachments">Attachments
               </label>
               <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
                 <app-file-upload [field]="prepareAttachments()" [formData]="removeBlockData"></app-file-upload>
@@ -538,7 +473,7 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Unblock Remarks
+              <label class="col-sm-3 col-form-label" i18n="@@legalBlocksPopupUnblockRemarks">Unblock Remarks
                 <span>*</span>
               </label>
               <div class="col-sm-9">
@@ -566,8 +501,8 @@
     </div>
     <div class="modal-footer pb-0">
       <div class="col-sm-12">
-        <button type="button" class="btn btn-default" (click)="removeEngineeringBlockModal.close()">Close</button>
-        <button type="submit" [disabled]="removeEngineeringBlockForm.invalid" class="btn btn-primary float-left">Remove</button>
+        <button type="button" class="btn btn-default" (click)="removeEngineeringBlockModal.close()" i18n="@@legalBlocksPopupCancel">Close</button>
+        <button type="submit" [disabled]="removeEngineeringBlockForm.invalid" class="btn btn-primary float-left" i18n="@@legalBlocksPopupRemove">Remove</button>
       </div>
     </div>
   </form>

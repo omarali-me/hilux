@@ -478,4 +478,8 @@ export class SearchPageComponent implements OnInit {
     this.hideAttachmentsControl = (!!value ? value : !this.hideAttachmentsControl)
     return this.hideAttachmentsControl;
   }
+
+  getViewEngineeringBlocks(propertyId: any, resourceType: any = 'propertyId') {
+    return `/engineering_blocks?${resourceType}=${propertyId}`;
+  }
 }
