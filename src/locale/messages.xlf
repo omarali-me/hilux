@@ -3447,10 +3447,6 @@
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
           <context context-type="linenumber">184</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">184</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksResultsLandId" datatype="html">
         <source>Land ID: </source>
@@ -3541,7 +3537,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">265</context>
+          <context context-type="linenumber">276</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksResultsTableAttachments" datatype="html">
@@ -3553,6 +3549,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
           <context context-type="linenumber">285</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
+          <context context-type="linenumber">218</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
+          <context context-type="linenumber">277</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksResultsTableCreatedAtModifiedAt" datatype="html">
@@ -3567,11 +3571,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">218</context>
+          <context context-type="linenumber">219</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">266</context>
+          <context context-type="linenumber">278</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksResultsTableCreatedByModifiedBy" datatype="html">
@@ -3586,11 +3590,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">219</context>
+          <context context-type="linenumber">220</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">267</context>
+          <context context-type="linenumber">279</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksResultsTableUnblockRemarks" datatype="html">
@@ -3605,11 +3609,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">220</context>
+          <context context-type="linenumber">221</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">268</context>
+          <context context-type="linenumber">280</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksResultsTableEndedAt" datatype="html">
@@ -3624,11 +3628,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">221</context>
+          <context context-type="linenumber">222</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">269</context>
+          <context context-type="linenumber">281</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksResultsTableEndedBy" datatype="html">
@@ -3643,11 +3647,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">222</context>
+          <context context-type="linenumber">223</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">270</context>
+          <context context-type="linenumber">282</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksResultsTableActions" datatype="html">
@@ -3658,7 +3662,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">223</context>
+          <context context-type="linenumber">224</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksResultsPreviousLegalBlockages" datatype="html">
@@ -3673,10 +3677,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
           <context context-type="linenumber">349</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">307</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupBlockageType" datatype="html">
@@ -3727,11 +3727,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">316</context>
+          <context context-type="linenumber">338</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">384</context>
+          <context context-type="linenumber">406</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupAttachments" datatype="html">
@@ -3763,15 +3763,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">351</context>
+          <context context-type="linenumber">373</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">419</context>
+          <context context-type="linenumber">441</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">504</context>
+          <context context-type="linenumber">526</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupSubmit" datatype="html">
@@ -3782,7 +3782,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">352</context>
+          <context context-type="linenumber">374</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupHeaderUpdateBlock" datatype="html">
@@ -3793,7 +3793,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">362</context>
+          <context context-type="linenumber">384</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupCreatedAt" datatype="html">
@@ -3808,11 +3808,11 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">371</context>
+          <context context-type="linenumber">393</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">438</context>
+          <context context-type="linenumber">460</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksUpdatePopupAttachments" datatype="html">
@@ -3824,15 +3824,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">339</context>
+          <context context-type="linenumber">361</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">407</context>
+          <context context-type="linenumber">429</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">464</context>
+          <context context-type="linenumber">486</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupUpdate" datatype="html">
@@ -3843,7 +3843,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">420</context>
+          <context context-type="linenumber">442</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupHeaderRemoveBlock" datatype="html">
@@ -3851,10 +3851,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/legal-blocks/legal-blocks.component.html</context>
           <context context-type="linenumber">594</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">429</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupRemarksReadOnly" datatype="html">
@@ -3865,7 +3861,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">451</context>
+          <context context-type="linenumber">473</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupUnblockRemarks" datatype="html">
@@ -3878,7 +3874,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">476</context>
+          <context context-type="linenumber">498</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlocksPopupRemove" datatype="html">
@@ -3889,7 +3885,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">505</context>
+          <context context-type="linenumber">527</context>
         </context-group>
       </trans-unit>
       <trans-unit id="engineeringBlocksResultsEngineeringBans" datatype="html">
@@ -3897,6 +3893,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
           <context context-type="linenumber">181</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksResultsAddEngineeringBlock" datatype="html">
+        <source>Add Block</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
+          <context context-type="linenumber">184</context>
         </context-group>
       </trans-unit>
       <trans-unit id="engineeringBlocksResultsCurrentEngineeringBans" datatype="html">
@@ -3910,7 +3913,21 @@
         <source>Previous Engineering Bans</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
-          <context context-type="linenumber">258</context>
+          <context context-type="linenumber">269</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupAddNewEngineeringBlockHeader" datatype="html">
+        <source>Add New Block</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
+          <context context-type="linenumber">329</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="legalBlocksPopupHeaderRemoveEngineeringBlock" datatype="html">
+        <source>Remove Block</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/engineering-blocks/engineering-blocks.component.html</context>
+          <context context-type="linenumber">451</context>
         </context-group>
       </trans-unit>
     </body>

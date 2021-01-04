@@ -181,7 +181,7 @@
                   <label i18n="@@engineeringBlocksResultsEngineeringBans">Engineering Bans:</label>
                 </div>
                 <div class="col-sm-6">
-                  <button class="btn btn-primary float-left" (click)="openAddBlockModal()" i18n="@@legalBlocksResultsAddBlock">Add Block</button>
+                  <button class="btn btn-primary float-left" (click)="openAddBlockModal()" i18n="@@legalBlocksResultsAddEngineeringBlock">Add Block</button>
                 </div>
               </div>
               <div class="row">
@@ -215,6 +215,7 @@
                       <tr class="bg-grey">
                         <th>#</th>
                         <th i18n="@@legalBlocksResultsTableRemarks">Remarks</th>
+                        <th i18n="@@legalBlocksResultsTableAttachments" >Attachments</th>
                         <th i18n="@@legalBlocksResultsTableCreatedAtModifiedAt">Created At / Modified At</th>
                         <th i18n="@@legalBlocksResultsTableCreatedByModifiedBy">Created By / Modified By</th>
                         <th i18n="@@legalBlocksResultsTableUnblockRemarks">Unblock Remarks</th>
@@ -227,6 +228,16 @@
                       <tr *ngFor="let current_block_detail of getCurrentOwnedBlocks(response); let i = index">
                         <td>{{ i + 1}}</td>
                         <td>{{ current_block_detail?.remarks }}</td>
+
+                        <td>
+                          <ng-container *ngFor="let attachment of getAttachments(current_block_detail?.attachments)">
+                            <li class="no-style-attachment" *ngIf="attachment.link">
+                              <a [href]="attachment.link" target="_blank">
+                                {{attachment.name}}
+                              </a>
+                            </li>
+                          </ng-container>
+                        </td>
 
                         <td>{{ getCreatedAtModifiedAt(current_block_detail) }}</td>
                         <td>{{ getCreatedByModifiedBy(current_block_detail) }}</td>
@@ -263,6 +274,7 @@
                       <tr class="bg-grey">
                         <th>#</th>
                         <th i18n="@@legalBlocksResultsTableRemarks">Remarks</th>
+                        <th i18n="@@legalBlocksResultsTableAttachments" >Attachments</th>
                         <th i18n="@@legalBlocksResultsTableCreatedAtModifiedAt">Created At / Modified At</th>
                         <th i18n="@@legalBlocksResultsTableCreatedByModifiedBy">Created By / Modified By</th>
                         <th i18n="@@legalBlocksResultsTableUnblockRemarks">Unblock Remarks</th>
@@ -274,6 +286,16 @@
                       <tr *ngFor="let previous_block_detail of getPreviouslyOwnedBlocks(response); let i = index">
                         <td>{{ i + 1}}</td>
                         <td>{{ previous_block_detail?.remarks  }}</td>
+
+                        <td>
+                          <ng-container *ngFor="let attachment of getAttachments(previous_block_detail?.attachments)">
+                            <li class="no-style-attachment" *ngIf="attachment.link">
+                              <a [href]="attachment.link" target="_blank">
+                                {{attachment.name}}
+                              </a>
+                            </li>
+                          </ng-container>
+                        </td>
 
                         <td>{{ getCreatedAtModifiedAt(previous_block_detail) }}</td>
                         <td>{{ getCreatedByModifiedBy(previous_block_detail) }}</td>
@@ -304,7 +326,7 @@
 <ngx-smart-modal #addEngineeringBlockModal identifier="addEngineeringBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetAddBlockModal()">
   <div class="modal-header pt-0">
     <div class="modal-title">
-      <h4 i18n="@@legalBlocksPopupAddNewBlockHeader">Add New Block</h4>
+      <h4 i18n="@@legalBlocksPopupAddNewEngineeringBlockHeader">Add New Block</h4>
     </div>
   </div>
   <form #addEngineeringBlockForm="ngForm" (ngSubmit)="addNewBlock(addBlockData);" novalidate>
@@ -426,7 +448,7 @@
 <ngx-smart-modal #removeEngineeringBlockModal identifier="removeEngineeringBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetRemoveBlockModal()">
   <div class="modal-header pt-0">
     <div class="modal-title">
-      <h4 i18n="@@legalBlocksPopupHeaderRemoveBlock">Remove Block</h4>
+      <h4 i18n="@@legalBlocksPopupHeaderRemoveEngineeringBlock">Remove Block</h4>
     </div>
   </div>
   <form #removeEngineeringBlockForm="ngForm" (ngSubmit)="removeBlock(removeBlockData);" novalidate>
