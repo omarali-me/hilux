@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { NgxSmartModalService } from 'ngx-smart-modal';
+import * as _ from 'lodash';
 
 interface SearchParams {
   query?: string;
@@ -70,8 +71,15 @@ export class SearchPageComponent implements OnInit {
     this.loadOldLandsoptions();
     this.loadBlockageEntities();
 
-    // this.paramsSubscription = this.route.queryParams
-    //   .subscribe(params => this.search(params));
+    this.route.queryParams.subscribe(async (params) => {
+      if (!_.isEqual(params, {})) {
+        _.keys(params).forEach(key => {
+          this.formData[key] = params[key]
+        });
+
+        await this.searchData(this.formData);
+      }
+    });
   }
 
   searchData(formData: any) {
@@ -482,4 +490,26 @@ export class SearchPageComponent implements OnInit {
   getViewEngineeringBlocks(propertyId: any, resourceType: any = 'propertyId') {
     return `/engineering_blocks?${resourceType}=${propertyId}`;
   }
+
+  getSearchLink(resourceId: any, name: any) {
+    let type = this.getType(name);
+    return `/search?type=${type}&${name}=${resourceId}`
+  }
+
+  getSearchByandTypeValues(field_name: any) {
+    let type = '3'
+    if (['developerId', 'projectId', 'unitId'].includes(field_name)) {
+      type = '2'
+    } else if (['landId', 'oldLandId'].includes(field_name)) {
+      type = '1'
+    } else {
+      type = '3'
+    }
+    return type;
+  }
+
+  getType(param_name: string) {
+    return this.getSearchByandTypeValues(param_name);
+  }
+
 }

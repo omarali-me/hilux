@@ -252,8 +252,8 @@
                 <tbody>
                   <tr *ngIf="getfirstOwner(response.deeds) as owner_detail">
                     <td>{{owner_detail?.profile?.id}}</td>
-                    <td>{{owner_detail?.profile?.nameAr}}</td>
-                    <td>{{owner_detail?.profile?.nameEn}}</td>
+                    <td><a [href]="getSearchLink(owner_detail?.profile?.ownerId, 'ownerId')">{{owner_detail?.profile?.nameAr}}</a></td>
+                    <td><a [href]="getSearchLink(owner_detail?.profile?.ownerId, 'ownerId')">{{owner_detail?.profile?.nameEn}}</a></td>
                     <td>{{owner_detail?.profile?.ownerId}}</td>
                     <td>{{owner_detail?.profile?.phone}}</td>
                     <td>{{ getNationalityName(owner_detail?.profile, 'nationalityCode') }}</td>
@@ -300,8 +300,8 @@
                     <tbody>
                       <tr *ngFor="let current_land_detail of getCurrentOwnedLands(response.deeds); let i = index">
                         <td>{{ i + 1}}</td>
-                        <td>{{ current_land_detail?.land?.land?.landId }}</td>
-                        <td>{{ current_land_detail?.land?.land?.oldLandId }}</td>
+                        <td><a [href]="getSearchLink(current_land_detail?.land?.land?.landId, 'landId')">{{ current_land_detail?.land?.land?.landId }}</a></td>
+                        <td><a [href]="getSearchLink(current_land_detail?.land?.land?.oldLandId, 'oldLandId')">{{ current_land_detail?.land?.land?.oldLandId }}</a></td>
                         <td>{{ getFieldNameorId(current_land_detail?.land?.land, 'sector') }}</td>
                         <td>{{ getFieldNameorId(current_land_detail?.land?.land, 'section') }}</td>
                         <td>{{ getFieldNameorId(current_land_detail?.childDeed, 'ownershipType') }}</td>
@@ -364,8 +364,8 @@
                     <tbody>
                       <tr *ngFor="let previous_land_detail of getPreviouslyOwnedLands(response.deeds); let i = index">
                         <td>{{ i + 1}}</td>
-                        <td>{{ previous_land_detail?.land?.land?.landId }}</td>
-                        <td>{{ previous_land_detail?.land?.land?.oldLandId }}</td>
+                        <td><a [href]="getSearchLink(previous_land_detail?.land?.land?.landId, 'landId')">{{ previous_land_detail?.land?.land?.landId }}</a></td>
+                        <td><a [href]="getSearchLink(previous_land_detail?.land?.land?.oldLandId, 'oldLandId')">{{ previous_land_detail?.land?.land?.oldLandId }}</a></td>
                         <td>{{ getFieldNameorId(previous_land_detail?.land?.land, 'sector') }}</td>
                         <td>{{ getFieldNameorId(previous_land_detail?.land?.land, 'section') }}</td>
                         <td>{{ getFieldNameorId(previous_land_detail?.childDeed, 'ownershipType') }}</td>
@@ -427,7 +427,7 @@
                     <tbody>
                       <tr *ngFor="let current_unit_detail of getCurrentOwnedUnits(response.deeds); let i = index">
                         <td>{{ i + 1 }}</td>
-                        <td>{{current_unit_detail?.unitData?.unit?.unitNumber}}</td>
+                        <td><a [href]="getSearchLink(current_unit_detail?.unitData?.unit?.unitNumber, 'unitId')">{{current_unit_detail?.unitData?.unit?.unitNumber}}</a></td>
                         <td>{{current_unit_detail?.unitData?.project?.nameAr}}</td>
                         <td>{{current_unit_detail?.unitData?.developer?.nameAr}}</td>
                         <td>{{ getItemShare(current_unit_detail) }}</td>
@@ -486,7 +486,7 @@
                     <tbody>
                       <tr *ngFor="let previous_unit_detail of getPreviouslyOwnedUnits(response.deeds); let i = index">
                         <td>{{ i + 1 }}</td>
-                        <td>{{previous_unit_detail?.unitData?.unit?.unitNumber}}</td>
+                        <td><a [href]="getSearchLink(previous_unit_detail?.unitData?.unit?.unitNumber, 'unitId')">{{previous_unit_detail?.unitData?.unit?.unitNumber}}</a></td>
                         <td>{{previous_unit_detail?.unitData?.project?.nameAr}}</td>
                         <td>{{previous_unit_detail?.unitData?.developer?.nameAr}}</td>
                         <td>{{ getItemShare(previous_unit_detail) }}</td>
@@ -535,8 +535,8 @@
                 </thead>
                 <tbody>
                   <tr *ngIf="getfirstLand(response.deeds) as land_detail">
-                    <td>{{land_detail.land.landId}}</td>
-                    <td>{{land_detail.land.oldLandId}}</td>
+                    <td><a [href]="getSearchLink(land_detail.land.landId, 'landId')">{{land_detail.land.landId}}</a></td>
+                    <td><a [href]="getSearchLink(land_detail.land.oldLandId, 'oldLandId')">{{land_detail.land.oldLandId}}</a></td>
                     <td>{{ getFieldNameorId(land_detail.land, 'sector') }}</td>
                     <td>{{ getFieldNameorId(land_detail.land, 'section') }}</td>
                     <td>
@@ -592,8 +592,8 @@
                     <tbody>
                       <tr [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-white' : getOwnerClass(item)" *ngFor="let deed_detail_item of item.deedDetails; let i = index">
                         <td>{{deed_detail_item.profile?.id}}</td>
-                        <td>{{deed_detail_item.profile?.nameAr}}</td>
-                        <td>{{deed_detail_item.profile?.nameEn}}</td>
+                        <td><a [href]="getSearchLink(deed_detail_item.details?.ownerId, 'ownerId')">{{deed_detail_item.profile?.nameAr}}</a></td>
+                        <td><a [href]="getSearchLink(deed_detail_item.details?.ownerId, 'ownerId')">{{deed_detail_item.profile?.nameEn}}</a></td>
                         <td>{{deed_detail_item.details?.ownerId}}</td>
                         <td>{{deed_detail_item.details?.share}}</td>
                         <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
@@ -638,8 +638,8 @@
                     <tbody>
                       <tr [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-white' : getOwnerClass(item)" *ngFor="let deed_detail_item of item.deedDetails; let i = index">
                         <td>{{deed_detail_item.profile?.id}}</td>
-                        <td>{{deed_detail_item.profile?.nameAr}}</td>
-                        <td>{{deed_detail_item.profile?.nameEn}}</td>
+                        <td><a [href]="getSearchLink(deed_detail_item.details?.ownerId, 'ownerId')">{{deed_detail_item.profile?.nameAr}}</a></td>
+                        <td><a [href]="getSearchLink(deed_detail_item.details?.ownerId, 'ownerId')">{{deed_detail_item.profile?.nameEn}}</a></td>
                         <td>{{deed_detail_item.details?.ownerId}}</td>
                         <td>{{deed_detail_item.details?.share}}</td>
                         <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
@@ -674,7 +674,7 @@
                 </thead>
                 <tbody>
                   <tr *ngIf="getfirstUnit(response.deeds) as unit_detail">
-                    <td>{{unit_detail?.unit?.unitNumber}}</td>
+                    <td><a [href]="getSearchLink(unit_detail?.unit?.unitNumber, 'unitId')">{{unit_detail?.unit?.unitNumber}}</a></td>
                     <td>{{unit_detail?.project?.nameAr}}</td>
                     <td>{{unit_detail?.developer?.nameAr}}</td>
                     <td>
@@ -729,8 +729,8 @@
                     <tbody>
                       <tr [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-white' : getOwnerClass(item)" *ngFor="let deed_detail_item of item.deedDetails; let i = index">
                         <td>{{deed_detail_item.profile?.id}}</td>
-                        <td>{{deed_detail_item.profile?.nameAr}}</td>
-                        <td>{{deed_detail_item.profile?.nameEn}}</td>
+                        <td><a [href]="getSearchLink(deed_detail_item.details?.ownerId, 'ownerId')">{{deed_detail_item.profile?.nameAr}}</a></td>
+                        <td><a [href]="getSearchLink(deed_detail_item.details?.ownerId, 'ownerId')">{{deed_detail_item.profile?.nameEn}}</a></td>
                         <td>{{deed_detail_item.details?.ownerId}}</td>
                         <td>{{deed_detail_item.details?.share}}</td>
                         <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
@@ -775,8 +775,8 @@
                     <tbody>
                       <tr [ngClass]="getOwnerClass(item) == 'bg-seagreen' ? 'bg-white' : getOwnerClass(item)" *ngFor="let deed_detail_item of item.deedDetails; let i = index">
                         <td>{{deed_detail_item.profile?.id}}</td>
-                        <td>{{deed_detail_item.profile?.nameAr}}</td>
-                        <td>{{deed_detail_item.profile?.nameEn}}</td>
+                        <td><a [href]="getSearchLink(deed_detail_item.details?.ownerId, 'ownerId')">{{deed_detail_item.profile?.nameAr}}</a></td>
+                        <td><a [href]="getSearchLink(deed_detail_item.details?.ownerId, 'ownerId')">{{deed_detail_item.profile?.nameEn}}</a></td>
                         <td>{{deed_detail_item.details?.ownerId}}</td>
                         <td>{{deed_detail_item.details?.share}}</td>
                         <td>{{ getNationalityName(deed_detail_item.profile, 'nationalityCode') }}</td>
