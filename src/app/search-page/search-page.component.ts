@@ -75,6 +75,8 @@ export class SearchPageComponent implements OnInit {
       if (!_.isEqual(params, {})) {
         _.keys(params).forEach(key => {
           this.formData[key] = params[key]
+          if (key != 'type')
+            this.searchby = key
         });
 
         await this.searchData(this.formData);
