@@ -323,7 +323,7 @@ export class LegalBlocksComponent implements OnInit {
   }
 
   getCreatesByModifiedBy(block: any) {
-    return `${block.createdByNameAr} \n ${block.modifiedBy}`
+    return `${block.createdByNameAr} \n ${block.modifiedByNameAr}`
   }
 
   resetSearch(field_name: any) {

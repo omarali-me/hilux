@@ -323,7 +323,7 @@ export class EngineeringBlocksComponent implements OnInit {
   }
 
   getCreatedByModifiedBy(block: any) {
-    return `${block.createdByNameAr} \n ${block.modifiedBy}`
+    return `${block.createdByNameAr} \n ${block.modifiedByNameAr}`
   }
 
   resetSearch(field_name: any) {
