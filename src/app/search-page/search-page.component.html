@@ -300,8 +300,8 @@
                     <tbody>
                       <tr *ngFor="let current_land_detail of getCurrentOwnedLands(response.deeds); let i = index">
                         <td>{{ i + 1}}</td>
-                        <td><a [href]="getSearchLink(current_land_detail?.land?.land?.id, 'landId')">{{ current_land_detail?.land?.land?.landId }}</a></td>
-                        <td><a [href]="getSearchLink(current_land_detail?.land?.land?.id, 'oldLandId')">{{ current_land_detail?.land?.land?.oldLandId }}</a></td>
+                        <td><a [href]="getSearchLink(current_land_detail?.land?.land?.propertyId, 'landId')">{{ current_land_detail?.land?.land?.landId }}</a></td>
+                        <td><a [href]="getSearchLink(current_land_detail?.land?.land?.propertyId, 'oldLandId')">{{ current_land_detail?.land?.land?.oldLandId }}</a></td>
                         <td>{{ getFieldNameorId(current_land_detail?.land?.land, 'sector') }}</td>
                         <td>{{ getFieldNameorId(current_land_detail?.land?.land, 'section') }}</td>
                         <td>{{ getFieldNameorId(current_land_detail?.childDeed, 'ownershipType') }}</td>
@@ -364,8 +364,8 @@
                     <tbody>
                       <tr *ngFor="let previous_land_detail of getPreviouslyOwnedLands(response.deeds); let i = index">
                         <td>{{ i + 1}}</td>
-                        <td><a [href]="getSearchLink(previous_land_detail?.land?.land?.id, 'landId')">{{ previous_land_detail?.land?.land?.landId }}</a></td>
-                        <td><a [href]="getSearchLink(previous_land_detail?.land?.land?.id, 'oldLandId')">{{ previous_land_detail?.land?.land?.oldLandId }}</a></td>
+                        <td><a [href]="getSearchLink(previous_land_detail?.land?.land?.propertyId, 'landId')">{{ previous_land_detail?.land?.land?.landId }}</a></td>
+                        <td><a [href]="getSearchLink(previous_land_detail?.land?.land?.propertyId, 'oldLandId')">{{ previous_land_detail?.land?.land?.oldLandId }}</a></td>
                         <td>{{ getFieldNameorId(previous_land_detail?.land?.land, 'sector') }}</td>
                         <td>{{ getFieldNameorId(previous_land_detail?.land?.land, 'section') }}</td>
                         <td>{{ getFieldNameorId(previous_land_detail?.childDeed, 'ownershipType') }}</td>
@@ -427,7 +427,7 @@
                     <tbody>
                       <tr *ngFor="let current_unit_detail of getCurrentOwnedUnits(response.deeds); let i = index">
                         <td>{{ i + 1 }}</td>
-                        <td><a [href]="getSearchLink(current_unit_detail?.unitData?.unit?.id, 'unitId')">{{current_unit_detail?.unitData?.unit?.unitNumber}}</a></td>
+                        <td><a [href]="getSearchLink(current_unit_detail?.unitData?.unit?.propertyId, 'unitId')">{{current_unit_detail?.unitData?.unit?.unitNumber}}</a></td>
                         <td>{{current_unit_detail?.unitData?.project?.nameAr}}</td>
                         <td>{{current_unit_detail?.unitData?.developer?.nameAr}}</td>
                         <td>{{ getItemShare(current_unit_detail) }}</td>
@@ -486,7 +486,7 @@
                     <tbody>
                       <tr *ngFor="let previous_unit_detail of getPreviouslyOwnedUnits(response.deeds); let i = index">
                         <td>{{ i + 1 }}</td>
-                        <td><a [href]="getSearchLink(previous_unit_detail?.unitData?.unit?.id, 'unitId')">{{previous_unit_detail?.unitData?.unit?.unitNumber}}</a></td>
+                        <td><a [href]="getSearchLink(previous_unit_detail?.unitData?.unit?.propertyId, 'unitId')">{{previous_unit_detail?.unitData?.unit?.unitNumber}}</a></td>
                         <td>{{previous_unit_detail?.unitData?.project?.nameAr}}</td>
                         <td>{{previous_unit_detail?.unitData?.developer?.nameAr}}</td>
                         <td>{{ getItemShare(previous_unit_detail) }}</td>
@@ -535,8 +535,8 @@
                 </thead>
                 <tbody>
                   <tr *ngIf="getfirstLand(response.deeds) as land_detail">
-                    <td><a [href]="getSearchLink(land_detail.land.id, 'landId')">{{land_detail.land.landId}}</a></td>
-                    <td><a [href]="getSearchLink(land_detail.land.id, 'oldLandId')">{{land_detail.land.oldLandId}}</a></td>
+                    <td><a [href]="getSearchLink(land_detail.land.propertyId, 'landId')">{{land_detail.land.landId}}</a></td>
+                    <td><a [href]="getSearchLink(land_detail.land.propertyId, 'oldLandId')">{{land_detail.land.oldLandId}}</a></td>
                     <td>{{ getFieldNameorId(land_detail.land, 'sector') }}</td>
                     <td>{{ getFieldNameorId(land_detail.land, 'section') }}</td>
                     <td>
@@ -674,7 +674,7 @@
                 </thead>
                 <tbody>
                   <tr *ngIf="getfirstUnit(response.deeds) as unit_detail">
-                    <td><a [href]="getSearchLink(unit_detail?.unit?.id, 'unitId')">{{unit_detail?.unit?.unitNumber}}</a></td>
+                    <td><a [href]="getSearchLink(unit_detail?.unit?.propertyId, 'unitId')">{{unit_detail?.unit?.unitNumber}}</a></td>
                     <td>{{unit_detail?.project?.nameAr}}</td>
                     <td>{{unit_detail?.developer?.nameAr}}</td>
                     <td>
