@@ -113,7 +113,7 @@ const routes: Routes = [
   { path: 'search', component: SearchPageComponent, canActivate: [AuthenticationGuard] },
   { path: 'legal_blocks', component: LegalBlocksComponent, canActivate: [AuthenticationGuard] },
   { path: 'engineering_blocks', component: EngineeringBlocksComponent, canActivate: [AuthenticationGuard] },
-  { path: 'applicaions_search', component: ApplicationSearchComponent, canActivate: [AuthenticationGuard] }
+  { path: 'application_search', component: ApplicationSearchComponent, canActivate: [AuthenticationGuard] }
 ];
 
 @NgModule({

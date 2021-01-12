@@ -1,1 +1,475 @@
-<p>application-search works!</p>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="m-2 text-dark">
+          <h1>Application</h1>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="card card-purple">
+        <div class="card-header">
+          <h3 class="card-title">قائمة البحث</h3>
+        </div>
+        <app-alerts [errors]="formErrors"></app-alerts>
+
+        <div class="col-sm-12">
+          <div class="mt-4">
+            <form class="form-horizontal" (ngSubmit)="searchData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Application ID
+                      </label>
+                      <div class="col-sm-9">
+                        <input name="applicationID"
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="formData.applicationID"
+                          #applicationID="ngModel"
+                          (keyup)="setSearchType('applicationID', $event)"
+                        >
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Service Name
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          [items]="serviceNameOptions"
+                          name="serviceName"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.serviceName"
+                          bindLabel="serviceName.ar"
+                          bindValue="serviceName.ar"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          #serviceName="ngModel"
+                          multiple="true"
+                          [disabled]="isSearchTypeApplication()"
+                          >
+                        </ng-select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Application Source
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          [items]="applicationSourceOptions"
+                          name="applicationSource"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.applicationSource"
+                          bindLabel="value.ar"
+                          bindValue="key"
+                          #applicationSource="ngModel"
+                          multiple="true"
+                          [disabled]="isSearchTypeApplication()"
+                          >
+                        </ng-select>
+                      </div>
+                    </div>
+
+                    <label class="col-sm-12 col-form-label">Application Date</label>
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">From Date</label>
+                      <div class="col-sm-9">
+                        <input type="text"
+                          class="form-control"
+                          name="applicationStartDate"
+                          [(ngModel)]="formData.applicationStartDate"
+                          (dateTimeChange)="formatDate('applicationStartDate')"
+                          [max]="minDate"
+                          [owlDateTime]="dt7"
+                          [owlDateTimeTrigger]="dt7"
+                          #applicationStartDate="ngModel"
+                          [disabled]="isSearchTypeApplication()"
+                        >
+                        <owl-date-time [pickerType]="'calendar'" #dt7></owl-date-time>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">To Date</label>
+                      <div class="col-sm-9">
+                        <input type="text"
+                          class="form-control"
+                          name="applicationEndDate"
+                          [(ngModel)]="formData.applicationEndDate"
+                          (dateTimeChange)="formatDate('applicationEndDate')"
+                          [min]="minDate"
+                          [owlDateTime]="dt5"
+                          [owlDateTimeTrigger]="dt5"
+                          #applicationEndDate="ngModel"
+                          [disabled]="isSearchTypeApplication()"
+                        >
+                        <owl-date-time [pickerType]="'calendar'" #dt5></owl-date-time>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Land ID
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          required="true"
+                          [items]="landsOptions | async"
+                          name="land"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.landId"
+                          [typeahead]="landSearchInput$"
+                          bindLabel="value.ar"
+                          [minTermLength]="1"
+                          bindValue="key"
+                          [loading]="landDataOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #land="ngModel"
+                          [disabled]="isNotSearchTypeLand() || isNotSearchBy('landId')"
+                          (blur)="checkTypeAndValues('landId')"
+                          (keyup)="setSearchType('landId', $event)">
+                        </ng-select>
+                      </div>
+                    </div>
+                  
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Old Land ID
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          required="true"
+                          [items]="oldLandsOptions | async"
+                          name="oldLand"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.oldLandId"
+                          [typeahead]="oldLandSearchInput$"
+                          bindLabel="value.ar"
+                          [minTermLength]="1"
+                          bindValue="key"
+                          [loading]="oldLandDataOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #oldLand="ngModel"
+                          [disabled]="isNotSearchTypeLand() || isNotSearchBy('oldLandId')"
+                          (blur)="checkTypeAndValues('oldLandId')"
+                          (keyup)="setSearchType('oldLandId', $event)">
+                        </ng-select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Developer Name
+                        <span *ngIf="isSearchByUnit()">*</span>
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          [items]="developerOptions | async"
+                          required="isSearchByUnit()"
+                          name="developerId"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.developerId"
+                          [typeahead]="developerSearchInput$"
+                          bindLabel="value.ar"
+                          [minTermLength]="1"
+                          bindValue="key"
+                          [loading]="developerDataOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #developer="ngModel"
+                          [disabled]="isNotSearchTypeUnit()"
+                          (keyup)="setSearchType('developerId', $event)"
+                          (blur)="checkTypeAndValues('developerId')"
+                          (change)="resetProjectAndUnit()"
+                        >
+                        </ng-select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Project Name
+                        <span *ngIf="isSearchByUnit()">*</span>
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          required="isSearchByUnit()"
+                          [items]="projectsOptions | async"
+                          name="project"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.projectId"
+                          [minTermLength]="1"
+                          bindLabel="value.ar"
+                          typeToSearchText="Please enter 1 or more characters"
+                          bindValue="key"
+                          [typeahead]="projectsSearchInput$"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          [loading]="projectDataOptionsLoading"
+                          #project="ngModel"
+                          [disabled]="isNotSearchTypeUnit() || isEmpty('developerId')"
+                          (keyup)="setSearchType('unitId', $event)"
+                          (blur)="checkTypeAndValues('projectId')"
+                          (change)="resetUnit()"
+                        >
+                        </ng-select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Unit ID
+                        <span *ngIf="isSearchByUnit()">*</span>
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          required="isSearchByUnit()"
+                          [items]="unitsOptions"
+                          name="units"
+                          [(ngModel)]="formData.unitId"
+                          bindLabel="value.ar"
+                          bindValue="key"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          #unitId="ngModel"
+                          [disabled]="isNotSearchTypeUnit() || isEmpty('projectId')"
+                          (open)="loadUnitsOptions()"
+                        >
+                        </ng-select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <div class="offset-sm-1 col-sm-5 placeholder">
+                        <div class="form-check float-right">
+                          <input
+                            name="lands"
+                            type="checkbox"
+                            class="form-check-input"
+                            [(ngModel)]="formData.lands"
+                            [disabled]="isSearchTypeApplication()"
+                          >
+                          <label class="form-check-label">
+                            lands
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="offset-sm-1 col-sm-5 placeholder">
+                        <div class="form-check float-right">
+                          <input
+                            name="units"
+                            type="checkbox"
+                            class="form-check-input"
+                            [(ngModel)]="formData.units"
+                            [disabled]="isSearchTypeApplication()"
+                          >
+                          <label class="form-check-label">
+                            Units
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Owner
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          [items]="ownersOptions | async"
+                          [(ngModel)]="formData.owner"
+                          [hideSelected]="true"
+                          name="owner"
+                          bindLabel="value.ar"
+                          bindValue="key"
+                          [minTermLength]="1"
+                          [typeahead]="ownersSearchInput$"
+                          [loading]="ownersOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #owner="ngModel"
+                          (blur)="checkTypeAndValues('owner')"
+                          [disabled]="isSearchTypeApplication()"
+                          >
+                        </ng-select>
+                      </div>
+                    </div>
+                  
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Owner ID
+                      </label>
+                      <div class="col-sm-9">
+                        <input name="ownerId"
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="formData.ownerId"
+                          #ownerId="ngModel"
+                          (blur)="checkTypeAndValues('ownerId')"
+                          [disabled]="isSearchTypeApplication()"
+                          >
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <div class="offset-sm-1 col-sm-5 placeholder">
+                        <div class="form-check float-right">
+                          <input
+                            name="currentOwner"
+                            type="checkbox"
+                            class="form-check-input"
+                            [(ngModel)]="formData.currentOwner"
+                            [disabled]="isSearchTypeApplication()"
+                          >
+                          <label class="form-check-label">
+                            Current Owner
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="offset-sm-1 col-sm-5 placeholder">
+                        <div class="form-check float-right">
+                          <input
+                            name="previousOwner"
+                            type="checkbox"
+                            class="form-check-input"
+                            [(ngModel)]="formData.previousOwner"
+                            [disabled]="isSearchTypeApplication()"
+                          >
+                          <label class="form-check-label">
+                            Previous Owner
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Contract ID
+                      </label>
+                      <div class="col-sm-9">
+                        <input name="contractId"
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="formData.contractId"
+                          #contractId="ngModel"
+                          [disabled]="isSearchTypeApplication()"
+                        >
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Receipt ID
+                      </label>
+                      <div class="col-sm-9">
+                        <input name="receiptID"
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="formData.receiptID"
+                          #receiptID="ngModel"
+                          [disabled]="isSearchTypeApplication()"
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="row ">
+                  <div class="col-sm-12 text-center">
+                    <button type="submit" class="btn btn-primary" [disabled]="isFormInValid(f.invalid, formData)">Search</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <hr/>
+
+          <div class="resultsWrapper rtl" *ngIf="response">
+            <div class="searchApplications">
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">Search Results:</h3>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered landTable bg-white table-responsive">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>#</th>
+                        <th>Application Source</th>
+                        <th>Application Id</th>
+                        <th>Service Name</th>
+                        <th>Land ID</th>
+                        <th>Developer Name</th>
+                        <th>Project Name</th>
+                        <th>Unit ID</th>
+                        <th>Application Date</th>
+                        <th>Additional Info</th>
+                        <th>Application Status</th>
+                        <th>Reserved By</th>
+                        <th>Waiting For Action From</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item_detail of response; let i = index">
+                        <td>{{ i + 1}}</td>
+                        <td>
+                          <div class="d-flex">
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i [class]="getIconClass(item_detail.channel)"></i>
+                            </span>
+                          </div>
+                        </td>
+                        <td>{{ item_detail?.applicationID }}</td>
+                        <td>{{ item_detail?.serviceName?.ar }}</td>
+                        <td>{{ item_detail?.landID }}</td>
+
+                        <td>{{ item_detail?.developerName }}</td>
+                        <td>{{ item_detail?.projectName }}</td>
+
+                        <td>{{ item_detail?.unitID }}</td>
+                        <td>{{ item_detail?.applicationDate }}</td>
+
+                        <td>{{ item_detail?.applicationDetails }}</td>
+                        <td>
+                          <div class="d-flex">
+                            <span class="fs-30 p-1 icon-pointer">
+                              <i [class]="getStatusClass(item_detail?.applicationStatus)"></i>
+                            </span>
+                          </div>
+                        </td>
+                        <td>{{ item_detail?.reservedBy }}</td>
+                        <td>{{ item_detail?.pendingWith }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="row" *ngIf="!response">
+            <div class="col-sm-12 text-center">
+              <h4>لا توجد بيانات لهذا البحث ، حاول مرة أخرى عن طريق تغيير معايير البحث</h4>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
