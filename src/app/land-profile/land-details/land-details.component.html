@@ -575,7 +575,7 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label" i18n="@@landProfileDistrictImage">District Image</label>
               <div class="text-center col-sm-10">
-                <app-file-upload [field]="prepareDistrictImage()" [formData]="formData"></app-file-upload>
+                <app-file-upload [field]="prepareDistrictImage()" [formData]="formData" [defaultValues]="formData"></app-file-upload>
               </div>
             </div>
           </div>
@@ -583,7 +583,7 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label" i18n="@@landProfileSectorImage">Sector Image</label>
               <div class="text-center col-sm-10">
-                <app-file-upload [field]="prepareSectorImage()" [formData]="formData"></app-file-upload>
+                <app-file-upload [field]="prepareSectorImage()" [formData]="formData" [defaultValues]="formData"></app-file-upload>
               </div>
             </div>
           </div>
@@ -594,7 +594,7 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label" i18n="@@landProfileParcelImage">Parcel Image</label>
               <div class="text-center col-sm-10">
-                <app-file-upload [field]="prepareParcelImage()" [formData]="formData"></app-file-upload>
+                <app-file-upload [field]="prepareParcelImage()" [formData]="formData" [defaultValues]="formData"></app-file-upload>
               </div>
             </div>
           </div>
