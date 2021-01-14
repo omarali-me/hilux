@@ -49,7 +49,13 @@ export class LandDetailsComponent implements OnInit {
     this.profile$.subscribe((profile: any) => {
       if (profile && profile.id) {
         this.formData = profile as any;
-      } else {
+        if (!this.formData.buildingDetails) {
+          this.formData.buildingDetails = {}
+        }
+        if (!this.formData.buildingFinishes) {
+          this.formData.buildingFinishes = {}
+        }
+       } else {
         this.formData = { buildingDetails: {}, buildingFinishes: {} };
       }
     });
