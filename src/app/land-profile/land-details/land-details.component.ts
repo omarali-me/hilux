@@ -202,4 +202,8 @@ export class LandDetailsComponent implements OnInit {
       }
     }
   }
+
+  getImageAttachments(data: any, filed_name: any) {
+    return data[filed_name] ? [data[filed_name]] : [];
+  }
 }
