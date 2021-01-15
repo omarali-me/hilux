@@ -105,7 +105,7 @@
                           name="applicationEndDate"
                           [(ngModel)]="formData.applicationEndDate"
                           (dateTimeChange)="formatDate('applicationEndDate')"
-                          [min]="minDate"
+                          [min]="formData.applicationStartDate || minDate"
                           [owlDateTime]="dt5"
                           [owlDateTimeTrigger]="dt5"
                           #applicationEndDate="ngModel"
