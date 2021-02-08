@@ -1,1 +1,148 @@
-<p>units-excel-upload works!</p>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="m-2 text-dark">
+          <h1>Units Excel Upload</h1>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="card card-purple">
+        <div class="card-header">
+          <!-- <h3 class="card-title">قائمة البحث</h3> -->
+        </div>
+        <app-alerts [errors]="formErrors"></app-alerts>
+
+        <div class="col-sm-12">
+          <div class="mt-4">
+            <form class="form-horizontal" (ngSubmit)="uploadExcel(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-sm-10">
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="custom-file">
+                          <input type="file"
+                            class="custom-file-input"
+                            name="upload"
+                            id="upload"
+                            multiple="false"
+                            (change)="updateControlLabel($event)"
+                            #ngModel="ngModel"
+                            [(ngModel)]="formData.upload"
+                            required="true"
+                            />
+                          <label class="custom-file-label" for="upload" #controlLabel>choose file</label>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Upload</button>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-sm-12">
+                <div class="row ">
+                  <div class="col-sm-12 text-center">
+                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Search</button>
+                  </div>
+                </div>
+              </div> -->
+            </form>
+          </div>
+
+          <hr/>
+
+          <div class="resultsWrapper rtl" *ngIf="response">
+            <div class="searchApplications">
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <h3 class="card-title float-right font-weight-bold">Results:</h3>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <label >Project: </label><span>{{response.projectNameAr}}</span>
+                    </div>
+                    <div class="col-sm-6">
+                      <label >Developer: </label><span>{{response.developerNameAr}}</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <label >Unit Number: </label><span></span>
+                    </div>
+                    <div class="col-sm-6">
+                      <label >Registration Status: </label><span></span>
+                    </div>
+                  </div>
+                  <table class="table table-bordered landTable bg-white table-responsive">
+                    <thead>
+                      <tr class="bg-grey">
+                        <th>#</th>
+                        <th>Unit Number</th>
+                        <th>Owner Name</th>
+                        <th>Meter Total Sold Area</th>
+                        <th>Meter Net Sold Area</th>
+                        <th>Meter Total Actual Area</th>
+                        <th>Meter Net Actual Area</th>
+                        <th>Site Plan</th>
+                        <th>Payment Percentage</th>
+                        <th>Unit Use</th>
+                        <th>Unit Type</th>
+                        <th>Registration Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item_detail of response.units; let i = index">
+                        <td>{{ i + 1}}</td>
+                        <td>{{ item_detail?.unitNumber }}</td>
+
+                        <td>{{ item_detail?.unitNumber }}</td>
+
+                        <td>{{ item_detail?.meterTotalSoldArea }}</td>
+                        <td>{{ item_detail?.meterNetSoldArea }}</td>
+
+                        <td>{{ item_detail?.meterTotalActualArea }}</td>
+                        <td>{{ item_detail?.meterNetActualArea }}</td>
+
+                        <td>{{ item_detail?.sitePlan }}</td>
+                        <td>{{ item_detail?.paymentPercentage }}</td>
+
+                        <td>{{ item_detail?.unitUse }}</td>
+                        <td>{{ item_detail?.unitType }}</td>
+                        <td>{{ item_detail?.registrationStatus }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="row" *ngIf="!response">
+            <div class="col-sm-12 text-center">
+              <h4>No Unit data available</h4>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
