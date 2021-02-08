@@ -97,6 +97,7 @@ import { DeveloperDetailsComponent } from './developer-profile/developer-details
 import { LegalBlocksComponent } from './legal-blocks/legal-blocks.component';
 import { EngineeringBlocksComponent } from './engineering-blocks/engineering-blocks.component';
 import { ApplicationSearchComponent } from './application-search/application-search.component';
+import { UnitsExcelUploadComponent } from './units-excel-upload/units-excel-upload.component';
 
 @NgModule({
   declarations: [
@@ -182,7 +183,8 @@ import { ApplicationSearchComponent } from './application-search/application-sea
     DeveloperDetailsComponent,
     LegalBlocksComponent,
     EngineeringBlocksComponent,
-    ApplicationSearchComponent
+    ApplicationSearchComponent,
+    UnitsExcelUploadComponent
   ],
   imports: [
     FormsModule,

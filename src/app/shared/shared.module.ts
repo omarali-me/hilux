@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import {NgxGalleryModule} from '@kolkov/ngx-gallery';
 import { MediaGalleryComponent } from './media-gallery/media-gallery.component';
 import {NgxSmartModalModule} from 'ngx-smart-modal';
+import { LookupsService } from './lookups.service';
 
 @NgModule({
   imports: [
@@ -23,7 +24,7 @@ import {NgxSmartModalModule} from 'ngx-smart-modal';
     NgxGalleryModule,
     NgxSmartModalModule.forRoot(), // smartModal added
   ],
-  providers: [AuthenticationService, FieldsService, DecimalPipe, CurrencyPipe, TimeAgoPipe, DatePipe],
+  providers: [AuthenticationService, FieldsService, DecimalPipe, CurrencyPipe, TimeAgoPipe, DatePipe, LookupsService],
   declarations: [
     HeaderComponent,
     FooterComponent,

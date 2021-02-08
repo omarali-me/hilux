@@ -7,6 +7,7 @@ import { FieldsService } from '../shared/fields.service';
 import { pluck, distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { environment } from '../../environments/environment';
+import { LookupsService } from '../shared/lookups.service';
 
 @Component({
   selector: 'app-company-profile',
@@ -31,7 +32,8 @@ export class CompanyProfileComponent implements OnInit {
     private router: Router,
     private http: HttpClient,
     private toastr: ToastrService,
-    private fieldsService: FieldsService
+    private fieldsService: FieldsService,
+    private lookupsService: LookupsService
   ) { }
 
   ngOnInit(): void {
@@ -72,21 +74,21 @@ export class CompanyProfileComponent implements OnInit {
   }
 
   loadEmiratesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/emirates`)
+    this.lookupsService.loadEmiratesOptions()
     .subscribe((data) => {
       this.emiratesOptions = data;
     })
   }
 
   loadLicenseTypeOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/licensesTypes`)
+    this.lookupsService.loadLicenseTypeOptions()
     .subscribe((data) => {
       this.licenseTypeOptions = data;
     })
   }
 
   loadLicenseIssuerOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companiesLicensesIssuers`)
+    this.lookupsService.loadLicenseIssuerOptions()
     .subscribe((data) => {
       this.licenseIssuerOptions = data;
     })
@@ -108,7 +110,7 @@ export class CompanyProfileComponent implements OnInit {
   }
 
   loadCompanyTypeOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companiesTypes`)
+    this.lookupsService.loadCompanyTypeOptions()
     .subscribe((data) => {
       this.companyTypeOptions = data;
     })
