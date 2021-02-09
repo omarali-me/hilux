@@ -56,29 +56,6 @@ export class SingleApplicationSearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.minDate = new Date();
-    this.loadUnitsOptions();
-    this.loadDeveloperOptions();
-    this.loadProjectsOptions();
-    this.loadLandsoptions();
-    this.loadOldLandsoptions();
-    this.loadOwnersOptions();
-    this.loadServiceNamesOptions()
-
-    this.applicationSourceOptions = [
-      {
-        key: "hilux",
-        value: { en: 'Hilux', ar: 'hilux' }
-      },
-      {
-        key: "web",
-        value: { en: 'Web', ar: 'Web' }
-      },
-      {
-        key: "mobile",
-        value: { en: 'mobile', ar: 'Mobile' }
-      }
-    ]
-
     // this.route.queryParams.subscribe(async (params) => {
     //   if (!_.isEqual(params, {})) {
     //     this.formData.propertyId = params.propertyId;
@@ -87,20 +64,7 @@ export class SingleApplicationSearchComponent implements OnInit {
     // });
 
     this.application_search$ = this.route.data.pipe(pluck('application_search'));
-    this.application_search$.subscribe((application_search: any) => {
-      if (application_search && application_search.id) {
-        this.formData = application_search as any;
-      } else {
-        this.formData = {};
-      }
-    });
-  }
-
-  searchData(formData: any) {
-    let fd = new FormData();
-    fd.append('data', JSON.stringify(formData));
-
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/Applications/applicationSearch`, fd)
+    this.application_search$
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.response = data.data;
@@ -111,7 +75,7 @@ export class SingleApplicationSearchComponent implements OnInit {
       }, (error) => {
         this.toastr.error('Something went Wrong', 'Error');
         this.router.navigate(['error']);
-      });
+    });
   }
 
   loadUnitsOptions() {
