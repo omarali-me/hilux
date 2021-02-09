@@ -39,6 +39,8 @@ import { LegalBlocksComponent } from './legal-blocks/legal-blocks.component';
 import { EngineeringBlocksComponent } from './engineering-blocks/engineering-blocks.component';
 import { ApplicationSearchComponent } from './application-search/application-search.component';
 import { UnitsExcelUploadComponent } from './units-excel-upload/units-excel-upload.component';
+import { SingleApplicationSearchComponent } from './single-application-search/single-application-search.component';
+import { ApplicationSearchResolver } from './shared/application_search.resolver';
 
 const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [AuthenticationGuard] },
@@ -115,7 +117,8 @@ const routes: Routes = [
   { path: 'legal_blocks', component: LegalBlocksComponent, canActivate: [AuthenticationGuard] },
   { path: 'engineering_blocks', component: EngineeringBlocksComponent, canActivate: [AuthenticationGuard] },
   { path: 'application_search', component: ApplicationSearchComponent, canActivate: [AuthenticationGuard] },
-  { path: 'units_excel_upload', component: UnitsExcelUploadComponent, canActivate: [AuthenticationGuard] }
+  { path: 'units_excel_upload', component: UnitsExcelUploadComponent, canActivate: [AuthenticationGuard] },
+  { path: 'application_search/:applicationId', component: SingleApplicationSearchComponent, canActivate: [AuthenticationGuard], resolve: { application_search: ApplicationSearchResolver } }
 ];
 
 @NgModule({
@@ -131,7 +134,8 @@ const routes: Routes = [
     OwnerProfileResolver,
     PropertiesProfileResolver,
     LandProfileResolver,
-    DeveloperProfileResolver
+    DeveloperProfileResolver,
+    ApplicationSearchResolver
   ]
 })
 export class AppRoutingModule { }

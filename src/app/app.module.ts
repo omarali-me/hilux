@@ -98,6 +98,7 @@ import { LegalBlocksComponent } from './legal-blocks/legal-blocks.component';
 import { EngineeringBlocksComponent } from './engineering-blocks/engineering-blocks.component';
 import { ApplicationSearchComponent } from './application-search/application-search.component';
 import { UnitsExcelUploadComponent } from './units-excel-upload/units-excel-upload.component';
+import { SingleApplicationSearchComponent } from './single-application-search/single-application-search.component';
 
 @NgModule({
   declarations: [
@@ -184,7 +185,8 @@ import { UnitsExcelUploadComponent } from './units-excel-upload/units-excel-uplo
     LegalBlocksComponent,
     EngineeringBlocksComponent,
     ApplicationSearchComponent,
-    UnitsExcelUploadComponent
+    UnitsExcelUploadComponent,
+    SingleApplicationSearchComponent
   ],
   imports: [
     FormsModule,
