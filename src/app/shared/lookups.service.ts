@@ -24,4 +24,8 @@ export class LookupsService {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companiesLicensesIssuers`);
   }
 
+  loadRegistrationTypes() {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/registrationTypes`);
+  }
+
 }

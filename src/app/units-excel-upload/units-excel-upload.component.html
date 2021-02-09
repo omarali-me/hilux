@@ -84,12 +84,75 @@
                   </div>
                   <div class="row">
                     <div class="col-sm-6">
-                      <label >Unit Number: </label><span></span>
+                      <div class="row">
+                        <label class="col-sm-3 col-form-label">
+                          Unit Number:</label>
+                        <div class="col-sm-9">
+                          <ng-select
+                            class="rtl"
+                            [items]="unitNumberOptions"
+                            name="unitNumber"
+                            [(ngModel)]="filterData.unitNumber"
+                            bindLabel="value.ar"
+                            bindValue="key"
+                            notFoundText="لا يوجد نتائج للبحث"
+                            #unitNumber="ngModel"
+                            (change)="filterResponse()"
+                            [clearable]="false"
+                          >
+                          </ng-select>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-sm-6">
-                      <label >Registration Status: </label><span></span>
+                      <div class="row">
+                        <label class="col-sm-3 col-form-label">
+                          Registration Status:</label>
+                        <div class="col-sm-9">
+                          <ng-select
+                            class="rtl"
+                            [items]="registrationTypeOptions"
+                            name="registrationStatus"
+                            [(ngModel)]="filterData.registrationStatus"
+                            bindLabel="value.ar"
+                            bindValue="key"
+                            notFoundText="لا يوجد نتائج للبحث"
+                            #registrationStatus="ngModel"
+                            (change)="filterResponse()"
+                            [clearable]="false"
+                          >
+                          </ng-select>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="row">
+                        <label class="col-sm-3 col-form-label">
+                          Meter Total Sold Area:</label>
+                        <div class="col-sm-9">
+                          <ng-select
+                            class="rtl"
+                            [items]="meterTotalSoldAreaOptions"
+                            name="meterTotalSoldArea"
+                            [(ngModel)]="filterData.meterTotalSoldArea"
+                            bindLabel="value.ar"
+                            bindValue="key"
+                            notFoundText="لا يوجد نتائج للبحث"
+                            #meterTotalSoldArea="ngModel"
+                            [clearable]="false"
+                            (change)="filterResponse()"
+                          >
+                          </ng-select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+
+                    </div>
+                  </div>
+
                   <table class="table table-bordered landTable bg-white table-responsive">
                     <thead>
                       <tr class="bg-grey">
@@ -108,7 +171,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let item_detail of response.units; let i = index">
+                      <tr *ngFor="let item_detail of filterResponse(); let i = index">
                         <td>{{ i + 1}}</td>
                         <td>{{ item_detail?.unitNumber }}</td>
 
