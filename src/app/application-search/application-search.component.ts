@@ -495,4 +495,8 @@ export class ApplicationSearchComponent implements OnInit {
       return form_invalid
     }
   }
+
+  goToApplicationPage(item_detail) {
+    window.open(`/application_search/${item_detail.applicationID}`, '_blank');
+  }
 }

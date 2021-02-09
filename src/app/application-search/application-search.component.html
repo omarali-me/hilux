@@ -424,7 +424,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let item_detail of response; let i = index">
+                      <tr class="icon-pointer" (click)="goToApplicationPage(item_detail)" *ngFor="let item_detail of response; let i = index">
                         <td>{{ i + 1}}</td>
                         <td>
                           <div class="d-flex">
