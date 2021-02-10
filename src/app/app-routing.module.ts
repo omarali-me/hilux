@@ -41,6 +41,7 @@ import { ApplicationSearchComponent } from './application-search/application-sea
 import { UnitsExcelUploadComponent } from './units-excel-upload/units-excel-upload.component';
 import { SingleApplicationSearchComponent } from './single-application-search/single-application-search.component';
 import { ApplicationSearchResolver } from './shared/application_search.resolver';
+import { UnitsValuationComponent } from './units-valuation/units-valuation.component';
 
 const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [AuthenticationGuard] },
@@ -118,7 +119,8 @@ const routes: Routes = [
   { path: 'engineering_blocks', component: EngineeringBlocksComponent, canActivate: [AuthenticationGuard] },
   { path: 'application_search', component: ApplicationSearchComponent, canActivate: [AuthenticationGuard] },
   { path: 'units_excel_upload', component: UnitsExcelUploadComponent, canActivate: [AuthenticationGuard] },
-  { path: 'application_search/:applicationId', component: SingleApplicationSearchComponent, canActivate: [AuthenticationGuard], resolve: { application_search: ApplicationSearchResolver } }
+  { path: 'application_search/:applicationId', component: SingleApplicationSearchComponent, canActivate: [AuthenticationGuard], resolve: { application_search: ApplicationSearchResolver } },
+  { path: 'units_valuation', component: UnitsValuationComponent, canActivate: [AuthenticationGuard] },
 ];
 
 @NgModule({

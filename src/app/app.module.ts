@@ -99,6 +99,7 @@ import { EngineeringBlocksComponent } from './engineering-blocks/engineering-blo
 import { ApplicationSearchComponent } from './application-search/application-search.component';
 import { UnitsExcelUploadComponent } from './units-excel-upload/units-excel-upload.component';
 import { SingleApplicationSearchComponent } from './single-application-search/single-application-search.component';
+import { UnitsValuationComponent } from './units-valuation/units-valuation.component';
 
 @NgModule({
   declarations: [
@@ -186,7 +187,8 @@ import { SingleApplicationSearchComponent } from './single-application-search/si
     EngineeringBlocksComponent,
     ApplicationSearchComponent,
     UnitsExcelUploadComponent,
-    SingleApplicationSearchComponent
+    SingleApplicationSearchComponent,
+    UnitsValuationComponent
   ],
   imports: [
     FormsModule,

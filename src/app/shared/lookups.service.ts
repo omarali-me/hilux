@@ -28,4 +28,7 @@ export class LookupsService {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/registrationTypes`);
   }
 
+  loadUnitsTypesOptions() {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/unitsTypes`);
+  }
 }
