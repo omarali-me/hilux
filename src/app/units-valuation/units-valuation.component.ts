@@ -181,12 +181,6 @@ export class UnitsValuationComponent implements OnInit {
       case 'developerId':
         this.formData.value = this.formData.unitId
         break;
-      case 'landId':
-        this.formData.value = this.formData.landId
-        break;
-      case 'oldLandId':
-        this.formData.value = this.formData.oldLandId
-        break;
       default:
         this.formData.value = null;
     }
@@ -248,14 +242,6 @@ export class UnitsValuationComponent implements OnInit {
     return this.filterBlocksWithStatus(blockages, '0');
   }
 
-  getCurrentOwnedUnits(blockages: any) {
-    return this.filterUnitsWithStatus(blockages, '1');
-  }
-
-  getPreviouslyOwnedUnits(blockages: any) {
-    return this.filterUnitsWithStatus(blockages, '0');
-  }
-
   filterBlocksWithStatus(blockages: any, status: any) {
     return blockages.filter(d => d.status == status);
   }
@@ -266,25 +252,6 @@ export class UnitsValuationComponent implements OnInit {
 
   getFieldNameorId(item: any, field_name: any) {
     return item && (item[`${field_name}NameAr`] || item[`${field_name}Id`])
-  }
-
-  getNationalityName(item: any, field_name: any) {
-    return item && (item[`${field_name}NameAr`] || item[`${field_name}`])
-  }
-
-  getAttachments(attachments: any[]) {
-    return !!attachments && attachments.map((a, i) => ({
-      name: `attachment ${i + 1}`,
-      link: a
-    }))
-  }
-
-  getCreatesAtModifiedAt(block: any) {
-    return `${block.createdAt} \n ${block.modifiedAt}`
-  }
-
-  getCreatesByModifiedBy(block: any) {
-    return `${block.createdByNameAr} \n ${block.modifiedByNameAr}`
   }
 
   resetSearch(field_name: any) {
@@ -360,7 +327,6 @@ export class UnitsValuationComponent implements OnInit {
   }
 
   openAddValuationModal() {
-    this.setPropertyId(this.addValuationData);
     this.ngxSmartModalService.getModal('addValuationModal').open();
   }
 
@@ -368,8 +334,9 @@ export class UnitsValuationComponent implements OnInit {
     this.getValuation(blockage.id)
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
-          this.updateValuationData = data.data
-          this.updateValuationData.attachments = undefined;
+          this.updateValuationData = data.data;
+          await this.prepareDeveloperValueOptions(this.updateValuationData);
+          await this.prepareProjectValueOptions(this.updateValuationData);
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -385,7 +352,7 @@ export class UnitsValuationComponent implements OnInit {
     let fd = new FormData();
     fd.append('data', JSON.stringify(formData));
 
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/create`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/ApiUpdateUnitPrice`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.ngxSmartModalService.closeLatestModal();
@@ -401,11 +368,6 @@ export class UnitsValuationComponent implements OnInit {
     })
   }
 
-  setPropertyId(data: any) {
-    const firstResponse = this.getFirstResponse(this.response);
-    data.propertyId = firstResponse && (firstResponse.propertyId || (firstResponse.land && firstResponse.land.propertyId) || this.getPropertyId(this.formData));
-  }
-
   resetAddValuationModal() {
     this.addValuationData = {};
   }
@@ -418,12 +380,13 @@ export class UnitsValuationComponent implements OnInit {
     let fd = new FormData();
     fd.append('data', JSON.stringify(formData));
 
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/update/${formData.id}`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/ApiUpdateUnitPrice`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.ngxSmartModalService.closeLatestModal();
           this.searchData(formData);
           this.addValuationData = {};
+          this.updateValuationData = {};
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
