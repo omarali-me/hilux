@@ -69,7 +69,7 @@ export class UnitsValuationComponent implements OnInit {
   }
 
   searchData(formData: any) {
-    this.http.get(`http://localhost:3000/ApiGetUnitsPrices`)
+    this.http.get(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/ApiGetUnitsPrices`)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.response = data.data;
@@ -415,4 +415,13 @@ export class UnitsValuationComponent implements OnInit {
   getActiveTehmeenRowIconClass(valuation: any) {
     return (this.activeValuationRow == valuation.id) ? 'fas fa-angle-up' : 'fas fa-angle-down'
   }
+
+  showRoomsCount(valuation: any) {
+    return ['1', '2', '4', '26'].includes(valuation.unitType) || [1, 2, 4, 26].includes(valuation.unitType)
+  }
+
+  isRoomsCountMandatory(valuation: any) {
+    return ['1', '4'].includes(valuation.unitType) || [1, 4].includes(valuation.unitType)
+  }
+
 }

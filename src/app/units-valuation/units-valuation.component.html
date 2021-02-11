@@ -406,17 +406,24 @@
           </div>
 
           <div class="col-sm-6">
-            <div class="form-group row">
+            <div class="form-group row" *ngIf="showRoomsCount(addValuationData)">
               <label class="col-sm-3 col-form-label">Rooms Count
+                <span *ngIf="isRoomsCountMandatory(addValuationData)">*</span>
               </label>
               <div class="col-sm-9">
                 <input name="roomsCount"
+                  [required]="isRoomsCountMandatory(addValuationData)"
                   type="text"
                   class="form-control"
                   [(ngModel)]="addValuationData.roomsCount"
                   #roomsCount="ngModel"
                   numbersOnly precision="0"
                 >
+                <div *ngIf="roomsCount.invalid && (roomsCount.dirty || roomsCount.touched)" class="alert alert-danger">
+                  <div *ngIf="roomsCount.errors?.required">
+                    Rooms Count can not be blank
+                  </div>
+                </div>
               </div>
             </div>
           </div>
