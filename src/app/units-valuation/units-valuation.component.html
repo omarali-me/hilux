@@ -191,7 +191,7 @@
 
           <div class="resultsWrapper rtl" *ngIf="response">
             <div class="searchBlockages">
-              <div class="row">
+              <div class="row mb-3">
                 <div class="col-sm-6">
                   <label>Search Results:</label>
                 </div>
@@ -560,11 +560,11 @@
               <label class="col-sm-3 col-form-label">Valuation Price
               </label>
               <div class="col-sm-9">
-                <input name="valuationPrice"
+                <input name="tathmeenPrice"
                   type="text"
                   class="form-control"
-                  [(ngModel)]="updateValuationData.valuationPrice"
-                  #valuationPrice="ngModel"
+                  [(ngModel)]="updateValuationData.tathmeenPrice"
+                  #tathmeenPrice="ngModel"
                   numbersOnly precision="2"
                 >
               </div>

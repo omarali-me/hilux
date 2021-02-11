@@ -66,11 +66,10 @@ export class UnitsValuationComponent implements OnInit {
     //     await this.searchData(this.formData);
     //   }
     // });
-    this.searchData({});
   }
 
   searchData(formData: any) {
-    this.http.get(`http://localhost:3000/ApiGetUnitPrice`)
+    this.http.get(`http://localhost:3000/ApiGetUnitsPrices`)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.response = data.data;
