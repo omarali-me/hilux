@@ -193,28 +193,13 @@
             <div class="searchBlockages">
               <div class="row">
                 <div class="col-sm-6">
-                  <label>Legal Blockages:</label>
+                  <label>Search Results:</label>
                 </div>
                 <div class="col-sm-6">
-                  <button class="btn btn-primary float-left" (click)="openAddBlockModal()">Add Block</button>
+                  <button class="btn btn-primary float-left" (click)="openAddValuationModal()">Add New Valuation</button>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-sm-6" *ngIf="isLandBlockage(response)">
-                  <label>Land ID: </label><span>{{ getfirstLand(response)?.landId }}</span>
-                </div>
-                <div class="col-sm-6" *ngIf="!isLandBlockage(response)">
-                  <label>Developer Name: </label><span>{{ getDeveloperName(response) }}</span>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-6" *ngIf="!isLandBlockage(response)">
-                  <label>Unit Number: </label><span>{{ getUnitNumber(response) }}</span>
-                </div>
-                <div class="col-sm-6" *ngIf="!isLandBlockage(response)">
-                  <label>Project Name: </label><span>{{ getProjectName(response) }}</span>
-                </div>
-              </div>
+
               <div class="card bg-seagreen">
                 <div class="card-header border-0">
                   <div class="card-tools">
@@ -222,127 +207,84 @@
                         <i class="fas fa-minus"></i>
                     </button>
                   </div>
-                  <h3 class="card-title float-right font-weight-bold">Current Legal Blockages</h3>
+                  <h3 class="card-title float-right font-weight-bold">Unit Valuations</h3>
                 </div>
                 <div class="card-body">
                   <table class="table table-bordered landTable bg-white">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
-                        <th>Blockage Type</th>
-                        <th>Block Entity Name Ar</th>
-                        <th>Remarks</th>
-                        <th>Attachments</th>
-                        <th>Created At / Modified At</th>
-                        <th>Created By / Modified By</th>
-                        <th>Unblock Remarks</th>
-                        <th>Ended At</th>
-                        <th>Ended By</th>
+                        <th>Developer Name</th>
+                        <th>Project Name</th>
+                        <th>Unit ID</th>
+                        <th>Unit Type</th>
+                        <th>Rooms Count</th>
+                        <th>Area</th>
+                        <th>Unit Price</th>
+                        <th>Price Per Sq. M</th>
+                        <th>Valuation Price</th>
+                        <th>Valuation Date</th>
+                        <th>Employee</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let current_block_detail of getCurrentOwnedBlocks(response); let i = index">
-                        <td>{{ i + 1}}</td>
-                        <td>{{ current_block_detail?.typeAr }}</td>
-                        <td>{{ current_block_detail?.blockEntityNameAr }}</td>
-                        <td>{{ current_block_detail?.remarks }}</td>
-                        <td>
-                          <ng-container *ngFor="let attachment of getAttachments(current_block_detail?.attachments)">
-                            <li class="no-style-attachment" *ngIf="attachment.link">
-                              <a [href]="attachment.link" target="_blank">
-                                {{attachment.name}}
+                      <ng-container *ngFor="let item_detail of response; let i = index">
+                        <tr>
+                          <td>{{ i + 1}}</td>
+                          <td>{{ item_detail?.typeAr }}</td>
+                          <td>{{ item_detail?.projectNameAr }}</td>
+                          <td>{{ item_detail?.id }}</td>
+
+                          <td>{{ item_detail?.id }}</td>
+                          <td>{{ item_detail?.id }}</td>
+                          <td>{{ item_detail?.id }}</td>
+
+                          <td>{{ getCreatesAtModifiedAt(item_detail) }}</td>
+                          <td>{{ getCreatesByModifiedBy(item_detail) }}</td>
+
+                          <td>{{ item_detail?.tathmeenPrice }}</td>
+
+                          <td>{{ item_detail?.tathmeenDate }}</td>
+                          <td>{{ item_detail?.endedByNameAr }}</td>
+                          <td>
+                            <div class="d-flex">
+                              <a href="javascript:void(0);" class="fs-30 p-1 icon-pointer" (click)="toggleActiveValuation(item_detail)">
+                                <i [class]="getActiveTehmeenRowIconClass(item_detail)"></i>
                               </a>
-                            </li>
-                          </ng-container>
-                        </td>
+                              <a href="javascript:void(0);" class="fs-30 p-1 icon-pointer" (click)="editValuation(item_detail)">
+                                <i class="fas fa-pen"></i>
+                              </a>
+                            </div>
+                          </td>
+                        </tr>
+                        <ng-container *ngIf="item_detail.allTathemeens.length > 0">
+                          <tr [class]="getPreviousTehmeenClass(item_detail)" *ngFor="let previous_item of item_detail.allTathemeens; let j = index">
+                            <td>{{ j + 1}}</td>
+                            <td>{{ previous_item?.typeAr }}</td>
+                            <td>{{ previous_item?.projectNameAr }}</td>
+                            <td>{{ previous_item?.id }}</td>
 
-                        <td class="line-break-class">{{ getCreatesAtModifiedAt(current_block_detail) }}</td>
-                        <td class="line-break-class">{{ getCreatesByModifiedBy(current_block_detail) }}</td>
+                            <td>{{ previous_item?.id }}</td>
+                            <td>{{ previous_item?.id }}</td>
+                            <td>{{ previous_item?.id }}</td>
 
-                        <td>{{ current_block_detail?.endRemarks }}</td>
+                            <td>{{ getCreatesAtModifiedAt(previous_item) }}</td>
+                            <td>{{ getCreatesByModifiedBy(previous_item) }}</td>
 
-                        <td>{{ current_block_detail?.endedAt }}</td>
-                        <td>{{ current_block_detail?.endedByNameAr }}</td>
-                        <td>
-                          <div class="d-flex">
-                            <span class="fs-30 p-1 icon-pointer" (click)="deleteBlockage(current_block_detail)">
-                              <i class="fas fa-times red"></i>
-                            </span>
-                            <a href="javascript:void(0);" class="fs-30 p-1 icon-pointer" (click)="editBlockage(current_block_detail)">
-                              <i class="fas fa-pen"></i>
-                            </a>
-                          </div>
-                        </td>
-                      </tr>
+                            <td>{{ previous_item?.tathmeenPrice }}</td>
+
+                            <td>{{ previous_item?.tathmeenDate }}</td>
+                            <td>{{ previous_item?.endedByNameAr }}</td>
+                            <td></td>
+                          </tr>
+                        </ng-container>
+                      </ng-container>
                     </tbody>
                   </table>
                 </div>
               </div>
 
-              <div class="card">
-                <div class="card-header border-0">
-                  <div class="card-tools">
-                    <button type="button" class="btn btn-sm" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                  </div>
-                  <h3 class="card-title float-right font-weight-bold">Previous Legal Blockages</h3>
-                </div>
-                <div class="card-body">
-                  <table class="table table-bordered landTable bg-light-red">
-                    <thead>
-                      <tr class="bg-grey">
-                        <th>#</th>
-                        <th >Blockage Type</th>
-                        <th >Block Entity Name Ar</th>
-                        <th >Remarks</th>
-                        <th >Attachments</th>
-                        <th >Created At / Modified At</th>
-                        <th >Created By / Modified By</th>
-                        <th >Unblock Remarks</th>
-                        <th >Ended At</th>
-                        <th >Ended By</th>
-                        <!-- <th >Actions</th> -->
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let previous_block_detail of getPreviouslyOwnedBlocks(response); let i = index">
-                        <td>{{ i + 1}}</td>
-                        <td>{{ previous_block_detail?.typeAr }}</td>
-                        <td>{{ previous_block_detail?.blockEntityNameAr }}</td>
-                        <td>{{ previous_block_detail?.remarks  }}</td>
-                        <td>
-                          <ng-container *ngFor="let attachment of getAttachments(previous_block_detail?.attachments)">
-                            <li class="no-style-attachment" *ngIf="attachment.link">
-                              <a [href]="attachment.link" target="_blank">
-                                {{attachment.name}}
-                              </a>
-                            </li>
-                          </ng-container>
-                        </td>
-
-                        <td class="line-break-class">{{ getCreatesAtModifiedAt(previous_block_detail) }}</td>
-                        <td class="line-break-class">{{ getCreatesByModifiedBy(previous_block_detail) }}</td>
-
-                        <td>{{ previous_block_detail?.endRemarks }}</td>
-                        <td>{{ previous_block_detail?.endedAt }}</td>
-                        <td>{{ previous_block_detail?.endedByNameAr }}</td>
-                        <!-- <td>
-                          <div class="d-flex">
-                            <span class="fs-30 p-1 icon-pointer" (click)="deleteBlockage(previous_block_detail)">
-                              <i class="fas fa-times red"></i>
-                            </span>
-                            <span class="fs-30 p-1 icon-pointer" (click)="editBlockage(previous_block_detail)">
-                              <i class="fas fa-pen"></i>
-                            </span>
-                          </div>
-                        </td> -->
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
             </div>
           </div>
           <div class="row" *ngIf="!response">
@@ -358,37 +300,45 @@
   <!-- /.content -->
 </div>
 
-<ngx-smart-modal #addBlockModal identifier="addBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetAddBlockModal()">
+<ngx-smart-modal #addValuationModal identifier="addValuationModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetAddValuationModal()">
   <div class="modal-header pt-0">
     <div class="modal-title">
-      <h4>Add New Block</h4>
+      <h4>Add New Valuation</h4>
     </div>
   </div>
-  <form #addBlockForm="ngForm" (ngSubmit)="addNewBlock(addBlockData);" novalidate>
+  <form #addValuationForm="ngForm" (ngSubmit)="addNewValuation(addValuationData);" novalidate>
     <div class="modal-body">
       <div class="conatiner">
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Blockage Type
+              <label class="col-sm-3 col-form-label">Developer Name
                 <span>*</span>
               </label>
               <div class="col-sm-9">
                 <ng-select
+                  
+                  [items]="developerOptions | async"
                   required="true"
-                  [items]="blockageTypesOptions"
-                  name="typeId"
-                  [(ngModel)]="addBlockData.typeId"
+                  name="developerId"
+                  [hideSelected]="true"
+                  [(ngModel)]="addValuationData.developerId"
+                  [typeahead]="developerSearchInput$"
                   bindLabel="value.ar"
+                  [minTermLength]="1"
                   bindValue="key"
+                  [loading]="developerDataOptionsLoading"
                   notFoundText="لا يوجد نتائج للبحث"
-                  #typeId="ngModel"
-                  (open)="loadBlockageTypesOptions()"
+                  typeToSearchText="Please enter 1 or more characters"
+                  #developer="ngModel"
+                  (keyup)="setSearchType('developerId', $event)"
+                  (blur)="checkTypeAndValues('developerId')"
+                  (change)="resetProjectAndUnit()"
                 >
                 </ng-select>
-                <div *ngIf="typeId.invalid && (typeId.dirty || typeId.touched)" class="alert alert-danger">
-                  <div *ngIf="typeId.errors?.required">
-                    Blockage Type can not be blank
+                <div *ngIf="developer.invalid && (developer.dirty || developer.touched)" class="alert alert-danger">
+                  <div *ngIf="developer.errors?.required">
+                    Developer Name can not be blank
                   </div>
                 </div>
               </div>
@@ -397,29 +347,34 @@
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Block Entity Name
+              <label class="col-sm-3 col-form-label">Project Name
                 <span>*</span>
               </label>
               <div class="col-sm-9">
                 <ng-select
+
                   required="true"
-                  [items]="blockageEntitiesOptions | async"
-                  name="blockEntityId"
+                  [items]="projectsOptions | async"
+                  name="project"
                   [hideSelected]="true"
-                  [(ngModel)]="addBlockData.blockEntityId"
-                  [typeahead]="blockageEntitySearchInput$"
-                  bindLabel="value.ar"
+                  [(ngModel)]="addValuationData.projectId"
                   [minTermLength]="1"
-                  bindValue="key"
-                  [loading]="blockageEntityOptionsLoading"
-                  notFoundText="لا يوجد نتائج للبحث"
+                  bindLabel="value.ar"
                   typeToSearchText="Please enter 1 or more characters"
-                  #blockEntityId="ngModel">
+                  bindValue="key"
+                  [typeahead]="projectsSearchInput$"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  [loading]="projectDataOptionsLoading"
+                  #project="ngModel"
+                  (keyup)="setSearchType('unitId', $event)"
+                  (blur)="checkTypeAndValues('projectId')"
+                  (change)="resetUnit()"
+                >
                 </ng-select>
 
-                <div *ngIf="blockEntityId.invalid && (blockEntityId.dirty || blockEntityId.touched)" class="alert alert-danger">
-                  <div *ngIf="blockEntityId.errors?.required">
-                    Block Entity Name can not be blank
+                <div *ngIf="project.invalid && (project.dirty || project.touched)" class="alert alert-danger">
+                  <div *ngIf="project.errors?.required">
+                    Project Name can not be blank
                   </div>
                 </div>
               </div>
@@ -430,174 +385,199 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Remarks
+              <label class="col-sm-3 col-form-label">Unit Type
                 <span>*</span>
               </label>
               <div class="col-sm-9">
-                <textarea
-                  name="remarks"
-                  class="form-control"
-                  rows="3"
-                  required="true"
-                  [(ngModel)]="addBlockData.remarks"
-                  #remarks="ngModel"
-                ></textarea>
-                <div *ngIf="remarks.invalid && (remarks.dirty || remarks.touched)" class="alert alert-danger">
-                  <div *ngIf="remarks.errors?.required">
-                    Remarks can not be blank
-                  </div>
-                </div>
+                <ng-select
+
+                  [items]="unitTypesOptions"
+                  name="unitType"
+                  [hideSelected]="true"
+                  [(ngModel)]="addValuationData.unitType"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  #unitType="ngModel"
+                  >
+                </ng-select>
               </div>
             </div>
           </div>
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Attachments
-                <span>*</span>
+              <label class="col-sm-3 col-form-label">Rooms Count
               </label>
-              <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
-                <app-file-upload [field]="prepareAttachments()" [formData]="addBlockData"></app-file-upload>
+              <div class="col-sm-9">
+                <input name="roomsCount"
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="addValuationData.roomsCount"
+                  #roomsCount="ngModel"
+                  numbersOnly precision="0"
+                >
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Price per sq. m
+              </label>
+              <div class="col-sm-9">
+                <input name="roomsCount"
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="addValuationData.roomsCount"
+                  #roomsCount="ngModel"
+                  numbersOnly precision="2"
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
           </div>
         </div>
       </div>
     </div>
     <div class="modal-footer pb-0">
       <div class="col-sm-12">
-        <button type="button" class="btn btn-default" (click)="addBlockModal.close()">Close</button>
-        <button type="submit" [disabled]="addBlockForm.invalid" class="btn btn-primary float-left">Submit</button>
+        <button type="button" class="btn btn-default" (click)="addValuationModal.close()">Close</button>
+        <button type="submit" [disabled]="addValuationForm.invalid" class="btn btn-primary float-left">Submit</button>
       </div>
     </div>
   </form>
 </ngx-smart-modal>
 
 
-<ngx-smart-modal #updateBlockModal identifier="updateBlockModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetUpdateBlockModal()">
+<ngx-smart-modal #updateValuationModal identifier="updateValuationModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetUpdateValuationModal()">
   <div class="modal-header pt-0">
     <div class="modal-title">
-      <h4>Update Block</h4>
+      <h4>Update Valuation</h4>
     </div>
   </div>
-  <form #updateBlockForm="ngForm" (ngSubmit)="updateBlock(updateBlockData);" novalidate>
+  <form #updateValuationForm="ngForm" (ngSubmit)="updateValuation(updateValuationData);" novalidate>
     <div class="modal-body">
       <div class="conatiner">
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Blockage Type
+              <label class="col-sm-3 col-form-label">Developer Name
                 <span>*</span>
               </label>
               <div class="col-sm-9">
                 <ng-select
+                  
+                  [items]="developerOptions | async"
                   required="true"
-                  [items]="blockageTypesOptions"
-                  name="typeId"
-                  [(ngModel)]="updateBlockData.typeId"
-                  bindLabel="value.ar"
-                  bindValue="key"
-                  notFoundText="لا يوجد نتائج للبحث"
-                  #typeId="ngModel"
-                  disabled="true"
-                  (open)="loadBlockageTypesOptions()"
-                >
-                </ng-select>
-                <div *ngIf="typeId.invalid && (typeId.dirty || typeId.touched)" class="alert alert-danger">
-                  <div *ngIf="typeId.errors?.required">
-                    Blockage Type can not be blank
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Block Entity Name
-                <span>*</span>
-              </label>
-              <div class="col-sm-9">
-                <ng-select
-                  required="true"
-                  [items]="blockageEntitiesOptions | async"
-                  name="blockEntityId"
+                  name="developerId"
                   [hideSelected]="true"
-                  [(ngModel)]="updateBlockData.blockEntityId"
-                  [typeahead]="blockageEntitySearchInput$"
+                  [(ngModel)]="updateValuationData.developerId"
+                  [typeahead]="developerSearchInput$"
                   bindLabel="value.ar"
                   [minTermLength]="1"
                   bindValue="key"
-                  [loading]="blockageEntityOptionsLoading"
+                  [loading]="developerDataOptionsLoading"
                   notFoundText="لا يوجد نتائج للبحث"
                   typeToSearchText="Please enter 1 or more characters"
+                  #developer="ngModel"
+                  (keyup)="setSearchType('developerId', $event)"
+                  (blur)="checkTypeAndValues('developerId')"
+                  (change)="resetProjectAndUnit()"
                   disabled="true"
-                  #blockEntityId="ngModel">
+                >
                 </ng-select>
-
-                <div *ngIf="blockEntityId.invalid && (blockEntityId.dirty || blockEntityId.touched)" class="alert alert-danger">
-                  <div *ngIf="blockEntityId.errors?.required">
-                    Block Entity Name can not be blank
+                <div *ngIf="developer.invalid && (developer.dirty || developer.touched)" class="alert alert-danger">
+                  <div *ngIf="developer.errors?.required">
+                    Developer Name can not be blank
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Created At</label>
-              <div class="col-sm-9">
-                <input name="createdAt" type="text" class="form-control" [(ngModel)]="updateBlockData.createdAt" #createdAt="ngModel" disabled="true">
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Remarks
+              <label class="col-sm-3 col-form-label">Project Name
                 <span>*</span>
               </label>
               <div class="col-sm-9">
-                <textarea
-                  name="remarks"
-                  class="form-control"
-                  rows="3"
+                <ng-select
+
                   required="true"
-                  [(ngModel)]="updateBlockData.remarks"
-                  #remarks="ngModel"
-                ></textarea>
-                <div *ngIf="remarks.invalid && (remarks.dirty || remarks.touched)" class="alert alert-danger">
-                  <div *ngIf="remarks.errors?.required">
-                    Remarks can not be blank
+                  [items]="projectsOptions | async"
+                  name="project"
+                  [hideSelected]="true"
+                  [(ngModel)]="updateValuationData.projectId"
+                  [minTermLength]="1"
+                  bindLabel="value.ar"
+                  typeToSearchText="Please enter 1 or more characters"
+                  bindValue="key"
+                  [typeahead]="projectsSearchInput$"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  [loading]="projectDataOptionsLoading"
+                  #project="ngModel"
+                  (keyup)="setSearchType('unitId', $event)"
+                  (blur)="checkTypeAndValues('projectId')"
+                  (change)="resetUnit()"
+                  disabled="true"
+                >
+                </ng-select>
+
+                <div *ngIf="project.invalid && (project.dirty || project.touched)" class="alert alert-danger">
+                  <div *ngIf="project.errors?.required">
+                    Project Name can not be blank
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Unit ID
+              </label>
+              <div class="col-sm-9">
+                <input name="unitID"
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="updateValuationData.unitID"
+                  #unitID="ngModel"
+                  disabled="true"
+                >
               </div>
             </div>
           </div>
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Attachments
+              <label class="col-sm-3 col-form-label">Valuation Price
               </label>
-              <div class="col-sm-9" *ngIf="!hideAttachmentsControl">
-                <app-file-upload [field]="prepareUpdateAttachments()" [formData]="updateBlockData"></app-file-upload>
+              <div class="col-sm-9">
+                <input name="valuationPrice"
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="updateValuationData.valuationPrice"
+                  #valuationPrice="ngModel"
+                  numbersOnly precision="2"
+                >
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
     <div class="modal-footer pb-0">
       <div class="col-sm-12">
-        <button type="button" class="btn btn-default" (click)="updateBlockModal.close()">Close</button>
-        <button type="submit" [disabled]="updateBlockForm.invalid" class="btn btn-primary float-left">Update</button>
+        <button type="button" class="btn btn-default" (click)="updateValuationModal.close()">Close</button>
+        <button type="submit" [disabled]="updateValuationForm.invalid" class="btn btn-primary float-left">Update</button>
       </div>
     </div>
   </form>

@@ -22,8 +22,8 @@ interface SearchParams {
 })
 export class UnitsValuationComponent implements OnInit {
   formData: any = {};
-  addBlockData: any = {};
-  updateBlockData: any = {};
+  addValuationData: any = {};
+  updateValuationData: any = {};
   removeBlockData: any = {};
   formErrors: any = {};
   currentSearchParams: SearchParams = {};
@@ -40,8 +40,8 @@ export class UnitsValuationComponent implements OnInit {
   ownersOptions: Observable<any>;
   response: any;
   searchby: any;
-  hideAttachmentsControl;
   minDate: any;
+  activeValuationRow: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -55,22 +55,22 @@ export class UnitsValuationComponent implements OnInit {
 
   ngOnInit(): void {
     this.minDate = new Date();
-    this.toggleControl(false);
     this.loadUnitsOptions();
     this.loadDeveloperOptions();
     this.loadProjectsOptions();
     this.loadUnitTypesOptions()
 
-    this.route.queryParams.subscribe(async (params) => {
-      if (!_.isEqual(params, {})) {
-        this.formData.propertyId = params.propertyId;
-        await this.searchData(this.formData);
-      }
-    });
+    // this.route.queryParams.subscribe(async (params) => {
+    //   if (!_.isEqual(params, {})) {
+    //     this.formData.propertyId = params.propertyId;
+    //     await this.searchData(this.formData);
+    //   }
+    // });
+    this.searchData({});
   }
 
   searchData(formData: any) {
-    this.http.get(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/getByPropertyId/${this.getPropertyId(formData)}`)
+    this.http.get(`http://localhost:3000/ApiGetUnitPrice`)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.response = data.data;
@@ -298,8 +298,8 @@ export class UnitsValuationComponent implements OnInit {
     }
   }
 
-  async editBlockage(blockage: any) {
-    await this.openUpdateBlockModal(blockage);
+  async editValuation(blockage: any) {
+    await this.openUpdateValuationModal(blockage);
   }
 
   getProjectName(response: any) {
@@ -359,19 +359,17 @@ export class UnitsValuationComponent implements OnInit {
     return  !!firstLand && !!firstLand.landId;
   }
 
-  openAddBlockModal() {
-    this.toggleControl(false);
-    this.setPropertyId(this.addBlockData);
-    this.ngxSmartModalService.getModal('addBlockModal').open();
+  openAddValuationModal() {
+    this.setPropertyId(this.addValuationData);
+    this.ngxSmartModalService.getModal('addValuationModal').open();
   }
 
-  async openUpdateBlockModal(blockage: any) {
-    this.toggleControl(false);
-    this.getBlockage(blockage.id)
+  async openUpdateValuationModal(blockage: any) {
+    this.getValuation(blockage.id)
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
-          this.updateBlockData = data.data
-          this.updateBlockData.attachments = undefined;
+          this.updateValuationData = data.data
+          this.updateValuationData.attachments = undefined;
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -380,10 +378,10 @@ export class UnitsValuationComponent implements OnInit {
       this.toastr.error('Something went Wrong', 'Error')
       this.router.navigate(['error'])
     })
-    this.ngxSmartModalService.getModal('updateBlockModal').open();
+    this.ngxSmartModalService.getModal('updateValuationModal').open();
   }
 
-  addNewBlock(formData: any) {
+  addNewValuation(formData: any) {
     let fd = new FormData();
     fd.append('data', JSON.stringify(formData));
 
@@ -392,7 +390,7 @@ export class UnitsValuationComponent implements OnInit {
         if (data.status == 'success') {
           this.ngxSmartModalService.closeLatestModal();
           this.searchData(formData);
-          this.addBlockData = {};
+          this.addValuationData = {};
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -403,57 +401,20 @@ export class UnitsValuationComponent implements OnInit {
     })
   }
 
-  prepareAttachments() {
-    return {
-      fieldID: "attachments",
-      fieldType: "fileupload",
-      required: true,
-      fieldName: {
-        "ar": "attachments",
-        "en": "attachments"
-      },
-      auxInfo: {
-        multiple: true
-      }
-    }
-  }
-
-  prepareUpdateAttachments() {
-    return {
-      fieldID: "attachments",
-      fieldType: "fileupload",
-      required: false,
-      fieldName: {
-        "ar": "attachments",
-        "en": "attachments"
-      },
-      auxInfo: {
-        multiple: true
-      }
-    }
-  }
-
   setPropertyId(data: any) {
     const firstResponse = this.getFirstResponse(this.response);
     data.propertyId = firstResponse && (firstResponse.propertyId || (firstResponse.land && firstResponse.land.propertyId) || this.getPropertyId(this.formData));
   }
 
-  resetAddBlockModal() {
-    this.addBlockData = {};
-    this.toggleControl(true);
+  resetAddValuationModal() {
+    this.addValuationData = {};
   }
 
-  resetUpdateBlockModal() {
-    this.updateBlockData = {};
-    this.toggleControl(true);
+  resetUpdateValuationModal() {
+    this.updateValuationData = {};
   }
 
-  resetRemoveBlockModal() {
-    this.removeBlockData = {};
-    this.toggleControl(true);
-  }
-
-  updateBlock(formData: any) {
+  updateValuation(formData: any) {
     let fd = new FormData();
     fd.append('data', JSON.stringify(formData));
 
@@ -462,7 +423,7 @@ export class UnitsValuationComponent implements OnInit {
         if (data.status == 'success') {
           this.ngxSmartModalService.closeLatestModal();
           this.searchData(formData);
-          this.addBlockData = {};
+          this.addValuationData = {};
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -473,32 +434,23 @@ export class UnitsValuationComponent implements OnInit {
     })
   }
 
-  removeBlock(formData: any) {
-    let fd = new FormData();
-    fd.append('data', JSON.stringify(formData));
-
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/deactivate/${formData.id}`, fd)
-      .subscribe((data: any) => {
-        if (data.status == 'success') {
-          this.ngxSmartModalService.closeLatestModal();
-          this.searchData(formData);
-          this.addBlockData = {};
-        } else {
-          this.formErrors = data.data;
-          this.toastr.error(JSON.stringify(data.message), 'Error')
-        }
-    }, (error) => {
-      this.toastr.error('Something went Wrong', 'Error')
-      this.router.navigate(['error'])
-    })
+  getValuation(valuationId: any) {
+    return this.fieldsService.postData(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/ApiGetUnitPrice`, { id: valuationId });
   }
 
-  getBlockage(blockageId: any) {
-    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/blockages/get/${blockageId}`);
+  formatDate(name: any) {
+    this.formData[name] = this.fieldsService.formatDate(this.formData, name);
   }
 
-  toggleControl(value?: boolean) {
-    this.hideAttachmentsControl = (!!value ? value : !this.hideAttachmentsControl)
-    return this.hideAttachmentsControl;
+  getPreviousTehmeenClass(valuation) {
+    return (this.activeValuationRow == valuation.id) ? `show collapse bg-light-red` : 'collapse bg-light-red'
+  }
+
+  toggleActiveValuation(valuation: any) {
+    this.activeValuationRow = (this.activeValuationRow != valuation.id) ? valuation.id : undefined
+  }
+
+  getActiveTehmeenRowIconClass(valuation: any) {
+    return (this.activeValuationRow == valuation.id) ? 'fas fa-angle-up' : 'fas fa-angle-down'
   }
 }
