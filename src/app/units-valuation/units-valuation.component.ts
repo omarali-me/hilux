@@ -69,7 +69,10 @@ export class UnitsValuationComponent implements OnInit {
   }
 
   searchData(formData: any) {
-    this.http.get(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/ApiGetUnitsPrices`)
+    let fd = new FormData();
+    fd.append('data', JSON.stringify(formData));
+
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/ApiGetUnitsPrices`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.response = data.data;
