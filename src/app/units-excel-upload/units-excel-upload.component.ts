@@ -251,4 +251,8 @@ export class UnitsExcelUploadComponent implements OnInit {
   getOwnersName(owners: any) {
     return _.join(owners, ', ');
   }
+
+  getExcelLink() {
+    return `${environment.apiHost}/units.xlsx`;
+  }
 }
