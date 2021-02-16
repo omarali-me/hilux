@@ -143,6 +143,8 @@ export class UnitsValuationComponent implements OnInit {
 
   resetProjectAndUnit() {
     this.formData.projectId = null;
+    this.addValuationData.projectId = null;
+    this.updateValuationData.projectId = null;
     this.resetUnit();
   }
 
@@ -314,7 +316,7 @@ export class UnitsValuationComponent implements OnInit {
 
   prepareformData(data: any) {
     return {
-      equal: _.pick(_.omitBy(data, _.isEmpty), ['developerId', 'projectId', 'unitId', 'unitType', 'roomsCount']),
+      equal: _.pick(_.omitBy(data, _.isEmpty), ['projectId', 'unitId', 'unitTypeId', 'roomsCount']),
       less: _.pick(_.omitBy(data, _.isEmpty), ['endDate']),
       greater: _.pick(_.omitBy(data, _.isEmpty), ['startDate'])
     }

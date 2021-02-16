@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="m-2 text-dark">
-          <h1>الحجوزات القانونية</h1>
+          <h1>Units Valuation</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -108,7 +108,7 @@
                           [items]="unitTypesOptions"
                           name="unitType"
                           [hideSelected]="true"
-                          [(ngModel)]="formData.unitType"
+                          [(ngModel)]="formData.unitTypeId"
                           bindLabel="value.ar"
                           bindValue="key"
                           notFoundText="لا يوجد نتائج للبحث"
@@ -184,7 +184,7 @@
 
           <hr/>
 
-          <div class="resultsWrapper rtl" *ngIf="response">
+          <div class="resultsWrapper rtl" *ngIf="response?.length > 0">
             <div class="searchBlockages">
               <div class="row mb-3">
                 <div class="col-sm-6">
@@ -244,7 +244,7 @@
                           <td>{{ item_detail?.endedByNameAr }}</td>
                           <td>
                             <div class="d-flex">
-                              <a href="javascript:void(0);" class="fs-30 p-1 icon-pointer" (click)="toggleActiveValuation(item_detail)">
+                              <a href="javascript:void(0);" class="fs-30 p-1 icon-pointer" (click)="toggleActiveValuation(item_detail)" *ngIf="item_detail.allTathemeens.length > 0">
                                 <i [class]="getActiveTehmeenRowIconClass(item_detail)"></i>
                               </a>
                               <a href="javascript:void(0);" class="fs-30 p-1 icon-pointer" (click)="editValuation(item_detail)">
@@ -282,7 +282,7 @@
 
             </div>
           </div>
-          <div class="row" *ngIf="!response">
+          <div class="row" *ngIf="!response || response?.length == 0">
             <div class="col-sm-12 text-center">
               <h4>لا توجد بيانات لهذا البحث ، حاول مرة أخرى عن طريق تغيير معايير البحث</h4>
             </div>
