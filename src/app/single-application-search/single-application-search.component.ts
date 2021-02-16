@@ -45,6 +45,7 @@ export class SingleApplicationSearchComponent implements OnInit {
   applicationSourceOptions: any;
   serviceNameOptions: any;
   application_search$: Observable<any>;
+  applicationID: any
 
   constructor(
     private route: ActivatedRoute,
@@ -63,6 +64,7 @@ export class SingleApplicationSearchComponent implements OnInit {
     //   }
     // });
 
+    this.applicationID = this.route.snapshot.params["applicationId"];
     this.application_search$ = this.route.data.pipe(pluck('application_search'));
     this.application_search$
       .subscribe((data: any) => {
