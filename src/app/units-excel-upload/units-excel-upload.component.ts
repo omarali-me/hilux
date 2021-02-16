@@ -21,6 +21,7 @@ interface SearchParams {
 })
 export class UnitsExcelUploadComponent implements OnInit {
   formData: any = {};
+  uploadData:any = {};
   filterData: any = { meterTotalSoldArea: '', registrationStatus: 'All', unitNumber: ''};
   formErrors: any = {};
   currentSearchParams: SearchParams = {};
@@ -84,17 +85,14 @@ export class UnitsExcelUploadComponent implements OnInit {
       });
   }
 
-  uploadExcel(formData: any) {
+  uploadExcel(uploadData: any) {
     let fd = new FormData();
-    fd.append('upload', this.uploadedFile);
+    fd.append('zipFile', this.uploadedFile);
 
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/excel/createUnitsByExcel`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/excel/createUnitsByZip`, fd)
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
-          this.response = data.data;
           this.resetUploadControl();
-          await this.prepareUnitNumberOptions(this.response);
-          await this.prepareMeterTotalSoldAreaOptions(this.response);
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error');
@@ -112,6 +110,9 @@ export class UnitsExcelUploadComponent implements OnInit {
   }
 
   resetUploadControl() {
+    this.uploadData = {};
+    this.formData = {};
+    this.response = undefined;
     this.formErrors = {}
     this.controlLabel.nativeElement.innerText = 'choose file';
   }

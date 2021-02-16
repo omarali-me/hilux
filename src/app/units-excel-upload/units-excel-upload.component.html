@@ -259,6 +259,38 @@
                       </tr>
                     </tbody>
                   </table>
+
+                  <form class="form-horizontal" (ngSubmit)="uploadExcel(formData)" #uf="ngForm" enctype='multipart/form-data' novalidate>
+                    <div class="col-sm-12 mt-3">
+                      <div class="row">
+                        <div class="col-sm-10">
+
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <div class="custom-file">
+                                <input type="file"
+                                  class="custom-file-input"
+                                  name="upload"
+                                  id="upload"
+                                  multiple="false"
+                                  (change)="updateControlLabel($event)"
+                                  #ngModel="ngModel"
+                                  [(ngModel)]="uploadData.upload"
+                                  accept=".xlsx, .xls, .zip"
+                                  required="true"
+                                  />
+                                <label class="custom-file-label" for="upload" #controlLabel>choose file</label>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="col-sm-2">
+                          <button type="submit" class="btn btn-primary" [disabled]="uf.invalid">Upload</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
 
@@ -269,37 +301,6 @@
               <h4>No Unit data available</h4>
             </div>
           </div>
-
-          <!-- <form class="form-horizontal" (ngSubmit)="uploadExcel(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
-              <div class="col-sm-12">
-                <div class="row">
-                  <div class="col-sm-10">
-
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="custom-file">
-                          <input type="file"
-                            class="custom-file-input"
-                            name="upload"
-                            id="upload"
-                            multiple="false"
-                            (change)="updateControlLabel($event)"
-                            #ngModel="ngModel"
-                            [(ngModel)]="formData.upload"
-                            required="true"
-                            />
-                          <label class="custom-file-label" for="upload" #controlLabel>choose file</label>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="col-sm-2">
-                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Upload</button>
-                  </div>
-                </div>
-              </div>
-            </form> -->
         </div>
         <!-- /.card-body -->
       </div>
