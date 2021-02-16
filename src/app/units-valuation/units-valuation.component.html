@@ -45,8 +45,6 @@
                           notFoundText="لا يوجد نتائج للبحث"
                           typeToSearchText="Please enter 1 or more characters"
                           #developer="ngModel"
-                          (keyup)="setSearchType('developerId', $event)"
-                          (blur)="checkTypeAndValues('developerId')"
                           (change)="resetProjectAndUnit()"
                         >
                         </ng-select>
@@ -73,8 +71,6 @@
                           notFoundText="لا يوجد نتائج للبحث"
                           [loading]="projectDataOptionsLoading"
                           #project="ngModel"
-                          (keyup)="setSearchType('unitId', $event)"
-                          (blur)="checkTypeAndValues('projectId')"
                           (change)="resetUnit()"
                         >
                         </ng-select>
@@ -83,12 +79,11 @@
 
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Unit ID
-                        <span>*</span>
                       </label>
                       <div class="col-sm-9">
                         <ng-select
                           
-                          required="true"
+                          required="false"
                           [items]="unitsOptions"
                           name="units"
                           [(ngModel)]="formData.unitId"
@@ -331,8 +326,6 @@
                   notFoundText="لا يوجد نتائج للبحث"
                   typeToSearchText="Please enter 1 or more characters"
                   #developer="ngModel"
-                  (keyup)="setSearchType('developerId', $event)"
-                  (blur)="checkTypeAndValues('developerId')"
                   (change)="resetProjectAndUnit()"
                 >
                 </ng-select>
@@ -366,8 +359,6 @@
                   notFoundText="لا يوجد نتائج للبحث"
                   [loading]="projectDataOptionsLoading"
                   #project="ngModel"
-                  (keyup)="setSearchType('unitId', $event)"
-                  (blur)="checkTypeAndValues('projectId')"
                   (change)="resetUnit()"
                 >
                 </ng-select>
@@ -492,8 +483,6 @@
                   notFoundText="لا يوجد نتائج للبحث"
                   typeToSearchText="Please enter 1 or more characters"
                   #developer="ngModel"
-                  (keyup)="setSearchType('developerId', $event)"
-                  (blur)="checkTypeAndValues('developerId')"
                   (change)="resetProjectAndUnit()"
                   disabled="true"
                 >
@@ -528,8 +517,6 @@
                   notFoundText="لا يوجد نتائج للبحث"
                   [loading]="projectDataOptionsLoading"
                   #project="ngModel"
-                  (keyup)="setSearchType('unitId', $event)"
-                  (blur)="checkTypeAndValues('projectId')"
                   (change)="resetUnit()"
                   disabled="true"
                 >

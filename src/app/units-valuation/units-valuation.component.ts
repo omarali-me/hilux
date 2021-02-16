@@ -136,71 +136,8 @@ export class UnitsValuationComponent implements OnInit {
     return this.response && (this.response.type == 1 || this.response.type == '1')
   }
 
-  isUnitResponse() {
-    return this.response && (this.response.type == 2 || this.response.type == '2')
-  }
-
-  isSearchByUnit() {
-    return (this.formData.type == '2')
-  }
-
-  isNotSearchTypeUnit() {
-    return !!this.formData.type && (['1'].includes(this.formData.type) || [1].includes(this.formData.type))
-  }
-
-  isNotSearchTypeLand() {
-    return !!this.formData.type && (['2'].includes(this.formData.type) || [2].includes(this.formData.type))
-  }
-
-  setSearchType(field_name: string, event: any) {
-    var val = event.target.value.trim();
-    this.setSearchByandTypeValues(val, field_name)
-  }
-
-  setSearchByandTypeValues(val: any, field_name: any) {
-    if (val != '') {
-      this.searchby = field_name;
-      if (['developerId', 'projectId', 'unitId'].includes(field_name)) {
-        this.formData.type = '2'
-      } else if (['landId', 'oldLandId'].includes(field_name)) {
-        this.formData.type = '1'
-      }
-    } else {
-      this.formData.type = null;
-      this.searchby = null;
-      this.resetSearch(field_name);
-    }
-  }
-
   isNotSearchBy(field_name: string) {
     return !!this.searchby && (this.searchby != field_name);
-  }
-
-  prepareFormData(formData: any) {
-    switch (this.searchby) {
-      case 'unitId':
-      case 'projectId':
-      case 'developerId':
-        this.formData.value = this.formData.unitId
-        break;
-      default:
-        this.formData.value = null;
-    }
-
-    return formData
-  }
-
-  checkTypeAndValues(field_name: string) {
-    let val = this.formData[field_name] && this.formData[field_name].trim();
-    val = (val == undefined ? '' : val);
-    if (!this.isSearchByUnit() && (val == '')) {
-      this.setSearchByandTypeValues(val, field_name);
-    } else if (this.isSearchByUnit()) {
-      //check all are empty then reset types
-      if (this.isEmpty('developerId') && this.isEmpty('projectId') && this.isEmpty('unitId')) {
-        this.setSearchByandTypeValues(val, null);
-      }
-    }
   }
 
   resetProjectAndUnit() {
@@ -212,44 +149,12 @@ export class UnitsValuationComponent implements OnInit {
     this.formData.unitId = null;
   }
 
-  isEmpty(field_name: string) {
-    return this.isSearchByUnit() && (this.formData[field_name] == undefined)
-  }
-
   getOwnerClass(item: any) {
     return (item.deed.status == '1') ? 'bg-seagreen' : 'bg-light-red'
   }
 
-  getfirstLand(response: any) {
-    return response.length > 0 ? response[0].land : {}
-  }
-
   getFirstResponse(response: any) {
     return response.length > 0 ? response[0] : {}
-  }
-
-  getfirstUnit(deeds: any) {
-    return deeds.length > 0 ? deeds[0].unitData : {}
-  }
-
-  getfirst(deeds: any) {
-    return deeds.length > 0 ? deeds[0].deedDetails[0] : {}
-  }
-
-  getCurrentOwnedBlocks(blockages: any) {
-    return this.filterBlocksWithStatus(blockages, '1');
-  }
-
-  getPreviouslyOwnedBlocks(blockages: any) {
-    return this.filterBlocksWithStatus(blockages, '0');
-  }
-
-  filterBlocksWithStatus(blockages: any, status: any) {
-    return blockages.filter(d => d.status == status);
-  }
-
-  filterUnitsWithStatus(deeds: any, status: any) {
-    return deeds.filter(d => d.unitData && d.deed?.status == status);
   }
 
   getFieldNameorId(item: any, field_name: any) {
@@ -276,11 +181,6 @@ export class UnitsValuationComponent implements OnInit {
     return !!firstResponse && firstResponse?.unit?.projectNameAr;
   }
 
-  getUnitNumber(response: any) {
-    const firstResponse = this.getFirstResponse(response);
-    return !!firstResponse && firstResponse?.unit?.unitNumber;
-  }
-
   getDeveloperName(response: any) {
     const firstResponse = this.getFirstResponse(response);
     return !!firstResponse && firstResponse?.unit?.developerNameAr;
@@ -304,28 +204,12 @@ export class UnitsValuationComponent implements OnInit {
     }
   }
 
-
   prepareUnitValueOptions(params: any) {
     if(!!params.unitId) {
       this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/units`, { id: params.unitId })
       .subscribe((option)=> {
       })
     }
-  }
-
-  getPropertyId(formData: any) {
-    if (formData.type == '1') {
-      return formData.landId || formData.oldLandId;
-    } else if (formData.type == '2') {
-      return formData.unitId;
-    } else {
-      return formData.propertyId;
-    }
-  }
-
-  isLandBlockage(response: any) {
-    const firstLand = this.getfirstLand(response);
-    return  !!firstLand && !!firstLand.landId;
   }
 
   openAddValuationModal() {
