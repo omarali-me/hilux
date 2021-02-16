@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Observable, Subject, Subscription } from 'rxjs';
+import { concat, Observable, of, Subject, Subscription } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { FieldsService } from '../shared/fields.service';
 import { LookupsService } from '../shared/lookups.service';
 import * as _ from 'lodash';
+import { catchError, distinctUntilChanged, switchMap, tap } from 'rxjs/operators';
 
 interface SearchParams {
   query?: string;
@@ -20,7 +21,7 @@ interface SearchParams {
 })
 export class UnitsExcelUploadComponent implements OnInit {
   formData: any = {};
-  filterData: any = { meterTotalSoldArea: '', registrationStatus: '', unitNumber: ''};
+  filterData: any = { meterTotalSoldArea: '', registrationStatus: 'All', unitNumber: ''};
   formErrors: any = {};
   currentSearchParams: SearchParams = {};
   paramsSubscription = new Subscription();
@@ -33,13 +34,17 @@ export class UnitsExcelUploadComponent implements OnInit {
   projectDataOptionsLoading = false;
   landDataOptionsLoading = false;
   landSearchInput$ = new Subject<string>();
-  unitsOptions: any;
+  unitsOptions: Observable<any>;
+  unitsDataOptionsLoading = false;
+  unitsSearchInput$ = new Subject<string>();
+
   response: any;
   minDate:any;
   uploadedFile: any;
   registrationTypeOptions: any;
   unitNumberOptions: any;
   meterTotalSoldAreaOptions: any;
+  unitTypesOptions: any;
 
   @ViewChild('controlLabel') controlLabel: ElementRef;
   constructor(
@@ -52,7 +57,31 @@ export class UnitsExcelUploadComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loadUnitsOptions();
     this.loadRegistrationTypes();
+    this.loadDeveloperOptions();
+    this.loadProjectsOptions();
+    this.loadUnitTypesOptions()
+  }
+
+  searchData(formData: any) {
+    let fd = new FormData();
+    fd.append('data', JSON.stringify(_.omit(formData, 'developerId')));
+
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/projects/unitsProject`, fd)
+      .subscribe((data: any) => {
+        if (data.status == 'success') {
+          this.response = data.data;
+          this.prepareUnitNumberOptions(this.response);
+          this.prepareMeterTotalSoldAreaOptions(this.response);
+        } else {
+          this.formErrors = data.data;
+          this.toastr.error(JSON.stringify(data.message), 'Error');
+        }
+      }, (error) => {
+        this.toastr.error('Something went Wrong', 'Error');
+        this.router.navigate(['error']);
+      });
   }
 
   uploadExcel(formData: any) {
@@ -89,7 +118,7 @@ export class UnitsExcelUploadComponent implements OnInit {
 
   loadRegistrationTypes() {
     let options  = [{
-      key: "",
+      key: "All",
       value: { en: 'All', ar: 'All' }
     }]
 
@@ -105,7 +134,7 @@ export class UnitsExcelUploadComponent implements OnInit {
       value: { en: 'All', ar: 'All' }
     }]
 
-    let preparedOptions = this.prepareOptions(response.units, 'unitNumber')
+    let preparedOptions = this.prepareOptions(response, 'unitNumber')
 
     this.unitNumberOptions = _.union(options, preparedOptions);
   }
@@ -116,12 +145,12 @@ export class UnitsExcelUploadComponent implements OnInit {
       value: { en: 'All', ar: 'All' }
     }]
 
-    let preparedOptions = this.prepareOptions(response.units, 'meterTotalSoldArea')
+    let preparedOptions = this.prepareOptions(response, 'meterTotalSoldArea')
     this.meterTotalSoldAreaOptions = _.union(options, preparedOptions);
   }
 
   filterResponse() {
-    let results = this.response && this.response.units;
+    let results = this.response;
 
     if (this.filterData.meterTotalSoldArea != '') {
       results = results.filter( r => r.meterTotalSoldArea == this.filterData.meterTotalSoldArea )
@@ -131,7 +160,7 @@ export class UnitsExcelUploadComponent implements OnInit {
       results = results.filter( r => r.unitNumber == this.filterData.unitNumber )
     }
 
-    if (this.filterData.registrationStatus != '') {
+    if (this.filterData.registrationStatus != 'All') {
       results = results.filter( r => r.registrationStatus == this.filterData.registrationStatus )
     }
 
@@ -148,5 +177,77 @@ export class UnitsExcelUploadComponent implements OnInit {
     })
 
     return options;
+  }
+
+  resetProjectAndUnit() {
+    this.formData.projectId = null;
+    this.resetUnit();
+  }
+
+  resetUnit() {
+    this.formData.unitId = null;
+  }
+
+  loadUnitTypesOptions() {
+    this.lookupsService.loadUnitsTypesOptions()
+      .subscribe((data) => {
+        this.unitTypesOptions = data;
+      })
+  }
+
+  loadDeveloperOptions() {
+    this.developerOptions = concat(
+      of([]), // default items
+      this.developerSearchInput$.pipe(
+        distinctUntilChanged(),
+        tap(() => this.developerDataOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/developers`, { term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.developerDataOptionsLoading = false)
+          )
+        })
+      )
+    );
+  }
+
+  loadProjectsOptions() {
+    this.projectsOptions = concat(
+      of([]), // default items
+      this.projectsSearchInput$.pipe(
+        distinctUntilChanged(),
+        tap(() => this.projectDataOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, { term, developerId: this.formData.developerId }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.projectDataOptionsLoading = false)
+          )
+        })
+      )
+    );
+  }
+
+  loadUnitsOptions() {
+    this.unitsOptions = concat(
+      of([]), // default items
+      this.unitsSearchInput$.pipe(
+        distinctUntilChanged(),
+        tap(() => this.unitsDataOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/unitsWithUnitId/projectId/this.formData.projectId/term/${term}`).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.unitsDataOptionsLoading = false)
+          )
+        })
+      )
+    );
+  }
+
+  formatDate(name: any) {
+    this.formData[name] = this.fieldsService.formatDate(this.formData, name);
+  }
+
+  getOwnersName(owners: any) {
+    return _.join(owners, ', ');
   }
 }

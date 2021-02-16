@@ -21,48 +21,124 @@
 
         <div class="col-sm-12">
           <div class="mt-4">
-            <form class="form-horizontal" (ngSubmit)="uploadExcel(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+            <form class="form-horizontal" (ngSubmit)="searchData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
               <div class="col-sm-12">
                 <div class="row">
-                  <div class="col-sm-10">
+                  <div class="col-sm-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Developer Name
+                        <span>*</span>
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          [items]="developerOptions | async"
+                          required="true"
+                          name="developerId"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.developerId"
+                          [typeahead]="developerSearchInput$"
+                          bindLabel="value.ar"
+                          [minTermLength]="1"
+                          bindValue="key"
+                          [loading]="developerDataOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #developer="ngModel"
+                          (change)="resetProjectAndUnit()"
+                        >
+                        </ng-select>
+                      </div>
+                    </div>
 
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="custom-file">
-                          <input type="file"
-                            class="custom-file-input"
-                            name="upload"
-                            id="upload"
-                            multiple="false"
-                            (change)="updateControlLabel($event)"
-                            #ngModel="ngModel"
-                            [(ngModel)]="formData.upload"
-                            required="true"
-                            />
-                          <label class="custom-file-label" for="upload" #controlLabel>choose file</label>
-                        </div>
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Project Name
+                        <span>*</span>
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          
+                          required="true"
+                          [items]="projectsOptions | async"
+                          name="project"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.projectId"
+                          [minTermLength]="1"
+                          bindLabel="value.ar"
+                          typeToSearchText="Please enter 1 or more characters"
+                          bindValue="key"
+                          [typeahead]="projectsSearchInput$"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          [loading]="projectDataOptionsLoading"
+                          #project="ngModel"
+                          (change)="resetUnit()"
+                        >
+                        </ng-select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Unit ID
+                      </label>
+                      <div class="col-sm-9">
+                        <ng-select
+
+                          [items]="unitsOptions | async"
+                          required="false"
+                          name="units"
+                          [hideSelected]="true"
+                          [(ngModel)]="formData.unitId"
+                          [typeahead]="unitsSearchInput$"
+                          bindLabel="value.ar"
+                          [minTermLength]="1"
+                          bindValue="key"
+                          [loading]="unitsDataOptionsLoading"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          typeToSearchText="Please enter 1 or more characters"
+                          #unitId="ngModel"
+                        >
+                        </ng-select>
                       </div>
                     </div>
 
                   </div>
-                  <div class="col-sm-2">
-                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Upload</button>
+
+                  <div class="col-sm-6">
+                    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Registration Type</label>
+                      <div class="col-sm-9">
+                        <ng-select
+                          class="rtl"
+                          [items]="registrationTypeOptions"
+                          name="registrationType"
+                          [(ngModel)]="formData.registrationTypeId"
+                          bindLabel="value.ar"
+                          bindValue="key"
+                          notFoundText="لا يوجد نتائج للبحث"
+                          #registrationType="ngModel"
+                          [clearable]="false"
+                          >
+                          </ng-select>
+                      </div>
+                    </div>
                   </div>
+
                 </div>
               </div>
-              <!-- <div class="col-sm-12">
+              <div class="col-sm-12">
                 <div class="row ">
                   <div class="col-sm-12 text-center">
                     <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Search</button>
                   </div>
                 </div>
-              </div> -->
+              </div>
             </form>
           </div>
 
           <hr/>
 
-          <div class="resultsWrapper rtl" *ngIf="response">
+          <div class="resultsWrapper rtl" *ngIf="response?.length > 0">
             <div class="searchApplications">
               <div class="card">
                 <div class="card-header border-0">
@@ -74,14 +150,6 @@
                   <h3 class="card-title float-right font-weight-bold">Results:</h3>
                 </div>
                 <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <label >Project: </label><span>{{response.projectNameAr}}</span>
-                    </div>
-                    <div class="col-sm-6">
-                      <label >Developer: </label><span>{{response.developerNameAr}}</span>
-                    </div>
-                  </div>
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="row">
@@ -107,7 +175,7 @@
                     <div class="col-sm-6">
                       <div class="row">
                         <label class="col-sm-3 col-form-label">
-                          Registration Status:</label>
+                          Registration Type:</label>
                         <div class="col-sm-9">
                           <ng-select
                             class="rtl"
@@ -115,10 +183,9 @@
                             name="registrationStatus"
                             [(ngModel)]="filterData.registrationStatus"
                             bindLabel="value.ar"
-                            bindValue="key"
+                            bindValue="value.ar"
                             notFoundText="لا يوجد نتائج للبحث"
                             #registrationStatus="ngModel"
-                            (change)="filterResponse()"
                             [clearable]="false"
                           >
                           </ng-select>
@@ -175,7 +242,7 @@
                         <td>{{ i + 1}}</td>
                         <td>{{ item_detail?.unitNumber }}</td>
 
-                        <td>{{ item_detail?.unitNumber }}</td>
+                        <td>{{ getOwnersName(item_detail?.owners) }}</td>
 
                         <td>{{ item_detail?.meterTotalSoldArea }}</td>
                         <td>{{ item_detail?.meterNetSoldArea }}</td>
@@ -202,6 +269,37 @@
               <h4>No Unit data available</h4>
             </div>
           </div>
+
+          <!-- <form class="form-horizontal" (ngSubmit)="uploadExcel(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-sm-10">
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="custom-file">
+                          <input type="file"
+                            class="custom-file-input"
+                            name="upload"
+                            id="upload"
+                            multiple="false"
+                            (change)="updateControlLabel($event)"
+                            #ngModel="ngModel"
+                            [(ngModel)]="formData.upload"
+                            required="true"
+                            />
+                          <label class="custom-file-label" for="upload" #controlLabel>choose file</label>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Upload</button>
+                  </div>
+                </div>
+              </div>
+            </form> -->
         </div>
         <!-- /.card-body -->
       </div>
