@@ -70,7 +70,8 @@ export class UnitsValuationComponent implements OnInit {
 
   searchData(formData: any) {
     let fd = new FormData();
-    fd.append('data', JSON.stringify(formData));
+    let preparedData = this.prepareformData(formData)
+    fd.append('data', JSON.stringify(preparedData));
 
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/ApiGetUnitsPrices`, fd)
       .subscribe((data: any) => {
@@ -309,6 +310,14 @@ export class UnitsValuationComponent implements OnInit {
 
   isRoomsCountMandatory(valuation: any) {
     return ['1', '4'].includes(valuation.unitType) || [1, 4].includes(valuation.unitType)
+  }
+
+  prepareformData(data: any) {
+    return {
+      equal: _.pick(_.omitBy(data, _.isEmpty), ['developerId', 'projectId', 'unitId', 'unitType', 'roomsCount']),
+      less: _.pick(_.omitBy(data, _.isEmpty), ['endDate']),
+      greater: _.pick(_.omitBy(data, _.isEmpty), ['startDate'])
+    }
   }
 
 }
