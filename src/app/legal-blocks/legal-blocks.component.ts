@@ -455,6 +455,7 @@ export class LegalBlocksComponent implements OnInit {
           this.updateBlockData.attachments = undefined;
           await this.prepareBlockageTypesValueOptions(this.updateBlockData);
           await this.prepareBlockagesEntitiesValueOptions(this.updateBlockData);
+          this.ngxSmartModalService.getModal('updateBlockModal').open();
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -463,7 +464,6 @@ export class LegalBlocksComponent implements OnInit {
       this.toastr.error('Something went Wrong', 'Error')
       this.router.navigate(['error'])
     })
-    this.ngxSmartModalService.getModal('updateBlockModal').open();
   }
 
   async openRemoveBlockModal(blockage: any) {
@@ -475,6 +475,7 @@ export class LegalBlocksComponent implements OnInit {
           this.removeBlockData.attachments = undefined;
           await this.prepareBlockageTypesValueOptions(this.removeBlockData);
           await this.prepareBlockagesEntitiesValueOptions(this.removeBlockData);
+          this.ngxSmartModalService.getModal('removeBlockModal').open();
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -483,7 +484,6 @@ export class LegalBlocksComponent implements OnInit {
       this.toastr.error('Something went Wrong', 'Error')
       this.router.navigate(['error'])
     })
-    this.ngxSmartModalService.getModal('removeBlockModal').open();
   }
 
   addNewBlock(formData: any) {

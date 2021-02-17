@@ -143,13 +143,29 @@ export class UnitsValuationComponent implements OnInit {
 
   resetProjectAndUnit() {
     this.formData.projectId = null;
-    this.addValuationData.projectId = null;
-    this.updateValuationData.projectId = null;
     this.resetUnit();
+  }
+
+  resetProjectAndUnitAddModal() {
+    this.addValuationData.projectId = null;
+    this.resetUnitAddModal();
+  }
+
+  resetProjectAndUnitUpdateModal() {
+    this.updateValuationData.projectId = null;
+    this.resetUnitUpdateModal();
   }
 
   resetUnit() {
     this.formData.unitId = null;
+  }
+
+  resetUnitAddModal() {
+    this.addValuationData.unitId = null;
+  }
+
+  resetUnitUpdateModal() {
+    this.updateValuationData.unitId = null;
   }
 
   getOwnerClass(item: any) {
@@ -226,6 +242,7 @@ export class UnitsValuationComponent implements OnInit {
           this.updateValuationData = data.data;
           await this.prepareDeveloperValueOptions(this.updateValuationData);
           await this.prepareProjectValueOptions(this.updateValuationData);
+          this.ngxSmartModalService.getModal('updateValuationModal').open();
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -234,7 +251,6 @@ export class UnitsValuationComponent implements OnInit {
       this.toastr.error('Something went Wrong', 'Error')
       this.router.navigate(['error'])
     })
-    this.ngxSmartModalService.getModal('updateValuationModal').open();
   }
 
   addNewValuation(formData: any) {

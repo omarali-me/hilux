@@ -325,12 +325,12 @@
                   [loading]="developerDataOptionsLoading"
                   notFoundText="لا يوجد نتائج للبحث"
                   typeToSearchText="Please enter 1 or more characters"
-                  #developer="ngModel"
-                  (change)="resetProjectAndUnit()"
+                  #addDeveloper="ngModel"
+                  (change)="resetProjectAndUnitAddModal()"
                 >
                 </ng-select>
-                <div *ngIf="developer.invalid && (developer.dirty || developer.touched)" class="alert alert-danger">
-                  <div *ngIf="developer.errors?.required">
+                <div *ngIf="addDeveloper.invalid && (addDeveloper.dirty || addDeveloper.touched)" class="alert alert-danger">
+                  <div *ngIf="addDeveloper.errors?.required">
                     Developer Name can not be blank
                   </div>
                 </div>
@@ -358,13 +358,13 @@
                   [typeahead]="projectsSearchInput$"
                   notFoundText="لا يوجد نتائج للبحث"
                   [loading]="projectDataOptionsLoading"
-                  #project="ngModel"
-                  (change)="resetUnit()"
+                  #addProject="ngModel"
+                  (change)="resetUnitAddModal()"
                 >
                 </ng-select>
 
-                <div *ngIf="project.invalid && (project.dirty || project.touched)" class="alert alert-danger">
-                  <div *ngIf="project.errors?.required">
+                <div *ngIf="addProject.invalid && (addProject.dirty || addProject.touched)" class="alert alert-danger">
+                  <div *ngIf="addProject.errors?.required">
                     Project Name can not be blank
                   </div>
                 </div>
@@ -389,7 +389,7 @@
                   bindLabel="value.ar"
                   bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث"
-                  #unitType="ngModel"
+                  #addUnitType="ngModel"
                   >
                 </ng-select>
               </div>
@@ -482,13 +482,13 @@
                   [loading]="developerDataOptionsLoading"
                   notFoundText="لا يوجد نتائج للبحث"
                   typeToSearchText="Please enter 1 or more characters"
-                  #developer="ngModel"
-                  (change)="resetProjectAndUnit()"
+                  #updateDeveloper="ngModel"
+                  (change)="resetProjectAndUnitUpdateModal()"
                   disabled="true"
                 >
                 </ng-select>
-                <div *ngIf="developer.invalid && (developer.dirty || developer.touched)" class="alert alert-danger">
-                  <div *ngIf="developer.errors?.required">
+                <div *ngIf="updateDeveloper.invalid && (updateDeveloper.dirty || updateDeveloper.touched)" class="alert alert-danger">
+                  <div *ngIf="updateDeveloper.errors?.required">
                     Developer Name can not be blank
                   </div>
                 </div>
@@ -516,14 +516,14 @@
                   [typeahead]="projectsSearchInput$"
                   notFoundText="لا يوجد نتائج للبحث"
                   [loading]="projectDataOptionsLoading"
-                  #project="ngModel"
-                  (change)="resetUnit()"
+                  #updateProject="ngModel"
+                  (change)="resetUnitUpdateModal()"
                   disabled="true"
                 >
                 </ng-select>
 
-                <div *ngIf="project.invalid && (project.dirty || project.touched)" class="alert alert-danger">
-                  <div *ngIf="project.errors?.required">
+                <div *ngIf="updateProject.invalid && (updateProject.dirty || updateProject.touched)" class="alert alert-danger">
+                  <div *ngIf="updateProject.errors?.required">
                     Project Name can not be blank
                   </div>
                 </div>
