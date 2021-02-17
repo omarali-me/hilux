@@ -237,7 +237,7 @@
           <div class="resultsWrapper rtl" *ngIf="response">
             <div class="searchbyOwner" *ngIf="isOwnerResponse()">
               <label i18n="@@searchPageTableOwner">Owner:</label>
-              <table class="table table-bordered ownerTable">
+              <table class="table table-bordered ownerTable table-responsive">
                 <thead>
                   <tr class="bg-grey">
                     <th i18n="@@searchPageTableHeaderCustomerID">Customer ID</th>
@@ -282,7 +282,7 @@
                   <h3 class="card-title float-right font-weight-bold" i18n="@@searchPageTableCurrentlyOwnedLands">Currently Owned Lands</h3>
                 </div>
                 <div class="card-body">
-                  <table class="table table-bordered landTable bg-white">
+                  <table class="table table-bordered landTable bg-white table-responsive">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
@@ -346,7 +346,7 @@
                   <h3 class="card-title float-right font-weight-bold" i18n="@@searchPageTablePreviouslyOwnedLands">Previously Owned Lands</h3>
                 </div>
                 <div class="card-body">
-                  <table class="table table-bordered landTable bg-light-red">
+                  <table class="table table-bordered landTable bg-light-red table-responsive">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
@@ -411,7 +411,7 @@
                   <h3 class="card-title float-right font-weight-bold" i18n="@@searchPageTableCurrentlyOwnedUnits">Currently Owned Units</h3>
                 </div>
                 <div class="card-body">
-                  <table class="table table-bordered unitTable bg-white">
+                  <table class="table table-bordered unitTable bg-white table-responsive">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
@@ -470,7 +470,7 @@
                   <h3 class="card-title float-right font-weight-bold" i18n="@@searchPageTablePreviouslyOwnedUnits">Previously Owned Units</h3>
                 </div>
                 <div class="card-body">
-                  <table class="table table-bordered unitTable bg-light-red">
+                  <table class="table table-bordered unitTable bg-light-red table-responsive">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
@@ -522,7 +522,7 @@
   
             <div class="searchbyLand" *ngIf="isLandResponse()">
               <label i18n="@@searchPageTableLand">Land:</label>
-              <table class="table table-bordered landTable">
+              <table class="table table-bordered landTable table-responsive">
                 <thead>
                   <tr class="bg-grey">
                     <th i18n="@@searchPageTableHeaderLandID">Land ID</th>
@@ -577,7 +577,7 @@
                   <h3 class="card-title float-right font-weight-bold">{{getOwnerHeader(item)}}</h3>
                 </div>
                 <div class="card-body">
-                  <table class="table table-bordered ownerTable">
+                  <table class="table table-bordered ownerTable table-responsive">
                     <thead>
                       <tr class="bg-grey">
                         <th i18n="@@searchPageTableHeaderCustomerID">Customer ID</th>
@@ -623,7 +623,7 @@
                   <h3 class="card-title float-right font-weight-bold">{{getOwnerHeader(item)}}</h3>
                 </div>
                 <div class="card-body">
-                  <table class="table table-bordered ownerTable">
+                  <table class="table table-bordered ownerTable table-responsive">
                     <thead>
                       <tr class="bg-grey">
                         <th i18n="@@searchPageTableHeaderCustomerID">Customer ID</th>
@@ -662,7 +662,7 @@
             
             <div class="searchbyUnit" *ngIf="isUnitResponse()">
               <label i18n="@@searchPageTableRealEstateUnit">Real Estate Unit:</label>
-              <table class="table table-bordered unitTable">
+              <table class="table table-bordered unitTable table-responsive">
                 <thead>
                   <tr class="bg-grey">
                     <th i18n="@@searchPageTableHeaderUnitID">Unit ID</th>
@@ -714,7 +714,7 @@
                   <h3 class="card-title float-right font-weight-bold">{{getUnitOwnerHeader(item)}}</h3>
                 </div>
                 <div class="card-body">
-                  <table class="table table-bordered ownerTable">
+                  <table class="table table-bordered ownerTable table-responsive">
                     <thead>
                       <tr class="bg-grey">
                         <th i18n="@@searchPageTableHeaderCustomerID">Customer ID</th>
@@ -760,7 +760,7 @@
                   <h3 class="card-title float-right font-weight-bold">{{getUnitOwnerHeader(item)}}</h3>
                 </div>
                 <div class="card-body">
-                  <table class="table table-bordered ownerTable">
+                  <table class="table table-bordered ownerTable table-responsive">
                     <thead>
                       <tr class="bg-grey">
                         <th i18n="@@searchPageTableHeaderCustomerID">Customer ID</th>

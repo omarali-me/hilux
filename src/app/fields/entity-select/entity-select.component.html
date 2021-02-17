@@ -1,5 +1,5 @@
 <div class="form-group">
-  <table class="table table-bordered">
+  <table class="table table-bordered table-responsive">
     <thead>
       <tr *ngFor="let dataOption of dataOptions | slice:0:1">
         <th *ngFor="let pair of dataOption.rowFields | keyvalue">{{pair.key}}</th>
