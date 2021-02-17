@@ -338,10 +338,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .rtl .ml-auto, [dir=rtl] .ml-auto {
     margin-left: auto!important;
     margin-right: 0!important;
-}
-
-.custom-direction {
-    direction: ltr !important;
 } */
 
 .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
@@ -441,4 +437,8 @@ ngx-gallery-thumbnails {
 
 .success-green {
   color: var(--success);
+}
+
+.custom-direction {
+  direction: ltr !important;
 }

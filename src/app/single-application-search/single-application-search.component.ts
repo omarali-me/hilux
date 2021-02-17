@@ -470,4 +470,12 @@ export class SingleApplicationSearchComponent implements OnInit {
       return form_invalid
     }
   }
+
+  renderFieldValue(value: any) {
+    if (typeof(value) == 'object') {
+      return JSON.stringify(value);
+    } else {
+      return value;
+    }
+  }
 }
