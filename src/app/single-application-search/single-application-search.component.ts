@@ -376,7 +376,7 @@ export class SingleApplicationSearchComponent implements OnInit {
     if(!!params.projectId) {
       this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, { id: params.projectId })
       .subscribe((option)=> {
-        this.projectsSearchInput$.next(option.value && option.value.en);
+        this.projectsSearchInput$.next(option.value && option.value.ar);
       })
     }
   }
@@ -385,7 +385,7 @@ export class SingleApplicationSearchComponent implements OnInit {
     if(!!params.developerId) {
       this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/developers`, { id: params.developerId })
       .subscribe((option)=> {
-        this.developerSearchInput$.next(option.value && option.value.en);
+        this.developerSearchInput$.next(option.value && option.value.ar);
       })
     }
   }
@@ -394,7 +394,7 @@ export class SingleApplicationSearchComponent implements OnInit {
     if(!!params.landId) {
       this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/lands`, { id: params.landId })
       .subscribe((option)=> {
-        this.landSearchInput$.next(option.value && option.value.en);
+        this.landSearchInput$.next(option.value && option.value.ar);
       })
     }
   }
@@ -403,7 +403,7 @@ export class SingleApplicationSearchComponent implements OnInit {
     if(!!params.oldLandId) {
       this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/oldLands`, { id: params.oldLandId })
       .subscribe((option)=> {
-        this.oldLandSearchInput$.next(option.value && option.value.en);
+        this.oldLandSearchInput$.next(option.value && option.value.ar);
       })
     }
   }
