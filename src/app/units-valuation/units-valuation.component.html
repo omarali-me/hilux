@@ -397,6 +397,44 @@
           </div>
 
           <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Unit ID</label>
+              <div class="col-sm-9">
+                <ng-select
+                  required="false"
+                  [items]="unitsOptions"
+                  name="units"
+                  [(ngModel)]="addValuationData.unitId"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  #unitId="ngModel"
+                  (open)="loadUnitsOptions()"
+                >
+                </ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Price per sq. m
+              </label>
+              <div class="col-sm-9">
+                <input name="pricePerSqm"
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="addValuationData.tathmeenPrice"
+                  #pricePerSqm="ngModel"
+                  numbersOnly precision="2"
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
             <div class="form-group row" *ngIf="showRoomsCount(addValuationData)">
               <label class="col-sm-3 col-form-label">Rooms Count
                 <span *ngIf="isRoomsCountMandatory(addValuationData)">*</span>
@@ -417,27 +455,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Price per sq. m
-              </label>
-              <div class="col-sm-9">
-                <input name="pricePerSqm"
-                  type="text"
-                  class="form-control"
-                  [(ngModel)]="addValuationData.pricePerSqm"
-                  #pricePerSqm="ngModel"
-                  numbersOnly precision="2"
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
           </div>
         </div>
       </div>

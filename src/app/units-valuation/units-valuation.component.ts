@@ -242,6 +242,7 @@ export class UnitsValuationComponent implements OnInit {
           this.updateValuationData = data.data;
           await this.prepareDeveloperValueOptions(this.updateValuationData);
           await this.prepareProjectValueOptions(this.updateValuationData);
+          await this.prepareUnitValueOptions(this.updateValuationData);
           this.ngxSmartModalService.getModal('updateValuationModal').open();
         } else {
           this.formErrors = data.data;
@@ -255,14 +256,17 @@ export class UnitsValuationComponent implements OnInit {
 
   addNewValuation(formData: any) {
     let fd = new FormData();
-    fd.append('data', JSON.stringify(formData));
+    let preparedData = this.prepareformData(formData)
+    preparedData = Object.assign({}, { query: _.omitBy(preparedData, _.isEmpty) }, _.pick(_.omitBy(formData, _.isEmpty), ['tathmeenPrice']))
+    fd.append('data', JSON.stringify(preparedData));
 
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/ApiUpdateUnitPrice`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/ApiUpdateUnitsPrices`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.ngxSmartModalService.closeLatestModal();
           this.searchData(formData);
           this.addValuationData = {};
+          this.toastr.success(JSON.stringify(data.data), 'Success')
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
