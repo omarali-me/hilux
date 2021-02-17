@@ -227,21 +227,21 @@
                       <ng-container *ngFor="let item_detail of response; let i = index">
                         <tr>
                           <td>{{ i + 1}}</td>
-                          <td>{{ item_detail?.typeAr }}</td>
+                          <td>{{ item_detail?.developerNameAr }}</td>
                           <td>{{ item_detail?.projectNameAr }}</td>
-                          <td>{{ item_detail?.id }}</td>
+                          <td>{{ item_detail?.UnitNumber }}</td>
 
-                          <td>{{ item_detail?.id }}</td>
-                          <td>{{ item_detail?.id }}</td>
-                          <td>{{ item_detail?.id }}</td>
+                          <td>{{ item_detail?.unitType }}</td>
+                          <td>{{ item_detail?.roomsCount }}</td>
+                          <td>{{ item_detail?.area }}</td>
 
-                          <td>{{ item_detail?.id }}</td>
-                          <td>{{ item_detail?.id }}</td>
+                          <td>{{ item_detail?.unitPrice }}</td>
+                          <td>{{ item_detail?.pricePerSqm }}</td>
 
                           <td>{{ item_detail?.tathmeenPrice }}</td>
 
                           <td>{{ item_detail?.tathmeenDate }}</td>
-                          <td>{{ item_detail?.endedByNameAr }}</td>
+                          <td>{{ item_detail?.tathmeenBy }}</td>
                           <td>
                             <div class="d-flex">
                               <a href="javascript:void(0);" class="fs-30 p-1 icon-pointer" (click)="toggleActiveValuation(item_detail)" *ngIf="item_detail.allTathemeens.length > 0">
@@ -256,21 +256,21 @@
                         <ng-container *ngIf="item_detail.allTathemeens.length > 0">
                           <tr [class]="getPreviousTehmeenClass(item_detail)" *ngFor="let previous_item of item_detail.allTathemeens; let j = index">
                             <td>{{ j + 1}}</td>
-                            <td>{{ previous_item?.typeAr }}</td>
+                            <td>{{ previous_item?.developerNameAr }}</td>
                             <td>{{ previous_item?.projectNameAr }}</td>
-                            <td>{{ previous_item?.id }}</td>
+                            <td>{{ previous_item?.UnitNumber }}</td>
 
-                            <td>{{ previous_item?.id }}</td>
-                            <td>{{ previous_item?.id }}</td>
-                            <td>{{ previous_item?.id }}</td>
+                            <td>{{ previous_item?.unitType }}</td>
+                            <td>{{ previous_item?.roomsCount }}</td>
+                            <td>{{ previous_item?.area }}</td>
 
-                            <td>{{ previous_item?.id }}</td>
-                            <td>{{ previous_item?.id }}</td>
+                            <td>{{ previous_item?.unitPrice }}</td>
+                            <td>{{ previous_item?.pricePerSqm }}</td>
 
                             <td>{{ previous_item?.tathmeenPrice }}</td>
 
                             <td>{{ previous_item?.tathmeenDate }}</td>
-                            <td>{{ previous_item?.endedByNameAr }}</td>
+                            <td>{{ previous_item?.tathmeenBy }}</td>
                             <td></td>
                           </tr>
                         </ng-container>
@@ -426,11 +426,11 @@
               <label class="col-sm-3 col-form-label">Price per sq. m
               </label>
               <div class="col-sm-9">
-                <input name="pricePerSqM"
+                <input name="pricePerSqm"
                   type="text"
                   class="form-control"
-                  [(ngModel)]="addValuationData.pricePerSqM"
-                  #pricePerSqM="ngModel"
+                  [(ngModel)]="addValuationData.pricePerSqm"
+                  #pricePerSqm="ngModel"
                   numbersOnly precision="2"
                 >
               </div>
