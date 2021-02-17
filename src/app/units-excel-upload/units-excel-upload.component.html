@@ -50,7 +50,9 @@
                         </ng-select>
                       </div>
                     </div>
+                  </div>
 
+                  <div class="col-sm-6">
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Project Name
                         <span>*</span>
@@ -76,52 +78,6 @@
                         </ng-select>
                       </div>
                     </div>
-
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Unit ID
-                      </label>
-                      <div class="col-sm-9">
-                        <ng-select
-
-                          [items]="unitsOptions | async"
-                          required="false"
-                          name="units"
-                          [hideSelected]="true"
-                          [(ngModel)]="formData.unitId"
-                          [typeahead]="unitsSearchInput$"
-                          bindLabel="value.ar"
-                          [minTermLength]="1"
-                          bindValue="key"
-                          [loading]="unitsDataOptionsLoading"
-                          notFoundText="لا يوجد نتائج للبحث"
-                          typeToSearchText="Please enter 1 or more characters"
-                          #unitId="ngModel"
-                        >
-                        </ng-select>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <div class="col-sm-6">
-                    
-                    <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Registration Type</label>
-                      <div class="col-sm-9">
-                        <ng-select
-                          class="rtl"
-                          [items]="registrationTypeOptions"
-                          name="registrationType"
-                          [(ngModel)]="formData.registrationTypeId"
-                          bindLabel="value.ar"
-                          bindValue="key"
-                          notFoundText="لا يوجد نتائج للبحث"
-                          #registrationType="ngModel"
-                          [clearable]="false"
-                          >
-                          </ng-select>
-                      </div>
-                    </div>
                   </div>
 
                 </div>
@@ -137,6 +93,47 @@
           </div>
 
           <hr/>
+
+          <form class="form-horizontal" (ngSubmit)="uploadExcel(formData)" #uf="ngForm" enctype='multipart/form-data' novalidate>
+            <div class="col-sm-12 mt-3">
+              <div class="row">
+                <div class="col-sm-10">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <label> تفاصيل الوحدات العقارية
+                        <span>*</span>
+                      </label>
+                    </div>
+                    <div class="col-sm-9">
+                      <div class="custom-file">
+                        <input type="file"
+                          class="custom-file-input"
+                          name="upload"
+                          id="upload"
+                          multiple="false"
+                          (change)="updateControlLabel($event)"
+                          #ngModel="ngModel"
+                          [(ngModel)]="uploadData.upload"
+                          accept=".xlsx, .xls, .zip"
+                          required="true"
+                          />
+                        <label class="custom-file-label" for="upload" #controlLabel>choose file</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                  <button type="submit" class="btn btn-primary" [disabled]="uf.invalid">Upload</button>
+                </div>
+              </div>
+
+              <div class="row">
+                <a [href]="getExcelLink()" target="_blank">units.xlsx</a>
+              </div>
+            </div>
+          </form>
+
+          <hr />
 
           <div class="resultsWrapper rtl" *ngIf="response?.length > 0">
             <div class="searchApplications">
@@ -259,42 +256,6 @@
                       </tr>
                     </tbody>
                   </table>
-
-                  <form class="form-horizontal" (ngSubmit)="uploadExcel(formData)" #uf="ngForm" enctype='multipart/form-data' novalidate>
-                    <div class="col-sm-12 mt-3">
-                      <div class="row">
-                        <div class="col-sm-10">
-
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <div class="custom-file">
-                                <input type="file"
-                                  class="custom-file-input"
-                                  name="upload"
-                                  id="upload"
-                                  multiple="false"
-                                  (change)="updateControlLabel($event)"
-                                  #ngModel="ngModel"
-                                  [(ngModel)]="uploadData.upload"
-                                  accept=".xlsx, .xls, .zip"
-                                  required="true"
-                                  />
-                                <label class="custom-file-label" for="upload" #controlLabel>choose file</label>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <a [href]="getExcelLink()" target="_blank">units.xlsx</a>
-                          </div>
-
-                        </div>
-                        <div class="col-sm-2">
-                          <button type="submit" class="btn btn-primary" [disabled]="uf.invalid">Upload</button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
                 </div>
               </div>
 
