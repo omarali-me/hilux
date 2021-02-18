@@ -96,6 +96,7 @@ export class UnitsValuationComponent implements OnInit {
   }
 
   loadUnitsOptions(data?: any) {
+    data = data || this.formData;
     this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/units`, { projectId: data.projectId })
       .subscribe((data) => {
         this.unitsOptions = data;
@@ -263,10 +264,20 @@ export class UnitsValuationComponent implements OnInit {
     }
   }
 
-  prepareUnitValueOptions(params: any) {
-    if(!!params.unitId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/units`, { id: params.unitId })
+  prepareModalProjectValueOptions(params: any) {
+    if(!!params.projectId) {
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, { id: params.projectId })
       .subscribe((option)=> {
+        this.modalProjectsSearchInput$.next(option.value && option.value.ar);
+      })
+    }
+  }
+
+  prepareModalDeveloperValueOptions(params: any) {
+    if(!!params.developerId) {
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/developers`, { id: params.developerId })
+      .subscribe((option)=> {
+        this.modalDeveloperSearchInput$.next(option.value && option.value.ar);
       })
     }
   }
@@ -280,9 +291,8 @@ export class UnitsValuationComponent implements OnInit {
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.updateValuationData = data.data;
-          await this.prepareDeveloperValueOptions(this.updateValuationData);
-          await this.prepareProjectValueOptions(this.updateValuationData);
-          await this.prepareUnitValueOptions(this.updateValuationData);
+          await this.prepareModalDeveloperValueOptions(this.updateValuationData);
+          await this.prepareModalProjectValueOptions(this.updateValuationData);
           this.ngxSmartModalService.getModal('updateValuationModal').open();
         } else {
           this.formErrors = data.data;
@@ -310,7 +320,6 @@ export class UnitsValuationComponent implements OnInit {
           this.formData.projectId = valuationData.projectId;
           await this.prepareProjectValueOptions(valuationData);
           this.formData.unitId = valuationData.unitId;
-          await this.prepareUnitValueOptions(valuationData);
           this.formData.unitTypeId = valuationData.unitTypeId;
           this.formData.roomsCount = valuationData.roomsCount;
           this.addValuationData = {};
