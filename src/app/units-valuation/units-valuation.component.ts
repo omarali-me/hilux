@@ -42,6 +42,12 @@ export class UnitsValuationComponent implements OnInit {
   searchby: any;
   minDate: any;
   activeValuationRow: any;
+  modalProjectsOptions: Observable<any>;
+  modalDeveloperOptions: Observable<any>;
+  modalDeveloperSearchInput$ = new Subject<string>();
+  modalProjectsSearchInput$ = new Subject<string>();
+  modalProjectDataOptionsLoading = false;
+  modalDeveloperDataOptionsLoading = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -55,10 +61,12 @@ export class UnitsValuationComponent implements OnInit {
 
   ngOnInit(): void {
     this.minDate = new Date();
-    this.loadUnitsOptions();
+    this.loadUnitsOptions(this.formData);
     this.loadDeveloperOptions();
     this.loadProjectsOptions();
-    this.loadUnitTypesOptions()
+    this.loadUnitTypesOptions();
+    this.loadModalDeveloperOptions();
+    this.loadModalProjectsOptions();
 
     // this.route.queryParams.subscribe(async (params) => {
     //   if (!_.isEqual(params, {})) {
@@ -87,8 +95,8 @@ export class UnitsValuationComponent implements OnInit {
       });
   }
 
-  loadUnitsOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/units`, { projectId: this.formData.projectId })
+  loadUnitsOptions(data?: any) {
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/units`, { projectId: data.projectId })
       .subscribe((data) => {
         this.unitsOptions = data;
       })
@@ -127,6 +135,38 @@ export class UnitsValuationComponent implements OnInit {
           return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, { term, developerId: this.formData.developerId }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.projectDataOptionsLoading = false)
+          )
+        })
+      )
+    );
+  }
+
+  loadModalDeveloperOptions() {
+    this.modalDeveloperOptions = concat(
+      of([]), // default items
+      this.modalDeveloperSearchInput$.pipe(
+        distinctUntilChanged(),
+        tap(() => this.modalDeveloperDataOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/developers`, { term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.modalDeveloperDataOptionsLoading = false)
+          )
+        })
+      )
+    );
+  }
+
+  loadModalProjectsOptions() {
+    this.modalProjectsOptions = concat(
+      of([]), // default items
+      this.modalProjectsSearchInput$.pipe(
+        distinctUntilChanged(),
+        tap(() => this.modalProjectDataOptionsLoading = true),
+        switchMap(term => {
+          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, { term, developerId: this.addValuationData.developerId }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.modalProjectDataOptionsLoading = false)
           )
         })
       )

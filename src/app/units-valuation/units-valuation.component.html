@@ -91,7 +91,7 @@
                           bindValue="key"
                           notFoundText="لا يوجد نتائج للبحث"
                           #unitId="ngModel"
-                          (open)="loadUnitsOptions()"
+                          (open)="loadUnitsOptions(formData)"
                         >
                         </ng-select>
                       </div>
@@ -313,16 +313,16 @@
               <div class="col-sm-9">
                 <ng-select
                   
-                  [items]="developerOptions | async"
+                  [items]="modalDeveloperOptions | async"
                   required="true"
                   name="developerId"
                   [hideSelected]="true"
                   [(ngModel)]="addValuationData.developerId"
-                  [typeahead]="developerSearchInput$"
+                  [typeahead]="modalDeveloperSearchInput$"
                   bindLabel="value.ar"
                   [minTermLength]="1"
                   bindValue="key"
-                  [loading]="developerDataOptionsLoading"
+                  [loading]="modalDeveloperDataOptionsLoading"
                   notFoundText="لا يوجد نتائج للبحث"
                   typeToSearchText="Please enter 1 or more characters"
                   #addDeveloper="ngModel"
@@ -347,7 +347,7 @@
                 <ng-select
 
                   required="true"
-                  [items]="projectsOptions | async"
+                  [items]="modalProjectsOptions | async"
                   name="project"
                   [hideSelected]="true"
                   [(ngModel)]="addValuationData.projectId"
@@ -355,9 +355,9 @@
                   bindLabel="value.ar"
                   typeToSearchText="Please enter 1 or more characters"
                   bindValue="key"
-                  [typeahead]="projectsSearchInput$"
+                  [typeahead]="modalProjectsSearchInput$"
                   notFoundText="لا يوجد نتائج للبحث"
-                  [loading]="projectDataOptionsLoading"
+                  [loading]="modalProjectDataOptionsLoading"
                   #addProject="ngModel"
                   (change)="resetUnitAddModal()"
                 >
@@ -409,7 +409,7 @@
                   bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث"
                   #unitId="ngModel"
-                  (open)="loadUnitsOptions()"
+                  (open)="loadUnitsOptions(addValuationData)"
                 >
                 </ng-select>
               </div>
