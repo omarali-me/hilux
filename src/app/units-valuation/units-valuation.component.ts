@@ -254,17 +254,20 @@ export class UnitsValuationComponent implements OnInit {
     })
   }
 
-  addNewValuation(formData: any) {
+  addNewValuation(valuationData: any) {
     let fd = new FormData();
-    let preparedData = this.prepareformData(formData)
-    preparedData = Object.assign({}, { query: _.omitBy(preparedData, _.isEmpty) }, _.pick(_.omitBy(formData, _.isEmpty), ['tathmeenPrice']))
+    let preparedData = this.prepareformData(valuationData)
+    preparedData = Object.assign({}, { query: _.omitBy(preparedData, _.isEmpty) }, _.pick(_.omitBy(valuationData, _.isEmpty), ['tathmeenPrice']))
     fd.append('data', JSON.stringify(preparedData));
 
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/ApiUpdateUnitsPrices`, fd)
-      .subscribe((data: any) => {
+      .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.ngxSmartModalService.closeLatestModal();
-          this.searchData(formData);
+          this.searchData(valuationData);
+          await this.prepareDeveloperValueOptions(valuationData);
+          await this.prepareProjectValueOptions(valuationData);
+          await this.prepareUnitValueOptions(valuationData);
           this.addValuationData = {};
           this.toastr.success(JSON.stringify(data.data), 'Success')
         } else {
