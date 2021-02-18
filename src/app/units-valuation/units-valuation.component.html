@@ -487,16 +487,16 @@
               <div class="col-sm-9">
                 <ng-select
                   
-                  [items]="developerOptions | async"
+                  [items]="modalDeveloperOptions | async"
                   required="true"
                   name="developerId"
                   [hideSelected]="true"
                   [(ngModel)]="updateValuationData.developerId"
-                  [typeahead]="developerSearchInput$"
+                  [typeahead]="modalDeveloperSearchInput$"
                   bindLabel="value.ar"
                   [minTermLength]="1"
                   bindValue="key"
-                  [loading]="developerDataOptionsLoading"
+                  [loading]="modalDeveloperDataOptionsLoading"
                   notFoundText="لا يوجد نتائج للبحث"
                   typeToSearchText="Please enter 1 or more characters"
                   #updateDeveloper="ngModel"
@@ -522,7 +522,7 @@
                 <ng-select
 
                   required="true"
-                  [items]="projectsOptions | async"
+                  [items]="modalProjectsOptions | async"
                   name="project"
                   [hideSelected]="true"
                   [(ngModel)]="updateValuationData.projectId"
@@ -530,9 +530,9 @@
                   bindLabel="value.ar"
                   typeToSearchText="Please enter 1 or more characters"
                   bindValue="key"
-                  [typeahead]="projectsSearchInput$"
+                  [typeahead]="modalProjectsSearchInput$"
                   notFoundText="لا يوجد نتائج للبحث"
-                  [loading]="projectDataOptionsLoading"
+                  [loading]="modalProjectDataOptionsLoading"
                   #updateProject="ngModel"
                   (change)="resetUnitUpdateModal()"
                   disabled="true"
