@@ -305,9 +305,14 @@ export class UnitsValuationComponent implements OnInit {
         if (data.status == 'success') {
           this.ngxSmartModalService.closeLatestModal();
           this.searchData(valuationData);
+          this.formData.developerId = valuationData.developerId;
           await this.prepareDeveloperValueOptions(valuationData);
+          this.formData.projectId = valuationData.projectId;
           await this.prepareProjectValueOptions(valuationData);
+          this.formData.unitId = valuationData.unitId;
           await this.prepareUnitValueOptions(valuationData);
+          this.formData.unitTypeId = valuationData.unitTypeId;
+          this.formData.roomsCount = valuationData.roomsCount;
           this.addValuationData = {};
           this.toastr.success(JSON.stringify(data.data), 'Success')
         } else {
@@ -370,11 +375,11 @@ export class UnitsValuationComponent implements OnInit {
   }
 
   showRoomsCount(valuation: any) {
-    return ['1', '2', '4', '26'].includes(valuation.unitType) || [1, 2, 4, 26].includes(valuation.unitType)
+    return ['1', '2', '4', '26'].includes(valuation.unitTypeId) || [1, 2, 4, 26].includes(valuation.unitTypeId)
   }
 
   isRoomsCountMandatory(valuation: any) {
-    return ['1', '4'].includes(valuation.unitType) || [1, 4].includes(valuation.unitType)
+    return ['1', '4'].includes(valuation.unitTypeId) || [1, 4].includes(valuation.unitTypeId)
   }
 
   prepareformData(data: any) {

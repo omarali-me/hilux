@@ -442,3 +442,8 @@ ngx-gallery-thumbnails {
 .custom-direction {
   direction: ltr !important;
 }
+
+.custom-table-class {
+  flex: none;
+  overflow-x: auto;
+}

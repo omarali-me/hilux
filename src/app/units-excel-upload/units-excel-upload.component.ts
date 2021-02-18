@@ -93,6 +93,7 @@ export class UnitsExcelUploadComponent implements OnInit {
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.resetUploadControl();
+          this.toastr.success(JSON.stringify(data.data), 'Success')
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error');
