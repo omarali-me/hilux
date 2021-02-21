@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="m-2 text-dark">
-          <h1>Units Excel Upload</h1>
+          <h1 i18n="@@unitsExcelUploadHeader">Units Excel Upload</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -26,7 +26,7 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Developer Name
+                      <label class="col-sm-3 col-form-label" i18n="@@unitsExcelUploadDeveloperName">Developer Name
                         <span>*</span>
                       </label>
                       <div class="col-sm-9">
@@ -54,7 +54,7 @@
 
                   <div class="col-sm-6">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Project Name
+                      <label class="col-sm-3 col-form-label" i18n="@@unitsExcelUploadProjectName">Project Name
                         <span>*</span>
                       </label>
                       <div class="col-sm-9">
@@ -85,7 +85,7 @@
               <div class="col-sm-12">
                 <div class="row ">
                   <div class="col-sm-12 text-center">
-                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Search</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="f.invalid" i18n="@@unitsExcelUploadSearch">Search</button>
                   </div>
                 </div>
               </div>
@@ -123,7 +123,7 @@
                   </div>
                 </div>
                 <div class="col-sm-2">
-                  <button type="submit" class="btn btn-primary" [disabled]="uf.invalid">Upload</button>
+                  <button type="submit" class="btn btn-primary" [disabled]="uf.invalid" i18n="@@unitsExcelUploadUpload">Upload</button>
                 </div>
               </div>
 
@@ -144,13 +144,13 @@
                         <i class="fas fa-minus"></i>
                     </button>
                   </div>
-                  <h3 class="card-title float-right font-weight-bold">Results:</h3>
+                  <h3 class="card-title float-right font-weight-bold" i18n="@@unitsExcelUploadResults">Results:</h3>
                 </div>
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="row">
-                        <label class="col-sm-3 col-form-label">
+                        <label class="col-sm-3 col-form-label" i18n="@@unitsExcelUploadUnitNumber">
                           Unit Number:</label>
                         <div class="col-sm-9">
                           <ng-select
@@ -171,7 +171,7 @@
                     </div>
                     <div class="col-sm-6">
                       <div class="row">
-                        <label class="col-sm-3 col-form-label">
+                        <label class="col-sm-3 col-form-label" i18n="@@unitsExcelUploadRegistrationType">
                           Registration Type:</label>
                         <div class="col-sm-9">
                           <ng-select
@@ -193,7 +193,7 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="row">
-                        <label class="col-sm-3 col-form-label">
+                        <label class="col-sm-3 col-form-label" i18n="@@unitsExcelUploadMeterTotalSoldArea">
                           Meter Total Sold Area:</label>
                         <div class="col-sm-9">
                           <ng-select
@@ -221,17 +221,17 @@
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
-                        <th>Unit Number</th>
-                        <th>Owner Name</th>
-                        <th>Meter Total Sold Area</th>
-                        <th>Meter Net Sold Area</th>
-                        <th>Meter Total Actual Area</th>
-                        <th>Meter Net Actual Area</th>
-                        <th>Site Plan</th>
-                        <th>Payment Percentage</th>
-                        <th>Unit Use</th>
-                        <th>Unit Type</th>
-                        <th>Registration Status</th>
+                        <th i18n="@@unitsExcelUploadTableUnitNumber">Unit Number</th>
+                        <th i18n="@@unitsExcelUploadTableOwnerName">Owner Name</th>
+                        <th i18n="@@unitsExcelUploadTableMeterTotalSoldArea">Meter Total Sold Area</th>
+                        <th i18n="@@unitsExcelUploadTableMeterNetSoldArea">Meter Net Sold Area</th>
+                        <th i18n="@@unitsExcelUploadTableMeterTotalActualArea">Meter Total Actual Area</th>
+                        <th i18n="@@unitsExcelUploadTableMeterNetActualArea">Meter Net Actual Area</th>
+                        <th i18n="@@unitsExcelUploadTableSitePlan">Site Plan</th>
+                        <th i18n="@@unitsExcelUploadTablePaymentPercentage">Payment Percentage</th>
+                        <th i18n="@@unitsExcelUploadTableUnitUse">Unit Use</th>
+                        <th i18n="@@unitsExcelUploadTableUnitType">Unit Type</th>
+                        <th i18n="@@unitsExcelUploadTableRegistrationStatus">Registration Status</th>
                       </tr>
                     </thead>
                     <tbody>

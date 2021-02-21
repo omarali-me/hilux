@@ -4533,6 +4533,554 @@
           <context context-type="linenumber">451</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="applicationSearchHeaderApplicationSearch" datatype="html">
+        <source>Application Search</source>
+        <target>Application Search Arabic</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchApplicationId" datatype="html">
+        <source>Application ID
+                      </source>
+        <target>رقم المعاملة
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchServiceName" datatype="html">
+        <source>Service Name
+                      </source>
+        <target>الخدمة
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchApplicationSource" datatype="html">
+        <source>Application Source
+                      </source>
+        <target>مصدر المعاملة
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchApplicationDate" datatype="html">
+        <source>Application Date</source>
+        <target>تاريخ المعاملة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchFromDate" datatype="html">
+        <source>From Date</source>
+        <target>من</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchToDate" datatype="html">
+        <source>To Date</source>
+        <target>إلى</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchLandId" datatype="html">
+        <source>Land ID
+                      </source>
+        <target>رقم الأرض
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchOldLandId" datatype="html">
+        <source>Old Land ID
+                      </source>
+        <target>رقم الأرض القديم
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">146</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchDeveloperName" datatype="html">
+        <source>Developer Name
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <target>المطور العقاري
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">171</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchProjectName" datatype="html">
+        <source>Project Name
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <target>مشروع التطوير العقاري
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">199</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchUnitId" datatype="html">
+        <source>Unit ID
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <target>رقم الوحدة العقارية
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">227</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchLands" datatype="html">
+        <source>
+                            lands
+                          </source>
+        <target>
+                            عقارات
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">257</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchUnits" datatype="html">
+        <source>
+                            Units
+                          </source>
+        <target>
+                            وحدات عقارية
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">272</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchOwner" datatype="html">
+        <source>Owner
+                      </source>
+        <target>المالك
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">283</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchOwnerId" datatype="html">
+        <source>Owner ID
+                      </source>
+        <target>الرقم المعرف
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">307</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchCurrentOwner" datatype="html">
+        <source>
+                            Current Owner
+                          </source>
+        <target>
+                            مالك حالي
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">331</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchPreviousOwner" datatype="html">
+        <source>
+                            Previous Owner
+                          </source>
+        <target>
+                            مالك سابق
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">346</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchContractId" datatype="html">
+        <source>Contract ID
+                      </source>
+        <target>رقم العقد
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">354</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchReceiptId" datatype="html">
+        <source>Receipt ID
+                      </source>
+        <target>رقم الايصال
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">368</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchSearch" datatype="html">
+        <source>Search</source>
+        <target>بحث</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">387</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchSearchResults" datatype="html">
+        <source>Search Results:</source>
+        <target>Search Results:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">405</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchTableApplicationSource" datatype="html">
+        <source>Application Source</source>
+        <target>مصدر المعاملة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">412</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchTableApplicationId" datatype="html">
+        <source>Application Id</source>
+        <target>رقم المعاملة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">413</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchTableServiceName" datatype="html">
+        <source>Service Name</source>
+        <target>الخدمة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">414</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchTableLandId" datatype="html">
+        <source>Land ID</source>
+        <target>رقم الأرض</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">415</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchTableDeveloperName" datatype="html">
+        <source>Developer Name</source>
+        <target>المطور العقاري</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">416</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchTableProjectName" datatype="html">
+        <source>Project Name</source>
+        <target>مشروع التطوير العقاري</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">417</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchTableUnitId" datatype="html">
+        <source>Unit ID</source>
+        <target>رقم الوحدة العقارية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">418</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchTableApplicationDate" datatype="html">
+        <source>Application Date</source>
+        <target>تاريخ المعاملة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">419</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchTableAdditionalInfo" datatype="html">
+        <source>Additional Info</source>
+        <target>بيانات اضافية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">420</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchTableApplicationStatus" datatype="html">
+        <source>Application Status</source>
+        <target>حالة المعاملة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">421</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchTableReservedBy" datatype="html">
+        <source>Reserved By</source>
+        <target>محجوزة لدى</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">422</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicationSearchTableWaitingForActionFrom" datatype="html">
+        <source>Waiting For Action From</source>
+        <target>بانتظار اجراء</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">423</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadHeader" datatype="html">
+        <source>Units Excel Upload</source>
+        <target>Units Excel Upload</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadDeveloperName" datatype="html">
+        <source>Developer Name
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <target>اسم المطور العقاري
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadProjectName" datatype="html">
+        <source>Project Name
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <target>اسم مشروع التطوير العقاري
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadSearch" datatype="html">
+        <source>Search</source>
+        <target>بحث</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadUpload" datatype="html">
+        <source>Upload</source>
+        <target>رفع</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadResults" datatype="html">
+        <source>Results:</source>
+        <target>Results:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">147</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadUnitNumber" datatype="html">
+        <source>
+                          Unit Number:</source>
+        <target>
+                          رقم الوحدة العقارية:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadRegistrationType" datatype="html">
+        <source>
+                          Registration Type:</source>
+        <target>
+                          حالة التسجيل:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">174</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadMeterTotalSoldArea" datatype="html">
+        <source>
+                          Meter Total Sold Area:</source>
+        <target>
+                          المساحة الاجمالية المباعة:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">196</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadTableUnitNumber" datatype="html">
+        <source>Unit Number</source>
+        <target>رقم الوحدة العقاري</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">224</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadTableOwnerName" datatype="html">
+        <source>Owner Name</source>
+        <target>اسم المالك</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">225</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadTableMeterTotalSoldArea" datatype="html">
+        <source>Meter Total Sold Area</source>
+        <target>المساحة الصافية المباعة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">226</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadTableMeterNetSoldArea" datatype="html">
+        <source>Meter Net Sold Area</source>
+        <target>المساحة الاجمالية المباعة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">227</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadTableMeterTotalActualArea" datatype="html">
+        <source>Meter Total Actual Area</source>
+        <target>المساحة الصافية الفعلية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">228</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadTableMeterNetActualArea" datatype="html">
+        <source>Meter Net Actual Area</source>
+        <target>المساحة الاجمالية الفعلية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">229</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadTableSitePlan" datatype="html">
+        <source>Site Plan</source>
+        <target>المخطط</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">230</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadTablePaymentPercentage" datatype="html">
+        <source>Payment Percentage</source>
+        <target>نسبة السداد</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">231</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadTableUnitUse" datatype="html">
+        <source>Unit Use</source>
+        <target>استخدام الوحدة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">232</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadTableUnitType" datatype="html">
+        <source>Unit Type</source>
+        <target>نوع الوحدة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">233</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsExcelUploadTableRegistrationStatus" datatype="html">
+        <source>Registration Status</source>
+        <target>حالة التسجيل</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
+          <context context-type="linenumber">234</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="singleApplicationHeaderApplicationSearch" datatype="html">
+        <source>Application Search</source>
+        <target>Application Search arabic</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/single-application-search/single-application-search.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="singleApplicationServiceNameLabel" datatype="html">
+        <source>Service Name: </source>
+        <target>الخدمة: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/single-application-search/single-application-search.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="singleApplicationApplicationIdLabel" datatype="html">
+        <source>Application ID: </source>
+        <target>رقم المعاملة:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/single-application-search/single-application-search.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="singleApplicationChannelLabel" datatype="html">
+        <source>Channel: </source>
+        <target>مصدر المعاملة:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/single-application-search/single-application-search.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="singleApplicationStepStatusLabel" datatype="html">
+        <source>Step Status:</source>
+        <target>اسم الخطوة:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/single-application-search/single-application-search.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="singleApplicationSearchFieldname" datatype="html">
+        <source>Field name</source>
+        <target>Field name arabic</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/single-application-search/single-application-search.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="singleApplicationSearchFieldValue" datatype="html">
+        <source>Field Value</source>
+        <target>Field Value arabic</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/single-application-search/single-application-search.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

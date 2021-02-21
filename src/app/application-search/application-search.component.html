@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="m-2 text-dark">
-          <h1>Application</h1>
+          <h1 i18n="@@applicationSearchHeaderApplicationSearch">Application Search</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -26,7 +26,7 @@
                 <div class="row">
                   <div class="col-sm-4">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Application ID
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchApplicationId">Application ID
                       </label>
                       <div class="col-sm-9">
                         <input name="applicationID"
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Service Name
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchServiceName">Service Name
                       </label>
                       <div class="col-sm-9">
                         <ng-select
@@ -60,7 +60,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Application Source
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchApplicationSource">Application Source
                       </label>
                       <div class="col-sm-9">
                         <ng-select
@@ -78,9 +78,9 @@
                       </div>
                     </div>
 
-                    <label class="col-sm-12 col-form-label">Application Date</label>
+                    <label class="col-sm-12 col-form-label" i18n="@@applicationSearchApplicationDate">Application Date</label>
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">From Date</label>
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchFromDate">From Date</label>
                       <div class="col-sm-9">
                         <input type="text"
                           class="form-control"
@@ -98,7 +98,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">To Date</label>
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchToDate">To Date</label>
                       <div class="col-sm-9">
                         <input type="text"
                           class="form-control"
@@ -118,7 +118,7 @@
 
                   <div class="col-sm-4">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Land ID
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchLandId">Land ID
                       </label>
                       <div class="col-sm-9">
                         <ng-select
@@ -143,7 +143,7 @@
                     </div>
                   
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Old Land ID
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchOldLandId">Old Land ID
                       </label>
                       <div class="col-sm-9">
                         <ng-select
@@ -168,7 +168,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Developer Name
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchDeveloperName">Developer Name
                         <span *ngIf="isSearchByUnit()">*</span>
                       </label>
                       <div class="col-sm-9">
@@ -196,7 +196,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Project Name
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchProjectName">Project Name
                         <span *ngIf="isSearchByUnit()">*</span>
                       </label>
                       <div class="col-sm-9">
@@ -224,7 +224,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Unit ID
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchUnitId">Unit ID
                         <span *ngIf="isSearchByUnit()">*</span>
                       </label>
                       <div class="col-sm-9">
@@ -254,7 +254,7 @@
                             [(ngModel)]="formData.lands"
                             [disabled]="isSearchTypeApplication()"
                           >
-                          <label class="form-check-label">
+                          <label class="form-check-label" i18n="@@applicationSearchLands">
                             lands
                           </label>
                         </div>
@@ -269,7 +269,7 @@
                             [(ngModel)]="formData.units"
                             [disabled]="isSearchTypeApplication()"
                           >
-                          <label class="form-check-label">
+                          <label class="form-check-label" i18n="@@applicationSearchUnits">
                             Units
                           </label>
                         </div>
@@ -280,7 +280,7 @@
 
                   <div class="col-sm-4">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Owner
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchOwner">Owner
                       </label>
                       <div class="col-sm-9">
                         <ng-select
@@ -304,7 +304,7 @@
                     </div>
                   
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Owner ID
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchOwnerId">Owner ID
                       </label>
                       <div class="col-sm-9">
                         <input name="ownerId"
@@ -328,7 +328,7 @@
                             [(ngModel)]="formData.currentOwner"
                             [disabled]="isSearchTypeApplication()"
                           >
-                          <label class="form-check-label">
+                          <label class="form-check-label" i18n="@@applicationSearchCurrentOwner">
                             Current Owner
                           </label>
                         </div>
@@ -343,7 +343,7 @@
                             [(ngModel)]="formData.previousOwner"
                             [disabled]="isSearchTypeApplication()"
                           >
-                          <label class="form-check-label">
+                          <label class="form-check-label" i18n="@@applicationSearchPreviousOwner">
                             Previous Owner
                           </label>
                         </div>
@@ -351,7 +351,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Contract ID
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchContractId">Contract ID
                       </label>
                       <div class="col-sm-9">
                         <input name="contractId"
@@ -365,7 +365,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Receipt ID
+                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchReceiptId">Receipt ID
                       </label>
                       <div class="col-sm-9">
                         <input name="receiptID"
@@ -384,7 +384,7 @@
               <div class="col-sm-12">
                 <div class="row ">
                   <div class="col-sm-12 text-center">
-                    <button type="submit" class="btn btn-primary" [disabled]="isFormInValid(f.invalid, formData)">Search</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="isFormInValid(f.invalid, formData)" i18n="@@applicationSearchSearch">Search</button>
                   </div>
                 </div>
               </div>
@@ -402,25 +402,25 @@
                         <i class="fas fa-minus"></i>
                     </button>
                   </div>
-                  <h3 class="card-title float-right font-weight-bold">Search Results:</h3>
+                  <h3 class="card-title float-right font-weight-bold" i18n="@@applicationSearchSearchResults">Search Results:</h3>
                 </div>
                 <div class="card-body">
                   <table class="table table-bordered landTable bg-white table-responsive">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
-                        <th>Application Source</th>
-                        <th>Application Id</th>
-                        <th>Service Name</th>
-                        <th>Land ID</th>
-                        <th>Developer Name</th>
-                        <th>Project Name</th>
-                        <th>Unit ID</th>
-                        <th>Application Date</th>
-                        <th>Additional Info</th>
-                        <th>Application Status</th>
-                        <th>Reserved By</th>
-                        <th>Waiting For Action From</th>
+                        <th i18n="@@applicationSearchTableApplicationSource">Application Source</th>
+                        <th i18n="@@applicationSearchTableApplicationId">Application Id</th>
+                        <th i18n="@@applicationSearchTableServiceName">Service Name</th>
+                        <th i18n="@@applicationSearchTableLandId">Land ID</th>
+                        <th i18n="@@applicationSearchTableDeveloperName">Developer Name</th>
+                        <th i18n="@@applicationSearchTableProjectName">Project Name</th>
+                        <th i18n="@@applicationSearchTableUnitId">Unit ID</th>
+                        <th i18n="@@applicationSearchTableApplicationDate">Application Date</th>
+                        <th i18n="@@applicationSearchTableAdditionalInfo">Additional Info</th>
+                        <th i18n="@@applicationSearchTableApplicationStatus">Application Status</th>
+                        <th i18n="@@applicationSearchTableReservedBy">Reserved By</th>
+                        <th i18n="@@applicationSearchTableWaitingForActionFrom">Waiting For Action From</th>
                       </tr>
                     </thead>
                     <tbody>

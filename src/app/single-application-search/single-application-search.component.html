@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="m-2 text-dark">
-          <h1>Application</h1>
+          <h1 i18n="@@singleApplicationHeaderApplicationSearch">Application Search</h1>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -24,17 +24,17 @@
             <div class="searchApplications">
               <div class="row">
                 <div class="col-sm-6">
-                  <label >Service Name: </label><span>{{response.serviceName?.ar}}</span>
+                  <label i18n="@@singleApplicationServiceNameLabel">Service Name: </label><span>{{response.serviceName?.ar}}</span>
                 </div>
                 <div class="col-sm-6">
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  <label >Application ID: </label><span>{{ applicationID }}</span>
+                  <label i18n="@@singleApplicationApplicationIdLabel">Application ID: </label><span>{{ applicationID }}</span>
                 </div>
                 <div class="col-sm-6">
-                  <label >Channel: </label><span>{{response.channel}}</span>
+                  <label i18n="@@singleApplicationChannelLabel">Channel: </label><span>{{response.channel}}</span>
                 </div>
               </div>
               <div class="card" *ngFor="let application_step of response.steps; let i = index">
@@ -44,15 +44,15 @@
                         <i class="fas fa-minus"></i>
                     </button>
                   </div>
-                  <h3 class="card-title float-right font-weight-bold">Step Status: {{application_step.status}}</h3>
+                  <h3 class="card-title float-right font-weight-bold"><span i18n="@@singleApplicationStepStatusLabel">Step Status:</span> {{application_step.status}}</h3>
                 </div>
                 <div class="card-body custom-table-class">
                   <table class="table table-bordered landTable bg-white table-responsive d-table">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
-                        <th>Field name</th>
-                        <th>Field Value</th>
+                        <th i18n="@@singleApplicationSearchFieldname">Field name</th>
+                        <th i18n="@@singleApplicationSearchFieldValue">Field Value</th>
                       </tr>
                     </thead>
                     <tbody>
