@@ -4387,6 +4387,298 @@
           <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="unitsValuationHeader" datatype="html">
+        <source>Units Valuation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationDeveloperName" datatype="html">
+        <source>Developer Name
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationProjectName" datatype="html">
+        <source>Project Name
+                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationUnitID" datatype="html">
+        <source>Unit ID
+                      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationUnitType" datatype="html">
+        <source>Unit Type
+                      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationRoomCount" datatype="html">
+        <source>Rooms Count
+                      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationValuationDate" datatype="html">
+        <source>Valuation Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationFromDate" datatype="html">
+        <source>From Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">139</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationToDate" datatype="html">
+        <source>To Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationSearch" datatype="html">
+        <source>Search</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">178</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationAddNewValuation" datatype="html">
+        <source>Add New Valuation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">181</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationSearchResults" datatype="html">
+        <source>Search Results:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">194</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationUnitValuationsLabel" datatype="html">
+        <source>Unit Valuations</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">205</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationTableDeveloperName" datatype="html">
+        <source>Developer Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">212</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationTableProjectName" datatype="html">
+        <source>Project Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">213</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationTableUnitId" datatype="html">
+        <source>Unit ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">214</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationTableUnitType" datatype="html">
+        <source>Unit Type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">215</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationTableRoomsCount" datatype="html">
+        <source>Rooms Count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">216</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationTableArea" datatype="html">
+        <source>Area</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">217</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationTableUnitPrice" datatype="html">
+        <source>Unit Price</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">218</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationTablePricePerSqM" datatype="html">
+        <source>Price Per Sq. M</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">219</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationTableValuationPrice" datatype="html">
+        <source>Valuation Price</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">220</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationTableValuationDate" datatype="html">
+        <source>Valuation Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">221</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationTableEmployee" datatype="html">
+        <source>Employee</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">222</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationTableActions" datatype="html">
+        <source>Actions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">223</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationModalAddNewValuation" datatype="html">
+        <source>Add New Valuation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">301</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationModalDeveloperName" datatype="html">
+        <source>Developer Name
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">310</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">484</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationModalProjectName" datatype="html">
+        <source>Project Name
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">343</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">518</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationModalUnitType" datatype="html">
+        <source>Unit Type
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">379</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationModalUnitId" datatype="html">
+        <source>Unit ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">401</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">555</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationModalPricePerSqM" datatype="html">
+        <source>Price per sq. m
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">423</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationModalRoomsCount" datatype="html">
+        <source>Rooms Count
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">439</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationModalClose" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">464</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">590</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationModalSubmit" datatype="html">
+        <source>Submit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">465</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationModalUpdateHeader" datatype="html">
+        <source>Update Valuation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">475</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationModalValuationPrice" datatype="html">
+        <source>Valuation Price
+              </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">571</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitsValuationModalUpdate" datatype="html">
+        <source>Update</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
