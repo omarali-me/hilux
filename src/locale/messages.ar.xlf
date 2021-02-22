@@ -4535,7 +4535,7 @@
       </trans-unit>
       <trans-unit id="applicationSearchHeaderApplicationSearch" datatype="html">
         <source>Application Search</source>
-        <target>Application Search Arabic</target>
+        <target>البحث بالمعاملات</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
           <context context-type="linenumber">7</context>
@@ -4749,7 +4749,7 @@
       </trans-unit>
       <trans-unit id="applicationSearchSearchResults" datatype="html">
         <source>Search Results:</source>
-        <target>Search Results:</target>
+        <target>نتائج البحث:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
           <context context-type="linenumber">405</context>
@@ -4853,7 +4853,7 @@
       </trans-unit>
       <trans-unit id="unitsExcelUploadHeader" datatype="html">
         <source>Units Excel Upload</source>
-        <target>Units Excel Upload</target>
+        <target>شاشة الوحدات العقارية</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/units-excel-upload/units-excel-upload.component.html</context>
           <context context-type="linenumber">7</context>
@@ -5027,7 +5027,7 @@
       </trans-unit>
       <trans-unit id="singleApplicationHeaderApplicationSearch" datatype="html">
         <source>Application Search</source>
-        <target>Application Search arabic</target>
+        <target>شاشة عرض المعاملة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/single-application-search/single-application-search.component.html</context>
           <context context-type="linenumber">7</context>
@@ -5067,7 +5067,7 @@
       </trans-unit>
       <trans-unit id="singleApplicationSearchFieldname" datatype="html">
         <source>Field name</source>
-        <target>Field name arabic</target>
+        <target>اسم الحقل</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/single-application-search/single-application-search.component.html</context>
           <context context-type="linenumber">54</context>
@@ -5075,7 +5075,7 @@
       </trans-unit>
       <trans-unit id="singleApplicationSearchFieldValue" datatype="html">
         <source>Field Value</source>
-        <target>Field Value arabic</target>
+        <target>قيمة الحقل</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/single-application-search/single-application-search.component.html</context>
           <context context-type="linenumber">55</context>
@@ -5083,7 +5083,7 @@
       </trans-unit>
       <trans-unit id="unitsValuationHeader" datatype="html">
         <source>Units Valuation</source>
-        <target>Units Valuation arabic</target>
+        <target>تقييم الوحدات العقارية</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
           <context context-type="linenumber">7</context>
@@ -5185,7 +5185,7 @@
       </trans-unit>
       <trans-unit id="unitsValuationSearchResults" datatype="html">
         <source>Search Results:</source>
-        <target>Search Results:</target>
+        <target>نتائج البحث:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
           <context context-type="linenumber">194</context>
@@ -5193,7 +5193,7 @@
       </trans-unit>
       <trans-unit id="unitsValuationUnitValuationsLabel" datatype="html">
         <source>Unit Valuations</source>
-        <target>Unit Valuations arabic</target>
+        <target>تقييم الوحدات العقارية</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
           <context context-type="linenumber">205</context>
