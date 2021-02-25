@@ -1,6 +1,74 @@
 <section class="content" *ngIf="profile$ | async as profile">
   <div class="container-fluid">
     <app-alerts [errors]="formErrors"></app-alerts>
+    <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data' novalidate>
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Company Name</label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  [items]="companyNameOptions | async"
+                  name="companyNameSearch"
+                  [hideSelected]="true"
+                  [minTermLength]="1"
+                  [(ngModel)]="searchData.term"
+                  [loading]="companyNameOptionsLoading"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  typeToSearchText="Please enter 1 or more characters"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  [typeahead]="searchCompanyNameInput$"
+                  (keyup)="setSearchType('term', $event)"
+                  [disabled]="isSearchBy('licenseNumber')"
+                  (blur)="checkTypeAndValues('term')"
+                  #companyNameSearch="ngModel"
+                >
+                </ng-select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">
+                License Number
+              </label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  [items]="companyLicenseNumberOptions | async"
+                  name="licenseNumberSearch"
+                  [hideSelected]="true"
+                  [minTermLength]="1"
+                  [(ngModel)]="searchData.licenseNumber"
+                  [loading]="companyLicenseNumberOptionsLoading"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  typeToSearchText="Please enter 1 or more characters"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  [typeahead]="searchCompanyLicenseNumberInput$"
+                  #companyLicenseNumberSearch="ngModel"
+                  (keyup)="setSearchType('licenseNumber', $event)"
+                  [disabled]="isSearchBy('term')"
+                  (blur)="checkTypeAndValues('licenseNumber')"
+                >
+                </ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer text-center">
+        <button type="submit" class="btn btn-primary" [disabled]="isSearchFormValid()">Search</button>
+      </div>
+    </form>
+
+    <hr/>
+
     <form class="form-horizontal" (ngSubmit)="updateData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
       <div class="card-body"> <div class="form-group row">
           <div class="col-sm-6">

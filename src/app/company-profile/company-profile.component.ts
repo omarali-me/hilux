@@ -16,16 +16,24 @@ import { LookupsService } from '../shared/lookups.service';
 })
 export class CompanyProfileComponent implements OnInit {
   formData: any = {};
+  searchData: any = {};
   profile$: Observable<any>;
   emiratesOptions: any;
   licenseTypeOptions: any;
   licenseIssuerOptions: any;
   ownerOptions: Observable<any>;
+  companyNameOptions: Observable<any>;
+  companyLicenseNumberOptions: Observable<any>;
   companyTypeOptions: any;
   minDate:any;
   dataOptionsLoading = false;
   searchInput$ = new Subject<string>();
   formErrors: any = {};
+  companyNameOptionsLoading = false;
+  companyLicenseNumberOptionsLoading = false;
+  searchCompanyNameInput$ = new Subject<string>();
+  searchCompanyLicenseNumberInput$ = new Subject<string>();
+  searchby: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -43,6 +51,8 @@ export class CompanyProfileComponent implements OnInit {
     this.loadOwnerOptions();
     this.loadCompanyTypeOptions();
     this.loadLicenseIssuerOptions();
+    this.loadCompanyNameOptions();
+    this.loadCompanyLicenseNumberOptions();
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
@@ -164,4 +174,89 @@ export class CompanyProfileComponent implements OnInit {
       }
     }
   }
+
+  setSearchType(field_name: any, event: any) {
+    var val = event.target.value.trim();
+    this.setSearchByandTypeValues(val, field_name)
+  }
+
+  setSearchByandTypeValues(val: any, field_name: any) {
+    if (val != '') {
+      this.searchby = field_name;
+    } else {
+      this.searchby = null;
+      this.resetSearch(field_name);
+    }
+  }
+
+  resetSearch(field_name: any) {
+    switch (field_name) {
+      case 'licenseNumber':
+        this.searchCompanyLicenseNumberInput$.next(null);
+        break;
+      case 'term':
+        this.searchCompanyNameInput$.next(null);
+        break;
+    }
+  }
+
+  isSearchBy(name: any) {
+    return this.searchby == name;
+  }
+
+  checkTypeAndValues(field_name: string) {
+    let val = this.searchData[field_name] && this.searchData[field_name].trim();
+    val = (val == undefined ? '' : val);
+    if (!this.isSearchBy(field_name) && (val == '')) {
+      this.setSearchByandTypeValues(val, field_name);
+    } else if (this.isSearchBy(field_name)) {
+      if (this.isEmpty(field_name)) {
+        this.setSearchByandTypeValues(val, null);
+      }
+    }
+  }
+
+  isEmpty(field_name: any) {
+    return (this.searchData[field_name] == undefined)
+  }
+
+  searchResourceData(data: any) {
+    let value = !!data.term ? data.term : data.licenseNumber;
+    this.router.navigate(['company/profile/', value, 'edit']);
+  }
+
+  loadCompanyNameOptions() {
+    this.companyNameOptions = concat(
+      of([]), // default items
+      this.searchCompanyNameInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.companyNameOptionsLoading = true),
+          switchMap(term => {
+            return this.lookupsService.loadCompanies({ term }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.companyNameOptionsLoading = false)
+          )})
+      )
+    );
+  }
+
+  loadCompanyLicenseNumberOptions() {
+    this.companyLicenseNumberOptions = concat(
+      of([]), // default items
+      this.searchCompanyLicenseNumberInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.companyLicenseNumberOptionsLoading = true),
+          switchMap(licenseNumber => {
+            return this.lookupsService.loadCompanies({ licenseNumber }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.companyLicenseNumberOptionsLoading = false)
+          )})
+      )
+    );
+  }
+
+  isSearchFormValid() {
+    return !this.searchData.term && !this.searchData.licenseNumber
+  }
+
 }
