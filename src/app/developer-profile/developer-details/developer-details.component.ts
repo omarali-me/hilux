@@ -15,6 +15,7 @@ import { LookupsService } from 'src/app/shared/lookups.service';
 })
 export class DeveloperDetailsComponent implements OnInit {
   formData: any = {};
+  searchData: any = {};
   profile$: Observable<any>;
   companyOptions: any;
   developerTypeOptions: any;
@@ -33,7 +34,9 @@ export class DeveloperDetailsComponent implements OnInit {
   licenseSearchInput$ = new Subject<string>();
   formErrors: any = {};
   companyDetails: any = { owners: [{}] };
-
+  developerNameOptions: Observable<any>;
+  searchDeveloperNameInput$ = new Subject<string>();
+  developerNameOptionsLoading = false;
   searchCompanyBy: any;
 
   constructor(
@@ -54,6 +57,7 @@ export class DeveloperDetailsComponent implements OnInit {
     this.loadLicenseIssuerOptions();
     this.loadCompanyOptions();
     this.loadCompanyOptionsByLicenseNumber();
+    this.loadDeveloperNameOptions();
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
@@ -265,4 +269,24 @@ export class DeveloperDetailsComponent implements OnInit {
     return formData;
   }
 
+  searchResourceData(data: any) {
+    if (!!data.term) {
+      this.router.navigate(['developer/profile/', data.term, 'edit']);
+    }
+  }
+
+  loadDeveloperNameOptions() {
+    this.developerNameOptions = concat(
+      of([]), // default items
+      this.searchDeveloperNameInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.developerNameOptionsLoading = true),
+          switchMap(term => {
+            return this.lookupsService.loadDevelopers({ term }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.developerNameOptionsLoading = false)
+          )})
+      )
+    );
+  }
 }
