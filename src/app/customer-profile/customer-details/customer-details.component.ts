@@ -7,6 +7,7 @@ import { FieldsService } from '../../shared/fields.service';
 import { pluck } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import * as _ from 'lodash';
+import { LookupsService } from 'src/app/shared/lookups.service';
 
 @Component({
   selector: 'app-customer-details',
@@ -34,7 +35,8 @@ export class CustomerDetailsComponent implements OnInit {
     private router: Router,
     private http: HttpClient,
     private toastr: ToastrService,
-    private fieldsService: FieldsService
+    private fieldsService: FieldsService,
+    private lookupsService: LookupsService
   ) { }
 
   ngOnInit(): void {
@@ -95,61 +97,60 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   loadContactPerferencesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/contactPreferencesTypes`)
+    this.lookupsService.loadContactPerferencesOptions()
     .subscribe((data) => {
       this.contactPerferencesOptions = data;
     })
   }
 
   loadTimeToContactOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/timeToContactPreferences`)
+    this.lookupsService.loadTimeToContactOptions()
     .subscribe((data) => {
       this.timeToContactOptions = data;
     })
   }
 
   loadNationalitiesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/nationalities`)
+    this.lookupsService.loadNationalitiesOptions()
     .subscribe((data) => {
       this.nationalitiesOptions = data;
     })
   }
 
   loadCustomerCategoryOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/customersCategories`)
+    this.lookupsService.loadCustomerCategoryOptions()
     .subscribe((data) => {
       this.customerCategoryOptions = data;
     })
   }
 
   loadCustomerTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/customerTypes`)
+    this.lookupsService.loadCustomerTypesOptions()
     .subscribe((data) => {
       this.customerTypesOptions = data;
     })
   }
 
   loadEmiratesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/emirates`)
+    this.lookupsService.loadEmiratesOptions()
     .subscribe((data) => {
       this.emiratesOptions = data;
     })
   }
 
   loadOtherIdTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/otherIdTypes`)
+    this.lookupsService.loadOtherIdTypesOptions()
     .subscribe((data) => {
       this.otherIdTypesOptions = data;
     })
   }
 
   loadDisablilityTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/disabilityTypes`)
+    this.lookupsService.loadDisablilityTypesOptions()
     .subscribe((data) => {
       this.disabilityTypesOptions = data;
     })
   }
-
   getAttachments() {
     return this.formData.profileImage ? [this.formData.profileImage] : [];
   }

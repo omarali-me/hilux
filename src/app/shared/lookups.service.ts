@@ -59,4 +59,33 @@ export class LookupsService {
   loadOwners(params: any = {}) {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/owners`, params);
   }
+
+  loadContactPerferencesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/contactPreferencesTypes`, params);
+  }
+
+  loadTimeToContactOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/timeToContactPreferences`, params);
+  }
+
+  loadNationalitiesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/nationalities`, params);
+  }
+
+  loadCustomerCategoryOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/customersCategories`, params);
+  }
+
+  loadCustomerTypesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/customerTypes`, params);
+  }
+
+  loadOtherIdTypesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/otherIdTypes`, params);
+  }
+
+  loadDisablilityTypesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/disabilityTypes`, params);
+  }
+
 }
