@@ -16,6 +16,7 @@ import { LookupsService } from 'src/app/shared/lookups.service';
 })
 export class ProjectDetailsComponent implements OnInit {
   formData: any;
+  searchData: any = {};
   formErrors:any = {};
   profile$: Observable<any>;
   developerOptions: Observable<any>;
@@ -36,6 +37,12 @@ export class ProjectDetailsComponent implements OnInit {
   consultantsOptions: any;
   accountTrusteesOptions: any;
   projectStatusOptions: any;
+  developerNameOptions: Observable<any>;
+  projectNameOptions: Observable<any>;
+  searchDeveloperNameInput$ = new Subject<string>();
+  searchProjectNameInput$ = new Subject<string>();
+  developerNameOptionsLoading = false;
+  projectNameOptionsLoading =  false;
 
   constructor(
     private route: ActivatedRoute,
@@ -58,6 +65,8 @@ export class ProjectDetailsComponent implements OnInit {
     this.loadConsultantsOptions();
     this.loadAccountTrusteesOptions();
     this.loadProjectStatusOptions();
+    this.loadDeveloperNameOptions();
+    this.loadProjectNameOptions();
 
     this.isMainOptions = [{
       key: 1,
@@ -290,4 +299,46 @@ export class ProjectDetailsComponent implements OnInit {
   isProjectCompleted() {
     return this.formData.projectStatusId && (this.formData.projectStatusId.includes('9') || this.formData.projectStatusId.includes(9));
   }
+
+
+  searchResourceData(data: any) {
+    if (!!data.searchProjectId) {
+      this.router.navigate(['project/profile/', data.searchProjectId, 'edit']);
+    }
+  }
+
+  loadDeveloperNameOptions() {
+    this.developerNameOptions = concat(
+      of([]), // default items
+      this.searchDeveloperNameInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.developerNameOptionsLoading = true),
+          switchMap(term => {
+            return this.lookupsService.loadDevelopers({ term }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.developerNameOptionsLoading = false)
+          )})
+      )
+    );
+  }
+
+  loadProjectNameOptions() {
+    this.projectNameOptions = concat(
+      of([]), // default items
+      this.searchProjectNameInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.projectNameOptionsLoading = true),
+          switchMap(term => {
+            return this.lookupsService.loadProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.projectNameOptionsLoading = false)
+          )})
+      )
+    );
+  }
+
+  resetSearchProject() {
+    this.searchData.searchProjectId = null;
+  }
+
 }
