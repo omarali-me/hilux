@@ -8,6 +8,7 @@ import { environment } from '../../environments/environment';
 import { FieldsService } from '../shared/fields.service';
 import * as _ from 'lodash';
 import { NgxSmartModalService } from 'ngx-smart-modal';
+import { LookupsService } from '../shared/lookups.service';
 
 interface SearchParams {
   query?: string;
@@ -58,7 +59,8 @@ export class LegalBlocksComponent implements OnInit {
     private fieldsService: FieldsService,
     private http: HttpClient,
     private toastr: ToastrService,
-    private ngxSmartModalService: NgxSmartModalService
+    private ngxSmartModalService: NgxSmartModalService,
+    private lookupsService: LookupsService
   ) { }
 
   ngOnInit(): void {
@@ -73,11 +75,6 @@ export class LegalBlocksComponent implements OnInit {
     this.route.queryParams.subscribe(async (params) => {
       if (!_.isEqual(params, {})) {
         this.formData.propertyId = params.propertyId;
-        // await this.prepareDeveloperValueOptions(params);
-        // await this.prepareProjectValueOptions(params);
-        // await this.prepareUnitValueOptions(params);
-        // await this.prepareLandValueOptions(params);
-        // await this.prepareOldLandValueOptions(params);
         await this.searchData(this.formData);
       }
     });
@@ -99,7 +96,7 @@ export class LegalBlocksComponent implements OnInit {
   }
 
   loadUnitsOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/units`, { projectId: this.formData.projectId })
+    this.lookupsService.loadUnitsOptions({ projectId: this.formData.projectId })
       .subscribe((data) => {
         this.unitsOptions = data;
       })
@@ -112,7 +109,7 @@ export class LegalBlocksComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.developerDataOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/developers`, { term }).pipe(
+          return this.lookupsService.loadDevelopers({ term }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.developerDataOptionsLoading = false)
           )
@@ -128,7 +125,7 @@ export class LegalBlocksComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.projectDataOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, { term, developerId: this.formData.developerId }).pipe(
+          return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.projectDataOptionsLoading = false)
           )
@@ -144,7 +141,7 @@ export class LegalBlocksComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.landDataOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/lands`, { term }).pipe(
+          return this.lookupsService.loadLands({ term }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.landDataOptionsLoading = false)
           )
@@ -160,7 +157,7 @@ export class LegalBlocksComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.oldLandDataOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/oldLands`, { term }).pipe(
+          return this.lookupsService.loadOldLands({ term }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.oldLandDataOptionsLoading = false)
           )
@@ -368,7 +365,7 @@ export class LegalBlocksComponent implements OnInit {
 
   prepareProjectValueOptions(params: any) {
     if(!!params.projectId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, { id: params.projectId })
+      this.lookupsService.loadProjects({ id: params.projectId })
       .subscribe((option)=> {
         this.projectsSearchInput$.next(option.value && option.value.ar);
       })
@@ -377,7 +374,7 @@ export class LegalBlocksComponent implements OnInit {
 
   prepareDeveloperValueOptions(params: any) {
     if(!!params.developerId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/developers`, { id: params.developerId })
+      this.lookupsService.loadDevelopers({ id: params.developerId })
       .subscribe((option)=> {
         this.developerSearchInput$.next(option.value && option.value.ar);
       })
@@ -386,7 +383,7 @@ export class LegalBlocksComponent implements OnInit {
 
   prepareLandValueOptions(params: any) {
     if(!!params.landId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/lands`, { id: params.landId })
+      this.lookupsService.loadLands({ id: params.landId })
       .subscribe((option)=> {
         this.landSearchInput$.next(option.value && option.value.ar);
       })
@@ -395,7 +392,7 @@ export class LegalBlocksComponent implements OnInit {
 
   prepareOldLandValueOptions(params: any) {
     if(!!params.oldLandId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/oldLands`, { id: params.oldLandId })
+      this.lookupsService.loadOldLands({ id: params.oldLandId })
       .subscribe((option)=> {
         this.oldLandSearchInput$.next(option.value && option.value.ar);
       })
@@ -404,7 +401,7 @@ export class LegalBlocksComponent implements OnInit {
 
   prepareUnitValueOptions(params: any) {
     if(!!params.unitId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/units`, { id: params.unitId })
+      this.lookupsService.loadUnitsOptions({ id: params.unitId })
       .subscribe((option)=> {
       })
     }
@@ -412,7 +409,7 @@ export class LegalBlocksComponent implements OnInit {
 
   prepareBlockagesEntitiesValueOptions(params: any) {
     if(!!params.blockEntityId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/blockagesEntities`, { id: params.blockEntityId })
+      this.lookupsService.loadBlockageEntities({ id: params.blockEntityId })
       .subscribe((option)=> {
         this.blockageEntitySearchInput$.next(option.value && option.value.ar);
       })
@@ -537,7 +534,7 @@ export class LegalBlocksComponent implements OnInit {
   }
 
   loadBlockageTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/blockagesTypes`)
+    this.lookupsService.loadBlockageTypesOptions()
       .subscribe((data) => {
         this.blockageTypesOptions = data;
       })
@@ -550,7 +547,7 @@ export class LegalBlocksComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.blockageEntityOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/blockagesEntities`, { term }).pipe(
+          return this.lookupsService.loadBlockageEntities({ term }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.blockageEntityOptionsLoading = false)
           )
