@@ -6,6 +6,7 @@ import { Subscription, Observable, Subject, concat, of } from 'rxjs';
 import { distinctUntilChanged, tap, switchMap, catchError, pluck } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { FieldsService } from '../shared/fields.service';
+import { LookupsService } from '../shared/lookups.service';
 
 interface SearchParams {
   query?: string;
@@ -52,18 +53,12 @@ export class SingleApplicationSearchComponent implements OnInit {
     private router: Router,
     private fieldsService: FieldsService,
     private http: HttpClient,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private lookupsService: LookupsService
   ) { }
 
   ngOnInit(): void {
     this.minDate = new Date();
-    // this.route.queryParams.subscribe(async (params) => {
-    //   if (!_.isEqual(params, {})) {
-    //     this.formData.propertyId = params.propertyId;
-    //     await this.searchData(this.formData);
-    //   }
-    // });
-
     this.applicationID = this.route.snapshot.params["applicationId"];
     this.application_search$ = this.route.data.pipe(pluck('application_search'));
     this.application_search$
@@ -81,7 +76,7 @@ export class SingleApplicationSearchComponent implements OnInit {
   }
 
   loadUnitsOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/units`, { projectId: this.formData.projectId })
+    this.lookupsService.loadUnitsOptions({ projectId: this.formData.projectId })
       .subscribe((data) => {
         this.unitsOptions = data;
       })
@@ -94,7 +89,7 @@ export class SingleApplicationSearchComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.developerDataOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/developers`, { term }).pipe(
+          return this.lookupsService.loadDevelopers({ term }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.developerDataOptionsLoading = false)
           )
@@ -110,7 +105,7 @@ export class SingleApplicationSearchComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.projectDataOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, { term, developerId: this.formData.developerId }).pipe(
+          return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.projectDataOptionsLoading = false)
           )
@@ -126,7 +121,7 @@ export class SingleApplicationSearchComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.landDataOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/lands`, { term }).pipe(
+          return this.lookupsService.loadLands({ term }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.landDataOptionsLoading = false)
           )
@@ -142,7 +137,7 @@ export class SingleApplicationSearchComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.oldLandDataOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/oldLands`, { term }).pipe(
+          return this.lookupsService.loadOldLands({ term }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.oldLandDataOptionsLoading = false)
           )
@@ -158,7 +153,7 @@ export class SingleApplicationSearchComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.ownersOptionsLoading = true),
         switchMap(term => {
-          return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/owners`, { term }).pipe(
+          return this.lookupsService.loadOwners({ term }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.ownersOptionsLoading = false)
           )
@@ -168,26 +163,12 @@ export class SingleApplicationSearchComponent implements OnInit {
   }
 
   loadServiceNamesOptions() {
-    // this.serviceNameOptions = concat(
-    //   of([]), // default items
-    //   this.serviceNameSearchInput$.pipe(
-    //     distinctUntilChanged(),
-    //     tap(() => this.serviceNameDataOptionsLoading = true),
-    //     switchMap(term => {
-    //       return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/listOfServices`, { term }).pipe(
-    //         catchError(() => of([])), // empty list on error
-    //         tap(() => this.serviceNameDataOptionsLoading = false)
-    //       )
-    //     })
-    //   )
-    // );
 
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/listOfServices`)
+    this.lookupsService.loadServiceNamesOptions()
       .subscribe((data) => {
         this.serviceNameOptions = data;
       })
   }
-
 
   isLandResponse() {
     return this.response && (this.response.type == 1 || this.response.type == '1')
@@ -374,7 +355,7 @@ export class SingleApplicationSearchComponent implements OnInit {
 
   prepareProjectValueOptions(params: any) {
     if(!!params.projectId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, { id: params.projectId })
+      this.lookupsService.loadProjects({ id: params.projectId })
       .subscribe((option)=> {
         this.projectsSearchInput$.next(option.value && option.value.ar);
       })
@@ -383,7 +364,7 @@ export class SingleApplicationSearchComponent implements OnInit {
 
   prepareDeveloperValueOptions(params: any) {
     if(!!params.developerId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/developers`, { id: params.developerId })
+      this.lookupsService.loadDevelopers({ id: params.developerId })
       .subscribe((option)=> {
         this.developerSearchInput$.next(option.value && option.value.ar);
       })
@@ -392,7 +373,7 @@ export class SingleApplicationSearchComponent implements OnInit {
 
   prepareLandValueOptions(params: any) {
     if(!!params.landId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/lands`, { id: params.landId })
+      this.lookupsService.loadLands({ id: params.landId })
       .subscribe((option)=> {
         this.landSearchInput$.next(option.value && option.value.ar);
       })
@@ -401,7 +382,7 @@ export class SingleApplicationSearchComponent implements OnInit {
 
   prepareOldLandValueOptions(params: any) {
     if(!!params.oldLandId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/oldLands`, { id: params.oldLandId })
+      this.lookupsService.loadOldLands({ id: params.oldLandId })
       .subscribe((option)=> {
         this.oldLandSearchInput$.next(option.value && option.value.ar);
       })
@@ -410,7 +391,7 @@ export class SingleApplicationSearchComponent implements OnInit {
 
   prepareUnitValueOptions(params: any) {
     if(!!params.unitId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/units`, { id: params.unitId })
+      this.lookupsService.loadUnitsOptions({ id: params.unitId })
       .subscribe((option)=> {
       })
     }
