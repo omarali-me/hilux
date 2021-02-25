@@ -33,13 +33,11 @@ export class UnitProfileComponent implements OnInit {
   landSearchInput$ = new Subject<string>();
   developerNameOptions: Observable<any>;
   projectNameOptions: Observable<any>;
-  unitNumberOptions: Observable<any>;
+  unitNumberOptions: any;
   searchDeveloperNameInput$ = new Subject<string>();
   searchProjectNameInput$ = new Subject<string>();
-  searchUnitNumberInput$ = new Subject<string>();
   developerNameOptionsLoading = false;
   projectNameOptionsLoading =  false;
-  unitNumberOptionsLoading = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -258,18 +256,10 @@ export class UnitProfileComponent implements OnInit {
   }
 
   loadUnitNumberOptions() {
-    this.unitNumberOptions = concat(
-      of([]), // default items
-      this.searchUnitNumberInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.unitNumberOptionsLoading = true),
-          switchMap(term => {
-            return this.lookupsService.loadUnitsOptions({ term, projectId: this.searchData.searchProjectId }).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.unitNumberOptionsLoading = false)
-          )})
-      )
-    );
+    this.lookupsService.loadUnitsOptions({ projectId: this.searchData.searchProjectId })
+      .subscribe((data) => {
+        this.unitNumberOptions = data;
+      })
   }
 
   resetSearchProject() {

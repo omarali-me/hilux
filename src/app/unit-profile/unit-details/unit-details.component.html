@@ -69,20 +69,15 @@
               </label>
               <div class="col-sm-9">
                 <ng-select
-                  class="rtl"
-                  [items]="unitNumberOptions | async"
-                  name="unitNumberSearch"
-                  [hideSelected]="true"
-                  [minTermLength]="1"
                   required="true"
+                  [items]="unitNumberOptions"
+                  name="unitNumberSearch"
                   [(ngModel)]="searchData.searchUnitNumber"
-                  [loading]="unitNumberOptionsLoading"
                   bindLabel="value.ar"
                   bindValue="key"
-                  typeToSearchText="Please enter 1 or more characters"
                   notFoundText="لا يوجد نتائج للبحث"
-                  [typeahead]="searchUnitNumberInput$"
                   #unitNumberSearch="ngModel"
+                  (open)="loadUnitNumberOptions()"
                 >
                 </ng-select>
               </div>
