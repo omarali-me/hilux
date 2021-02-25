@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from '../shared/fields.service';
 import { pluck, distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { LookupsService } from '../shared/lookups.service';
 
 @Component({
   selector: 'app-developer-profile',
@@ -40,7 +41,8 @@ export class DeveloperProfileComponent implements OnInit {
     private router: Router,
     private http: HttpClient,
     private toastr: ToastrService,
-    private fieldsService: FieldsService
+    private fieldsService: FieldsService,
+    private lookupsService: LookupsService
   ) { }
 
   ngOnInit(): void {
@@ -93,21 +95,21 @@ export class DeveloperProfileComponent implements OnInit {
   }
 
   loadEmiratesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/emirates`)
+    this.lookupsService.loadEmiratesOptions()
     .subscribe((data) => {
       this.emiratesOptions = data;
     })
   }
 
   loadLicenseTypeOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/licensesTypes`)
+    this.lookupsService.loadLicenseTypeOptions()
     .subscribe((data) => {
       this.licenseTypeOptions = data;
     })
   }
 
   loadLicenseIssuerOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companiesLicensesIssuers`)
+    this.lookupsService.loadLicenseIssuerOptions()
     .subscribe((data) => {
       this.licenseIssuerOptions = data;
     })
@@ -120,7 +122,7 @@ export class DeveloperProfileComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.dataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/owners`, { term } ).pipe(
+            return this.lookupsService.loadOwners({ term }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.dataOptionsLoading = false)
           )})
@@ -129,7 +131,7 @@ export class DeveloperProfileComponent implements OnInit {
   }
 
   loadCompanyTypeOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companiesTypes`)
+    this.lookupsService.loadCompanyTypeOptions()
     .subscribe((data) => {
       this.companyTypeOptions = data;
     })
@@ -142,7 +144,7 @@ export class DeveloperProfileComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.companyOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companies`, { term } ).pipe(
+            return this.lookupsService.loadCompanies({ term }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.companyOptionsLoading = false)
           )})
@@ -157,7 +159,7 @@ export class DeveloperProfileComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.licenseNumberOptionsLoading = true),
           switchMap(licenseNumber => {
-            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companies`, { licenseNumber } ).pipe(
+            return this.lookupsService.loadCompanies({ licenseNumber }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.licenseNumberOptionsLoading = false)
           )})
@@ -208,7 +210,7 @@ export class DeveloperProfileComponent implements OnInit {
   async prepareOwnerValueOptions(profile: any) {
     for(let owner of (profile.owners || [])) {
       await setTimeout(() => {
-        this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/owners`, { id: owner.ownerId })
+        this.lookupsService.loadOwners({ id: owner.ownerId })
         .subscribe((option)=> {
           this.searchInput$.next(option.value && option.value.ar);
         })

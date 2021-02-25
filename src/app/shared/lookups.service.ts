@@ -88,4 +88,7 @@ export class LookupsService {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/disabilityTypes`, params);
   }
 
+  loadCompanies(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companies`, params);
+  }
 }
