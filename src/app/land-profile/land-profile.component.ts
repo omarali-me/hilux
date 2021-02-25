@@ -6,6 +6,7 @@ import { FieldsService } from '../shared/fields.service';
 import { Observable, Subject } from 'rxjs';
 import { pluck } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { LookupsService } from '../shared/lookups.service';
 
 @Component({
   selector: 'app-land-profile',
@@ -32,7 +33,8 @@ export class LandProfileComponent implements OnInit {
     private router: Router,
     private http: HttpClient,
     private toastr: ToastrService,
-    private fieldsService: FieldsService
+    private fieldsService: FieldsService,
+    private lookupsService: LookupsService
   ) { }
 
   ngOnInit(): void {
@@ -75,56 +77,56 @@ export class LandProfileComponent implements OnInit {
   }
 
   loadSectorsOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/sectors`)
+    this.lookupsService.loadSectorsOptions()
     .subscribe((data) => {
       this.sectorsOptions = data;
     })
   }
 
   loadSectionsOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/sections`)
+    this.lookupsService.loadSectionsOptions()
     .subscribe((data) => {
       this.sectionsOptions = data;
     })
   }
 
   loadStreetNamesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/streetsnames`)
+    this.lookupsService.loadStreetNamesOptions()
     .subscribe((data) => {
       this.streetsNamesOptions = data;
     })
   }
 
   loadStreetTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/streetstypes`)
+    this.lookupsService.loadStreetTypesOptions()
     .subscribe((data) => {
       this.streetsTypesOptions = data;
     })
   }
 
   loadMainUsageTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/mainUsageTypes`)
+    this.lookupsService.loadMainUsageTypesOptions()
     .subscribe((data) => {
       this.mainUsageTypesOptions = data;
     })
   }
 
   loadSubUsageTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/subUsageTypes`)
+    this.lookupsService.loadSubUsageTypesOptions()
     .subscribe((data) => {
       this.subUsageTypesOptions = data;
     })
   }
 
   loadCitiesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/cities`)
+    this.lookupsService.loadCitiesOptions()
     .subscribe((data) => {
       this.citiesOptions = data;
     })
   }
 
   loadPropertyTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/landsTypes`)
+    this.lookupsService.loadPropertyTypesOptions()
     .subscribe((data) => {
       this.propertyTypesOptions = data;
     })

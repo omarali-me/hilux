@@ -99,4 +99,37 @@ export class LookupsService {
   loadBlockageEntities(params: any = {}) {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/blockagesEntities`, params);
   }
+
+  loadSectorsOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/sectors`, params);
+  }
+
+  loadSectionsOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/sections`, params);
+  }
+
+  loadStreetNamesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/streetsnames`, params);
+  }
+
+  loadStreetTypesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/streetstypes`, params);
+  }
+
+  loadMainUsageTypesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/mainUsageTypes`, params);
+  }
+
+  loadSubUsageTypesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/subUsageTypes`, params);
+  }
+
+  loadCitiesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/cities`, params);
+  }
+
+  loadPropertyTypesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/landsTypes`, params);
+  }
+
 }
