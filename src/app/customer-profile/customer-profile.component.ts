@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { concat, Observable, of, Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
-import { pluck } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, pluck, switchMap, tap } from 'rxjs/operators';
 import { FieldsService } from '../shared/fields.service';
 import { LookupsService } from '../shared/lookups.service';
 
@@ -15,6 +15,7 @@ import { LookupsService } from '../shared/lookups.service';
 })
 export class CustomerProfileComponent implements OnInit {
   formData: any;
+  searchData: any = {};
   formErrors: any = {};
   profile$: Observable<any>;
   contactPerferencesOptions: any;
@@ -28,6 +29,13 @@ export class CustomerProfileComponent implements OnInit {
   booleanOptions: any;
   genderOptions: any;
   minDate:any;
+  searchby: any;
+  searchOwnerNameInput$ = new Subject<string>();
+  searchOwnerUniqueIdInput$ = new Subject<string>();
+  ownerUniqueIdOptions: Observable<any>;
+  ownerNameOptions: Observable<any>;
+  ownerNameOptionsLoading = false;
+  ownerUniqueIdOptionsLoading = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -48,6 +56,8 @@ export class CustomerProfileComponent implements OnInit {
     this.loadEmiratesOptions();
     this.loadOtherIdTypesOptions();
     this.loadDisablilityTypesOptions();
+    this.loadOwnerNameOptions();
+    this.loadOwnerUniqueIdOptions();
 
     this.booleanOptions = [{
       key: 1,
@@ -222,4 +232,89 @@ export class CustomerProfileComponent implements OnInit {
   formatDate(name: any) {
     this.formData[name] = this.fieldsService.formatDate(this.formData, name);
   }
+
+  setSearchType(field_name: any, event: any) {
+    var val = event.target.value.trim();
+    this.setSearchByandTypeValues(val, field_name)
+  }
+
+  setSearchByandTypeValues(val: any, field_name: any) {
+    if (val != '') {
+      this.searchby = field_name;
+    } else {
+      this.searchby = null;
+      this.resetSearch(field_name);
+    }
+  }
+
+  resetSearch(field_name: any) {
+    switch (field_name) {
+      case 'uniqueId':
+        this.searchOwnerUniqueIdInput$.next(null);
+        break;
+      case 'term':
+        this.searchOwnerNameInput$.next(null);
+        break;
+    }
+  }
+
+  isSearchBy(name: any) {
+    return this.searchby == name;
+  }
+
+  checkTypeAndValues(field_name: string) {
+    let val = this.searchData[field_name] && this.searchData[field_name].trim();
+    val = (val == undefined ? '' : val);
+    if (!this.isSearchBy(field_name) && (val == '')) {
+      this.setSearchByandTypeValues(val, field_name);
+    } else if (this.isSearchBy(field_name)) {
+      if (this.isEmpty(field_name)) {
+        this.setSearchByandTypeValues(val, null);
+      }
+    }
+  }
+
+  isEmpty(field_name: any) {
+    return (this.searchData[field_name] == undefined)
+  }
+
+  searchResourceData(data: any) {
+    let value = !!data.term ? data.term : data.uniqueId;
+    this.router.navigate(['customer/profile/', value, 'edit']);
+  }
+
+  loadOwnerNameOptions() {
+    this.ownerNameOptions = concat(
+      of([]), // default items
+      this.searchOwnerNameInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.ownerNameOptionsLoading = true),
+          switchMap(term => {
+            return this.lookupsService.loadOwners({ term }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.ownerNameOptionsLoading = false)
+          )})
+      )
+    );
+  }
+
+  loadOwnerUniqueIdOptions() {
+    this.ownerUniqueIdOptions = concat(
+      of([]), // default items
+      this.searchOwnerUniqueIdInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.ownerUniqueIdOptionsLoading = true),
+          switchMap(uniqueId => {
+            return this.lookupsService.loadOwners({ uniqueId }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.ownerUniqueIdOptionsLoading = false)
+          )})
+      )
+    );
+  }
+
+  isSearchFormValid() {
+    return !this.searchData.term && !this.searchData.uniqueId
+  }
+
 }
