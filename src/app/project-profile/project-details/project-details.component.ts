@@ -7,6 +7,7 @@ import { FieldsService } from 'src/app/shared/fields.service';
 import { pluck, distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { environment } from '../../../environments/environment';
+import { LookupsService } from 'src/app/shared/lookups.service';
 
 @Component({
   selector: 'app-project-details',
@@ -41,7 +42,8 @@ export class ProjectDetailsComponent implements OnInit {
     private router: Router,
     private http: HttpClient,
     private toastr: ToastrService,
-    private fieldsService: FieldsService
+    private fieldsService: FieldsService,
+    private lookupsService: LookupsService
   ) { }
 
   ngOnInit(): void {
@@ -103,7 +105,7 @@ export class ProjectDetailsComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.developerDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/developers`, { term } ).pipe(
+            return this.lookupsService.loadDevelopers({ term }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.developerDataOptionsLoading = false)
           )})
@@ -118,7 +120,7 @@ export class ProjectDetailsComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.projectDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projects`, { term, developerId: this.formData.developerId } ).pipe(
+            return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectDataOptionsLoading = false)
           )})
@@ -133,7 +135,7 @@ export class ProjectDetailsComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.landDataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/lands`, { term } ).pipe(
+            return this.lookupsService.loadLands({ term }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.landDataOptionsLoading = false)
           )})
@@ -142,49 +144,49 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   loadProjectsTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projectstypes`)
+    this.lookupsService.loadProjectsTypesOptions()
     .subscribe((data) => {
       this.projectsTypesOptions = data;
     })
   }
 
   loadProjectStatusOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projectsStatuses`)
+    this.lookupsService.loadProjectStatusOptions()
     .subscribe((data) => {
       this.projectStatusOptions = data;
     })
   }
 
   loadProjectsRegistrationTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projectsRegistrationTypes`)
+    this.lookupsService.loadProjectsRegistrationTypesOptions()
     .subscribe((data) => {
       this.projectsRegistrationTypesOptions = data;
     })
   }
 
   loadProjectUsageTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projectsUsageTypes`)
+    this.lookupsService.loadProjectUsageTypesOptions()
     .subscribe((data) => {
       this.projectUsageTypesOptions = data;
     })
   }
 
   loadContractorsOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projetcsContractors`)
+    this.lookupsService.loadContractorsOptions()
     .subscribe((data) => {
       this.contractorsOptions = data;
     })
   }
 
   loadConsultantsOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projetcsConsultants`)
+    this.lookupsService.loadConsultantsOptions()
     .subscribe((data) => {
       this.consultantsOptions = data;
     })
   }
 
   loadAccountTrusteesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projetcsAccountTrusteeBanks`)
+    this.lookupsService.loadAccountTrusteesOptions()
     .subscribe((data) => {
       this.accountTrusteesOptions = data;
     })
@@ -254,7 +256,7 @@ export class ProjectDetailsComponent implements OnInit {
 
   prepareProjectValueOptions(profile: any) {
     if(!!profile.mainProjectId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projects`, { id: profile.mainProjectId })
+      this.lookupsService.loadProjects({ id: profile.mainProjectId })
       .subscribe((option)=> {
         this.projectsSearchInput$.next(option.value && option.value.ar);
       })
@@ -263,7 +265,7 @@ export class ProjectDetailsComponent implements OnInit {
 
   prepareDeveloperValueOptions(profile: any) {
     if(!!profile.developerId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/developers`, { id: profile.developerId })
+      this.lookupsService.loadDevelopers({ id: profile.developerId })
       .subscribe((option)=> {
         this.developerSearchInput$.next(option.value && option.value.ar);
       })
@@ -272,7 +274,7 @@ export class ProjectDetailsComponent implements OnInit {
 
   prepareLandValueOptions(profile: any) {
     if(!!profile.landId) {
-      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/lands`, { id: profile.landId })
+      this.lookupsService.loadLands({ id: profile.landId })
       .subscribe((option)=> {
         this.landSearchInput$.next(option.value && option.value.ar);
       })

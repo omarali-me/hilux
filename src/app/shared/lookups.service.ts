@@ -132,4 +132,31 @@ export class LookupsService {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/landsTypes`, params);
   }
 
+  loadProjectsTypesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projectstypes`, params);
+  }
+
+  loadProjectStatusOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projectsStatuses`, params);
+  }
+
+  loadProjectsRegistrationTypesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projectsRegistrationTypes`, params);
+  }
+
+  loadProjectUsageTypesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/projectsUsageTypes`, params);
+  }
+
+  loadContractorsOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projetcsContractors`, params);
+  }
+
+  loadConsultantsOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projetcsConsultants`, params);
+  }
+
+  loadAccountTrusteesOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projetcsAccountTrusteeBanks`, params);
+  }
 }
