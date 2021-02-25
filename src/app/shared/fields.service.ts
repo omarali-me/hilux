@@ -166,7 +166,7 @@ export class FieldsService {
   }
 
   private defaultValuesByIndex(value: any, index?: any) {
-    if (isArray(value)) {
+    if (Array.isArray(value)) {
       return value[index];
     } else {
       return value

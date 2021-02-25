@@ -7,6 +7,7 @@ import { FieldsService } from '../shared/fields.service';
 import { pluck, distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { environment } from '../../environments/environment';
+import { LookupsService } from '../shared/lookups.service';
 
 @Component({
   selector: 'app-unit-profile',
@@ -15,6 +16,7 @@ import { environment } from '../../environments/environment';
 })
 export class UnitProfileComponent implements OnInit {
   formData: any = {};
+  searchData: any = {};
   formErrors: any = {};
   profile$: Observable<any>;
   developerOptions: Observable<any>;
@@ -29,13 +31,23 @@ export class UnitProfileComponent implements OnInit {
   projectDataOptionsLoading = false;
   landDataOptionsLoading = false;
   landSearchInput$ = new Subject<string>();
+  developerNameOptions: Observable<any>;
+  projectNameOptions: Observable<any>;
+  unitNumberOptions: Observable<any>;
+  searchDeveloperNameInput$ = new Subject<string>();
+  searchProjectNameInput$ = new Subject<string>();
+  searchUnitNumberInput$ = new Subject<string>();
+  developerNameOptionsLoading = false;
+  projectNameOptionsLoading =  false;
+  unitNumberOptionsLoading = false;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private http: HttpClient,
     private toastr: ToastrService,
-    private fieldsService: FieldsService
+    private fieldsService: FieldsService,
+    private lookupsService: LookupsService
   ) { }
 
   ngOnInit(): void {
@@ -45,6 +57,9 @@ export class UnitProfileComponent implements OnInit {
     this.loadLandsoptions();
     this.loadUnitsTypesOptions();
     this.loadunitsUsageTypesOptions();
+    this.loadDeveloperNameOptions();
+    this.loadProjectNameOptions();
+    this.loadUnitNumberOptions();
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
@@ -205,4 +220,65 @@ export class UnitProfileComponent implements OnInit {
     const meterNetSoldArea = this.formData.meterNetSoldArea || null;
     this.formData.meterJointSoldArea = _.toNumber(meterTotalSoldArea) - _.toNumber(meterNetSoldArea)
   }
+
+  searchResourceData(data: any) {
+    if (!!data.searchUnitNumber) {
+      this.router.navigate(['unit/profile/', data.searchUnitNumber, 'edit']);
+    }
+  }
+
+  loadDeveloperNameOptions() {
+    this.developerNameOptions = concat(
+      of([]), // default items
+      this.searchDeveloperNameInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.developerNameOptionsLoading = true),
+          switchMap(term => {
+            return this.lookupsService.loadDevelopers({ term }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.developerNameOptionsLoading = false)
+          )})
+      )
+    );
+  }
+
+  loadProjectNameOptions() {
+    this.projectNameOptions = concat(
+      of([]), // default items
+      this.searchProjectNameInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.projectNameOptionsLoading = true),
+          switchMap(term => {
+            return this.lookupsService.loadProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.projectNameOptionsLoading = false)
+          )})
+      )
+    );
+  }
+
+  loadUnitNumberOptions() {
+    this.unitNumberOptions = concat(
+      of([]), // default items
+      this.searchUnitNumberInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.unitNumberOptionsLoading = true),
+          switchMap(term => {
+            return this.lookupsService.loadUnitsOptions({ term, projectId: this.searchData.searchProjectId }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.unitNumberOptionsLoading = false)
+          )})
+      )
+    );
+  }
+
+  resetSearchProject() {
+    this.searchData.searchProjectId = null;
+    this.resetUnitNumber();
+  }
+
+  resetUnitNumber() {
+    this.searchData.searchUnitNumber = null;
+  }
+
 }

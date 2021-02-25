@@ -7,7 +7,7 @@ import { FieldsService } from 'src/app/shared/fields.service';
 import { pluck, distinctUntilChanged, tap, switchMap, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { environment } from '../../../environments/environment';
-import { LookupsService } from 'src/app/shared/lookups.service';
+import { LookupsService } from '../../shared/lookups.service';
 
 @Component({
   selector: 'app-project-details',
