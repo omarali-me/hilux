@@ -3,8 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { FieldsService } from '../shared/fields.service';
-import { Observable, Subject } from 'rxjs';
-import { pluck } from 'rxjs/operators';
+import { concat, Observable, of, Subject } from 'rxjs';
+import { catchError, distinctUntilChanged, pluck, switchMap, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { LookupsService } from '../shared/lookups.service';
 
@@ -15,6 +15,7 @@ import { LookupsService } from '../shared/lookups.service';
 })
 export class LandProfileComponent implements OnInit {
   formData: any = { buildingDetails: {}, buildingFinishes: {} };
+  searchData: any = {};
   formErrors: any = {};
   profile$: Observable<any>;
   sectorsOptions: any;
@@ -27,6 +28,13 @@ export class LandProfileComponent implements OnInit {
   dataOptionsLoading = false;
   propertyTypesOptions: any;
   searchInput$ = new Subject<string>();
+  searchby: any;
+  searchLandNameInput$ = new Subject<string>();
+  landNameOptions: Observable<any>;
+  landNameOptionsLoading = false;
+  searchOldLandOptions: Observable<any>;
+  searchOldLandIdInput$ = new Subject<string>();
+  searchOldLandOptionsLoading = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -46,6 +54,8 @@ export class LandProfileComponent implements OnInit {
     this.loadSubUsageTypesOptions();
     this.loadCitiesOptions();
     this.loadPropertyTypesOptions();
+    this.loadLandNameOptions();
+    this.loadSearchOldLandIdOptions();
     
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
@@ -200,4 +210,89 @@ export class LandProfileComponent implements OnInit {
       }
     }
   }
+
+  setSearchType(field_name: any, event: any) {
+    var val = event.target.value.trim();
+    this.setSearchByandTypeValues(val, field_name)
+  }
+
+  setSearchByandTypeValues(val: any, field_name: any) {
+    if (val != '') {
+      this.searchby = field_name;
+    } else {
+      this.searchby = null;
+      this.resetSearch(field_name);
+    }
+  }
+
+  resetSearch(field_name: any) {
+    switch (field_name) {
+      case 'searchOldLandId':
+        this.searchOldLandIdInput$.next(null);
+        break;
+      case 'term':
+        this.searchLandNameInput$.next(null);
+        break;
+    }
+  }
+
+  isSearchBy(name: any) {
+    return this.searchby == name;
+  }
+
+  checkTypeAndValues(field_name: string) {
+    let val = this.searchData[field_name] && this.searchData[field_name].trim();
+    val = (val == undefined ? '' : val);
+    if (!this.isSearchBy(field_name) && (val == '')) {
+      this.setSearchByandTypeValues(val, field_name);
+    } else if (this.isSearchBy(field_name)) {
+      if (this.isEmpty(field_name)) {
+        this.setSearchByandTypeValues(val, null);
+      }
+    }
+  }
+
+  isEmpty(field_name: any) {
+    return (this.searchData[field_name] == undefined)
+  }
+
+  searchResourceData(data: any) {
+    let value = !!data.term ? data.term : data.searchOldLandId;
+    this.router.navigate(['land/profile/', value, 'edit']);
+  }
+
+  loadLandNameOptions() {
+    this.landNameOptions = concat(
+      of([]), // default items
+      this.searchLandNameInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.landNameOptionsLoading = true),
+          switchMap(term => {
+            return this.lookupsService.loadLands({ term }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.landNameOptionsLoading = false)
+          )})
+      )
+    );
+  }
+
+  loadSearchOldLandIdOptions() {
+    this.searchOldLandOptions = concat(
+      of([]), // default items
+      this.searchOldLandIdInput$.pipe(
+          distinctUntilChanged(),
+          tap(() => this.searchOldLandOptionsLoading = true),
+          switchMap(term => {
+            return this.lookupsService.loadOldLands({ term }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.searchOldLandOptionsLoading = false)
+          )})
+      )
+    );
+  }
+
+  isSearchFormValid() {
+    return !this.searchData.term && !this.searchData.searchOldLandId
+  }
+
 }

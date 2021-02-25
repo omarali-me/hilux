@@ -1,6 +1,74 @@
 <section class="content" *ngIf="profile$ | async as profile">
   <div class="container-fluid">
     <app-alerts [errors]="formErrors"></app-alerts>
+    <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data' novalidate>
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Land Id</label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  [items]="landNameOptions | async"
+                  name="LandNameSearch"
+                  [hideSelected]="true"
+                  [minTermLength]="1"
+                  [(ngModel)]="searchData.term"
+                  [loading]="landNameOptionsLoading"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  typeToSearchText="Please enter 1 or more characters"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  [typeahead]="searchLandNameInput$"
+                  (keyup)="setSearchType('term', $event)"
+                  [disabled]="isSearchBy('searchOldLandId')"
+                  (blur)="checkTypeAndValues('term')"
+                  #LandNameSearch="ngModel"
+                >
+                </ng-select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">
+                Old Land Id
+              </label>
+              <div class="col-sm-9">
+                <ng-select
+                  class="rtl"
+                  [items]="searchOldLandOptions | async"
+                  name="OldLandIdSearch"
+                  [hideSelected]="true"
+                  [minTermLength]="1"
+                  [(ngModel)]="searchData.searchOldLandId"
+                  [loading]="searchOldLandOptionsLoading"
+                  bindLabel="value.ar"
+                  bindValue="key"
+                  typeToSearchText="Please enter 1 or more characters"
+                  notFoundText="لا يوجد نتائج للبحث"
+                  [typeahead]="searchOldLandIdInput$"
+                  #OldLandIdSearch="ngModel"
+                  (keyup)="setSearchType('searchOldLandId', $event)"
+                  [disabled]="isSearchBy('term')"
+                  (blur)="checkTypeAndValues('searchOldLandId')"
+                >
+                </ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer text-center">
+        <button type="submit" class="btn btn-primary" [disabled]="isSearchFormValid()">Search</button>
+      </div>
+    </form>
+
+    <hr/>
+
     <form class="form-horizontal" (ngSubmit)="updateData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
       <div class="card-body">
 
