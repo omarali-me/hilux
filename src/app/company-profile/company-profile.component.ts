@@ -101,7 +101,7 @@ export class CompanyProfileComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.dataOptionsLoading = true),
           switchMap(term => {
-            return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/owners`, { term } ).pipe(
+            return this.lookupsService.loadOwners({ term }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.dataOptionsLoading = false)
           )})
@@ -149,17 +149,6 @@ export class CompanyProfileComponent implements OnInit {
   getName(row: string, index: string) {
     return this.fieldsService.getFieldName('owner', row, index);
   }
-
-  // notValidTotal() {
-  //   if (this.isNotGovernmentAndIndividualInstitute()) {
-  //     let shares = this.formData.owners && this.formData.owners.map(o => _.toNumber(o.share));
-  //     let shareTotal = 0.00;
-  //     shares.forEach(share => shareTotal = shareTotal + share);
-  //     return (shareTotal != 100.00 || shareTotal != 100);
-  //   } else {
-  //     return false;
-  //   }
-  // }
 
   prepareEstablishmentContractFileField() {
     return {
