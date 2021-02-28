@@ -6,7 +6,7 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">Name</label>
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileSearchName">Name</label>
               <div class="col-sm-9">
                 <ng-select
                   class="rtl"
@@ -33,7 +33,7 @@
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label">
+              <label class="col-sm-3 col-form-label" i18n="@@customerProfileSearchIDNumber">
                 ID Number
               </label>
               <div class="col-sm-9">
@@ -63,7 +63,7 @@
       </div>
 
       <div class="card-footer text-center">
-        <button type="submit" class="btn btn-primary" [disabled]="isSearchFormValid()">Search</button>
+        <button type="submit" class="btn btn-primary" [disabled]="isSearchFormValid()" i18n="@@customerProfileSearchButton">Search</button>
       </div>
     </form>
 
