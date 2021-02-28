@@ -216,51 +216,51 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">1027</context>
+          <context context-type="linenumber">1096</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">694</context>
+          <context context-type="linenumber">762</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">886</context>
+          <context context-type="linenumber">950</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">462</context>
+          <context context-type="linenumber">556</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">433</context>
+          <context context-type="linenumber">498</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">440</context>
+          <context context-type="linenumber">535</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">871</context>
+          <context context-type="linenumber">938</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">407</context>
+          <context context-type="linenumber">475</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">856</context>
+          <context context-type="linenumber">921</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">831</context>
+          <context context-type="linenumber">899</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">536</context>
+          <context context-type="linenumber">570</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">477</context>
+          <context context-type="linenumber">514</context>
         </context-group>
       </trans-unit>
       <trans-unit id="myTaskpageHeadingLabel" datatype="html">
@@ -271,6 +271,46 @@
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="customerProfileSearchName" datatype="html">
+        <source>Name</source>
+        <target>الاسم</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="customerProfileSearchIDNumber" datatype="html">
+        <source>
+                                            ID Number
+                                          </source>
+        <target>
+                                            الرقم المعرف
+                                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="customerProfileSearchButton" datatype="html">
+        <source>Search</source>
+        <target>بحث</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="customerProfileProfileImage" datatype="html">
         <source>
                                                         Profile Image
@@ -278,7 +318,7 @@
         <target>صورة العميل</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">125</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileDeceased" datatype="html">
@@ -288,11 +328,11 @@
         <target>متوفي</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">149</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">98</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileDateOfDeath" datatype="html">
@@ -305,11 +345,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">97</context>
+          <context context-type="linenumber">166</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">107</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileNameInArabic" datatype="html">
@@ -322,11 +362,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">136</context>
+          <context context-type="linenumber">205</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">139</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileNameInEnglish" datatype="html">
@@ -339,11 +379,11 @@
                     </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">163</context>
+          <context context-type="linenumber">232</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">154</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileEmiratesID" datatype="html">
@@ -353,11 +393,11 @@
         <target>رقم الهوية الوطنية</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">193</context>
+          <context context-type="linenumber">262</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">104</context>
+          <context context-type="linenumber">172</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileEmiratesIDissuancedate" datatype="html">
@@ -368,11 +408,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">229</context>
+          <context context-type="linenumber">298</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">122</context>
+          <context context-type="linenumber">190</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileEmiratesIDexpirydate" datatype="html">
@@ -385,11 +425,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">256</context>
+          <context context-type="linenumber">325</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">144</context>
+          <context context-type="linenumber">212</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfilePassportnumber" datatype="html">
@@ -399,11 +439,11 @@
         <target>رقم جواز السفر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">295</context>
+          <context context-type="linenumber">364</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">174</context>
+          <context context-type="linenumber">242</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfilePassportnumberissuancedate" datatype="html">
@@ -416,11 +456,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">320</context>
+          <context context-type="linenumber">389</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">187</context>
+          <context context-type="linenumber">255</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfilePassportnumberexpirydate" datatype="html">
@@ -433,11 +473,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">357</context>
+          <context context-type="linenumber">426</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">215</context>
+          <context context-type="linenumber">283</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileOtherdecrees" datatype="html">
@@ -447,11 +487,11 @@
         <target>أخرى(مراسيم..)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">397</context>
+          <context context-type="linenumber">466</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">246</context>
+          <context context-type="linenumber">314</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileOtherdocumenttype" datatype="html">
@@ -464,11 +504,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">418</context>
+          <context context-type="linenumber">487</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">254</context>
+          <context context-type="linenumber">322</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileMobileNumber" datatype="html">
@@ -481,11 +521,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">452</context>
+          <context context-type="linenumber">521</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">283</context>
+          <context context-type="linenumber">351</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileDateofBirth" datatype="html">
@@ -498,11 +538,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">485</context>
+          <context context-type="linenumber">554</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">302</context>
+          <context context-type="linenumber">370</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileGender" datatype="html">
@@ -515,11 +555,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">523</context>
+          <context context-type="linenumber">592</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">332</context>
+          <context context-type="linenumber">400</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileNationality" datatype="html">
@@ -532,11 +572,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">554</context>
+          <context context-type="linenumber">623</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">358</context>
+          <context context-type="linenumber">426</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileCustomercategory" datatype="html">
@@ -549,11 +589,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">588</context>
+          <context context-type="linenumber">657</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">387</context>
+          <context context-type="linenumber">455</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileTypeofDisability" datatype="html">
@@ -566,11 +606,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">623</context>
+          <context context-type="linenumber">692</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">414</context>
+          <context context-type="linenumber">482</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileDoyouhavetaxnumber" datatype="html">
@@ -583,11 +623,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">657</context>
+          <context context-type="linenumber">726</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">444</context>
+          <context context-type="linenumber">512</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileTaxNumber" datatype="html">
@@ -600,11 +640,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">695</context>
+          <context context-type="linenumber">764</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">476</context>
+          <context context-type="linenumber">544</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileEmirate" datatype="html">
@@ -617,11 +657,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">722</context>
+          <context context-type="linenumber">791</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">491</context>
+          <context context-type="linenumber">559</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileHomeAddress" datatype="html">
@@ -631,11 +671,11 @@
         <target>عنوان المنزل</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">756</context>
+          <context context-type="linenumber">825</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">520</context>
+          <context context-type="linenumber">588</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileGeneralNotes" datatype="html">
@@ -645,11 +685,11 @@
         <target>ملاحظات عامة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">774</context>
+          <context context-type="linenumber">843</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">533</context>
+          <context context-type="linenumber">601</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileEmail" datatype="html">
@@ -659,11 +699,11 @@
         <target>البريد الالكتروني</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">795</context>
+          <context context-type="linenumber">864</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">549</context>
+          <context context-type="linenumber">617</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileMobileNumber2" datatype="html">
@@ -673,11 +713,11 @@
         <target>هاتف محمول2</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">821</context>
+          <context context-type="linenumber">890</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">562</context>
+          <context context-type="linenumber">630</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfilePreferredtimetocommunicate" datatype="html">
@@ -687,11 +727,11 @@
         <target>الوقت المفضل للتواصل</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">853</context>
+          <context context-type="linenumber">922</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">578</context>
+          <context context-type="linenumber">646</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfilePreferredwaytocommunicate" datatype="html">
@@ -701,11 +741,11 @@
         <target>الطريقة المفضلة للتواصل</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">875</context>
+          <context context-type="linenumber">944</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">595</context>
+          <context context-type="linenumber">663</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileEmployer" datatype="html">
@@ -715,11 +755,11 @@
         <target>جهة العمل</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">900</context>
+          <context context-type="linenumber">969</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">615</context>
+          <context context-type="linenumber">683</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileJobTitle" datatype="html">
@@ -729,11 +769,11 @@
         <target>الوظيفة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">918</context>
+          <context context-type="linenumber">987</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">623</context>
+          <context context-type="linenumber">691</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileIsResident" datatype="html">
@@ -743,11 +783,11 @@
         <target>مقيم في الدولة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">945</context>
+          <context context-type="linenumber">1014</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">635</context>
+          <context context-type="linenumber">703</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileCountryofresidence" datatype="html">
@@ -757,11 +797,11 @@
         <target>بلد الاقامة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">959</context>
+          <context context-type="linenumber">1028</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">645</context>
+          <context context-type="linenumber">713</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileCityofresidenceinUAE" datatype="html">
@@ -771,11 +811,11 @@
         <target>مدينة الاقامة في الدولة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">982</context>
+          <context context-type="linenumber">1051</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">663</context>
+          <context context-type="linenumber">731</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileSignature" datatype="html">
@@ -785,11 +825,11 @@
         <target>التوقيع</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
-          <context context-type="linenumber">1007</context>
+          <context context-type="linenumber">1076</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">683</context>
+          <context context-type="linenumber">751</context>
         </context-group>
       </trans-unit>
       <trans-unit id="customerProfileCustomerId" datatype="html">
@@ -797,7 +837,51 @@
         <target>رقم المتعامل</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-details/customer-details.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileSearchDeveloperName" datatype="html">
+        <source>Developer Name
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <target>المطور العقاري
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileSearchProjectName" datatype="html">
+        <source>Project Name
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <target>مشروع التطوير العقاري
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectProfileSearchButton" datatype="html">
+        <source>Search</source>
+        <target>بحث</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileDeveloper" datatype="html">
@@ -809,11 +893,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">98</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileNameInArabic" datatype="html">
@@ -825,11 +909,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">129</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">106</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileNameInEnglish" datatype="html">
@@ -841,11 +925,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="linenumber">144</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">121</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileisMain" datatype="html">
@@ -859,11 +943,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">166</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">143</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileMainProject" datatype="html">
@@ -875,11 +959,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">125</context>
+          <context context-type="linenumber">193</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">102</context>
+          <context context-type="linenumber">170</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileBuildingNameInArabic" datatype="html">
@@ -891,11 +975,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">155</context>
+          <context context-type="linenumber">222</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">132</context>
+          <context context-type="linenumber">199</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileBuildingNameInEnglish" datatype="html">
@@ -907,11 +991,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">170</context>
+          <context context-type="linenumber">237</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">147</context>
+          <context context-type="linenumber">214</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileBuildingNumber" datatype="html">
@@ -923,11 +1007,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">188</context>
+          <context context-type="linenumber">255</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">165</context>
+          <context context-type="linenumber">232</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileBuildingCode" datatype="html">
@@ -937,11 +1021,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">203</context>
+          <context context-type="linenumber">270</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">180</context>
+          <context context-type="linenumber">247</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileParcelId" datatype="html">
@@ -955,11 +1039,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">220</context>
+          <context context-type="linenumber">287</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">197</context>
+          <context context-type="linenumber">264</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileDevPartNumber" datatype="html">
@@ -969,11 +1053,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">247</context>
+          <context context-type="linenumber">314</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">224</context>
+          <context context-type="linenumber">291</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileProjectType" datatype="html">
@@ -983,11 +1067,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">264</context>
+          <context context-type="linenumber">331</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">241</context>
+          <context context-type="linenumber">308</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileCompletionCertificateDate" datatype="html">
@@ -997,11 +1081,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">293</context>
+          <context context-type="linenumber">360</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">270</context>
+          <context context-type="linenumber">337</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileTotalBuiltUpArea" datatype="html">
@@ -1011,11 +1095,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">311</context>
+          <context context-type="linenumber">378</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">288</context>
+          <context context-type="linenumber">355</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileMeterTotalArea" datatype="html">
@@ -1025,11 +1109,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">328</context>
+          <context context-type="linenumber">395</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">305</context>
+          <context context-type="linenumber">372</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileMeterNetArea" datatype="html">
@@ -1037,11 +1121,11 @@
         <target>المساحة الصافية بالمتر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">347</context>
+          <context context-type="linenumber">414</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">324</context>
+          <context context-type="linenumber">391</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileMeterJointArea" datatype="html">
@@ -1049,11 +1133,11 @@
         <target>المساحة المشتركة بالمتر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">360</context>
+          <context context-type="linenumber">427</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">337</context>
+          <context context-type="linenumber">404</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileLongitude" datatype="html">
@@ -1061,11 +1145,11 @@
         <target>خط الطول</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">376</context>
+          <context context-type="linenumber">443</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">353</context>
+          <context context-type="linenumber">420</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileLatitude" datatype="html">
@@ -1073,11 +1157,11 @@
         <target>خط العرض</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">389</context>
+          <context context-type="linenumber">456</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">366</context>
+          <context context-type="linenumber">433</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileAccountTrustee" datatype="html">
@@ -1087,11 +1171,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">405</context>
+          <context context-type="linenumber">472</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">382</context>
+          <context context-type="linenumber">449</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileEscrowAccountNumber" datatype="html">
@@ -1101,11 +1185,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">434</context>
+          <context context-type="linenumber">501</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">411</context>
+          <context context-type="linenumber">478</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileAccountOpeningDate" datatype="html">
@@ -1115,11 +1199,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">448</context>
+          <context context-type="linenumber">515</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">425</context>
+          <context context-type="linenumber">492</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileRegistrationDate" datatype="html">
@@ -1131,11 +1215,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">473</context>
+          <context context-type="linenumber">540</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">450</context>
+          <context context-type="linenumber">517</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileExpiryDate" datatype="html">
@@ -1145,11 +1229,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">498</context>
+          <context context-type="linenumber">565</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">475</context>
+          <context context-type="linenumber">542</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileBuildingPermitNumber" datatype="html">
@@ -1159,11 +1243,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">524</context>
+          <context context-type="linenumber">591</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">501</context>
+          <context context-type="linenumber">568</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileBuildingPermitIssuanceDate" datatype="html">
@@ -1173,11 +1257,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">538</context>
+          <context context-type="linenumber">605</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">515</context>
+          <context context-type="linenumber">582</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileBuildingPermitExpiryDate" datatype="html">
@@ -1187,11 +1271,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">557</context>
+          <context context-type="linenumber">624</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">539</context>
+          <context context-type="linenumber">606</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileProjectStatus" datatype="html">
@@ -1203,11 +1287,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">578</context>
+          <context context-type="linenumber">645</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">566</context>
+          <context context-type="linenumber">633</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileProjectCompletionpercentage" datatype="html">
@@ -1219,11 +1303,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">604</context>
+          <context context-type="linenumber">671</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">592</context>
+          <context context-type="linenumber">659</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileConsultant" datatype="html">
@@ -1235,11 +1319,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">622</context>
+          <context context-type="linenumber">689</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">610</context>
+          <context context-type="linenumber">677</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileConsultantContractValue" datatype="html">
@@ -1249,11 +1333,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">648</context>
+          <context context-type="linenumber">715</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">636</context>
+          <context context-type="linenumber">703</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileContractor" datatype="html">
@@ -1265,11 +1349,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">665</context>
+          <context context-type="linenumber">732</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">653</context>
+          <context context-type="linenumber">720</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileContractorContractValue" datatype="html">
@@ -1279,11 +1363,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">691</context>
+          <context context-type="linenumber">758</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">679</context>
+          <context context-type="linenumber">746</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileContractorContractStartDate" datatype="html">
@@ -1293,11 +1377,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">708</context>
+          <context context-type="linenumber">775</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">696</context>
+          <context context-type="linenumber">763</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileContractorContractEndDate" datatype="html">
@@ -1307,11 +1391,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">726</context>
+          <context context-type="linenumber">793</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">714</context>
+          <context context-type="linenumber">781</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileActualStartDate" datatype="html">
@@ -1321,11 +1405,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">747</context>
+          <context context-type="linenumber">814</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">735</context>
+          <context context-type="linenumber">802</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileTotalProjectCost" datatype="html">
@@ -1335,11 +1419,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">765</context>
+          <context context-type="linenumber">832</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">753</context>
+          <context context-type="linenumber">820</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileTypeOfUse" datatype="html">
@@ -1349,11 +1433,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">777</context>
+          <context context-type="linenumber">844</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">765</context>
+          <context context-type="linenumber">832</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileTechDescription" datatype="html">
@@ -1365,11 +1449,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">796</context>
+          <context context-type="linenumber">863</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">784</context>
+          <context context-type="linenumber">851</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileNumberofElevators" datatype="html">
@@ -1377,11 +1461,11 @@
         <target>عدد المصاعد في المشروع</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">814</context>
+          <context context-type="linenumber">881</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">802</context>
+          <context context-type="linenumber">869</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileNumberofSwimmingPool" datatype="html">
@@ -1389,11 +1473,11 @@
         <target>عدد احواض السباحة في المشروع</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">822</context>
+          <context context-type="linenumber">889</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">810</context>
+          <context context-type="linenumber">877</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileNumberofFloors" datatype="html">
@@ -1401,11 +1485,11 @@
         <target>عدد الطوابق</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">833</context>
+          <context context-type="linenumber">900</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">821</context>
+          <context context-type="linenumber">888</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileNumberofFlats" datatype="html">
@@ -1413,11 +1497,11 @@
         <target>عدد الشقق</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">841</context>
+          <context context-type="linenumber">908</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">829</context>
+          <context context-type="linenumber">896</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileNumberofOffices" datatype="html">
@@ -1425,11 +1509,11 @@
         <target>عدد المكاتب</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">852</context>
+          <context context-type="linenumber">919</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">840</context>
+          <context context-type="linenumber">907</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileNumberofShops" datatype="html">
@@ -1437,11 +1521,11 @@
         <target>عدد المحلات</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">860</context>
+          <context context-type="linenumber">927</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">848</context>
+          <context context-type="linenumber">915</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectProfileNumberofCarParks" datatype="html">
@@ -1449,11 +1533,71 @@
         <target>عدد مواقف السيارات</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
-          <context context-type="linenumber">871</context>
+          <context context-type="linenumber">938</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-details/project-details.component.html</context>
-          <context context-type="linenumber">859</context>
+          <context context-type="linenumber">926</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileSearchDeveloperName" datatype="html">
+        <source>Developer Name
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <target>المطور العقاري
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileSearchProjectName" datatype="html">
+        <source>Project Name
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <target>مشروع التطوير العقاري
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileSearchUnitNumber" datatype="html">
+        <source>Unit Number
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </source>
+        <target>رقم الوحدة العقارية
+                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="unitProfileSearchButton" datatype="html">
+        <source>Search</source>
+        <target>بحث</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
+          <context context-type="linenumber">93</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileDeveloper" datatype="html">
@@ -1465,11 +1609,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">126</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">103</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileProject" datatype="html">
@@ -1483,11 +1627,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">152</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">130</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileUnitNumber" datatype="html">
@@ -1499,11 +1643,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">87</context>
+          <context context-type="linenumber">182</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">66</context>
+          <context context-type="linenumber">161</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileUnitType" datatype="html">
@@ -1517,11 +1661,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">107</context>
+          <context context-type="linenumber">202</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">181</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileUnitUse" datatype="html">
@@ -1531,11 +1675,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">134</context>
+          <context context-type="linenumber">229</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">113</context>
+          <context context-type="linenumber">208</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileFloorNumber" datatype="html">
@@ -1547,11 +1691,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">161</context>
+          <context context-type="linenumber">256</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">140</context>
+          <context context-type="linenumber">235</context>
         </context-group>
       </trans-unit>
             <trans-unit id="unitProfileLand" datatype="html">
@@ -1561,11 +1705,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">180</context>
+          <context context-type="linenumber">275</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">159</context>
+          <context context-type="linenumber">254</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterTotalSoldArea" datatype="html">
@@ -1577,11 +1721,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">209</context>
+          <context context-type="linenumber">304</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">188</context>
+          <context context-type="linenumber">283</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterNetSoldArea" datatype="html">
@@ -1589,11 +1733,11 @@
         <target>المساحة الصافية المباعة بالمتر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">229</context>
+          <context context-type="linenumber">324</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">208</context>
+          <context context-type="linenumber">303</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterJointSoldArea" datatype="html">
@@ -1601,11 +1745,11 @@
         <target>المساحة المشتركة المباعة بالمتر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">242</context>
+          <context context-type="linenumber">337</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">221</context>
+          <context context-type="linenumber">316</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterTotalActualArea" datatype="html">
@@ -1613,11 +1757,11 @@
         <target>المساحة الاجمالية الفعلية بالمتر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">258</context>
+          <context context-type="linenumber">353</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">237</context>
+          <context context-type="linenumber">332</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterNetActualArea" datatype="html">
@@ -1625,11 +1769,11 @@
         <target>المساحة الصافية الفعلية بالمتر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">276</context>
+          <context context-type="linenumber">371</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">255</context>
+          <context context-type="linenumber">350</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileMeterJointActualArea" datatype="html">
@@ -1637,11 +1781,11 @@
         <target>المساحة المشتركة الفعلية بالمتر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">289</context>
+          <context context-type="linenumber">384</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">268</context>
+          <context context-type="linenumber">363</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileRoomsCount" datatype="html">
@@ -1649,11 +1793,11 @@
         <target>عدد الغرف</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">305</context>
+          <context context-type="linenumber">400</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">284</context>
+          <context context-type="linenumber">379</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileServantRoomsCount" datatype="html">
@@ -1661,11 +1805,11 @@
         <target>عدد غرف الخدم</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">318</context>
+          <context context-type="linenumber">413</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">297</context>
+          <context context-type="linenumber">392</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileLivingRoomsCount" datatype="html">
@@ -1673,11 +1817,11 @@
         <target>عدد غرف المعيشة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">334</context>
+          <context context-type="linenumber">429</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">313</context>
+          <context context-type="linenumber">408</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileDiningRoomsCount" datatype="html">
@@ -1685,11 +1829,11 @@
         <target>عدد غرف الطعام</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">347</context>
+          <context context-type="linenumber">442</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">326</context>
+          <context context-type="linenumber">421</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileBathroomsCount" datatype="html">
@@ -1697,11 +1841,11 @@
         <target>عدد الحمامات</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">363</context>
+          <context context-type="linenumber">458</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">342</context>
+          <context context-type="linenumber">437</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileLoungesCount" datatype="html">
@@ -1709,11 +1853,11 @@
         <target>عدد الصالات</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">376</context>
+          <context context-type="linenumber">471</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">355</context>
+          <context context-type="linenumber">450</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileKitchensCount" datatype="html">
@@ -1721,11 +1865,11 @@
         <target>عدد المطابخ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">392</context>
+          <context context-type="linenumber">487</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">371</context>
+          <context context-type="linenumber">466</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileBalconyCount" datatype="html">
@@ -1733,11 +1877,11 @@
         <target>عدد البلكونات</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">405</context>
+          <context context-type="linenumber">500</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">384</context>
+          <context context-type="linenumber">479</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileServicesDescription" datatype="html">
@@ -1745,11 +1889,11 @@
         <target>الخدمات</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">421</context>
+          <context context-type="linenumber">516</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">400</context>
+          <context context-type="linenumber">495</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileOthers" datatype="html">
@@ -1757,11 +1901,11 @@
         <target>اخرى</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">434</context>
+          <context context-type="linenumber">529</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">413</context>
+          <context context-type="linenumber">508</context>
         </context-group>
       </trans-unit>
       <trans-unit id="unitProfileSitePlan" datatype="html">
@@ -1769,11 +1913,51 @@
         <target>المخطط</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-profile.component.html</context>
-          <context context-type="linenumber">450</context>
+          <context context-type="linenumber">545</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/unit-profile/unit-details/unit-details.component.html</context>
-          <context context-type="linenumber">429</context>
+          <context context-type="linenumber">524</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="companyProfileSearchCompanyName" datatype="html">
+        <source>Company Name</source>
+        <target>اسم الشركة/ المؤسسة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="companyProfileSearchLicenseNumber" datatype="html">
+        <source>
+                            License Number
+                          </source>
+        <target>
+                            رقم الرخصة التجارية
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="companyProfileSearchButton" datatype="html">
+        <source>Search</source>
+        <target>بحث</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
+          <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileCompanyOrganisationType" datatype="html">
@@ -1787,11 +1971,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">99</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileNameInArabic" datatype="html">
@@ -1803,11 +1987,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">142</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">119</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileNameInEnglish" datatype="html">
@@ -1819,11 +2003,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">157</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">66</context>
+          <context context-type="linenumber">134</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileTradeLicenseNumber" datatype="html">
@@ -1835,11 +2019,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">107</context>
+          <context context-type="linenumber">175</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">84</context>
+          <context context-type="linenumber">152</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileLicenseIssuer" datatype="html">
@@ -1851,11 +2035,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">122</context>
+          <context context-type="linenumber">190</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">167</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileLicenseIssuanceDate" datatype="html">
@@ -1867,11 +2051,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">151</context>
+          <context context-type="linenumber">219</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">128</context>
+          <context context-type="linenumber">196</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileLicenseExpiryDate" datatype="html">
@@ -1883,11 +2067,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">178</context>
+          <context context-type="linenumber">246</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">155</context>
+          <context context-type="linenumber">223</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileLicenseType" datatype="html">
@@ -1899,11 +2083,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">208</context>
+          <context context-type="linenumber">276</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">185</context>
+          <context context-type="linenumber">253</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileEstablishmentCardNumber" datatype="html">
@@ -1915,11 +2099,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">239</context>
+          <context context-type="linenumber">307</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">216</context>
+          <context context-type="linenumber">284</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileTaxNumber" datatype="html">
@@ -1931,11 +2115,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">263</context>
+          <context context-type="linenumber">331</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">240</context>
+          <context context-type="linenumber">308</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileEmirate" datatype="html">
@@ -1947,11 +2131,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">278</context>
+          <context context-type="linenumber">346</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">255</context>
+          <context context-type="linenumber">323</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfilePhoneNumber" datatype="html">
@@ -1963,11 +2147,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">307</context>
+          <context context-type="linenumber">375</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">284</context>
+          <context context-type="linenumber">352</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileMakaniNumber" datatype="html">
@@ -1975,11 +2159,11 @@
         <target>رقم مكاني</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">326</context>
+          <context context-type="linenumber">394</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">303</context>
+          <context context-type="linenumber">371</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileEmail" datatype="html">
@@ -1987,11 +2171,11 @@
         <target>البريد الالكتروني</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">337</context>
+          <context context-type="linenumber">405</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">314</context>
+          <context context-type="linenumber">382</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileWebsite" datatype="html">
@@ -1999,11 +2183,11 @@
         <target>الموقع الالكتروني</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">350</context>
+          <context context-type="linenumber">418</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">327</context>
+          <context context-type="linenumber">395</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileOwner" datatype="html">
@@ -2015,11 +2199,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">366</context>
+          <context context-type="linenumber">434</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">343</context>
+          <context context-type="linenumber">411</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileOwnershipPercentage" datatype="html">
@@ -2031,11 +2215,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">392</context>
+          <context context-type="linenumber">460</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">369</context>
+          <context context-type="linenumber">437</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileEstablishmentContractFile" datatype="html">
@@ -2047,11 +2231,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-profile.component.html</context>
-          <context context-type="linenumber">417</context>
+          <context context-type="linenumber">485</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">394</context>
+          <context context-type="linenumber">462</context>
         </context-group>
       </trans-unit>
       <trans-unit id="companyProfileCompanyId" datatype="html">
@@ -2059,7 +2243,47 @@
         <target>رقم الشركة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/company-profile/company-details/company-details.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileSearchLandId" datatype="html">
+        <source>Land Id</source>
+        <target>رقم الأرض</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileSearchOldLandId" datatype="html">
+        <source>
+                            Old Land Id
+                          </source>
+        <target>
+                            رقم الأرض القديم
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileSearchButton" datatype="html">
+        <source>Search</source>
+        <target>بحث</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileFreeHold" datatype="html">
@@ -2067,11 +2291,11 @@
         <target>تملك حر (عقار يخضع لقوانين الملكيات المشتركة)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">102</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileLandID" datatype="html">
@@ -2083,11 +2307,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">114</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileOldLandID" datatype="html">
@@ -2097,11 +2321,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">130</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">108</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileCity" datatype="html">
@@ -2113,11 +2337,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">142</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">120</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileSector" datatype="html">
@@ -2129,11 +2353,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">101</context>
+          <context context-type="linenumber">169</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="linenumber">147</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileDistrict" datatype="html">
@@ -2145,11 +2369,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">198</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">176</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfilePlot" datatype="html">
@@ -2161,11 +2385,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">146</context>
+          <context context-type="linenumber">214</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">124</context>
+          <context context-type="linenumber">192</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileLandUse" datatype="html">
@@ -2175,11 +2399,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">164</context>
+          <context context-type="linenumber">232</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">142</context>
+          <context context-type="linenumber">210</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileSubLandUse" datatype="html">
@@ -2189,11 +2413,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">184</context>
+          <context context-type="linenumber">252</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">162</context>
+          <context context-type="linenumber">230</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfilePropertyType" datatype="html">
@@ -2203,11 +2427,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">206</context>
+          <context context-type="linenumber">274</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">184</context>
+          <context context-type="linenumber">252</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileLandAreaM2" datatype="html">
@@ -2217,11 +2441,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">236</context>
+          <context context-type="linenumber">304</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">214</context>
+          <context context-type="linenumber">282</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileFloorsasperSiteMap" datatype="html">
@@ -2231,11 +2455,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">246</context>
+          <context context-type="linenumber">314</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">224</context>
+          <context context-type="linenumber">292</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileMunicipalityRemarks" datatype="html">
@@ -2243,11 +2467,11 @@
         <target>ملاحظات البلدية</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">258</context>
+          <context context-type="linenumber">326</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">236</context>
+          <context context-type="linenumber">304</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileEngineeringsRemarks" datatype="html">
@@ -2255,11 +2479,11 @@
         <target>الملاحظات الهندسية</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">272</context>
+          <context context-type="linenumber">340</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">250</context>
+          <context context-type="linenumber">318</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileStreetType" datatype="html">
@@ -2269,11 +2493,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">288</context>
+          <context context-type="linenumber">356</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">266</context>
+          <context context-type="linenumber">334</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileStreetName" datatype="html">
@@ -2283,11 +2507,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">313</context>
+          <context context-type="linenumber">381</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">291</context>
+          <context context-type="linenumber">359</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNorth" datatype="html">
@@ -2297,11 +2521,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">344</context>
+          <context context-type="linenumber">412</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">322</context>
+          <context context-type="linenumber">390</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileSouth" datatype="html">
@@ -2311,11 +2535,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">354</context>
+          <context context-type="linenumber">422</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">332</context>
+          <context context-type="linenumber">400</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileEast" datatype="html">
@@ -2325,11 +2549,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">366</context>
+          <context context-type="linenumber">434</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">344</context>
+          <context context-type="linenumber">412</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileWest" datatype="html">
@@ -2339,11 +2563,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">376</context>
+          <context context-type="linenumber">444</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">354</context>
+          <context context-type="linenumber">422</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileBuildingArea" datatype="html">
@@ -2353,11 +2577,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">393</context>
+          <context context-type="linenumber">461</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">371</context>
+          <context context-type="linenumber">439</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileNumberofBuiltFloors" datatype="html">
@@ -2367,11 +2591,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">403</context>
+          <context context-type="linenumber">471</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">381</context>
+          <context context-type="linenumber">449</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileCompletionRate" datatype="html">
@@ -2381,11 +2605,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">415</context>
+          <context context-type="linenumber">483</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">393</context>
+          <context context-type="linenumber">461</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileBuildingAge" datatype="html">
@@ -2395,11 +2619,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">425</context>
+          <context context-type="linenumber">493</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">403</context>
+          <context context-type="linenumber">471</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfilePropertyLeased" datatype="html">
@@ -2407,11 +2631,11 @@
         <target> العقار مؤجر</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">440</context>
+          <context context-type="linenumber">508</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">418</context>
+          <context context-type="linenumber">486</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileAnnualincomefromRent" datatype="html">
@@ -2421,87 +2645,17 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">448</context>
+          <context context-type="linenumber">516</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">426</context>
+          <context context-type="linenumber">494</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileAnnualMaintenanceAmount" datatype="html">
         <source>Annual maintenance amount
                           </source>
         <target>مبلغ الصيانة السنوي
-                          </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">460</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">438</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfileNumberofShops" datatype="html">
-        <source>Number of shops
-                          </source>
-        <target>عدد المحلات التجارية
-                          </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">475</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">453</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfileNumberofVacantShops" datatype="html">
-        <source>Number of vacant shops
-                          </source>
-        <target>عدد المحلات الشاغرة
-                          </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">490</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">468</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfileTheNumberofRentedShops" datatype="html">
-        <source>The number of rented shops
-                          </source>
-        <target>عدد المحلات المؤجرة
-                          </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">500</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">478</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfileNumberofWarehouses" datatype="html">
-        <source>Number of warehouses
-                          </source>
-        <target>عدد الشبرات
-                          </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">513</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">491</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfileNumberofVacantWarehouses" datatype="html">
-        <source>Number of vacant warehouses
-                          </source>
-        <target>عدد الشبرات الشاغرة
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -2512,91 +2666,81 @@
           <context context-type="linenumber">506</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="landProfileNumberofShops" datatype="html">
+        <source>Number of shops
+                          </source>
+        <target>عدد المحلات التجارية
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">543</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">521</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileNumberofVacantShops" datatype="html">
+        <source>Number of vacant shops
+                          </source>
+        <target>عدد المحلات الشاغرة
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">558</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">536</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileTheNumberofRentedShops" datatype="html">
+        <source>The number of rented shops
+                          </source>
+        <target>عدد المحلات المؤجرة
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">568</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">546</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileNumberofWarehouses" datatype="html">
+        <source>Number of warehouses
+                          </source>
+        <target>عدد الشبرات
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">581</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">559</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileNumberofVacantWarehouses" datatype="html">
+        <source>Number of vacant warehouses
+                          </source>
+        <target>عدد الشبرات الشاغرة
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">596</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">574</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="landProfileTheNumberofRentedWarehouses" datatype="html">
         <source>The number of rented warehouses
                           </source>
         <target>عدد الشبرات المؤجرة
                           </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">538</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">516</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfileNumberofRooms" datatype="html">
-        <source>Number of rooms
-                          </source>
-        <target>عدد الغرف
-                          </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">550</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">528</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfileNumberofServiceUnits" datatype="html">
-        <source>Number of service units
-                          </source>
-        <target>عدد الوحدات الخدمية
-                          </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">560</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">538</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfileNumberofVacantRooms" datatype="html">
-        <source>Number of vacant rooms
-                          </source>
-        <target>عدد الغرف الشاغرة
-                          </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">572</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">550</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfileNumberofRentedRooms" datatype="html">
-        <source>Number of rented rooms
-                          </source>
-        <target>عدد الغرف المؤجرة
-                          </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">582</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">560</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfileDistrictImage" datatype="html">
-        <source>District Image</source>
-        <target>District Image</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">598</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">576</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfileSectorImage" datatype="html">
-        <source>Sector Image</source>
-        <target>Sector Image</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
           <context context-type="linenumber">606</context>
@@ -2606,65 +2750,65 @@
           <context context-type="linenumber">584</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileParcelImage" datatype="html">
-        <source>Parcel Image</source>
-        <target>Parcel Image</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">617</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">595</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="landProfileNorthFacade" datatype="html">
-        <source>North facade
+      <trans-unit id="landProfileNumberofRooms" datatype="html">
+        <source>Number of rooms
                           </source>
-        <target>الواجهة الشمالية
+        <target>عدد الغرف
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">634</context>
+          <context context-type="linenumber">618</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">612</context>
+          <context context-type="linenumber">596</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileEastern" datatype="html">
-        <source>Eastern
+      <trans-unit id="landProfileNumberofServiceUnits" datatype="html">
+        <source>Number of service units
                           </source>
-        <target>الشرقية
+        <target>عدد الوحدات الخدمية
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">644</context>
+          <context context-type="linenumber">628</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">622</context>
+          <context context-type="linenumber">606</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileSouthern" datatype="html">
-        <source>Southern
+      <trans-unit id="landProfileNumberofVacantRooms" datatype="html">
+        <source>Number of vacant rooms
                           </source>
-        <target>الجنوبية
+        <target>عدد الغرف الشاغرة
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">656</context>
+          <context context-type="linenumber">640</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">634</context>
+          <context context-type="linenumber">618</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="landProfileWestern" datatype="html">
-        <source>Western
+      <trans-unit id="landProfileNumberofRentedRooms" datatype="html">
+        <source>Number of rented rooms
                           </source>
-        <target>الغربية
+        <target>عدد الغرف المؤجرة
                           </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">650</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">628</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileDistrictImage" datatype="html">
+        <source>District Image</source>
+        <target>District Image</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
           <context context-type="linenumber">666</context>
@@ -2674,6 +2818,86 @@
           <context context-type="linenumber">644</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="landProfileSectorImage" datatype="html">
+        <source>Sector Image</source>
+        <target>Sector Image</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">674</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">652</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileParcelImage" datatype="html">
+        <source>Parcel Image</source>
+        <target>Parcel Image</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">685</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">663</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileNorthFacade" datatype="html">
+        <source>North facade
+                          </source>
+        <target>الواجهة الشمالية
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">702</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">680</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileEastern" datatype="html">
+        <source>Eastern
+                          </source>
+        <target>الشرقية
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">712</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">690</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileSouthern" datatype="html">
+        <source>Southern
+                          </source>
+        <target>الجنوبية
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">724</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">702</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="landProfileWestern" datatype="html">
+        <source>Western
+                          </source>
+        <target>الغربية
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">734</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">712</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="landProfileStructureType" datatype="html">
         <source>Structure type
                           </source>
@@ -2681,11 +2905,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">679</context>
+          <context context-type="linenumber">747</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">657</context>
+          <context context-type="linenumber">725</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileExternalYards" datatype="html">
@@ -2695,11 +2919,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">698</context>
+          <context context-type="linenumber">766</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">676</context>
+          <context context-type="linenumber">744</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileReception" datatype="html">
@@ -2709,11 +2933,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">708</context>
+          <context context-type="linenumber">776</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">686</context>
+          <context context-type="linenumber">754</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileTheEntrance" datatype="html">
@@ -2723,11 +2947,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">720</context>
+          <context context-type="linenumber">788</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">698</context>
+          <context context-type="linenumber">766</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileTheRooms" datatype="html">
@@ -2737,11 +2961,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">730</context>
+          <context context-type="linenumber">798</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">708</context>
+          <context context-type="linenumber">776</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileLiftsStairsEscalators" datatype="html">
@@ -2751,11 +2975,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">746</context>
+          <context context-type="linenumber">814</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">724</context>
+          <context context-type="linenumber">792</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileElectricity" datatype="html">
@@ -2765,11 +2989,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">756</context>
+          <context context-type="linenumber">824</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">734</context>
+          <context context-type="linenumber">802</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileAirConditioning" datatype="html">
@@ -2779,11 +3003,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">768</context>
+          <context context-type="linenumber">836</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">746</context>
+          <context context-type="linenumber">814</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileAppendix" datatype="html">
@@ -2793,11 +3017,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">778</context>
+          <context context-type="linenumber">846</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">756</context>
+          <context context-type="linenumber">824</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileGas" datatype="html">
@@ -2807,11 +3031,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">790</context>
+          <context context-type="linenumber">858</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">768</context>
+          <context context-type="linenumber">836</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileCarParking" datatype="html">
@@ -2824,11 +3048,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">800</context>
+          <context context-type="linenumber">868</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">778</context>
+          <context context-type="linenumber">846</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileMetalAwnings" datatype="html">
@@ -2838,11 +3062,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">812</context>
+          <context context-type="linenumber">880</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">790</context>
+          <context context-type="linenumber">858</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfileGates" datatype="html">
@@ -2852,11 +3076,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">822</context>
+          <context context-type="linenumber">890</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">800</context>
+          <context context-type="linenumber">868</context>
         </context-group>
       </trans-unit>
       <trans-unit id="landProfilePropertyDescription" datatype="html">
@@ -2864,11 +3088,11 @@
         <target>وصف العقار</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
-          <context context-type="linenumber">835</context>
+          <context context-type="linenumber">903</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
-          <context context-type="linenumber">813</context>
+          <context context-type="linenumber">881</context>
         </context-group>
       </trans-unit>
       <trans-unit id="searchPageHeaderLabel" datatype="html">
@@ -3503,6 +3727,30 @@
           <context context-type="linenumber">943</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="developerProfileSearchDeveloperName" datatype="html">
+        <source>Developer Name<x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target>المطور العقاري<x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="developerProfileSearchButton" datatype="html">
+        <source>Search</source>
+        <target>بحث</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="searchPageBlockSubmit" datatype="html">
         <source>Submit</source>
         <target>إرسال</target>
@@ -3520,7 +3768,7 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileLicenseNumber" datatype="html">
@@ -3532,7 +3780,7 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">61</context>
+          <context context-type="linenumber">98</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileCompanyDetails" datatype="html">
@@ -3540,7 +3788,7 @@
         <target>بيانات الشركة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">128</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileCompanyID" datatype="html">
@@ -3548,11 +3796,11 @@
         <target>رقم الشركة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">98</context>
+          <context context-type="linenumber">135</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">135</context>
+          <context context-type="linenumber">172</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileCompanyOrganizationType" datatype="html">
@@ -3560,11 +3808,11 @@
         <target>نوع الشركة / المؤسسة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">112</context>
+          <context context-type="linenumber">149</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">149</context>
+          <context context-type="linenumber">186</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileCompanyNameInArabic" datatype="html">
@@ -3572,11 +3820,11 @@
         <target>اسم الشركة/ المؤسسة باللغة العربية</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">134</context>
+          <context context-type="linenumber">171</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">171</context>
+          <context context-type="linenumber">208</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileCompanyNameInEnglish" datatype="html">
@@ -3586,11 +3834,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">143</context>
+          <context context-type="linenumber">180</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">180</context>
+          <context context-type="linenumber">217</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileTradeLicenseNumber" datatype="html">
@@ -3598,11 +3846,11 @@
         <target>رقم الرخصة التجارية</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">155</context>
+          <context context-type="linenumber">192</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">192</context>
+          <context context-type="linenumber">229</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileLicenseIssuer" datatype="html">
@@ -3610,11 +3858,11 @@
         <target>جهة اصدار الرخصة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">164</context>
+          <context context-type="linenumber">201</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">201</context>
+          <context context-type="linenumber">238</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileLicenseIssuanceDate" datatype="html">
@@ -3622,11 +3870,11 @@
         <target>تاريخ اصدار الرخصة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">186</context>
+          <context context-type="linenumber">223</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">223</context>
+          <context context-type="linenumber">260</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileLicenseExpiryDate" datatype="html">
@@ -3634,11 +3882,11 @@
         <target>تاريخ انتهاء الرخصة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">205</context>
+          <context context-type="linenumber">242</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">242</context>
+          <context context-type="linenumber">279</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileLicenseType" datatype="html">
@@ -3646,11 +3894,11 @@
         <target>نوع الرخصة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">227</context>
+          <context context-type="linenumber">264</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">264</context>
+          <context context-type="linenumber">301</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileTaxNumber" datatype="html">
@@ -3662,11 +3910,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">251</context>
+          <context context-type="linenumber">288</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">288</context>
+          <context context-type="linenumber">325</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileEmirate" datatype="html">
@@ -3678,11 +3926,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">266</context>
+          <context context-type="linenumber">303</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">303</context>
+          <context context-type="linenumber">340</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileOwner" datatype="html">
@@ -3690,11 +3938,11 @@
         <target>المالك / الشريك</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">295</context>
+          <context context-type="linenumber">332</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">332</context>
+          <context context-type="linenumber">369</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileOwnershipPercentage" datatype="html">
@@ -3702,11 +3950,11 @@
         <target>نسبة التملك</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">321</context>
+          <context context-type="linenumber">358</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">358</context>
+          <context context-type="linenumber">395</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfilePhoneNumber" datatype="html">
@@ -3718,11 +3966,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">335</context>
+          <context context-type="linenumber">372</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">372</context>
+          <context context-type="linenumber">409</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileMakaniNumber" datatype="html">
@@ -3730,11 +3978,11 @@
         <target>رقم مكاني</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">355</context>
+          <context context-type="linenumber">392</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">392</context>
+          <context context-type="linenumber">429</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileEmail" datatype="html">
@@ -3742,11 +3990,11 @@
         <target>البريد الالكتروني</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">366</context>
+          <context context-type="linenumber">403</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">403</context>
+          <context context-type="linenumber">440</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileWebsite" datatype="html">
@@ -3754,11 +4002,11 @@
         <target>الموقع الالكتروني</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">380</context>
+          <context context-type="linenumber">417</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">417</context>
+          <context context-type="linenumber">454</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileAddress" datatype="html">
@@ -3766,11 +4014,11 @@
         <target>العنوان</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">396</context>
+          <context context-type="linenumber">433</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">433</context>
+          <context context-type="linenumber">470</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfilePOBox" datatype="html">
@@ -3778,11 +4026,11 @@
         <target>صندوق البريد</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">410</context>
+          <context context-type="linenumber">447</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">447</context>
+          <context context-type="linenumber">484</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileEstablishmentContractFile" datatype="html">
@@ -3794,11 +4042,11 @@
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">421</context>
+          <context context-type="linenumber">458</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">458</context>
+          <context context-type="linenumber">495</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileDeveloperDetails" datatype="html">
@@ -3806,11 +4054,11 @@
         <target>بيانات القيد</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">439</context>
+          <context context-type="linenumber">476</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileDeveloperType" datatype="html">
@@ -3824,11 +4072,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">445</context>
+          <context context-type="linenumber">482</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileRegistrationDate" datatype="html">
@@ -3840,11 +4088,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">479</context>
+          <context context-type="linenumber">516</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">75</context>
+          <context context-type="linenumber">112</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileRegistrationExpiryDate" datatype="html">
@@ -3856,11 +4104,11 @@
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-profile.component.html</context>
-          <context context-type="linenumber">504</context>
+          <context context-type="linenumber">541</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">137</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileDeveloperId" datatype="html">
@@ -3872,7 +4120,7 @@
                 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileDeveloperNameInArabic" datatype="html">
@@ -3880,7 +4128,7 @@
         <target>اسم المطور العقاري باللغة العربية</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">91</context>
         </context-group>
       </trans-unit>
       <trans-unit id="developerProfileDeveloperNameInEnglish" datatype="html">
@@ -3890,7 +4138,7 @@
                 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/developer-profile/developer-details/developer-details.component.html</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">100</context>
         </context-group>
       </trans-unit>
       <trans-unit id="legalBlockssearchDeveloperName" datatype="html">
