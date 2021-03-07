@@ -223,22 +223,31 @@ export class DeveloperProfileComponent implements OnInit {
     }
   }
 
-  getCompanyDetails(event: any) {
+  getCompanyDetails(event: any, field_name: any) {
     if (event && event.key) {
-      console.log('get profile for', event);
       // get Company Details for Id
-      this.getCompanyProfile(event.key);
+      this.getCompanyProfile(event.key, field_name);
     } else {
       // reset company Details
       this.companyDetails = { owners: [{}] }
     }
   }
 
-  getCompanyProfile(company_id: any) {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companies?${company_id}`)
+  getCompanyProfile(company_id: any, field_name: any = 'companyName') {
+    let url = '';
+    if (field_name == 'companyName') {
+      url = `${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companies/companyId/${company_id}`;
+    } else {
+      url = `${environment.apiHost}/AjmanLandProperty/index.php/Lookups/companies/licenseNumberObj/${company_id}`;
+    }
+    this.fieldsService.getUrl(url)
       .subscribe(async (profile) => {
-        await this.prepareOwnerValueOptions(profile);
-        this.companyDetails = profile
+        if (profile !== {}) {
+          await this.prepareOwnerValueOptions(profile);
+          this.companyDetails = profile
+        } else {
+          this.companyDetails = { owners: [{}] }
+        }
       }, (error) => {
         this.toastr.error('Something went Wrong While fetching Company Details', 'Error')
         this.router.navigate(['error'])
