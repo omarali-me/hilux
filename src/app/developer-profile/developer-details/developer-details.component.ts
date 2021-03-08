@@ -83,7 +83,7 @@ export class DeveloperDetailsComponent implements OnInit {
     let fd = new FormData();
     let preparedData = this.prepareDeveloperName(formData);
     fd.append('developer', JSON.stringify(preparedData));
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/developers/update//${formData.id}`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/developers/update/${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
