@@ -232,8 +232,8 @@ export class UnitsValuationComponent implements OnInit {
     }
   }
 
-  async editValuation(blockage: any) {
-    await this.openUpdateValuationModal(blockage);
+  async editValuation(valuation: any) {
+    await this.openUpdateValuationModal(valuation);
   }
 
   getProjectName(response: any) {
@@ -286,8 +286,8 @@ export class UnitsValuationComponent implements OnInit {
     this.ngxSmartModalService.getModal('addValuationModal').open();
   }
 
-  async openUpdateValuationModal(blockage: any) {
-    this.getValuation(blockage.id)
+  async openUpdateValuationModal(valuation: any) {
+    this.getValuation(valuation.id)
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.updateValuationData = data.data;
@@ -295,8 +295,12 @@ export class UnitsValuationComponent implements OnInit {
           await this.prepareModalProjectValueOptions(this.updateValuationData);
           this.ngxSmartModalService.getModal('updateValuationModal').open();
         } else {
-          this.formErrors = data.data;
-          this.toastr.error(JSON.stringify(data.message), 'Error')
+          this.addValuationData = valuation
+          await this.prepareModalDeveloperValueOptions(this.addValuationData);
+          await this.prepareModalProjectValueOptions(this.addValuationData);
+          this.openAddValuationModal();
+          // this.formErrors = data.data;
+          // this.toastr.error(JSON.stringify(data.message), 'Error')
         }
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
