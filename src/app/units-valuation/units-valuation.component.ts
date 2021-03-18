@@ -293,12 +293,14 @@ export class UnitsValuationComponent implements OnInit {
           this.updateValuationData = data.data;
           await this.prepareModalDeveloperValueOptions(this.updateValuationData);
           await this.prepareModalProjectValueOptions(this.updateValuationData);
+          await this.loadUnitsOptions(this.updateValuationData);
           this.ngxSmartModalService.getModal('updateValuationModal').open();
         } else {
-          this.addValuationData = valuation
-          await this.prepareModalDeveloperValueOptions(this.addValuationData);
-          await this.prepareModalProjectValueOptions(this.addValuationData);
-          this.openAddValuationModal();
+          this.updateValuationData = valuation
+          await this.prepareModalDeveloperValueOptions(this.updateValuationData);
+          await this.prepareModalProjectValueOptions(this.updateValuationData);
+          await this.loadUnitsOptions(this.updateValuationData);
+          this.ngxSmartModalService.getModal('updateValuationModal').open();
           // this.formErrors = data.data;
           // this.toastr.error(JSON.stringify(data.message), 'Error')
         }
