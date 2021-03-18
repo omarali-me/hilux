@@ -96,7 +96,7 @@
                               name="unitNumberSearch"
                               [(ngModel)]="searchData.searchUnitNumber"
                               bindLabel="value.ar"
-                              bindValue="key"
+                              bindValue="value.entityId"
                               notFoundText="لا يوجد نتائج للبحث"
                               #unitNumberSearch="ngModel"
                               (open)="loadUnitNumberOptions()"
