@@ -276,6 +276,7 @@ export class DeveloperProfileComponent implements OnInit {
   prepareDeveloperName(formData: any) {
     formData["nameAr"] = this.companyDetails.nameAr;
     formData["nameEn"] = this.companyDetails.nameEn;
+    formData["companyDetails"] = this.companyDetails;
     return formData;
   }
 
