@@ -171,6 +171,53 @@
                 My Tasks
             </a>
         </li>
+        <li
+            [routerLink]="['/my_tasks']"
+            class="nav-item d-none d-sm-inline-block"
+            [routerLinkActive]="['active']"
+        >
+            <a
+                href="/"
+                class="nav-link"
+            >
+            لوحدة التحكم 
+            </a>
+        </li>
+        <li
+        class="nav-item d-none d-sm-inline-block"
+        [routerLinkActive]="['active']"
+    >
+        <a
+            href="http://192.168.5.90/AjmanLandProperty/index.php/gameScores"
+            class="nav-link"
+        >
+        مؤشر موظف الخدمة المتميز
+        </a>
+    </li>
+    <li
+    class="nav-item d-none d-sm-inline-block"
+    [routerLinkActive]="['active']"
+>
+    <a
+        href="/customer/new"
+        class="nav-link"
+    >
+        عميل
+        <i class="nav-icon fas fa-tags"></i>
+    </a>
+</li>
+<li
+class="nav-item d-none d-sm-inline-block"
+[routerLinkActive]="['active']"
+>
+<a
+    href="/company/new"
+    class="nav-link"
+>
+    شركة
+    <i class="nav-icon fas fa-tags"></i>
+</a>
+</li>
 
         <!-- <li
             [routerLink]="['/login']"
@@ -286,7 +333,3 @@
 </nav>
 
 <app-sidebar *ngIf="userloggedIn"></app-sidebar>
-
-
-
-
