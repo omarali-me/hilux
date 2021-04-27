@@ -37,7 +37,7 @@
                                     </th>
                                     <th
                                     scope="col"
-                                    style="width: 1%;"
+                                    style="width: 9%;"
                                     class="text-center"
                                 >
                                    المصدر
@@ -68,14 +68,14 @@
                                     </th>
                                     <th
                                         scope="col"
-                                        style="width: 15%;"
+                                        style="width: 10%;"
                                         class="text-center"
                                     >
                                         الوقت
                                     </th>
                                     <th
                                         scope="col"
-                                        style="width: 10%;"
+                                        style="width: 7%;"
                                         class="text-center"
                                     >
                                         الحالة
@@ -84,18 +84,21 @@
                             </thead>
                             <tbody>
                                 <tr *ngFor="let item of response; let i = index">
-                                    <td (click)="performActionPerStatus(item)">{{i +1}}</td>
-                                    <td (click)="performActionPerStatus(item)">
-                                      {{item.propertyDetails}}
+                                    <td (click)="performActionPerStatus(item)" class="text-center align-middle">{{i +1}}</td>
+                                    <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                      {{getChannelText(item)}}
                                     </td>
-                                    <td (click)="performActionPerStatus(item)">
+                                    <td (click)="performActionPerStatus(item)" class="text-center align-middle">
                                         {{item.applicationDetails?.applicationID}}
                                     </td>
-                                    <td (click)="performActionPerStatus(item)">
+                                    <td (click)="performActionPerStatus(item)" class="text-center align-middle">
                                         {{getItemText(item.serviceDetails, 'serviceName')}}
                                     </td>
-                                    <td (click)="performActionPerStatus(item)">
-                                      {{item.propertyDetails}}
+                                    <td (click)="performActionPerStatus(item)" 
+                                    style="white-space: pre;"
+                                    class="text-center align-middle"
+                                    [innerHTML] = "getPropertyDetailText(item)"
+                                    >
                                     </td>
 
                                     <td (click)="expand[i] = !expand[i]">

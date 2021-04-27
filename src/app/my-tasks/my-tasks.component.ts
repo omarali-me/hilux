@@ -104,6 +104,31 @@ export class MyTasksComponent implements OnDestroy, OnInit {
     }
   }
 
+  getChannelText(item: any) {
+    switch (item.channel.toLowerCase()) {
+      case 'hilux':
+        return 'النظام الداخلي';
+      case 'eserviceportal':
+        return 'البوابة الالكترونية';
+      case 'web':
+        return 'تطبيقات الهواتف الذكية';
+      default:
+        return '';
+    }
+  }
+
+  getPropertyDetailText(item: any) {
+     if (item.dataIn.landId != "" && item.dataIn.landId != undefined) {
+      return '<strong> رقم المميز : </strong> ' + item.dataIn.landId_displayValue;
+    }
+    
+    if (item.dataIn.propertyId != "" && item.dataIn.propertyId != undefined) {
+     return '<strong> مشروع : </strong> ' + item.dataIn.projectId_displayValue
+      +'\n'
+      + '<strong> وحدة : </strong> ' +item.dataIn.propertyId_displayValue;
+    }
+   }
+
   checkStatusClass(item: any) {
     switch (item.stepDetails.status.toLowerCase()) {
       case 'pending':
