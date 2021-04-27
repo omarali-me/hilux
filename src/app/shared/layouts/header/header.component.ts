@@ -49,6 +49,7 @@ export class HeaderComponent implements OnInit {
       if (data.status == 'success') {
         this.toastr.success('Successfully Logged out', 'Success')
         this.router.navigate(['/login']);
+        location.reload();
       } else {
         this.toastr.error(data.message, 'Error')
       }
