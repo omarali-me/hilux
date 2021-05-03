@@ -547,18 +547,24 @@
                     </td>
                     <td>
                       <div class="d-flex">
+                        <ng-container *ngIf="getRole(userRole,'customerservices') || getRole(userRole,'Archives')">
                         <a [href]="getViewResourceUrl(land_detail.land.id, 'land')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-eye"></i>
                         </a>
+                        </ng-container>
+                        <ng-container *ngIf="getRole(userRole,'Legal')">
                         <a [href]="getViewLegalBlocks(land_detail.land.propertyId , 'propertyId')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-balance-scale"></i>
                         </a>
+                        </ng-container>
                         <!-- <a [href]="getViewLegalBlocks(land_detail.land.propertyId , 'propertyId')" target="_blank" class="fs-30 p-1" *ngIf="!land_detail.land.landId">
                           <i class="fas fa-balance-scale"></i>
                         </a> -->
+                        <ng-container *ngIf="getRole(userRole,'Engineering')">
                         <a [href]="getViewEngineeringBlocks(land_detail.land.propertyId , 'propertyId')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-drafting-compass"></i>
                         </a>
+                        </ng-container>
                       </div>
                     </td>
                   </tr>
@@ -598,12 +604,16 @@
                         <td>{{ deed_detail_item.profile?.nationalityAr }}</td>
                         <td>
                           <div class="d-flex">
+                            <ng-container *ngIf="getRole(userRole,'customerservices') || getRole(userRole,'Archives')">
                             <a [href]="getViewResourceUrl(deed_detail_item.profile?.ownerId, 'owner')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
                             </a>
+                            </ng-container>
+                            <ng-container *ngIf="getRole(userRole,'Legal')">
                             <a href="javascript:void(0);" class="fs-30 p-1 icon-pointer" (click)="openAddBlockToOwnerPropertiesModal(deed_detail_item.profile?.ownerId)">
                               <i class="fas fa-gavel fa-rotate-270"></i>
                             </a>
+                            </ng-container>
                           </div>
                         </td>
                       </tr>
@@ -644,12 +654,16 @@
                         <td>{{ deed_detail_item.profile?.nationalityAr }}</td>
                         <td>
                           <div class="d-flex">
+                            <ng-container *ngIf="getRole(userRole,'customerservices') || getRole(userRole,'Archives')">
                             <a [href]="getViewResourceUrl(deed_detail_item.profile?.ownerId, 'owner')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
                             </a>
+                            </ng-container>
+                            <ng-container *ngIf="getRole(userRole,'Legal')">
                             <a href="javascript:void(0);" class="fs-30 p-1 icon-pointer" (click)="openAddBlockToOwnerPropertiesModal(deed_detail_item.profile?.ownerId)">
                               <i class="fas fa-gavel fa-rotate-270"></i>
                             </a>
+                            </ng-container>
                           </div>
                         </td>
                       </tr>
@@ -687,15 +701,21 @@
                     </td>
                     <td>
                       <div class="d-flex">
+                        <ng-container *ngIf="getRole(userRole,'customerservices') || getRole(userRole,'Archives')">
                         <a [href]="getViewResourceUrl(unit_detail?.unit?.id, 'unit')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-eye"></i>
                         </a>
+                        </ng-container>
+                        <ng-container *ngIf="getRole(userRole,'Legal')">
                         <a [href]="getViewLegalBlocks(unit_detail?.unit?.propertyId, 'propertyId')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-balance-scale"></i>
                         </a>
+                        </ng-container>
+                        <ng-container *ngIf="getRole(userRole,'Engineering')">
                         <a [href]="getViewEngineeringBlocks(unit_detail?.unit?.propertyId, 'propertyId')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-drafting-compass"></i>
                         </a>
+                        </ng-container>
                       </div>
                     </td>
                   </tr>
@@ -735,12 +755,16 @@
                         <td>{{ deed_detail_item.profile?.nationalityAr }}</td>
                         <td>
                           <div class="d-flex">
+                            <ng-container *ngIf="getRole(userRole,'customerservices') || getRole(userRole,'Archives')">
                             <a [href]="getViewResourceUrl(deed_detail_item.profile?.ownerId, 'owner')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
                             </a>
+                            </ng-container>
+                            <ng-container *ngIf="getRole(userRole,'Legal')">
                             <a href="javascript:void(0);" class="fs-30 p-1 icon-pointer" (click)="openAddBlockToOwnerPropertiesModal(deed_detail_item.profile?.ownerId)">
                               <i class="fas fa-gavel fa-rotate-270"></i>
                             </a>
+                            </ng-container>
                           </div>
                         </td>
                       </tr>
@@ -781,12 +805,16 @@
                         <td>{{ deed_detail_item.profile?.nationalityAr }}</td>
                         <td>
                           <div class="d-flex">
+                            <ng-container *ngIf="getRole(userRole,'customerservices') || getRole(userRole,'Archives')">
                             <a [href]="getViewResourceUrl(deed_detail_item.profile?.ownerId, 'owner')" target="_blank" class="fs-30 p-1">
                               <i class="fas fa-eye"></i>
                             </a>
+                            </ng-container>
+                            <ng-container *ngIf="getRole(userRole,'Legal')">
                             <a href="javascript:void(0);" class="fs-30 p-1 icon-pointer" (click)="openAddBlockToOwnerPropertiesModal(deed_detail_item.profile?.ownerId)">
                               <i class="fas fa-gavel fa-rotate-270"></i>
                             </a>
+                            </ng-container>
                           </div>
                         </td>
                       </tr>

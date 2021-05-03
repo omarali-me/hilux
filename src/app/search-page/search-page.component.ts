@@ -50,6 +50,9 @@ export class SearchPageComponent implements OnInit {
   blockageEntityOptionsLoading = false;
   currentlyOwnedPropertiesByOwner: any = [];
   hideAttachmentsControl;
+  roles$: object;
+  userRole:any;
+
 
   searchby: any;
 
@@ -73,6 +76,12 @@ export class SearchPageComponent implements OnInit {
     this.loadOldLandsoptions();
     this.loadBlockageEntities();
 
+    this.roles$ = this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/applications/getUserRights`)
+    .subscribe((res) => {
+      this.userRole = res;
+    });
+
+
     this.route.queryParams.subscribe(async (params) => {
       if (!_.isEqual(params, {})) {
         _.keys(params).forEach(key => {
@@ -86,6 +95,9 @@ export class SearchPageComponent implements OnInit {
     });
   }
 
+  getRole(data: any, permission: string) {
+    return Object.keys(data).includes(permission);
+  }
   searchData(formData: any) {
     let prepapedData = this.prepareFormData(formData)
     let fd = new FormData();
