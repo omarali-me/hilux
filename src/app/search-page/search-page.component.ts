@@ -76,7 +76,7 @@ export class SearchPageComponent implements OnInit {
     this.loadOldLandsoptions();
     this.loadBlockageEntities();
 
-    this.roles$ = this.fieldsService.getUrl(`https://wfe.ajm.re/AjmanLandProperty/index.php/applications/getUserRights`)
+    this.roles$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/getUserRights`)
     .subscribe((res) => {
       this.userRole = res;
     });
@@ -96,7 +96,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   getRole(data: any, permission: string) {
-    return Object.keys(data).includes(permission);
+    return Object.keys(data).includes(permission,);
   }
   searchData(formData: any) {
     let prepapedData = this.prepareFormData(formData)
