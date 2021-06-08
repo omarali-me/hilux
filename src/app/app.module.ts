@@ -100,6 +100,11 @@ import { ApplicationSearchComponent } from './application-search/application-sea
 import { UnitsExcelUploadComponent } from './units-excel-upload/units-excel-upload.component';
 import { SingleApplicationSearchComponent } from './single-application-search/single-application-search.component';
 import { UnitsValuationComponent } from './units-valuation/units-valuation.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
+const maskConfig: Partial<IConfig> = {
+	  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -203,7 +208,9 @@ import { UnitsValuationComponent } from './units-valuation/units-valuation.compo
     OwlNativeDateTimeModule,
     PrettyJsonModule,
     ToastrModule.forRoot({ positionClass: 'toast-top-left'}),
-    DataTablesModule
+    DataTablesModule,
+    NgxMaskModule.forRoot(maskConfig),
+
   ],
   providers: [
     AuthenticationGuard,

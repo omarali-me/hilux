@@ -10,9 +10,9 @@
   [maxlength]="field.auxInfo?.maxLength"
   [(ngModel)]="formData[field.fieldID]"
   [disabled]="isActiveEditStep()"
-  numbersOnly
-  precision="2"
   #ngModel="ngModel"
+  mask="separator.3"
+  thousandSeparator=","
 />
 
 <div *ngIf="ngModel.invalid && (ngModel.dirty || ngModel.touched) || showErrors(field.fieldID)"
