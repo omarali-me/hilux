@@ -64,8 +64,7 @@
                           [disabled]="isNotSearchTypeUnit()"
                           (keyup)="setSearchType('developerId', $event)"
                           (blur)="checkTypeAndValues('developerId')"
-                          (change)="resetProjectAndUnit()"
-                        >
+                          (keyup.enter)="testEnter('developerId',formData.developerId)">
                         </ng-select>
                       </div>
                     </div>
@@ -94,7 +93,8 @@
                           (keyup)="setSearchType('unitId', $event)"
                           (blur)="checkTypeAndValues('projectId')"
                           (change)="resetUnit()"
-                        >
+                          (keyup.enter)="testEnter('projectId',formData.projectId)">
+                        
                         </ng-select>
                       </div>
                     </div>
@@ -116,7 +116,8 @@
                           #unitId="ngModel"
                           [disabled]="isNotSearchTypeUnit() || isEmpty('projectId')"
                           (open)="loadUnitsOptions()"
-                        >
+                          (keyup.enter)="testEnter('projectId',formData.projectId)">
+                        
                         </ng-select>
                       </div>
                     </div>
@@ -144,7 +145,8 @@
                           #land="ngModel"
                           [disabled]="isNotSearchTypeLand() || isNotSearchBy('landId')"
                           (blur)="checkTypeAndValues('landId')"
-                          (keyup)="setSearchType('landId', $event)">
+                          (keyup)="setSearchType('landId', $event)"
+                          (keyup.enter)="testEnter('landId',formData.landId)">
                         </ng-select>
                       </div>
                     </div>
@@ -170,12 +172,13 @@
                           #oldLand="ngModel"
                           [disabled]="isNotSearchTypeLand() || isNotSearchBy('oldLandId')"
                           (blur)="checkTypeAndValues('oldLandId')"
-                          (keyup)="setSearchType('oldLandId', $event)">
+                          (keyup)="setSearchType('oldLandId', $event)"
+                          (keyup.enter)="testEnter('oldLandId',formData.oldLandId)">
                         </ng-select>
                       </div>
                     </div>
                   </div>
-
+                  <!-- // hashem search owner auto complete  -->
                   <div class="col-sm-4">
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label" i18n="@@searchPageOwner">Owner
@@ -198,7 +201,8 @@
                           #owner="ngModel"
                           [disabled]="isNotSearchTypeOwner() || isNotSearchBy('owner')"
                           (blur)="checkTypeAndValues('owner')"
-                          (keyup)="setSearchType('owner', $event)">
+                          (keyup)="setSearchType('owner', $event)"
+                          (keyup.enter)="testEnter('owner',formData.owner)">
                         </ng-select>
                       </div>
                     </div>
@@ -258,7 +262,7 @@
                     <td>{{ owner_detail?.profile?.nationalityAr }}</td>
                     <td>
                       <div class="d-flex">
-                        <ng-container *ngIf="getRole(userRole,'Admin') || getRole (userRole,'customerservices')|| getRole (userRole,'Engineering') || getRole(userRole,'Archives')">
+                        <ng-container >
                         <a [href]="getViewResourceUrl(owner_detail?.profile?.ownerId, 'owner')" target="_blank" class="fs-30 p-1">
                           <i class="fas fa-eye"></i>
                         </a>
@@ -865,7 +869,7 @@
   <!-- /.content -->
 </div>
 
-<ngx-smart-modal #addBlockToOwnerPropertiesModal identifier="addBlockToOwnerPropertiesModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetAddBlockToOwnerPropertiesModal()">
+<ngx-smart-modal customClass="msg-modal"  #addBlockToOwnerPropertiesModal [ngStyle]="{width:'500px;'}" identifier="addBlockToOwnerPropertiesModal" [escapable]="true" escapable="true" (onAnyCloseEvent)="resetAddBlockToOwnerPropertiesModal()">
   <div class="modal-header pt-0">
     <div class="modal-title">
       <h4 i18n="@@searchPageAddNewBlockHeader">Add New Block</h4>
