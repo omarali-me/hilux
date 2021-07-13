@@ -18,11 +18,15 @@ import { UnitProfileComponent } from './unit-profile/unit-profile.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 import { CustomerProfileResolver } from './customer-profile.resolver';
 import { CustomerDetailsComponent } from './customer-profile/customer-details/customer-details.component';
+import { CustomerViewComponent } from './customer-profile/customer-view/customer-view.component';
 import { ProjectProfileResolver } from './shared/project-profile.resolver';
 import { UnitProfileResolver } from './shared/unit-profile.resolver';
 import { CompanyProfileResolver } from './shared/company-profile.resolver';
 import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.component';
 import { ProjectDetailsComponent } from './project-profile/project-details/project-details.component';
+import { ProjectEditComponent } from './project-profile/project-edit/project-edit.component';
+import { ProjectViewMainComponent } from './project-profile/project-view-main/project-view-main.component';
+import { ProjectViewComponent } from './project-profile/project-view/project-view.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CompanyDetailsComponent } from './company-profile/company-details/company-details.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
@@ -61,15 +65,21 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
-      { path: 'edit', component: CustomerDetailsComponent }
+      { path: 'edit', component: CustomerDetailsComponent },
+      { path: 'view', component: CustomerViewComponent }
+
     ]
   },
   { path: 'project/new', component: ProjectProfileComponent, resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard] },
+  { path: 'project/edit', component: ProjectEditComponent, resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard] },
+  { path: 'project/view', component: ProjectViewMainComponent, resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard] },
   { path: 'project/profile/:profileId', component: ProjectProfileComponent,
     resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
-      { path: 'edit', component: ProjectDetailsComponent }
+      { path: 'edit', component: ProjectDetailsComponent },
+      { path: 'view', component: ProjectViewComponent }
+
     ]
   },
   { path: 'unit/new', component: UnitProfileComponent, resolve: { profile: UnitProfileResolver}, canActivate: [AuthenticationGuard] },

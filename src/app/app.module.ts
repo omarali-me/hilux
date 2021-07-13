@@ -80,7 +80,11 @@ import { DisplayDataFormGeneratorComponent } from './display-data-form-generator
 import { HiddenFieldComponent } from './fields/hidden-field/hidden-field.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { CustomerDetailsComponent } from './customer-profile/customer-details/customer-details.component';
+import { CustomerViewComponent } from './customer-profile/customer-view/customer-view.component';
 import { ProjectProfileComponent } from './project-profile/project-profile.component';
+import { ProjectEditComponent } from './project-profile/project-edit/project-edit.component';
+import { ProjectViewMainComponent } from './project-profile/project-view-main/project-view-main.component';
+import { ProjectViewComponent } from './project-profile/project-view/project-view.component';
 import { UnitProfileComponent } from './unit-profile/unit-profile.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.component';
@@ -137,6 +141,7 @@ const maskConfig: Partial<IConfig> = {
     DisplayTableComponent,
     DisplayFieldDataComponent,
     DisplayFieldGroupComponent,
+    ProjectViewComponent,
     CustomPageComponent,
     FormComponent,
     RuleGeneratorComponent,
@@ -175,7 +180,10 @@ const maskConfig: Partial<IConfig> = {
     HiddenFieldComponent,
     CustomerProfileComponent,
     CustomerDetailsComponent,
+    CustomerViewComponent,
     ProjectProfileComponent,
+    ProjectEditComponent,
+    ProjectViewMainComponent,
     UnitProfileComponent,
     CompanyProfileComponent,
     UnitDetailsComponent,
