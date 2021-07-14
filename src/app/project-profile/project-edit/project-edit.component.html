@@ -1,5 +1,6 @@
 <section class="content" *ngIf="profile$ | async as profile">
-  <div class="container-fluid">
+  <div class="container-fluid" 
+  style="width: 75%; margin-right: 20%; justify-content:center;">
     <app-alerts [errors]="formErrors"></app-alerts>
     <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data' novalidate>
       <div class="card-body">
