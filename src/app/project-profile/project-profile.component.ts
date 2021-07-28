@@ -113,7 +113,7 @@ export class ProjectProfileComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.developerDataOptionsLoading = true),
           switchMap(term => {
-            return this.lookupsService.loadDevelopers({ term }).pipe(
+            return this.lookupsService.loaddevelopersStatusTypes({ term }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.developerDataOptionsLoading = false)
           )})
