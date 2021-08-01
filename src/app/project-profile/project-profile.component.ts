@@ -128,7 +128,7 @@ export class ProjectProfileComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.projectDataOptionsLoading = true),
           switchMap(term => {
-            return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
+            return this.lookupsService.loadNewProjects({ term, developerId: this.formData.developerId }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectDataOptionsLoading = false)
           )})
