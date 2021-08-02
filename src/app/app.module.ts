@@ -91,11 +91,14 @@ import { UnitProfileComponent } from './unit-profile/unit-profile.component';
 import { UnitEditComponent } from './unit-profile/unit-edit/unit-edit.component';
 import { UnitMainViewComponent } from './unit-profile/unit-mainView/unit-mainView.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
+import { CompanyEditComponent } from './company-profile/company-edit/company-edit.component';
+import { CompanyMainViewComponent } from './company-profile/company-mainView/company-mainView.component';
 import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.component';
 import { UnitViewComponent } from './unit-profile/unit-view/unit-view.component';
 import { ProjectDetailsComponent } from './project-profile/project-details/project-details.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CompanyDetailsComponent } from './company-profile/company-details/company-details.component';
+import { CompanyViewComponent } from './company-profile/company-view/company-view.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { PropertiesProfileComponent } from './properties-profile/properties-profile.component';
@@ -199,10 +202,13 @@ const maskConfig: Partial<IConfig> = {
     UnitEditComponent,
     UnitMainViewComponent,
     CompanyProfileComponent,
+    CompanyEditComponent,
+    CompanyMainViewComponent,
     UnitDetailsComponent,
     ProjectDetailsComponent,
     ErrorPageComponent,
     CompanyDetailsComponent,
+    CompanyViewComponent,
     OwnerProfileComponent,
     AlertsComponent,
     PropertiesProfileComponent,
