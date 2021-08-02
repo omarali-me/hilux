@@ -88,8 +88,11 @@ import { ProjectEditComponent } from './project-profile/project-edit/project-edi
 import { ProjectViewMainComponent } from './project-profile/project-view-main/project-view-main.component';
 import { ProjectViewComponent } from './project-profile/project-view/project-view.component';
 import { UnitProfileComponent } from './unit-profile/unit-profile.component';
+import { UnitEditComponent } from './unit-profile/unit-edit/unit-edit.component';
+import { UnitMainViewComponent } from './unit-profile/unit-mainView/unit-mainView.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.component';
+import { UnitViewComponent } from './unit-profile/unit-view/unit-view.component';
 import { ProjectDetailsComponent } from './project-profile/project-details/project-details.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CompanyDetailsComponent } from './company-profile/company-details/company-details.component';
@@ -131,6 +134,7 @@ const maskConfig: Partial<IConfig> = {
     NumberFieldComponent,
     LabelComponent,
     HeadingComponent,
+    UnitViewComponent,
     FieldComponent,
     FileUploadComponent,
     RadioButtonFieldComponent,
@@ -192,6 +196,8 @@ const maskConfig: Partial<IConfig> = {
     ProjectEditComponent,
     ProjectViewMainComponent,
     UnitProfileComponent,
+    UnitEditComponent,
+    UnitMainViewComponent,
     CompanyProfileComponent,
     UnitDetailsComponent,
     ProjectDetailsComponent,
