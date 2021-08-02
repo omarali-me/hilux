@@ -13,6 +13,8 @@ import { NotificationPageComponent } from './notification-page/notification-page
 import { MyTasksComponent } from './my-tasks/my-tasks.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
+import { CustomerEditComponent } from './customer-profile/customer-edit/customer-edit.component';
+import { CustomerMainViewComponent } from './customer-profile/customer-mainView/customer-mainView.component';
 import { ProjectProfileComponent } from './project-profile/project-profile.component';
 import { UnitProfileComponent } from './unit-profile/unit-profile.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
@@ -60,6 +62,8 @@ const routes: Routes = [
   { path: 'service/:serviceId', component: ServicePageComponent, resolve: { serviceId: ServiceIdResolver} , canActivate: [AuthenticationGuard]},
   { path: 'notifications/:stepId', component: NotificationPageComponent, resolve: { stepId: StepIdResolver}, canActivate: [AuthenticationGuard]},
   { path: 'customer/new', component: CustomerProfileComponent, resolve: { profile: CustomerProfileResolver}, canActivate: [AuthenticationGuard] },
+  { path: 'customer/edit', component: CustomerEditComponent, resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard] },
+  { path: 'customer/view', component: CustomerMainViewComponent, resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard] },
   { path: 'customer/profile/:profileId', component: CustomerProfileComponent,
     resolve: { profile: CustomerProfileResolver},
     canActivate: [AuthenticationGuard],

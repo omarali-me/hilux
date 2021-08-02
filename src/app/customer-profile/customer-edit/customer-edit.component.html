@@ -1,0 +1,113 @@
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <!-- <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">User Profile</li>
+            </ol>
+          </div> -->
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div
+                    class="col-md-12"
+                    *ngIf="profile$ | async as profile"
+                >
+                    <div class="card card-purple">
+                        <div class="card-header">
+                            <h3 class="card-title"> حساب عميل </h3>
+                        </div>
+                        <router-outlet></router-outlet>
+
+                        <section
+                            class="content"
+                            *ngIf="formData && !formData.id"
+                        >
+                            <div class="container-fluid">
+                                <app-alerts [errors]="formErrors"></app-alerts>
+                                <!-- // hashem search customer -->
+                                <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data' novalidate>
+                                  <div class="card-body">
+                                    <div class="form-group row">
+                                      <div class="col-sm-6">
+                                        <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label" i18n="@@customerProfileSearchName">Name</label>
+                                          <div class="col-sm-9">
+                                            <ng-select
+                                              class="rtl"
+                                              [items]="ownerNameOptions | async"
+                                              name="term"
+                                              [hideSelected]="true"
+                                              [minTermLength]="1"
+                                              [(ngModel)]="searchData.term"
+                                              [loading]="ownerNameOptionsLoading"
+                                              bindLabel="value.ar"
+                                              bindValue="key"
+                                              typeToSearchText="Please enter 1 or more characters"
+                                              notFoundText="لا يوجد نتائج للبحث"
+                                              [typeahead]="searchOwnerNameInput$"
+                                              (keyup)="setSearchType('term', $event)"
+                                              [disabled]="isSearchBy('uniqueId')"
+                                              (blur)="checkTypeAndValues('term')"
+                                              #term="ngModel"
+                                            >
+                                            </ng-select>
+                                          </div>
+                                        </div>
+                                      </div>
+                            
+                                      <div class="col-sm-6">
+                                        <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label" i18n="@@customerProfileSearchIDNumber">
+                                            ID Number
+                                          </label>
+                                          <div class="col-sm-9">
+                                            <ng-select
+                                              class="rtl"
+                                              [items]="ownerUniqueIdOptions | async"
+                                              name="ownerUniqueIdSearch"
+                                              [hideSelected]="true"
+                                              [minTermLength]="1"
+                                              [(ngModel)]="searchData.uniqueId"
+                                              [loading]="ownerUniqueIdOptionsLoading"
+                                              bindLabel="value.ar"
+                                              bindValue="value.entityId"
+                                              typeToSearchText="Please enter 1 or more characters"
+                                              notFoundText="لا يوجد نتائج للبحث"
+                                              [typeahead]="searchOwnerUniqueIdInput$"
+                                              #ownerUniqueIdSearch="ngModel"
+                                              (keyup)="setSearchType('uniqueId', $event)"
+                                              [disabled]="isSearchBy('term')"
+                                              (blur)="checkTypeAndValues('uniqueId')"
+                                            >
+                                            </ng-select>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            
+                                  <div class="card-footer text-center">
+                                    <button type="submit" class="btn btn-primary"  [disabled]="isSearchFormValid()"  i18n="@@customerProfileSearchButton">Search</button>
+                                  </div>
+                                </form>
+                            
+                                <hr/>
+                
+                            
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

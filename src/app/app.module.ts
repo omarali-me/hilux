@@ -79,6 +79,8 @@ import { AuthenticationGuard } from './authentication.guard';
 import { DisplayDataFormGeneratorComponent } from './display-data-form-generator/display-data-form-generator.component';
 import { HiddenFieldComponent } from './fields/hidden-field/hidden-field.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
+import { CustomerEditComponent } from './customer-profile/customer-edit/customer-edit.component';
+import { CustomerMainViewComponent } from './customer-profile/customer-mainView/customer-mainView.component';
 import { CustomerDetailsComponent } from './customer-profile/customer-details/customer-details.component';
 import { CustomerViewComponent } from './customer-profile/customer-view/customer-view.component';
 import { ProjectProfileComponent } from './project-profile/project-profile.component';
@@ -179,6 +181,8 @@ const maskConfig: Partial<IConfig> = {
     DisplayDataFormGeneratorComponent,
     HiddenFieldComponent,
     CustomerProfileComponent,
+    CustomerEditComponent,
+    CustomerMainViewComponent,
     CustomerDetailsComponent,
     CustomerViewComponent,
     ProjectProfileComponent,
