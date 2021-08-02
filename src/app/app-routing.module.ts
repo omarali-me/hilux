@@ -36,6 +36,9 @@ import { OwnerProfileResolver } from './shared/owner-profile.resolver';
 import { PropertiesProfileResolver } from './shared/properties-profile.resolver';
 import { PropertiesProfileComponent } from './properties-profile/properties-profile.component';
 import { LandProfileComponent } from './land-profile/land-profile.component';
+import { LandEditComponent } from './land-profile/land-edit/land-edit.component';
+import { LandMainViewComponent } from './land-profile/land-mainView/land-mainView.component';
+import { LandViewComponent } from './land-profile/land-view/land-view.component';
 import { LandDetailsComponent } from './land-profile/land-details/land-details.component';
 import { LandProfileResolver } from './shared/land-profile.resolver';
 import { SearchPageComponent } from './search-page/search-page.component';
@@ -105,12 +108,15 @@ const routes: Routes = [
     ]
   },
   { path: 'land/new', component: LandProfileComponent, resolve: { profile: LandProfileResolver} , canActivate: [AuthenticationGuard] },
+  { path: 'land/edit', component: LandEditComponent, resolve: { profile: LandProfileResolver} , canActivate: [AuthenticationGuard] },
+  { path: 'land/view', component: LandMainViewComponent, resolve: { profile: LandProfileResolver} , canActivate: [AuthenticationGuard] },
   { path: 'land/profile/:profileId', component: LandProfileComponent,
     resolve: { profile: LandProfileResolver},
     canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
-      { path: 'edit', component: LandDetailsComponent }
+      { path: 'edit', component: LandDetailsComponent },
+      { path: 'view', component: LandViewComponent }
     ]
   },
   { path: 'developer/new', component: DeveloperProfileComponent, resolve: { profile: DeveloperProfileResolver}, canActivate: [AuthenticationGuard] },

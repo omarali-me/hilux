@@ -97,6 +97,9 @@ import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { PropertiesProfileComponent } from './properties-profile/properties-profile.component';
 import { LandProfileComponent } from './land-profile/land-profile.component';
+import { LandEditComponent } from './land-profile/land-edit/land-edit.component';
+import { LandMainViewComponent } from './land-profile/land-mainView/land-mainView.component';
+import { LandViewComponent } from './land-profile/land-view/land-view.component';
 import { LandDetailsComponent } from './land-profile/land-details/land-details.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { DeveloperProfileComponent } from './developer-profile/developer-profile.component';
@@ -198,6 +201,9 @@ const maskConfig: Partial<IConfig> = {
     AlertsComponent,
     PropertiesProfileComponent,
     LandProfileComponent,
+    LandEditComponent,
+    LandMainViewComponent,
+    LandViewComponent,
     LandDetailsComponent,
     SearchPageComponent,
     DeveloperProfileComponent,
