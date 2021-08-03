@@ -297,6 +297,9 @@ export class CustomerMainViewComponent implements OnInit {
       )
     );
   }
+  addNewFun(){
+    this.router.navigate(['customer/new']);
+  }
 
   loadOwnerUniqueIdOptions() {
     this.ownerUniqueIdOptions = concat(
