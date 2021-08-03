@@ -86,7 +86,7 @@
                 <ng-container *ngIf="getRole(userRole,'Admin') || getRole (userRole,'customerservices') || getRole(userRole,'Archives')">
                     <a
                             class="dropdown-item"
-                            href="/customer/new"
+                            href="/customer/view"
                             i18n="@@headerCustomer"
                     >
                         <i class="fas fa-plus float-left">Customer</i>
@@ -97,7 +97,7 @@
 
                 <a
                         class="dropdown-item"
-                        href="/project/new"
+                        href="/project/view"
                         i18n="@@headerProject"
                 >
                     <i class="fas fa-plus float-left"></i>
@@ -108,7 +108,7 @@
                 <ng-container *ngIf="getRole(userRole,'Admin') || getRole (userRole,'Engineering')">
                 <a
                         class="dropdown-item"
-                        href="/unit/new"
+                        href="/unit/view"
                         i18n="@@headerUnit"
                 >
                     <i class="fas fa-plus float-left"></i>
@@ -119,7 +119,7 @@
                 <ng-container *ngIf="getRole(userRole,'Admin') || getRole (userRole,'customerservices') || getRole(userRole,'Archives')">
                 <a
                         class="dropdown-item"
-                        href="/company/new"
+                        href="/company/view"
                         i18n="@@headerCompany"
                 >
                     <i class="fas fa-plus float-left"></i>
@@ -130,7 +130,7 @@
                 <ng-container *ngIf="getRole(userRole,'Admin') || getRole (userRole,'Engineering')">
                 <a
                         class="dropdown-item"
-                        href="/land/new"
+                        href="/land/view"
                         i18n="@@headerLand"
                 >
                     <i class="fas fa-plus float-left"></i>
