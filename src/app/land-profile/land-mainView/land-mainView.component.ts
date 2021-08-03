@@ -92,6 +92,9 @@ export class LandMainViewComponent implements OnInit {
       this.sectorsOptions = data;
     })
   }
+  addNewFun(){
+    this.router.navigate(['land/new']);
+  } 
 
   loadSectionsOptions() {
     this.lookupsService.loadSectionsOptions()
