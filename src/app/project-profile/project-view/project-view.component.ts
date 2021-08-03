@@ -89,7 +89,10 @@ export class ProjectViewComponent implements OnInit {
       }
     });
   }
+  editFun(){
+    this.router.navigate(['project/profile/', this.formData.id, 'edit']);
 
+  }
   updateData(formData: any) {
     let fd = new FormData();
     fd.append('project', JSON.stringify(formData));
