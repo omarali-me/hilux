@@ -68,7 +68,9 @@ export class UnitMainViewComponent implements OnInit {
       }
     });
   }
-
+  addNewFun(){
+    this.router.navigate(['unit/new']);
+  } 
   saveData(formData: any) {
     let fd = new FormData();
     fd.append('unit', JSON.stringify(formData));
