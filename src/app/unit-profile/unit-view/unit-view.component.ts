@@ -71,7 +71,9 @@ export class UnitViewComponent implements OnInit {
       }
     });
   }
-
+  editFun(){
+     this.router.navigate(['unit/profile/', this.formData.id, 'edit']);
+  }
   updateData(formData: any) {
     let fd = new FormData();
     fd.append('unit', JSON.stringify(formData));
