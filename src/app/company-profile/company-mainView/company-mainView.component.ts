@@ -82,7 +82,7 @@ export class CompanyMainViewComponent implements OnInit {
       this.router.navigate(['error'])
     })
   }
-
+  
   loadEmiratesOptions() {
     this.lookupsService.loadEmiratesOptions()
     .subscribe((data) => {
@@ -103,7 +103,9 @@ export class CompanyMainViewComponent implements OnInit {
       this.licenseIssuerOptions = data;
     })
   }
-
+  addNewFun(){
+    this.router.navigate(['company/new']);
+  } 
   loadOwnerOptions() {
     this.ownerOptions = concat(
       of([]), // default items
