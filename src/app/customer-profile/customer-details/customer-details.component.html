@@ -61,7 +61,7 @@
           </div>
         </div>
       </div>
-
+ 
       <div class="card-footer text-center">
         <button type="submit" class="btn btn-primary" [disabled]="isSearchFormValid()" i18n="@@customerProfileSearchButton">Search</button>
       </div>
@@ -79,6 +79,8 @@
             <!-- <img class="profile-user-img img-fluid img-circle"
                 src="assets/images/user4-128x128.jpg"
                 alt="User profile picture"> -->
+                <app-file-upload [field]="prepareEstablishmentContractFileField()" [formData]="formData" [defaultValues]="formData"></app-file-upload>
+
           </div>
         </div>
         <div class="form-group row">

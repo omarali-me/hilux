@@ -644,7 +644,10 @@
               <label class="col-sm-2 col-form-label" i18n="@@landProfileDistrictImage">District Image</label>
               <div class="text-center col-sm-2 gallery-wrapper profile-user-img img-fluid img-circle">
                 <app-media-gallery [medias]="getImageAttachments(formData, 'districtImageUrl')"></app-media-gallery>
+
               </div>
+              <app-file-upload [field]="prepareEstablishmentContractFileField()" [formData]="formData" [defaultValues]="formData"></app-file-upload>
+
             </div>
           </div>
           <div class="col-sm-6">
@@ -652,7 +655,10 @@
               <label class="col-sm-2 col-form-label" i18n="@@landProfileSectorImage">Sector Image</label>
               <div class="text-center col-sm-2 gallery-wrapper profile-user-img img-fluid img-circle">
                 <app-media-gallery [medias]="getImageAttachments(formData, 'sectorImageUrl')"></app-media-gallery>
+
               </div>
+              <app-file-upload [field]="prepareEstablishmentContractFileField2()" [formData]="formData" [defaultValues]="formData"></app-file-upload>
+
             </div>
           </div>
         </div>
@@ -663,7 +669,9 @@
               <label class="col-sm-2 col-form-label" i18n="@@landProfileParcelImage">Parcel Image</label>
               <div class="text-center col-sm-2 gallery-wrapper profile-user-img img-fluid img-circle">
                 <app-media-gallery [medias]="getImageAttachments(formData, 'parcelImageUrl')"></app-media-gallery>
+
               </div>
+              <app-file-upload [field]="prepareEstablishmentContractFileField3()" [formData]="formData" [defaultValues]="formData"></app-file-upload>
             </div>
           </div>
           <div class="col-sm-6">

@@ -72,7 +72,48 @@ export class LandDetailsComponent implements OnInit {
       }
     });
   }
-
+ prepareEstablishmentContractFileField() {
+    return {
+      fieldID: "districtImage",
+      fieldType: "fileupload",
+      required: true,
+      fieldName: {
+        "ar": "districtImage",
+        "en": "districtImage"
+      },
+      auxInfo: {
+        multiple: true
+      }
+    }
+  }
+  prepareEstablishmentContractFileField2() {
+    return {
+      fieldID: "sectorImage",
+      fieldType: "fileupload",
+      required: true,
+      fieldName: {
+        "ar": "sectorImage",
+        "en": "sectorImage"
+      },
+      auxInfo: {
+        multiple: true
+      }
+    }
+  }
+  prepareEstablishmentContractFileField3() {
+    return {
+      fieldID: "parcelImage",
+      fieldType: "fileupload",
+      required: true,
+      fieldName: {
+        "ar": "parcelImage",
+        "en": "parcelImage"
+      },
+      auxInfo: {
+        multiple: true
+      }
+    }
+  }
   updateData(formData: any) {
     let fd = new FormData();
     fd.append('land', JSON.stringify(formData));
