@@ -289,6 +289,11 @@ export class CustomerViewComponent implements OnInit {
   isSearchFormValid() {
     return !this.searchData.term && !this.searchData.uniqueId
   }
+  editFun(){
+    
+    this.router.navigate(['customer/profile/', this.formData.id, 'edit']);
+
+  }
 
 
 }
