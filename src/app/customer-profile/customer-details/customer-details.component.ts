@@ -87,7 +87,20 @@ export class CustomerDetailsComponent implements OnInit {
       }
     });
   }
-
+  prepareEstablishmentContractFileField() {
+    return {
+      fieldID: "profileImage",
+      fieldType: "fileupload",
+      required: true,
+      fieldName: {
+        "ar": "profileImage",
+        "en": "profileImage"
+      },
+      auxInfo: {
+        multiple: true
+      }
+    }
+  }
   updateData(formData: any) {
     let fd = new FormData();
     fd.append('customer', JSON.stringify(formData));
