@@ -64,7 +64,10 @@ export class CompanyViewComponent implements OnInit {
       }
     });
   }
+  editFun(){
+    this.router.navigate(['company/profile/', this.formData.id, 'edit']);
 
+  }
   updateData(formData: any) {
     let fd = new FormData();
     fd.append('company', JSON.stringify(formData));
