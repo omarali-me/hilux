@@ -89,6 +89,10 @@ export class LandViewComponent implements OnInit {
       this.router.navigate(['error'])
     })
   }
+  editFun(){
+    this.router.navigate(['land/profile/', this.formData.id, 'edit']);
+
+  }
 
   loadSectorsOptions() {
     this.lookupsService.loadSectorsOptions()
