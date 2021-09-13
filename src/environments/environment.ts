@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiHost: 'https://wfe.ajm.re',
+  apiHost: 'https://wfe.ajre.gov.ae',
   token: 'sy3rHBHVD3U7VxMs6vuSLU32'
 };
 

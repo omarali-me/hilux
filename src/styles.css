@@ -270,4 +270,13 @@ label > span {
     width: 150px;
     min-height: 150px;
 }
-
+.nsm-dialog {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  min-height: 200px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  pointer-events: none;
+  outline: none; }
