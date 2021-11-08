@@ -52,6 +52,7 @@ export class FieldsService {
       let preparedparams = this.prepareParams(formData, field.auxInfo.apiParams)
       let finalParams = Object.assign({}, preparedparams, params);
       let apiUrl: string = field.auxInfo.sourceDetails
+//      apiUrl = apiUrl.replace("https://wfe.ajre.gov.ae", "http://192.168.101.36");
       if (field.auxInfo && field.auxInfo.method && field.auxInfo.method == 'post')
         return this.postData(apiUrl, finalParams);
       return this.getUrl(apiUrl, finalParams);

@@ -20,14 +20,14 @@ export class SidebarComponent implements OnInit {
   constructor(private fieldsService: FieldsService, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`);
+    this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices?channel=hilux`);
   }
 
   searchtServices() {
     if (this.searchInput$ === '') {
-      this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`);
+      this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices?channel=hilux`);
     } else {
-      this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`, { search: this.searchInput$ });
+      this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices?channel=hilux`, { search: this.searchInput$ });
     }
   }
 
