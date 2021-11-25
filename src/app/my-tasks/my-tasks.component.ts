@@ -16,10 +16,13 @@ export class MyTasksComponent implements OnDestroy, OnInit {
 
   // response: Observable<any>;
   // @ViewChild('dataTable') dataTable: ElementRef;
-  response: any;
+  myTasksResponse: any;
+  deparmentTasksResponse: any;
 
   dtOptions = {};
-  dtTrigger: Subject<any> = new Subject();
+  dtTriggerMyTasks: Subject<any> = new Subject();
+  dtTriggerDeparmentTasks: Subject<any> = new Subject();
+
 
   expand=[]
 
@@ -66,9 +69,19 @@ export class MyTasksComponent implements OnDestroy, OnInit {
     };
 
     this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/myTasks`).subscribe(
-      dataResponse => {
-        this.response = dataResponse;
-        this.dtTrigger.next();
+      dataResponseMyTasks => {
+        this.myTasksResponse = dataResponseMyTasks;
+        this.dtTriggerMyTasks.next();
+      },
+      error => {
+        console.log(error);
+      }
+    );
+
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/DeparmentTasks`).subscribe(
+      dataResponseDeparmentTasks => {
+        this.deparmentTasksResponse = dataResponseDeparmentTasks;
+        this.dtTriggerDeparmentTasks.next();
       },
       error => {
         console.log(error);
@@ -77,7 +90,8 @@ export class MyTasksComponent implements OnDestroy, OnInit {
   }
   ngOnDestroy(): void {
     // Do not forget to unsubscribe the event
-    this.dtTrigger.unsubscribe();
+    this.dtTriggerMyTasks.unsubscribe();
+    this.dtTriggerDeparmentTasks.unsubscribe();
   }
   getItemText(field: any, key: any) {
     return ((field[key] && JSON.parse(field[key])).ar || '');

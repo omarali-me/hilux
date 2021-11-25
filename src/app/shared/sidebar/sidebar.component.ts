@@ -13,6 +13,7 @@ import { environment } from '../../../environments/environment';
 export class SidebarComponent implements OnInit {
   menuItems$: Observable<any>;
   items: any;
+  isLoggedIn: any;
   openSubMenu: boolean = false;
   openSubmenuIndex: any;
   searchInput$ = '';
@@ -21,6 +22,11 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices?channel=hilux`);
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/isLoggedIn`)
+    .subscribe((res) => {
+      this.isLoggedIn = res;
+    });
+
   }
 
   searchtServices() {
