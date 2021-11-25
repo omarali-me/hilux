@@ -96,7 +96,7 @@ export class FileUploadComponent implements OnInit {
     let form = new FormData();
     let values = (this.isMultiple() ? (this.formData[fieldId] || []) : ( !!this.formData[fieldId] ? [this.formData[fieldId]] : []))
     form.append(`${fieldId}`, file);
-    return this.http.post<any>(`https://wfe.ajm.re/ajaxupload.php`, form).subscribe((data: any) => {
+    return this.http.post<any>(`https://wfe.ajre.gov.ae/ajaxupload.php`, form).subscribe((data: any) => {
         if (data.status == 'success') {
           // Add value to formData
           values.push(data.data[fieldId]);
