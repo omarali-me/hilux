@@ -118,6 +118,17 @@ export class MyTasksComponent implements OnDestroy, OnInit {
     }
   }
 
+  getInvoiceStatusClass(item: any) {
+    switch (item.paymentStatus.en.toLowerCase()) {
+      case 'not paid':
+        return 'badge-danger';
+      case 'paid':
+        return 'badge-success';
+      default:
+        return 'text-info';
+    }
+  }
+
   getChannelText(item: any) {
     switch (item.channel.toLowerCase()) {
       case 'hilux':

@@ -53,9 +53,12 @@
                                             <th scope="col" style="width: 15%;">
                                                 تفاصيل
                                             </th>
-                                            <th scope="col" class="text-center">
-                                                الخطوات المنجزة
+                                            <th scope="col" style="width: 2%;">
+                                                الايصال
                                             </th>
+                                            <!-- <th scope="col" class="text-center">
+                                                الخطوات المنجزة
+                                            </th> -->
                                             <th scope="col" style="width: 10%;" class="text-center">
                                                 الوقت
                                             </th>
@@ -81,17 +84,16 @@
                                                 class="text-center align-middle"
                                                 [innerHTML]="getPropertyDetailText(item)">
                                             </td>
-                                            <td (click)="expand[i] = !expand[i]">
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                <span class="badge" [ngClass]="getInvoiceStatusClass(item)">
+                                                    {{item.paymentStatus?.ar}}
+                                                </span>
+                                            </td>
+                                            
+                                            <!-- <td (click)="expand[i] = !expand[i]">
 
-                                                <!-- The time line -->
 
                                                 <div class="timeline" *ngIf="item.applicationDetails?.stepsExecuted">
-                                                    <!-- timeline time label -->
-                                                    <!-- <div class="time-label">
-                                <span class="bg-red">10 Feb. 2014</span>
-                              </div> -->
-                                                    <!-- END timeline time label -->
-                                                    <!-- timeline item -->
                                                     <span class="float-right"><i
                                                             class="expand fas fa-expand bg-purple position-relative"></i></span>
                                                     <div *ngIf="getStepDetailsFirst(item) as rowItem">
@@ -123,11 +125,9 @@
                                                             </h3>
                                                         </div>
                                                     </div>
-                                                    <!-- END timeline item -->
 
                                                 </div>
-                                                <!-- ENF The time line -->
-                                            </td>
+                                            </td> -->
                                             <td (click)="performActionPerStatus(item)" class="text-center align-middle">
                                                 {{getTimeAvailable(item) | date}}
                                                 <br>
