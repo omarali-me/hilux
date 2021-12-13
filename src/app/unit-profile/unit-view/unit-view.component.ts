@@ -251,7 +251,7 @@ export class UnitViewComponent implements OnInit {
 
   searchResourceData(data: any) {
     if (!!data.searchUnitNumber) {
-      this.router.navigate(['unit/profile/', data.searchUnitNumber, 'edit']);
+      // this.router.navigate(['unit/profile/', data.searchUnitNumber, 'edit']);
     }
   }
 
