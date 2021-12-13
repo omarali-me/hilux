@@ -259,7 +259,7 @@ export class UnitMainViewComponent implements OnInit {
   }
 
   loadUnitNumberOptions() {
-    this.lookupsService.loadUnitsOptions({ projectId: this.searchData.searchProjectId })
+    this.lookupsService.loadUnitsByUnitIDOptions({ projectId: this.searchData.searchProjectId })
       .subscribe((data) => {
         this.unitNumberOptions = data;
       })
