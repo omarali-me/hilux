@@ -412,15 +412,12 @@
                         <th i18n="@@applicationSearchTableApplicationSource">Application Source</th>
                         <th i18n="@@applicationSearchTableApplicationId">Application Id</th>
                         <th i18n="@@applicationSearchTableServiceName">Service Name</th>
-                        <th i18n="@@applicationSearchTableLandId">Land ID</th>
-                        <th i18n="@@applicationSearchTableDeveloperName">Developer Name</th>
-                        <th i18n="@@applicationSearchTableProjectName">Project Name</th>
-                        <th i18n="@@applicationSearchTableUnitId">Unit ID</th>
+                        <th i18n="@@applicationSearchTableDetails">Application Details</th>
                         <th i18n="@@applicationSearchTableApplicationDate">Application Date</th>
-                        <th i18n="@@applicationSearchTableAdditionalInfo">Additional Info</th>
+                        <!-- <th i18n="@@applicationSearchTableAdditionalInfo">Additional Info</th> -->
                         <th i18n="@@applicationSearchTableApplicationStatus">Application Status</th>
                         <th i18n="@@applicationSearchTableReservedBy">Reserved By</th>
-                        <th i18n="@@applicationSearchTableWaitingForActionFrom">Waiting For Action From</th>
+                        <!-- <th i18n="@@applicationSearchTableWaitingForActionFrom">Waiting For Action From</th> -->
                       </tr>
                     </thead>
                     <tbody>
@@ -429,30 +426,31 @@
                         <td>
                           <div class="d-flex">
                             <span class="fs-30 p-1 icon-pointer">
-                              <i [class]="getIconClass(item_detail.channel)"></i>
+                              <!-- <i [class]="getIconClass(item_detail.channel)"> -->
+                                {{ item_detail?.channel }}
+                              <!-- </i> -->
                             </span>
                           </div>
                         </td>
                         <td>{{ item_detail?.applicationID }}</td>
-                        <td>{{ item_detail?.serviceName?.ar }}</td>
-                        <td>{{ item_detail?.landID }}</td>
+                        <td>{{ item_detail?.serviceName }}</td>
+                        <td>
+                          <p *ngFor="let applicationDetail of item_detail?.applicationDetails">{{applicationDetail}}</p>
+                        </td>
 
-                        <td>{{ item_detail?.developerName }}</td>
-                        <td>{{ item_detail?.projectName }}</td>
-
-                        <td>{{ item_detail?.unitID }}</td>
                         <td>{{ item_detail?.applicationDate }}</td>
 
-                        <td>{{ item_detail?.applicationDetails }}</td>
+                        <!-- <td>{{ item_detail?.applicationDetails }}</td> -->
                         <td>
-                          <div class="d-flex">
+                          <!-- <div class="d-flex">
                             <span class="fs-30 p-1 icon-pointer">
                               <i [class]="getStatusClass(item_detail?.applicationStatus)"></i>
                             </span>
-                          </div>
+                          </div> -->
+                          {{ item_detail?.applicationStatus }}
                         </td>
                         <td>{{ item_detail?.reservedBy }}</td>
-                        <td>{{ item_detail?.pendingWith }}</td>
+                        <!-- <td>{{ item_detail?.pendingWith }}</td> -->
                       </tr>
                     </tbody>
                   </table>

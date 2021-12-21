@@ -5085,6 +5085,14 @@
           <context context-type="linenumber">415</context>
         </context-group>
       </trans-unit>
+            <trans-unit id="applicationSearchTableDetails" datatype="html">
+        <source>Application Details</source>
+        <target>تفاصيل المعاملة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">415</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="applicationSearchTableDeveloperName" datatype="html">
         <source>Developer Name</source>
         <target>المطور العقاري</target>
