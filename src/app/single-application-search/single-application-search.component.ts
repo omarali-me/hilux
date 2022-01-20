@@ -459,4 +459,30 @@ export class SingleApplicationSearchComponent implements OnInit {
       return value;
     }
   }
+
+  getStepStatusClass(item: any) {
+    switch (item.toLowerCase()) {
+      case 'pending':
+        return 'badge-danger';
+      case 'completed':
+        return 'badge-success';
+      case 'locked':
+        return 'badge-warning';
+      default:
+        return 'text-info';
+    }
+  }
+
+  getStepStatusText(item: any) {
+    switch (item.toLowerCase()) {
+      case 'قيد الانتظار':
+        return 'badge-danger';
+      case 'completed':
+        return 'مكتملة';
+      case 'locked':
+        return 'محجوزة';
+      default:
+        return item;
+    }
+  }
 }
