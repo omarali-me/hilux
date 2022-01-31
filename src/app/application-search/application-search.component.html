@@ -49,7 +49,7 @@
                           [hideSelected]="true"
                           [(ngModel)]="formData.serviceName"
                           bindLabel="serviceName.ar"
-                          bindValue="serviceName.ar"
+                          bindValue="serviceID"
                           notFoundText="لا يوجد نتائج للبحث"
                           #serviceName="ngModel"
                           multiple="true"
@@ -384,7 +384,7 @@
               <div class="col-sm-12">
                 <div class="row ">
                   <div class="col-sm-12 text-center">
-                    <button type="submit" class="btn btn-primary" [disabled]="isFormInValid(f.invalid, formData)" i18n="@@applicationSearchSearch">Search</button>
+                    <button type="submit" class="btn btn-primary" i18n="@@applicationSearchSearch">Search</button>
                   </div>
                 </div>
               </div>
@@ -416,6 +416,7 @@
                         <th i18n="@@applicationSearchTableApplicationDate">Application Date</th>
                         <!-- <th i18n="@@applicationSearchTableAdditionalInfo">Additional Info</th> -->
                         <th i18n="@@applicationSearchTableApplicationStatus">Application Status</th>
+                        <th>حالة الإيصال</th>
                         <th i18n="@@applicationSearchTableReservedBy">Reserved By</th>
                         <!-- <th i18n="@@applicationSearchTableWaitingForActionFrom">Waiting For Action From</th> -->
                       </tr>
@@ -439,7 +440,11 @@
                         </td>
 
                         <td>{{ item_detail?.applicationDate }}</td>
-
+                        <td class="text-center align-middle">
+                          <span class="badge" [ngClass]="getInvoiceStatusClass(item_detail)">
+                              {{getInvoiceStatusText(item_detail)}}
+                          </span>
+                      </td>
                         <!-- <td>{{ item_detail?.applicationDetails }}</td> -->
                         <td>
                           <!-- <div class="d-flex">

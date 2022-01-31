@@ -69,15 +69,15 @@ export class ApplicationSearchComponent implements OnInit {
     this.applicationSourceOptions = [
       {
         key: "hilux",
-        value: { en: 'Hilux', ar: 'hilux' }
+        value: { en: 'Hilux', ar: 'النظام الداخلي' }
       },
       {
-        key: "web",
-        value: { en: 'Web', ar: 'Web' }
+        key: "eserviceportal",
+        value: { en: 'Web', ar: 'البوابة الاكترونية' }
       },
       {
         key: "mobile",
-        value: { en: 'mobile', ar: 'Mobile' }
+        value: { en: 'mobile', ar: 'موبايل' }
       }
     ]
   }
@@ -465,6 +465,8 @@ export class ApplicationSearchComponent implements OnInit {
   }
 
   isFormInValid(form_invalid: boolean, formData: any) {
+    console.log('form_invalid',form_invalid);
+    
     if (form_invalid) {
       return form_invalid && (
         (!formData.owner) &&
@@ -473,6 +475,27 @@ export class ApplicationSearchComponent implements OnInit {
       )
     } else {
       return form_invalid
+    }
+  }
+
+  getInvoiceStatusClass(item: any) {
+    switch (item.invoiceStatus.toLowerCase()) {
+      case 'notpaid':
+        return 'badge-danger';
+      case 'paid':
+        return 'badge-success';
+      default:
+        return 'text-info';
+    }
+  }
+  getInvoiceStatusText(item: any) {
+    switch (item.invoiceStatus.toLowerCase()) {
+      case 'notpaid':
+        return 'غير مدفوع';
+      case 'paid':
+        return 'مدفوع';
+      default:
+        return '';
     }
   }
 
