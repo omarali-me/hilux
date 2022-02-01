@@ -130,10 +130,21 @@ export class ApplicationSearchComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.projectDataOptionsLoading = true),
         switchMap(term => {
-          return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
-            catchError(() => of([])), // empty list on error
-            tap(() => this.projectDataOptionsLoading = false)
-          )
+          if(this.formData.developerId)
+          {
+            return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.projectDataOptionsLoading = false)
+            )
+          }
+          else
+          {
+            return this.lookupsService.loadProjects({ term}).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.projectDataOptionsLoading = false)
+            )
+          }
+
         })
       )
     );
@@ -271,7 +282,7 @@ export class ApplicationSearchComponent implements OnInit {
       this.setSearchByandTypeValues(val, field_name);
     } else if (this.isSearchByUnit()) {
       //check all are empty then reset types
-      if (this.isEmpty('developerId') && this.isEmpty('projectId') && this.isEmpty('unitId')) {
+      if ( this.isEmpty('projectId') && this.isEmpty('unitId')) {
         this.setSearchByandTypeValues(val, null);
       }
     }

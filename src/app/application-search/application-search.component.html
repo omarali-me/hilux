@@ -169,12 +169,11 @@
 
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label" i18n="@@applicationSearchDeveloperName">Developer Name
-                        <span *ngIf="isSearchByUnit()">*</span>
+                        <span *ngIf="false">*</span>
                       </label>
                       <div class="col-sm-9">
                         <ng-select
                           [items]="developerOptions | async"
-                          required="isSearchByUnit()"
                           name="developerId"
                           [hideSelected]="true"
                           [(ngModel)]="formData.developerId"
@@ -214,7 +213,7 @@
                           notFoundText="لا يوجد نتائج للبحث"
                           [loading]="projectDataOptionsLoading"
                           #project="ngModel"
-                          [disabled]="isNotSearchTypeUnit() || isEmpty('developerId')"
+                          [disabled]="isNotSearchTypeUnit()"
                           (keyup)="setSearchType('unitId', $event)"
                           (blur)="checkTypeAndValues('projectId')"
                           (change)="resetUnit()"
@@ -365,7 +364,7 @@
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label" i18n="@@applicationSearchReceiptId">Receipt ID
+                      <label class="col-sm-3 col-form-label">رقم الفاتورة
                       </label>
                       <div class="col-sm-9">
                         <input name="receiptID"
@@ -377,7 +376,21 @@
                         >
                       </div>
                     </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">رقم الايصال
+                    </label>
+                    <div class="col-sm-9">
+                      <input name="invoiceID"
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="formData.invoiceID"
+                        #receiptID="ngModel"
+                        [disabled]="isSearchTypeApplication()"
+                      >
+                    </div>
                   </div>
+                </div>
 
                 </div>
               </div>
