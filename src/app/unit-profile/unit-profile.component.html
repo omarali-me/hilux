@@ -257,7 +257,7 @@
                             <span>*</span>
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="floorNumber" required="true" class="form-control" [(ngModel)]="formData.floorNumber" #floorNumber="ngModel" numbersOnly precision="0" pattern="[0-9]*" >
+                            <input type="text" name="floorNumber" required="true" class="form-control" [(ngModel)]="formData.floorNumber" #floorNumber="ngModel" >
                             <div *ngIf="floorNumber.invalid && (floorNumber.dirty || floorNumber.touched)" class="alert alert-danger">
                               <div *ngIf="floorNumber.errors?.required">
                                 Floor Number can not be blank
