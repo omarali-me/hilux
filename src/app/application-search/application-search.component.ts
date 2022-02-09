@@ -64,7 +64,7 @@ export class ApplicationSearchComponent implements OnInit {
     this.loadLandsoptions();
     this.loadOldLandsoptions();
     this.loadOwnersOptions();
-    this.loadServiceNamesOptions()
+    this.loadServiceNamesOptionsByUser()
 
     this.applicationSourceOptions = [
       {
@@ -198,8 +198,8 @@ export class ApplicationSearchComponent implements OnInit {
     );
   }
 
-  loadServiceNamesOptions() {
-    this.lookupsService.loadServiceNamesOptions()
+  loadServiceNamesOptionsByUser() {
+    this.lookupsService.loadServiceNamesOptionsByUser()
       .subscribe((data) => {
         this.serviceNameOptions = data;
       })

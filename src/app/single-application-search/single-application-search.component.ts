@@ -162,9 +162,9 @@ export class SingleApplicationSearchComponent implements OnInit {
     );
   }
 
-  loadServiceNamesOptions() {
+  loadServiceNamesOptionsByUser() {
 
-    this.lookupsService.loadServiceNamesOptions()
+    this.lookupsService.loadServiceNamesOptionsByUser()
       .subscribe((data) => {
         this.serviceNameOptions = data;
       })
