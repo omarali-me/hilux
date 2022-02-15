@@ -364,6 +364,19 @@
                     </div>
 
                     <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">رقم عقد الرهن</label>
+                      <div class="col-sm-9">
+                        <input name="mortgageId"
+                          type="text"
+                          class="form-control"
+                          [(ngModel)]="formData.mortgageId"
+                          #receiptID="ngModel"
+                          [disabled]="isSearchTypeApplication()"
+                        >
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
                       <label class="col-sm-3 col-form-label">رقم الفاتورة
                       </label>
                       <div class="col-sm-9">
