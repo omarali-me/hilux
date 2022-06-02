@@ -119,7 +119,7 @@ export class MyTasksComponent implements OnDestroy, OnInit {
   }
 
   getInvoiceStatusClass(item: any) {
-    switch (item.paymentStatus.en.toLowerCase()) {
+    switch (item.paymentStatus?.en.toLowerCase()) {
       case 'not paid':
         return 'badge-danger';
       case 'paid':
@@ -135,6 +135,8 @@ export class MyTasksComponent implements OnDestroy, OnInit {
         return 'النظام الداخلي';
       case 'eserviceportal':
         return 'البوابة الالكترونية';
+      case 'adgbus':
+	return 'تطبيق عجمان ون';
       case 'web':
         return 'تطبيقات الهواتف الذكية';
       default:

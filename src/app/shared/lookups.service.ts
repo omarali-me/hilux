@@ -48,7 +48,7 @@ export class LookupsService {
   }
 
   loadProjects(params: any = {}) {
-    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, params);
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projectsUnactiveSH`, params);
   }
   loadNewProjects(params: any = {}) {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/newProjects`, params);
