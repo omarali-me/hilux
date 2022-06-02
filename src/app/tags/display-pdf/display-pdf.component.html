@@ -5,7 +5,7 @@
           <i class="fas fa-minus"></i>
       </button>
     </div>
-    <h3 class="card-title float-right font-weight-bold">{{data.caption}}</h3>
+    <h3 class="card-title float-right font-weight-bold">{{data.caption && data.caption?.ar ? data.caption?.ar : data.caption}}</h3>
   </div>
   <div class="card-body">
     <a
