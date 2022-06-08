@@ -192,7 +192,8 @@ export class FileUploadComponent implements OnInit {
   }
 
   isMultiple() {
-    return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isMultiple(this.field.auxInfo.multiple) : false);
+    // return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isMultiple(this.field.auxInfo.multiple) : false);
+    return true;
   }
 
   getUploadedFiles() {
