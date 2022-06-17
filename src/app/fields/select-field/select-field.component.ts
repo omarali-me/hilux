@@ -14,6 +14,8 @@ import { ChangeDetectorRef } from '@angular/core';
 export class SelectFieldComponent implements OnInit {
   dataOptions: any;
   isStepToEdit: boolean = false;
+  isRejectReason: boolean = false;
+  isEditReason: boolean = false;
 
   @Input() field: Field;
 
@@ -40,6 +42,8 @@ export class SelectFieldComponent implements OnInit {
 
   ngOnInit(): void {
     this.isStepToEdit = (this.field.fieldID == 'stepToEdit');
+    this.isRejectReason = (this.field.fieldID == 'rejectReason');
+    this.isEditReason = (this.field.fieldID == 'editReason');
     this.loadData();
     this.getDefaultValue(this.field.fieldID);
   }
@@ -111,6 +115,14 @@ export class SelectFieldComponent implements OnInit {
     if (this.isStepToEdit) {
       this.service.setSteptoEditField(option && option.key);
     }
+
+    if (this.isEditReason) {
+      this.service.setEditReasonField(option && option.key);
+    }
+
+    if (this.isRejectReason) {
+      this.service.setRejectReasonField(option && option.key);
+    }
   }
 
   prepareDisplayValues() {
@@ -147,6 +159,12 @@ export class SelectFieldComponent implements OnInit {
   }
 
   isActiveEditStep() {
-    return this.isStepToEdit ? false : (this.service.isEditStep && (this.service.editStepField != this.field.fieldID));
+    return this.isStepToEdit || this.isEditReason ? false : (this.service.isEditStep && (this.service.editStepField != this.field.fieldID || this.service.editReasonField != this.field.fieldID));
   }
+
+  isActiveRejectStep() {
+    return this.isRejectReason ? false : (this.service.isRejectStep && (this.service.rejectReasonField != this.field.fieldID || this.service.rejectRemarksField != this.field.fieldID));
+  }
+
+  
 }

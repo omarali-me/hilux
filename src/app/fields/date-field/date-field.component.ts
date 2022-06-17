@@ -140,4 +140,8 @@ export class DateFieldComponent implements OnInit {
   isActiveEditStep() {
     return this.service.isEditStep && (this.service.editStepField != this.field.fieldID);
   }
+
+  isActiveRejectStep() {
+    return this.service.isRejectStep && (this.service.rejectReasonField != this.field.fieldID);
+  }
 }

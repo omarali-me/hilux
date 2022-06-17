@@ -16,6 +16,13 @@ export class FieldsService {
 
   public isEditStep: boolean = false;
   public editStepField: any;
+  public editReasonField: any;
+  public editRemarksField: any;
+
+  public isRejectStep: boolean = false;
+  public rejectReasonField: any;
+  public rejectRemarksField: any;
+  
   public datesValues: Array<{ group: string, value: string }> = [];
 
   
@@ -220,12 +227,12 @@ export class FieldsService {
   }
 
   isRequired(value: any, field_name: any) {
-    if (this.isEditStep && ('stepToEdit' == field_name)) {
+    if ((this.isEditStep && ('stepToEdit' == field_name || 'editReason' == field_name)) || this.isRejectStep && ('rejectReason' == field_name)) {
       return true;
-    } else if (this.isEditStep && (this.editStepField == field_name)) {
+    } else if ((this.isEditStep && (this.editStepField == field_name || this.editReasonField == field_name )) || (this.isRejectStep && (this.rejectReasonField == field_name))) {
       return (value == "true" || value == true);
     } else {
-      return this.isEditStep ? false : (value == "true" || value == true);
+      return this.isEditStep || this.isRejectStep ? false : (value == "true" || value == true);
     }
   }
 
@@ -239,5 +246,25 @@ export class FieldsService {
 
   setSteptoEditField(field_name: any) {
     this.editStepField = field_name;
+  }
+
+  setEditRemarksField(field_name: any) {
+    this.editRemarksField = field_name;
+  }
+
+  setIsRejectStep(value: any) {
+    this.isRejectStep = value;
+  }
+
+  setEditReasonField(field_name: any) {
+    this.editReasonField = field_name;
+  }
+
+  setRejectReasonField(field_name: any) {
+    this.rejectReasonField = field_name;
+  }
+
+  setRejectRemarksField(field_name: any) {
+    this.rejectRemarksField = field_name;
   }
 }

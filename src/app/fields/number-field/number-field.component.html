@@ -9,7 +9,7 @@
   [minlength]="field.auxInfo?.minLength"
   [maxlength]="field.auxInfo?.maxLength"
   [(ngModel)]="formData[field.fieldID]"
-  [disabled]="isActiveEditStep()"
+  [disabled]="isActiveEditStep() || isActiveRejectStep()"
   #ngModel="ngModel"
   mask="separator.3"
   thousandSeparator=","
