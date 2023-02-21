@@ -108,7 +108,7 @@
               <label class="col-sm-3 col-form-label" i18n="@@landProfileOldLandID">Old Land ID
               </label>
               <div class="col-sm-9">
-                <input type="text" name="oldLandId" class="form-control" [(ngModel)]="formData.oldLandId" #oldLandId="ngModel" [disabled]="true">
+                <input type="text" name="oldLandId" class="form-control" [(ngModel)]="formData.oldLandId" #oldLandId="ngModel" >
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@
                   bindLabel="value.ar"
                   bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث"
-                  #cityId="ngModel" [disabled]="true"
+                  #cityId="ngModel" 
                 >
                 </ng-select>
                 <div *ngIf="cityId.invalid && (cityId.dirty || cityId.touched)" class="alert alert-danger">
@@ -157,7 +157,7 @@
                   bindLabel="value.ar"
                   bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث"
-                  #sectorId="ngModel" [disabled]="true"
+                  #sectorId="ngModel" 
                 >
                 </ng-select>
                 <div *ngIf="sectorId.invalid && (sectorId.dirty || sectorId.touched)" class="alert alert-danger">
@@ -177,7 +177,7 @@
                 <span>*</span>
               </label>
               <div class="col-sm-9">
-                <input type="text" name="district" required="false" class="form-control" [(ngModel)]="formData.sectionId" #district="ngModel" [disabled]="true">
+                <input type="text" name="district" required="false" class="form-control" [(ngModel)]="formData.sectionId" #district="ngModel" >
                 <div *ngIf="district.invalid && (district.dirty || district.touched)" class="alert alert-danger">
                   <div *ngIf="district.errors?.required">
                     District can not be blank
@@ -193,7 +193,7 @@
                 <span>*</span>
               </label>
               <div class="col-sm-9">
-                <input type="text" name="plot" required="true" class="form-control" [(ngModel)]="formData.pieceNumber" #plot="ngModel" numbersOnly precision="0" [disabled]="true">
+                <input type="text" name="plot" required="true" class="form-control" [(ngModel)]="formData.pieceNumber" #plot="ngModel" numbersOnly precision="0" >
                 <div *ngIf="plot.invalid && (plot.dirty || plot.touched)" class="alert alert-danger">
                   <div *ngIf="plot.errors?.required">
                     Plot can not be blank
@@ -218,7 +218,7 @@
                   bindLabel="value.ar"
                   bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث"
-                  #landUse="ngModel" [disabled]="true"
+                  #landUse="ngModel" 
                 >
                 </ng-select>
               </div>
@@ -238,7 +238,7 @@
                   bindLabel="value.ar"
                   bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث"
-                  #subLandUse="ngModel" [disabled]="true"
+                  #subLandUse="ngModel" 
                 >
                 </ng-select>
               </div>
@@ -282,7 +282,7 @@
               <label class="col-sm-3 col-form-label" i18n="@@landProfileLandAreaM2">Land Area m2
               </label>
               <div class="col-sm-9">
-                <input type="text" name="landAreaM2" class="form-control" [(ngModel)]="formData.area" #landAreaM2="ngModel" numbersOnly precision="2" [disabled]="true">
+                <input type="text" name="landAreaM2" class="form-control" [(ngModel)]="formData.area" #landAreaM2="ngModel" numbersOnly precision="2" >
               </div>
             </div>
           </div>
@@ -292,7 +292,7 @@
               <label class="col-sm-3 col-form-label" i18n="@@landProfileFloorsasperSiteMap">Floors as per Site Map
               </label>
               <div class="col-sm-9">
-                <input type="text" name="floorsasperSiteMap" class="form-control" [(ngModel)]="formData.floors" #floorsasperSiteMap="ngModel" numbersOnly precision="0" [disabled]="true">
+                <input type="text" name="floorsasperSiteMap" class="form-control" [(ngModel)]="formData.floors" #floorsasperSiteMap="ngModel" numbersOnly precision="0" >
               </div>
             </div>
           </div>
@@ -306,7 +306,7 @@
                 <textarea
                   name="municipalityRemarks"
                   class="form-control"
-                  rows="3" [disabled]="true"
+                  rows="3" 
                   [(ngModel)]="formData.municipalityRemarks"
                 ></textarea>
               </div>
@@ -646,7 +646,7 @@
                 <app-media-gallery [medias]="getImageAttachments(formData, 'districtImageUrl')"></app-media-gallery>
 
               </div>
-              <app-file-upload [field]="prepareEstablishmentContractFileField()" [formData]="formData" [defaultValues]="formData"></app-file-upload>
+              <!-- <app-file-upload [field]="prepareEstablishmentContractFileField()" [formData]="formData" [defaultValues]="formData"></app-file-upload> -->
 
             </div>
           </div>
@@ -657,7 +657,7 @@
                 <app-media-gallery [medias]="getImageAttachments(formData, 'sectorImageUrl')"></app-media-gallery>
 
               </div>
-              <app-file-upload [field]="prepareEstablishmentContractFileField2()" [formData]="formData" [defaultValues]="formData"></app-file-upload>
+              <!-- <app-file-upload [field]="prepareEstablishmentContractFileField2()" [formData]="formData" [defaultValues]="formData"></app-file-upload> -->
 
             </div>
           </div>
@@ -671,7 +671,7 @@
                 <app-media-gallery [medias]="getImageAttachments(formData, 'parcelImageUrl')"></app-media-gallery>
 
               </div>
-              <app-file-upload [field]="prepareEstablishmentContractFileField3()" [formData]="formData" [defaultValues]="formData"></app-file-upload>
+              <!-- <app-file-upload [field]="prepareEstablishmentContractFileField3()" [formData]="formData" [defaultValues]="formData"></app-file-upload> -->
             </div>
           </div>
           <div class="col-sm-6">
