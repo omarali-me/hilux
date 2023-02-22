@@ -220,6 +220,17 @@
                     Search
                 </a>
                 </ng-container>
+                <ng-container *ngIf="getRole(userRole,'Admin') || getRole(userRole,'Archives')">
+                    <a
+                            class="dropdown-item"
+                            href="https://wfe.ajre.gov.ae/AjmanLandProperty/index.php/DMS/index"
+                            target="_blank"
+                    >
+                        <i class="fas fa-plus float-left"></i>
+                        شاشة تسليم الملفات
+
+                    </a>
+                    </ng-container>
             </div>
         </li>
         <li
@@ -259,6 +270,19 @@
                 لوحدة التحكم
             </a>
         </li>
+        <ng-container *ngIf="getRole(userRole,'Admin') || getRole(userRole,'Archives')">
+            <li
+                class="nav-item d-none d-sm-inline-block"
+        >
+            <a
+                    href="https://wfe.ajre.gov.ae/AjmanLandProperty/index.php/DMS/index"
+                    class="nav-link"
+                    target="_blank"
+            >
+            شاشة تسليم الملفات
+            </a>
+        </li>
+            </ng-container>
         <li
                 class="nav-item d-none d-sm-inline-block"
                 [routerLinkActive]="['active']"
