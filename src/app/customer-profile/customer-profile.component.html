@@ -388,7 +388,7 @@
                                                         i18n="@@customerProfilePassportnumberissuancedate"
                                                     >
                                                         Passport number issuance date
-                                                        <span>*</span>
+                                                        <span></span>
                                                     </label>
                                                     <div class="col-sm-9">
                                                         <input
@@ -396,7 +396,7 @@
                                                             class="form-control"
                                                             name="passportIssueDate"
                                                             (dateTimeChange)="formatDate('passportIssueDate')"
-                                                            required="true"
+                                                            required="false"
                                                             [(ngModel)]="formData.passportIssueDate"
                                                             [max]="minDate"
                                                             [owlDateTime]="dt5"
