@@ -103,7 +103,7 @@ export class CompanyDetailsComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.dataOptionsLoading = true),
           switchMap(term => {
-            return this.lookupsService.loadOwners({ term }).pipe(
+            return this.lookupsService.loadOwners3({ term }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.dataOptionsLoading = false)
           )})
@@ -162,7 +162,7 @@ export class CompanyDetailsComponent implements OnInit {
   async prepareOwnerValueOptions(profile: any) {
     for(let owner of (profile.owners || [])) {
       await setTimeout(() => {
-        this.lookupsService.loadOwners({ id: owner.ownerId })
+        this.lookupsService.loadOwners3({ id: owner.ownerId })
         .subscribe((option)=> {
           this.searchInput$.next(option.value && option.value.ar);
         })
