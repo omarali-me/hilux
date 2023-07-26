@@ -72,6 +72,9 @@ export class LookupsService {
   loadOwners(params: any = {}) {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/owners`, params);
   }
+  loadOwners3(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/owners3`, params);
+  }
 
   loadCustomers(params: any = {}) {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/customers`, params);
