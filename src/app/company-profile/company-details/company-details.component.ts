@@ -26,7 +26,7 @@ export class CompanyDetailsComponent implements OnInit {
   companyNameOptions: Observable<any>;
   companyLicenseNumberOptions: Observable<any>;
   companyTypeOptions: any;
-  minDate:any;
+  minDate: any;
   dataOptionsLoading = false;
   companyNameOptionsLoading = false;
   companyLicenseNumberOptionsLoading = false;
@@ -34,6 +34,8 @@ export class CompanyDetailsComponent implements OnInit {
   searchCompanyNameInput$ = new Subject<string>();
   searchCompanyLicenseNumberInput$ = new Subject<string>();
   searchby: any;
+  ownersList: any;
+  ownerIdVal: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -53,12 +55,13 @@ export class CompanyDetailsComponent implements OnInit {
     this.loadLicenseIssuerOptions();
     this.loadCompanyNameOptions();
     this.loadCompanyLicenseNumberOptions();
-
+    this.ownersList = [];
     this.profile$ = this.route.data.pipe(pluck('profile'));
-    this.profile$.subscribe(async(profile: any) => {
+    this.profile$.subscribe(async (profile: any) => {
       if (profile && profile.id) {
         await this.prepareOwnerValueOptions(profile);
         this.formData = profile as any;
+        // this.getOwnersData();
       } else {
         this.formData = { owners: [{}] };
       }
@@ -76,64 +79,120 @@ export class CompanyDetailsComponent implements OnInit {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
         }
-    }, (error) => {
-      this.toastr.error('Something went Wrong', 'Error')
-      this.router.navigate(['error'])
-    })
+      }, (error) => {
+        this.toastr.error('Something went Wrong', 'Error')
+        this.router.navigate(['error'])
+      })
   }
 
   loadEmiratesOptions() {
     this.lookupsService.loadEmiratesOptions()
-    .subscribe((data) => {
-      this.emiratesOptions = data;
-    })
+      .subscribe((data) => {
+        this.emiratesOptions = data;
+      })
   }
 
   loadLicenseTypeOptions() {
     this.lookupsService.loadLicenseTypeOptions()
-    .subscribe((data) => {
-      this.licenseTypeOptions = data;
-    })
+      .subscribe((data) => {
+        this.licenseTypeOptions = data;
+      })
   }
 
-  loadOwnerOptions() {
-    this.ownerOptions = concat(
-      of([]), // default items
-      this.searchInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.dataOptionsLoading = true),
-          switchMap(term => {
-            return this.lookupsService.loadOwners3({ term }).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.dataOptionsLoading = false)
-          )})
-      )
-    );
+  async loadOwnerOptions() {
+
+
+    console.log("loadOwnerOptions");
+    // let vals = [];
+    // await this.searchInput$.subscribe(val => vals.push(val));
+    await this.searchInput$.subscribe(val => {
+      // vals.push(val);
+      this.LoadOptionsData(val);
+    });
+
+    // console.log(vals);
+    // setTimeout(async () => {
+    //   if (vals.length > 0) {
+    //     console.log(vals.length + " if")
+    //     for (let index = 0; index < vals.length; index++) {
+    //       let term = vals[index];
+    //       console.log(term);
+    //       await setTimeout(() => {
+    //         this.lookupsService.loadOwners3({ term })
+    //           .subscribe((option) => {
+    //             // this.loadOwnerOptions(owner.ownerId)
+    //             let obj = option;
+    //             this.ownerOptions = concat(
+    //               of([]), // default items
+    //               [obj]
+    //             );
+    //           })
+    //       },
+    //         500)
+
+    //     }
+    //   } else {
+    //     console.log("lenght equal zero")
+    //   }
+    // }, 500);
+
+
+    // this.ownerOptions = concat(
+    //   of([]), // default items
+    //   this.searchInput$.pipe(
+    //     distinctUntilChanged(),
+    //     tap(() => this.dataOptionsLoading = true),
+    //     switchMap(term => {
+    //       console.log("search fun")
+    //       return this.lookupsService.loadOwners3({ term }).pipe(
+    //         catchError(() => of([])), // empty list on error
+    //         tap(() => this.dataOptionsLoading = false)
+    //       )
+    //     })
+    //   )
+    // );
+
+
+  }
+  async LoadOptionsData(term) {
+    console.log(term);
+    await setTimeout(() => {
+      this.lookupsService.loadOwners3({ term })
+        .subscribe((option) => {
+          // this.loadOwnerOptions(owner.ownerId)
+          let obj = option;
+          this.ownerOptions = concat(
+            of([]), // default items
+            [obj]
+          );
+        })
+    },
+      500);
   }
 
   loadCompanyTypeOptions() {
     this.lookupsService.loadCompanyTypeOptions()
-    .subscribe((data) => {
-      this.companyTypeOptions = data;
-    })
+      .subscribe((data) => {
+        this.companyTypeOptions = data;
+      })
   }
 
   loadLicenseIssuerOptions() {
     this.lookupsService.loadLicenseIssuerOptions()
-    .subscribe((data) => {
-      this.licenseIssuerOptions = data;
-    })
+      .subscribe((data) => {
+        this.licenseIssuerOptions = data;
+      })
   }
 
-  isNotGovernmentInstitute () {
+  isNotGovernmentInstitute() {
     return this.formData.companyType && !(["3", "4", "5"].includes(this.formData.companyType) || [3, 4, 5].includes(this.formData.companyType))
   }
 
-  isNotGovernmentAndIndividualInstitute () {
+  isNotGovernmentAndIndividualInstitute() {
     return this.formData.companyType && !(["2", "3", "4", "5"].includes(this.formData.companyType) || [2, 3, 4, 5].includes(this.formData.companyType))
   }
 
-  isGovernmentOrg () {
+  isGovernmentOrg() {
     return this.formData.companyType && (["3"].includes(this.formData.companyType) || [3].includes(this.formData.companyType))
   }
 
@@ -143,6 +202,7 @@ export class CompanyDetailsComponent implements OnInit {
 
   getOwnersData() {
     return this.formData.owners ? this.formData.owners : (this.formData.owners = [{}]);
+    // return this.ownersList =  this.formData.owners ? this.formData.owners :  [{}];
   }
 
   addRow() {
@@ -150,8 +210,8 @@ export class CompanyDetailsComponent implements OnInit {
   }
 
   deleteRow(index) {
-    _.remove(this.formData.owners, function(resource, i) {
-        return index === i;
+    _.remove(this.formData.owners, function (resource, i) {
+      return index === i;
     });
   }
 
@@ -160,14 +220,22 @@ export class CompanyDetailsComponent implements OnInit {
   }
 
   async prepareOwnerValueOptions(profile: any) {
-    for(let owner of (profile.owners || [])) {
+    for (let owner of (profile.owners || [])) {
       await setTimeout(() => {
         this.lookupsService.loadOwners3({ id: owner.ownerId })
-        .subscribe((option)=> {
-          this.searchInput$.next(option.value && option.value.ar);
-        })
+          .subscribe((option) => {
+            // this.loadOwnerOptions(owner.ownerId)
+            this.searchInput$.next(option.value && option.value.ar);
+
+            // this.ownerOptions = concat(([option]));
+
+            // this.ownersList.push(option)
+            // this.ownerOptions=option;
+            // console.log("................");
+            // console.log(this.ownerOptions);
+          })
       },
-      100)
+        100)
     }
   }
 
@@ -240,13 +308,14 @@ export class CompanyDetailsComponent implements OnInit {
     this.companyNameOptions = concat(
       of([]), // default items
       this.searchCompanyNameInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.companyNameOptionsLoading = true),
-          switchMap(term => {
-            return this.lookupsService.loadCompanies({ term }).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.companyNameOptionsLoading = false)
-          )})
+        distinctUntilChanged(),
+        tap(() => this.companyNameOptionsLoading = true),
+        switchMap(term => {
+          return this.lookupsService.loadCompanies({ term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.companyNameOptionsLoading = false)
+          )
+        })
       )
     );
   }
@@ -255,13 +324,14 @@ export class CompanyDetailsComponent implements OnInit {
     this.companyLicenseNumberOptions = concat(
       of([]), // default items
       this.searchCompanyLicenseNumberInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.companyLicenseNumberOptionsLoading = true),
-          switchMap(licenseNumber => {
-            return this.lookupsService.loadCompanies({ licenseNumber }).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.companyLicenseNumberOptionsLoading = false)
-          )})
+        distinctUntilChanged(),
+        tap(() => this.companyLicenseNumberOptionsLoading = true),
+        switchMap(licenseNumber => {
+          return this.lookupsService.loadCompanies({ licenseNumber }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.companyLicenseNumberOptionsLoading = false)
+          )
+        })
       )
     );
   }
