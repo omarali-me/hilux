@@ -34,6 +34,9 @@ export class CompanyViewComponent implements OnInit {
   searchCompanyNameInput$ = new Subject<string>();
   searchCompanyLicenseNumberInput$ = new Subject<string>();
   searchby: any;
+  establishmentContractDmsId:any;
+  // pdfPath = require("../../../assets/images/pdf.png");
+  photoPath :any;
 
   constructor(
     private route: ActivatedRoute,
@@ -53,12 +56,32 @@ export class CompanyViewComponent implements OnInit {
     this.loadLicenseIssuerOptions();
     this.loadCompanyNameOptions();
     this.loadCompanyLicenseNumberOptions();
-
+    this.establishmentContractDmsId =[];
+    // this.pdfPath = 
+    // this.photoPath = require("../../../assets/images/photo.png");
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe(async (profile: any) => {
       if (profile && profile.id) {
         await this.prepareOwnerValueOptions(profile);
         this.formData = profile as any;
+        // let establishmentContractDmsId =this.formData.establishmentContractDmsId;
+        if (this.formData.establishmentContractDmsId.length > 0) {
+          for (let index = 0; index < this.formData.establishmentContractDmsId.length; index++) {
+            let parts = this.formData.establishmentContractDmsId[index].split('.');
+            let ex =parts[parts.length - 1];
+            let obj ={
+              ex :ex,
+              link:this.formData.establishmentContractDmsId[index]
+            }
+            this.establishmentContractDmsId.push(obj);
+            if ((index + 1) == this.formData.establishmentContractDmsId.length) {
+              console.log(this.establishmentContractDmsId);
+            }
+          }
+        }
+        
+        console.log('..............');
+        console.log(this.formData);
       } else {
         this.formData = { owners: [{}] };
       }
@@ -112,7 +135,6 @@ export class CompanyViewComponent implements OnInit {
     //       )})
     //   )
     // );
-    console.log("loadOwnerOptions");
     // let vals = [];
     // await this.searchInput$.subscribe(val => vals.push(val));
     await this.searchInput$.subscribe(val => {
@@ -121,7 +143,6 @@ export class CompanyViewComponent implements OnInit {
     });
   }
   async LoadOptionsData(term) {
-    console.log(term);
     await setTimeout(() => {
       this.lookupsService.loadOwners3({ term })
         .subscribe((option) => {

@@ -71,10 +71,13 @@ export class CompanyDetailsComponent implements OnInit {
   updateData(formData: any) {
     let fd = new FormData();
     fd.append('company', JSON.stringify(formData));
+    console.log(formData);
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/companies/update/${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
+          // this.router.navigate(['company/view/']);
+          this.router.navigate(['company/profile/'+formData.id+'/view']);
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -102,7 +105,6 @@ export class CompanyDetailsComponent implements OnInit {
   async loadOwnerOptions() {
 
 
-    console.log("loadOwnerOptions");
     // let vals = [];
     // await this.searchInput$.subscribe(val => vals.push(val));
     await this.searchInput$.subscribe(val => {
@@ -155,7 +157,6 @@ export class CompanyDetailsComponent implements OnInit {
 
   }
   async LoadOptionsData(term) {
-    console.log(term);
     await setTimeout(() => {
       this.lookupsService.loadOwners3({ term })
         .subscribe((option) => {
