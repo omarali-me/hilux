@@ -93,7 +93,8 @@ export class FileUploadComponent implements OnInit {
   }
 
   private async uploadFile(file: any, fieldId: any, percentage: any) {
-    console.log(fieldId);
+    console.log("file ......")
+    console.log(file);
     let form = new FormData();
     let values = (this.isMultiple() ? (this.formData[fieldId] || []) : ( !!this.formData[fieldId] ? [this.formData[fieldId]] : []))
     form.append(`${fieldId}`, file);

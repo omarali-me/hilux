@@ -36,6 +36,8 @@ export class CompanyDetailsComponent implements OnInit {
   searchby: any;
   ownersList: any;
   ownerIdVal: any;
+  establishmentContractDmsId: any;
+  flagUpload: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -56,11 +58,25 @@ export class CompanyDetailsComponent implements OnInit {
     this.loadCompanyNameOptions();
     this.loadCompanyLicenseNumberOptions();
     this.ownersList = [];
+    this.establishmentContractDmsId = [];
+    this.flagUpload = true;
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe(async (profile: any) => {
       if (profile && profile.id) {
         await this.prepareOwnerValueOptions(profile);
         this.formData = profile as any;
+        if (this.formData.establishmentContractDmsId.length > 0) {
+          this.flagUpload = false;
+          for (let index = 0; index < this.formData.establishmentContractDmsId.length; index++) {
+            let parts = this.formData.establishmentContractDmsId[index].split('.');
+            let ex = parts[parts.length - 1];
+            let obj = this.formData.establishmentContractDmsId[index]
+            this.establishmentContractDmsId.push(obj);
+            if ((index + 1) == this.formData.establishmentContractDmsId.length) {
+              console.log(this.establishmentContractDmsId);
+            }
+          }
+        }
         // this.getOwnersData();
       } else {
         this.formData = { owners: [{}] };
@@ -70,14 +86,29 @@ export class CompanyDetailsComponent implements OnInit {
 
   updateData(formData: any) {
     let fd = new FormData();
+    console.log("form data ");
+    console.log(formData);
+    console.log("prev data");
+    console.log(this.establishmentContractDmsId);
+    if (!formData.establishmentContractFile) {
+      if (this.establishmentContractDmsId) {
+        formData.establishmentContractFile = this.establishmentContractDmsId;
+      }
+    }
     fd.append('company', JSON.stringify(formData));
     console.log(formData);
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/companies/update/${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
+          console.log("retun data ... ");
+          console.log(data);
           this.toastr.success(data.message, 'Success');
           // this.router.navigate(['company/view/']);
-          this.router.navigate(['company/profile/'+formData.id+'/view']);
+          // this.router.navigate(['company/profile/' + formData.id + '/view']);
+          this.router.navigate(['company/profile/' + formData.id + '/view'])
+            .then(() => {
+              window.location.reload();
+            });
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -244,7 +275,7 @@ export class CompanyDetailsComponent implements OnInit {
     return {
       fieldID: "establishmentContractFile",
       fieldType: "fileupload",
-      required: true,
+      required: this.flagUpload,
       fieldName: {
         "ar": "establishmentContractFile",
         "en": "establishmentContractFile"

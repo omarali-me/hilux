@@ -64,15 +64,13 @@ export class CompanyViewComponent implements OnInit {
       if (profile && profile.id) {
         await this.prepareOwnerValueOptions(profile);
         this.formData = profile as any;
+        console.log(this.formData);
         // let establishmentContractDmsId =this.formData.establishmentContractDmsId;
         if (this.formData.establishmentContractDmsId.length > 0) {
           for (let index = 0; index < this.formData.establishmentContractDmsId.length; index++) {
             let parts = this.formData.establishmentContractDmsId[index].split('.');
             let ex =parts[parts.length - 1];
-            let obj ={
-              ex :ex,
-              link:this.formData.establishmentContractDmsId[index]
-            }
+            let obj =this.formData.establishmentContractDmsId[index]
             this.establishmentContractDmsId.push(obj);
             if ((index + 1) == this.formData.establishmentContractDmsId.length) {
               console.log(this.establishmentContractDmsId);
