@@ -473,7 +473,11 @@
                 <span>*</span>
               </label>
               <div class="col-sm-9">
-                <app-file-upload [field]="prepareEstablishmentContractFileField()" [formData]="formData" [defaultValues]="formData"></app-file-upload>
+                <!-- <app-file-upload [field]="prepareEstablishmentContractFileField()" [formData]="formData" [defaultValues]="formData"></app-file-upload> -->
+             <!-- <label>{{formData.establishmentContractDmsId[0]}}</label> -->
+             <button type="button" class="btn btn-sm btn-danger" style="margin-right: 5px;margin-left: 5px;"  *ngFor="let item of formData.establishmentContractDmsId let i = index">
+              <a href="{{item}}" target="_blank"> ملف {{i+1}}</a>
+             </button>
               </div>
             </div>
           </div>

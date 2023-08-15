@@ -93,12 +93,29 @@ export class FileUploadComponent implements OnInit {
   }
 
   private async uploadFile(file: any, fieldId: any, percentage: any) {
+    console.log("file ......")
+    console.log(file);
     let form = new FormData();
     let values = (this.isMultiple() ? (this.formData[fieldId] || []) : ( !!this.formData[fieldId] ? [this.formData[fieldId]] : []))
     form.append(`${fieldId}`, file);
-    return this.http.post<any>(`https://wfe.ajre.gov.ae/ajaxupload.php`, form).subscribe((data: any) => {
+    let parts = file.name.split('.');
+    let ex =parts[parts.length - 1];
+    console.log(file);
+    console.log(parts);
+    console.log("********");
+    console.log(ex);
+    if (ex.toLowerCase() != "png" && ex.toLowerCase()!= "jpg" && ex.toLowerCase() != "pdf") {
+      console.log("exstenstion not allow ");
+      this.progressBar.nativeElement.style.width = `${percentage}%`;
+      alert( ex +  "  صيغة الملف غير مدعومة \n الصيغ المدعومة هي  " + " Jpj , Png and Pdf ");
+      return;
+    }
+    else{
+      console.log("exstension allow ok " + ex)
+      return this.http.post<any>(`https://wfe.ajre.gov.ae/ajaxupload.php`, form).subscribe((data: any) => {
         if (data.status == 'success') {
           // Add value to formData
+          console.log("file upload ....")
           values.push(data.data[fieldId]);
           this.setValues(values, fieldId);
           this.progressBar.nativeElement.style.width = `${percentage}%`;
@@ -111,6 +128,7 @@ export class FileUploadComponent implements OnInit {
         console.log('error', error)
         this.progressBar.nativeElement.style.width = `${percentage}%`;
       })
+    }
   }
 
   private appendIfValid(data: any, fieldId: string) {
