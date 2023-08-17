@@ -130,7 +130,7 @@
 
       </div>
       <div class="card-footer">
-        <button type="submit" class="btn btn-primary float-left" i18n="@@formSubmitLabel">Submit</button>
+        <button [disabled]="!formData.newLandId || !formData.remarks " type="submit" class="btn btn-primary float-left" i18n="@@formSubmitLabel">Submit</button>
       </div>
     </form>
   </div>

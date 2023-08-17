@@ -130,7 +130,11 @@ export class LandnumberComponent implements OnInit {
           console.log(data);
           if (data.status == 'success') {
             this.toastr.success(data.message, 'Success');
-            this.router.navigate(['land/profile/', formData.id, 'view']);
+            this.router.navigate(['land/profile/', formData.id, 'view'])
+            .then(() => {
+              window.location.reload();
+            });
+          
           } else {
             console.log("error data");
             this.formErrors = data.data;
