@@ -190,6 +190,14 @@
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="remarks" datatype="html">
+        <source>Remarks</source>
+        <target> ملاحظات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
         <trans-unit id="forgetpasswordRepeatLabel" datatype="html">
         <source>Confirm Password</source>
         <target>آعادة كلمه السر</target>
@@ -248,6 +256,18 @@
           <context context-type="sourcefile">src/app/form/form.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group> -->
+      </trans-unit>
+       <trans-unit id="changeLandNumber" datatype="html">
+      <source>+ Change Land Number </source>
+        <target> + تحويل رقم الأرض</target>
+      </trans-unit>
+       <trans-unit id="newLandIdRequid" datatype="html">
+      <source> New Land Id Can't be blank </source>
+        <target> لا يمكن أن يكون معرّف الأرض الجديد فارغًا</target>
+      </trans-unit>
+       <trans-unit id="remarksRequid" datatype="html">
+      <source> Remarks Can't be blank </source>
+        <target>لا يمكن ترك الملاحظات فارغة</target>
       </trans-unit>
        <trans-unit id="edit" datatype="html">
       <source>Edit </source>
@@ -2368,6 +2388,20 @@
         <source>Old Land ID
                           </source>
         <target>رقم الارض القديم
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="landProfileNewLandID" datatype="html">
+        <source>New Land ID
+                          </source>
+        <target>رقم الارض الجديد
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>

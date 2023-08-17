@@ -45,6 +45,8 @@ import { LandProfileComponent } from './land-profile/land-profile.component';
 import { LandEditComponent } from './land-profile/land-edit/land-edit.component';
 import { LandMainViewComponent } from './land-profile/land-mainView/land-mainView.component';
 import { LandViewComponent } from './land-profile/land-view/land-view.component';
+import { LandChangeNumberComponent } from './land-profile/landChangeNumber/land-changeNumber.component';
+import { LandnumberComponent } from './land-profile/landNumber/land-number.component';
 import { LandDetailsComponent } from './land-profile/land-details/land-details.component';
 import { LandProfileResolver } from './shared/land-profile.resolver';
 import { SearchPageComponent } from './search-page/search-page.component';
@@ -119,6 +121,7 @@ const routes: Routes = [
     ]
   },
   { path: 'land/new', component: LandProfileComponent, resolve: { profile: LandProfileResolver} , canActivate: [AuthenticationGuard] },
+  { path: 'land/changeNumber', component: LandChangeNumberComponent, resolve: { profile: LandProfileResolver} , canActivate: [AuthenticationGuard] },
   { path: 'land/edit', component: LandEditComponent, resolve: { profile: LandProfileResolver} , canActivate: [AuthenticationGuard] },
   { path: 'land/view', component: LandMainViewComponent, resolve: { profile: LandProfileResolver} , canActivate: [AuthenticationGuard] },
   { path: 'land/profile/:profileId', component: LandProfileComponent,
@@ -127,7 +130,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
       { path: 'edit', component: LandDetailsComponent },
-      { path: 'view', component: LandViewComponent }
+      { path: 'view', component: LandViewComponent },
+      { path: 'landNumber', component: LandnumberComponent }
     ]
   },
   { path: 'developer/new', component: DeveloperProfileComponent, resolve: { profile: DeveloperProfileResolver}, canActivate: [AuthenticationGuard] },

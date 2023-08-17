@@ -1,0 +1,137 @@
+<section class="content" *ngIf="profile$ | async as profile">
+  <div class="container-fluid">
+    <app-alerts [errors]="formErrors"></app-alerts>
+    <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data'
+      novalidate>
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileSearchLandId">Land Id</label>
+              <div class="col-sm-9">
+                <ng-select class="rtl" [items]="landNameOptions | async" name="LandNameSearch" [hideSelected]="true"
+                  [minTermLength]="1" [(ngModel)]="searchData.term" [loading]="landNameOptionsLoading"
+                  bindLabel="value.ar" bindValue="value.entityId" typeToSearchText="Please enter 1 or more characters"
+                  notFoundText="لا يوجد نتائج للبحث" [typeahead]="searchLandNameInput$"
+                  (keyup)="setSearchType('term', $event)" [disabled]="isSearchBy('searchOldLandId')"
+                  (blur)="checkTypeAndValues('term')" #LandNameSearch="ngModel">
+                </ng-select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileSearchOldLandId">
+                Old Land Id
+              </label>
+              <div class="col-sm-9">
+                <ng-select class="rtl" [items]="searchOldLandOptions | async" name="OldLandIdSearch"
+                  [hideSelected]="true" [minTermLength]="1" [(ngModel)]="searchData.searchOldLandId"
+                  [loading]="searchOldLandOptionsLoading" bindLabel="value.ar" bindValue="key"
+                  typeToSearchText="Please enter 1 or more characters" notFoundText="لا يوجد نتائج للبحث"
+                  [typeahead]="searchOldLandIdInput$" #OldLandIdSearch="ngModel"
+                  (keyup)="setSearchType('searchOldLandId', $event)" [disabled]="isSearchBy('term')"
+                  (blur)="checkTypeAndValues('searchOldLandId')">
+                </ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer text-center">
+        <button type="submit" class="btn btn-primary" [disabled]="isSearchFormValid()"
+          i18n="@@landProfileSearchButton">Search</button>
+      </div>
+    </form>
+
+    <hr />
+
+    <form class="form-horizontal" (ngSubmit)="updateData(formData)" #f="ngForm" enctype='multipart/form-data'
+      novalidate>
+      <div class="card-body">
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="offset-sm-2 col-sm-10 placeholder">
+              <div class="form-check float-right">
+                <input name="freeHold" type="checkbox" class="form-check-input" [(ngModel)]="formData.freeHold">
+                <label class="form-check-label" i18n="@@landProfileFreeHold">Free Hold</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileLandID">Land ID
+                <span>*</span>
+              </label>
+              <div class="col-sm-9">
+                <input type="text" name="landId" required="false" class="form-control" [(ngModel)]="formData.landId"
+                  #landId="ngModel" numbersOnly precision="0" [disabled]="true">
+                <div *ngIf="landId.invalid && (landId.dirty || landId.touched)" class="alert alert-danger">
+                  <div *ngIf="landId.errors?.required">
+                    Land ID can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@landProfileNewLandID">New Land ID <span>*</span>
+              </label>
+              <div class="col-sm-9">
+                <input type="number" name="newLandId" class="form-control" [(ngModel)]="formData.newLandId"
+                  #newLandId="ngModel" required>
+              </div>
+              <!-- <div *ngIf="newLandId.invalid && (newLandId.dirty || newLandId.touched)" class="alert alert-danger">
+                <div *ngIf="newLandId.errors?.required">
+                  <label i18n="@@newLandIdRequid"> New Land ID Can't be blank </label> 
+                </div>
+              </div> -->
+              <div *ngIf="newLandId.errors?.required">
+               <label i18n="@@newLandIdRequid"> New Land ID Can't be blank </label> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@remarks">Remarks <span>*</span>
+                <span>*</span>
+              </label>
+              <div class="col-sm-9">
+                <input type="text" name="remarks" required="true" class="form-control" [(ngModel)]="formData.remarks"
+                  #remarks="ngModel" [disabled]="false">
+              </div>
+              <!-- <div *ngIf="remarks.invalid && (remarks.dirty || remarks.touched)" class="alert alert-danger">
+                <div *ngIf="remarks.errors?.required">
+                  Remarks Can't be blank
+                </div>
+              </div> -->
+              <div *ngIf="remarks.errors?.required">
+                <label i18n="@@remarksRequid">  Remarks Can't be blank </label> 
+               </div>
+             <!-- </div> -->
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary float-left" i18n="@@formSubmitLabel">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>

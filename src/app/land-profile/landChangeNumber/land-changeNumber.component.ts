@@ -10,10 +10,10 @@ import { LookupsService } from '../../shared/lookups.service';
 
 @Component({
   selector: 'app-land-profile',
-  templateUrl: './land-mainView.component.html',
-  styleUrls: ['./land-mainView.component.css']
+  templateUrl: './land-changeNumber.component.html',
+  styleUrls: ['./land-changeNumber.component.css']
 })
-export class LandMainViewComponent implements OnInit {
+export class LandChangeNumberComponent implements OnInit {
   formData: any = { buildingDetails: {}, buildingFinishes: {} };
   searchData: any = {};
   formErrors: any = {};
@@ -66,6 +66,7 @@ export class LandMainViewComponent implements OnInit {
       }
     });
   }
+  
 
   saveData(formData: any) {
     let fd = new FormData();
@@ -94,9 +95,6 @@ export class LandMainViewComponent implements OnInit {
   }
   addNewFun(){
     this.router.navigate(['land/new']);
-  } 
-  changeLandNoFun(){
-    this.router.navigate(['land/changeNumber']);
   } 
 
   loadSectionsOptions() {
@@ -264,7 +262,7 @@ export class LandMainViewComponent implements OnInit {
 
   searchResourceData(data: any) {
     let value = !!data.term ? data.term : data.searchOldLandId;
-    this.router.navigate(['land/profile/', value, 'view']);
+    this.router.navigate(['land/profile/', value, 'landNumber']);
   }
 
   loadLandNameOptions() {
