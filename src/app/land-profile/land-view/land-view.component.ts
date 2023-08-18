@@ -61,6 +61,8 @@ export class LandViewComponent implements OnInit {
     this.profile$.subscribe((profile: any) => {
       if (profile && profile.id) {
         this.formData = profile as any;
+        console.log(".........");
+        console.log(this.formData.landTreeHistory);
         if (!this.formData.buildingDetails) {
           this.formData.buildingDetails = {}
         }
