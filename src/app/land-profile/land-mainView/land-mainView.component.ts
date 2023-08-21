@@ -95,6 +95,9 @@ export class LandMainViewComponent implements OnInit {
   addNewFun(){
     this.router.navigate(['land/new']);
   } 
+  changeLandNoFun(){
+    this.router.navigate(['land/changeNumber']);
+  } 
 
   loadSectionsOptions() {
     this.lookupsService.loadSectionsOptions()

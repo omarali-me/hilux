@@ -105,6 +105,8 @@ import { PropertiesProfileComponent } from './properties-profile/properties-prof
 import { LandProfileComponent } from './land-profile/land-profile.component';
 import { LandEditComponent } from './land-profile/land-edit/land-edit.component';
 import { LandMainViewComponent } from './land-profile/land-mainView/land-mainView.component';
+import { LandChangeNumberComponent } from './land-profile/landChangeNumber/land-changeNumber.component';
+import { LandnumberComponent } from './land-profile/landNumber/land-number.component';
 import { LandViewComponent } from './land-profile/land-view/land-view.component';
 import { LandDetailsComponent } from './land-profile/land-details/land-details.component';
 import { SearchPageComponent } from './search-page/search-page.component';
@@ -215,6 +217,8 @@ const maskConfig: Partial<IConfig> = {
     LandProfileComponent,
     LandEditComponent,
     LandMainViewComponent,
+    LandChangeNumberComponent,
+    LandnumberComponent,
     LandViewComponent,
     LandDetailsComponent,
     SearchPageComponent,

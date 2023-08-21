@@ -9,11 +9,11 @@ import { environment } from '../../../environments/environment';
 import { LookupsService } from '../../shared/lookups.service';
 
 @Component({
-  selector: 'app-land-details',
-  templateUrl: './land-view.component.html',
-  styleUrls: ['./land-view.component.css']
+  selector: 'app-land-profile',
+  templateUrl: './land-changeNumber.component.html',
+  styleUrls: ['./land-changeNumber.component.css']
 })
-export class LandViewComponent implements OnInit {
+export class LandChangeNumberComponent implements OnInit {
   formData: any = { buildingDetails: {}, buildingFinishes: {} };
   searchData: any = {};
   formErrors: any = {};
@@ -56,44 +56,35 @@ export class LandViewComponent implements OnInit {
     this.loadPropertyTypesOptions();
     this.loadLandNameOptions();
     this.loadSearchOldLandIdOptions();
-
+    
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
       if (profile && profile.id) {
         this.formData = profile as any;
-        console.log(".........");
-        console.log(this.formData.landTreeHistory);
-        if (!this.formData.buildingDetails) {
-          this.formData.buildingDetails = {}
-        }
-        if (!this.formData.buildingFinishes) {
-          this.formData.buildingFinishes = {}
-        }
-       } else {
+      } else {
         this.formData = { buildingDetails: {}, buildingFinishes: {} };
       }
     });
   }
+  
 
-  updateData(formData: any) {
+  saveData(formData: any) {
     let fd = new FormData();
     fd.append('land', JSON.stringify(formData));
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/lands/update/${formData.id}`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/lands/create`, fd)
       .subscribe((data: any) => {
-        if (data.status == 'success') {
-          this.toastr.success(data.message, 'Success');
-        } else {
-          this.formErrors = data.data;
-          this.toastr.error(JSON.stringify(data.message), 'Error')
-        }
+       if (data.status == 'success') {
+        this.toastr.success(data.message, 'Success');
+        if (data.data.id)
+          this.router.navigate(['company/profile', data.data.id, 'edit']);
+      } else {
+        this.formErrors = data.data;
+        this.toastr.error(JSON.stringify(data.message), 'Error')
+      }
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
       this.router.navigate(['error'])
     })
-  }
-  editFun(){
-    this.router.navigate(['land/profile/', this.formData.id, 'edit']);
-
   }
 
   loadSectorsOptions() {
@@ -102,6 +93,9 @@ export class LandViewComponent implements OnInit {
       this.sectorsOptions = data;
     })
   }
+  addNewFun(){
+    this.router.navigate(['land/new']);
+  } 
 
   loadSectionsOptions() {
     this.lookupsService.loadSectionsOptions()
@@ -221,10 +215,6 @@ export class LandViewComponent implements OnInit {
     }
   }
 
-  getImageAttachments(data: any, filed_name: any) {
-    return data[filed_name] ? [data[filed_name]] : [];
-  }
-  
   setSearchType(field_name: any, event: any) {
     var val = event.target.value.trim();
     this.setSearchByandTypeValues(val, field_name)
@@ -272,7 +262,7 @@ export class LandViewComponent implements OnInit {
 
   searchResourceData(data: any) {
     let value = !!data.term ? data.term : data.searchOldLandId;
-    this.router.navigate(['land/profile/', value, 'edit']);
+    this.router.navigate(['land/profile/', value, 'landNumber']);
   }
 
   loadLandNameOptions() {
