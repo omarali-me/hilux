@@ -5839,6 +5839,110 @@
           <context context-type="linenumber">591</context>
         </context-group>
       </trans-unit>
+       <trans-unit id="projectName" datatype="html">
+        <source>Project Name</source>
+        <target>أسم المشروع</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+         <trans-unit id="Rating" datatype="html">
+        <source>
+                    <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>
+                    Rating
+                </source>
+        <target>
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> تقييم
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
+          <context context-type="linenumber">143</context>
+        </context-group>
+      </trans-unit>
+        
+       <trans-unit id="apartmentType" datatype="html">
+    <source>Apartment Type</source>
+        <target>نوع الشقة </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context     context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+        <trans-unit id="servicesFees" datatype="html">
+    <source>Services Fees</source>
+        <target>رسوم الخدمات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="ratingLabel" datatype="html">
+    <source>Rating</source>
+        <target>التقييم</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="status" datatype="html">
+    <source>Status</source>
+        <target>الحالة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+        <trans-unit id="projectIdRequid" datatype="html">
+      <source> Project Name Can't be blank </source>
+        <target> لا يمكن أن يكون اسم المشروع فارغًا</target>
+      </trans-unit>
+        <trans-unit id="apartmentTypeRequid" datatype="html">
+      <source>Apartment Type Can't be blank </source>
+        <target> لا يمكن أن يكون نوع الشقة فارغًا</target>
+      </trans-unit>
+        <trans-unit id="ratingRequid" datatype="html">
+      <source>Rating Can't be blank </source>
+        <target> لا يمكن أن يكون التقييم فارغًا</target>
+      </trans-unit>
+         <trans-unit id="servicesFeesRequid" datatype="html">
+      <source>Services Fees Can't be blank </source>
+        <target> لا يمكن أن يكون رسوم الخدمات فارغًا</target>
+      </trans-unit>
+         <trans-unit id="totalEvaluatedUnits" datatype="html">
+      <source>total Evaluated Units</source>
+        <target>إجمالي الوحدات المقيمة</target>
+      </trans-unit>
+        <trans-unit id="totalNonEvaluatedUnits" datatype="html">
+      <source>total Non Evaluated Units</source>
+        <target>إجمالي الوحدات  غير مقيمة</target>
+      </trans-unit>
+       <trans-unit id="numberOfRoom" datatype="html">
+      <source>Number Of Room</source>
+        <target>عدد الغرف</target>
+      </trans-unit>
+       <trans-unit id="active" datatype="html">
+      <source>Active</source>
+        <target> نشط</target>
+      </trans-unit>
+       <trans-unit id="deactive" datatype="html">
+      <source>Deactive</source>
+        <target>غير نشط </target>
+      </trans-unit>
+        <trans-unit id="pricePerMeter" datatype="html">
+      <source>Price Per Meter</source>
+        <target>سعر المتر</target>
+      </trans-unit>
+       <trans-unit id="servicePerMeter" datatype="html">
+      <source>Service Per Meter</source>
+        <target>تكلفة الخدمة بالمتر</target>
+      </trans-unit>
+      <trans-unit id="back" datatype="html">
+      <source>Back</source>
+        <target>الرجوع</target>
+      </trans-unit>
+      
+      
     </body>
   </file>
 </xliff>

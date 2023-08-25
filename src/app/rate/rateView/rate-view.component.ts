@@ -9,11 +9,11 @@ import { environment } from '../../../environments/environment';
 import { LookupsService } from '../../shared/lookups.service';
 
 @Component({
-  selector: 'app-land-details',
-  templateUrl: './land-view.component.html',
-  styleUrls: ['./land-view.component.css']
+  // selector: 'app-land-profile',
+  templateUrl: './rate-view.component.html',
+  styleUrls: ['./rate-view.component.css']
 })
-export class LandViewComponent implements OnInit {
+export class RateViewComponent implements OnInit {
   formData: any = { buildingDetails: {}, buildingFinishes: {} };
   searchData: any = {};
   formErrors: any = {};
@@ -35,6 +35,14 @@ export class LandViewComponent implements OnInit {
   searchOldLandOptions: Observable<any>;
   searchOldLandIdInput$ = new Subject<string>();
   searchOldLandOptionsLoading = false;
+  projectNameOptions: Observable<any>;
+  apartmentsNameOptions:any;
+  projectNameOptionsLoading = false;
+  apartmentNameOptionsLoading = false;
+  searchProjectNameInput$ = new Subject<string>();
+  searchApartmentNameInput$ = new Subject<string>();
+  kpiObj :any;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -56,100 +64,147 @@ export class LandViewComponent implements OnInit {
     this.loadPropertyTypesOptions();
     this.loadLandNameOptions();
     this.loadSearchOldLandIdOptions();
+    this.loadProjectNameOptions();
+    this.loadApartmentNameOptions();
+    this.getKpiFun();
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
       if (profile && profile.id) {
         this.formData = profile as any;
-        console.log(".........");
-        console.log(this.formData.landTreeHistory);
-        if (!this.formData.buildingDetails) {
-          this.formData.buildingDetails = {}
-        }
-        if (!this.formData.buildingFinishes) {
-          this.formData.buildingFinishes = {}
-        }
-       } else {
+      } else {
         this.formData = { buildingDetails: {}, buildingFinishes: {} };
       }
     });
   }
 
-  updateData(formData: any) {
+
+  saveData(formData: any) {
     let fd = new FormData();
     fd.append('land', JSON.stringify(formData));
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/lands/update/${formData.id}`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/lands/create`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
+          if (data.data.id)
+            this.router.navigate(['company/profile', data.data.id, 'edit']);
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
         }
-    }, (error) => {
-      this.toastr.error('Something went Wrong', 'Error')
-      this.router.navigate(['error'])
-    })
+      }, (error) => {
+        this.toastr.error('Something went Wrong', 'Error')
+        this.router.navigate(['error'])
+      })
   }
-  editFun(){
-    this.router.navigate(['land/profile/', this.formData.id, 'edit']);
-
+  getKpiFun() {
+    // let fd = new FormData();
+    // fd.append('land', JSON.stringify(formData));
+    this.http.get(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/unitsEvaluationKpi`)
+      .subscribe((data: any) => {
+        if (data.status == 'success') {
+          this.kpiObj =data;
+         console.log("kpi api status success");
+         console.log(this.kpiObj);
+        } else {
+          console.log("kpi api status fail");
+        }
+      }, (error) => {
+        console.log("error api kpi")
+      })
+  }
+  loadProjectNameOptions() {
+    this.projectNameOptions = concat(
+      of([]), // default items
+      this.searchProjectNameInput$.pipe(
+        distinctUntilChanged(),
+        tap(() => this.projectNameOptionsLoading = true),
+        switchMap(term => {
+          return this.lookupsService.loadProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.projectNameOptionsLoading = false)
+          )
+        })
+      )
+    );
+  }
+  loadApartmentNameOptions() {
+    // this.apartmentsNameOptions = concat(
+    //   of([]), // default items
+    //   this.searchApartmentNameInput$.pipe(
+    //     distinctUntilChanged(),
+    //     tap(() => this.apartmentNameOptionsLoading = true),
+    //     switchMap(term => {
+    //       return this.lookupsService.loadApartments({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+    //         catchError(() => of([])), // empty list on error
+    //         tap(() => this.projectNameOptionsLoading = false)
+    //       )
+    //     })
+    //   )
+    // );
+    this.lookupsService.loadApartments()
+    .subscribe((data) => {
+      this.apartmentsNameOptions = data;
+    })
   }
 
   loadSectorsOptions() {
     this.lookupsService.loadSectorsOptions()
-    .subscribe((data) => {
-      this.sectorsOptions = data;
-    })
+      .subscribe((data) => {
+        this.sectorsOptions = data;
+      })
+  }
+  addNewFun() {
+    this.router.navigate(['rate/new']);
   }
 
   loadSectionsOptions() {
     this.lookupsService.loadSectionsOptions()
-    .subscribe((data) => {
-      this.sectionsOptions = data;
-    })
+      .subscribe((data) => {
+        this.sectionsOptions = data;
+      })
   }
 
   loadStreetNamesOptions() {
     this.lookupsService.loadStreetNamesOptions()
-    .subscribe((data) => {
-      this.streetsNamesOptions = data;
-    })
+      .subscribe((data) => {
+        this.streetsNamesOptions = data;
+      })
   }
 
   loadStreetTypesOptions() {
     this.lookupsService.loadStreetTypesOptions()
-    .subscribe((data) => {
-      this.streetsTypesOptions = data;
-    })
+      .subscribe((data) => {
+        this.streetsTypesOptions = data;
+      })
   }
 
   loadMainUsageTypesOptions() {
     this.lookupsService.loadMainUsageTypesOptions()
-    .subscribe((data) => {
-      this.mainUsageTypesOptions = data;
-    })
+      .subscribe((data) => {
+        this.mainUsageTypesOptions = data;
+      })
   }
 
   loadSubUsageTypesOptions() {
     this.lookupsService.loadSubUsageTypesOptions()
-    .subscribe((data) => {
-      this.subUsageTypesOptions = data;
-    })
+      .subscribe((data) => {
+        this.subUsageTypesOptions = data;
+      })
   }
 
   loadCitiesOptions() {
     this.lookupsService.loadCitiesOptions()
-    .subscribe((data) => {
-      this.citiesOptions = data;
-    })
+      .subscribe((data) => {
+        this.citiesOptions = data;
+      })
   }
 
   loadPropertyTypesOptions() {
     this.lookupsService.loadPropertyTypesOptions()
-    .subscribe((data) => {
-      this.propertyTypesOptions = data;
-    })
+      .subscribe((data) => {
+        this.propertyTypesOptions = data;
+      })
   }
 
   isShoporShoppingMall() {
@@ -221,10 +276,6 @@ export class LandViewComponent implements OnInit {
     }
   }
 
-  getImageAttachments(data: any, filed_name: any) {
-    return data[filed_name] ? [data[filed_name]] : [];
-  }
-  
   setSearchType(field_name: any, event: any) {
     var val = event.target.value.trim();
     this.setSearchByandTypeValues(val, field_name)
@@ -270,22 +321,27 @@ export class LandViewComponent implements OnInit {
     return (this.searchData[field_name] == undefined)
   }
 
-  searchResourceData(data: any) {
-    let value = !!data.term ? data.term : data.searchOldLandId;
-    this.router.navigate(['land/profile/', value, 'view']);
+  searchResourceData(data: any,searchApartmentId:any) {
+    console.log(" searchResourceData fun ...");
+    console.log(searchApartmentId.model)
+    console.log(data);
+    if (data.searchProjectId) {
+      this.router.navigate(['rate/profile/'+data.searchProjectId+"/"+searchApartmentId.model+"/view"]);
+    }
   }
 
   loadLandNameOptions() {
     this.landNameOptions = concat(
       of([]), // default items
       this.searchLandNameInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.landNameOptionsLoading = true),
-          switchMap(term => {
-            return this.lookupsService.loadLands({ term }).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.landNameOptionsLoading = false)
-          )})
+        distinctUntilChanged(),
+        tap(() => this.landNameOptionsLoading = true),
+        switchMap(term => {
+          return this.lookupsService.loadLands({ term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.landNameOptionsLoading = false)
+          )
+        })
       )
     );
   }
@@ -294,13 +350,14 @@ export class LandViewComponent implements OnInit {
     this.searchOldLandOptions = concat(
       of([]), // default items
       this.searchOldLandIdInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.searchOldLandOptionsLoading = true),
-          switchMap(term => {
-            return this.lookupsService.loadOldLands({ term }).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.searchOldLandOptionsLoading = false)
-          )})
+        distinctUntilChanged(),
+        tap(() => this.searchOldLandOptionsLoading = true),
+        switchMap(term => {
+          return this.lookupsService.loadOldLands({ term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.searchOldLandOptionsLoading = false)
+          )
+        })
       )
     );
   }

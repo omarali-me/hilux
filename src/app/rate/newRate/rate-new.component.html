@@ -1,0 +1,121 @@
+<div class="content-wrapper">
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <!-- <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+            </ol>
+          </div> -->
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12" *ngIf="profile$ | async as profile">
+          <div class="card card-purple">
+            <div class="card-header">
+              <h3 class="card-title"> أضافة تقييم</h3>
+            </div>
+            <router-outlet></router-outlet>
+
+            <section class="content" *ngIf="formData && !formData.id">
+              <div class="container-fluid">
+                <app-alerts [errors]="formErrors"></app-alerts>
+                <hr />
+
+                <form class="form-horizontal" (ngSubmit)="saveData(searchData)" #f="ngForm" enctype='multipart/form-data'
+                  novalidate>
+                  <div class="card-body">
+
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" i18n="@@projectProfileSearchDeveloperName">Developer Name
+                            <span>*</span>
+                          </label>
+                          <div class="col-sm-9">
+                            <ng-select class="rtl" [items]="projectNameOptions | async" name="projectNameSearch"
+                              [hideSelected]="true" [minTermLength]="1" required="true" [(ngModel)]="searchData.projectNameSearch"
+                              [loading]="projectNameOptionsLoading" bindLabel="value.ar" bindValue="key"
+                              typeToSearchText="Please enter 1 or more characters" notFoundText="لا يوجد نتائج للبحث"
+                              [typeahead]="searchProjectNameInput$" #projectNameSearch="ngModel">
+                            </ng-select>
+                            <div *ngIf="projectNameSearch.errors?.required">
+                              <label i18n="@@ratingRequid">Rating Can't be blank </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <span class="col-sm-3 col-form-label"> <label i18n="@@apartmentType">Apartment Type 
+                          </label> <span> * </span></span>
+                          <div class="col-sm-9">
+                            <ng-select class="rtl" [items]="apartmentsNameOptions" name="searchApartmentId"
+                              [(ngModel)]="searchData.searchApartmentId"  required="true" bindLabel="value.ar" bindValue="key"
+                              notFoundText="لا يوجد نتائج للبحث" #searchApartmentId="ngModel">
+                            </ng-select>
+                            <div *ngIf="searchApartmentId.errors?.required">
+                              <label i18n="@@ratingRequid">Rating Can't be blank </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <span class="col-sm-3 col-form-label"> <label i18n="@@pricePerMeter">Rating 
+                            </label> <span> * </span></span>
+                          <div class="col-sm-9">
+                            <input type="number" name="rating" required="true" class="form-control"
+                              [(ngModel)]="searchData.rating" #rating="ngModel">
+                            <!-- <div *ngIf="rating.invalid && (rating.dirty || rating.touched)" class="alert alert-danger">
+                              <div *ngIf="rating.errors?.required">
+                                Rating in Arabic can not be blank
+                              </div>
+                            </div> -->
+                            <div *ngIf="rating.errors?.required">
+                              <label i18n="@@ratingRequid">Rating Can't be blank </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <span class="col-sm-3 col-form-label"> <label i18n="@@servicePerMeter">Services Fees
+                            </label> <span> * </span></span>
+                          <div class="col-sm-9">
+                            <input type="number" name="servicesFees" required="true" class="form-control"
+                              [(ngModel)]="searchData.servicesFees" #servicesFees="ngModel">
+                            <!-- <div *ngIf="servicesFees.invalid && (servicesFees.dirty || servicesFees.touched)" class="alert alert-danger">
+                              <div *ngIf="servicesFees.errors?.required">
+                                Services Fees in English can not be blank
+                              </div>
+                            </div> -->
+                            <div *ngIf="servicesFees.errors?.required">
+                              <label i18n="@@servicesFeesRequid">Services Fees Can't be blank </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <button type="button" style="margin-left: 10px;margin-right: 10px;"  (click)="backFun()" class="btn btn-primary float-left" 
+                    i18n="@@back">Back</button>
+                    <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid"
+                      i18n="@@formSubmitLabel">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
