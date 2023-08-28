@@ -35,6 +35,7 @@ export class LandDetailsComponent implements OnInit {
   searchOldLandOptions: Observable<any>;
   searchOldLandIdInput$ = new Subject<string>();
   searchOldLandOptionsLoading = false;
+  distructsTypesOptions: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -56,6 +57,7 @@ export class LandDetailsComponent implements OnInit {
     this.loadPropertyTypesOptions();
     this.loadLandNameOptions();
     this.loadSearchOldLandIdOptions();
+    this.loadDistructsTypesOptions();
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
@@ -71,6 +73,12 @@ export class LandDetailsComponent implements OnInit {
         this.formData = { buildingDetails: {}, buildingFinishes: {} };
       }
     });
+  }
+  loadDistructsTypesOptions() {
+    this.lookupsService.loadSectionsOptions()
+    .subscribe((data) => {
+      this.distructsTypesOptions = data;
+    })
   }
  prepareEstablishmentContractFileField() {
     return {
@@ -121,6 +129,10 @@ export class LandDetailsComponent implements OnInit {
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
+          this.router.navigate(['land/profile/' + formData.id + '/view'])
+          .then(() => {
+            window.location.reload();
+          });
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')

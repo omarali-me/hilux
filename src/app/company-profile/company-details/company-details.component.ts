@@ -86,16 +86,21 @@ export class CompanyDetailsComponent implements OnInit {
 
   updateData(formData: any) {
     let fd = new FormData();
-    console.log("form data ");
-    console.log(formData);
-    console.log("prev data");
+    console.log("updateData  ");
+   
     console.log(this.establishmentContractDmsId);
     if (!formData.establishmentContractFile) {
       if (this.establishmentContractDmsId) {
         formData.establishmentContractFile = this.establishmentContractDmsId;
       }
     }
+    if (formData.companyType == 2 || formData.companyType =="2") {
+      if (formData.owners && formData.owners.length > 0) {
+        formData.owners[0].share = 100 ;
+      }
+    }
     fd.append('company', JSON.stringify(formData));
+    console.log("form data update")
     console.log(formData);
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/companies/update/${formData.id}`, fd)
       .subscribe((data: any) => {
@@ -103,12 +108,11 @@ export class CompanyDetailsComponent implements OnInit {
           console.log("retun data ... ");
           console.log(data);
           this.toastr.success(data.message, 'Success');
-          // this.router.navigate(['company/view/']);
-          // this.router.navigate(['company/profile/' + formData.id + '/view']);
-          this.router.navigate(['company/profile/' + formData.id + '/view'])
-            .then(() => {
-              window.location.reload();
-            });
+        
+          // this.router.navigate(['company/profile/' + formData.id + '/view'])
+          //   .then(() => {
+          //     window.location.reload();
+          //   });
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -221,7 +225,11 @@ export class CompanyDetailsComponent implements OnInit {
   }
 
   isNotGovernmentAndIndividualInstitute() {
-    return this.formData.companyType && !(["2", "3", "4", "5"].includes(this.formData.companyType) || [2, 3, 4, 5].includes(this.formData.companyType))
+    return this.formData.companyType && !(
+      ["2", "3", "4", "5"].includes(this.formData.companyType)
+       ||
+        [2, 3, 4, 5].includes(this.formData.companyType)
+        )
   }
 
   isGovernmentOrg() {
