@@ -9,11 +9,11 @@ import { environment } from '../../../environments/environment';
 import { LookupsService } from '../../shared/lookups.service';
 
 @Component({
-  selector: 'app-land-details',
-  templateUrl: './land-view.component.html',
-  styleUrls: ['./land-view.component.css']
+  // selector: 'app-land-details',
+  templateUrl: './rate-new.component.html',
+  styleUrls: ['./rate-new.component.css']
 })
-export class LandViewComponent implements OnInit {
+export class newRateComponent implements OnInit {
   formData: any = { buildingDetails: {}, buildingFinishes: {} };
   searchData: any = {};
   formErrors: any = {};
@@ -35,7 +35,10 @@ export class LandViewComponent implements OnInit {
   searchOldLandOptions: Observable<any>;
   searchOldLandIdInput$ = new Subject<string>();
   searchOldLandOptionsLoading = false;
-
+  projectNameOptions: Observable<any>;
+  projectNameOptionsLoading = false;
+  searchProjectNameInput$ = new Subject<string>();
+  apartmentsNameOptions:any; 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -56,6 +59,8 @@ export class LandViewComponent implements OnInit {
     this.loadPropertyTypesOptions();
     this.loadLandNameOptions();
     this.loadSearchOldLandIdOptions();
+    this.loadProjectNameOptions();
+    this.loadApartmentNameOptions();
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
@@ -74,28 +79,65 @@ export class LandViewComponent implements OnInit {
       }
     });
   }
-
-  updateData(formData: any) {
-    let fd = new FormData();
-    fd.append('land', JSON.stringify(formData));
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/lands/update/${formData.id}`, fd)
-      .subscribe((data: any) => {
-        if (data.status == 'success') {
-          this.toastr.success(data.message, 'Success');
-        } else {
-          this.formErrors = data.data;
-          this.toastr.error(JSON.stringify(data.message), 'Error')
-        }
-    }, (error) => {
-      this.toastr.error('Something went Wrong', 'Error')
-      this.router.navigate(['error'])
+  loadApartmentNameOptions(){
+    this.lookupsService.loadApartments()
+    .subscribe((data) => {
+      this.apartmentsNameOptions = data;
     })
+  }
+  loadProjectNameOptions() {
+    this.projectNameOptions = concat(
+      of([]), // default items
+      this.searchProjectNameInput$.pipe(
+        distinctUntilChanged(),
+        tap(() => this.projectNameOptionsLoading = true),
+        switchMap(term => {
+          return this.lookupsService.loadProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.projectNameOptionsLoading = false)
+          )
+        })
+      )
+    );
+  }
+
+  saveData(formData :any) {
+    console.log(formData);
+    if (formData.projectNameSearch && formData.searchApartmentId && formData.rating && formData.servicesFees) {
+      let fd = new FormData();
+      let obj ={
+        projectId:formData.projectNameSearch,
+        pricePerMeter:formData.rating,
+        unitTypeId:formData.searchApartmentId,
+        ServiceFeesPerMeter:formData.servicesFees
+      }
+      fd.append('data', JSON.stringify(obj));
+      this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/updateUnitsEvaluation`, fd)
+        .subscribe((data: any) => {
+          if (data.status == 'success') {
+            this.toastr.success(data.message, 'Success');
+            this.searchData.projectNameSearch = null;
+            this.searchData.searchApartmentId = null;
+            this.searchData.rating = null;
+            this.searchData.servicesFees = null;
+          } else {
+            this.formErrors = data.data;
+            this.toastr.error(JSON.stringify(data.message), 'Error')
+          }
+      }, (error) => {
+        this.toastr.error('Something went Wrong', 'Error')
+        this.router.navigate(['error'])
+      })
+    }
+    else return ;
   }
   editFun(){
     this.router.navigate(['land/profile/', this.formData.id, 'edit']);
 
   }
-
+  backFun(){
+    this.router.navigate(['rate']);
+  }
   loadSectorsOptions() {
     this.lookupsService.loadSectorsOptions()
     .subscribe((data) => {

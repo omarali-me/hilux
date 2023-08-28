@@ -45,6 +45,8 @@ import { LandProfileComponent } from './land-profile/land-profile.component';
 import { LandEditComponent } from './land-profile/land-edit/land-edit.component';
 import { LandMainViewComponent } from './land-profile/land-mainView/land-mainView.component';
 import { LandViewComponent } from './land-profile/land-view/land-view.component';
+import { RateViewComponent } from './rate/rateView/rate-view.component';
+import { newRateComponent } from './rate/newRate/rate-new.component';
 import { LandChangeNumberComponent } from './land-profile/landChangeNumber/land-changeNumber.component';
 import { LandnumberComponent } from './land-profile/landNumber/land-number.component';
 import { LandDetailsComponent } from './land-profile/land-details/land-details.component';
@@ -60,23 +62,25 @@ import { UnitsExcelUploadComponent } from './units-excel-upload/units-excel-uplo
 import { SingleApplicationSearchComponent } from './single-application-search/single-application-search.component';
 import { ApplicationSearchResolver } from './shared/application_search.resolver';
 import { UnitsValuationComponent } from './units-valuation/units-valuation.component';
+import { RateDetailsComponent } from './rate/rateDetails/rate-details.component';
 
 const routes: Routes = [
-  { path: '',  component: HomePageComponent, canActivate: [AuthenticationGuard] },
-  { path: 'login',  component: LoginComponent },
-  { path: 'ResetPassword/:id',  component: ResetPasswordComponent },
+  { path: '', component: HomePageComponent, canActivate: [AuthenticationGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: 'ResetPassword/:id', component: ResetPasswordComponent },
   // { path: 'signup',  component: SignupComponent },
-  { path: 'error',  component: ErrorPageComponent },
-  { path: 'custom_page',  component: CustomPageComponent, canActivate: [AuthenticationGuard] },
-  { path: 'my_tasks',  component: MyTasksComponent, canActivate: [AuthenticationGuard] },
-  { path: 'rule_generator',  component: RuleGeneratorComponent, canActivate: [AuthenticationGuard] },
-  { path: 'service/:serviceId', component: ServicePageComponent, resolve: { serviceId: ServiceIdResolver} , canActivate: [AuthenticationGuard]},
-  { path: 'notifications/:stepId', component: NotificationPageComponent, resolve: { stepId: StepIdResolver}, canActivate: [AuthenticationGuard]},
-  { path: 'customer/new', component: CustomerProfileComponent, resolve: { profile: CustomerProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'customer/edit', component: CustomerEditComponent, resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'customer/view', component: CustomerMainViewComponent, resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'customer/profile/:profileId', component: CustomerProfileComponent,
-    resolve: { profile: CustomerProfileResolver},
+  { path: 'error', component: ErrorPageComponent },
+  { path: 'custom_page', component: CustomPageComponent, canActivate: [AuthenticationGuard] },
+  { path: 'my_tasks', component: MyTasksComponent, canActivate: [AuthenticationGuard] },
+  { path: 'rule_generator', component: RuleGeneratorComponent, canActivate: [AuthenticationGuard] },
+  { path: 'service/:serviceId', component: ServicePageComponent, resolve: { serviceId: ServiceIdResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'notifications/:stepId', component: NotificationPageComponent, resolve: { stepId: StepIdResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'customer/new', component: CustomerProfileComponent, resolve: { profile: CustomerProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'customer/edit', component: CustomerEditComponent, resolve: { profile: ProjectProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'customer/view', component: CustomerMainViewComponent, resolve: { profile: ProjectProfileResolver }, canActivate: [AuthenticationGuard] },
+  {
+    path: 'customer/profile/:profileId', component: CustomerProfileComponent,
+    resolve: { profile: CustomerProfileResolver },
     canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
@@ -85,22 +89,24 @@ const routes: Routes = [
 
     ]
   },
-  { path: 'project/new', component: ProjectProfileComponent, resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'project/edit', component: ProjectEditComponent, resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'project/view', component: ProjectViewMainComponent, resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'project/profile/:profileId', component: ProjectProfileComponent,
-    resolve: { profile: ProjectProfileResolver}, canActivate: [AuthenticationGuard],
+  { path: 'project/new', component: ProjectProfileComponent, resolve: { profile: ProjectProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'project/edit', component: ProjectEditComponent, resolve: { profile: ProjectProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'project/view', component: ProjectViewMainComponent, resolve: { profile: ProjectProfileResolver }, canActivate: [AuthenticationGuard] },
+  {
+    path: 'project/profile/:profileId', component: ProjectProfileComponent,
+    resolve: { profile: ProjectProfileResolver }, canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
       { path: 'edit', component: ProjectDetailsComponent },
       { path: 'view', component: ProjectViewComponent }
     ]
   },
-  { path: 'unit/new', component: UnitProfileComponent, resolve: { profile: UnitProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'unit/edit', component: UnitEditComponent, resolve: { profile: UnitProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'unit/view', component: UnitMainViewComponent, resolve: { profile: UnitProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'unit/profile/:profileId', component: UnitProfileComponent,
-    resolve: { profile: UnitProfileResolver},
+  { path: 'unit/new', component: UnitProfileComponent, resolve: { profile: UnitProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'unit/edit', component: UnitEditComponent, resolve: { profile: UnitProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'unit/view', component: UnitMainViewComponent, resolve: { profile: UnitProfileResolver }, canActivate: [AuthenticationGuard] },
+  {
+    path: 'unit/profile/:profileId', component: UnitProfileComponent,
+    resolve: { profile: UnitProfileResolver },
     canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
@@ -108,11 +114,12 @@ const routes: Routes = [
       { path: 'view', component: UnitViewComponent }
     ]
   },
-  { path: 'company/new', component: CompanyProfileComponent, resolve: { profile: CompanyProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'company/edit', component: CompanyEditComponent, resolve: { profile: CompanyProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'company/view', component: CompanyMainViewComponent, resolve: { profile: CompanyProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'company/profile/:profileId', component: CompanyProfileComponent,
-    resolve: { profile: CompanyProfileResolver},
+  { path: 'company/new', component: CompanyProfileComponent, resolve: { profile: CompanyProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'company/edit', component: CompanyEditComponent, resolve: { profile: CompanyProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'company/view', component: CompanyMainViewComponent, resolve: { profile: CompanyProfileResolver }, canActivate: [AuthenticationGuard] },
+  {
+    path: 'company/profile/:profileId', component: CompanyProfileComponent,
+    resolve: { profile: CompanyProfileResolver },
     canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
@@ -120,12 +127,23 @@ const routes: Routes = [
       { path: 'view', component: CompanyViewComponent }
     ]
   },
-  { path: 'land/new', component: LandProfileComponent, resolve: { profile: LandProfileResolver} , canActivate: [AuthenticationGuard] },
-  { path: 'land/changeNumber', component: LandChangeNumberComponent, resolve: { profile: LandProfileResolver} , canActivate: [AuthenticationGuard] },
-  { path: 'land/edit', component: LandEditComponent, resolve: { profile: LandProfileResolver} , canActivate: [AuthenticationGuard] },
-  { path: 'land/view', component: LandMainViewComponent, resolve: { profile: LandProfileResolver} , canActivate: [AuthenticationGuard] },
-  { path: 'land/profile/:profileId', component: LandProfileComponent,
-    resolve: { profile: LandProfileResolver},
+  { path: 'rate', component: RateViewComponent, resolve: { profile: LandProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'rate/new', component: newRateComponent, resolve: { profile: LandProfileResolver }, canActivate: [AuthenticationGuard] },
+  {
+    path: 'rate/profile/:profileId/:profileId2', component: RateViewComponent,
+    resolve: { profile: ProjectProfileResolver },
+    canActivate: [AuthenticationGuard],
+    children: [
+      { path: 'view', component: RateDetailsComponent },
+    ]
+  },
+  { path: 'land/new', component: LandProfileComponent, resolve: { profile: LandProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'land/changeNumber', component: LandChangeNumberComponent, resolve: { profile: LandProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'land/edit', component: LandEditComponent, resolve: { profile: LandProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'land/view', component: LandMainViewComponent, resolve: { profile: LandProfileResolver }, canActivate: [AuthenticationGuard] },
+  {
+    path: 'land/profile/:profileId', component: LandProfileComponent,
+    resolve: { profile: LandProfileResolver },
     canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
@@ -134,21 +152,24 @@ const routes: Routes = [
       { path: 'landNumber', component: LandnumberComponent }
     ]
   },
-  { path: 'developer/new', component: DeveloperProfileComponent, resolve: { profile: DeveloperProfileResolver}, canActivate: [AuthenticationGuard] },
-  { path: 'developer/profile/:profileId', component: DeveloperProfileComponent,
-    resolve: { profile: DeveloperProfileResolver},
+  { path: 'developer/new', component: DeveloperProfileComponent, resolve: { profile: DeveloperProfileResolver }, canActivate: [AuthenticationGuard] },
+  {
+    path: 'developer/profile/:profileId', component: DeveloperProfileComponent,
+    resolve: { profile: DeveloperProfileResolver },
     canActivate: [AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'edit', pathMatch: 'full' },
       { path: 'edit', component: DeveloperDetailsComponent }
     ]
   },
-  { path: 'owner/profile/:profileId/edit', component: OwnerProfileComponent,
-    resolve: { profile: OwnerProfileResolver},
+  {
+    path: 'owner/profile/:profileId/edit', component: OwnerProfileComponent,
+    resolve: { profile: OwnerProfileResolver },
     canActivate: [AuthenticationGuard]
   },
-  { path: 'properties/profile/:profileId/edit', component: PropertiesProfileComponent,
-    resolve: { profile: PropertiesProfileResolver},
+  {
+    path: 'properties/profile/:profileId/edit', component: PropertiesProfileComponent,
+    resolve: { profile: PropertiesProfileResolver },
     canActivate: [AuthenticationGuard]
   },
   { path: 'search', component: SearchPageComponent, canActivate: [AuthenticationGuard] },

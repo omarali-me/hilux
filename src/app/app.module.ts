@@ -104,6 +104,9 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { PropertiesProfileComponent } from './properties-profile/properties-profile.component';
 import { LandProfileComponent } from './land-profile/land-profile.component';
 import { LandEditComponent } from './land-profile/land-edit/land-edit.component';
+import { RateViewComponent } from './rate/rateView/rate-view.component';
+import { newRateComponent } from './rate/newRate/rate-new.component';
+import { RateDetailsComponent } from './rate/rateDetails/rate-details.component';
 import { LandMainViewComponent } from './land-profile/land-mainView/land-mainView.component';
 import { LandChangeNumberComponent } from './land-profile/landChangeNumber/land-changeNumber.component';
 import { LandnumberComponent } from './land-profile/landNumber/land-number.component';
@@ -147,6 +150,7 @@ const maskConfig: Partial<IConfig> = {
     CheckboxFieldComponent,
     EntitySelectComponent,
     StepSelectComponent,
+    RateDetailsComponent,
     DisplayFieldsComponent,
     DisplayImageComponent,
     DisplayImageGroupComponent,
@@ -229,7 +233,9 @@ const maskConfig: Partial<IConfig> = {
     ApplicationSearchComponent,
     UnitsExcelUploadComponent,
     SingleApplicationSearchComponent,
-    UnitsValuationComponent
+    UnitsValuationComponent,
+    RateViewComponent,
+    newRateComponent
   ],
   imports: [
     FormsModule,
