@@ -61,7 +61,7 @@ export class RateViewComponent implements OnInit {
       .subscribe((res) => {
         this.userRole = res;
         console.log(this.userRole);
-        if (Object.keys(this.userRole).includes("Admin") && !Object.keys(this.userRole).includes("Tathmeen")) {
+        if (!Object.keys(this.userRole).includes("Admin") && !Object.keys(this.userRole).includes("Tathmeen")) {
           this.router.navigate(['/']);
         } else {
           this.loadSectorsOptions();
