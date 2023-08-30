@@ -38,6 +38,7 @@ export class UnitDetailsComponent implements OnInit {
   searchProjectNameInput$ = new Subject<string>();
   developerNameOptionsLoading = false;
   projectNameOptionsLoading =  false;
+  sitePLANList :any;
 
   constructor(
     private route: ActivatedRoute,
@@ -58,6 +59,7 @@ export class UnitDetailsComponent implements OnInit {
     this.loadDeveloperNameOptions();
     this.loadProjectNameOptions();
     this.loadUnitNumberOptions();
+    this.sitePLANList =[];
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe(async (profile: any) => {
@@ -66,6 +68,8 @@ export class UnitDetailsComponent implements OnInit {
         await this.prepareDeveloperValueOptions(profile);
         await this.prepareLandValueOptions(profile);
         this.formData = profile as any;
+        console.log(".......")
+        console.log(this.formData.sitePlan);
       } else {
         this.formData = { };
       }
@@ -88,6 +92,21 @@ export class UnitDetailsComponent implements OnInit {
       this.router.navigate(['error'])
     })
   }
+   prepareGalleryField() {
+    return {
+      fieldID: "sitePLAN",
+      fieldType: "fileupload",
+      // required: this.flagUpload,
+      fieldName: {
+        "ar": "sitePLAN",
+        "en": "sitePLAN"
+      },
+      auxInfo: {
+        multiple: true
+      }
+    }
+  }
+
 
   loadDeveloperOptions() {
     this.developerOptions = concat(
@@ -142,7 +161,7 @@ export class UnitDetailsComponent implements OnInit {
   }
 
   loadunitsUsageTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/unitsUsageTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/unitsTypes`)
     .subscribe((data) => {
       this.unitsUsageTypesOptions = data;
     })
