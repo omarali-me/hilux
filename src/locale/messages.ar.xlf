@@ -5960,6 +5960,7 @@
         <trans-unit id="time" datatype="html">
       <source>Time</source>
         <target>الوقت</target>
+              </trans-unit> 
        <trans-unit id="noData" datatype="html">
       <source>Not Found Data</source>
         <target>لا يوجد بيانات</target>
