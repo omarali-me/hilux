@@ -18,6 +18,7 @@ export class MyTasksComponent implements OnDestroy, OnInit {
   // @ViewChild('dataTable') dataTable: ElementRef;
   myTasksResponse: any;
   deparmentTasksResponse: any;
+  flagCallTasks :any;
 
   dtOptions = {};
   dtTriggerMyTasks: Subject<any> = new Subject();
@@ -37,6 +38,7 @@ export class MyTasksComponent implements OnDestroy, OnInit {
   // }
 
   ngOnInit(): void {
+    this.flagCallTasks =false;
     setTimeout(() => {
            this.displayData();
     }, 1000);
@@ -75,20 +77,24 @@ export class MyTasksComponent implements OnDestroy, OnInit {
     this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/myTasks`).subscribe(
       dataResponseMyTasks => {
         this.myTasksResponse = dataResponseMyTasks;
+        this.flagCallTasks =true;
         this.dtTriggerMyTasks.next();
       },
       error => {
         console.log(error);
+        this.flagCallTasks =true;
       }
     );
 
     this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/DeparmentTasks`).subscribe(
       dataResponseDeparmentTasks => {
         this.deparmentTasksResponse = dataResponseDeparmentTasks;
+        this.flagCallTasks =true;
         this.dtTriggerDeparmentTasks.next();
       },
       error => {
         console.log(error);
+        this.flagCallTasks =true;
       }
     );
   }
