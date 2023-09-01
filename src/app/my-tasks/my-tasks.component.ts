@@ -37,10 +37,14 @@ export class MyTasksComponent implements OnDestroy, OnInit {
   // }
 
   ngOnInit(): void {
-    this.displayData();
+    setTimeout(() => {
+           this.displayData();
+    }, 1000);
+    
+    // this.displayData();
     // this.response = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/myTasks`);
   }
-
+ 
   displayData() {
     this.dtOptions = {
       language: {
