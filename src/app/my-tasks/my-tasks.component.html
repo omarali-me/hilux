@@ -13,7 +13,7 @@
 
     <!-- Main content -->
     <section class="content">
-        <div *ngIf="myTasksResponse && myTasksResponse.length > 0" class="container-fluid col-lg-11">
+        <div *ngIf="flagCallTasks" class="container-fluid col-lg-11">
             <div class="card card-purple card-tabs">
                 <div class="card-header p-0 pt-1">
                     <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
@@ -273,7 +273,7 @@
             </div>
         </div>
        
-            <div *ngIf="!myTasksResponse || !myTasksResponse.length ||myTasksResponse.length == 0" class="loader"></div>
+            <div *ngIf="!flagCallTasks" class="loader"></div>
         <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
