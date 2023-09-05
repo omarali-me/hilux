@@ -67,12 +67,15 @@
                         class="nav nav-treeview text-sm"
                         *ngIf="item.value.services"
                     >
+                    <!-- [routerLink]="['/service', subItem.key]" -->
+
                         <li
                             class="nav-item"
-                            [routerLink]="['/service', subItem.key]"
                             *ngFor="let subItem of item.value.services | keyvalue"
                         >
-                            <a class="nav-link">
+                            <a class="nav-link"
+                            (click)="navigateServicesName(subItem.key)"
+                            >
                                 <img
                                     class="nav-icon fas align-top ml-3"
                                     src="{{getServiceIcon(subItem.value)}}"
