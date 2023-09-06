@@ -9,24 +9,24 @@
               <label class="col-sm-3 col-form-label" i18n="@@customerProfileSearchName">Name</label>
               <div class="col-sm-9">
                 <ng-select
-                  class="rtl"
-                  [items]="ownerNameOptions | async"
-                  name="ownerNameSearch"
-                  [hideSelected]="true"
-                  [minTermLength]="1"
-                  [(ngModel)]="searchData.term"
-                  [loading]="ownerNameOptionsLoading"
-                  bindLabel="value.ar"
-                  bindValue="value.entityId"
-                  typeToSearchText="Please enter 1 or more characters"
-                  notFoundText="لا يوجد نتائج للبحث"
-                  [typeahead]="searchOwnerNameInput$"
-                  (keyup)="setSearchType('term', $event)"
-                  [disabled]="isSearchBy('uniqueId')"
-                  (blur)="checkTypeAndValues('term')"
-                  #ownerNameSearch="ngModel"
-                >
-                </ng-select>
+                class="rtl"
+                [items]="ownerNameOptions | async"
+                name="term"
+                [hideSelected]="true"
+                [minTermLength]="1"
+                [(ngModel)]="searchData.term"
+                [loading]="ownerNameOptionsLoading"
+                bindLabel="value.ar"
+                bindValue="key"
+                typeToSearchText="Please enter 1 or more characters"
+                notFoundText="لا يوجد نتائج للبحث"
+                [typeahead]="searchOwnerNameInput$"
+                (keyup)="setSearchType('term', $event)"
+                [disabled]="isSearchBy('uniqueId')"
+                (blur)="checkTypeAndValues('term')"
+                #term="ngModel"
+              >
+              </ng-select>
               </div>
             </div>
           </div>

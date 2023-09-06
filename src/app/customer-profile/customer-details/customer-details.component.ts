@@ -160,6 +160,7 @@ export class CustomerDetailsComponent implements OnInit {
       this.emiratesOptions = data;
     })
   }
+  
 
   loadOtherIdTypesOptions() {
     this.lookupsService.loadOtherIdTypesOptions()
@@ -267,6 +268,7 @@ export class CustomerDetailsComponent implements OnInit {
   searchResourceData(data: any) {
     let value = !!data.term ? data.term : data.uniqueId;
     this.router.navigate(['customer/profile/', value, 'edit']);
+    this.searchData.term =null;
   }
 
   loadOwnerNameOptions() {
@@ -300,7 +302,9 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   isSearchFormValid() {
-    return !this.searchData.term && !this.searchData.uniqueId
+    console.log(this.searchData);
+    console.log(!this.searchData.term );
+    return !this.searchData.term 
   }
 
 
