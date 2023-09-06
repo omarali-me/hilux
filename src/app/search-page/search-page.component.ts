@@ -397,7 +397,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   getViewResourceUrl(resourceId: any, resourceType: any) {
-    return `/${resourceType}/profile/${resourceId}/edit`;
+    return `/${resourceType}/profile/${resourceId}/view`;
   }
 
   getViewLegalBlocks(propertyId: any, resourceType: any = 'propertyId') {
