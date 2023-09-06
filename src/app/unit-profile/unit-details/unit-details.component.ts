@@ -38,7 +38,6 @@ export class UnitDetailsComponent implements OnInit {
   searchProjectNameInput$ = new Subject<string>();
   developerNameOptionsLoading = false;
   projectNameOptionsLoading =  false;
-  sitePLANList :any;
 
   constructor(
     private route: ActivatedRoute,
@@ -53,13 +52,12 @@ export class UnitDetailsComponent implements OnInit {
     this.minDate = new Date();
     this.loadDeveloperOptions();
     this.loadProjectsOptions();
-    this.loadLandsoptions();
+    // this.loadLandsoptions();
     this.loadUnitsTypesOptions();
     this.loadunitsUsageTypesOptions();
     this.loadDeveloperNameOptions();
     this.loadProjectNameOptions();
     this.loadUnitNumberOptions();
-    this.sitePLANList =[];
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe(async (profile: any) => {
@@ -78,6 +76,11 @@ export class UnitDetailsComponent implements OnInit {
 
   updateData(formData: any) {
     let fd = new FormData();
+    if (formData.sitePLAN && formData.sitePLAN.length) {
+      formData.sitePlan = formData.sitePLAN[0];
+      delete formData.sitePLAN;
+      console.log(formData);
+    }
     fd.append('unit', JSON.stringify(formData));
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/units/update/${formData.id}`, fd)
       .subscribe((data: any) => {
@@ -108,7 +111,7 @@ export class UnitDetailsComponent implements OnInit {
         "en": "sitePLAN"
       },
       auxInfo: {
-        multiple: true
+        multiple: false
       }
     }
   }

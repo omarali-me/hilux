@@ -513,10 +513,10 @@
               </div>
             </div>
           </div> -->
-          <div class="col-sm-6">
+          <div class="col-sm-6" *ngIf="formData.sitePlan">
             <button type="button" class="btn btn-sm btn-danger" style="margin-right: 5px;margin-left: 5px;">
               <!-- *ngFor="let item of formData.sitePLAN let i = index" -->
-              <a href="{{formData.sitePLAN}}" target="_blank"> ملف 1</a>
+              <a href="{{formData.sitePlan}}" target="_blank"> ملف 1</a>
             </button>
           </div>
           <!-- <div class="col-sm-6">

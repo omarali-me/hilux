@@ -256,7 +256,7 @@
               <label class="col-sm-3 col-form-label" i18n="@@unitProfileLand">Land
               </label>
               <div class="col-sm-9">
-                <ng-select
+                <!-- <ng-select
                   class="rtl"
                   required="false"
                   [items]="landsoptions | async"
@@ -267,13 +267,13 @@
                   notFoundText="لا يوجد نتائج للبحث" typeToSearchText="Please enter 4 or more characters"
                   #land="ngModel"
                 >
-                </ng-select>
+                </ng-select> -->
                 <!-- <div *ngIf="land.invalid && (land.dirty || land.touched)" class="alert alert-danger">
                   <div *ngIf="land.errors?.required">
                     Land can not be blank
                   </div>
                 </div> -->
-                <!-- <input type="text" maxlength="9" name="landId" required="false" class="form-control" [(ngModel)]="formData.landId" #landId="ngModel" numbersOnly precision="0"/> -->
+                <input type="text" minlength="9" maxlength="9" name="landId" required="false" class="form-control" [(ngModel)]="formData.landId" #landId="ngModel" numbersOnly precision="0"/>
               </div>
             </div>
           </div>
@@ -553,11 +553,11 @@
             </div>
            
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6"   *ngIf="formData.sitePlan">
             <button type="button" class="btn btn-sm btn-danger" style="margin-right: 5px;margin-left: 5px;" 
             >
             <!-- *ngFor="let item of formData.sitePLAN let i = index" -->
-            <a href="{{formData.sitePLAN}}" target="_blank"> ملف 1</a>
+            <a href="{{formData.sitePlan}}" target="_blank"> ملف 1</a>
             </button>
           </div>
         </div>

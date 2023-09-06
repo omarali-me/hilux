@@ -52,7 +52,7 @@ export class UnitProfileComponent implements OnInit {
     this.minDate = new Date();
     this.loadDeveloperOptions();
     this.loadProjectsOptions();
-    this.loadLandsoptions();
+    // this.loadLandsoptions();
     this.loadUnitsTypesOptions();
     this.loadunitsUsageTypesOptions();
     this.loadDeveloperNameOptions();
