@@ -71,6 +71,11 @@ export class UnitViewComponent implements OnInit {
       }
     });
   }
+  isSearchFormValid() {
+    console.log(this.searchData);
+    // console.log(!this.searchData.developerNameSearch && !this.searchData.projectNameSearch && !this.searchData.searchUnitNumber);
+    return  !this.searchData.developerNameSearch && !this.searchData.projectNameSearch && !this.searchData.searchUnitNumber;
+  }
   editFun(){
      this.router.navigate(['unit/profile/', this.formData.id, 'edit']);
   }
@@ -251,7 +256,10 @@ export class UnitViewComponent implements OnInit {
 
   searchResourceData(data: any) {
     if (!!data.searchUnitNumber) {
-      // this.router.navigate(['unit/profile/', data.searchUnitNumber, 'edit']);
+      this.router.navigate(['unit/profile/', data.searchUnitNumber, 'view']);
+      this.searchData.searchDeveloperId =null;
+      this.searchData.searchProjectId =null;
+      this.searchData.searchUnitNumber =null;
     }
   }
 

@@ -274,10 +274,18 @@ export class UnitDetailsComponent implements OnInit {
       })
     }
   }
+  isSearchFormValid() {
+    console.log(this.searchData);
+    // console.log(!this.searchData.developerNameSearch && !this.searchData.projectNameSearch && !this.searchData.searchUnitNumber);
+    return  !this.searchData.developerNameSearch && !this.searchData.projectNameSearch && !this.searchData.searchUnitNumber;
+  }
 
   searchResourceData(data: any) {
     if (!!data.searchUnitNumber) {
       this.router.navigate(['unit/profile/', data.searchUnitNumber, 'edit']);
+      this.searchData.searchDeveloperId =null;
+      this.searchData.searchProjectId =null;
+      this.searchData.searchUnitNumber =null;
     }
   }
 
