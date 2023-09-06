@@ -342,6 +342,7 @@ export class CompanyDetailsComponent implements OnInit {
   searchResourceData(data: any) {
     let value = !!data.term ? data.term : data.licenseNumber;
     this.router.navigate(['company/profile/', value, 'edit']);
+    this.searchData.term = null;
   }
 
   loadCompanyNameOptions() {

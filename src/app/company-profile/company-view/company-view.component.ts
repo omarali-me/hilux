@@ -279,6 +279,7 @@ export class CompanyViewComponent implements OnInit {
   searchResourceData(data: any) {
     let value = !!data.term ? data.term : data.licenseNumber;
     this.router.navigate(['company/profile/', value, 'view']);
+    this.searchData.term = null;
   }
 
   loadCompanyNameOptions() {
