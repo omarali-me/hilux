@@ -19,6 +19,7 @@ export class MyTasksComponent implements OnDestroy, OnInit {
   myTasksResponse: any;
   deparmentTasksResponse: any;
   flagCallTasks :any;
+  flagCallDepTasks :any;
 
   dtOptions = {};
   dtTriggerMyTasks: Subject<any> = new Subject();
@@ -39,9 +40,10 @@ export class MyTasksComponent implements OnDestroy, OnInit {
 
   ngOnInit(): void {
     this.flagCallTasks =false;
-    setTimeout(() => {
-           this.displayData();
-    }, 1000);
+    // setTimeout(() => {
+    //        this.displayData();
+    // }, 1000);
+    this.displayData();
     
     // this.displayData();
     // this.response = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/myTasks`);
@@ -86,17 +88,36 @@ export class MyTasksComponent implements OnDestroy, OnInit {
       }
     );
 
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/DeparmentTasks`).subscribe(
-      dataResponseDeparmentTasks => {
-        this.deparmentTasksResponse = dataResponseDeparmentTasks;
-        this.flagCallTasks =true;
-        this.dtTriggerDeparmentTasks.next();
-      },
-      error => {
-        console.log(error);
-        this.flagCallTasks =true;
-      }
-    );
+    // this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/DeparmentTasks`).subscribe(
+    //   dataResponseDeparmentTasks => {
+    //     this.deparmentTasksResponse = dataResponseDeparmentTasks;
+    //     this.flagCallTasks =true;
+    //     this.dtTriggerDeparmentTasks.next();
+    //   },
+    //   error => {
+    //     console.log(error);
+    //     this.flagCallTasks =true;
+    //   }
+    // );
+  }
+  loadDepFun (){
+    if (this.flagCallDepTasks == 1) {
+      return;
+    }else{
+      this.flagCallTasks=false;
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/DeparmentTasks`).subscribe(
+        dataResponseDeparmentTasks => {
+          this.deparmentTasksResponse = dataResponseDeparmentTasks;
+          this.flagCallTasks =true;
+          this.dtTriggerDeparmentTasks.next();
+          this.flagCallDepTasks = 1;
+        },
+        error => {
+          console.log(error);
+          this.flagCallTasks =true;
+        }
+      );
+    }
   }
   ngOnDestroy(): void {
     // Do not forget to unsubscribe the event
