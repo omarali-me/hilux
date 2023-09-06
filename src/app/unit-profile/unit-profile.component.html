@@ -277,7 +277,7 @@
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
-                              required="true"
+                              required="false"
                               [items]="landsoptions | async"
                               name="land" [hideSelected]="true"
                               [(ngModel)]="formData.landId" [typeahead]="landSearchInput$"
@@ -285,14 +285,14 @@
                               bindValue="key" [loading]="landDataOptionsLoading"
                               notFoundText="لا يوجد نتائج للبحث" typeToSearchText="Please enter 4 or more characters"
                               [disabled]="isUnitVilla()"
-                              #land="ngModel"
+                              #landId="ngModel"
                             >
                             </ng-select>
-                            <div *ngIf="land.invalid && (land.dirty || land.touched)" class="alert alert-danger">
+                            <!-- <div *ngIf="land.invalid && (land.dirty || land.touched)" class="alert alert-danger">
                               <div *ngIf="land.errors?.required">
                                 Land can not be blank
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                         </div>
                       </div>
