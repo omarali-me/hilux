@@ -72,8 +72,6 @@ export class UnitViewComponent implements OnInit {
     });
   }
   isSearchFormValid() {
-    console.log(this.searchData);
-    // console.log(!this.searchData.developerNameSearch && !this.searchData.projectNameSearch && !this.searchData.searchUnitNumber);
     return  !this.searchData.developerNameSearch && !this.searchData.projectNameSearch && !this.searchData.searchUnitNumber;
   }
   editFun(){

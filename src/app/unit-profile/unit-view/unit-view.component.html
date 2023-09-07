@@ -532,11 +532,11 @@
               </div>
             </div>
           </div> -->
-          <div class="col-sm-6" *ngIf="formData.sitePlan">
-            <button type="button" class="btn btn-sm btn-danger" style="margin-right: 5px;margin-left: 5px;">
-              <!-- *ngFor="let item of formData.sitePLAN let i = index" -->
+          <div class="col-sm-3" style="height: 120px;width: 70px;" *ngIf="formData.sitePlan">
+            <!-- <button type="button" class="btn btn-sm btn-danger" style="margin-right: 5px;margin-left: 5px;">
               <a href="{{formData.sitePlan}}" target="_blank"> ملف 1</a>
-            </button>
+            </button> -->
+            <app-media-gallery [medias]="[formData.sitePlan]"></app-media-gallery>
           </div>
           <!-- <div class="col-sm-6">
           </div> -->

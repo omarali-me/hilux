@@ -66,8 +66,6 @@ export class UnitDetailsComponent implements OnInit {
         await this.prepareDeveloperValueOptions(profile);
         await this.prepareLandValueOptions(profile);
         this.formData = profile as any;
-        console.log(".......")
-        console.log(this.formData.sitePlan);
       } else {
         this.formData = { };
       }
@@ -79,7 +77,6 @@ export class UnitDetailsComponent implements OnInit {
     if (formData.sitePLAN && formData.sitePLAN.length) {
       formData.sitePlan = formData.sitePLAN[0];
       delete formData.sitePLAN;
-      console.log(formData);
     }
     fd.append('unit', JSON.stringify(formData));
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/units/update/${formData.id}`, fd)
@@ -275,7 +272,6 @@ export class UnitDetailsComponent implements OnInit {
     }
   }
   isSearchFormValid() {
-    console.log(this.searchData);
     // console.log(!this.searchData.developerNameSearch && !this.searchData.projectNameSearch && !this.searchData.searchUnitNumber);
     return  !this.searchData.developerNameSearch && !this.searchData.projectNameSearch && !this.searchData.searchUnitNumber;
   }
