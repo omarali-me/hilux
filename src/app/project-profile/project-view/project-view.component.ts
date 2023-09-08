@@ -306,7 +306,7 @@ export class ProjectViewComponent implements OnInit {
 
   searchResourceData(data: any) {
     if (!!data.searchProjectId) {
-      this.router.navigate(['project/profile/', data.searchProjectId, 'edit']);
+      this.router.navigate(['project/profile/', data.searchProjectId, 'view']);
     }
   }
 
