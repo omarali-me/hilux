@@ -139,40 +139,37 @@
                     <div class="form-group row">
                       <div class="col-sm-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label" i18n="@@landProfileCity">City
-                            <span>*</span>
-                          </label>
+                          <label class="col-sm-3 col-form-label" i18n="@@city">City</label>
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
                               [items]="citiesOptions"
                               name="city"
-                              required="true"
+                              required="false"
                               [(ngModel)]="formData.cityId"
                               bindLabel="value.ar"
                               bindValue="key"
                               notFoundText="لا يوجد نتائج للبحث"
                               #cityId="ngModel"
+                              [disabled]="true"
                             >
                             </ng-select>
-                            <div *ngIf="cityId.invalid && (cityId.dirty || cityId.touched)" class="alert alert-danger">
+                            <!-- <div *ngIf="cityId.invalid && (cityId.dirty || cityId.touched)" class="alert alert-danger">
                               <div *ngIf="cityId.errors?.required">
                                 City can not be blank
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                         </div>                        
                       </div>
 
                       <div class="col-sm-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label" i18n="@@landProfileSector">Sector
-                            <span>*</span>
-                          </label>
+                          <label class="col-sm-3 col-form-label" i18n="@@Sector">Sector</label>
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
-                              required="true"
+                              required="false"
                               [items]="sectorsOptions"
                               name="sector"
                               [(ngModel)]="formData.sectorId"
@@ -180,13 +177,14 @@
                               bindValue="key"
                               notFoundText="لا يوجد نتائج للبحث"
                               #sectorId="ngModel"
+                              [disabled]="true"
                             >
                             </ng-select>
-                            <div *ngIf="sectorId.invalid && (sectorId.dirty || sectorId.touched)" class="alert alert-danger">
+                            <!-- <div *ngIf="sectorId.invalid && (sectorId.dirty || sectorId.touched)" class="alert alert-danger">
                               <div *ngIf="sectorId.errors?.required">
                                 Sector can not be blank
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                         </div>
                       </div>
@@ -195,36 +193,32 @@
                     <div class="form-group row">
                       <div class="col-sm-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label" i18n="@@landProfileDistrict">District
-                            <span>*</span>
-                          </label>
+                          <label class="col-sm-3 col-form-label" i18n="@@District">District</label>
                           <div class="col-sm-9">
                             <!-- <input type="text" name="district" required="true" class="form-control" [(ngModel)]="formData.sectionId" #district="ngModel"> -->
                             <ng-select class="rtl" [items]="distructsTypesOptions" name="district"
-                            [(ngModel)]="formData.district"  required="true" bindLabel="value.ar" bindValue="key"
-                            notFoundText="لا يوجد نتائج للبحث" #district="ngModel">
+                            [(ngModel)]="formData.district"  required="false" bindLabel="value.ar" bindValue="key"
+                            notFoundText="لا يوجد نتائج للبحث" [disabled]="true"#district="ngModel">
                           </ng-select>
-                            <div *ngIf="district.invalid && (district.dirty || district.touched)" class="alert alert-danger">
+                            <!-- <div *ngIf="district.invalid && (district.dirty || district.touched)" class="alert alert-danger">
                               <div *ngIf="district.errors?.required">
                                 District can not be blank
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                         </div>
                       </div>
 
                       <div class="col-sm-6">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label" i18n="@@landProfilePlot">Plot
-                            <span>*</span>
-                          </label>
+                          <label class="col-sm-3 col-form-label" i18n="@@Plot">Plot</label>
                           <div class="col-sm-9">
-                            <input type="text" name="plot" required="true" class="form-control" [(ngModel)]="formData.pieceNumber" #plot="ngModel" numbersOnly precision="0">
-                            <div *ngIf="plot.invalid && (plot.dirty || plot.touched)" class="alert alert-danger">
+                            <input type="text" name="plot" [disabled]="true" required="false" class="form-control" [(ngModel)]="formData.pieceNumber" #plot="ngModel" numbersOnly precision="0">
+                            <!-- <div *ngIf="plot.invalid && (plot.dirty || plot.touched)" class="alert alert-danger">
                               <div *ngIf="plot.errors?.required">
                                 Plot can not be blank
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                         </div>
                       </div>
