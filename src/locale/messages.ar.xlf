@@ -5965,9 +5965,9 @@
       <source>Not Found Data</source>
         <target>لا يوجد بيانات</target>
       </trans-unit>
-       <trans-unit id="withdrawData" datatype="html">
-      <source>Withdraw Data</source>
-        <target>سحب البيانات</target>
+       <trans-unit id="withdrawDataFromMunicipality" datatype="html">
+      <source>Withdraw Data from municipality</source>
+        <target>سحب البيانات من البلدية</target>
       </trans-unit>
       
       

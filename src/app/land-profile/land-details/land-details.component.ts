@@ -74,6 +74,9 @@ export class LandDetailsComponent implements OnInit {
       }
     });
   }
+  withdrawData (){
+    
+  }
   loadDistructsTypesOptions() {
     this.lookupsService.loadSectionsOptions()
     .subscribe((data) => {

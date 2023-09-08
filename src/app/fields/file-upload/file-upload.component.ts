@@ -104,7 +104,7 @@ export class FileUploadComponent implements OnInit {
     console.log(parts);
     console.log("********");
     console.log(ex);
-    if (ex.toLowerCase() != "png" && ex.toLowerCase()!= "jpg" && ex.toLowerCase() != "pdf") {
+    if (ex.toLowerCase() != "png" && ex.toLowerCase()!= "jpg" && ex.toLowerCase() != "pdf" && ex.toLowerCase() != "jpeg") {
       console.log("exstenstion not allow ");
       this.progressBar.nativeElement.style.width = `${percentage}%`;
       alert( ex +  "  صيغة الملف غير مدعومة \n الصيغ المدعومة هي  " + " Jpj , Png and Pdf ");

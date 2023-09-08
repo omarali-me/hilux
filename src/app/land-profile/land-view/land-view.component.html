@@ -50,12 +50,17 @@
 
     <form class="form-horizontal" (ngSubmit)="updateData(formData)" #f="ngForm" enctype='multipart/form-data'
       novalidate>
-     
-      <div class="card-body">
-        <div style="width: 100%;justify-content: center;background-color: #f7f7f7;height: 20%;">
 
-          <button type="button"  (click)="withdrawData()"  style="float: left;margin-left: 3%;margin-top: 1%;margin-bottom: 1%;"  class="btn btn-primary"   i18n="@@withdrawData">Withdraw Data</button>
-  
+      <div class="card-body">
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <div style="width: 100%;justify-content: center;background-color: #f7f7f7;height: 20%;">
+              <button type="button" (click)="withdrawData()"
+                style="float: left;margin-left: 3%;margin-top: 1%;margin-bottom: 1%;margin-top: 50px;"
+                class="btn btn-primary" i18n="@@withdrawDataFromMunicipality">Withdraw Data From Municipality</button>
+            </div>
+          </div>
         </div>
 
         <div class="form-group row">
@@ -152,8 +157,8 @@
                 <!-- <input type="text" name="district" required="true" class="form-control" [(ngModel)]="formData.sectionId"
                   #district="ngModel" [disabled]="true"> -->
                 <ng-select class="rtl" [items]="distructsTypesOptions" name="district" [(ngModel)]="formData.district"
-                  required="true" bindLabel="value.ar" disabled="true" bindValue="key" notFoundText="لا يوجد نتائج للبحث"
-                  #district="ngModel">
+                  required="true" bindLabel="value.ar" disabled="true" bindValue="key"
+                  notFoundText="لا يوجد نتائج للبحث" #district="ngModel">
                 </ng-select>
                 <div *ngIf="district.invalid && (district.dirty || district.touched)" class="alert alert-danger">
                   <div *ngIf="district.errors?.required">
