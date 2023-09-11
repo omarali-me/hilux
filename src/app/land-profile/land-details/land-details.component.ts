@@ -340,7 +340,10 @@ export class LandDetailsComponent implements OnInit {
 
   searchResourceData(data: any) {
     let value = !!data.term ? data.term : data.searchOldLandId;
-    this.router.navigate(['land/profile/', value, 'edit']);
+    this.router.navigate(['land/profile/', value, 'edit'])
+    .then(() => {
+      window.location.reload();
+    });
   }
 
   loadLandNameOptions() {

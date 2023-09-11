@@ -298,7 +298,10 @@ export class LandViewComponent implements OnInit {
 
   searchResourceData(data: any) {
     let value = !!data.term ? data.term : data.searchOldLandId;
-    this.router.navigate(['land/profile/', value, 'view']);
+    this.router.navigate(['land/profile/', value, 'view'])
+    .then(() => {
+      window.location.reload();
+    });
   }
 
   loadLandNameOptions() {
