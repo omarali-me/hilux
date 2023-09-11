@@ -150,12 +150,12 @@
               <div class="col-sm-9">
                 <!-- <input type="text" name="district" required="true" class="form-control" [(ngModel)]="formData.sectionId"
                   #district="ngModel" [disabled]="true"> -->
-                <!-- <ng-select class="rtl" [items]="distructsTypesOptions" name="district" [(ngModel)]="formData.district"
-                  required="false" bindLabel="value.ar" [disabled]="true" bindValue="key"
-                  notFoundText="لا يوجد نتائج للبحث" #district="ngModel">
-                </ng-select> -->
-                <input type="text" name="sectionId" required="false" class="form-control" [(ngModel)]="formData.sectionId"
-                #sectionId="ngModel" [disabled]="true" numbersOnly precision="0">
+                  <ng-select class="rtl" [items]="distructsTypesOptions" name="sectionId" [(ngModel)]="formData.sectionId"
+                  required="false" [disabled]="true" bindLabel="value.ar" bindValue="key" notFoundText="لا يوجد نتائج للبحث"
+                  #sectionId="ngModel">
+                </ng-select>
+                <!-- <input type="text" name="sectionId" required="false" class="form-control" [(ngModel)]="formData.sectionId"
+                #sectionId="ngModel" [disabled]="true" numbersOnly precision="0"> -->
               </div>
             </div>
           </div>
