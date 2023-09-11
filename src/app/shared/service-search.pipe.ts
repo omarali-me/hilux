@@ -18,9 +18,7 @@ export class ServiceSearchPipe implements PipeTransform {
 
     return dataIn.filter(item => {
 
-      // console.log();
       // _.keys(item.value.services).forEach( key => {
-      //   console.log(key);
 
       // if (Array.isArray(formData[key])) {
       //   formData[key].forEach(element => {
@@ -37,7 +35,6 @@ export class ServiceSearchPipe implements PipeTransform {
 
 
     //   return value.filter(item => {
-    //     console.log(`${key}
     //     ${item.ar}
     //     ${item.en}`); // key - value
     //   });

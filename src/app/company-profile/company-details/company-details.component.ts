@@ -73,7 +73,6 @@ export class CompanyDetailsComponent implements OnInit {
             let obj = this.formData.establishmentContractDmsId[index]
             this.establishmentContractDmsId.push(obj);
             if ((index + 1) == this.formData.establishmentContractDmsId.length) {
-              console.log(this.establishmentContractDmsId);
             }
           }
         }
@@ -86,9 +85,7 @@ export class CompanyDetailsComponent implements OnInit {
 
   updateData(formData: any) {
     let fd = new FormData();
-    console.log("updateData  ");
    
-    console.log(this.establishmentContractDmsId);
     if (!formData.establishmentContractFile) {
       if (this.establishmentContractDmsId) {
         formData.establishmentContractFile = this.establishmentContractDmsId;
@@ -100,13 +97,9 @@ export class CompanyDetailsComponent implements OnInit {
       }
     }
     fd.append('company', JSON.stringify(formData));
-    console.log("form data update")
-    console.log(formData);
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/companies/update/${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
-          console.log("retun data ... ");
-          console.log(data);
           this.toastr.success(data.message, 'Success');
         
           // this.router.navigate(['company/profile/' + formData.id + '/view'])
@@ -147,13 +140,10 @@ export class CompanyDetailsComponent implements OnInit {
       this.LoadOptionsData(val);
     });
 
-    // console.log(vals);
     // setTimeout(async () => {
     //   if (vals.length > 0) {
-    //     console.log(vals.length + " if")
     //     for (let index = 0; index < vals.length; index++) {
     //       let term = vals[index];
-    //       console.log(term);
     //       await setTimeout(() => {
     //         this.lookupsService.loadOwners3({ term })
     //           .subscribe((option) => {
@@ -169,7 +159,6 @@ export class CompanyDetailsComponent implements OnInit {
 
     //     }
     //   } else {
-    //     console.log("lenght equal zero")
     //   }
     // }, 500);
 
@@ -180,7 +169,6 @@ export class CompanyDetailsComponent implements OnInit {
     //     distinctUntilChanged(),
     //     tap(() => this.dataOptionsLoading = true),
     //     switchMap(term => {
-    //       console.log("search fun")
     //       return this.lookupsService.loadOwners3({ term }).pipe(
     //         catchError(() => of([])), // empty list on error
     //         tap(() => this.dataOptionsLoading = false)
@@ -271,8 +259,6 @@ export class CompanyDetailsComponent implements OnInit {
 
             // this.ownersList.push(option)
             // this.ownerOptions=option;
-            // console.log("................");
-            // console.log(this.ownerOptions);
           })
       },
         100)

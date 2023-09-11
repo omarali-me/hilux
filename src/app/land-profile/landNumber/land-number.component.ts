@@ -115,19 +115,16 @@ export class LandnumberComponent implements OnInit {
     }
   }
   updateData(formData: any) {
-    // console.log(formData);
     if (formData.id && formData.newLandId && formData.remarks) {
       let obj = {
         id: formData.id,
         newLandId: formData.newLandId,
         comments: formData.remarks
       }
-      console.log(obj);
       let fd = new FormData();
       fd.append('data', JSON.stringify(obj));
       this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/lands/updateLandid`, fd)
         .subscribe((data: any) => {
-          console.log(data);
           if (data.status == 'success') {
             this.toastr.success(data.message, 'Success');
             this.router.navigate(['land/profile/', formData.id, 'view'])
@@ -136,13 +133,10 @@ export class LandnumberComponent implements OnInit {
             });
           
           } else {
-            console.log("error data");
             this.formErrors = data.data;
-            console.log(data.message);
             this.toastr.error(JSON.stringify(data.message), 'Error')
           }
         }, (error) => {
-          console.log("error");
           this.toastr.error('Something went Wrong', 'Error')
           this.router.navigate(['error'])
         })

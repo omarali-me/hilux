@@ -83,7 +83,6 @@ export class MyTasksComponent implements OnDestroy, OnInit {
         this.dtTriggerMyTasks.next();
       },
       error => {
-        console.log(error);
         this.flagCallTasks =true;
       }
     );
@@ -95,7 +94,6 @@ export class MyTasksComponent implements OnDestroy, OnInit {
     //     this.dtTriggerDeparmentTasks.next();
     //   },
     //   error => {
-    //     console.log(error);
     //     this.flagCallTasks =true;
     //   }
     // );
@@ -113,7 +111,6 @@ export class MyTasksComponent implements OnDestroy, OnInit {
           this.flagCallDepTasks = 1;
         },
         error => {
-          console.log(error);
           this.flagCallTasks =true;
         }
       );

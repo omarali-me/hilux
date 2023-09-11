@@ -55,7 +55,6 @@ export class LoginComponent implements OnInit {
   }
   sendPasswordLinkToMail(formData: any){
     if(! formData.email) return;
-    console.log(formData.email);
     this.ngxSmartModalService.getModal('addBlockToOwnerPropertiesModal').close();
   }
 
@@ -78,7 +77,6 @@ export class LoginComponent implements OnInit {
   }
 
   addRow(row, index) {
-    console.log('add row', row);
     this.formData[row.row].push({});
   }
 

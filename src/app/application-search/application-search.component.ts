@@ -476,7 +476,6 @@ export class ApplicationSearchComponent implements OnInit {
   }
 
   isFormInValid(form_invalid: boolean, formData: any) {
-    console.log('form_invalid',form_invalid);
     
     if (form_invalid) {
       return form_invalid && (

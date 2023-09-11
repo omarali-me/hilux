@@ -54,7 +54,6 @@ export class newRateComponent implements OnInit {
     this.roles$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/getUserRights`)
       .subscribe((res) => {
         this.userRole = res;
-        console.log(this.userRole);
         if (!Object.keys(this.userRole).includes("Admin") && !Object.keys(this.userRole).includes("Tathmeen")) {
           this.router.navigate(['/']);
         } else {
@@ -75,8 +74,6 @@ export class newRateComponent implements OnInit {
           this.profile$.subscribe((profile: any) => {
             if (profile && profile.id) {
               this.formData = profile as any;
-              console.log(".........");
-              console.log(this.formData.landTreeHistory);
               if (!this.formData.buildingDetails) {
                 this.formData.buildingDetails = {}
               }
@@ -113,7 +110,6 @@ export class newRateComponent implements OnInit {
   }
 
   saveData(formData: any) {
-    console.log(formData);
     if (formData.projectNameSearch && formData.searchApartmentId && formData.rating && formData.servicesFees >= 0) {
       let fd = new FormData();
       let obj = {

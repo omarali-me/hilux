@@ -222,7 +222,6 @@ export class UnitMainViewComponent implements OnInit {
   }
 
   searchResourceData(data: any) {
-    console.log(data);
     if (!!data.searchUnitNumber) {
       this.router.navigate(['unit/profile/', data.searchUnitNumber, 'view']);
     }

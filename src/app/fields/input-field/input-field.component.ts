@@ -69,7 +69,6 @@ export class InputFieldComponent implements OnInit {
     return this.service.isEditStep && (this.service.editStepField != this.field.fieldID);
   }
   checkCallFromSelect(val){
-    console.log(val);
   }
 
   isActiveRejectStep() {

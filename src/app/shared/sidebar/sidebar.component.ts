@@ -62,7 +62,6 @@ export class SidebarComponent implements OnInit {
   }
 
   callServicehandler(item: any) {
-    console.log('here submenu', item)
   }
 
   toggleClass(event: any) {

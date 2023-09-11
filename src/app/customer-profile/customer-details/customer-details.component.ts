@@ -302,8 +302,6 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   isSearchFormValid() {
-    console.log(this.searchData);
-    console.log(!this.searchData.term );
     return !this.searchData.term 
   }
 

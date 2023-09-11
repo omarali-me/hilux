@@ -47,7 +47,6 @@ export class AutocompleteFieldComponent implements OnInit {
   }
 
   setmyvalue(event: any) {
-    console.log('value changed', event.target.value);
     if (event.target.value.length > 3) {
       this.dataOptions = this.service.getFieldData(this.field, this.formData);
     }

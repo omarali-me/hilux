@@ -77,10 +77,8 @@ export class LandDetailsComponent implements OnInit {
   }
   withdrawData (){
     this.flagwithdrawData =false;
-    console.log(this.formData);
     this.http.get(`${environment.apiHost}/AjmanLandProperty/index.php/lands/getLandDataFromAM/${this.formData.id}`)
     .subscribe((data: any) => {
-      console.log(data);
         this.formData = data;
         this.toastr.success("", 'Success');
         this.flagwithdrawData =true;
@@ -90,7 +88,6 @@ export class LandDetailsComponent implements OnInit {
         });
     }, (error) => {
       this.flagwithdrawData = true;
-      console.log("error");
       this.toastr.error('Something went Wrong', 'Error');
       // this.router.navigate(['error']);
     });

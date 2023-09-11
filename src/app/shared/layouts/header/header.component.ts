@@ -36,7 +36,6 @@ export class HeaderComponent implements OnInit {
             this.roles$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/getUserRights`)
             .subscribe((res) => {
               this.userRole = res;
-              console.log("check permission")
             });
         });
        
@@ -61,7 +60,6 @@ export class HeaderComponent implements OnInit {
     }
 
     log(val) {
-        console.log(val);
     }
 
     logout() {

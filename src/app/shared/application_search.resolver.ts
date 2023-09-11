@@ -15,7 +15,6 @@ export class ApplicationSearchResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
     const applicationId = route.params.applicationId;
-    console.log('applicationId', applicationId);
     return applicationId ? this.getApplication(applicationId) : { }
   }
 

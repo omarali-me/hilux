@@ -65,7 +65,6 @@ export class RateDetailsComponent implements OnInit {
     this.roles$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/getUserRights`)
       .subscribe((res) => {
         this.userRole = res;
-        console.log(this.userRole);
         if (!Object.keys(this.userRole).includes("Admin") && !Object.keys(this.userRole).includes("Tathmeen")) {
           this.router.navigate(['/']);
         } else {
@@ -132,7 +131,6 @@ export class RateDetailsComponent implements OnInit {
           }];
           let projectId = this.route.snapshot.paramMap.get('profileId');
           let apartmentId = this.route.snapshot.paramMap.get('profileId2');
-          console.log(projectId + " " + apartmentId);
           this.getData(projectId, apartmentId);
           this.profile$ = this.route.data.pipe(pluck('profile'));
           this.profile$.subscribe(async (profile: any) => {
@@ -149,7 +147,6 @@ export class RateDetailsComponent implements OnInit {
       });
   }
   getData(projectId: any, apartmentId: any) {
-    console.log("getData fun " + projectId + " " + apartmentId);
     let fd = new FormData();
     let obj = {};
     if (apartmentId != "undefined") {
@@ -166,15 +163,10 @@ export class RateDetailsComponent implements OnInit {
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/Tathmeen/searchUnitsEvalutions`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
-          console.log(data.data);
           this.pageData = data.data;
-          console.log(" api status success");
-          console.log(this.pageData);
         } else {
-          console.log(" api status fail");
         }
       }, (error) => {
-        console.log("error api ")
       })
   }
   loadApartmentNameOptions() {
@@ -399,9 +391,6 @@ export class RateDetailsComponent implements OnInit {
 
 
   searchResourceData(data: any, searchApartmentId: any) {
-    console.log(" searchResourceData fun ...");
-    console.log(searchApartmentId.model)
-    console.log(data);
     if (data.searchProjectId) {
       this.router.navigate(['rate/profile/' + data.searchProjectId + "/" + searchApartmentId.model + "/view"]);
       this.getData(data.searchProjectId, searchApartmentId.model);
