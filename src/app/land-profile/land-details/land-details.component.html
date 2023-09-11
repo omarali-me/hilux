@@ -1,7 +1,7 @@
 <section class="content" *ngIf="profile$ | async as profile">
   <div class="container-fluid">
     <app-alerts [errors]="formErrors"></app-alerts>
-    <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data'
+    <form  *ngIf="flagwithdrawData" class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data'
       novalidate>
       <div class="card-body">
         <div class="form-group row">
@@ -50,7 +50,7 @@
 
     <form class="form-horizontal" (ngSubmit)="updateData(formData)" #f="ngForm" enctype='multipart/form-data'
       novalidate>
-      <div class="card-body">
+      <div  *ngIf="flagwithdrawData" class="card-body">
         
         <div class="form-group row">
           <div class="col-sm-12">
@@ -154,10 +154,12 @@
               <label class="col-sm-3 col-form-label" i18n="@@District">District</label>
               <div class="col-sm-9">
                 <!-- <input type="text" name="district" required="false" class="form-control" [(ngModel)]="formData.sectionId" #district="ngModel" > -->
-                <ng-select class="rtl" [items]="distructsTypesOptions" name="district" [(ngModel)]="formData.district"
+                <!-- <ng-select class="rtl" [items]="distructsTypesOptions" name="district" [(ngModel)]="formData.district"
                   required="false" [disabled]="true" bindLabel="value.ar" bindValue="key" notFoundText="لا يوجد نتائج للبحث"
                   #district="ngModel">
-                </ng-select>
+                </ng-select> -->
+                <input type="text" name="sectionId" required="false" class="form-control" [(ngModel)]="formData.sectionId"
+                #sectionId="ngModel" [disabled]="true" numbersOnly precision="0">
                 <!-- <div *ngIf="district.invalid && (district.dirty || district.touched)" class="alert alert-danger">
                   <div *ngIf="district.errors?.required">
                     District can not be blank
@@ -902,8 +904,14 @@
         </div>
 
       </div>
-      <div class="card-footer">
+      <div *ngIf="flagwithdrawData" class="card-footer">
         <button type="submit" class="btn btn-primary float-left" i18n="@@formSubmitLabel">Submit</button>
+      </div>
+      <div *ngIf="!flagwithdrawData" class="loader">
+      </div>
+      <div *ngIf="!flagwithdrawData" style="width: 100%;text-align: center;margin-top: 10px;">
+        <label class="col-form-label" i18n="@@withdrawDataFromMunicipalityLoadingTxt">
+          Land data is being retrieved from the municipality \n Please wait a few time</label>
       </div>
     </form>
   </div>

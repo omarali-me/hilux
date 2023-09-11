@@ -196,10 +196,12 @@
                           <label class="col-sm-3 col-form-label" i18n="@@District">District</label>
                           <div class="col-sm-9">
                             <!-- <input type="text" name="district" required="true" class="form-control" [(ngModel)]="formData.sectionId" #district="ngModel"> -->
-                            <ng-select class="rtl" [items]="distructsTypesOptions" name="district"
+                            <!-- <ng-select class="rtl" [items]="distructsTypesOptions" name="district"
                             [(ngModel)]="formData.district"  required="false" bindLabel="value.ar" bindValue="key"
                             notFoundText="لا يوجد نتائج للبحث" [disabled]="true"#district="ngModel">
-                          </ng-select>
+                          </ng-select> -->
+                          <input type="text" name="sectionId" required="false" class="form-control" [(ngModel)]="formData.sectionId"
+                          #sectionId="ngModel" [disabled]="true" numbersOnly precision="0">
                             <!-- <div *ngIf="district.invalid && (district.dirty || district.touched)" class="alert alert-danger">
                               <div *ngIf="district.errors?.required">
                                 District can not be blank

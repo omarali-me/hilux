@@ -36,6 +36,7 @@ export class LandDetailsComponent implements OnInit {
   searchOldLandIdInput$ = new Subject<string>();
   searchOldLandOptionsLoading = false;
   distructsTypesOptions: any;
+  flagwithdrawData :any;
 
   constructor(
     private route: ActivatedRoute,
@@ -58,7 +59,7 @@ export class LandDetailsComponent implements OnInit {
     this.loadLandNameOptions();
     this.loadSearchOldLandIdOptions();
     this.loadDistructsTypesOptions();
-
+    this.flagwithdrawData =true;
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
       if (profile && profile.id) {
@@ -75,7 +76,24 @@ export class LandDetailsComponent implements OnInit {
     });
   }
   withdrawData (){
-    
+    this.flagwithdrawData =false;
+    console.log(this.formData);
+    this.http.get(`${environment.apiHost}/AjmanLandProperty/index.php/lands/getLandDataFromAM/${this.formData.id}`)
+    .subscribe((data: any) => {
+      console.log(data);
+        this.formData = data;
+        this.toastr.success("", 'Success');
+        this.flagwithdrawData =true;
+        this.router.navigate(['land/profile/', this.formData.id, 'edit'])
+        .then(() => {
+          window.location.reload();
+        });
+    }, (error) => {
+      this.flagwithdrawData = true;
+      console.log("error");
+      this.toastr.error('Something went Wrong', 'Error');
+      // this.router.navigate(['error']);
+    });
   }
   loadDistructsTypesOptions() {
     this.lookupsService.loadSectionsOptions()

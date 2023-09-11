@@ -5969,6 +5969,28 @@
       <source>Withdraw Data from municipality</source>
         <target>سحب البيانات من البلدية</target>
       </trans-unit>
+       <trans-unit id="city" datatype="html">
+      <source>City</source>
+        <target>المدينة</target>
+      </trans-unit>
+       <trans-unit id="Sector" datatype="html">
+      <source>Sector</source>
+        <target>القطاع</target>
+      </trans-unit>
+        <trans-unit id="District" datatype="html">
+      <source>District</source>
+        <target>الحي</target>
+      </trans-unit>
+        <trans-unit id="Plot" datatype="html">
+      <source>Plot</source>
+        <target>القطعة</target>
+      </trans-unit>
+        <trans-unit id="withdrawDataFromMunicipalityLoadingTxt" datatype="html">
+      <source>Land data is being withdraw from the municipality 
+       Please wait a few time</source>
+        <target>يتم سحب بيانات الأراضي من البلدية 
+         يرجى الانتظار بعض الوقت</target>
+      </trans-unit>
       
       
     </body>
