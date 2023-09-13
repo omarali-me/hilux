@@ -1,7 +1,7 @@
 <section class="content" *ngIf="profile$ | async as profile">
   <div class="container-fluid">
     <app-alerts [errors]="formErrors"></app-alerts>
-    <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data'
+    <form *ngIf="flagwithdrawData" class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data'
       novalidate>
       <div class="card-body">
         <div class="form-group row">
@@ -50,7 +50,18 @@
 
     <form class="form-horizontal" (ngSubmit)="updateData(formData)" #f="ngForm" enctype='multipart/form-data'
       novalidate>
-      <div class="card-body">
+
+      <div *ngIf="flagwithdrawData"  class="card-body">
+
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <div style="width: 100%;justify-content: center;background-color: #f7f7f7;height: 20%;">
+              <button type="button" (click)="withdrawData()"
+                style="float: left;margin-left: 3%;margin-top: 1%;margin-bottom: 1%;margin-top: 50px;"
+                class="btn btn-primary" i18n="@@withdrawDataFromMunicipality">Withdraw Data From Municipality</button>
+            </div>
+          </div>
+        </div>
 
         <div class="form-group row">
           <div class="col-sm-6">
@@ -99,11 +110,9 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileCity">City
-                <span>*</span>
-              </label>
+              <label class="col-sm-3 col-form-label" i18n="@@city">City</label>
               <div class="col-sm-9">
-                <ng-select class="rtl" [items]="citiesOptions" name="city" required="true" [(ngModel)]="formData.cityId"
+                <ng-select class="rtl" [items]="citiesOptions" name="city" required="false" [(ngModel)]="formData.cityId"
                   bindLabel="value.ar" bindValue="key" notFoundText="لا يوجد نتائج للبحث" #cityId="ngModel"
                   [disabled]="true">
                 </ng-select>
@@ -118,11 +127,9 @@
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileSector">Sector
-                <span>*</span>
-              </label>
+              <label class="col-sm-3 col-form-label" i18n="@@Sector">Sector</label>
               <div class="col-sm-9">
-                <ng-select class="rtl" required="true" [items]="sectorsOptions" name="sector"
+                <ng-select class="rtl" required="false" [items]="sectorsOptions" name="sector"
                   [(ngModel)]="formData.sectorId" bindLabel="value.ar" bindValue="key"
                   notFoundText="لا يوجد نتائج للبحث" #sectorId="ngModel" [disabled]="true">
                 </ng-select>
@@ -139,32 +146,25 @@
         <div class="form-group row">
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfileDistrict">District
-                <span>*</span>
-              </label>
+              <label class="col-sm-3 col-form-label" i18n="@@District">District</label>
               <div class="col-sm-9">
                 <!-- <input type="text" name="district" required="true" class="form-control" [(ngModel)]="formData.sectionId"
                   #district="ngModel" [disabled]="true"> -->
-                <ng-select class="rtl" [items]="distructsTypesOptions" name="district" [(ngModel)]="formData.district"
-                  required="true" bindLabel="value.ar" disabled="true" bindValue="key" notFoundText="لا يوجد نتائج للبحث"
-                  #district="ngModel">
+                  <ng-select class="rtl" [items]="distructsTypesOptions" name="sectionId" [(ngModel)]="formData.sectionId"
+                  required="false" [disabled]="true" bindLabel="value.ar" bindValue="key" notFoundText="لا يوجد نتائج للبحث"
+                  #sectionId="ngModel">
                 </ng-select>
-                <div *ngIf="district.invalid && (district.dirty || district.touched)" class="alert alert-danger">
-                  <div *ngIf="district.errors?.required">
-                    District can not be blank
-                  </div>
-                </div>
+                <!-- <input type="text" name="sectionId" required="false" class="form-control" [(ngModel)]="formData.sectionId"
+                #sectionId="ngModel" [disabled]="true" numbersOnly precision="0"> -->
               </div>
             </div>
           </div>
 
           <div class="col-sm-6">
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" i18n="@@landProfilePlot">Plot
-                <span>*</span>
-              </label>
+              <label class="col-sm-3 col-form-label" i18n="@@Plot">Plot</label>
               <div class="col-sm-9">
-                <input type="text" name="plot" required="true" class="form-control" [(ngModel)]="formData.pieceNumber"
+                <input type="text" name="plot" required="false" class="form-control" [(ngModel)]="formData.pieceNumber"
                   #plot="ngModel" numbersOnly precision="0" [disabled]="true">
                 <div *ngIf="plot.invalid && (plot.dirty || plot.touched)" class="alert alert-danger">
                   <div *ngIf="plot.errors?.required">
@@ -997,8 +997,14 @@
       <!-- <div class="card-footer">
         <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid" i18n="@@formSubmitLabel">Submit</button>
       </div> -->
-      <div class="card-footer">
+      <div *ngIf="flagwithdrawData" class="card-footer">
         <button type="button" (click)="editFun()" class="btn btn-primary float-left" i18n="@@edit">Edit</button>
+      </div>
+      <div *ngIf="!flagwithdrawData" class="loader">
+      </div>
+      <div *ngIf="!flagwithdrawData" style="width: 100%;text-align: center;margin-top: 10px;">
+        <label class="col-form-label" i18n="@@withdrawDataFromMunicipalityLoadingTxt">
+          Land data is being retrieved from the municipality \n Please wait a few time</label>
       </div>
     </form>
   </div>

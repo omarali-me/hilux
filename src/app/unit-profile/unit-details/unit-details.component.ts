@@ -38,7 +38,6 @@ export class UnitDetailsComponent implements OnInit {
   searchProjectNameInput$ = new Subject<string>();
   developerNameOptionsLoading = false;
   projectNameOptionsLoading =  false;
-  sitePLANList :any;
 
   constructor(
     private route: ActivatedRoute,
@@ -53,13 +52,12 @@ export class UnitDetailsComponent implements OnInit {
     this.minDate = new Date();
     this.loadDeveloperOptions();
     this.loadProjectsOptions();
-    this.loadLandsoptions();
+    // this.loadLandsoptions();
     this.loadUnitsTypesOptions();
     this.loadunitsUsageTypesOptions();
     this.loadDeveloperNameOptions();
     this.loadProjectNameOptions();
     this.loadUnitNumberOptions();
-    this.sitePLANList =[];
 
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe(async (profile: any) => {
@@ -68,8 +66,6 @@ export class UnitDetailsComponent implements OnInit {
         await this.prepareDeveloperValueOptions(profile);
         await this.prepareLandValueOptions(profile);
         this.formData = profile as any;
-        console.log(".......")
-        console.log(this.formData.sitePlan);
       } else {
         this.formData = { };
       }
@@ -78,11 +74,21 @@ export class UnitDetailsComponent implements OnInit {
 
   updateData(formData: any) {
     let fd = new FormData();
+    if (formData.sitePLAN && formData.sitePLAN.length) {
+      formData.sitePlan = formData.sitePLAN[0];
+      delete formData.sitePLAN;
+    }
     fd.append('unit', JSON.stringify(formData));
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/units/update/${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
+          setTimeout(() => {
+            this.router.navigate(['unit/profile/' + formData.id + '/view'])
+            .then(() => {
+              window.location.reload();
+            });
+          }, 500);
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -102,7 +108,7 @@ export class UnitDetailsComponent implements OnInit {
         "en": "sitePLAN"
       },
       auxInfo: {
-        multiple: true
+        multiple: false
       }
     }
   }
@@ -161,7 +167,7 @@ export class UnitDetailsComponent implements OnInit {
   }
 
   loadunitsUsageTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/unitsTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/ListOfUnitsUses`)
     .subscribe((data) => {
       this.unitsUsageTypesOptions = data;
     })
@@ -265,10 +271,19 @@ export class UnitDetailsComponent implements OnInit {
       })
     }
   }
+  isSearchFormValid() {
+    return  !this.searchData.developerNameSearch && !this.searchData.projectNameSearch && !this.searchData.searchUnitNumber;
+  }
 
   searchResourceData(data: any) {
     if (!!data.searchUnitNumber) {
-      this.router.navigate(['unit/profile/', data.searchUnitNumber, 'edit']);
+      this.router.navigate(['unit/profile/', data.searchUnitNumber, 'edit'])
+      .then(() => {
+        window.location.reload();
+      });
+      this.searchData.searchDeveloperId =null;
+      this.searchData.searchProjectId =null;
+      this.searchData.searchUnitNumber =null;
     }
   }
 
@@ -294,7 +309,7 @@ export class UnitDetailsComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.projectNameOptionsLoading = true),
           switchMap(term => {
-            return this.lookupsService.loadProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+            return this.lookupsService.loadAllProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectNameOptionsLoading = false)
           )})

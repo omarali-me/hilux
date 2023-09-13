@@ -64,7 +64,6 @@ export class CompanyViewComponent implements OnInit {
       if (profile && profile.id) {
         await this.prepareOwnerValueOptions(profile);
         this.formData = profile as any;
-        console.log(this.formData);
         // let establishmentContractDmsId =this.formData.establishmentContractDmsId;
         if (this.formData.establishmentContractDmsId.length > 0) {
           for (let index = 0; index < this.formData.establishmentContractDmsId.length; index++) {
@@ -73,13 +72,10 @@ export class CompanyViewComponent implements OnInit {
             let obj =this.formData.establishmentContractDmsId[index]
             this.establishmentContractDmsId.push(obj);
             if ((index + 1) == this.formData.establishmentContractDmsId.length) {
-              console.log(this.establishmentContractDmsId);
             }
           }
         }
         
-        console.log('..............');
-        console.log(this.formData);
       } else {
         this.formData = { owners: [{}] };
       }
@@ -278,7 +274,11 @@ export class CompanyViewComponent implements OnInit {
 
   searchResourceData(data: any) {
     let value = !!data.term ? data.term : data.licenseNumber;
-    this.router.navigate(['company/profile/', value, 'view']);
+    this.router.navigate(['company/profile/', value, 'view'])
+    .then(() => {
+      window.location.reload();
+    });
+    this.searchData.term = null;
   }
 
   loadCompanyNameOptions() {

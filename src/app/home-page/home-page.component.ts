@@ -103,17 +103,14 @@ export class HomePageComponent implements OnInit {
   }
 
   getDashboard(fiteredData: any) {
-    console.log(fiteredData);
 
     let fd = new FormData();
-    console.log('fs',fd);
     
     fd.append('data', JSON.stringify(fiteredData));
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/Applications/dashboard`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.response = data.data;
-          console.log(data.data);
 
         } else {
           this.formErrors = data.data;

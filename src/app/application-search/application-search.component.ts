@@ -132,14 +132,14 @@ export class ApplicationSearchComponent implements OnInit {
         switchMap(term => {
           if(this.formData.developerId)
           {
-            return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
+            return this.lookupsService.loadAllProjects({ term, developerId: this.formData.developerId }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectDataOptionsLoading = false)
             )
           }
           else
           {
-            return this.lookupsService.loadProjects({ term}).pipe(
+            return this.lookupsService.loadAllProjects({ term}).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectDataOptionsLoading = false)
             )
@@ -390,7 +390,7 @@ export class ApplicationSearchComponent implements OnInit {
 
   prepareProjectValueOptions(params: any) {
     if(!!params.projectId) {
-      this.lookupsService.loadProjects({ id: params.projectId })
+      this.lookupsService.loadAllProjects({ id: params.projectId })
       .subscribe((option)=> {
         this.projectsSearchInput$.next(option.value && option.value.ar);
       })
@@ -476,7 +476,6 @@ export class ApplicationSearchComponent implements OnInit {
   }
 
   isFormInValid(form_invalid: boolean, formData: any) {
-    console.log('form_invalid',form_invalid);
     
     if (form_invalid) {
       return form_invalid && (

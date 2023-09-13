@@ -220,7 +220,6 @@ export class UnitEditComponent implements OnInit {
   }
 
   searchResourceData(data: any) {
-    console.log(data);
     if (!!data.searchUnitNumber) {
       this.router.navigate(['unit/profile/', data.searchUnitNumber, 'edit']);
     }
@@ -248,7 +247,7 @@ export class UnitEditComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.projectNameOptionsLoading = true),
           switchMap(term => {
-            return this.lookupsService.loadProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+            return this.lookupsService.loadAllProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectNameOptionsLoading = false)
           )})

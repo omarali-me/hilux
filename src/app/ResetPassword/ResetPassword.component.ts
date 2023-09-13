@@ -34,7 +34,6 @@ export class ResetPasswordComponent implements OnInit {
   ngOnInit(): void {
     // this.response$ = this.fieldsService.getUrl('http://192.168.0.150:3000/login');
     const token = this.route.snapshot.paramMap.get('id');
-    console.log(token);
   }
 
   resetPassword(formData: any) {
@@ -61,7 +60,6 @@ export class ResetPasswordComponent implements OnInit {
       return this.toastr.error("كلمة المرور يجب ان تحتوي حروف خاصة \n Password must contain special characters", 'Error');
      }
      else {
-       console.log(password + " " + confirmPassword)
       // let fd = new FormData();
       // fd.append('data', JSON.stringify(formData));
       // this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/applications/loginAPI`, fd)
@@ -87,7 +85,6 @@ export class ResetPasswordComponent implements OnInit {
   }
   sendPasswordLinkToMail(formData: any) {
     if (!formData.email) return;
-    console.log(formData.email);
     this.ngxSmartModalService.getModal('addBlockToOwnerPropertiesModal').close();
   }
 
@@ -110,7 +107,6 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   addRow(row, index) {
-    console.log('add row', row);
     this.formData[row.row].push({});
   }
 

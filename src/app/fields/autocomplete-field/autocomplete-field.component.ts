@@ -47,7 +47,6 @@ export class AutocompleteFieldComponent implements OnInit {
   }
 
   setmyvalue(event: any) {
-    console.log('value changed', event.target.value);
     if (event.target.value.length > 3) {
       this.dataOptions = this.service.getFieldData(this.field, this.formData);
     }
@@ -132,7 +131,7 @@ export class AutocompleteFieldComponent implements OnInit {
 
   getViewResourceUrl() {
     let resourceName = this.field.auxInfo && this.field.auxInfo.entityName
-    return `/${resourceName}/profile/${this.formData[this.field.fieldID]}/edit`;
+    return `/${resourceName}/profile/${this.formData[this.field.fieldID]}/view`;
   }
 
   isActiveEditStep() {

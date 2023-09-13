@@ -60,7 +60,6 @@ export class RateViewComponent implements OnInit {
     this.roles$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/getUserRights`)
       .subscribe((res) => {
         this.userRole = res;
-        console.log(this.userRole);
         if (!Object.keys(this.userRole).includes("Admin") && !Object.keys(this.userRole).includes("Tathmeen")) {
           this.router.navigate(['/']);
         } else {
@@ -116,13 +115,9 @@ export class RateViewComponent implements OnInit {
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.kpiObj = data;
-          console.log("kpi api status success");
-          console.log(this.kpiObj);
         } else {
-          console.log("kpi api status fail");
         }
       }, (error) => {
-        console.log("error api kpi")
       })
   }
   loadProjectNameOptions() {
@@ -132,7 +127,7 @@ export class RateViewComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.projectNameOptionsLoading = true),
         switchMap(term => {
-          return this.lookupsService.loadProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+          return this.lookupsService.loadAllProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.projectNameOptionsLoading = false)
           )
@@ -334,9 +329,6 @@ export class RateViewComponent implements OnInit {
   }
 
   searchResourceData(data: any, searchApartmentId: any) {
-    console.log(" searchResourceData fun ...");
-    console.log(searchApartmentId.model)
-    console.log(data);
     if (data.searchProjectId) {
       this.router.navigate(['rate/profile/' + data.searchProjectId + "/" + searchApartmentId.model + "/view"]);
     }

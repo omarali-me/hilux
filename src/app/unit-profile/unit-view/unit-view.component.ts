@@ -71,6 +71,9 @@ export class UnitViewComponent implements OnInit {
       }
     });
   }
+  isSearchFormValid() {
+    return  !this.searchData.developerNameSearch && !this.searchData.projectNameSearch && !this.searchData.searchUnitNumber;
+  }
   editFun(){
      this.router.navigate(['unit/profile/', this.formData.id, 'edit']);
   }
@@ -144,7 +147,7 @@ export class UnitViewComponent implements OnInit {
   }
 
   loadunitsUsageTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/unitsUsageTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/ListOfUnitsUses`)
     .subscribe((data) => {
       this.unitsUsageTypesOptions = data;
     })
@@ -251,7 +254,13 @@ export class UnitViewComponent implements OnInit {
 
   searchResourceData(data: any) {
     if (!!data.searchUnitNumber) {
-      // this.router.navigate(['unit/profile/', data.searchUnitNumber, 'edit']);
+      this.router.navigate(['unit/profile/', data.searchUnitNumber, 'view'])
+      .then(() => {
+        window.location.reload();
+      });
+      this.searchData.searchDeveloperId =null;
+      this.searchData.searchProjectId =null;
+      this.searchData.searchUnitNumber =null;
     }
   }
 
@@ -277,7 +286,7 @@ export class UnitViewComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.projectNameOptionsLoading = true),
           switchMap(term => {
-            return this.lookupsService.loadProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+            return this.lookupsService.loadAllProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectNameOptionsLoading = false)
           )})

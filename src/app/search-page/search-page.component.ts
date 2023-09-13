@@ -99,7 +99,6 @@ export class SearchPageComponent implements OnInit {
     return Object.keys(data).includes(permission,);
   }
   searchData(formData: any) {
-    console.log(formData);
     let prepapedData = this.prepareFormData(formData)
     let fd = new FormData();
     fd.append('data', JSON.stringify(prepapedData));
@@ -164,7 +163,7 @@ export class SearchPageComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.projectDataOptionsLoading = true),
         switchMap(term => {
-          return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
+          return this.lookupsService.loadAllProjects({ term, developerId: this.formData.developerId }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.projectDataOptionsLoading = false)
           )
@@ -235,11 +234,9 @@ export class SearchPageComponent implements OnInit {
 
   setSearchType(field_name: string, event: any) {
     var val = event.target.value.trim();
-    console.log(field_name + "  " + val);
     this.setSearchByandTypeValues(val, field_name)
   }
   testEnter(field_name :string,val : any){
-    console.log(field_name + ' '  + val);
     this.setSearchByandTypeValues(val, field_name)
   }
 
@@ -397,7 +394,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   getViewResourceUrl(resourceId: any, resourceType: any) {
-    return `/${resourceType}/profile/${resourceId}/edit`;
+    return `/${resourceType}/profile/${resourceId}/view`;
   }
 
   getViewLegalBlocks(propertyId: any, resourceType: any = 'propertyId') {

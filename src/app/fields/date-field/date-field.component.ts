@@ -74,18 +74,15 @@ export class DateFieldComponent implements OnInit {
     if (name == 'startDate' && this.field['startDate']) {
       this.service.setDatesValues(this.field['startDate'], this.formData[name]);
       const datesValues = this.service.getDatesValues();
-      console.log(datesValues);
     }
   }
   addFun(val: string, id: string) {
-    console.log('add fun ' + id);
     const datesValues = this.service.getDatesValues();
     const obj = datesValues.filter(e => {
       return e.group == val;
     });
     if (obj.length > 0) {
       const startDate = obj[0].value;
-      console.log('start date  =' + obj[0].value);
       var date = new Date(startDate);
       var newDate = new Date(date);
       if (this.plusYear) {
@@ -103,7 +100,6 @@ export class DateFieldComponent implements OnInit {
       }
       var endDateModel = newDate || 'yyyy-MM-dd';
       this.formData[id] = endDateModel;
-      console.log("end date " + endDateModel);
     } else {
       var date = new Date();
       var newDate = new Date(date);
@@ -121,7 +117,6 @@ export class DateFieldComponent implements OnInit {
       }
       var endDateModel = newDate || 'yyyy-MM-dd';
       this.formData[id] = endDateModel;
-      console.log("end date " + endDateModel);
     }
 
   }

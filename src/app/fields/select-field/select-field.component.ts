@@ -57,7 +57,6 @@ export class SelectFieldComponent implements OnInit {
   }
 
   setmyvalue(value: any) {
-    console.log('value changed',value);
   }
 
   getText(field: any, key: string) {
