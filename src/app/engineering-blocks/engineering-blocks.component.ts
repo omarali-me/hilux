@@ -124,7 +124,7 @@ export class EngineeringBlocksComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.projectDataOptionsLoading = true),
         switchMap(term => {
-          return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
+          return this.lookupsService.loadAllProjects({ term, developerId: this.formData.developerId }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.projectDataOptionsLoading = false)
           )
@@ -364,7 +364,7 @@ export class EngineeringBlocksComponent implements OnInit {
 
   prepareProjectValueOptions(params: any) {
     if(!!params.projectId) {
-      this.lookupsService.loadProjects({ id: params.projectId })
+      this.lookupsService.loadAllProjects({ id: params.projectId })
       .subscribe((option)=> {
         this.projectsSearchInput$.next(option.value && option.value.ar);
       })

@@ -247,7 +247,7 @@ export class UnitProfileComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.projectNameOptionsLoading = true),
           switchMap(term => {
-            return this.lookupsService.loadProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+            return this.lookupsService.loadAllProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectNameOptionsLoading = false)
           )})

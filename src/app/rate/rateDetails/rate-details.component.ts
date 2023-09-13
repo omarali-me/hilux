@@ -216,7 +216,7 @@ export class RateDetailsComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.projectDataOptionsLoading = true),
         switchMap(term => {
-          return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
+          return this.lookupsService.loadAllProjects({ term, developerId: this.formData.developerId }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.projectDataOptionsLoading = false)
           )
@@ -354,7 +354,7 @@ export class RateDetailsComponent implements OnInit {
 
   prepareProjectValueOptions(profile: any) {
     if (!!profile.mainProjectId) {
-      this.lookupsService.loadProjects({ id: profile.mainProjectId })
+      this.lookupsService.loadAllProjects({ id: profile.mainProjectId })
         .subscribe((option) => {
           this.projectsSearchInput$.next(option.value && option.value.ar);
         })
