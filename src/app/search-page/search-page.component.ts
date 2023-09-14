@@ -51,7 +51,7 @@ export class SearchPageComponent implements OnInit {
   currentlyOwnedPropertiesByOwner: any = [];
   hideAttachmentsControl;
   roles$: object;
-  userRole:any;
+  userRole: any;
 
 
   searchby: any;
@@ -77,9 +77,9 @@ export class SearchPageComponent implements OnInit {
     this.loadBlockageEntities();
 
     this.roles$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/getUserRights`)
-    .subscribe((res) => {
-      this.userRole = res;
-    });
+      .subscribe((res) => {
+        this.userRole = res;
+      });
 
 
     this.route.queryParams.subscribe(async (params) => {
@@ -236,7 +236,7 @@ export class SearchPageComponent implements OnInit {
     var val = event.target.value.trim();
     this.setSearchByandTypeValues(val, field_name)
   }
-  testEnter(field_name :string,val : any){
+  testEnter(field_name: string, val: any) {
     this.setSearchByandTypeValues(val, field_name)
   }
 
@@ -394,7 +394,11 @@ export class SearchPageComponent implements OnInit {
   }
 
   getViewResourceUrl(resourceId: any, resourceType: any) {
-    return `/${resourceType}/profile/${resourceId}/view`;
+    if (resourceType == "owner") {
+      return `/${resourceType}/profile/${resourceId}/edit`;
+    } else {
+      return `/${resourceType}/profile/${resourceId}/view`;
+    }
   }
 
   getViewLegalBlocks(propertyId: any, resourceType: any = 'propertyId') {
@@ -423,10 +427,10 @@ export class SearchPageComponent implements OnInit {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
         }
-    }, (error) => {
-      this.toastr.error('Something went Wrong', 'Error')
-      this.router.navigate(['error'])
-    })
+      }, (error) => {
+        this.toastr.error('Something went Wrong', 'Error')
+        this.router.navigate(['error'])
+      })
   }
 
   resetAddBlockToOwnerPropertiesModal() {
@@ -485,10 +489,10 @@ export class SearchPageComponent implements OnInit {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
         }
-    }, (error) => {
-      this.toastr.error('Something went Wrong', 'Error')
-      this.router.navigate(['error'])
-    })
+      }, (error) => {
+        this.toastr.error('Something went Wrong', 'Error')
+        this.router.navigate(['error'])
+      })
   }
 
   getActiveLandDetails(land: any) {

@@ -23,7 +23,7 @@ export class OwnerProfileComponent implements OnInit {
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
       if (profile && profile.id) {
-        this.router.navigate([(profile.type && profile.type.toLowerCase()), 'profile', profile.id, 'edit'])
+        this.router.navigate([(profile.type && profile.type.toLowerCase()), 'profile', profile.id, 'view'])
       } else {
         this.toastr.error('Something went Wrong', 'Error')
         this.router.navigate(['error'])
