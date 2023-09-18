@@ -5991,8 +5991,20 @@
         <target>يتم سحب بيانات الأراضي من البلدية 
          يرجى الانتظار بعض الوقت</target>
       </trans-unit>
-      
-      
+         <trans-unit id="unitPricingSearch" datatype="html">
+      <source>Unit Pricing Search</source>
+        <target>بحث عن تسعير الوحدات</target>
+      </trans-unit>
+       <trans-unit id="unitNumber" datatype="html">
+        <source>Unit Number
+                          </source>
+        <target>رقم الوحدة العقارية
+                          </target>
+      </trans-unit>
+       <trans-unit id="price" datatype="html">
+        <source>Price</source>
+        <target>السعر</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
