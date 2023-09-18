@@ -32,7 +32,7 @@
       (open)="loadData()"
       (change)="setDisplayValue($event)"
       [multiple]="isMultiple()"
-      [disabled]="isActiveEditStep()"
+      [disabled]="isActiveEditStep() || isActiveRejectStep()"
       #ngModel="ngModel"
     >
     </ng-select>

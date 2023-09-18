@@ -16,11 +16,17 @@ export class MyTasksComponent implements OnDestroy, OnInit {
 
   // response: Observable<any>;
   // @ViewChild('dataTable') dataTable: ElementRef;
-  response: any;
+  myTasksResponse: any;
+  deparmentTasksResponse: any;
+  flagCallTasks :any;
+  flagCallDepTasks :any;
 
   dtOptions = {};
-  dtTrigger: Subject<any> = new Subject();
+  dtTriggerMyTasks: Subject<any> = new Subject();
+  dtTriggerDeparmentTasks: Subject<any> = new Subject();
 
+
+  expand=[]
 
   constructor(
     private fieldsService: FieldsService,
@@ -33,10 +39,16 @@ export class MyTasksComponent implements OnDestroy, OnInit {
   // }
 
   ngOnInit(): void {
+    this.flagCallTasks =false;
+    // setTimeout(() => {
+    //        this.displayData();
+    // }, 1000);
     this.displayData();
+    
+    // this.displayData();
     // this.response = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/myTasks`);
   }
-
+ 
   displayData() {
     this.dtOptions = {
       language: {
@@ -65,18 +77,49 @@ export class MyTasksComponent implements OnDestroy, OnInit {
     };
 
     this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/myTasks`).subscribe(
-      dataResponse => {
-        this.response = dataResponse;
-        this.dtTrigger.next();
+      dataResponseMyTasks => {
+        this.myTasksResponse = dataResponseMyTasks;
+        this.flagCallTasks =true;
+        this.dtTriggerMyTasks.next();
       },
       error => {
-        console.log(error);
+        this.flagCallTasks =true;
       }
     );
+
+    // this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/DeparmentTasks`).subscribe(
+    //   dataResponseDeparmentTasks => {
+    //     this.deparmentTasksResponse = dataResponseDeparmentTasks;
+    //     this.flagCallTasks =true;
+    //     this.dtTriggerDeparmentTasks.next();
+    //   },
+    //   error => {
+    //     this.flagCallTasks =true;
+    //   }
+    // );
+  }
+  loadDepFun (){
+    if (this.flagCallDepTasks == 1) {
+      return;
+    }else{
+      this.flagCallTasks=false;
+      this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/DeparmentTasks`).subscribe(
+        dataResponseDeparmentTasks => {
+          this.deparmentTasksResponse = dataResponseDeparmentTasks;
+          this.flagCallTasks =true;
+          this.dtTriggerDeparmentTasks.next();
+          this.flagCallDepTasks = 1;
+        },
+        error => {
+          this.flagCallTasks =true;
+        }
+      );
+    }
   }
   ngOnDestroy(): void {
     // Do not forget to unsubscribe the event
-    this.dtTrigger.unsubscribe();
+    this.dtTriggerMyTasks.unsubscribe();
+    this.dtTriggerDeparmentTasks.unsubscribe();
   }
   getItemText(field: any, key: any) {
     return ((field[key] && JSON.parse(field[key])).ar || '');
@@ -103,6 +146,58 @@ export class MyTasksComponent implements OnDestroy, OnInit {
     }
   }
 
+  getInvoiceStatusClass(item: any) {
+    switch (item.paymentStatus?.en.toLowerCase()) {
+      case 'not paid':
+        return 'badge-danger';
+      case 'paid':
+        return 'badge-success';
+      default:
+        return 'text-info';
+    }
+  }
+
+  getChannelText(item: any) {
+    switch (item.channel.toLowerCase()) {
+      case 'hilux':
+        return 'النظام الداخلي';
+      case 'eserviceportal':
+        return 'البوابة الالكترونية';
+      case 'adgbus':
+	return 'تطبيق عجمان ون';
+      case 'web':
+        return 'تطبيقات الهواتف الذكية';
+      default:
+        return '';
+    }
+  }
+
+  getPropertyDetailText(item: any) {
+     if (item.dataIn.landId != "" && item.dataIn.landId != undefined) {
+      return '<strong> رقم المميز : </strong> ' + item.dataIn.landId_displayValue;
+    }
+    
+    if (item.dataIn.propertyId != "" && item.dataIn.propertyId != undefined) {
+     return '<strong> مشروع : </strong> ' + item.dataIn.projectId_displayValue
+      +'\n'
+      + '<strong> وحدة : </strong> ' +item.dataIn.propertyId_displayValue;
+    }
+   }
+
+  checkStatusClass(item: any) {
+    switch (item.stepDetails.status.toLowerCase()) {
+      case 'pending':
+        return true;
+      case 'completed':
+      case 'locked':
+        return false;
+      default:
+        return true;
+    }
+  }
+
+
+
   performActionPerStatus(item: any) {
     if (item.stepDetails.status.toLowerCase() === 'pending') {
       this.router.navigate(['/notifications', item.stepDetails.applicationWorkflowStepID]);
@@ -111,5 +206,8 @@ export class MyTasksComponent implements OnDestroy, OnInit {
 
   getStepDetails(item: any) {
     return JSON.parse(item.applicationDetails.stepsExecuted);
+  }
+  getStepDetailsFirst(item: any) {
+    return JSON.parse(item.applicationDetails.stepsExecuted)[0];
   }
 }

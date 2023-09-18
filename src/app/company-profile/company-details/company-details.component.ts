@@ -26,7 +26,7 @@ export class CompanyDetailsComponent implements OnInit {
   companyNameOptions: Observable<any>;
   companyLicenseNumberOptions: Observable<any>;
   companyTypeOptions: any;
-  minDate:any;
+  minDate: any;
   dataOptionsLoading = false;
   companyNameOptionsLoading = false;
   companyLicenseNumberOptionsLoading = false;
@@ -34,6 +34,10 @@ export class CompanyDetailsComponent implements OnInit {
   searchCompanyNameInput$ = new Subject<string>();
   searchCompanyLicenseNumberInput$ = new Subject<string>();
   searchby: any;
+  ownersList: any;
+  ownerIdVal: any;
+  establishmentContractDmsId: any;
+  flagUpload: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -53,12 +57,26 @@ export class CompanyDetailsComponent implements OnInit {
     this.loadLicenseIssuerOptions();
     this.loadCompanyNameOptions();
     this.loadCompanyLicenseNumberOptions();
-
+    this.ownersList = [];
+    this.establishmentContractDmsId = [];
+    this.flagUpload = true;
     this.profile$ = this.route.data.pipe(pluck('profile'));
-    this.profile$.subscribe(async(profile: any) => {
+    this.profile$.subscribe(async (profile: any) => {
       if (profile && profile.id) {
         await this.prepareOwnerValueOptions(profile);
         this.formData = profile as any;
+        if (this.formData.establishmentContractDmsId.length > 0) {
+          this.flagUpload = false;
+          for (let index = 0; index < this.formData.establishmentContractDmsId.length; index++) {
+            let parts = this.formData.establishmentContractDmsId[index].split('.');
+            let ex = parts[parts.length - 1];
+            let obj = this.formData.establishmentContractDmsId[index]
+            this.establishmentContractDmsId.push(obj);
+            if ((index + 1) == this.formData.establishmentContractDmsId.length) {
+            }
+          }
+        }
+        // this.getOwnersData();
       } else {
         this.formData = { owners: [{}] };
       }
@@ -67,73 +85,142 @@ export class CompanyDetailsComponent implements OnInit {
 
   updateData(formData: any) {
     let fd = new FormData();
+   
+    if (!formData.establishmentContractFile) {
+      if (this.establishmentContractDmsId) {
+        formData.establishmentContractFile = this.establishmentContractDmsId;
+      }
+    }
+    if (formData.companyType == 2 || formData.companyType =="2") {
+      if (formData.owners && formData.owners.length > 0) {
+        formData.owners[0].share = 100 ;
+      }
+    }
     fd.append('company', JSON.stringify(formData));
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/companies/update/${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
+        
+          // this.router.navigate(['company/profile/' + formData.id + '/view'])
+          //   .then(() => {
+          //     window.location.reload();
+          //   });
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
         }
-    }, (error) => {
-      this.toastr.error('Something went Wrong', 'Error')
-      this.router.navigate(['error'])
-    })
+      }, (error) => {
+        this.toastr.error('Something went Wrong', 'Error')
+        this.router.navigate(['error'])
+      })
   }
 
   loadEmiratesOptions() {
     this.lookupsService.loadEmiratesOptions()
-    .subscribe((data) => {
-      this.emiratesOptions = data;
-    })
+      .subscribe((data) => {
+        this.emiratesOptions = data;
+      })
   }
 
   loadLicenseTypeOptions() {
     this.lookupsService.loadLicenseTypeOptions()
-    .subscribe((data) => {
-      this.licenseTypeOptions = data;
-    })
+      .subscribe((data) => {
+        this.licenseTypeOptions = data;
+      })
   }
 
-  loadOwnerOptions() {
-    this.ownerOptions = concat(
-      of([]), // default items
-      this.searchInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.dataOptionsLoading = true),
-          switchMap(term => {
-            return this.lookupsService.loadOwners({ term }).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.dataOptionsLoading = false)
-          )})
-      )
-    );
+  async loadOwnerOptions() {
+
+
+    // let vals = [];
+    // await this.searchInput$.subscribe(val => vals.push(val));
+    await this.searchInput$.subscribe(val => {
+      // vals.push(val);
+      this.LoadOptionsData(val);
+    });
+
+    // setTimeout(async () => {
+    //   if (vals.length > 0) {
+    //     for (let index = 0; index < vals.length; index++) {
+    //       let term = vals[index];
+    //       await setTimeout(() => {
+    //         this.lookupsService.loadOwners3({ term })
+    //           .subscribe((option) => {
+    //             // this.loadOwnerOptions(owner.ownerId)
+    //             let obj = option;
+    //             this.ownerOptions = concat(
+    //               of([]), // default items
+    //               [obj]
+    //             );
+    //           })
+    //       },
+    //         500)
+
+    //     }
+    //   } else {
+    //   }
+    // }, 500);
+
+
+    // this.ownerOptions = concat(
+    //   of([]), // default items
+    //   this.searchInput$.pipe(
+    //     distinctUntilChanged(),
+    //     tap(() => this.dataOptionsLoading = true),
+    //     switchMap(term => {
+    //       return this.lookupsService.loadOwners3({ term }).pipe(
+    //         catchError(() => of([])), // empty list on error
+    //         tap(() => this.dataOptionsLoading = false)
+    //       )
+    //     })
+    //   )
+    // );
+
+
+  }
+  async LoadOptionsData(term) {
+    await setTimeout(() => {
+      this.lookupsService.loadOwners3({ term })
+        .subscribe((option) => {
+          // this.loadOwnerOptions(owner.ownerId)
+          let obj = option;
+          this.ownerOptions = concat(
+            of([]), // default items
+            [obj]
+          );
+        })
+    },
+      500);
   }
 
   loadCompanyTypeOptions() {
     this.lookupsService.loadCompanyTypeOptions()
-    .subscribe((data) => {
-      this.companyTypeOptions = data;
-    })
+      .subscribe((data) => {
+        this.companyTypeOptions = data;
+      })
   }
 
   loadLicenseIssuerOptions() {
     this.lookupsService.loadLicenseIssuerOptions()
-    .subscribe((data) => {
-      this.licenseIssuerOptions = data;
-    })
+      .subscribe((data) => {
+        this.licenseIssuerOptions = data;
+      })
   }
 
-  isNotGovernmentInstitute () {
+  isNotGovernmentInstitute() {
     return this.formData.companyType && !(["3", "4", "5"].includes(this.formData.companyType) || [3, 4, 5].includes(this.formData.companyType))
   }
 
-  isNotGovernmentAndIndividualInstitute () {
-    return this.formData.companyType && !(["2", "3", "4", "5"].includes(this.formData.companyType) || [2, 3, 4, 5].includes(this.formData.companyType))
+  isNotGovernmentAndIndividualInstitute() {
+    return this.formData.companyType && !(
+      ["2", "3", "4", "5"].includes(this.formData.companyType)
+       ||
+        [2, 3, 4, 5].includes(this.formData.companyType)
+        )
   }
 
-  isGovernmentOrg () {
+  isGovernmentOrg() {
     return this.formData.companyType && (["3"].includes(this.formData.companyType) || [3].includes(this.formData.companyType))
   }
 
@@ -143,6 +230,7 @@ export class CompanyDetailsComponent implements OnInit {
 
   getOwnersData() {
     return this.formData.owners ? this.formData.owners : (this.formData.owners = [{}]);
+    // return this.ownersList =  this.formData.owners ? this.formData.owners :  [{}];
   }
 
   addRow() {
@@ -150,8 +238,8 @@ export class CompanyDetailsComponent implements OnInit {
   }
 
   deleteRow(index) {
-    _.remove(this.formData.owners, function(resource, i) {
-        return index === i;
+    _.remove(this.formData.owners, function (resource, i) {
+      return index === i;
     });
   }
 
@@ -160,14 +248,20 @@ export class CompanyDetailsComponent implements OnInit {
   }
 
   async prepareOwnerValueOptions(profile: any) {
-    for(let owner of (profile.owners || [])) {
+    for (let owner of (profile.owners || [])) {
       await setTimeout(() => {
-        this.lookupsService.loadOwners({ id: owner.ownerId })
-        .subscribe((option)=> {
-          this.searchInput$.next(option.value && option.value.ar);
-        })
+        this.lookupsService.loadOwners3({ id: owner.ownerId })
+          .subscribe((option) => {
+            // this.loadOwnerOptions(owner.ownerId)
+            this.searchInput$.next(option.value && option.value.ar);
+
+            // this.ownerOptions = concat(([option]));
+
+            // this.ownersList.push(option)
+            // this.ownerOptions=option;
+          })
       },
-      100)
+        100)
     }
   }
 
@@ -175,7 +269,7 @@ export class CompanyDetailsComponent implements OnInit {
     return {
       fieldID: "establishmentContractFile",
       fieldType: "fileupload",
-      required: true,
+      required: this.flagUpload,
       fieldName: {
         "ar": "establishmentContractFile",
         "en": "establishmentContractFile"
@@ -233,20 +327,25 @@ export class CompanyDetailsComponent implements OnInit {
 
   searchResourceData(data: any) {
     let value = !!data.term ? data.term : data.licenseNumber;
-    this.router.navigate(['company/profile/', value, 'edit']);
+    this.router.navigate(['company/profile/', value, 'edit'])
+    .then(() => {
+      window.location.reload();
+    });
+    this.searchData.term = null;
   }
 
   loadCompanyNameOptions() {
     this.companyNameOptions = concat(
       of([]), // default items
       this.searchCompanyNameInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.companyNameOptionsLoading = true),
-          switchMap(term => {
-            return this.lookupsService.loadCompanies({ term }).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.companyNameOptionsLoading = false)
-          )})
+        distinctUntilChanged(),
+        tap(() => this.companyNameOptionsLoading = true),
+        switchMap(term => {
+          return this.lookupsService.loadCompanies({ term }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.companyNameOptionsLoading = false)
+          )
+        })
       )
     );
   }
@@ -255,13 +354,14 @@ export class CompanyDetailsComponent implements OnInit {
     this.companyLicenseNumberOptions = concat(
       of([]), // default items
       this.searchCompanyLicenseNumberInput$.pipe(
-          distinctUntilChanged(),
-          tap(() => this.companyLicenseNumberOptionsLoading = true),
-          switchMap(licenseNumber => {
-            return this.lookupsService.loadCompanies({ licenseNumber }).pipe(
-              catchError(() => of([])), // empty list on error
-              tap(() => this.companyLicenseNumberOptionsLoading = false)
-          )})
+        distinctUntilChanged(),
+        tap(() => this.companyLicenseNumberOptionsLoading = true),
+        switchMap(licenseNumber => {
+          return this.lookupsService.loadCompanies({ licenseNumber }).pipe(
+            catchError(() => of([])), // empty list on error
+            tap(() => this.companyLicenseNumberOptionsLoading = false)
+          )
+        })
       )
     );
   }

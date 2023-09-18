@@ -52,7 +52,7 @@ export class UnitProfileComponent implements OnInit {
     this.minDate = new Date();
     this.loadDeveloperOptions();
     this.loadProjectsOptions();
-    this.loadLandsoptions();
+    // this.loadLandsoptions();
     this.loadUnitsTypesOptions();
     this.loadunitsUsageTypesOptions();
     this.loadDeveloperNameOptions();
@@ -141,7 +141,7 @@ export class UnitProfileComponent implements OnInit {
   }
 
   loadunitsUsageTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/unitsUsageTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/ListOfUnitsUses`)
     .subscribe((data) => {
       this.unitsUsageTypesOptions = data;
     })
@@ -247,7 +247,7 @@ export class UnitProfileComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.projectNameOptionsLoading = true),
           switchMap(term => {
-            return this.lookupsService.loadProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+            return this.lookupsService.loadAllProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectNameOptionsLoading = false)
           )})

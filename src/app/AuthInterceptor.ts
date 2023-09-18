@@ -17,7 +17,7 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
 
-    if (req.url !== 'https://wfe.ajm.re/ajaxupload.php') {
+    if (req.url !== 'https://wfe.ajre.gov.ae/ajaxupload.php') {
       req = req.clone({
         withCredentials: true
       });

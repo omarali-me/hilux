@@ -14,6 +14,7 @@ import { ChangeDetectorRef } from '@angular/core';
 export class CheckboxFieldComponent implements OnInit {
   dataOptions: any;
   isEditStep: boolean = false;
+  isRejectStep: boolean = false;
 
   @Input() field: Field;
 
@@ -35,6 +36,7 @@ export class CheckboxFieldComponent implements OnInit {
 
   ngOnInit(): void {
     this.isEditStep = (this.field.fieldID == 'editStep');
+    this.isRejectStep = (this.field.fieldID == 'rejectStep');
     this.service.getFieldData(this.field, this.fullFormData).subscribe((data)=> {
       this.dataOptions = data;
       this.getDefaultValue(this.field.fieldID);
@@ -65,6 +67,10 @@ export class CheckboxFieldComponent implements OnInit {
     this.prepareDisplayValues();
     if (this.isEditStep) {
       this.service.setIsEditStep($event.target.checked);
+    }
+
+    if (this.isRejectStep) {
+      this.service.setIsRejectStep($event.target.checked);
     }
   }
 
@@ -129,6 +135,10 @@ export class CheckboxFieldComponent implements OnInit {
   }
 
   isActiveEditStep() {
-    return this.isEditStep ? false : (this.service.isEditStep && (this.service.editStepField != this.field.fieldID));
+    return this.isEditStep ? false : (this.service.isEditStep && (this.service.editStepField != this.field.fieldID || this.service.editRemarksField != this.field.fieldID));
+  }
+
+  isActiveRejectStep() {
+    return this.isRejectStep ? false : (this.service.isRejectStep && (this.service.rejectReasonField != this.field.fieldID || this.service.rejectRemarksField != this.field.fieldID));
   }
 }

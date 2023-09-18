@@ -16,6 +16,16 @@ export class FieldsService {
 
   public isEditStep: boolean = false;
   public editStepField: any;
+  public editReasonField: any;
+  public editRemarksField: any;
+
+  public isRejectStep: boolean = false;
+  public rejectReasonField: any;
+  public rejectRemarksField: any;
+  
+  public datesValues: Array<{ group: string, value: string }> = [];
+
+  
 
   constructor(private http: HttpClient, private datePipe: DatePipe) {}
 
@@ -30,12 +40,26 @@ export class FieldsService {
   getModelName(field_id: string, formdata: any ) {
     return `${formdata}.${field_id}`
   }
+  setDatesValues(group: string , value: string) {
+    var obj ={
+      group:group,
+      value:value
+    }
+      this.datesValues = this.datesValues.filter(e => {
+        return e.group != group;
+      });
+    this.datesValues.push(obj);
+  }
+  getDatesValues (){
+    return this.datesValues;
+  }
 
   getFieldData(field: Field, formData:any = {}, params: any = {}) {
     if (field.auxInfo.source == 'api') {
       let preparedparams = this.prepareParams(formData, field.auxInfo.apiParams)
       let finalParams = Object.assign({}, preparedparams, params);
       let apiUrl: string = field.auxInfo.sourceDetails
+//      apiUrl = apiUrl.replace("https://wfe.ajre.gov.ae", "http://192.168.101.36");
       if (field.auxInfo && field.auxInfo.method && field.auxInfo.method == 'post')
         return this.postData(apiUrl, finalParams);
       return this.getUrl(apiUrl, finalParams);
@@ -203,12 +227,12 @@ export class FieldsService {
   }
 
   isRequired(value: any, field_name: any) {
-    if (this.isEditStep && ('stepToEdit' == field_name)) {
+    if ((this.isEditStep && ('stepToEdit' == field_name || 'editReason' == field_name)) || this.isRejectStep && ('rejectReason' == field_name)) {
       return true;
-    } else if (this.isEditStep && (this.editStepField == field_name)) {
+    } else if ((this.isEditStep && (this.editStepField == field_name || this.editReasonField == field_name )) || (this.isRejectStep && (this.rejectReasonField == field_name))) {
       return (value == "true" || value == true);
     } else {
-      return this.isEditStep ? false : (value == "true" || value == true);
+      return this.isEditStep || this.isRejectStep ? false : (value == "true" || value == true);
     }
   }
 
@@ -222,5 +246,25 @@ export class FieldsService {
 
   setSteptoEditField(field_name: any) {
     this.editStepField = field_name;
+  }
+
+  setEditRemarksField(field_name: any) {
+    this.editRemarksField = field_name;
+  }
+
+  setIsRejectStep(value: any) {
+    this.isRejectStep = value;
+  }
+
+  setEditReasonField(field_name: any) {
+    this.editReasonField = field_name;
+  }
+
+  setRejectReasonField(field_name: any) {
+    this.rejectReasonField = field_name;
+  }
+
+  setRejectRemarksField(field_name: any) {
+    this.rejectRemarksField = field_name;
   }
 }
