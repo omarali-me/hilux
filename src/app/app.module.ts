@@ -121,6 +121,8 @@ import { ApplicationSearchComponent } from './application-search/application-sea
 import { UnitsExcelUploadComponent } from './units-excel-upload/units-excel-upload.component';
 import { SingleApplicationSearchComponent } from './single-application-search/single-application-search.component';
 import { UnitsValuationComponent } from './units-valuation/units-valuation.component';
+import { PricingUnitComponent } from './rate/pricingUnit/pricingUnit-search.component';
+import { PricingUnitDetailsComponent } from './rate/pricingUnitDetails/pricingUnit-details.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 const maskConfig: Partial<IConfig> = {
@@ -235,7 +237,9 @@ const maskConfig: Partial<IConfig> = {
     SingleApplicationSearchComponent,
     UnitsValuationComponent,
     RateViewComponent,
-    newRateComponent
+    newRateComponent,
+    PricingUnitComponent,
+    PricingUnitDetailsComponent
   ],
   imports: [
     FormsModule,

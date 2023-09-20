@@ -10,10 +10,10 @@ import { LookupsService } from '../../shared/lookups.service';
 
 @Component({
   // selector: 'app-land-profile',
-  templateUrl: './rate-view.component.html',
-  styleUrls: ['./rate-view.component.css']
+  templateUrl: './pricingUnit-search.component.html',
+  styleUrls: ['./pricingUnit-search.component.css']
 })
-export class RateViewComponent implements OnInit {
+export class PricingUnitComponent implements OnInit {
   formData: any = { buildingDetails: {}, buildingFinishes: {} };
   searchData: any = {};
   formErrors: any = {};
@@ -44,6 +44,7 @@ export class RateViewComponent implements OnInit {
   kpiObj: any;
   roles$: object;
   userRole: any;
+  unitNumberOptions: any;
 
 
   constructor(
@@ -76,6 +77,7 @@ export class RateViewComponent implements OnInit {
           this.loadProjectNameOptions();
           this.loadApartmentNameOptions();
           this.getKpiFun();
+          this.loadUnitNumberOptions();
 
           this.profile$ = this.route.data.pipe(pluck('profile'));
           this.profile$.subscribe((profile: any) => {
@@ -89,7 +91,12 @@ export class RateViewComponent implements OnInit {
       });
   }
 
-
+  loadUnitNumberOptions() {
+    this.lookupsService.loadUnitsOptions({ projectId: this.searchData.searchProjectId })
+      .subscribe((data) => {
+        this.unitNumberOptions = data;
+      })
+  }
   saveData(formData: any) {
     let fd = new FormData();
     fd.append('land', JSON.stringify(formData));
@@ -108,10 +115,6 @@ export class RateViewComponent implements OnInit {
         this.router.navigate(['error'])
       })
   }
-  unitPricingFun (){
-    this.router.navigate(['pricingUnit']);
-  }
-
   getKpiFun() {
     // let fd = new FormData();
     // fd.append('land', JSON.stringify(formData));
@@ -131,7 +134,7 @@ export class RateViewComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.projectNameOptionsLoading = true),
         switchMap(term => {
-          return this.lookupsService.loadAllProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+          return this.lookupsService.loadAllProjects({ term }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.projectNameOptionsLoading = false)
           )
@@ -332,9 +335,9 @@ export class RateViewComponent implements OnInit {
     return (this.searchData[field_name] == undefined)
   }
 
-  searchResourceData(data: any, searchApartmentId: any) {
+  searchResourceData(data: any, unitNumberSearch: any) {
     if (data.searchProjectId) {
-      this.router.navigate(['rate/profile/' + data.searchProjectId + "/" + searchApartmentId.model + "/view"]);
+      this.router.navigate(['pricingUnit/profile/' + data.searchProjectId + "/" + unitNumberSearch.model + "/view"]);
     }
   }
 

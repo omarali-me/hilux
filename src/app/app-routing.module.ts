@@ -63,7 +63,8 @@ import { SingleApplicationSearchComponent } from './single-application-search/si
 import { ApplicationSearchResolver } from './shared/application_search.resolver';
 import { UnitsValuationComponent } from './units-valuation/units-valuation.component';
 import { RateDetailsComponent } from './rate/rateDetails/rate-details.component';
-
+import { PricingUnitComponent } from './rate/pricingUnit/pricingUnit-search.component';
+import { PricingUnitDetailsComponent } from './rate/pricingUnitDetails/pricingUnit-details.component';
 const routes: Routes = [
   { path: '', component: HomePageComponent, canActivate: [AuthenticationGuard] },
   { path: 'login', component: LoginComponent },
@@ -128,6 +129,7 @@ const routes: Routes = [
     ]
   },
   { path: 'rate', component: RateViewComponent, resolve: { profile: LandProfileResolver }, canActivate: [AuthenticationGuard] },
+  { path: 'pricingUnit', component: PricingUnitComponent, resolve: { profile: LandProfileResolver }, canActivate: [AuthenticationGuard] },
   { path: 'rate/new', component: newRateComponent, resolve: { profile: LandProfileResolver }, canActivate: [AuthenticationGuard] },
   {
     path: 'rate/profile/:profileId/:profileId2', component: RateViewComponent,
@@ -135,6 +137,14 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard],
     children: [
       { path: 'view', component: RateDetailsComponent },
+    ]
+  },
+  {
+    path: 'pricingUnit/profile/:profileId/:profileId2', component: RateViewComponent,
+    resolve: { profile: ProjectProfileResolver },
+    canActivate: [AuthenticationGuard],
+    children: [
+      { path: 'view', component: PricingUnitDetailsComponent },
     ]
   },
   { path: 'land/new', component: LandProfileComponent, resolve: { profile: LandProfileResolver }, canActivate: [AuthenticationGuard] },

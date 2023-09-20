@@ -1,0 +1,120 @@
+<section class="content" *ngIf="profile$ | async as profile">
+  <div class="container-fluid">
+    <app-alerts [errors]="formErrors"></app-alerts>
+    <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData,unitNumberSearch)" #sf="ngForm" enctype='multipart/form-data'
+      novalidate>
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@projectName">Project Name
+                <span>*</span>
+              </label>
+              <div class="col-sm-9">
+                <ng-select class="rtl" [items]="projectNameOptions | async" name="projectNameSearch"
+                  [hideSelected]="true" [minTermLength]="1" required="true" [(ngModel)]="searchData.searchProjectId"
+                  [loading]="projectNameOptionsLoading" bindLabel="value.ar" bindValue="key"
+                  typeToSearchText="Please enter 1 or more characters" notFoundText="لا يوجد نتائج للبحث"
+                  [typeahead]="searchProjectNameInput$" #projectNameSearch="ngModel">
+                </ng-select>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <!-- <label class="col-sm-3 col-form-label" i18n="@@apartmentType">Apartment Type</label> -->
+              <label class="col-sm-3 col-form-label" i18n="@@unitNumber">Unit Number</label>
+              <div class="col-sm-9">
+                <!-- <ng-select class="rtl" [items]="apartmentsNameOptions" name="searchApartmentId"
+                  [(ngModel)]="formData.searchApartmentId" bindLabel="value.ar" bindValue="key"
+                  notFoundText="لا يوجد نتائج للبحث" #searchApartmentId="ngModel">
+                </ng-select> -->
+                <ng-select required="true" [items]="unitNumberOptions" name="unitNumberSearch"
+                [(ngModel)]="searchData.searchUnitNumber" bindLabel="value.ar" bindValue="key"
+                notFoundText="لا يوجد نتائج للبحث" #unitNumberSearch="ngModel"
+                (open)="loadUnitNumberOptions()">
+              </ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer text-center">
+        <button type="submit" class="btn btn-primary" [disabled]="sf.invalid"
+          i18n="@@projectProfileSearchButton">Search</button>
+      </div>
+    </form>
+
+    <hr />
+
+    <form class="form-horizontal" (ngSubmit)="updateData(formData)" #f="ngForm" enctype='multipart/form-data'
+      novalidate>
+      <div class="card-body">
+        <!-- <div class="form-group row">
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" i18n="@@projectProfileDeveloper">Developer
+                <span>*</span>
+              </label>
+              <div class="col-sm-9">
+                <ng-select class="rtl" required="true" [items]="developerOptions | async" name="developer"
+                  [hideSelected]="true" [(ngModel)]="formData.developerId" [typeahead]="developerSearchInput$"
+                  bindLabel="value.ar" [minTermLength]="4" bindValue="key" [loading]="developerDataOptionsLoading"
+                  notFoundText="لا يوجد نتائج للبحث" typeToSearchText="Please enter 4 or more characters"
+                  #developer="ngModel" disabled="true">
+                </ng-select>
+                <div *ngIf="developer.invalid && (developer.dirty || developer.touched)" class="alert alert-danger">
+                  <div *ngIf="developer.errors?.required">
+                    Developer can not be blank
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div> -->
+        <div class="form-group row" *ngIf="pageData">
+          <table style="border: 1px solid black;width: 100%;">
+            <thead style="border: 1px solid black;">
+              <th style="border: 1px solid black; text-align: center;">
+                <label class="col-form-label" i18n="@@price">Price</label>
+              </th>
+              <th style="border: 1px solid black; text-align: center;">
+                <label class="col-form-label" i18n="@@remarks">Remarks</label>
+              </th>
+            </thead>
+            <tbody style="border: 1px solid black;">
+              <!-- <tr *ngFor="let item of formData.landTreeHistory let j = index"> -->
+              <tr >
+                <td style="border: 1px solid black; text-align: center;">
+                  <label class="col-form-label" >
+                    {{pageData.price}}
+                  </label>
+                </td>
+                <td style="border: 1px solid black; text-align: center;">
+                  <label class="col-form-label" *ngIf="pageData.remarks">
+                    {{pageData.remarks}}
+                  </label>
+                  <label class="col-form-label" *ngIf="! pageData.remarks">
+                    ---
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <label *ngIf="! pageData" class="col-form-label text-center"
+        style="width: 100%;text-align: center;"
+        i18n="@@noData">
+          Not Found Data
+        </label>
+      </div>
+      <!-- <div class="card-footer">
+        <button type="submit" class="btn btn-primary float-left" [disabled]="f.invalid"
+          i18n="@@formSubmitLabel">Submit</button>
+      </div> -->
+    </form>
+  </div>
+</section>
