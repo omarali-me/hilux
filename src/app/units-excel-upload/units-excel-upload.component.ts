@@ -87,9 +87,12 @@ export class UnitsExcelUploadComponent implements OnInit {
 
   uploadExcel(uploadData: any) {
     let fd = new FormData();
-    fd.append('zipFile', this.uploadedFile);
+    fd.append("projectId",uploadData.projectId)
+    fd.append('units', this.uploadedFile);
+    console.log(fd);
 
-    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/excel/createUnitsByZip`, fd)
+//    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/excel/createUnitsByZip`, fd)
+    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/DMS/editUnitsSubmit`, fd)
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
           this.resetUploadControl();
@@ -100,7 +103,7 @@ export class UnitsExcelUploadComponent implements OnInit {
         }
       }, (error) => {
         this.toastr.error('Something went Wrong', 'Error');
-        this.router.navigate(['error']);
+        // this.router.navigate(['error']);
       });
   }
 
