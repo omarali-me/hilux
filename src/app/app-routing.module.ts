@@ -65,6 +65,11 @@ import { UnitsValuationComponent } from './units-valuation/units-valuation.compo
 import { RateDetailsComponent } from './rate/rateDetails/rate-details.component';
 import { PricingUnitComponent } from './rate/pricingUnit/pricingUnit-search.component';
 import { PricingUnitDetailsComponent } from './rate/pricingUnitDetails/pricingUnit-details.component';
+import { PageOneComponent } from './pages/page1/page1.component';
+import { PageTwoComponent } from './pages/page2/page2.component';
+import { PageThreeComponent } from './pages/page3/page3.component';
+import { PageFourComponent } from './pages/page4/page4.component';
+
 const routes: Routes = [
   { path: '', component: HomePageComponent, canActivate: [AuthenticationGuard] },
   { path: 'login', component: LoginComponent },
@@ -189,6 +194,11 @@ const routes: Routes = [
   { path: 'units_excel_upload', component: UnitsExcelUploadComponent, canActivate: [AuthenticationGuard] },
   { path: 'application_search/:applicationId', component: SingleApplicationSearchComponent, canActivate: [AuthenticationGuard], resolve: { application_search: ApplicationSearchResolver } },
   { path: 'units_valuation', component: UnitsValuationComponent, canActivate: [AuthenticationGuard] },
+  { path: 'pageOne', component: PageOneComponent, canActivate: [AuthenticationGuard] },
+  { path: 'pageTwo', component: PageTwoComponent, canActivate: [AuthenticationGuard] },
+  { path: 'pageThree', component: PageThreeComponent, canActivate: [AuthenticationGuard] },
+  { path: 'pageFour', component: PageFourComponent, canActivate: [AuthenticationGuard] },
+
 ];
 
 @NgModule({
