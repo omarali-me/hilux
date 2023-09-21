@@ -3,7 +3,7 @@
   </pre>
 </div>
 <button type="button" class="btn btn-primary"
-  (click)="loadData()" [disabled]="isActiveEditStep()">
+  (click)="loadData()" [disabled]="isActiveEditStep() || isActiveRejectStep()">
   {{ getText(field, 'fieldName') }}
 </button>
 

@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
+import { ResetPasswordComponent } from './ResetPassword/ResetPassword.component';
 import { SignupComponent } from './signup/signup.component';
 import { InputFieldComponent } from './fields/input-field/input-field.component';
 import { SelectFieldComponent } from './fields/select-field/select-field.component';
@@ -78,18 +79,38 @@ import { AuthenticationGuard } from './authentication.guard';
 import { DisplayDataFormGeneratorComponent } from './display-data-form-generator/display-data-form-generator.component';
 import { HiddenFieldComponent } from './fields/hidden-field/hidden-field.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
+import { CustomerEditComponent } from './customer-profile/customer-edit/customer-edit.component';
+import { CustomerMainViewComponent } from './customer-profile/customer-mainView/customer-mainView.component';
 import { CustomerDetailsComponent } from './customer-profile/customer-details/customer-details.component';
+import { CustomerViewComponent } from './customer-profile/customer-view/customer-view.component';
 import { ProjectProfileComponent } from './project-profile/project-profile.component';
+import { ProjectEditComponent } from './project-profile/project-edit/project-edit.component';
+import { ProjectViewMainComponent } from './project-profile/project-view-main/project-view-main.component';
+import { ProjectViewComponent } from './project-profile/project-view/project-view.component';
 import { UnitProfileComponent } from './unit-profile/unit-profile.component';
+import { UnitEditComponent } from './unit-profile/unit-edit/unit-edit.component';
+import { UnitMainViewComponent } from './unit-profile/unit-mainView/unit-mainView.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
+import { CompanyEditComponent } from './company-profile/company-edit/company-edit.component';
+import { CompanyMainViewComponent } from './company-profile/company-mainView/company-mainView.component';
 import { UnitDetailsComponent } from './unit-profile/unit-details/unit-details.component';
+import { UnitViewComponent } from './unit-profile/unit-view/unit-view.component';
 import { ProjectDetailsComponent } from './project-profile/project-details/project-details.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CompanyDetailsComponent } from './company-profile/company-details/company-details.component';
+import { CompanyViewComponent } from './company-profile/company-view/company-view.component';
 import { OwnerProfileComponent } from './owner-profile/owner-profile.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { PropertiesProfileComponent } from './properties-profile/properties-profile.component';
 import { LandProfileComponent } from './land-profile/land-profile.component';
+import { LandEditComponent } from './land-profile/land-edit/land-edit.component';
+import { RateViewComponent } from './rate/rateView/rate-view.component';
+import { newRateComponent } from './rate/newRate/rate-new.component';
+import { RateDetailsComponent } from './rate/rateDetails/rate-details.component';
+import { LandMainViewComponent } from './land-profile/land-mainView/land-mainView.component';
+import { LandChangeNumberComponent } from './land-profile/landChangeNumber/land-changeNumber.component';
+import { LandnumberComponent } from './land-profile/landNumber/land-number.component';
+import { LandViewComponent } from './land-profile/land-view/land-view.component';
 import { LandDetailsComponent } from './land-profile/land-details/land-details.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { DeveloperProfileComponent } from './developer-profile/developer-profile.component';
@@ -100,12 +121,25 @@ import { ApplicationSearchComponent } from './application-search/application-sea
 import { UnitsExcelUploadComponent } from './units-excel-upload/units-excel-upload.component';
 import { SingleApplicationSearchComponent } from './single-application-search/single-application-search.component';
 import { UnitsValuationComponent } from './units-valuation/units-valuation.component';
+import { PricingUnitComponent } from './rate/pricingUnit/pricingUnit-search.component';
+import { PricingUnitDetailsComponent } from './rate/pricingUnitDetails/pricingUnit-details.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { PageOneComponent } from './pages/page1/page1.component';
+import { PageTwoComponent } from './pages/page2/page2.component';
+import { PageThreeComponent } from './pages/page3/page3.component';
+import { PageFourComponent } from './pages/page4/page4.component';
+
+
+const maskConfig: Partial<IConfig> = {
+	  validation: false,
+};
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     LoginComponent,
+    ResetPasswordComponent,
     SignupComponent,
     InputFieldComponent,
     SelectFieldComponent,
@@ -115,6 +149,7 @@ import { UnitsValuationComponent } from './units-valuation/units-valuation.compo
     NumberFieldComponent,
     LabelComponent,
     HeadingComponent,
+    UnitViewComponent,
     FieldComponent,
     FileUploadComponent,
     RadioButtonFieldComponent,
@@ -122,6 +157,7 @@ import { UnitsValuationComponent } from './units-valuation/units-valuation.compo
     CheckboxFieldComponent,
     EntitySelectComponent,
     StepSelectComponent,
+    RateDetailsComponent,
     DisplayFieldsComponent,
     DisplayImageComponent,
     DisplayImageGroupComponent,
@@ -130,6 +166,7 @@ import { UnitsValuationComponent } from './units-valuation/units-valuation.compo
     DisplayTableComponent,
     DisplayFieldDataComponent,
     DisplayFieldGroupComponent,
+    ProjectViewComponent,
     CustomPageComponent,
     FormComponent,
     RuleGeneratorComponent,
@@ -167,18 +204,33 @@ import { UnitsValuationComponent } from './units-valuation/units-valuation.compo
     DisplayDataFormGeneratorComponent,
     HiddenFieldComponent,
     CustomerProfileComponent,
+    CustomerEditComponent,
+    CustomerMainViewComponent,
     CustomerDetailsComponent,
+    CustomerViewComponent,
     ProjectProfileComponent,
+    ProjectEditComponent,
+    ProjectViewMainComponent,
     UnitProfileComponent,
+    UnitEditComponent,
+    UnitMainViewComponent,
     CompanyProfileComponent,
+    CompanyEditComponent,
+    CompanyMainViewComponent,
     UnitDetailsComponent,
     ProjectDetailsComponent,
     ErrorPageComponent,
     CompanyDetailsComponent,
+    CompanyViewComponent,
     OwnerProfileComponent,
     AlertsComponent,
     PropertiesProfileComponent,
     LandProfileComponent,
+    LandEditComponent,
+    LandMainViewComponent,
+    LandChangeNumberComponent,
+    LandnumberComponent,
+    LandViewComponent,
     LandDetailsComponent,
     SearchPageComponent,
     DeveloperProfileComponent,
@@ -188,7 +240,15 @@ import { UnitsValuationComponent } from './units-valuation/units-valuation.compo
     ApplicationSearchComponent,
     UnitsExcelUploadComponent,
     SingleApplicationSearchComponent,
-    UnitsValuationComponent
+    UnitsValuationComponent,
+    RateViewComponent,
+    newRateComponent,
+    PricingUnitComponent,
+    PricingUnitDetailsComponent,
+    PageOneComponent,
+    PageTwoComponent,
+    PageThreeComponent,
+    PageFourComponent
   ],
   imports: [
     FormsModule,
@@ -203,7 +263,9 @@ import { UnitsValuationComponent } from './units-valuation/units-valuation.compo
     OwlNativeDateTimeModule,
     PrettyJsonModule,
     ToastrModule.forRoot({ positionClass: 'toast-top-left'}),
-    DataTablesModule
+    DataTablesModule,
+    NgxMaskModule.forRoot(maskConfig),
+
   ],
   providers: [
     AuthenticationGuard,

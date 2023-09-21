@@ -33,8 +33,8 @@
                         >
                             <div class="container-fluid">
                                 <app-alerts [errors]="formErrors"></app-alerts>
-
-                                <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data' novalidate>
+                                <!-- // hashem search customer -->
+                                <!-- <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data' novalidate>
                                   <div class="card-body">
                                     <div class="form-group row">
                                       <div class="col-sm-6">
@@ -44,20 +44,20 @@
                                             <ng-select
                                               class="rtl"
                                               [items]="ownerNameOptions | async"
-                                              name="ownerNameSearch"
+                                              name="term"
                                               [hideSelected]="true"
                                               [minTermLength]="1"
                                               [(ngModel)]="searchData.term"
                                               [loading]="ownerNameOptionsLoading"
                                               bindLabel="value.ar"
-                                              bindValue="value.entityId"
+                                              bindValue="key"
                                               typeToSearchText="Please enter 1 or more characters"
                                               notFoundText="لا يوجد نتائج للبحث"
                                               [typeahead]="searchOwnerNameInput$"
                                               (keyup)="setSearchType('term', $event)"
                                               [disabled]="isSearchBy('uniqueId')"
                                               (blur)="checkTypeAndValues('term')"
-                                              #ownerNameSearch="ngModel"
+                                              #term="ngModel"
                                             >
                                             </ng-select>
                                           </div>
@@ -96,9 +96,9 @@
                                   </div>
                             
                                   <div class="card-footer text-center">
-                                    <button type="submit" class="btn btn-primary" [disabled]="isSearchFormValid()" i18n="@@customerProfileSearchButton">Search</button>
+                                    <button type="submit" class="btn btn-primary"  [disabled]="isSearchFormValid()"  i18n="@@customerProfileSearchButton">Search</button>
                                   </div>
-                                </form>
+                                </form> -->
                             
                                 <hr/>
                 
@@ -388,7 +388,7 @@
                                                         i18n="@@customerProfilePassportnumberissuancedate"
                                                     >
                                                         Passport number issuance date
-                                                        <span>*</span>
+                                                        <span></span>
                                                     </label>
                                                     <div class="col-sm-9">
                                                         <input
@@ -396,7 +396,7 @@
                                                             class="form-control"
                                                             name="passportIssueDate"
                                                             (dateTimeChange)="formatDate('passportIssueDate')"
-                                                            required="true"
+                                                            required="false"
                                                             [(ngModel)]="formData.passportIssueDate"
                                                             [max]="minDate"
                                                             [owlDateTime]="dt5"

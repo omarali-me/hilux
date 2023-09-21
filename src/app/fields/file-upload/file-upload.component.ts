@@ -96,7 +96,15 @@ export class FileUploadComponent implements OnInit {
     let form = new FormData();
     let values = (this.isMultiple() ? (this.formData[fieldId] || []) : ( !!this.formData[fieldId] ? [this.formData[fieldId]] : []))
     form.append(`${fieldId}`, file);
-    return this.http.post<any>(`https://wfe.ajm.re/ajaxupload.php`, form).subscribe((data: any) => {
+    let parts = file.name.split('.');
+    let ex =parts[parts.length - 1];
+    if (ex.toLowerCase() != "png" && ex.toLowerCase()!= "jpg" && ex.toLowerCase() != "pdf" && ex.toLowerCase() != "jpeg") {
+      this.progressBar.nativeElement.style.width = `${percentage}%`;
+      alert( ex +  "  صيغة الملف غير مدعومة \n الصيغ المدعومة هي  " + " Jpj , Png and Pdf ");
+      return;
+    }
+    else{
+      return this.http.post<any>(`https://wfe.ajre.gov.ae/ajaxupload.php`, form).subscribe((data: any) => {
         if (data.status == 'success') {
           // Add value to formData
           values.push(data.data[fieldId]);
@@ -108,9 +116,9 @@ export class FileUploadComponent implements OnInit {
           this.progressBar.nativeElement.style.width = `${percentage}%`;
         }
       }, (error) => {
-        console.log('error', error)
         this.progressBar.nativeElement.style.width = `${percentage}%`;
       })
+    }
   }
 
   private appendIfValid(data: any, fieldId: string) {
@@ -192,7 +200,8 @@ export class FileUploadComponent implements OnInit {
   }
 
   isMultiple() {
-    return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isMultiple(this.field.auxInfo.multiple) : false);
+    // return ((this.field.auxInfo && this.field.auxInfo.multiple) ? this.service.isMultiple(this.field.auxInfo.multiple) : false);
+    return true;
   }
 
   getUploadedFiles() {
@@ -201,5 +210,9 @@ export class FileUploadComponent implements OnInit {
 
   isActiveEditStep() {
     return this.service.isEditStep && (this.service.editStepField != this.field.fieldID);
+  }
+
+  isActiveRejectStep() {
+    return this.service.isRejectStep && (this.service.rejectReasonField != this.field.fieldID);
   }
 }

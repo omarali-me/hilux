@@ -7,7 +7,7 @@
       [name]="field_detail.value.en"
       (change)="handleChange($event)"
       [checked]="isChecked(field_detail.key)"
-      [disabled]="isActiveEditStep()"
+      [disabled]="isActiveEditStep() || isActiveRejectStep()"
     />
     <label class="form-check-label">{{ getText(field_detail, 'value') }}</label>
   </div>

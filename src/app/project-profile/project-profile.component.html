@@ -23,7 +23,7 @@
             <section class="content" *ngIf="formData && !formData.id">
               <div class="container-fluid">
                 <app-alerts [errors]="formErrors"></app-alerts>
-                <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data' novalidate>
+                <!-- <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data' novalidate>
                   <div class="card-body">
                     <div class="form-group row">
                       <div class="col-sm-6">
@@ -87,11 +87,12 @@
                     <button type="submit" class="btn btn-primary" [disabled]="sf.invalid" i18n="@@projectProfileSearchButton">Search</button>
                   </div>
                 </form>
-            
+             -->
                 <hr/>
 
                 <form class="form-horizontal" (ngSubmit)="saveData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
                   <div class="card-body">
+                  
                     <div class="form-group row">
                       <div class="col-sm-6">
                         <div class="form-group row">
@@ -108,8 +109,8 @@
                               bindLabel="value.ar" [minTermLength]="4"
                               bindValue="key" [loading]="developerDataOptionsLoading"
                               notFoundText="لا يوجد نتائج للبحث" typeToSearchText="Please enter 4 or more characters"
-                              #developer="ngModel"
-                            >
+                              #developer="ngModel">
+                              
                             </ng-select>
                             <div *ngIf="developer.invalid && (developer.dirty || developer.touched)" class="alert alert-danger">
                               <div *ngIf="developer.errors?.required">
@@ -351,6 +352,51 @@
                         </div>
                       </div>
                       <div class="col-sm-6">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" i18n="@@projectProfileProjectStatus">Project Status
+                            <span>*</span>
+                          </label>
+                          <div class="col-sm-9">
+                            <ng-select
+                              class="rtl"
+                              [items]="projectStatusOptions"
+                              required="true"
+                              name="projectStatus"
+                              [(ngModel)]="formData.projectStatusId"
+                              bindLabel="value.ar"
+                              bindValue="key"
+                              notFoundText="لا يوجد نتائج للبحث" (change)="setProjectCompletionPercentage()"
+                              #projectStatus="ngModel"
+                            >
+                            </ng-select>
+                            <div *ngIf="projectStatus.invalid && (projectStatus.dirty || projectStatus.touched)" class="alert alert-danger">
+                              <div *ngIf="projectStatus.errors?.required">
+                                Project Status can not be blank
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      
+                      <div class="col-sm-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label" i18n="@@projectProfileProjectCompletionpercentage">Project Completion percentage
+                            <span>*</span>
+                          </label>
+                          <div class="col-sm-9">
+                            <input name="projectCompletionpercentage" type="text" class="form-control" required="true" [(ngModel)]="formData.projectCompletionpercentage" #projectCompletionpercentage="ngModel" numbersOnly precision="0" [disabled]="isProjectCompleted()">
+                            <div *ngIf="projectCompletionpercentage.invalid && (projectCompletionpercentage.dirty || projectCompletionpercentage.touched)" class="alert alert-danger">
+                              <div *ngIf="projectCompletionpercentage.errors?.pattern || projectCompletionpercentage.errors?.required">
+                                Enter valid Project Completion Percentage
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
@@ -639,68 +685,26 @@
                       </div>
                     </div>
 
-                    <div class="form-group row">
-                      <div class="col-sm-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label" i18n="@@projectProfileProjectStatus">Project Status
-                            <span>*</span>
-                          </label>
-                          <div class="col-sm-9">
-                            <ng-select
-                              class="rtl"
-                              [items]="projectStatusOptions"
-                              required="true"
-                              name="projectStatus"
-                              [(ngModel)]="formData.projectStatusId"
-                              bindLabel="value.ar"
-                              bindValue="key"
-                              notFoundText="لا يوجد نتائج للبحث" (change)="setProjectCompletionPercentage()"
-                              #projectStatus="ngModel"
-                            >
-                            </ng-select>
-                            <div *ngIf="projectStatus.invalid && (projectStatus.dirty || projectStatus.touched)" class="alert alert-danger">
-                              <div *ngIf="projectStatus.errors?.required">
-                                Project Status can not be blank
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label" i18n="@@projectProfileProjectCompletionpercentage">Project Completion percentage
-                            <span>*</span>
-                          </label>
-                          <div class="col-sm-9">
-                            <input name="projectCompletionpercentage" type="text" class="form-control" required="true" [(ngModel)]="formData.projectCompletionpercentage" #projectCompletionpercentage="ngModel" numbersOnly precision="0" [disabled]="isProjectCompleted()">
-                            <div *ngIf="projectCompletionpercentage.invalid && (projectCompletionpercentage.dirty || projectCompletionpercentage.touched)" class="alert alert-danger">
-                              <div *ngIf="projectCompletionpercentage.errors?.pattern || projectCompletionpercentage.errors?.required">
-                                Enter valid Project Completion Percentage
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                
 
                     <div class="form-group row">
                       <div class="col-sm-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label" i18n="@@projectProfileConsultant">Consultant
-                            <span>*</span>
+                            <span></span>
                           </label>
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
                               [items]="consultantsOptions"
                               name="consultant"
-                              required="true"
+                              required="false"
                               [(ngModel)]="formData.consultantId"
                               bindLabel="value.ar"
                               bindValue="key"
                               notFoundText="لا يوجد نتائج للبحث"
                               #consultant="ngModel"
-                            >
+                              >
                             </ng-select>
                             <div *ngIf="consultant.invalid && (consultant.dirty || consultant.touched)" class="alert alert-danger">
                               <div *ngIf="consultant.errors?.required">
@@ -730,14 +734,14 @@
                       <div class="col-sm-6">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label" i18n="@@projectProfileContractor">Contractor
-                            <span>*</span>
+                            <span></span>
                           </label>
                           <div class="col-sm-9">
                             <ng-select
                               class="rtl"
                               [items]="contractorsOptions"
                               name="contractor"
-                              required="true"
+                              required="false"
                               [(ngModel)]="formData.contractorId"
                               bindLabel="value.ar"
                               bindValue="key"

@@ -35,6 +35,8 @@ export class LandProfileComponent implements OnInit {
   searchOldLandOptions: Observable<any>;
   searchOldLandIdInput$ = new Subject<string>();
   searchOldLandOptionsLoading = false;
+  distructsTypesOptions: any;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -56,6 +58,7 @@ export class LandProfileComponent implements OnInit {
     this.loadPropertyTypesOptions();
     this.loadLandNameOptions();
     this.loadSearchOldLandIdOptions();
+    this.loadDistructsTypesOptions();
     
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
@@ -83,6 +86,12 @@ export class LandProfileComponent implements OnInit {
     }, (error) => {
       this.toastr.error('Something went Wrong', 'Error')
       this.router.navigate(['error'])
+    })
+  }
+  loadDistructsTypesOptions() {
+    this.lookupsService.loadSectionsOptions()
+    .subscribe((data) => {
+      this.distructsTypesOptions = data;
     })
   }
 

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
 import { environment } from '../../../environments/environment';
-
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -13,22 +13,34 @@ import { environment } from '../../../environments/environment';
 export class SidebarComponent implements OnInit {
   menuItems$: Observable<any>;
   items: any;
+  isLoggedIn: any;
   openSubMenu: boolean = false;
   openSubmenuIndex: any;
   searchInput$ = '';
 
-  constructor(private fieldsService: FieldsService, private http: HttpClient) { }
+  constructor(private fieldsService: FieldsService,private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`);
+    this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices?channel=hilux`);
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/isLoggedIn`)
+      .subscribe((res) => {
+        this.isLoggedIn = res;
+      });
+
   }
 
   searchtServices() {
     if (this.searchInput$ === '') {
-      this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`);
+      this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices?channel=hilux`);
     } else {
-      this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices`, { search: this.searchInput$ });
+      this.menuItems$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/getServices?channel=hilux`, { search: this.searchInput$ });
     }
+  }
+  navigateServicesName(key: any) {
+     this.router.navigate(['service/' + key ])
+            .then(() => {
+              window.location.reload();
+            });
   }
 
   getServiceProviderItem(data: any) {
@@ -50,7 +62,6 @@ export class SidebarComponent implements OnInit {
   }
 
   callServicehandler(item: any) {
-    console.log('here submenu', item)
   }
 
   toggleClass(event: any) {

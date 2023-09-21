@@ -1,83 +1,280 @@
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <div class="container-fluid col-lg-11">
-      <div class="row mb-2">
-        <div class="m-2 text-dark">
-          <h1 i18n="@@myTaskpageHeadingLabel">My Tasks</h1>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid col-lg-11">
+            <div class="row mb-2">
+                <div class="m-2 text-dark">
+                    <h1 i18n="@@myTaskpageHeadingLabel">My Tasks</h1>
+                </div>
+            </div>
         </div>
-      </div>
-    </div><!-- /.container-fluid -->
-  </section>
+        <!-- /.container-fluid -->
+    </section>
 
-  <!-- Main content -->
-  <section class="content">
-    <div class="container-fluid col-lg-11">
-      <div class="card card-purple">
-        <div class="card-header">
-          <h3 class="card-title">مهامي</h3>
-        </div>
-        <div class="card-body">
-          <div class="box-body table-responsive no-padding">
-            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped ">
-              <thead>
-                <tr class="text-center">
-                  <th scope="col" style="width: 1%;" class="text-center">#</th>
-                  <th scope="col" style="width: 10%;">الطلب</th>
-                  <th scope="col" style="width: 15%;">الخدمة</th>
-                  <th scope="col" class="text-center">الخطوات المنجزة</th>
-                  <th scope="col" style="width: 15%;" class="text-center">الوقت</th>
-                  <th scope="col" style="width: 10%;" class="text-center">الحالة</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr (click)="performActionPerStatus(item)" *ngFor="let item of response; let i = index">
-                  <td>{{i +1}}</td>
-                  <td>{{item.applicationDetails?.applicationID}}</td>
-                  <td>{{getItemText(item.serviceDetails, 'serviceName')}}</td>
-                  <td>
+    <!-- Main content -->
+    <section class="content">
+        <div  class="container-fluid col-lg-11">
+            <div class="card card-purple card-tabs">
+                <div class="card-header p-0 pt-1">
+                    <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill"
+                                href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home"
+                                aria-selected="true">مهامي</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" (click)="loadDepFun()" id="custom-tabs-one-profile-tab" data-toggle="pill"
+                                href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile"
+                                aria-selected="false">قسم</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="custom-tabs-one-tabContent">
+                        <div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel"
+                            aria-labelledby="custom-tabs-one-home-tab">
+                            <div class="box-body table-responsive no-padding">
+                                <table id="MyTasks" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTriggerMyTasks"
+                                    class="table table-bordered table-striped ">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th scope="col" style="width: 1%;" class="text-center">
+                                                <label class="col-form-label" i18n="@@no">#</label> 
+                                            </th>
+                                            <th scope="col" style="width: 9%;" class="text-center">
+                                                <label class="col-form-label" i18n="@@source">Source</label> 
+                                            </th>
+                                            <th scope="col" style="width: 2%;">
+                                                <label class="col-form-label" i18n="@@request">Request</label> 
+                                            </th>
+                                            <th scope="col" style="width: 15%;">
+                                                <label class="col-form-label" i18n="@@applicationSearchTableServiceName">Service</label> 
+                                            </th>
+                                            <th scope="col" style="width: 15%;">
+                                                <label class="col-form-label" i18n="@@details">Details</label> 
+                                            </th>
+                                            <th scope="col" style="width: 2%;">
+                                                <label class="col-form-label" i18n="@@receipt">Receipt</label> 
+                                            </th>
+                                            <!-- <th scope="col" class="text-center">
+                                                الخطوات المنجزة
+                                            </th> -->
+                                            <th scope="col" style="width: 10%;" class="text-center">
+                                                <label class="col-form-label" i18n="@@time">Time</label> 
+                                            </th>
+                                            <th scope="col" style="width: 7%;" class="text-center">
+                                                <label class="col-form-label" i18n="@@status">Status</label> 
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of myTasksResponse; let i = index">
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                {{i +1}}</td>
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                {{getChannelText(item)}}
+                                            </td>
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                {{item.applicationDetails?.applicationID}}
+                                            </td>
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                {{getItemText(item.serviceDetails, 'serviceName')}}
+                                            </td>
+                                            <td (click)="performActionPerStatus(item)" style="white-space: pre;"
+                                                class="text-center align-middle"
+                                                [innerHTML]="getPropertyDetailText(item)">
+                                            </td>
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                <span class="badge" [ngClass]="getInvoiceStatusClass(item)">
+                                                    {{item.paymentStatus?.ar}}
+                                                </span>
+                                            </td>
 
-                    <!-- The time line -->
-                    <div class="timeline" *ngIf="item.applicationDetails?.stepsExecuted">
-                      <!-- timeline time label -->
-                      <!-- <div class="time-label">
-                        <span class="bg-red">10 Feb. 2014</span>
-                      </div> -->
-                      <!-- END timeline time label -->
-                      <!-- timeline item -->
-                      <div *ngFor="let rowItem of getStepDetails(item); let j = index">
-                        <i class="fas fa-user bg-green"></i>
-                        <div class="timeline-item">
-                          <span class="time"><i class="fas fa-clock"></i> {{rowItem.timeExecuted | date:'medium'}} </span>
-                          <h3 class="timeline-header no-border">
-                            Step Name: {{rowItem.stepName}}
-                            UserID:{{rowItem.userID}}
-                          </h3>
+                                            <!-- <td (click)="expand[i] = !expand[i]">
+
+
+                                                <div class="timeline" *ngIf="item.applicationDetails?.stepsExecuted">
+                                                    <span class="float-right"><i
+                                                            class="expand fas fa-expand bg-purple position-relative"></i></span>
+                                                    <div *ngIf="getStepDetailsFirst(item) as rowItem">
+
+
+                                                        <i class="fas fa-user bg-green"></i>
+                                                        <div class="timeline-item">
+                                                            <span class="time">
+                                                                <i class="fas fa-clock"></i>
+                                                                {{rowItem.timeExecuted | date:'medium'}}
+                                                            </span>
+                                                            <h3 class="timeline-header no-border">
+                                                                Step Name: {{rowItem.stepName}}
+                                                                UserID:{{rowItem.userID}}
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <div [hidden]="!expand[i]"
+                                                        *ngFor="let rowItem of getStepDetails(item); let j = index">
+                                                        <i class="fas fa-user bg-green"></i>
+                                                        <div class="timeline-item">
+                                                            <span class="time">
+                                                                <i class="fas fa-clock"></i>
+                                                                {{rowItem.timeExecuted | date:'medium'}}
+                                                            </span>
+                                                            <h3 class="timeline-header no-border">
+                                                                Step Name: {{rowItem.stepName}}
+                                                                UserID:{{rowItem.userID}}
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </td> -->
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                {{getTimeAvailable(item) | date}}
+                                                <br>
+                                                {{getTimeAvailable(item) | date:'shortTime'}}
+                                            </td>
+
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                <span class="badge" [ngClass]="getStatusClass(item)">
+                                                    {{item.stepDetails?.status}}
+                                                </span>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- <<div *ngIf="!myTasksResponse&& myTasksResponse.length == 0" style=" border: 16px solid #f3f3f3; /* Light grey */
+                                border-top: 16px solid #3498db; /* Blue */
+                                border-radius: 50%;
+                                width: 120px;
+                                height: 120px;
+                                animation: spin 2s linear infinite;"></div> -->
+                            </div>
                         </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <div>
-                        <i class="fas fa-clock bg-gray"></i>
-                      </div>
+                        <div class="tab-pane fade" id="custom-tabs-one-profile" role="tabpanel"
+                            aria-labelledby="custom-tabs-one-profile-tab">
+                            <div class="box-body table-responsive no-padding">
+                                <table id="DeparmentTasks" datatable [dtOptions]="dtOptions"
+                                    [dtTrigger]="dtTriggerDeparmentTasks" class="table table-bordered table-striped ">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th scope="col" style="width: 1%;" class="text-center">
+                                                #
+                                            </th>
+                                            <th scope="col" style="width: 9%;" class="text-center">
+                                                المصدر
+                                            </th>
+                                            <th scope="col" style="width: 2%;">
+                                                الطلب
+                                            </th>
+                                            <th scope="col" style="width: 15%;">
+                                                الخدمة
+                                            </th>
+                                            <th scope="col" style="width: 15%;">
+                                                تفاصيل
+                                            </th>
+                                            <th scope="col" class="text-center">
+                                                الخطوات المنجزة
+                                            </th>
+                                            <th scope="col" style="width: 10%;" class="text-center">
+                                                الوقت
+                                            </th>
+                                            <th scope="col" style="width: 7%;" class="text-center">
+                                                الحالة
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of deparmentTasksResponse; let i = index">
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                {{i +1}}</td>
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                {{getChannelText(item)}}
+                                            </td>
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                {{item.applicationDetails?.applicationID}}
+                                            </td>
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                {{getItemText(item.serviceDetails, 'serviceName')}}
+                                            </td>
+                                            <td (click)="performActionPerStatus(item)" style="white-space: pre;"
+                                                class="text-center align-middle"
+                                                [innerHTML]="getPropertyDetailText(item)">
+                                            </td>
+                                            <td (click)="expand[i] = !expand[i]">
+
+                                                <!-- The time line -->
+
+                                                <div class="timeline" *ngIf="item.applicationDetails?.stepsExecuted">
+                                                    <!-- timeline time label -->
+                                                    <!-- <div class="time-label">
+                                <span class="bg-red">10 Feb. 2014</span>
+                              </div> -->
+                                                    <!-- END timeline time label -->
+                                                    <!-- timeline item -->
+                                                    <span class="float-right"><i
+                                                            class="expand fas fa-expand bg-purple position-relative"></i></span>
+                                                    <div *ngIf="getStepDetailsFirst(item) as rowItem">
+
+
+                                                        <i class="fas fa-user bg-green"></i>
+                                                        <div class="timeline-item">
+                                                            <span class="time">
+                                                                <i class="fas fa-clock"></i>
+                                                                {{rowItem.timeExecuted | date:'medium'}}
+                                                            </span>
+                                                            <h3 class="timeline-header no-border">
+                                                                Step Name: {{rowItem.stepName}}
+                                                                UserID:{{rowItem.userID}}
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <div [hidden]="!expand[i]"
+                                                        *ngFor="let rowItem of getStepDetails(item); let j = index">
+                                                        <i class="fas fa-user bg-green"></i>
+                                                        <div class="timeline-item">
+                                                            <span class="time">
+                                                                <i class="fas fa-clock"></i>
+                                                                {{rowItem.timeExecuted | date:'medium'}}
+                                                            </span>
+                                                            <h3 class="timeline-header no-border">
+                                                                Step Name: {{rowItem.stepName}}
+                                                                UserID:{{rowItem.userID}}
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <!-- END timeline item -->
+
+                                                </div>
+                                                <!-- ENF The time line -->
+                                            </td>
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                {{getTimeAvailable(item) | date}}
+                                                <br>
+                                                {{getTimeAvailable(item) | date:'shortTime'}}
+                                            </td>
+
+                                            <td (click)="performActionPerStatus(item)" class="text-center align-middle">
+                                                <span class="badge" [ngClass]="getStatusClass(item)">
+                                                    {{item.stepDetails?.status}}
+                                                </span>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <!-- ENF The time line -->
-                  </td>
+                    <!-- <label *ngIf="!myTasksResponse || !myTasksResponse.length ||myTasksResponse.length == 0" > Loading Data ....</label> -->
 
-                  <td class="text-center align-middle">{{getTimeAvailable(item) | date}} <br>
-                    {{getTimeAvailable(item) | date:'shortTime'}}
-                  </td>
-
-                  <td class="text-center align-middle">
-                    <span class="badge" [ngClass]="getStatusClass(item)">{{item.stepDetails?.status}}</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                </div>
+                <!-- /.card -->
+            </div>
         </div>
-        <!-- /.card-body -->
-      </div>
-    </div><!-- /.container-fluid -->
-  </section>
-  <!-- /.content -->
+       
+            <div *ngIf="!flagCallTasks" class="loader"></div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 </div>

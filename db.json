@@ -1,10 +1,634 @@
 {
+  "27799": {
+    "id": "27799",
+    "nameAr": "test3",
+    "nameEn": "",
+    "normalizedArabicName": "test3",
+    "emiratesId": null,
+    "passportNumber": "",
+    "otherId": null,
+    "otherIdTypeId": null,
+    "gender": null,
+    "dateOfBirth": null,
+    "nationalityCode": null,
+    "emiratesIdIssueDate": null,
+    "emiratesIdExpiryDate": null,
+    "passportIssueDate": null,
+    "passportExpiryDate": null,
+    "phone": "0",
+    "phone2": null,
+    "email": "",
+    "address": null,
+    "homePhone": "0",
+    "trxId": null,
+    "hasTrx": "0",
+    "trxEmirateId": null,
+    "contactPreferencesTypeId": null,
+    "timeToContactPreferencesId": null,
+    "customerCategoryId": null,
+    "customerTypeId": "9",
+    "isDead": null,
+    "jobTitle": null,
+    "emirateId": null,
+    "countryOfResidence": null,
+    "employer": null,
+    "remarks": null,
+    "ownerId": "27795",
+    "tempCustomerId": "24928",
+    "tempArraId": null,
+    "tempArraIds": null,
+    "moiUnifiedNumber": null,
+    "createdAt": "2020-06-12 14:19:44",
+    "createdBy": "1",
+    "modifiedAt": "2020-06-12 14:19:44",
+    "modifiedBy": "1"
+  },
+  "loginAPI": {
+    "status": "success",
+    "message": "Successfully logged in admin",
+    "data": []
+  },
+  "myTasks": [
+    {
+      "serviceDetails": {
+        "serviceID": "33",
+        "serviceCategoryID": "6",
+        "serviceName": "{\"ar\":\"تسجيل عقار جديد\",\"en\":\"Registration of a new real estate\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2731",
+        "serviceID": "33",
+        "serviceWorkflowDefinitionID": "5",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 13:38:46\",\"stepName\":4,\"userID\":null}]",
+        "latestStatus": "{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\"}",
+        "latestUsers": "1",
+        "statusTimestamps": "[{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\",\"0\":{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\"}},{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0631\\u0636\",\"en\":\"Create New Land\"}]",
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10663",
+        "applicationID": "2731",
+        "stepNumber": "4",
+        "stepStatus": "{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\"}",
+        "timeStampInEffect": "2020-09-30 13:38:46",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": "10662",
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": null,
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": null,
+        "dataOut": null,
+        "status": "pending"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "33",
+        "serviceCategoryID": "6",
+        "serviceName": "{\"ar\":\"تسجيل عقار جديد\",\"en\":\"Registration of a new real estate\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2731",
+        "serviceID": "33",
+        "serviceWorkflowDefinitionID": "5",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 13:38:46\",\"stepName\":4,\"userID\":\"محمد الغول \"}]",
+        "latestStatus": "{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\"}",
+        "latestUsers": "1",
+        "statusTimestamps": "[{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\",\"0\":{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\"}},{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0631\\u0636\",\"en\":\"Create New Land\"}]",
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10662",
+        "applicationID": "2731",
+        "stepNumber": "2",
+        "stepStatus": "{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0631\\u0636\",\"en\":\"Create New Land\"}",
+        "timeStampInEffect": "2020-09-30 13:37:06",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": "10661",
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": null,
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": "null",
+        "dataOut": null,
+        "status": "completed"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "33",
+        "serviceCategoryID": "6",
+        "serviceName": "{\"ar\":\"تسجيل عقار جديد\",\"en\":\"Registration of a new real estate\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2731",
+        "serviceID": "33",
+        "serviceWorkflowDefinitionID": "5",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 13:38:46\",\"stepName\":4,\"userID\":null}]",
+        "latestStatus": "{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\"}",
+        "latestUsers": "1",
+        "statusTimestamps": "[{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\",\"0\":{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\"}},{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0631\\u0636\",\"en\":\"Create New Land\"}]",
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10661",
+        "applicationID": "2731",
+        "stepNumber": "1",
+        "stepStatus": "{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\"}",
+        "timeStampInEffect": "2020-09-30 13:37:00",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": null,
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": "2020-09-30 13:37:06",
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": "{\"applicationID\":\"2731\",\"landId\":\"105329997\"}",
+        "dataOut": null,
+        "status": "completed"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "33",
+        "serviceCategoryID": "6",
+        "serviceName": "{\"ar\":\"تسجيل عقار جديد\",\"en\":\"Registration of a new real estate\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2724",
+        "serviceID": "33",
+        "serviceWorkflowDefinitionID": "5",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 13:30:51\",\"stepName\":6,\"userID\":null}]",
+        "latestStatus": "{\"ar\":\"\\u0627\\u0644\\u062f\\u0641\\u0639\",\"en\":\"payment\"}",
+        "latestUsers": "1",
+        "statusTimestamps": "[{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\",\"0\":{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\"}},{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0631\\u0636\",\"en\":\"Create New Land\"},{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\",\"0\":{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\"}},{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0644\\u0627\\u064a\\u0635\\u0627\\u0644\",\"en\":\"Create Invoice\"}]",
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10660",
+        "applicationID": "2724",
+        "stepNumber": "6",
+        "stepStatus": "{\"ar\":\"\\u0627\\u0644\\u062f\\u0641\\u0639\",\"en\":\"payment\"}",
+        "timeStampInEffect": "2020-09-30 13:30:51",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": "10659",
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": "2020-09-30 13:30:53",
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": null,
+        "dataOut": null,
+        "status": "locked"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "33",
+        "serviceCategoryID": "6",
+        "serviceName": "{\"ar\":\"تسجيل عقار جديد\",\"en\":\"Registration of a new real estate\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2724",
+        "serviceID": "33",
+        "serviceWorkflowDefinitionID": "5",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 13:30:51\",\"stepName\":6,\"userID\":null}]",
+        "latestStatus": "{\"ar\":\"\\u0627\\u0644\\u062f\\u0641\\u0639\",\"en\":\"payment\"}",
+        "latestUsers": "1",
+        "statusTimestamps": "[{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\",\"0\":{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\"}},{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0631\\u0636\",\"en\":\"Create New Land\"},{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\",\"0\":{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\"}},{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0644\\u0627\\u064a\\u0635\\u0627\\u0644\",\"en\":\"Create Invoice\"}]",
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10659",
+        "applicationID": "2724",
+        "stepNumber": "5",
+        "stepStatus": "{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0644\\u0627\\u064a\\u0635\\u0627\\u0644\",\"en\":\"Create Invoice\"}",
+        "timeStampInEffect": "2020-09-30 13:30:51",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": "10650",
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": null,
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": "null",
+        "dataOut": null,
+        "status": "completed"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "7",
+        "serviceCategoryID": "7",
+        "serviceName": "{\"ar\":\"تسجيل إلغاء/ تعديل الوصية ( تكميلية)\",\"en\":\"Registration of the cancellation/modification of the will (Complementary)\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2730",
+        "serviceID": "7",
+        "serviceWorkflowDefinitionID": "55",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 13:30:29\",\"stepName\":2,\"userID\":\"1\"}]",
+        "latestStatus": "{\"ar\":\"Registertion of a unit Ar\",\"en\":\"Registertion of a unit En\"}",
+        "latestUsers": "1",
+        "statusTimestamps": "[{\"ar\":\"Registertion of a unit Ar\",\"en\":\"Registertion of a unit En\",\"0\":{\"ar\":\"Registertion of a unit Ar\",\"en\":\"Registertion of a unit En\"}}]",
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10658",
+        "applicationID": "2730",
+        "stepNumber": "2",
+        "stepStatus": "{\"ar\":\"Registertion of a unit Ar\",\"en\":\"Registertion of a unit En\"}",
+        "timeStampInEffect": "2020-09-30 13:30:29",
+        "toUsers": "{\"stepUser\":[1]}",
+        "parentStepID": "10657",
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": "2020-09-30 13:30:51",
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": null,
+        "dataOut": null,
+        "status": "locked"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "7",
+        "serviceCategoryID": "7",
+        "serviceName": "{\"ar\":\"تسجيل إلغاء/ تعديل الوصية ( تكميلية)\",\"en\":\"Registration of the cancellation/modification of the will (Complementary)\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2730",
+        "serviceID": "7",
+        "serviceWorkflowDefinitionID": "55",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 13:30:29\",\"stepName\":2,\"userID\":\"1\"}]",
+        "latestStatus": "{\"ar\":\"Registertion of a unit Ar\",\"en\":\"Registertion of a unit En\"}",
+        "latestUsers": "1",
+        "statusTimestamps": "[{\"ar\":\"Registertion of a unit Ar\",\"en\":\"Registertion of a unit En\",\"0\":{\"ar\":\"Registertion of a unit Ar\",\"en\":\"Registertion of a unit En\"}}]",
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10657",
+        "applicationID": "2730",
+        "stepNumber": "1",
+        "stepStatus": "{\"ar\":\"Registertion of a unit Ar\",\"en\":\"Registertion of a unit En\"}",
+        "timeStampInEffect": "2020-09-30 13:30:13",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": null,
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": "2020-09-30 13:30:29",
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": "{\"applicationID\":\"2730\",\"test2\":\"kjhkj\",\"customerId\":[\"54\"],\"nationalityCode\":\"AFG\",\"customerId_displayValue\":[\"101010011\"],\"nationalityCode_displayValue\":\"\\u0623\\u0641\\u063a\\u0627\\u0646\\u0633\\u062a\\u0627\\u0646 \\u0627\\u0644\\u0625\\u0633\\u0644\\u0627\\u0645\\u064a\\u0629\"}",
+        "dataOut": null,
+        "status": "completed"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "77",
+        "serviceCategoryID": "11",
+        "serviceName": "{\"ar\":\"تسجيل الرهن - اسكان\",\"en\":\"Mortgage registration - Housing program\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2729",
+        "serviceID": "77",
+        "serviceWorkflowDefinitionID": "77",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 13:30:11\",\"stepName\":1,\"userID\":\"1\"}]",
+        "latestStatus": "{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration For Residance\"}",
+        "latestUsers": "1",
+        "statusTimestamps": null,
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10656",
+        "applicationID": "2729",
+        "stepNumber": "1",
+        "stepStatus": "{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration For Residance\"}",
+        "timeStampInEffect": "2020-09-30 13:30:11",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": null,
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": null,
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": null,
+        "dataOut": null,
+        "status": "locked"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "39",
+        "serviceCategoryID": "11",
+        "serviceName": "{\"ar\":\"تسجيل الرهن\",\"en\":\"Mortgage registration\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2728",
+        "serviceID": "39",
+        "serviceWorkflowDefinitionID": "61",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 13:27:49\",\"stepName\":1,\"userID\":\"1\"}]",
+        "latestStatus": "{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration\"}",
+        "latestUsers": "1",
+        "statusTimestamps": null,
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10655",
+        "applicationID": "2728",
+        "stepNumber": "1",
+        "stepStatus": "{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration\"}",
+        "timeStampInEffect": "2020-09-30 13:27:49",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": null,
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": null,
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": null,
+        "dataOut": null,
+        "status": "locked"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "39",
+        "serviceCategoryID": "11",
+        "serviceName": "{\"ar\":\"تسجيل الرهن\",\"en\":\"Mortgage registration\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2727",
+        "serviceID": "39",
+        "serviceWorkflowDefinitionID": "61",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 13:16:38\",\"stepName\":1,\"userID\":\"1\"}]",
+        "latestStatus": "{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration\"}",
+        "latestUsers": "1",
+        "statusTimestamps": null,
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10654",
+        "applicationID": "2727",
+        "stepNumber": "1",
+        "stepStatus": "{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration\"}",
+        "timeStampInEffect": "2020-09-30 13:16:38",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": null,
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": null,
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": null,
+        "dataOut": null,
+        "status": "locked"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "39",
+        "serviceCategoryID": "11",
+        "serviceName": "{\"ar\":\"تسجيل الرهن\",\"en\":\"Mortgage registration\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2726",
+        "serviceID": "39",
+        "serviceWorkflowDefinitionID": "61",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 12:45:49\",\"stepName\":1,\"userID\":\"1\"}]",
+        "latestStatus": "{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration\"}",
+        "latestUsers": "1",
+        "statusTimestamps": null,
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10653",
+        "applicationID": "2726",
+        "stepNumber": "1",
+        "stepStatus": "{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration\"}",
+        "timeStampInEffect": "2020-09-30 12:45:49",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": null,
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": null,
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": null,
+        "dataOut": null,
+        "status": "locked"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "39",
+        "serviceCategoryID": "11",
+        "serviceName": "{\"ar\":\"تسجيل الرهن\",\"en\":\"Mortgage registration\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2725",
+        "serviceID": "39",
+        "serviceWorkflowDefinitionID": "61",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 12:44:57\",\"stepName\":2,\"userID\":\"1\"}]",
+        "latestStatus": "{\"ar\":\"\\u0625\\u0636\\u0627\\u0641\\u0629 \\u0627\\u0644\\u0631\\u0647\\u0646\",\"en\":\"Adding Mortigage\"}",
+        "latestUsers": "1",
+        "statusTimestamps": "[{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration\",\"0\":{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration\"}}]",
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10652",
+        "applicationID": "2725",
+        "stepNumber": "2",
+        "stepStatus": "{\"ar\":\"\\u0625\\u0636\\u0627\\u0641\\u0629 \\u0627\\u0644\\u0631\\u0647\\u0646\",\"en\":\"Adding Mortigage\"}",
+        "timeStampInEffect": "2020-09-30 12:44:57",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": "10651",
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": "2020-09-30 12:45:07",
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": null,
+        "dataOut": null,
+        "status": "locked"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "39",
+        "serviceCategoryID": "11",
+        "serviceName": "{\"ar\":\"تسجيل الرهن\",\"en\":\"Mortgage registration\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2725",
+        "serviceID": "39",
+        "serviceWorkflowDefinitionID": "61",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 12:44:57\",\"stepName\":2,\"userID\":\"1\"}]",
+        "latestStatus": "{\"ar\":\"\\u0625\\u0636\\u0627\\u0641\\u0629 \\u0627\\u0644\\u0631\\u0647\\u0646\",\"en\":\"Adding Mortigage\"}",
+        "latestUsers": "1",
+        "statusTimestamps": "[{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration\",\"0\":{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration\"}}]",
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10651",
+        "applicationID": "2725",
+        "stepNumber": "1",
+        "stepStatus": "{\"ar\":\"\\u0628\\u062f\\u0621 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0627\\u0644\\u0631\\u0647\\u0646 \\u0627\\u0644\\u0639\\u0642\\u0627\\u0631\\u064a\",\"en\":\"Start Mortigage registration\"}",
+        "timeStampInEffect": "2020-09-30 12:42:17",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": null,
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": "2020-09-30 12:44:57",
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": "{\"applicationID\":\"2725\",\"landId\":null}",
+        "dataOut": null,
+        "status": "completed"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "33",
+        "serviceCategoryID": "6",
+        "serviceName": "{\"ar\":\"تسجيل عقار جديد\",\"en\":\"Registration of a new real estate\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2724",
+        "serviceID": "33",
+        "serviceWorkflowDefinitionID": "5",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 13:30:51\",\"stepName\":6,\"userID\":null}]",
+        "latestStatus": "{\"ar\":\"\\u0627\\u0644\\u062f\\u0641\\u0639\",\"en\":\"payment\"}",
+        "latestUsers": "1",
+        "statusTimestamps": "[{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\",\"0\":{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\"}},{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0631\\u0636\",\"en\":\"Create New Land\"},{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\",\"0\":{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\"}},{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0644\\u0627\\u064a\\u0635\\u0627\\u0644\",\"en\":\"Create Invoice\"}]",
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10650",
+        "applicationID": "2724",
+        "stepNumber": "4",
+        "stepStatus": "{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\"}",
+        "timeStampInEffect": "2020-09-30 12:07:07",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": "10649",
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": "2020-09-30 13:30:51",
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": "{\"applicationID\":\"2724\",\"ownerId\":[\"78893\"],\"share\":[\"100\"],\"wakeelId\":[\"11266\"],\"ownerId_displayValue\":[\"\\u0645\\u062d\\u0645\\u062f \\u0634\\u064a\\u062e\\u0648\\u0627\\u062a \\u062d\\u0633\\u064a\\u0646 \\u0645\\u0648\\u0644\\u0627 \"],\"wakeelId_displayValue\":[\"\\u0633\\u0639\\u064a\\u062f \\u0639\\u0644\\u064a \\u0628\\u0648\\u0637\\u0648\\u064a\\u0644 \\u0627\\u0644\\u0645\\u0637\\u0631\\u0648\\u0634\\u064a\"],\"ownershipTypeId\":\"1\",\"applicantId\":\"11247\",\"applicantTypeId\":\"1\",\"sitePlanFile\":\"https:\\/\\/wfe.ajm.re\\/ajaxuploads\\/2020-09-30_13-19-04_7db1f8503aeacc50faa3d40af778e25cafc5a3ca.png\",\"municipalityApprovalFile\":\"https:\\/\\/wfe.ajm.re\\/ajaxuploads\\/2020-09-30_13-19-08_cfc8de24ee3a7d58c40fc603e8c7ee11165068c4.png\",\"identityFile\":\"https:\\/\\/wfe.ajm.re\\/ajaxuploads\\/2020-09-30_13-19-11_cfc8de24ee3a7d58c40fc603e8c7ee11165068c4.png\",\"companyFiles\":\"https:\\/\\/wfe.ajm.re\\/ajaxuploads\\/2020-09-30_13-19-15_cfc8de24ee3a7d58c40fc603e8c7ee11165068c4.png\",\"ownershipTypeId_displayValue\":\"\\u0627\\u0644\\u0634\\u0631\\u0627\\u0621\",\"applicantId_displayValue\":\"\\u0639\\u0644\\u064a \\u0639\\u0628\\u062f\\u0627\\u0644\\u0644\\u0647 \\u0645\\u062d\\u0645\\u062f \\u0627\\u0644\\u0633\\u0639\\u064a\\u062f\\u064a\",\"applicantTypeId_displayValue\":\"\\u0645\\u0627\\u0644\\u0643\"}",
+        "dataOut": null,
+        "status": "completed"
+      }
+    },
+    {
+      "serviceDetails": {
+        "serviceID": "33",
+        "serviceCategoryID": "6",
+        "serviceName": "{\"ar\":\"تسجيل عقار جديد\",\"en\":\"Registration of a new real estate\"}",
+        "serviceDescription": ""
+      },
+      "applicationDetails": {
+        "applicationID": "2724",
+        "serviceID": "33",
+        "serviceWorkflowDefinitionID": "5",
+        "stepsExecuted": "[{\"timeExecuted\":\"2020-09-30 13:30:51\",\"stepName\":6,\"userID\":null}]",
+        "latestStatus": "{\"ar\":\"\\u0627\\u0644\\u062f\\u0641\\u0639\",\"en\":\"payment\"}",
+        "latestUsers": "1",
+        "statusTimestamps": "[{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\",\"0\":{\"ar\":\"\\u0628\\u062f\\u0621 \\u062e\\u062f\\u0645\\u0629 \\u062a\\u0633\\u062c\\u064a\\u0644 \\u0639\\u0642\\u0627\\u0631 \\u062c\\u062f\\u064a\\u062f\",\"en\":\"star new land registration\"}},{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0631\\u0636\",\"en\":\"Create New Land\"},{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\",\"0\":{\"ar\":\"\\u0628\\u064a\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\",\"en\":\"Service Form\"}},{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0644\\u0627\\u064a\\u0635\\u0627\\u0644\",\"en\":\"Create Invoice\"}]",
+        "userTimestamps": null,
+        "entities": null,
+        "nationalitiesServed": null,
+        "customersServed": null
+      },
+      "stepDetails": {
+        "applicationWorkflowStepID": "10649",
+        "applicationID": "2724",
+        "stepNumber": "2",
+        "stepStatus": "{\"ar\":\"\\u0627\\u0646\\u0634\\u0627\\u0621 \\u0627\\u0631\\u0636\",\"en\":\"Create New Land\"}",
+        "timeStampInEffect": "2020-09-30 12:04:56",
+        "toUsers": "{\"userID\":[\"1\"]}",
+        "parentStepID": "10648",
+        "latestUserID": "1",
+        "latestUserIDTimeStamp": null,
+        "latestTimeToRespond": null,
+        "totalTimeToRespond": null,
+        "historyUserAndTimeResponses": null,
+        "dataIn": "null",
+        "dataOut": null,
+        "status": "completed"
+      }
+    }
+  ],
   "notifications": [
     {
       "applicationWorkflowStepID": "27",
       "applicationID": "28",
       "stepNumber": "2",
-      "stepStatus": {"ar":"customer service","en":"customer service"},
+      "stepStatus": {
+        "ar": "customer service",
+        "en": "customer service"
+      },
       "timeStampInEffect": "2020-05-16 00:52:10",
       "status": "completed"
     },
@@ -12,7 +636,10 @@
       "applicationWorkflowStepID": "28",
       "applicationID": "28",
       "stepNumber": "3",
-      "stepStatus": {"ar":"payment","en":"payment"},
+      "stepStatus": {
+        "ar": "payment",
+        "en": "payment"
+      },
       "timeStampInEffect": "2020-05-16 12:54:29",
       "status": "pending"
     },
@@ -20,7 +647,10 @@
       "applicationWorkflowStepID": "30",
       "applicationID": "29",
       "stepNumber": "2",
-      "stepStatus": {"ar":"customer service","en":"customer service"},
+      "stepStatus": {
+        "ar": "customer service",
+        "en": "customer service"
+      },
       "timeStampInEffect": "2020-05-22 23:13:26",
       "status": "rejected"
     },
@@ -28,7 +658,10 @@
       "applicationWorkflowStepID": "30",
       "applicationID": "29",
       "stepNumber": "2",
-      "stepStatus": {"ar":"customer service","en":"customer service"},
+      "stepStatus": {
+        "ar": "customer service",
+        "en": "customer service"
+      },
       "timeStampInEffect": "2020-05-17 11:13:26",
       "status": "testing"
     },
@@ -36,7 +669,10 @@
       "applicationWorkflowStepID": "30",
       "applicationID": "29",
       "stepNumber": "2",
-      "stepStatus": {"ar":"customer service","en":"customer service"},
+      "stepStatus": {
+        "ar": "customer service",
+        "en": "customer service"
+      },
       "timeStampInEffect": "2020-05-17 11:13:26",
       "status": "pending"
     },
@@ -44,434 +680,557 @@
       "applicationWorkflowStepID": "30",
       "applicationID": "29",
       "stepNumber": "2",
-      "stepStatus": {"ar":"customer service","en":"customer service"},
+      "stepStatus": {
+        "ar": "customer service",
+        "en": "customer service"
+      },
       "timeStampInEffect": "2020-05-17 11:13:26",
       "status": "pending"
     }
   ],
-
   "menu": {
     "1": {
-        "serviceCategoryName": {
-            "ar": "root",
-            "en": "root"
-        },
-        "services": {
-            "1": {
-                "ar": "testService",
-                "en": "testService"
-            }
+      "serviceCategoryName": {
+        "ar": "root",
+        "en": "root"
+      },
+      "services": {
+        "1": {
+          "ar": "testService",
+          "en": "testService"
         }
+      }
     },
     "3": {
-        "serviceCategoryName": {
-            "ar": "\u0627\u0644\u0627\u0641\u0627\u062f\u0627\u062a",
-            "en": "Testimonies"
+      "serviceCategoryName": {
+        "ar": "الافادات",
+        "en": "Testimonies"
+      },
+      "services": {
+        "37": {
+          "ar": "اصدار شهادة لمن يهمه الأمر",
+          "en": "Issuance of a `To Whomsoever It May Concern` certificate"
         },
-        "services": {
-            "37": {
-                "ar": "\u0627\u0635\u062f\u0627\u0631 \u0634\u0647\u0627\u062f\u0629 \u0644\u0645\u0646 \u064a\u0647\u0645\u0647 \u0627\u0644\u0623\u0645\u0631",
-                "en": "Issuance of a `To Whomsoever It May Concern` certificate"
-            },
-            "38": {
-                "ar": "\u0635\u0648\u0631\u0629 \u0637\u0628\u0642 \u0627\u0644\u0623\u0635\u0644",
-                "en": "Identical copy of the original"
-            }
+        "38": {
+          "ar": "صورة طبق الأصل",
+          "en": "Identical copy of the original"
         }
+      }
     },
     "4": {
-        "serviceCategoryName": {
-            "ar": "\u0627\u0644\u062a\u062d\u0648\u0637",
-            "en": "Hedge Services"
+      "serviceCategoryName": {
+        "ar": "التحوط",
+        "en": "Hedge Services"
+      },
+      "services": {
+        "45": {
+          "ar": "إلغاء التحوط في السجل ( تكميلية)",
+          "en": "Cancellation of security (Complementary)"
         },
-        "services": {
-            "45": {
-                "ar": "\u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u062a\u062d\u0648\u0637 \u0641\u064a \u0627\u0644\u0633\u062c\u0644 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Cancellation of security (Complementary)"
-            },
-            "46": {
-                "ar": "\u0627\u0644\u062a\u062d\u0648\u0637",
-                "en": "Security"
-            }
+        "46": {
+          "ar": "التحوط",
+          "en": "Security"
         }
+      }
     },
     "5": {
-        "serviceCategoryName": {
-            "ar": "\u0627\u0644\u062a\u0631\u0627\u062e\u064a\u0635 \u0627\u0644\u0639\u0642\u0627\u0631\u064a\u0629",
-            "en": "Real estate permits"
+      "serviceCategoryName": {
+        "ar": "التراخيص العقارية",
+        "en": "Real estate permits"
+      },
+      "services": {
+        "48": {
+          "ar": "اصدار بدل تالف أو فاقد بطاقة مزاولة نشاط عقاري ( تكميلية)",
+          "en": "Issuance of a replacement of a damaged or lost real estate activities practicing card (Complementary)"
         },
-        "services": {
-            "48": {
-                "ar": "\u0627\u0635\u062f\u0627\u0631 \u0628\u062f\u0644 \u062a\u0627\u0644\u0641 \u0623\u0648 \u0641\u0627\u0642\u062f \u0628\u0637\u0627\u0642\u0629 \u0645\u0632\u0627\u0648\u0644\u0629 \u0646\u0634\u0627\u0637 \u0639\u0642\u0627\u0631\u064a ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Issuance of a replacement of a damaged or lost real estate activities practicing card (Complementary)"
-            },
-            "49": {
-                "ar": "\u0627\u0635\u062f\u0627\u0631 \u0628\u0637\u0627\u0642\u0629 \u0645\u0632\u0627\u0648\u0644\u0629 \u0646\u0634\u0627\u0637 \u0639\u0642\u0627\u0631\u064a",
-                "en": "Issuance of a real estate activity practice card"
-            },
-            "50": {
-                "ar": "\u0627\u0635\u062f\u0627\u0631 \u0634\u0647\u0627\u062f\u0629 \u0642\u064a\u062f \u0645\u0637\u0648\u0631 \u0639\u0642\u0627\u0631\u064a",
-                "en": "Issuance of a real estate developer registration certificate"
-            },
-            "51": {
-                "ar": "\u0627\u0635\u062f\u0627\u0631 \u0634\u0647\u0627\u062f\u0629 \u0642\u064a\u062f \u0645\u0643\u062a\u0628 \u0639\u0642\u0627\u0631\u064a",
-                "en": "Issuance of a real estate office registration certificate"
-            },
-            "52": {
-                "ar": "\u0627\u0644\u063a\u0627\u0621 \u0628\u0637\u0627\u0642\u0629 \u0645\u0632\u0627\u0648\u0644\u0629 \u0646\u0634\u0627\u0637 \u0639\u0642\u0627\u0631\u064a ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Cancellation of a real estate activity practice card (Complementary)"
-            },
-            "53": {
-                "ar": "\u062a\u062c\u062f\u064a\u062f \u0634\u0647\u0627\u062f\u0629 \u0642\u064a\u062f ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Renewal of registration certificate (Complementary)"
-            },
-            "54": {
-                "ar": "\u062a\u062c\u062f\u064a\u062f \u0628\u0637\u0627\u0642\u0629 \u0645\u0632\u0627\u0648\u0644\u0629 \u0646\u0634\u0627\u0637 \u0639\u0642\u0627\u0631\u064a ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Renewal of a real estate activity practice card (Complementary)"
-            },
-            "55": {
-                "ar": "\u062a\u062d\u062f\u064a\u062b \u0634\u0647\u0627\u062f\u0629 \u0642\u064a\u062f ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Updating of registration certificate (Complementary)"
-            },
-            "56": {
-                "ar": "\u062a\u0635\u062f\u064a\u0642 \u0639\u0642\u062f \u0627\u0644\u0625\u062f\u0627\u0631\u0629 \u0644\u0644\u0645\u0643\u062a\u0628 \u0627\u0644\u0639\u0642\u0627\u0631\u064a",
-                "en": "Attestation of management contract of the Real estate office (Complementary)"
-            },
-            "58": {
-                "ar": "\u062a\u0635\u0631\u064a\u062d \u0625\u0639\u0644\u0627\u0646 \u0639\u0642\u0627\u0631\u064a \/ \u0628\u0627\u0642\u0629 \u0627\u0644\u0627\u0639\u0644\u0627\u0646\u0627\u062a \u0627\u0644\u0639\u0642\u0627\u0631\u064a\u0629",
-                "en": "Real Estate advertisement permission \/ Real Estate advertisements plan"
-            }
+        "49": {
+          "ar": "اصدار بطاقة مزاولة نشاط عقاري",
+          "en": "Issuance of a real estate activity practice card"
+        },
+        "50": {
+          "ar": "اصدار شهادة قيد مطور عقاري",
+          "en": "Issuance of a real estate developer registration certificate"
+        },
+        "51": {
+          "ar": "اصدار شهادة قيد مكتب عقاري",
+          "en": "Issuance of a real estate office registration certificate"
+        },
+        "52": {
+          "ar": "الغاء بطاقة مزاولة نشاط عقاري ( تكميلية)",
+          "en": "Cancellation of a real estate activity practice card (Complementary)"
+        },
+        "53": {
+          "ar": "تجديد شهادة قيد ( تكميلية)",
+          "en": "Renewal of registration certificate (Complementary)"
+        },
+        "54": {
+          "ar": "تجديد بطاقة مزاولة نشاط عقاري ( تكميلية)",
+          "en": "Renewal of a real estate activity practice card (Complementary)"
+        },
+        "55": {
+          "ar": "تحديث شهادة قيد ( تكميلية)",
+          "en": "Updating of registration certificate (Complementary)"
+        },
+        "56": {
+          "ar": "تصديق عقد الإدارة للمكتب العقاري",
+          "en": "Attestation of management contract of the Real estate office (Complementary)"
+        },
+        "58": {
+          "ar": "تصريح إعلان عقاري / باقة الاعلانات العقارية",
+          "en": "Real Estate advertisement permission / Real Estate advertisements plan"
         }
+      }
     },
     "6": {
-        "serviceCategoryName": {
-            "ar": "\u0627\u0644\u062a\u0633\u062c\u064a\u0644 \u0648\u0627\u0644\u062a\u0645\u0644\u064a\u0643",
-            "en": "Registration and Ownership"
+      "serviceCategoryName": {
+        "ar": "التسجيل والتمليك",
+        "en": "Registration and Ownership"
+      },
+      "services": {
+        "25": {
+          "ar": "إصدار بدل فاقد / بدل تالف لشهادة / سند ملكية / عقد رهن (تكميلية)",
+          "en": "Issuance of a replacement of a lost/damaged certificate/title deed/mortgage contract (Complementary)"
         },
-        "services": {
-            "25": {
-                "ar": "\u0625\u0635\u062f\u0627\u0631 \u0628\u062f\u0644 \u0641\u0627\u0642\u062f \/ \u0628\u062f\u0644 \u062a\u0627\u0644\u0641 \u0644\u0634\u0647\u0627\u062f\u0629 \/ \u0633\u0646\u062f \u0645\u0644\u0643\u064a\u0629 \/ \u0639\u0642\u062f \u0631\u0647\u0646 (\u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Issuance of a replacement of a lost\/damaged certificate\/title deed\/mortgage contract (Complementary)"
-            },
-            "26": {
-                "ar": "\u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u0645\u0628\u062f\u0626\u0649 \u0644\u0644\u0648\u062d\u062f\u0629 \u0627\u0644\u0639\u0642\u0627\u0631\u064a\u0629 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Cancellation of the tentative registration of the real estate unit (Complementary)"
-            },
-            "27": {
-                "ar": "\u062a\u062d\u062f\u064a\u062b \u0628\u064a\u0627\u0646\u0627\u062a \u0633\u0646\u062f \u0645\u0644\u0643\u064a\u0629 \/ \u0634\u0647\u0627\u062f\u0629 \u0645\u0644\u0643\u064a\u0629 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Updating of information of Title Deed \/ Ownership Certificate (Complementary)"
-            },
-            "28": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0625\u0644\u063a\u0627\u0621 \u0633\u0646\u062f \u0645\u0644\u0643\u064a\u0629 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0647)",
-                "en": "Registration of cancellation of title deed (Complementary)"
-            },
-            "29": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u062a\u0628\u062f\u064a\u0644 \u0633\u0646\u062f \u0645\u0644\u0643\u064a\u0629 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of exchange of title deed (Complementary)"
-            },
-            "30": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u062f\u0645\u062c \u0623\u0648 \u0641\u0631\u0632 \u0644\u0639\u0642\u0627\u0631 \u0644\u0630\u0627\u062a \u0627\u0644\u0645\u0627\u0644\u0643",
-                "en": "Registration of merging or allotment of a real estate to the same owner"
-            },
-            "31": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0639\u0642\u0627\u0631 \u0623\u0648 \u0648\u062d\u062f\u0629 \u0639\u0642\u0627\u0631\u064a\u0629 \u0628\u0627\u0644\u062a\u0639\u0648\u064a\u0636",
-                "en": "Registration of a real estate or a real estate unit by way of compensation"
-            },
-            "32": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0639\u0642\u0627\u0631 \u0628\u0625\u0641\u0631\u0627\u0632\u0647 \u0628\u064a\u0646 \u0627\u0644\u0645\u0644\u0627\u0643",
-                "en": "Registration of a real estate by distributing it between owners"
-            },
-            "33": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0639\u0642\u0627\u0631 \u062c\u062f\u064a\u062f",
-                "en": "Registration of a new real estate"
-            },
-            "34": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0645\u0628\u062f\u0626\u0649 \u0644\u0628\u064a\u0639 \u0648\u062d\u062f\u0629 \u0639\u0642\u0627\u0631\u064a\u0629",
-                "en": "Tentative registration of sale of a real estate unit"
-            },
-            "35": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0646\u0647\u0627\u0626\u0649 \u0644\u0628\u064a\u0639 \u0648\u062d\u062f\u0629 \u0639\u0642\u0627\u0631\u064a\u0629",
-                "en": "Final registration of sale of a real estate unit"
-            },
-            "36": {
-                "ar": "\u062a\u0645\u0644\u064a\u0643 \u0639\u0642\u0627\u0631 \u0628\u0627\u0644\u0634\u0631\u0627\u0621 \u0644\u0630\u0627\u062a \u0627\u0644\u0645\u0627\u0644\u0643",
-                "en": "Owning of a real estate by way of purchasing to the same owner"
-            }
+        "26": {
+          "ar": "إلغاء التسجيل المبدئى للوحدة العقارية ( تكميلية)",
+          "en": "Cancellation of the tentative registration of the real estate unit (Complementary)"
+        },
+        "27": {
+          "ar": "تحديث بيانات سند ملكية / شهادة ملكية ( تكميلية)",
+          "en": "Updating of information of Title Deed / Ownership Certificate (Complementary)"
+        },
+        "28": {
+          "ar": "تسجيل إلغاء سند ملكية ( تكميليه)",
+          "en": "Registration of cancellation of title deed (Complementary)"
+        },
+        "29": {
+          "ar": "تسجيل تبديل سند ملكية ( تكميلية)",
+          "en": "Registration of exchange of title deed (Complementary)"
+        },
+        "30": {
+          "ar": "تسجيل دمج أو فرز لعقار لذات المالك",
+          "en": "Registration of merging or allotment of a real estate to the same owner"
+        },
+        "31": {
+          "ar": "تسجيل عقار أو وحدة عقارية بالتعويض",
+          "en": "Registration of a real estate or a real estate unit by way of compensation"
+        },
+        "32": {
+          "ar": "تسجيل عقار بإفرازه بين الملاك",
+          "en": "Registration of a real estate by distributing it between owners"
+        },
+        "33": {
+          "ar": "تسجيل عقار جديد",
+          "en": "Registration of a new real estate"
+        },
+        "34": {
+          "ar": "تسجيل مبدئى لبيع وحدة عقارية",
+          "en": "Tentative registration of sale of a real estate unit"
+        },
+        "35": {
+          "ar": "تسجيل نهائى لبيع وحدة عقارية",
+          "en": "Final registration of sale of a real estate unit"
+        },
+        "36": {
+          "ar": "تمليك عقار بالشراء لذات المالك",
+          "en": "Owning of a real estate by way of purchasing to the same owner"
         }
+      }
     },
     "7": {
-        "serviceCategoryName": {
-            "ar": "\u0627\u0644\u062a\u0635\u0631\u0641\u0627\u062a",
-            "en": "Transactions"
+      "serviceCategoryName": {
+        "ar": "التصرفات",
+        "en": "Transactions"
+      },
+      "services": {
+        "2": {
+          "ar": "إلغاء القسمة بين الشركاء ( تكميلية)",
+          "en": "The cancelling of a distribution between partners (Complementary)"
         },
-        "services": {
-            "2": {
-                "ar": "\u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u0642\u0633\u0645\u0629 \u0628\u064a\u0646 \u0627\u0644\u0634\u0631\u0643\u0627\u0621 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "The cancelling of a distribution between partners (Complementary)"
-            },
-            "3": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0628\u0627\u0644\u062a\u062e\u0627\u0631\u062c",
-                "en": "Registration by way of exit."
-            },
-            "4": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0628\u0627\u0644\u0648\u0631\u0627\u062b\u0629",
-                "en": "Registration by inheritance."
-            },
-            "5": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0625\u0644\u063a\u0627\u0621 \/ \u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0647\u0628\u0629 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of the cancellation\/modification of the grant (Complementary)"
-            },
-            "6": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u0648\u0642\u0641 \u0627\u0644\u0630\u0631\u064a (\u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of the cancellation of the descendant endowment (Complementary)"
-            },
-            "7": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0625\u0644\u063a\u0627\u0621\/ \u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0648\u0635\u064a\u0629 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of the cancellation\/modification of the will (Complementary)"
-            },
-            "8": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0625\u0646\u0647\u0627\u0621 \u0625\u064a\u062c\u0627\u0631 \u0637\u0648\u064a\u0644 \u0627\u0644\u0645\u062f\u0629 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of termination of a long term lease (Complementary)"
-            },
-            "9": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0625\u0646\u0647\u0627\u0621 \u062d\u0642 \u0627\u0646\u062a\u0641\u0627\u0639 \/ \u0645\u0633\u0627\u0637\u062d\u0629 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of termination of right for benefit \/ right for `Mosataha` (Complementary)"
-            },
-            "10": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0625\u0646\u0647\u0627\u0621 \u0639\u0642\u062f \u0625\u064a\u062c\u0627\u0631 \u064a\u0646\u062a\u0647\u064a \u0628\u0627\u0644\u062a\u0645\u0644\u0643 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of termination of lease contract ending with ownership (Complementary)"
-            },
-            "11": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0625\u064a\u062c\u0627\u0631 \u0637\u0648\u064a\u0644 \u0627\u0644\u0645\u062f\u0629",
-                "en": "Registration of a long term lease"
-            },
-            "12": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0625\u064a\u062c\u0627\u0631 \u064a\u0646\u062a\u0647\u064a \u0628\u0627\u0644\u062a\u0645\u0644\u0643",
-                "en": "Registration of lease ending with ownershi"
-            },
-            "13": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0628\u0627\u0644\u0645\u0628\u0627\u062f\u0644\u0629",
-                "en": "Registration by way of exchange"
-            },
-            "14": null,
-            "15": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u062a\u0639\u062f\u064a\u0644 \u0623\u0648 \u062a\u062d\u0648\u064a\u0644 \u062d\u0642 \u0627\u0646\u062a\u0641\u0627\u0639 \/ \u0645\u0633\u0627\u0637\u062d\u0629 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0647)",
-                "en": "Registration of amendment or transfer of right for benefit \/ right for `Mosataha` (Complementary)"
-            },
-            "16": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u062a\u0639\u062f\u064a\u0644 \u0625\u064a\u062c\u0627\u0631 \u0637\u0648\u064a\u0644 \u0627\u0644\u0645\u062f\u0629 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of amendment of a long term lease (Complementary)"
-            },
-            "17": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u062a\u0639\u062f\u064a\u0644 \u0648\u0642\u0641 \u062e\u064a\u0631\u064a\/ \u0630\u0631\u064a ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of amendment of charity \/ descendant endowment (Complementary)"
-            },
-            "18": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u062a\u0639\u062f\u064a\u0644\/\u062a\u062d\u0648\u064a\u0644 \u0625\u064a\u062c\u0627\u0631 \u064a\u0646\u062a\u0647\u064a \u0628\u0627\u0644\u062a\u0645\u0644\u0643 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": " Registration of amendment\/transfer of lease ending with ownership (Complementary)"
-            },
-            "19": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u062d\u0642 \u0625\u0646\u062a\u0641\u0627\u0639 \/ \u0645\u0633\u0627\u0637\u062d\u0629",
-                "en": "Registration of right to benefit \/ `Mosataha`"
-            },
-            "20": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0639\u0642\u0627\u0631 \/ \u0648 \u062d\u062f\u0629 \u0639\u0642\u0627\u0631\u064a\u0629 \u0628\u0627\u0644\u0642\u0633\u0645\u0629 \u0628\u064a\u0646 \u0627\u0644\u0634\u0631\u0643\u0627\u0621",
-                "en": "Registration of a real estate or a real estate unit by distribution between partners"
-            },
-            "21": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0639\u0642\u0627\u0631 \u0623\u0648 \u0648\u062d\u062f\u0629 \u0639\u0642\u0627\u0631\u064a\u0629 \u0628\u0627\u0644\u0647\u0628\u0629",
-                "en": "Registration of a Real Estate\/ Real Estate unit by way of grant"
-            },
-            "22": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0639\u0642\u0627\u0631 \u0623\u0648 \u0648\u062d\u062f\u0629 \u0639\u0642\u0627\u0631\u064a\u0629 \u0628\u0627\u0644\u0648\u0635\u064a\u0629",
-                "en": "Registration of a Real Estate\/ Real Estate unit by way of a will"
-            },
-            "23": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0648\u0642\u0641 \u062e\u064a\u0631\u064a\/ \u0630\u0631\u064a",
-                "en": "Registration of charity \/ descendant endowment"
-            },
-            "24": {
-                "ar": "\u0646\u0642\u0644 \u0645\u0644\u0643\u064a\u0629 \u0645\u0646 \u0645\u0627\u0644\u0643 \u0627\u0644\u0645\u0624\u0633\u0633\u0629 \u0627\u0644\u0641\u0631\u062f\u064a\u0629 \u0623\u0648 \u0627\u0644\u0634\u0631\u0643\u0629 \u0648\u0628\u0627\u0644\u0639\u0643\u0633",
-                "en": "transfer of ownership from the owner of the individual establishment or the company and vice-versa"
-            }
+        "3": {
+          "ar": "تسجيل بالتخارج",
+          "en": "Registration by way of exit."
+        },
+        "4": {
+          "ar": "تسجيل بالوراثة",
+          "en": "Registration by inheritance."
+        },
+        "5": {
+          "ar": "تسجيل إلغاء / تعديل الهبة ( تكميلية)",
+          "en": "Registration of the cancellation/modification of the grant (Complementary)"
+        },
+        "6": {
+          "ar": "تسجيل إلغاء الوقف الذري (تكميلية)",
+          "en": "Registration of the cancellation of the descendant endowment (Complementary)"
+        },
+        "7": {
+          "ar": "تسجيل إلغاء/ تعديل الوصية ( تكميلية)",
+          "en": "Registration of the cancellation/modification of the will (Complementary)"
+        },
+        "8": {
+          "ar": "تسجيل إنهاء إيجار طويل المدة ( تكميلية)",
+          "en": "Registration of termination of a long term lease (Complementary)"
+        },
+        "9": {
+          "ar": "تسجيل إنهاء حق انتفاع / مساطحة ( تكميلية)",
+          "en": "Registration of termination of right for benefit / right for `Mosataha` (Complementary)"
+        },
+        "10": {
+          "ar": "تسجيل إنهاء عقد إيجار ينتهي بالتملك ( تكميلية)",
+          "en": "Registration of termination of lease contract ending with ownership (Complementary)"
+        },
+        "11": {
+          "ar": "تسجيل إيجار طويل المدة",
+          "en": "Registration of a long term lease"
+        },
+        "12": {
+          "ar": "تسجيل إيجار ينتهي بالتملك",
+          "en": "Registration of lease ending with ownershi"
+        },
+        "13": {
+          "ar": "تسجيل بالمبادلة",
+          "en": "Registration by way of exchange"
+        },
+        "14": null,
+        "15": {
+          "ar": "تسجيل تعديل أو تحويل حق انتفاع / مساطحة ( تكميليه)",
+          "en": "Registration of amendment or transfer of right for benefit / right for `Mosataha` (Complementary)"
+        },
+        "16": {
+          "ar": "تسجيل تعديل إيجار طويل المدة ( تكميلية)",
+          "en": "Registration of amendment of a long term lease (Complementary)"
+        },
+        "17": {
+          "ar": "تسجيل تعديل وقف خيري/ ذري ( تكميلية)",
+          "en": "Registration of amendment of charity / descendant endowment (Complementary)"
+        },
+        "18": {
+          "ar": "تسجيل تعديل/تحويل إيجار ينتهي بالتملك ( تكميلية)",
+          "en": " Registration of amendment/transfer of lease ending with ownership (Complementary)"
+        },
+        "19": {
+          "ar": "تسجيل حق إنتفاع / مساطحة",
+          "en": "Registration of right to benefit / `Mosataha`"
+        },
+        "20": {
+          "ar": "تسجيل عقار / و حدة عقارية بالقسمة بين الشركاء",
+          "en": "Registration of a real estate or a real estate unit by distribution between partners"
+        },
+        "21": {
+          "ar": "تسجيل عقار أو وحدة عقارية بالهبة",
+          "en": "Registration of a Real Estate/ Real Estate unit by way of grant"
+        },
+        "22": {
+          "ar": "تسجيل عقار أو وحدة عقارية بالوصية",
+          "en": "Registration of a Real Estate/ Real Estate unit by way of a will"
+        },
+        "23": {
+          "ar": "تسجيل وقف خيري/ ذري",
+          "en": "Registration of charity / descendant endowment"
+        },
+        "24": {
+          "ar": "نقل ملكية من مالك المؤسسة الفردية أو الشركة وبالعكس",
+          "en": "transfer of ownership from the owner of the individual establishment or the company and vice-versa"
         }
+      }
     },
     "8": {
-        "serviceCategoryName": {
-            "ar": "\u0627\u0644\u062a\u0641\u062a\u064a\u0634",
-            "en": "Inspection"
-        },
-        "services": {
-            "57": {
-                "ar": "\u062f\u0641\u0639 \u0627\u0644\u0645\u062e\u0627\u0644\u0641\u0627\u062a",
-                "en": "payment of fines of violations"
-            }
+      "serviceCategoryName": {
+        "ar": "التفتيش",
+        "en": "Inspection"
+      },
+      "services": {
+        "57": {
+          "ar": "دفع المخالفات",
+          "en": "payment of fines of violations"
         }
+      }
     },
     "9": {
-        "serviceCategoryName": {
-            "ar": "\u0627\u0644\u062a\u0642\u0627\u0631\u064a\u0631 \u0627\u0644\u0647\u0646\u062f\u0633\u064a\u0629 \u0648\u0627\u0644\u0645\u0633\u062d \u0627\u0644\u0639\u0642\u0627\u0631\u064a",
-            "en": "Engineering reports and real estate survey"
+      "serviceCategoryName": {
+        "ar": "التقارير الهندسية والمسح العقاري",
+        "en": "Engineering reports and real estate survey"
+      },
+      "services": {
+        "64": {
+          "ar": "إصدار تقرير هندسي",
+          "en": "Issuance of an engineering report "
         },
-        "services": {
-            "64": {
-                "ar": "\u0625\u0635\u062f\u0627\u0631 \u062a\u0642\u0631\u064a\u0631 \u0647\u0646\u062f\u0633\u064a",
-                "en": "Issuance of an engineering report "
-            },
-            "65": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0625\u0633\u062a\u0634\u0627\u0631\u064a \u0647\u0646\u062f\u0633\u064a \u0645\u062a\u062e\u0635\u0635",
-                "en": "Registration of specialized engineering consultnant"
-            }
+        "65": {
+          "ar": "تسجيل إستشاري هندسي متخصص",
+          "en": "Registration of specialized engineering consultnant"
         }
+      }
     },
     "10": {
-        "serviceCategoryName": {
-            "ar": "\u0627\u0644\u062a\u0642\u064a\u064a\u0645 \u0627\u0644\u0639\u0642\u0627\u0631\u064a",
-            "en": "Real estate valuation"
-        },
-        "services": {
-            "47": {
-                "ar": "\u0627\u0644\u062a\u0642\u064a\u064a\u0645 \u0627\u0644\u0639\u0642\u0627\u0631\u064a",
-                "en": "Real estate valuation"
-            }
+      "serviceCategoryName": {
+        "ar": "التقييم العقاري",
+        "en": "Real estate valuation"
+      },
+      "services": {
+        "47": {
+          "ar": "التقييم العقاري",
+          "en": "Real estate valuation"
         }
+      }
     },
     "11": {
-        "serviceCategoryName": {
-            "ar": "\u0627\u0644\u0631\u0647\u0646",
-            "en": "Mortgage"
+      "serviceCategoryName": {
+        "ar": "الرهن",
+        "en": "Mortgage"
+      },
+      "services": {
+        "39": {
+          "ar": "تسجيل الرهن",
+          "en": "Mortgage registration"
         },
-        "services": {
-            "39": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u0631\u0647\u0646",
-                "en": "Mortgage registration"
-            },
-            "40": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u062a\u062d\u0648\u064a\u0644 \u0627\u0644\u0631\u0647\u0646 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of mortgage transfer (Complementary)"
-            },
-            "41": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u062a\u062d\u0648\u064a\u0644 \u0627\u0644\u0631\u0647\u0646 \u0628\u064a\u0646 \u062c\u0647\u0627\u062a \u0627\u0644\u062a\u0645\u0648\u064a\u0644( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of mortgage amendment by transferring between financers (Complementary)"
-            },
-            "42": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0631\u0647\u0646 (\u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of amendment of mortgage (Complementary)"
-            },
-            "43": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0631\u0647\u0646 \u0645\u0646 \u0645\u0627\u0644\u0643 \u0625\u0644\u0649 \u0623\u062e\u0631 \u062f\u0648\u0646 \u0627\u0644\u0645\u0633\u0627\u0633 \u0628\u0627\u0644\u0631\u0647\u0646 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of amendment of mortgage from an owner to another without prejudice to the mortgage (Complementary)"
-            },
-            "44": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0641\u0643 \u0627\u0644\u0631\u0647\u0646 ( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Registration of Release fo mortgage (Complementary)"
-            }
+        "40": {
+          "ar": "تسجيل تحويل الرهن ( تكميلية)",
+          "en": "Registration of mortgage transfer (Complementary)"
+        },
+        "41": {
+          "ar": "تسجيل تحويل الرهن بين جهات التمويل( تكميلية)",
+          "en": "Registration of mortgage amendment by transferring between financers (Complementary)"
+        },
+        "42": {
+          "ar": "تسجيل تعديل الرهن (تكميلية)",
+          "en": "Registration of amendment of mortgage (Complementary)"
+        },
+        "43": {
+          "ar": "تسجيل تعديل الرهن من مالك إلى أخر دون المساس بالرهن ( تكميلية)",
+          "en": "Registration of amendment of mortgage from an owner to another without prejudice to the mortgage (Complementary)"
+        },
+        "44": {
+          "ar": "تسجيل فك الرهن ( تكميلية)",
+          "en": "Registration of Release fo mortgage (Complementary)"
         }
+      }
     },
     "12": {
-        "serviceCategoryName": {
-            "ar": "\u0627\u0644\u0645\u0634\u0631\u0648\u0639\u0627\u062a \u0627\u0644\u0639\u0642\u0627\u0631\u064a\u0629",
-            "en": "Real estate projects"
+      "serviceCategoryName": {
+        "ar": "المشروعات العقارية",
+        "en": "Real estate projects"
+      },
+      "services": {
+        "60": {
+          "ar": "تعديل بيانات مشروع( تكميلية)",
+          "en": "Modify project data (Complementary)"
         },
-        "services": {
-            "60": {
-                "ar": "\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646\u0627\u062a \u0645\u0634\u0631\u0648\u0639( \u062a\u0643\u0645\u064a\u0644\u064a\u0629)",
-                "en": "Modify project data (Complementary)"
-            },
-            "61": {
-                "ar": "\u0642\u064a\u062f \u0645\u0634\u0631\u0648\u0639 \u0639\u0642\u0627\u0631\u064a",
-                "en": "Real estate project registration"
-            }
+        "61": {
+          "ar": "قيد مشروع عقاري",
+          "en": "Real estate project registration"
         }
+      }
     },
     "13": {
-        "serviceCategoryName": {
-            "ar": "\u0627\u0644\u0646\u0632\u0627\u0639\u0627\u062a \u0627\u0644\u0639\u0642\u0627\u0631\u064a\u0629",
-            "en": "Real estate complaints"
-        },
-        "services": {
-            "59": {
-                "ar": "\u0637\u0644\u0628 \u0641\u0636 \u0646\u0632\u0627\u0639 \u0639\u0642\u0627\u0631\u064a",
-                "en": "Application for resolution of a real estate dispute"
-            }
+      "serviceCategoryName": {
+        "ar": "النزاعات العقارية",
+        "en": "Real estate complaints"
+      },
+      "services": {
+        "59": {
+          "ar": "طلب فض نزاع عقاري",
+          "en": "Application for resolution of a real estate dispute"
         }
+      }
     },
     "14": {
-        "serviceCategoryName": {
-            "ar": "\u062d\u0633\u0627\u0628\u0627\u062a \u0627\u0644\u0636\u0645\u0627\u0646",
-            "en": "Escrow accounts"
+      "serviceCategoryName": {
+        "ar": "حسابات الضمان",
+        "en": "Escrow accounts"
+      },
+      "services": {
+        "62": {
+          "ar": "تسجيل مدقق مالي لمشروع عقاري",
+          "en": "Registration of a financial auditor for a real estate project"
         },
-        "services": {
-            "62": {
-                "ar": "\u062a\u0633\u062c\u064a\u0644 \u0645\u062f\u0642\u0642 \u0645\u0627\u0644\u064a \u0644\u0645\u0634\u0631\u0648\u0639 \u0639\u0642\u0627\u0631\u064a",
-                "en": "Registration of a financial auditor for a real estate project"
-            },
-            "63": {
-                "ar": "\u0637\u0644\u0628 \u0625\u0639\u062a\u0645\u0627\u062f \u0623\u0645\u064a\u0646 \u062d\u0633\u0627\u0628",
-                "en": "Accreditation of Escrow accounts"
-            }
+        "63": {
+          "ar": "طلب إعتماد أمين حساب",
+          "en": "Accreditation of Escrow accounts"
         }
+      }
     }
-},
-
+  },
   "custom_page": {
-    "displayData": [{
-      "image":{"caption":"customer Signature", "src":"https://i.picsum.photos/id/1002/4312/2868.jpg"},
-      "image-gallery":
-              [
-                  {"caption":"page 1 of contract", "src":"https://i.picsum.photos/id/1003/1181/1772.jpg"},
-                  {"caption":"page 2 of contract", "src":"https://i.picsum.photos/id/1016/3844/2563.jpg"},
-                  {"caption":"page 3 of contract", "src":"https://i.picsum.photos/id/1018/3914/2935.jpg"},
-                  {"caption":"page 1 of contract", "src":"https://i.picsum.photos/id/1024/1920/1280.jpg"},
-                  {"caption":"page 2 of contract", "src":"https://i.picsum.photos/id/102/4320/3240.jpg"},
-                  {"caption":"page 3 of contract", "src":"https://i.picsum.photos/id/100/2500/1656.jpg"}
-              ],
-      "pdf":{"caption":"passport copy","src":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"},
-      "pdf-gallery":
-              [
-                  {"caption":"page 1 of power of attorney", "src":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"},
-                  {"caption":"page 2 of power of attorney", "src":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"},
-                  {"caption":"page 3 of power of attorney", "src":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"},
-                  {"caption":"page 4 of power of attorney", "src":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"}
-              ],
-      "table":
-              {
-                "title":"List of Previous Mortgages",
-                "thead":
-                    [
-                        {"ar":"arabic title of column 1", "en":"english title of column 1"},
-                        {"ar":"arabic title of column 2", "en":"english title of column 2"},
-                        {"ar":"arabic title of column 3", "en":"english title of column 3"}
-                    ],
-                "tbody":
-                    [
-                        [{"ar":"arabic title of column 1", "en":"english title of column 1"},
-                        {"ar":"arabic title of column 2", "en":"english title of column 2"},
-                        {"ar":"arabic title of column 3", "en":"english title of column 3"}],
-                        [{"ar":"arabic title of column 1", "en":"english title of column 1"},
-                        {"ar":"arabic title of column 2", "en":"english title of column 2"},
-                        {"ar":"arabic title of column 3", "en":"english title of column 3"}],
-                        [{"ar":"arabic title of column 1", "en":"english title of column 1"},
-                        {"ar":"arabic title of column 2", "en":"english title of column 2"},
-                        {"ar":"arabic title of column 3", "en":"english title of column 3"}],
-                        [{"ar":"arabic title of column 1", "en":"english title of column 1"},
-                        {"ar":"arabic title of column 2", "en":"english title of column 2"},
-                        {"ar":"arabic title of column 3", "en":"english title of column 3"}]
-                    ]
+    "displayData": [
+      {
+        "image": {
+          "caption": "customer Signature",
+          "src": "https://i.picsum.photos/id/1002/4312/2868.jpg"
+        },
+        "image-gallery": [
+          {
+            "caption": "page 1 of contract",
+            "src": "https://i.picsum.photos/id/1003/1181/1772.jpg"
+          },
+          {
+            "caption": "page 2 of contract",
+            "src": "https://i.picsum.photos/id/1016/3844/2563.jpg"
+          },
+          {
+            "caption": "page 3 of contract",
+            "src": "https://i.picsum.photos/id/1018/3914/2935.jpg"
+          },
+          {
+            "caption": "page 1 of contract",
+            "src": "https://i.picsum.photos/id/1024/1920/1280.jpg"
+          },
+          {
+            "caption": "page 2 of contract",
+            "src": "https://i.picsum.photos/id/102/4320/3240.jpg"
+          },
+          {
+            "caption": "page 3 of contract",
+            "src": "https://i.picsum.photos/id/100/2500/1656.jpg"
+          }
+        ],
+        "pdf": {
+          "caption": "passport copy",
+          "src": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+        },
+        "pdf-gallery": [
+          {
+            "caption": "page 1 of power of attorney",
+            "src": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+          },
+          {
+            "caption": "page 2 of power of attorney",
+            "src": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+          },
+          {
+            "caption": "page 3 of power of attorney",
+            "src": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+          },
+          {
+            "caption": "page 4 of power of attorney",
+            "src": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+          }
+        ],
+        "table": {
+          "title": "List of Previous Mortgages",
+          "thead": [
+            {
+              "ar": "arabic title of column 1",
+              "en": "english title of column 1"
             },
-            "field-data": { "label":{"ar":"arabic field label","en":"english field label"},
-                            "value": {"ar":"arabic field value to display", "en":"english field value to display"}},
-            "field-group":
+            {
+              "ar": "arabic title of column 2",
+              "en": "english title of column 2"
+            },
+            {
+              "ar": "arabic title of column 3",
+              "en": "english title of column 3"
+            }
+          ],
+          "tbody": [
+            [
               {
-                  "fieldGroupName":{"ar":"summary of invoice arabic title","en":"summary of invoice"},
-                  "fields":
-                  [
-                      {"label":{"ar":"arabic label","en":"english label"},"value":{"ar":"arabic value", "en":"english value"}},
-                      {"label":{"ar":"arabic label","en":"english label"},"value":{"ar":"arabic value", "en":"english value"}},
-                      {"label":{"ar":"arabic label","en":"english label"},"value":{"ar":"arabic value", "en":"english value"}}
-                  ]
+                "ar": "arabic title of column 1",
+                "en": "english title of column 1"
+              },
+              {
+                "ar": "arabic title of column 2",
+                "en": "english title of column 2"
+              },
+              {
+                "ar": "arabic title of column 3",
+                "en": "english title of column 3"
               }
-    }],
+            ],
+            [
+              {
+                "ar": "arabic title of column 1",
+                "en": "english title of column 1"
+              },
+              {
+                "ar": "arabic title of column 2",
+                "en": "english title of column 2"
+              },
+              {
+                "ar": "arabic title of column 3",
+                "en": "english title of column 3"
+              }
+            ],
+            [
+              {
+                "ar": "arabic title of column 1",
+                "en": "english title of column 1"
+              },
+              {
+                "ar": "arabic title of column 2",
+                "en": "english title of column 2"
+              },
+              {
+                "ar": "arabic title of column 3",
+                "en": "english title of column 3"
+              }
+            ],
+            [
+              {
+                "ar": "arabic title of column 1",
+                "en": "english title of column 1"
+              },
+              {
+                "ar": "arabic title of column 2",
+                "en": "english title of column 2"
+              },
+              {
+                "ar": "arabic title of column 3",
+                "en": "english title of column 3"
+              }
+            ]
+          ]
+        },
+        "field-data": {
+          "label": {
+            "ar": "arabic field label",
+            "en": "english field label"
+          },
+          "value": {
+            "ar": "arabic field value to display",
+            "en": "english field value to display"
+          }
+        },
+        "field-group": {
+          "fieldGroupName": {
+            "ar": "summary of invoice arabic title",
+            "en": "summary of invoice"
+          },
+          "fields": [
+            {
+              "label": {
+                "ar": "arabic label",
+                "en": "english label"
+              },
+              "value": {
+                "ar": "arabic value",
+                "en": "english value"
+              }
+            },
+            {
+              "label": {
+                "ar": "arabic label",
+                "en": "english label"
+              },
+              "value": {
+                "ar": "arabic value",
+                "en": "english value"
+              }
+            },
+            {
+              "label": {
+                "ar": "arabic label",
+                "en": "english label"
+              },
+              "value": {
+                "ar": "arabic value",
+                "en": "english value"
+              }
+            }
+          ]
+        }
+      }
+    ],
     "fields": [
       {
         "fieldID": "projectCompletionDate",
@@ -845,379 +1604,3814 @@
       }
     ]
   },
-
-"login": {
-  "fields": [
-    {
-      "fieldID": "projectCompletionDate",
-      "fieldType": "currency",
-      "required": "true",
-      "fieldName": {
-        "ar": "Project completion date",
-        "en": "Project completion date"
+  "login": {
+    "fields": [
+      {
+        "fieldID": "projectCompletionDate",
+        "fieldType": "currency",
+        "required": "true",
+        "fieldName": {
+          "ar": "Project completion date",
+          "en": "Project completion date"
+        },
+        "placeholder": {
+          "ar": "",
+          "en": ""
+        },
+        "errorMsg": {
+          "ar": "",
+          "en": ""
+        },
+        "auxInfo": {
+          "acceptedFileTypes": "",
+          "minLength": "",
+          "maxLength": "",
+          "type": "Date",
+          "source": "api",
+          "sourceDetails": "it/getAllEmployees"
+        }
       },
-      "placeholder": {
-        "ar": "",
-        "en": ""
+      {
+        "fieldID": "testing",
+        "fieldType": "entitySelect",
+        "required": "true",
+        "fieldName": {
+          "ar": "testing",
+          "en": "testing"
+        },
+        "placeholder": {
+          "ar": "",
+          "en": "select testing"
+        },
+        "errorMsg": {
+          "ar": "",
+          "en": "Select one"
+        },
+        "auxInfo": {
+          "acceptedFileTypes": "",
+          "minLength": "",
+          "maxLength": "",
+          "type": "",
+          "source": "list",
+          "sourceDetails": [
+            {
+              "entityID": 1234,
+              "rowFields": {
+                "LandID": 1234,
+                "LandArea": "500 m2",
+                "LandLocation": "Ajman City Center"
+              }
+            },
+            {
+              "entityID": 125,
+              "rowFields": {
+                "LandID": 125,
+                "LandArea": "1500 m2",
+                "LandLocation": "Ajman Townsquare"
+              }
+            },
+            {
+              "entityID": "126",
+              "rowFields": {
+                "LandID": "1236",
+                "LandArea": "5400 m2",
+                "LandLocation": "Plaza Mall Area"
+              }
+            }
+          ]
+        }
       },
-      "errorMsg": {
-        "ar": "",
-        "en": ""
+      {
+        "fieldID": "email",
+        "fieldType": "text",
+        "required": "false",
+        "fieldName": {
+          "ar": "Email",
+          "en": "Email"
+        },
+        "placeholder": {
+          "ar": "Enter Email",
+          "en": "Enter Email"
+        },
+        "errorMsg": {
+          "ar": "Enter Valid Email",
+          "en": "Enter Valid Email"
+        },
+        "auxInfo": {
+          "acceptedFileTypes": "",
+          "minLength": "",
+          "maxLength": "",
+          "type": "",
+          "source": "",
+          "sourceDetails": ""
+        }
       },
-      "auxInfo": {
-        "acceptedFileTypes": "",
-        "minLength": "",
-        "maxLength": "",
-        "type": "Date",
-        "source": "api",
-        "sourceDetails": "it/getAllEmployees"
+      {
+        "fieldID": "password",
+        "fieldType": "password",
+        "required": "false",
+        "fieldName": {
+          "ar": "Password",
+          "en": "Password"
+        },
+        "placeholder": {
+          "ar": "",
+          "en": "Enter Password"
+        },
+        "errorMsg": {
+          "ar": "",
+          "en": "Enter Valid Password"
+        },
+        "auxInfo": {
+          "acceptedFileTypes": "",
+          "minLength": "8",
+          "maxLength": "10",
+          "type": "",
+          "source": "",
+          "sourceDetails": ""
+        }
+      },
+      {
+        "fieldID": "paymentPla",
+        "fieldType": "fileupload",
+        "required": "false",
+        "fieldName": {
+          "ar": "Payment Plan",
+          "en": "Payment Plan"
+        },
+        "placeholder": {
+          "ar": "",
+          "en": ""
+        },
+        "errorMsg": {
+          "ar": "",
+          "en": ""
+        },
+        "auxInfo": {
+          "acceptedFileTypes": "application/pdf,.xlsx,.ods",
+          "minLength": "",
+          "maxLength": "",
+          "type": "Date",
+          "source": "api",
+          "sourceDetails": "it/getAllEmployees"
+        }
+      },
+      {
+        "fieldID": "propertyType",
+        "fieldType": "dropdown",
+        "required": "true",
+        "fieldName": {
+          "ar": "Property Type",
+          "en": "Property Type"
+        },
+        "placeholder": {
+          "ar": "",
+          "en": ""
+        },
+        "errorMsg": {
+          "ar": "",
+          "en": ""
+        },
+        "auxInfo": {
+          "acceptedFileTypes": "",
+          "minLength": "",
+          "maxLength": "",
+          "type": "Date",
+          "source": "list",
+          "sourceDetails": [
+            {
+              "key": "commercial",
+              "value": {
+                "ar": "Commercial",
+                "en": "Commercial"
+              }
+            },
+            {
+              "key": "residential",
+              "value": {
+                "ar": "Residential",
+                "en": "Residential"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "fieldID": "projectCompletionDate",
+        "fieldType": "datetime",
+        "required": "false",
+        "fieldName": {
+          "ar": "Project completion date",
+          "en": "Project completion date"
+        },
+        "placeholder": {
+          "ar": "",
+          "en": ""
+        },
+        "errorMsg": {
+          "ar": "",
+          "en": ""
+        },
+        "auxInfo": {
+          "acceptedFileTypes": "",
+          "minLength": "",
+          "maxLength": "",
+          "type": "Date",
+          "source": "api",
+          "sourceDetails": "it/getAllEmployees"
+        }
+      },
+      {
+        "fieldID": "terms",
+        "fieldType": "textarea",
+        "required": "false",
+        "fieldName": {
+          "ar": "Terms & Conditions",
+          "en": "Terms & Conditions"
+        },
+        "placeholder": {
+          "ar": "",
+          "en": ""
+        },
+        "errorMsg": {
+          "ar": "",
+          "en": "Terms & Conditions error"
+        },
+        "auxInfo": {
+          "acceptedFileTypes": "",
+          "minLength": "",
+          "maxLength": "",
+          "type": "Date",
+          "source": "api",
+          "sourceDetails": "it/getAllEmployees"
+        }
+      },
+      {
+        "fieldID": "emiratesIDNumber",
+        "fieldType": "number",
+        "required": "false",
+        "fieldName": {
+          "ar": "Emirates ID #",
+          "en": "Emirates ID #"
+        },
+        "placeholder": {
+          "ar": "",
+          "en": "Enter number please"
+        },
+        "errorMsg": {
+          "ar": "",
+          "en": ""
+        },
+        "auxInfo": {
+          "acceptedFileTypes": "",
+          "minLength": "",
+          "maxLength": "",
+          "type": "Date",
+          "source": "api",
+          "sourceDetails": "it/getAllEmployees"
+        }
+      },
+      {
+        "fieldID": "projectName",
+        "fieldType": "dropdown",
+        "required": "false",
+        "fieldName": {
+          "ar": "Project Name",
+          "en": "Project Name"
+        },
+        "placeholder": {
+          "ar": "",
+          "en": "testing plaveolder"
+        },
+        "errorMsg": {
+          "ar": "",
+          "en": ""
+        },
+        "auxInfo": {
+          "acceptedFileTypes": "",
+          "minLength": "",
+          "maxLength": "",
+          "type": "Date",
+          "source": "api",
+          "sourceDetails": "https://ajm.re/fikra/index.php/it/getDeveloperProjects"
+        }
       }
-    },
-    {
-      "fieldID": "testing",
-      "fieldType": "entitySelect",
-      "required": "true",
-      "fieldName": {
-        "ar": "testing",
-        "en": "testing"
-      },
-      "placeholder": {
-        "ar": "",
-        "en": "select testing"
-      },
-      "errorMsg": {
-        "ar": "",
-        "en": "Select one"
-      },
-      "auxInfo": {
-        "acceptedFileTypes": "",
-        "minLength": "",
-        "maxLength": "",
-        "type": "",
-        "source": "list",
-        "sourceDetails": [
+    ],
+    "fieldOrder": [
+      {
+        "row": "row0",
+        "rowFields": [
           {
-            "entityID": 1234,
-            "rowFields": {
-              "LandID": 1234,
-              "LandArea": "500 m2",
-              "LandLocation": "Ajman City Center"
-            }
+            "fieldID": "projectCompletionDate",
+            "fieldWidth": "twelve"
+          }
+        ]
+      },
+      {
+        "row": "row1",
+        "allowMultiple": "true",
+        "rowFields": [
+          {
+            "fieldID": "email",
+            "fieldWidth": "six"
           },
           {
-            "entityID": 125,
-            "rowFields": {
-              "LandID": 125,
-              "LandArea": "1500 m2",
-              "LandLocation": "Ajman Townsquare"
-            }
-          },
+            "fieldID": "projectName",
+            "fieldWidth": "six"
+          }
+        ]
+      },
+      {
+        "row": "row2",
+        "allowMultiple": "true",
+        "rowFields": [
           {
-            "entityID": "126",
-            "rowFields": {
-              "LandID": "1236",
-              "LandArea": "5400 m2",
-              "LandLocation": "Plaza Mall Area"
-            }
+            "fieldID": "password",
+            "fieldWidth": "twelve"
+          }
+        ]
+      },
+      {
+        "row": "row3",
+        "rowFields": [
+          {
+            "fieldID": "paymentPla",
+            "fieldWidth": "twelve"
+          }
+        ]
+      },
+      {
+        "row": "row4",
+        "rowFields": [
+          {
+            "fieldID": "propertyType",
+            "fieldWidth": "twelve"
+          }
+        ]
+      },
+      {
+        "row": "row6",
+        "rowFields": [
+          {
+            "fieldID": "terms",
+            "fieldWidth": "twelve"
+          }
+        ]
+      },
+      {
+        "row": "row7",
+        "rowFields": [
+          {
+            "fieldID": "emiratesIDNumber",
+            "fieldWidth": "twelve"
+          }
+        ]
+      },
+      {
+        "row": "row8",
+        "rowFields": [
+          {
+            "fieldID": "projectName",
+            "fieldWidth": "twelve"
           }
         ]
       }
-    },
-    {
-      "fieldID": "email",
-      "fieldType": "text",
-      "required": "false",
-      "fieldName": {
-        "ar": "Email",
-        "en": "Email"
-      },
-      "placeholder": {
-        "ar": "Enter Email",
-        "en": "Enter Email"
-      },
-      "errorMsg": {
-        "ar": "Enter Valid Email",
-        "en": "Enter Valid Email"
-      },
-      "auxInfo": {
-        "acceptedFileTypes": "",
-        "minLength": "",
-        "maxLength": "",
-        "type": "",
-        "source": "",
-        "sourceDetails": ""
-      }
-    },
-    {
-      "fieldID": "password",
-      "fieldType": "password",
-      "required": "false",
-      "fieldName": {
-        "ar": "Password",
-        "en": "Password"
-      },
-      "placeholder": {
-        "ar": "",
-        "en": "Enter Password"
-      },
-      "errorMsg": {
-        "ar": "",
-        "en": "Enter Valid Password"
-      },
-      "auxInfo": {
-        "acceptedFileTypes": "",
-        "minLength": "8",
-        "maxLength": "10",
-        "type": "",
-        "source": "",
-        "sourceDetails": ""
-      }
-    },
-    {
-      "fieldID": "paymentPla",
-      "fieldType": "fileupload",
-      "required": "false",
-      "fieldName": {
-        "ar": "Payment Plan",
-        "en": "Payment Plan"
-      },
-      "placeholder": {
-        "ar": "",
-        "en": ""
-      },
-      "errorMsg": {
-        "ar": "",
-        "en": ""
-      },
-      "auxInfo": {
-        "acceptedFileTypes": "application/pdf,.xlsx,.ods",
-        "minLength": "",
-        "maxLength": "",
-        "type": "Date",
-        "source": "api",
-        "sourceDetails": "it/getAllEmployees"
-      }
-    },
-    {
-      "fieldID": "propertyType",
-      "fieldType": "dropdown",
-      "required": "true",
-      "fieldName": {
-        "ar": "Property Type",
-        "en": "Property Type"
-      },
-      "placeholder": {
-        "ar": "",
-        "en": ""
-      },
-      "errorMsg": {
-        "ar": "",
-        "en": ""
-      },
-      "auxInfo": {
-        "acceptedFileTypes": "",
-        "minLength": "",
-        "maxLength": "",
-        "type": "Date",
-        "source": "list",
-        "sourceDetails": [
-          {
-            "key": "commercial",
-            "value": {
-              "ar": "Commercial",
-              "en": "Commercial"
+    ]
+  },
+  "getServices": {
+    "1": {
+        "serviceCategoryName": {
+            "ar": "root",
+            "en": "root"
+        },
+        "services": {
+            "1": {
+                "ar": "إلغاء القسمة بين الشركاء ( تكميلية)",
+                "en": "The Cancelling Of A Distribution Between Partners (Complementary)",
+                "icon": "trans_cancellingDistPartners.png"
             }
-          },
-          {
-            "key": "residential",
-            "value": {
-              "ar": "Residential",
-              "en": "Residential"
+        }
+    },
+    "3": {
+        "serviceCategoryName": {
+            "ar": "الافادات",
+            "en": "Testimonies",
+            "icon": "https://wfe.ajm.re/serviceIcons/test.png"
+        },
+        "services": {
+            "37": {
+                "ar": "اصدار شهادة لمن يهمه الأمر",
+                "en": "Issuance Of A `To Whomsoever It May Concern` Certificate",
+                "icon": "https://wfe.ajm.re/serviceIcons/test_issueWhomConcernCert.png"
+            },
+            "38": {
+                "ar": "صورة طبق الأصل",
+                "en": "Identical Copy Of The Original",
+                "icon": "https://wfe.ajm.re/serviceIcons/test_IdentCopyOrig.png"
             }
-          }
-        ]
+        }
+    },
+    "4": {
+        "serviceCategoryName": {
+            "ar": "التحوط",
+            "en": "Hedge Services",
+            "icon": "https://wfe.ajm.re/serviceIcons/hedge.png"
+        },
+        "services": {
+            "45": {
+                "ar": "إلغاء التحوط في السجل ( تكميلية)",
+                "en": "Cancellation Of Security (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/hedge_cancelSecurity.png"
+            },
+            "46": {
+                "ar": "التحوط",
+                "en": "Hedge Services",
+                "icon": "https://wfe.ajm.re/serviceIcons/hedge_security.png"
+            }
+        }
+    },
+    "5": {
+        "serviceCategoryName": {
+            "ar": "التراخيص العقارية",
+            "en": "Real estate permits",
+            "icon": "https://wfe.ajm.re/serviceIcons/.png"
+        },
+        "services": {
+            "48": {
+                "ar": "اصدار بدل تالف أو فاقد بطاقة مزاولة نشاط عقاري ( تكميلية)",
+                "en": "Issuance Of A Replacement Of A Damaged Or Lost Real Estate Activities Practicing Card (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_issueReplaceDamageLostREcard.png"
+            },
+            "49": {
+                "ar": "اصدار بطاقة مزاولة نشاط عقاري",
+                "en": "Issuance Of A Real Estate Activity Practice Card",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_issueREcard.png"
+            },
+            "50": {
+                "ar": "اصدار شهادة قيد مطور عقاري",
+                "en": "Issuance Of A Real Estate Developer Registration Certificate",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_issueREdevRegCert.png"
+            },
+            "51": {
+                "ar": "اصدار شهادة قيد مكتب عقاري",
+                "en": "Issuance Of A Real Estate Office Registration Certificate",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_issueREofficeRegCert.png"
+            },
+            "52": {
+                "ar": "الغاء بطاقة مزاولة نشاط عقاري ( تكميلية)",
+                "en": "Cancellation Of A Real Estate Activity Practice Card (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_cancelRECard.png"
+            },
+            "53": {
+                "ar": "تجديد  شهادة قيد ( تكميلية)",
+                "en": "Renewal Of Registration Certificate (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_renewRegCert.png"
+            },
+            "54": {
+                "ar": "تجديد بطاقة مزاولة نشاط عقاري ( تكميلية)",
+                "en": "Renewal Of A Real Estate Activity Practice Card (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_renewREcard.png"
+            },
+            "55": {
+                "ar": "تحديث شهادة قيد ( تكميلية)",
+                "en": "Updating Of Registration Certificate (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_updateRegCert.png"
+            },
+            "56": {
+                "ar": "تصديق عقد الإدارة للمكتب العقاري",
+                "en": "Attestation Of Management Contract Of The Real Estate Office (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/repr_attesetMgmtContractREoffice.png"
+            },
+            "58": {
+                "ar": "تصريح إعلان عقاري / باقة الاعلانات العقارية",
+                "en": "Real Estate Advertisement Permission / Real Estate Advertisements Plan",
+                "icon": "https://wfe.ajm.re/serviceIcons/reads_permPlan.png"
+            }
+        }
+    },
+    "6": {
+        "serviceCategoryName": {
+            "ar": "التسجيل والتمليك",
+            "en": "Registration and Ownership",
+            "icon": "https://wfe.ajm.re/serviceIcons/regown.png"
+        },
+        "services": {
+            "25": {
+                "ar": "إصدار بدل فاقد / بدل تالف لشهادة / سند ملكية / عقد رهن (تكميلية)",
+                "en": "Issuance Of A Replacement Of A Lost/Damaged Certificate/Title Deed/Mortgage Contract (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_issuanceReplacementLostCertDeedMort.png"
+            },
+            "26": {
+                "ar": "إلغاء التسجيل المبدئى للوحدة العقارية ( تكميلية)",
+                "en": "Cancellation Of The Tentative Registration Of The Real Estate Unit (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_cancelTentRegistrationREU.png"
+            },
+            "27": {
+                "ar": "تحديث بيانات سند ملكية / شهادة ملكية  ( تكميلية)",
+                "en": "Updating Of Information Of Title Deed / Ownership Certificate (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_updateInfoTitleOwn.png"
+            },
+            "28": {
+                "ar": "تسجيل إلغاء سند ملكية  ( تكميليه)",
+                "en": "Registration Of Cancellation Of Title Deed (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regCancelTitleDeed.png"
+            },
+            "29": {
+                "ar": "تسجيل تبديل سند ملكية ( تكميلية)",
+                "en": "Registration Of Exchange Of Title Deed (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regExchangeTitleDeed.png"
+            },
+            "30": {
+                "ar": "تسجيل دمج لعقار لذات المالك",
+                "en": "Registration Of Merging Of A Real Estate To The Same Owner",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regMergeAllotmentRESameOwner.png"
+            },
+            "31": {
+                "ar": "تسجيل عقار أو  وحدة عقارية  بالتعويض",
+                "en": "Registration of a real estate or a real estate unit by way of compensation",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regREUbyCompensation.png"
+            },
+            "32": {
+                "ar": "تسجيل عقار بإفرازه بين الملاك",
+                "en": "Registration Of A Real Estate By Distributing It Between Owners",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regREUbyDistributeOwners.png"
+            },
+            "33": {
+                "ar": "تسجيل عقار جديد",
+                "en": "Registration Of A New Real Estate",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regNewRE.png"
+            },
+            "34": {
+                "ar": "تسجيل مبدئى لبيع وحدة عقارية",
+                "en": "Tentative Registration Of Sale Of A Real Estate Unit",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_tentRegSaleNewRE.png"
+            },
+            "35": {
+                "ar": "تسجيل نهائى لبيع وحدة عقارية",
+                "en": "Final Registration Of Sale Of A Real Estate Unit",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_finalRegSaleNewREU.png"
+            },
+            "36": {
+                "ar": "تمليك عقار بالشراء لذات المالك",
+                "en": "Owning Of A Real Estate By Way Of Purchasing To The Same Owner",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_OwnREbyWayPurchaseSameOwn.png"
+            },
+            "66": {
+                "ar": "تحديث بيانات شهادة ملكية وحدة عقارية( تكميلية)",
+                "en": "Updating of information of Ownership Certificate for a realestate unit (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_updateInfoTitleOwn.png"
+            },
+            "67": {
+                "ar": "تسجيل فرز لعقار لذات المالك",
+                "en": "Registration of allotment of a real estate to the same owner",
+                "icon": "https://wfe.ajm.re/serviceIcons/regown_regMergeAllotmentRESameOwner.png"
+            },
+            "68": {
+                "ar": "تسجيل online  فرز لعقار لذات المالك",
+                "en": "Registration of merging or allotment of a real estate to the same owner"
+            },
+            "69": {
+                "ar": "تسجيل online دمج  لعقار لذات المالك",
+                "en": "Registration of merging or allotment of a real estate to the same owner"
+            },
+            "70": {
+                "ar": "تحديث بيانات online سند ملكية ( تكميلية)",
+                "en": "Updating of information of Title Deed / Ownership Certificate (Complementary)"
+            },
+            "71": {
+                "ar": "تحديث بيانات وحدة عقارية online ( تكميلية)",
+                "en": "Updating of information of Title Deed / Ownership Certificate (Complementary)"
+            },
+            "72": {
+                "ar": "تمليك عقار online بالشراء لذات المالك",
+                "en": "Owning of a real estate by way of purchasing to the same owner"
+            },
+            "73": {
+                "ar": "إصدار بدل فاقد / بدل تالف لشهادة / سند ملكية / عقد رهن (المتعامل)",
+                "en": "Issuance of a replacement of a lost/damaged certificate/title deed/mortgage contract (Complementary)"
+            },
+            "74": {
+                "ar": "إلغاء التسجيل المبدئى للوحدة العقارية ( المتعامل)",
+                "en": "Cancellation of the tentative registration of the real estate unit (Complementary)"
+            }
+        }
+    },
+    "7": {
+        "serviceCategoryName": {
+            "ar": "التصرفات",
+            "en": "Transactions",
+            "icon": "https://wfe.ajm.re/serviceIcons/trans.png"
+        },
+        "services": {
+            "2": {
+                "ar": "إلغاء القسمة بين الشركاء ( تكميلية)",
+                "en": "The Cancelling Of A Distribution Between Partners (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_cancellingDistPartners.png"
+            },
+            "3": {
+                "ar": "تسجيل  بالتخارج",
+                "en": "Registration By Way Of Exit.",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regByWayExit.png"
+            },
+            "4": {
+                "ar": "تسجيل  بالوراثة",
+                "en": "Registration By Inheritance.",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regByInheritance.png"
+            },
+            "5": {
+                "ar": "تسجيل إلغاء / تعديل الهبة ( تكميلية)",
+                "en": "Registration Of The Cancellation/Modification Of The Grant (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regCancellationModGrant.png"
+            },
+            "6": {
+                "ar": "تسجيل إلغاء الوقف الذري (تكميلية)",
+                "en": "Registration Of The Cancellation Of The Descendant Endowment (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regCancellationDescEnd.png"
+            },
+            "7": {
+                "ar": "تسجيل إلغاء/ تعديل الوصية ( تكميلية)",
+                "en": "Registration Of The Cancellation/Modification Of The Will (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regCancellationModWill.png"
+            },
+            "8": {
+                "ar": "تسجيل إنهاء إيجار طويل المدة ( تكميلية)",
+                "en": "Registration Of Termination Of A Long Term Lease (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regTermLongLease.png"
+            },
+            "9": {
+                "ar": "تسجيل إنهاء حق انتفاع / مساطحة ( تكميلية)",
+                "en": "Registration Of Termination Of Right For Benefit / Right For `Mosataha` (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regTermRightBenefitMosataha.png"
+            },
+            "10": {
+                "ar": "تسجيل إنهاء عقد إيجار  ينتهي بالتملك ( تكميلية)",
+                "en": "Registration Of Termination Of Lease Contract Ending With Ownership (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regTermLeaseContractEndingOwnership.png"
+            },
+            "11": {
+                "ar": "تسجيل إيجار طويل المدة",
+                "en": "Registration Of A Long Term Lease",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regLongTermLease.png"
+            },
+            "12": {
+                "ar": "تسجيل إيجار ينتهي بالتملك",
+                "en": "Registration Of Lease Ending With Ownership",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regLeaseEndingOwnership.png"
+            },
+            "13": {
+                "ar": "تسجيل بالمبادلة",
+                "en": "Registration By Way Of Exchange",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regByWayExchange.png"
+            },
+            "14": {
+                "ar": "تسجيل بيع عقار / وحدة عقارية",
+                "en": "Sale Registration Of A Real Estate/ Real Estate Unit",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_saleRegRealEstateUnit.png"
+            },
+            "15": {
+                "ar": "تسجيل تعديل أو تحويل حق انتفاع / مساطحة ( تكميليه)",
+                "en": "Registration Of Amendment Or Transfer Of Right For Benefit / Right For `Mosataha` (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regAmendmentTransferRidhgBenefitRightMosataha.png"
+            },
+            "16": {
+                "ar": "تسجيل تعديل إيجار طويل المدة ( تكميلية)",
+                "en": "Registration Of Amendment Of A Long Term Lease (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regAmendmentLongTermLease.png"
+            },
+            "17": {
+                "ar": "تسجيل تعديل وقف خيري/ ذري ( تكميلية)",
+                "en": "Registration Of Amendment Of Charity / Descendant Endowment (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regAmendmentCharityDescEndowment.png"
+            },
+            "18": {
+                "ar": "تسجيل تعديل/تحويل إيجار ينتهي بالتملك ( تكميلية)",
+                "en": " Registration Of Amendment/Transfer Of Lease Ending With Ownership (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regAmendmentTransferLeaseEndingWithOwnership.png"
+            },
+            "19": {
+                "ar": "تسجيل حق إنتفاع / مساطحة",
+                "en": "Registration Of Right To Benefit / `Mosataha`",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regRightBenefitMosataha.png"
+            },
+            "20": {
+                "ar": "تسجيل عقار / و حدة عقارية بالقسمة بين الشركاء",
+                "en": "Registration Of A Real Estate Or A Real Estate Unit By Distribution Between Partners",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regRealEstateUnitByDistPartners.png"
+            },
+            "21": {
+                "ar": "تسجيل عقار أو  وحدة عقارية بالهبة",
+                "en": "Registration Of A Real Estate/ Real Estate Unit By Way Of Grant",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regRealEstateUnitByGrant.png"
+            },
+            "22": {
+                "ar": "تسجيل عقار أو وحدة عقارية  بالوصية",
+                "en": "Registration Of A Real Estate/ Real Estate Unit By Way Of A Will",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regRealEstateUnitByWill.png"
+            },
+            "23": {
+                "ar": "تسجيل وقف خيري/ ذري",
+                "en": "Registration Of Charity / Descendant Endowment",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_regCharityDescEndowment.png"
+            },
+            "24": {
+                "ar": "نقل ملكية من مالك المؤسسة الفردية أو الشركة وبالعكس",
+                "en": "Transfer Of Ownership From The Owner Of The Individual Establishment Or The Company And Vice-Versa",
+                "icon": "https://wfe.ajm.re/serviceIcons/trans_transferOwnerIndivisualEstOrCompVV.png"
+            }
+        }
+    },
+    "8": {
+        "serviceCategoryName": {
+            "ar": "التفتيش",
+            "en": "Inspection",
+            "icon": "https://wfe.ajm.re/serviceIcons/inspect.png"
+        },
+        "services": {
+            "57": {
+                "ar": "دفع المخالفات",
+                "en": "Payment Of Fines Of Violations",
+                "icon": "https://wfe.ajm.re/serviceIcons/inspect_payFines.png"
+            },
+            "75": {
+                "ar": "انشاء المخالفات",
+                "en": "Create violtion ticket"
+            }
+        }
+    },
+    "9": {
+        "serviceCategoryName": {
+            "ar": "التقارير الهندسية والمسح العقاري",
+            "en": "Engineering reports and real estate survey",
+            "icon": "https://wfe.ajm.re/serviceIcons/engr.png"
+        },
+        "services": {
+            "64": {
+                "ar": "إصدار تقرير هندسي",
+                "en": "Issuance Of An Engineering Report ",
+                "icon": "https://wfe.ajm.re/serviceIcons/engr_issueEngRep.png"
+            },
+            "65": {
+                "ar": "تسجيل إستشاري هندسي متخصص",
+                "en": "Registration Of Specialized Engineering Consultnant",
+                "icon": "https://wfe.ajm.re/serviceIcons/engr_regEngConsult.png"
+            }
+        }
+    },
+    "10": {
+        "serviceCategoryName": {
+            "ar": "التقييم العقاري",
+            "en": "Real estate valuation",
+            "icon": "https://wfe.ajm.re/serviceIcons/reval.png"
+        },
+        "services": {
+            "47": {
+                "ar": "التقييم العقاري",
+                "en": "Real Estate Valuation",
+                "icon": "https://wfe.ajm.re/serviceIcons/reval_reval.png"
+            }
+        }
+    },
+    "11": {
+        "serviceCategoryName": {
+            "ar": "الرهن",
+            "en": "Mortgage",
+            "icon": "https://wfe.ajm.re/serviceIcons/mort.png"
+        },
+        "services": {
+            "39": {
+                "ar": "تسجيل الرهن",
+                "en": "Mortgage Registration",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_reg.png"
+            },
+            "40": {
+                "ar": "تسجيل تحويل الرهن ( تكميلية)",
+                "en": "Registration Of Mortgage Transfer (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_regMortTransfer.png"
+            },
+            "41": {
+                "ar": "تسجيل تحويل الرهن بين جهات التمويل( تكميلية)",
+                "en": "Registration Of Mortgage Amendment By Transferring Between Financers (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_regMortAmendByTransferFinance.png"
+            },
+            "42": {
+                "ar": "تسجيل تعديل الرهن (تكميلية)",
+                "en": "Registration Of Amendment Of Mortgage From An Owner To Another Without Prejudice To The Mortgage (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_regAmendMort.png"
+            },
+            "43": {
+                "ar": "تسجيل تعديل الرهن من مالك إلى أخر دون المساس بالرهن ( تكميلية)",
+                "en": "Registration Of Amendment Of Mortgage From An Owner To Another Without Prejudice To The Mortgage (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_regAmendMortFromOwnerOtherWOprejMort.png"
+            },
+            "44": {
+                "ar": "تسجيل فك الرهن ( تكميلية)",
+                "en": "Registration Of Release Fo Mortgage (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_regReleaseMort.png"
+            },
+            "77": {
+                "ar": "تسجيل الرهن  - برامج الإسكان",
+                "en": "Mortgage registration - Housing program",
+                "icon": "https://wfe.ajm.re/serviceIcons/mort_reg.png"
+            }
+        }
+    },
+    "12": {
+        "serviceCategoryName": {
+            "ar": "المشروعات العقارية",
+            "en": "Real estate projects",
+            "icon": "https://wfe.ajm.re/serviceIcons/reproj.png"
+        },
+        "services": {
+            "60": {
+                "ar": "تعديل بيانات مشروع( تكميلية)",
+                "en": "Modify Project Data (Complementary)",
+                "icon": "https://wfe.ajm.re/serviceIcons/reproj_modifyData.png"
+            },
+            "61": {
+                "ar": "قيد مشروع عقاري",
+                "en": "Real Estate Project Registration",
+                "icon": "https://wfe.ajm.re/serviceIcons/reproj_reg.png"
+            }
+        }
+    },
+    "13": {
+        "serviceCategoryName": {
+            "ar": "النزاعات العقارية",
+            "en": "Real estate complaints",
+            "icon": "https://wfe.ajm.re/serviceIcons/recomp.png"
+        },
+        "services": {
+            "59": {
+                "ar": "طلب فض نزاع عقاري",
+                "en": "Application For Resolution Of A Real Estate Dispute",
+                "icon": "https://wfe.ajm.re/serviceIcons/recomp_appResolveREdispute.png"
+            }
+        }
+    },
+    "14": {
+        "serviceCategoryName": {
+            "ar": "حسابات الضمان",
+            "en": "Escrow accounts",
+            "icon": "https://wfe.ajm.re/serviceIcons/escrow.png"
+        },
+        "services": {
+            "62": {
+                "ar": "تسجيل مدقق مالي لمشروع عقاري",
+                "en": "Registration Of A Financial Auditor For A Real Estate Project",
+                "icon": "https://wfe.ajm.re/serviceIcons/escrow_regFinAuditREproj.png"
+            },
+            "63": {
+                "ar": "طلب إعتماد أمين حساب",
+                "en": "Accreditation Of Escrow Accounts",
+                "icon": "https://wfe.ajm.re/serviceIcons/escrow_accreditEscAcct.png"
+            }
+        }
+    },
+    "15": {
+        "serviceCategoryName": {
+            "ar": "الإعلانات العقارية",
+            "en": "Real-Estate Advertisement services",
+            "icon": "https://wfe.ajm.re/serviceIcons/reads.png"
+        },
+        "services": {
+            "78": {
+                "ar": "تصريح اعلان",
+                "en": "List an ad"
+            }
+        }
+    }
+},
+  "projectstypes": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "مباني",
+        "en": "Buildings"
       }
     },
     {
-      "fieldID": "projectCompletionDate",
-      "fieldType": "datetime",
-      "required": "false",
-      "fieldName": {
-        "ar": "Project completion date",
-        "en": "Project completion date"
-      },
-      "placeholder": {
-        "ar": "",
-        "en": ""
-      },
-      "errorMsg": {
-        "ar": "",
-        "en": ""
-      },
-      "auxInfo": {
-        "acceptedFileTypes": "",
-        "minLength": "",
-        "maxLength": "",
-        "type": "Date",
-        "source": "api",
-        "sourceDetails": "it/getAllEmployees"
-      }
-    },
-    {
-      "fieldID": "terms",
-      "fieldType": "textarea",
-      "required": "false",
-      "fieldName": {
-        "ar": "Terms & Conditions",
-        "en": "Terms & Conditions"
-      },
-      "placeholder": {
-        "ar": "",
-        "en": ""
-      },
-      "errorMsg": {
-        "ar": "",
-        "en": "Terms & Conditions error"
-      },
-      "auxInfo": {
-        "acceptedFileTypes": "",
-        "minLength": "",
-        "maxLength": "",
-        "type": "Date",
-        "source": "api",
-        "sourceDetails": "it/getAllEmployees"
-      }
-    },
-    {
-      "fieldID": "emiratesIDNumber",
-      "fieldType": "number",
-      "required": "false",
-      "fieldName": {
-        "ar": "Emirates ID #",
-        "en": "Emirates ID #"
-      },
-      "placeholder": {
-        "ar": "",
-        "en": "Enter number please"
-      },
-      "errorMsg": {
-        "ar": "",
-        "en": ""
-      },
-      "auxInfo": {
-        "acceptedFileTypes": "",
-        "minLength": "",
-        "maxLength": "",
-        "type": "Date",
-        "source": "api",
-        "sourceDetails": "it/getAllEmployees"
-      }
-    },
-    {
-      "fieldID": "projectName",
-      "fieldType": "dropdown",
-      "required": "false",
-      "fieldName": {
-        "ar": "Project Name",
-        "en": "Project Name"
-      },
-      "placeholder": {
-        "ar": "",
-        "en": "testing plaveolder"
-      },
-      "errorMsg": {
-        "ar": "",
-        "en": ""
-      },
-      "auxInfo": {
-        "acceptedFileTypes": "",
-        "minLength": "",
-        "maxLength": "",
-        "type": "Date",
-        "source": "api",
-        "sourceDetails": "https://ajm.re/fikra/index.php/it/getDeveloperProjects"
+      "key": "2",
+      "value": {
+        "ar": "فلل",
+        "en": "Villas"
       }
     }
   ],
-  "fieldOrder": [
+  "projetcsAccountTrusteeBanks": [
     {
-      "row": "row0",
-      "rowFields": [
-        {
-          "fieldID": "projectCompletionDate",
-          "fieldWidth": "twelve"
-        }
-      ]
+      "key": "1",
+      "value": {
+        "ar": "أبوظبي الاسلامي",
+        "en": "أبوظبي الاسلامي"
+      }
     },
     {
-      "row": "row1",
-      "allowMultiple": "true",
-      "rowFields": [
-        {
-          "fieldID": "email",
-          "fieldWidth": "six"
-        },
-        {
-          "fieldID": "projectName",
-          "fieldWidth": "six"
-        }
-      ]
+      "key": "2",
+      "value": {
+        "ar": "مصرف عجمان ",
+        "en": "Ajman Bank"
+      }
+    }
+  ],
+  "projetcsContractors": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "مقاول تجريبي",
+        "en": "heba"
+      }
     },
     {
-      "row": "row2",
-      "allowMultiple": "true",
-      "rowFields": [
-        {
-          "fieldID": "password",
-          "fieldWidth": "twelve"
-        }
-      ]
+      "key": "2",
+      "value": {
+        "ar": "هبة أحمد اليازوري",
+        "en": "heba ahmed Alyazouri"
+      }
+    }
+  ],
+  "projectsUsageTypes": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "تجاري",
+        "en": "commercial"
+      }
+    }
+  ],
+  "isLoggedIn": {
+    "status": "success",
+    "message": "User with ID=1 is logged in",
+    "data": [
+      {
+        "user_id": "1",
+        "lastname": "admin",
+        "firstname": "admin",
+        "employeeid": "",
+        "electronicArchivingRights": "deed,contract,invoice,mukhattat",
+        "chats": "",
+        "Department": "1",
+        "notificationSounds": "0;0",
+        "popupMessages": "",
+        "serviceApprovalRights": "11",
+        "profilePic": "man-1.svg",
+        "gameRank": "10",
+        "QMSUserID": "",
+        "userType": "hiluxUsers"
+      }
+    ]
+  },
+  "lands": [
+    {
+      "key": "52",
+      "value": {
+        "ar": "101010002",
+        "en": "101010002"
+      }
     },
     {
-      "row": "row3",
-      "rowFields": [
-        {
-          "fieldID": "paymentPla",
-          "fieldWidth": "twelve"
-        }
-      ]
+      "key": "53",
+      "value": {
+        "ar": "101010009",
+        "en": "101010009"
+      }
     },
     {
-      "row": "row4",
-      "rowFields": [
-        {
-          "fieldID": "propertyType",
-          "fieldWidth": "twelve"
-        }
-      ]
+      "key": "54",
+      "value": {
+        "ar": "101010011",
+        "en": "101010011"
+      }
     },
     {
-      "row": "row6",
-      "rowFields": [
-        {
-          "fieldID": "terms",
-          "fieldWidth": "twelve"
-        }
-      ]
+      "key": "55",
+      "value": {
+        "ar": "101010013",
+        "en": "101010013"
+      }
     },
     {
-      "row": "row7",
-      "rowFields": [
-        {
-          "fieldID": "emiratesIDNumber",
-          "fieldWidth": "twelve"
-        }
-      ]
+      "key": "56",
+      "value": {
+        "ar": "101010014",
+        "en": "101010014"
+      }
     },
     {
-      "row": "row8",
-      "rowFields": [
-        {
-          "fieldID": "projectName",
-          "fieldWidth": "twelve"
-        }
-      ]
+      "key": "57",
+      "value": {
+        "ar": "101010028",
+        "en": "101010028"
+      }
+    },
+    {
+      "key": "58",
+      "value": {
+        "ar": "101010029",
+        "en": "101010029"
+      }
+    },
+    {
+      "key": "59",
+      "value": {
+        "ar": "101010030",
+        "en": "101010030"
+      }
+    },
+    {
+      "key": "60",
+      "value": {
+        "ar": "101010031",
+        "en": "101010031"
+      }
+    },
+    {
+      "key": "61",
+      "value": {
+        "ar": "101010035",
+        "en": "101010035"
+      }
+    },
+    {
+      "key": "62",
+      "value": {
+        "ar": "101010038",
+        "en": "101010038"
+      }
+    },
+    {
+      "key": "63",
+      "value": {
+        "ar": "101010041",
+        "en": "101010041"
+      }
+    },
+    {
+      "key": "64",
+      "value": {
+        "ar": "101010043",
+        "en": "101010043"
+      }
+    },
+    {
+      "key": "65",
+      "value": {
+        "ar": "101010047",
+        "en": "101010047"
+      }
+    },
+    {
+      "key": "66",
+      "value": {
+        "ar": "101010048",
+        "en": "101010048"
+      }
+    },
+    {
+      "key": "67",
+      "value": {
+        "ar": "101010049",
+        "en": "101010049"
+      }
+    },
+    {
+      "key": "68",
+      "value": {
+        "ar": "101010081",
+        "en": "101010081"
+      }
+    },
+    {
+      "key": "69",
+      "value": {
+        "ar": "101010094",
+        "en": "101010094"
+      }
+    },
+    {
+      "key": "70",
+      "value": {
+        "ar": "101010095",
+        "en": "101010095"
+      }
+    },
+    {
+      "key": "73",
+      "value": {
+        "ar": "101010102",
+        "en": "101010102"
+      }
+    },
+    {
+      "key": "74",
+      "value": {
+        "ar": "101010103",
+        "en": "101010103"
+      }
+    },
+    {
+      "key": "75",
+      "value": {
+        "ar": "101010104",
+        "en": "101010104"
+      }
+    },
+    {
+      "key": "76",
+      "value": {
+        "ar": "101010105",
+        "en": "101010105"
+      }
+    },
+    {
+      "key": "77",
+      "value": {
+        "ar": "101010106",
+        "en": "101010106"
+      }
+    },
+    {
+      "key": "78",
+      "value": {
+        "ar": "101010107",
+        "en": "101010107"
+      }
+    },
+    {
+      "key": "79",
+      "value": {
+        "ar": "101010108",
+        "en": "101010108"
+      }
+    },
+    {
+      "key": "80",
+      "value": {
+        "ar": "101010109",
+        "en": "101010109"
+      }
+    },
+    {
+      "key": "81",
+      "value": {
+        "ar": "101010110",
+        "en": "101010110"
+      }
+    },
+    {
+      "key": "82",
+      "value": {
+        "ar": "101010111",
+        "en": "101010111"
+      }
+    },
+    {
+      "key": "83",
+      "value": {
+        "ar": "101010112",
+        "en": "101010112"
+      }
+    },
+    {
+      "key": "84",
+      "value": {
+        "ar": "101010113",
+        "en": "101010113"
+      }
+    },
+    {
+      "key": "85",
+      "value": {
+        "ar": "101010114",
+        "en": "101010114"
+      }
+    },
+    {
+      "key": "86",
+      "value": {
+        "ar": "101010115",
+        "en": "101010115"
+      }
+    },
+    {
+      "key": "87",
+      "value": {
+        "ar": "101010116",
+        "en": "101010116"
+      }
+    },
+    {
+      "key": "88",
+      "value": {
+        "ar": "101010117",
+        "en": "101010117"
+      }
+    },
+    {
+      "key": "89",
+      "value": {
+        "ar": "101010118",
+        "en": "101010118"
+      }
+    },
+    {
+      "key": "90",
+      "value": {
+        "ar": "101010119",
+        "en": "101010119"
+      }
+    },
+    {
+      "key": "91",
+      "value": {
+        "ar": "101010120",
+        "en": "101010120"
+      }
+    },
+    {
+      "key": "92",
+      "value": {
+        "ar": "101010123",
+        "en": "101010123"
+      }
+    },
+    {
+      "key": "93",
+      "value": {
+        "ar": "101010124",
+        "en": "101010124"
+      }
+    },
+    {
+      "key": "94",
+      "value": {
+        "ar": "101010125",
+        "en": "101010125"
+      }
+    },
+    {
+      "key": "95",
+      "value": {
+        "ar": "101010126",
+        "en": "101010126"
+      }
+    },
+    {
+      "key": "96",
+      "value": {
+        "ar": "101010127",
+        "en": "101010127"
+      }
+    },
+    {
+      "key": "97",
+      "value": {
+        "ar": "101010128",
+        "en": "101010128"
+      }
+    },
+    {
+      "key": "98",
+      "value": {
+        "ar": "101010129",
+        "en": "101010129"
+      }
+    },
+    {
+      "key": "99",
+      "value": {
+        "ar": "101010130",
+        "en": "101010130"
+      }
+    },
+    {
+      "key": "100",
+      "value": {
+        "ar": "101010131",
+        "en": "101010131"
+      }
+    },
+    {
+      "key": "101",
+      "value": {
+        "ar": "101010132",
+        "en": "101010132"
+      }
+    },
+    {
+      "key": "102",
+      "value": {
+        "ar": "101010133",
+        "en": "101010133"
+      }
+    },
+    {
+      "key": "103",
+      "value": {
+        "ar": "101010134",
+        "en": "101010134"
+      }
+    },
+    {
+      "key": "104",
+      "value": {
+        "ar": "101010135",
+        "en": "101010135"
+      }
+    },
+    {
+      "key": "105",
+      "value": {
+        "ar": "101010136",
+        "en": "101010136"
+      }
+    },
+    {
+      "key": "106",
+      "value": {
+        "ar": "101010137",
+        "en": "101010137"
+      }
+    },
+    {
+      "key": "107",
+      "value": {
+        "ar": "101010138",
+        "en": "101010138"
+      }
+    },
+    {
+      "key": "108",
+      "value": {
+        "ar": "101010139",
+        "en": "101010139"
+      }
+    },
+    {
+      "key": "109",
+      "value": {
+        "ar": "101010140",
+        "en": "101010140"
+      }
+    },
+    {
+      "key": "110",
+      "value": {
+        "ar": "101010141",
+        "en": "101010141"
+      }
+    },
+    {
+      "key": "111",
+      "value": {
+        "ar": "101010142",
+        "en": "101010142"
+      }
+    },
+    {
+      "key": "112",
+      "value": {
+        "ar": "101010143",
+        "en": "101010143"
+      }
+    },
+    {
+      "key": "113",
+      "value": {
+        "ar": "101010144",
+        "en": "101010144"
+      }
+    },
+    {
+      "key": "114",
+      "value": {
+        "ar": "101010145",
+        "en": "101010145"
+      }
+    },
+    {
+      "key": "115",
+      "value": {
+        "ar": "101010146",
+        "en": "101010146"
+      }
+    },
+    {
+      "key": "116",
+      "value": {
+        "ar": "101010147",
+        "en": "101010147"
+      }
+    },
+    {
+      "key": "117",
+      "value": {
+        "ar": "101010148",
+        "en": "101010148"
+      }
+    },
+    {
+      "key": "118",
+      "value": {
+        "ar": "101010149",
+        "en": "101010149"
+      }
+    },
+    {
+      "key": "119",
+      "value": {
+        "ar": "101010150",
+        "en": "101010150"
+      }
+    },
+    {
+      "key": "120",
+      "value": {
+        "ar": "101010151",
+        "en": "101010151"
+      }
+    },
+    {
+      "key": "121",
+      "value": {
+        "ar": "101010152",
+        "en": "101010152"
+      }
+    },
+    {
+      "key": "122",
+      "value": {
+        "ar": "101010153",
+        "en": "101010153"
+      }
+    },
+    {
+      "key": "123",
+      "value": {
+        "ar": "101010154",
+        "en": "101010154"
+      }
+    },
+    {
+      "key": "124",
+      "value": {
+        "ar": "101010155",
+        "en": "101010155"
+      }
+    },
+    {
+      "key": "125",
+      "value": {
+        "ar": "101010156",
+        "en": "101010156"
+      }
+    },
+    {
+      "key": "126",
+      "value": {
+        "ar": "101010157",
+        "en": "101010157"
+      }
+    },
+    {
+      "key": "127",
+      "value": {
+        "ar": "101010158",
+        "en": "101010158"
+      }
+    },
+    {
+      "key": "128",
+      "value": {
+        "ar": "101010159",
+        "en": "101010159"
+      }
+    },
+    {
+      "key": "129",
+      "value": {
+        "ar": "101010160",
+        "en": "101010160"
+      }
+    },
+    {
+      "key": "130",
+      "value": {
+        "ar": "101010161",
+        "en": "101010161"
+      }
+    },
+    {
+      "key": "131",
+      "value": {
+        "ar": "101010162",
+        "en": "101010162"
+      }
+    },
+    {
+      "key": "132",
+      "value": {
+        "ar": "101010163",
+        "en": "101010163"
+      }
+    },
+    {
+      "key": "133",
+      "value": {
+        "ar": "101010164",
+        "en": "101010164"
+      }
+    }
+  ],
+  "logOut": {
+    "status": "success",
+    "message": "successfully logged out",
+    "data": []
+  },
+  "licensesTypes": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "منطقة حرة",
+        "en": "Free Zone"
+      }
+    },
+    {
+      "key": "2",
+      "value": {
+        "ar": "التنمية الاقتصادية",
+        "en": "DED"
+      }
+    }
+  ],
+  "companiesLicensesIssuers": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "عجمان",
+        "en": "Ajman"
+      }
+    }
+  ],
+  "companiesTypes": [
+    {
+      "key": "2",
+      "value": {
+        "ar": "مؤسسة فردية",
+        "en": "Individual Foundation"
+      }
+    },
+    {
+      "key": "3",
+      "value": {
+        "ar": "مؤسسة حكومية",
+        "en": "Governmental entity"
+      }
+    },
+    {
+      "key": "4",
+      "value": {
+        "ar": "مؤسسة خيرية ذات نفع عام",
+        "en": "A public benefit charity"
+      }
+    },
+    {
+      "key": "5",
+      "value": {
+        "ar": "مؤسسة شبه حكومية",
+        "en": "Semi Governmental entity"
+      }
+    },
+    {
+      "key": "6",
+      "value": {
+        "ar": "شركة توصيه بسيطه ",
+        "en": "Simple recommendation company"
+      }
+    },
+    {
+      "key": "7",
+      "value": {
+        "ar": "شركة مساهمة عامة ",
+        "en": "public shareholding company"
+      }
+    },
+    {
+      "key": "8",
+      "value": {
+        "ar": "شركة مساهمه خاصة ",
+        "en": "Private joint stock company"
+      }
+    },
+    {
+      "key": "9",
+      "value": {
+        "ar": "شركة ذات مسئولية محدودة ",
+        "en": "A limited liability company"
+      }
+    },
+    {
+      "key": "10",
+      "value": {
+        "ar": "شركة تضامن ",
+        "en": "Solidarity Company"
+      }
+    }
+  ],
+  "emirates": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "عجمان",
+        "en": "Ajman"
+      }
+    }
+  ],
+  "otherIdTypes": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "أخرى",
+        "en": "other"
+      }
+    },
+    {
+      "key": "2",
+      "value": {
+        "ar": "مرسوم أميري",
+        "en": "Emiri Decree"
+      }
+    }
+  ],
+  "disabilityTypes": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "سمعية",
+        "en": "Hearing disability"
+      }
+    },
+    {
+      "key": "2",
+      "value": {
+        "ar": "بصرية",
+        "en": "visual disability"
+      }
+    },
+    {
+      "key": "3",
+      "value": {
+        "ar": "جسدية",
+        "en": "physical disability"
+      }
+    },
+    {
+      "key": "4",
+      "value": {
+        "ar": "ذهنية",
+        "en": "intellectual disability"
+      }
+    },
+    {
+      "key": "5",
+      "value": {
+        "ar": "أخرى",
+        "en": "other"
+      }
+    }
+  ],
+  "timeToContactPreferences": [
+    {
+      "key": "1",
+      "value": {
+        "ar": " الفترة الصباحية",
+        "en": " الفترة الصباحية"
+      }
+    },
+    {
+      "key": "2",
+      "value": {
+        "ar": "الفترة المسائية",
+        "en": "الفترة المسائية"
+      }
+    },
+    {
+      "key": "3",
+      "value": {
+        "ar": "جميع الاوقات",
+        "en": "جميع الاوقات"
+      }
+    }
+  ],
+  "contractTypes": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "بيع",
+        "en": "sale"
+      }
+    },
+    {
+      "key": "2",
+      "value": {
+        "ar": "وراثة",
+        "en": "Inhirtence"
+      }
+    },
+    {
+      "key": "3",
+      "value": {
+        "ar": "هبه",
+        "en": "Gift"
+      }
+    },
+    {
+      "key": "4",
+      "value": {
+        "ar": "تخارج",
+        "en": "تخارج"
+      }
+    },
+    {
+      "key": "5",
+      "value": {
+        "ar": "نقل ملكية من  مالك الشركة والعكس",
+        "en": "transfer of ownership from the owner of the individual establishment or the company and vice-versa"
+      }
+    }
+  ],
+  "startService": {},
+  "search": {},
+  "customerTypes": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "aalmatrooshi",
+        "en": "aalmatrooshi"
+      }
+    },
+    {
+      "key": "2",
+      "value": {
+        "ar": "aalzaabi",
+        "en": "aalzaabi"
+      }
+    },
+    {
+      "key": "3",
+      "value": {
+        "ar": "asalama",
+        "en": "asalama"
+      }
+    },
+    {
+      "key": "4",
+      "value": {
+        "ar": "EIDUpdated",
+        "en": "EIDUpdated"
+      }
+    },
+    {
+      "key": "5",
+      "value": {
+        "ar": "Investor",
+        "en": "Investor"
+      }
+    },
+    {
+      "key": "6",
+      "value": {
+        "ar": "maldhahri",
+        "en": "maldhahri"
+      }
+    },
+    {
+      "key": "7",
+      "value": {
+        "ar": "nbueissa",
+        "en": "nbueissa"
+      }
+    },
+    {
+      "key": "8",
+      "value": {
+        "ar": "R",
+        "en": "R"
+      }
+    },
+    {
+      "key": "9",
+      "value": {
+        "ar": "Regular",
+        "en": "Regular"
+      }
+    },
+    {
+      "key": "10",
+      "value": {
+        "ar": "sadfasdfasd",
+        "en": "sadfasdfasd"
+      }
+    },
+    {
+      "key": "11",
+      "value": {
+        "ar": "salbedwawi",
+        "en": "salbedwawi"
+      }
+    },
+    {
+      "key": "12",
+      "value": {
+        "ar": "yabdulqader",
+        "en": "yabdulqader"
+      }
+    },
+    {
+      "key": "13",
+      "value": {
+        "ar": "yalshamsi",
+        "en": "yalshamsi"
+      }
+    },
+    {
+      "key": "14",
+      "value": {
+        "ar": "الأفرااد",
+        "en": "الأفرااد"
+      }
+    },
+    {
+      "key": "15",
+      "value": {
+        "ar": "الأفراد ",
+        "en": "الأفراد "
+      }
+    },
+    {
+      "key": "16",
+      "value": {
+        "ar": "الإفراد",
+        "en": "الإفراد"
+      }
+    },
+    {
+      "key": "17",
+      "value": {
+        "ar": "الإمارات",
+        "en": "الإمارات"
+      }
+    },
+    {
+      "key": "18",
+      "value": {
+        "ar": "الافراد",
+        "en": "الافراد"
+      }
+    },
+    {
+      "key": "19",
+      "value": {
+        "ar": "شركة ",
+        "en": "شركة "
+      }
+    },
+    {
+      "key": "20",
+      "value": {
+        "ar": "شركة ذات مسؤولية محدودة ",
+        "en": "شركة ذات مسؤولية محدودة "
+      }
+    },
+    {
+      "key": "21",
+      "value": {
+        "ar": "فرد",
+        "en": "فرد"
+      }
+    },
+    {
+      "key": "22",
+      "value": {
+        "ar": "لأفراد",
+        "en": "لأفراد"
+      }
+    },
+    {
+      "key": "23",
+      "value": {
+        "ar": "متعامل",
+        "en": "متعامل"
+      }
+    },
+    {
+      "key": "24",
+      "value": {
+        "ar": "مستثمر",
+        "en": "مستثمر"
+      }
+    },
+    {
+      "key": "25",
+      "value": {
+        "ar": "مستثمر\\",
+        "en": "مستثمر\\"
+      }
+    },
+    {
+      "key": "26",
+      "value": {
+        "ar": "منشات",
+        "en": "منشات"
+      }
+    }
+  ],
+  "customersCategories": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "أصحاب الهمم",
+        "en": "People of determination"
+      }
+    },
+    {
+      "key": "2",
+      "value": {
+        "ar": "اخرى",
+        "en": "اخرى"
+      }
+    },
+    {
+      "key": "3",
+      "value": {
+        "ar": "الدوائر الحكومية وشبه الحكومية",
+        "en": "الدوائر الحكومية وشبه الحكومية"
+      }
+    },
+    {
+      "key": "4",
+      "value": {
+        "ar": "الشركات والمؤسسات الفردية",
+        "en": "الشركات والمؤسسات الفردية"
+      }
+    },
+    {
+      "key": "5",
+      "value": {
+        "ar": "المطور العقاري",
+        "en": "المطور العقاري"
+      }
+    },
+    {
+      "key": "6",
+      "value": {
+        "ar": "المكاتب العقارية",
+        "en": "المكاتب العقارية"
+      }
+    },
+    {
+      "key": "7",
+      "value": {
+        "ar": "ذوي احتياجات خاصة",
+        "en": "ذوي احتياجات خاصة"
+      }
+    },
+    {
+      "key": "8",
+      "value": {
+        "ar": "كبار السن",
+        "en": "Elderly"
+      }
+    },
+    {
+      "key": "9",
+      "value": {
+        "ar": "كبار الشخصيات",
+        "en": "VIP"
+      }
+    },
+    {
+      "key": "10",
+      "value": {
+        "ar": "كبار المستثمرين",
+        "en": "Major investors"
+      }
+    },
+    {
+      "key": "11",
+      "value": {
+        "ar": "مؤسسات خيرية و ذات نفع عام",
+        "en": "مؤسسات خيرية و ذات نفع عام"
+      }
+    },
+    {
+      "key": "12",
+      "value": {
+        "ar": "متعاملون",
+        "en": "Customers"
+      }
+    },
+    {
+      "key": "13",
+      "value": {
+        "ar": "نساء",
+        "en": "نساء"
+      }
+    }
+  ],
+  "nationalities": [
+    {
+      "key": "ABW",
+      "value": {
+        "ar": "أروبا",
+        "en": "Aruba"
+      }
+    },
+    {
+      "key": "AFG",
+      "value": {
+        "ar": "أفغانستان الإسلامية",
+        "en": "أفغانستان الإسلامية"
+      }
+    },
+    {
+      "key": "AGO",
+      "value": {
+        "ar": "أنغولا",
+        "en": "Angola"
+      }
+    },
+    {
+      "key": "AIA",
+      "value": {
+        "ar": "أنغيلا",
+        "en": "Anguilla"
+      }
+    },
+    {
+      "key": "ALA",
+      "value": {
+        "ar": "جزر أولان",
+        "en": "جزر أولان"
+      }
+    },
+    {
+      "key": "ALB",
+      "value": {
+        "ar": "ألبانيا",
+        "en": "Albania"
+      }
+    },
+    {
+      "key": "AND",
+      "value": {
+        "ar": "إمارة أندورا",
+        "en": "إمارة أندورا"
+      }
+    },
+    {
+      "key": "ANT",
+      "value": {
+        "ar": "جزر الأنتيل الهولندية",
+        "en": "Netherlands Antilles"
+      }
+    },
+    {
+      "key": "ARE",
+      "value": {
+        "ar": "الإمارات العربية المتحدة",
+        "en": "United Arab Emirates"
+      }
+    },
+    {
+      "key": "ARG",
+      "value": {
+        "ar": "الأرجنتين",
+        "en": "Argentina"
+      }
+    },
+    {
+      "key": "ARM",
+      "value": {
+        "ar": "أرمينيا",
+        "en": "Armenia"
+      }
+    },
+    {
+      "key": "ASM",
+      "value": {
+        "ar": "ساموا الأمريكية",
+        "en": "American Samoa"
+      }
+    },
+    {
+      "key": "ATA",
+      "value": {
+        "ar": "القارة القطبية الجنوبية",
+        "en": "Antarctica"
+      }
+    },
+    {
+      "key": "ATF",
+      "value": {
+        "ar": "المقاطعات الجنوبية الفرنسية",
+        "en": "French Southern Territories"
+      }
+    },
+    {
+      "key": "ATG",
+      "value": {
+        "ar": "أنتيغوا وبربودا",
+        "en": "أنتيغوا وبربودا"
+      }
+    },
+    {
+      "key": "AUS",
+      "value": {
+        "ar": "أستراليا",
+        "en": "Australia"
+      }
+    },
+    {
+      "key": "AUT",
+      "value": {
+        "ar": "النمسا",
+        "en": "Austria"
+      }
+    },
+    {
+      "key": "AZE",
+      "value": {
+        "ar": "أذربيجان",
+        "en": "Azerbaijan"
+      }
+    },
+    {
+      "key": "BDI",
+      "value": {
+        "ar": "بوروندي",
+        "en": "Burundi"
+      }
+    },
+    {
+      "key": "BEL",
+      "value": {
+        "ar": "بلجيكا",
+        "en": "Belgium"
+      }
+    },
+    {
+      "key": "BEN",
+      "value": {
+        "ar": "بنين",
+        "en": "Benin"
+      }
+    },
+    {
+      "key": "BES",
+      "value": {
+        "ar": "بونير، وسانت أوستا تيوس وسابا",
+        "en": "بونير، وسانت أوستا تيوس وسابا"
+      }
+    },
+    {
+      "key": "BFA",
+      "value": {
+        "ar": "بوركينا فاسو",
+        "en": "Burkina Faso"
+      }
+    },
+    {
+      "key": "BGD",
+      "value": {
+        "ar": "بنغلاديش",
+        "en": "Bangladesh"
+      }
+    },
+    {
+      "key": "BGR",
+      "value": {
+        "ar": "بلغاريا",
+        "en": "Bulgaria"
+      }
+    },
+    {
+      "key": "BHR",
+      "value": {
+        "ar": "البحرين",
+        "en": "Bahrain"
+      }
+    },
+    {
+      "key": "BHS",
+      "value": {
+        "ar": "كمنولث جزر البهاما",
+        "en": "كمنولث جزر البهاما"
+      }
+    },
+    {
+      "key": "BIH",
+      "value": {
+        "ar": "البوسنة والهرسك",
+        "en": "البوسنة والهرسك"
+      }
+    },
+    {
+      "key": "BLM",
+      "value": {
+        "ar": "سان بارت ليمي",
+        "en": "سان بارت ليمي"
+      }
+    },
+    {
+      "key": "BLR",
+      "value": {
+        "ar": "روسيا البيضاء",
+        "en": "روسيا البيضاء"
+      }
+    },
+    {
+      "key": "BLZ",
+      "value": {
+        "ar": "بليز",
+        "en": "Belize"
+      }
+    },
+    {
+      "key": "BMU",
+      "value": {
+        "ar": "برمودا",
+        "en": "Bermuda"
+      }
+    },
+    {
+      "key": "BOL",
+      "value": {
+        "ar": "بوليفيا",
+        "en": "Bolivia"
+      }
+    },
+    {
+      "key": "BRA",
+      "value": {
+        "ar": "الاتحادية البرازيلية",
+        "en": "الاتحادية البرازيلية"
+      }
+    },
+    {
+      "key": "BRB",
+      "value": {
+        "ar": "بربادوس",
+        "en": "Barbados"
+      }
+    },
+    {
+      "key": "BRN",
+      "value": {
+        "ar": "بروناي",
+        "en": "Brunei"
+      }
+    },
+    {
+      "key": "BTN",
+      "value": {
+        "ar": "بوتان",
+        "en": "Bhutan"
+      }
+    },
+    {
+      "key": "BVT",
+      "value": {
+        "ar": "جزيرة بوفيت",
+        "en": "Bouvet Island"
+      }
+    },
+    {
+      "key": "BWA",
+      "value": {
+        "ar": "بوتسوانا",
+        "en": "Botswana"
+      }
+    },
+    {
+      "key": "CAF",
+      "value": {
+        "ar": "جمهورية أفريقيا الوسطى",
+        "en": "Central African Republic"
+      }
+    },
+    {
+      "key": "CAN",
+      "value": {
+        "ar": "كندا",
+        "en": "Canada"
+      }
+    },
+    {
+      "key": "CCK",
+      "value": {
+        "ar": "جزر كوكوس",
+        "en": "Cocos Islands"
+      }
+    },
+    {
+      "key": "CHE",
+      "value": {
+        "ar": "سويسرا",
+        "en": "Switzerland"
+      }
+    },
+    {
+      "key": "CHL",
+      "value": {
+        "ar": "شيلي",
+        "en": "Chile"
+      }
+    },
+    {
+      "key": "CHN",
+      "value": {
+        "ar": "الصين",
+        "en": "China"
+      }
+    },
+    {
+      "key": "CIV",
+      "value": {
+        "ar": "ساحل العاج",
+        "en": "ساحل العاج"
+      }
+    },
+    {
+      "key": "CMR",
+      "value": {
+        "ar": "الكاميرون",
+        "en": "Cameroon"
+      }
+    },
+    {
+      "key": "COD",
+      "value": {
+        "ar": "جمهورية الكونغو الديمقراطية",
+        "en": "جمهورية الكونغو الديمقراطية"
+      }
+    },
+    {
+      "key": "COG",
+      "value": {
+        "ar": "الكونغو",
+        "en": "Congo"
+      }
+    },
+    {
+      "key": "COK",
+      "value": {
+        "ar": "جزر كوك",
+        "en": "Cook Islands"
+      }
+    },
+    {
+      "key": "COL",
+      "value": {
+        "ar": "كولومبيا",
+        "en": "Colombia"
+      }
+    },
+    {
+      "key": "COM",
+      "value": {
+        "ar": "جزر القمر",
+        "en": "Comoros"
+      }
+    },
+    {
+      "key": "CPV",
+      "value": {
+        "ar": "الرأس الأخضر",
+        "en": "Cape Verde"
+      }
+    },
+    {
+      "key": "CRI",
+      "value": {
+        "ar": "كوستاريكا",
+        "en": "Costa Rica"
+      }
+    },
+    {
+      "key": "CUB",
+      "value": {
+        "ar": "كوبا",
+        "en": "Cuba"
+      }
+    },
+    {
+      "key": "CUW",
+      "value": {
+        "ar": "كورا ساو",
+        "en": "كورا ساو"
+      }
+    },
+    {
+      "key": "CXR",
+      "value": {
+        "ar": "جزيرة كريسماس",
+        "en": "Christmas Island"
+      }
+    },
+    {
+      "key": "CYM",
+      "value": {
+        "ar": "جزر كايمان",
+        "en": "Cayman Islands"
+      }
+    },
+    {
+      "key": "CYP",
+      "value": {
+        "ar": "قبرص",
+        "en": "Cyprus"
+      }
+    },
+    {
+      "key": "CZE",
+      "value": {
+        "ar": "جمهورية التشيك",
+        "en": "Czech Republic"
+      }
+    },
+    {
+      "key": "DEU",
+      "value": {
+        "ar": "ألمانيا",
+        "en": "Germany"
+      }
+    },
+    {
+      "key": "DJI",
+      "value": {
+        "ar": "جيبوتي",
+        "en": "Djibouti"
+      }
+    },
+    {
+      "key": "DMA",
+      "value": {
+        "ar": "دومينيكا",
+        "en": "Dominica"
+      }
+    },
+    {
+      "key": "DNK",
+      "value": {
+        "ar": "الدنمارك",
+        "en": "Denmark"
+      }
+    },
+    {
+      "key": "DOM",
+      "value": {
+        "ar": "جمهورية الدومينيكان",
+        "en": "Dominican Republic"
+      }
+    },
+    {
+      "key": "DZA",
+      "value": {
+        "ar": "الجزائر",
+        "en": "Algeria"
+      }
+    },
+    {
+      "key": "ECU",
+      "value": {
+        "ar": "إكوادور",
+        "en": "إكوادور"
+      }
+    },
+    {
+      "key": "EGY",
+      "value": {
+        "ar": "مصر",
+        "en": "Egypt"
+      }
+    },
+    {
+      "key": "ERI",
+      "value": {
+        "ar": "إريتريا",
+        "en": "Eritrea"
+      }
+    },
+    {
+      "key": "ESH",
+      "value": {
+        "ar": "منطقة الصحراء الغربية",
+        "en": "منطقة الصحراء الغربية"
+      }
+    },
+    {
+      "key": "ESP",
+      "value": {
+        "ar": "إسبانيا",
+        "en": "Spain"
+      }
+    },
+    {
+      "key": "EST",
+      "value": {
+        "ar": "إستونيا",
+        "en": "إستونيا"
+      }
+    },
+    {
+      "key": "ETH",
+      "value": {
+        "ar": "إثيوبيا",
+        "en": "Ethiopia"
+      }
+    },
+    {
+      "key": "FIN",
+      "value": {
+        "ar": "فنلندا",
+        "en": "Finland"
+      }
+    },
+    {
+      "key": "FJI",
+      "value": {
+        "ar": "فيجي",
+        "en": "Fiji"
+      }
+    },
+    {
+      "key": "FLK",
+      "value": {
+        "ar": "جزر فوكلاند",
+        "en": "Falkland Islands"
+      }
+    },
+    {
+      "key": "FRA",
+      "value": {
+        "ar": "فرنسا",
+        "en": "France"
+      }
+    },
+    {
+      "key": "FRO",
+      "value": {
+        "ar": "جزر فارو",
+        "en": "Faroe Islands"
+      }
+    },
+    {
+      "key": "FSM",
+      "value": {
+        "ar": "ميكرونيزيا",
+        "en": "Micronesia"
+      }
+    },
+    {
+      "key": "GAB",
+      "value": {
+        "ar": "الغابونية",
+        "en": "الغابونية"
+      }
+    },
+    {
+      "key": "GBR",
+      "value": {
+        "ar": "المملكة المتحدة",
+        "en": "United Kingdom"
+      }
+    },
+    {
+      "key": "GEO",
+      "value": {
+        "ar": "جورجيا",
+        "en": "Georgia"
+      }
+    },
+    {
+      "key": "GGY",
+      "value": {
+        "ar": "غيرنسي",
+        "en": "Guernsey"
+      }
+    },
+    {
+      "key": "GHA",
+      "value": {
+        "ar": "غانا",
+        "en": "Ghana"
+      }
+    },
+    {
+      "key": "GIB",
+      "value": {
+        "ar": "جبل طارق",
+        "en": "Gibraltar"
+      }
+    },
+    {
+      "key": "GIN",
+      "value": {
+        "ar": "غينيا",
+        "en": "Guinea"
+      }
+    },
+    {
+      "key": "GLP",
+      "value": {
+        "ar": "غوادلوب",
+        "en": "Guadeloupe"
+      }
+    },
+    {
+      "key": "GMB",
+      "value": {
+        "ar": "غامبيا",
+        "en": "Gambia"
+      }
+    },
+    {
+      "key": "GNB",
+      "value": {
+        "ar": "غينيا بيساو",
+        "en": "Guinea-Bissau"
+      }
+    },
+    {
+      "key": "GNQ",
+      "value": {
+        "ar": "غينيا الاستوائية",
+        "en": "Equatorial Guinea"
+      }
+    },
+    {
+      "key": "GRC",
+      "value": {
+        "ar": "اليونان",
+        "en": "Greece"
+      }
+    },
+    {
+      "key": "GRD",
+      "value": {
+        "ar": "غرينادا",
+        "en": "Grenada"
+      }
+    },
+    {
+      "key": "GRL",
+      "value": {
+        "ar": "غرينلاند",
+        "en": "Greenland"
+      }
+    },
+    {
+      "key": "GTM",
+      "value": {
+        "ar": "غواتيمالا",
+        "en": "Guatemala"
+      }
+    },
+    {
+      "key": "GUF",
+      "value": {
+        "ar": "جويانا الفرنسية",
+        "en": "French Guiana"
+      }
+    },
+    {
+      "key": "GUM",
+      "value": {
+        "ar": "غوام",
+        "en": "Guam"
+      }
+    },
+    {
+      "key": "GUY",
+      "value": {
+        "ar": "غيانا",
+        "en": "Guyana"
+      }
+    },
+    {
+      "key": "HKG",
+      "value": {
+        "ar": "هونغ كونغ الصين",
+        "en": "Hong Kong SAR China"
+      }
+    },
+    {
+      "key": "HMD",
+      "value": {
+        "ar": "جزيرة هيرد وجزر ماكدونالد",
+        "en": "Heard Island and McDonald Islands"
+      }
+    },
+    {
+      "key": "HND",
+      "value": {
+        "ar": "هندوراس",
+        "en": "Honduras"
+      }
+    },
+    {
+      "key": "HRV",
+      "value": {
+        "ar": "كرواتيا",
+        "en": "Croatia"
+      }
+    },
+    {
+      "key": "HTI",
+      "value": {
+        "ar": "هايتي",
+        "en": "Haiti"
+      }
+    },
+    {
+      "key": "HUN",
+      "value": {
+        "ar": "المجر",
+        "en": "Hungary"
+      }
+    },
+    {
+      "key": "IDN",
+      "value": {
+        "ar": "إندونيسيا",
+        "en": "Indonesia"
+      }
+    },
+    {
+      "key": "IMN",
+      "value": {
+        "ar": "جزيرة مان",
+        "en": "Isle of Man"
+      }
+    },
+    {
+      "key": "IND",
+      "value": {
+        "ar": "الهند",
+        "en": "India"
+      }
+    },
+    {
+      "key": "IOT",
+      "value": {
+        "ar": "إقليم المحيط الهندي البريطاني",
+        "en": "British Indian Ocean Territory"
+      }
+    },
+    {
+      "key": "IRL",
+      "value": {
+        "ar": "آيرلندا",
+        "en": "آيرلندا"
+      }
+    },
+    {
+      "key": "IRN",
+      "value": {
+        "ar": "إيران",
+        "en": "Iran"
+      }
+    },
+    {
+      "key": "IRQ",
+      "value": {
+        "ar": "العراق",
+        "en": "Iraq"
+      }
+    },
+    {
+      "key": "ISL",
+      "value": {
+        "ar": "آيسلندا",
+        "en": "آيسلندا"
+      }
+    },
+    {
+      "key": "ISR",
+      "value": {
+        "ar": "دولة إسرائيل",
+        "en": "دولة إسرائيل"
+      }
+    },
+    {
+      "key": "ITA",
+      "value": {
+        "ar": "ايطاليا",
+        "en": "Italy"
+      }
+    },
+    {
+      "key": "JAM",
+      "value": {
+        "ar": "جامايكا",
+        "en": "Jamaica"
+      }
+    },
+    {
+      "key": "JEY",
+      "value": {
+        "ar": "جيرسي",
+        "en": "Jersey"
+      }
+    },
+    {
+      "key": "JOR",
+      "value": {
+        "ar": "الأردن",
+        "en": "Jordan"
+      }
+    },
+    {
+      "key": "JPN",
+      "value": {
+        "ar": "اليابان",
+        "en": "Japan"
+      }
+    },
+    {
+      "key": "KAZ",
+      "value": {
+        "ar": "كازاخستان",
+        "en": "Kazakhstan"
+      }
+    },
+    {
+      "key": "KEN",
+      "value": {
+        "ar": "كينيا",
+        "en": "Kenya"
+      }
+    },
+    {
+      "key": "KGZ",
+      "value": {
+        "ar": "قرغيزستان",
+        "en": "قرغيزستان"
+      }
+    },
+    {
+      "key": "KHM",
+      "value": {
+        "ar": "كمبوديا",
+        "en": "Cambodia"
+      }
+    },
+    {
+      "key": "KIR",
+      "value": {
+        "ar": "كيريباتي",
+        "en": "Kiribati"
+      }
+    },
+    {
+      "key": "KNA",
+      "value": {
+        "ar": "سانت كيتس ونيفيس",
+        "en": "Saint Kitts and Nevis"
+      }
+    },
+    {
+      "key": "KOR",
+      "value": {
+        "ar": "كوريا الجنوبية",
+        "en": "South Korea"
+      }
+    },
+    {
+      "key": "KRW",
+      "value": {
+        "ar": "كوريا",
+        "en": "كوريا"
+      }
+    },
+    {
+      "key": "KWT",
+      "value": {
+        "ar": "الكويت",
+        "en": "Kuwait"
+      }
+    },
+    {
+      "key": "LAO",
+      "value": {
+        "ar": "لاوس",
+        "en": "Laos"
+      }
+    },
+    {
+      "key": "LBN",
+      "value": {
+        "ar": "لبنان",
+        "en": "Lebanon"
+      }
+    },
+    {
+      "key": "LBR",
+      "value": {
+        "ar": "ليبيريا",
+        "en": "ليبيريا"
+      }
+    },
+    {
+      "key": "LBY",
+      "value": {
+        "ar": "ليبيا",
+        "en": "Libya"
+      }
+    },
+    {
+      "key": "LCA",
+      "value": {
+        "ar": "سانت لوسيا",
+        "en": "Saint Lucia"
+      }
+    },
+    {
+      "key": "LIE",
+      "value": {
+        "ar": "ليختنشتاين",
+        "en": "Liechtenstein"
+      }
+    },
+    {
+      "key": "LKA",
+      "value": {
+        "ar": "سريلانكا",
+        "en": "Sri Lanka"
+      }
+    },
+    {
+      "key": "LSO",
+      "value": {
+        "ar": "ليسوتو",
+        "en": "Lesotho"
+      }
+    },
+    {
+      "key": "LTU",
+      "value": {
+        "ar": "ليتوانيا",
+        "en": "Lithuania"
+      }
+    },
+    {
+      "key": "LUX",
+      "value": {
+        "ar": "لوكسمبورغ",
+        "en": "Luxembourg"
+      }
+    },
+    {
+      "key": "LVA",
+      "value": {
+        "ar": "لاتفيا",
+        "en": "Latvia"
+      }
+    },
+    {
+      "key": "MAC",
+      "value": {
+        "ar": "ماكاو الصينية",
+        "en": "ماكاو الصينية"
+      }
+    },
+    {
+      "key": "MAF",
+      "value": {
+        "ar": "سانت مارتن",
+        "en": "Saint Martin"
+      }
+    },
+    {
+      "key": "MAR",
+      "value": {
+        "ar": "المغرب",
+        "en": "Morocco"
+      }
+    },
+    {
+      "key": "MCO",
+      "value": {
+        "ar": "موناكو",
+        "en": "Monaco"
+      }
+    },
+    {
+      "key": "MDA",
+      "value": {
+        "ar": "مولدوفا",
+        "en": "Moldova"
+      }
+    },
+    {
+      "key": "MDG",
+      "value": {
+        "ar": "مدغشقر",
+        "en": "Madagascar"
+      }
+    },
+    {
+      "key": "MDV",
+      "value": {
+        "ar": "جزر المالديف",
+        "en": "Maldives"
+      }
+    },
+    {
+      "key": "MEX",
+      "value": {
+        "ar": "المكسيك",
+        "en": "Mexico"
+      }
+    },
+    {
+      "key": "MHL",
+      "value": {
+        "ar": "جزر مارشال",
+        "en": "Marshall Islands"
+      }
+    },
+    {
+      "key": "MKD",
+      "value": {
+        "ar": "مقدونيا",
+        "en": "Macedonia"
+      }
+    },
+    {
+      "key": "MLI",
+      "value": {
+        "ar": "مالي",
+        "en": "Mali"
+      }
+    },
+    {
+      "key": "MLT",
+      "value": {
+        "ar": "مالطة",
+        "en": "Malta"
+      }
+    },
+    {
+      "key": "MMR",
+      "value": {
+        "ar": "ميانمار",
+        "en": "Myanmar"
+      }
+    },
+    {
+      "key": "MNE",
+      "value": {
+        "ar": "الجبل الأسود",
+        "en": "Montenegro"
+      }
+    },
+    {
+      "key": "MNG",
+      "value": {
+        "ar": "منغوليا",
+        "en": "Mongolia"
+      }
+    },
+    {
+      "key": "MNP",
+      "value": {
+        "ar": "جزر ماريانا الشمالية",
+        "en": "Northern Mariana Islands"
+      }
+    },
+    {
+      "key": "MOZ",
+      "value": {
+        "ar": "موزمبيق",
+        "en": "Mozambique"
+      }
+    },
+    {
+      "key": "MRT",
+      "value": {
+        "ar": "موريتانيا",
+        "en": "Mauritania"
+      }
+    },
+    {
+      "key": "MSR",
+      "value": {
+        "ar": "مونتسيرات",
+        "en": "Montserrat"
+      }
+    },
+    {
+      "key": "MTQ",
+      "value": {
+        "ar": "مارتينيك",
+        "en": "Martinique"
+      }
+    },
+    {
+      "key": "MUS",
+      "value": {
+        "ar": "موريشيوس",
+        "en": "Mauritius"
+      }
+    },
+    {
+      "key": "MWI",
+      "value": {
+        "ar": "مالاوي",
+        "en": "Malawi"
+      }
+    },
+    {
+      "key": "MYS",
+      "value": {
+        "ar": "ماليزيا",
+        "en": "Malaysia"
+      }
+    },
+    {
+      "key": "MYT",
+      "value": {
+        "ar": "مايوت",
+        "en": "مايوت"
+      }
+    },
+    {
+      "key": "NAM",
+      "value": {
+        "ar": "ناميبيا",
+        "en": "Namibia"
+      }
+    },
+    {
+      "key": "NCL",
+      "value": {
+        "ar": "كاليدونيا الجديدة",
+        "en": "New Caledonia"
+      }
+    },
+    {
+      "key": "NER",
+      "value": {
+        "ar": "النيجر",
+        "en": "Niger"
+      }
+    },
+    {
+      "key": "NFK",
+      "value": {
+        "ar": "جزيرة نورفولك",
+        "en": "Norfolk Island"
+      }
+    },
+    {
+      "key": "NGA",
+      "value": {
+        "ar": "نيجيريا",
+        "en": "Nigeria"
+      }
+    },
+    {
+      "key": "NIC",
+      "value": {
+        "ar": "نيكاراغوا",
+        "en": "Nicaragua"
+      }
+    },
+    {
+      "key": "NIU",
+      "value": {
+        "ar": "نيوي",
+        "en": "Niue"
+      }
+    },
+    {
+      "key": "NLD",
+      "value": {
+        "ar": "هولندا",
+        "en": "Netherlands"
+      }
+    },
+    {
+      "key": "NOR",
+      "value": {
+        "ar": "النرويج",
+        "en": "Norway"
+      }
+    },
+    {
+      "key": "NPL",
+      "value": {
+        "ar": "نيبال",
+        "en": "Nepal"
+      }
+    },
+    {
+      "key": "NRU",
+      "value": {
+        "ar": "ناورو",
+        "en": "Nauru"
+      }
+    },
+    {
+      "key": "NZL",
+      "value": {
+        "ar": "نيوزيلندا",
+        "en": "New Zealand"
+      }
+    },
+    {
+      "key": "OMN",
+      "value": {
+        "ar": "عمان",
+        "en": "Oman"
+      }
+    },
+    {
+      "key": "PAK",
+      "value": {
+        "ar": "باكستان",
+        "en": "Pakistan"
+      }
+    },
+    {
+      "key": "PAN",
+      "value": {
+        "ar": "بنما",
+        "en": "Panama"
+      }
+    },
+    {
+      "key": "PCN",
+      "value": {
+        "ar": "جزر بيتكيرن",
+        "en": "Pitcairn Islands"
+      }
+    },
+    {
+      "key": "PER",
+      "value": {
+        "ar": "بيرو",
+        "en": "Peru"
+      }
+    },
+    {
+      "key": "PHL",
+      "value": {
+        "ar": "الفلبين",
+        "en": "Philippines"
+      }
+    },
+    {
+      "key": "PLW",
+      "value": {
+        "ar": "بالاو",
+        "en": "Palau"
+      }
+    },
+    {
+      "key": "PNG",
+      "value": {
+        "ar": "بابوا غينيا الجديدة",
+        "en": "Papua New Guinea"
+      }
+    },
+    {
+      "key": "POL",
+      "value": {
+        "ar": "بولندا",
+        "en": "Poland"
+      }
+    },
+    {
+      "key": "PRI",
+      "value": {
+        "ar": "بويرتو ريكو",
+        "en": "Puerto Rico"
+      }
+    },
+    {
+      "key": "PRK",
+      "value": {
+        "ar": "كوريا الشمالية",
+        "en": "North Korea"
+      }
+    },
+    {
+      "key": "PRT",
+      "value": {
+        "ar": "البرتغال",
+        "en": "Portugal"
+      }
+    },
+    {
+      "key": "PRY",
+      "value": {
+        "ar": "باراغواي",
+        "en": "Paraguay"
+      }
+    },
+    {
+      "key": "PSE",
+      "value": {
+        "ar": "فلسطين",
+        "en": "Palestine"
+      }
+    },
+    {
+      "key": "PYF",
+      "value": {
+        "ar": "بولينيزيا الفرنسية",
+        "en": "French Polynesia"
+      }
+    },
+    {
+      "key": "QAT",
+      "value": {
+        "ar": "قطر",
+        "en": "Qatar"
+      }
+    },
+    {
+      "key": "REU",
+      "value": {
+        "ar": "ريونيون",
+        "en": "Réunion"
+      }
+    },
+    {
+      "key": "ROU",
+      "value": {
+        "ar": "رومانيا",
+        "en": "Romania"
+      }
+    },
+    {
+      "key": "RUS",
+      "value": {
+        "ar": "روسيا",
+        "en": "Russia"
+      }
+    },
+    {
+      "key": "RWA",
+      "value": {
+        "ar": "رواندا",
+        "en": "Rwanda"
+      }
+    },
+    {
+      "key": "SAU",
+      "value": {
+        "ar": "السعودية",
+        "en": "Saudi Arabia"
+      }
+    },
+    {
+      "key": "SDN",
+      "value": {
+        "ar": "السودان",
+        "en": "Sudan"
+      }
+    },
+    {
+      "key": "SEN",
+      "value": {
+        "ar": "السنغال",
+        "en": "Senegal"
+      }
+    },
+    {
+      "key": "SGP",
+      "value": {
+        "ar": "سنغافورة",
+        "en": "Singapore"
+      }
+    },
+    {
+      "key": "SGS",
+      "value": {
+        "ar": "جورجيا الجنوبية و جزر ساندويتش الجنوبية",
+        "en": "South Georgia and the South Sandwich Islands"
+      }
+    },
+    {
+      "key": "SHN",
+      "value": {
+        "ar": "سانت هيلانة",
+        "en": "Saint Helena"
+      }
+    },
+    {
+      "key": "SJM",
+      "value": {
+        "ar": "سفالبارد وجان مايان",
+        "en": "Svalbard and Jan Mayen"
+      }
+    },
+    {
+      "key": "SLB",
+      "value": {
+        "ar": "جزر سليمان",
+        "en": "Solomon Islands"
+      }
+    },
+    {
+      "key": "SLE",
+      "value": {
+        "ar": "سيراليون",
+        "en": "Sierra Leone"
+      }
+    },
+    {
+      "key": "SLV",
+      "value": {
+        "ar": "سوازيلاند",
+        "en": "Swaziland"
+      }
+    },
+    {
+      "key": "SMR",
+      "value": {
+        "ar": "سان مارينو",
+        "en": "San Marino"
+      }
+    },
+    {
+      "key": "SOM",
+      "value": {
+        "ar": "الصومال",
+        "en": "Somalia"
+      }
+    },
+    {
+      "key": "SPM",
+      "value": {
+        "ar": "سانت بارتيليمي",
+        "en": "Saint Barthélemy"
+      }
+    },
+    {
+      "key": "SRB",
+      "value": {
+        "ar": "صربيا",
+        "en": "Serbia"
+      }
+    },
+    {
+      "key": "ssd",
+      "value": {
+        "ar": "جنوب السودان",
+        "en": "جنوب السودان"
+      }
+    },
+    {
+      "key": "STP",
+      "value": {
+        "ar": "ساو تومي وبرينسيبي",
+        "en": "São Tomé and Príncipe"
+      }
+    },
+    {
+      "key": "SUR",
+      "value": {
+        "ar": "سورينام",
+        "en": "Suriname"
+      }
+    },
+    {
+      "key": "SVK",
+      "value": {
+        "ar": "سلوفاكيا",
+        "en": "Slovakia"
+      }
+    },
+    {
+      "key": "SVN",
+      "value": {
+        "ar": "سلوفينيا",
+        "en": "Slovenia"
+      }
+    },
+    {
+      "key": "SWE",
+      "value": {
+        "ar": "السويد",
+        "en": "Sweden"
+      }
+    },
+    {
+      "key": "SWZ",
+      "value": {
+        "ar": "سوازيلند",
+        "en": "سوازيلند"
+      }
+    },
+    {
+      "key": "SXM",
+      "value": {
+        "ar": "سانت مارتن (الجزء الهولندي)",
+        "en": "سانت مارتن (الجزء الهولندي)"
+      }
+    },
+    {
+      "key": "SYC",
+      "value": {
+        "ar": "سيشيل",
+        "en": "Seychelles"
+      }
+    },
+    {
+      "key": "SYR",
+      "value": {
+        "ar": "الجمهورية العربية السورية",
+        "en": "Syria"
+      }
+    },
+    {
+      "key": "TCA",
+      "value": {
+        "ar": "جزر تركس وكايكوس",
+        "en": "Turks and Caicos Islands"
+      }
+    },
+    {
+      "key": "TCD",
+      "value": {
+        "ar": "تشاد",
+        "en": "Chad"
+      }
+    },
+    {
+      "key": "TGO",
+      "value": {
+        "ar": "توغو",
+        "en": "Togo"
+      }
+    },
+    {
+      "key": "THA",
+      "value": {
+        "ar": "تايلاند",
+        "en": "Thailand"
+      }
+    },
+    {
+      "key": "TJK",
+      "value": {
+        "ar": "طاجيكستان",
+        "en": "Tajikistan"
+      }
+    },
+    {
+      "key": "TKL",
+      "value": {
+        "ar": "توكيلاو",
+        "en": "Tokelau"
+      }
+    },
+    {
+      "key": "TKM",
+      "value": {
+        "ar": "تركمانستان",
+        "en": "Turkmenistan"
+      }
+    },
+    {
+      "key": "TLS",
+      "value": {
+        "ar": "تيمور الشرقية",
+        "en": "Timor-Leste"
+      }
+    },
+    {
+      "key": "TON",
+      "value": {
+        "ar": "تونغا",
+        "en": "Tonga"
+      }
+    },
+    {
+      "key": "TTO",
+      "value": {
+        "ar": "ترينيداد وتوباغو",
+        "en": "Trinidad and Tobago"
+      }
+    },
+    {
+      "key": "TUN",
+      "value": {
+        "ar": "تونس",
+        "en": "Tunisia"
+      }
+    },
+    {
+      "key": "TUR",
+      "value": {
+        "ar": "تركيا",
+        "en": "Turkey"
+      }
+    },
+    {
+      "key": "TUV",
+      "value": {
+        "ar": "توفالو",
+        "en": "Tuvalu"
+      }
+    },
+    {
+      "key": "TWN",
+      "value": {
+        "ar": "تايوان",
+        "en": "Taiwan"
+      }
+    },
+    {
+      "key": "TZA",
+      "value": {
+        "ar": "تنزانيا",
+        "en": "Tanzania"
+      }
+    },
+    {
+      "key": "UGA",
+      "value": {
+        "ar": "أوغندا",
+        "en": "Uganda"
+      }
+    },
+    {
+      "key": "UKR",
+      "value": {
+        "ar": "أوكرانيا",
+        "en": "Ukraine"
+      }
+    },
+    {
+      "key": "UMI",
+      "value": {
+        "ar": "الامريكى جزر البعيدة الصغيرة",
+        "en": "U.S. Minor Outlying Islands"
+      }
+    },
+    {
+      "key": "URY",
+      "value": {
+        "ar": "أوروغواي",
+        "en": "Uruguay"
+      }
+    },
+    {
+      "key": "USA",
+      "value": {
+        "ar": "الولايات المتحدة الأمريكية",
+        "en": "United States"
+      }
+    },
+    {
+      "key": "UZB",
+      "value": {
+        "ar": "أوزبكستان",
+        "en": "Uzbekistan"
+      }
+    },
+    {
+      "key": "VAT",
+      "value": {
+        "ar": "الفاتيكان",
+        "en": "Vatican City"
+      }
+    },
+    {
+      "key": "VCT",
+      "value": {
+        "ar": "سانت فنسنت وجزر غرينادين",
+        "en": "Saint Vincent and the Grenadines"
+      }
+    },
+    {
+      "key": "VEN",
+      "value": {
+        "ar": "فنزويلا",
+        "en": "Venezuela"
+      }
+    },
+    {
+      "key": "VGB",
+      "value": {
+        "ar": "جزر العذراء البريطانية",
+        "en": "British Virgin Islands"
+      }
+    },
+    {
+      "key": "VIR",
+      "value": {
+        "ar": "جزر العذراء الأمريكية",
+        "en": "U.S. Virgin Islands"
+      }
+    },
+    {
+      "key": "VNM",
+      "value": {
+        "ar": "فيتنام",
+        "en": "Vietnam"
+      }
+    },
+    {
+      "key": "VUT",
+      "value": {
+        "ar": "فانواتو",
+        "en": "Vanuatu"
+      }
+    },
+    {
+      "key": "WLF",
+      "value": {
+        "ar": "واليس و فوتونا",
+        "en": "Wallis and Futuna"
+      }
+    },
+    {
+      "key": "WSM",
+      "value": {
+        "ar": "ساموا",
+        "en": "Samoa"
+      }
+    },
+    {
+      "key": "XKX",
+      "value": {
+        "ar": "كوسوفو",
+        "en": "كوسوفو"
+      }
+    },
+    {
+      "key": "YEM",
+      "value": {
+        "ar": "اليمن",
+        "en": "Yemen"
+      }
+    },
+    {
+      "key": "ZAF",
+      "value": {
+        "ar": "جنوب أفريقيا",
+        "en": "South Africa"
+      }
+    },
+    {
+      "key": "ZMB",
+      "value": {
+        "ar": "زامبيا",
+        "en": "Zambia"
+      }
+    },
+    {
+      "key": "ZWE",
+      "value": {
+        "ar": "زيمبابوي",
+        "en": "Zimbabwe"
+      }
+    },
+    {
+      "key": "ZZZ",
+      "value": {
+        "ar": "غير معلوم",
+        "en": "unknown"
+      }
+    }
+  ],
+  "contactPreferencesTypes": [
+    {
+      "key": "1",
+      "value": {
+        "ar": "الاتصال",
+        "en": "الاتصال"
+      }
+    },
+    {
+      "key": "2",
+      "value": {
+        "ar": "البريد الالكتروني",
+        "en": "البريد الالكتروني"
+      }
+    },
+    {
+      "key": "3",
+      "value": {
+        "ar": "الرسائل النصية القصيرة",
+        "en": "الرسائل النصية القصيرة"
+      }
     }
   ]
-}
 }

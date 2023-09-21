@@ -41,7 +41,6 @@ export class DataDisplayGeneratorComponent implements OnInit {
   }
 
   deleteRow(index) {
-    console.log('; up here', this.formData.displayData)
     _.remove(this.formData.displayData, function(resource, i) {
         return index === i;
     });

@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4 bg-victoria">
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" style="height:calc(100%);">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-5 pb-3 mb-5 d-flex">
             <div class="info">
@@ -9,7 +9,7 @@
                     href="#"
                     class="d-block"
                 >
-                    اسم الموظف
+                {{isLoggedIn.data[0].firstname}}
                 </a>
             </div>
         </div>
@@ -67,12 +67,15 @@
                         class="nav nav-treeview text-sm"
                         *ngIf="item.value.services"
                     >
+                    <!-- [routerLink]="['/service', subItem.key]" -->
+
                         <li
                             class="nav-item"
-                            [routerLink]="['/service', subItem.key]"
                             *ngFor="let subItem of item.value.services | keyvalue"
                         >
-                            <a class="nav-link">
+                            <a class="nav-link"
+                            (click)="navigateServicesName(subItem.key)"
+                            >
                                 <img
                                     class="nav-icon fas align-top ml-3"
                                     src="{{getServiceIcon(subItem.value)}}"

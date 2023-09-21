@@ -13,7 +13,7 @@
     [minlength]="field.auxInfo?.minLength"
     [maxlength]="field.auxInfo?.maxLength"
     [(ngModel)]="formData[field.fieldID]"
-    [disabled]="isActiveEditStep()"
+    [disabled]="isActiveEditStep() || isActiveRejectStep()"
     appNumbersformatter
     precision="2"
     #ngModel="ngModel"

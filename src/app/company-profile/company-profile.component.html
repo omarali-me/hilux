@@ -23,7 +23,7 @@
             <section class="content" *ngIf="formData && !formData.id">
               <div class="container-fluid">
                 <app-alerts [errors]="formErrors"></app-alerts>
-                <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data' novalidate>
+                <!-- <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data' novalidate>
                   <div class="card-body">
                     <div class="form-group row">
                       <div class="col-sm-6">
@@ -87,7 +87,7 @@
                   <div class="card-footer text-center">
                     <button type="submit" class="btn btn-primary" [disabled]="isSearchFormValid()" i18n="@@companyProfileSearchButton">Search</button>
                   </div>
-                </form>
+                </form> -->
             
                 <hr/>
             
