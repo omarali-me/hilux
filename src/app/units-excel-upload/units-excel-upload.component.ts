@@ -46,7 +46,8 @@ export class UnitsExcelUploadComponent implements OnInit {
   unitNumberOptions: any;
   meterTotalSoldAreaOptions: any;
   unitTypesOptions: any;
-
+  myDialog :any; 
+  resMsg :any;
   @ViewChild('controlLabel') controlLabel: ElementRef;
   constructor(
     private route: ActivatedRoute,
@@ -63,6 +64,7 @@ export class UnitsExcelUploadComponent implements OnInit {
     this.loadDeveloperOptions();
     this.loadProjectsOptions();
     this.loadUnitTypesOptions()
+    this.myDialog = document.querySelector('#my-dialog');
   }
 
   searchData(formData: any) {
@@ -90,7 +92,7 @@ export class UnitsExcelUploadComponent implements OnInit {
     fd.append("projectId",uploadData.projectId)
     fd.append('units', this.uploadedFile);
     console.log(fd);
-
+ 
 //    this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/excel/createUnitsByZip`, fd)
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/DMS/editUnitsSubmit`, fd)
       .subscribe(async (data: any) => {
@@ -100,11 +102,17 @@ export class UnitsExcelUploadComponent implements OnInit {
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error');
+          this.resMsg = data.message;
+          this.myDialog.showModal();
+
         }
       }, (error) => {
         this.toastr.error('Something went Wrong', 'Error');
         // this.router.navigate(['error']);
       });
+  }
+   closeDialog (){
+    this.myDialog.close();
   }
 
   async updateControlLabel(event: any) {

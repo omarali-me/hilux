@@ -5991,6 +5991,10 @@
         <target>يتم سحب بيانات الأراضي من البلدية 
          يرجى الانتظار بعض الوقت</target>
       </trans-unit>
+        <trans-unit id="ok" datatype="html">
+      <source>OK</source>
+        <target>موافق</target>
+      </trans-unit>
       
       
     </body>
