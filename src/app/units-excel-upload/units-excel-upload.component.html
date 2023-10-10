@@ -79,7 +79,6 @@
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
               <div class="col-sm-12">
@@ -94,10 +93,20 @@
 
           <hr/>
           <dialog id="my-dialog">
-            <p>{{resMsg}}</p>
-            <form method="dialog">
-              <button type="buttons" (click)="closeDialog()" class="btn btn-primary"  i18n="@@ok">OK</button>
+            <div style="width: 800px;min-height: 100px;">
+            <h3 style="text-align: center;">{{resMsg}}</h3>
+            <div *ngIf="resErrors && resErrors.length > 0">
+              <h5 style="direction: rtl;margin-right: 10px;" *ngFor="let item of resErrors let i = index">
+               * {{item.unitNumber}}
+                <p style="direction: rtl;margin-right: 15px;" *ngFor="let err of item.errors let i = index">
+                 - {{err}}
+                </p>
+              </h5>
+            </div>
+            <form method="dialog" style="text-align: center;margin-top: 20px;">
+              <button type="buttons" style="text-align: center;" (click)="closeDialog()" class="btn btn-primary"  i18n="@@ok">OK</button>
             </form>
+            </div>
           </dialog>
 
           <form  *ngIf="response?.length > 0" class="form-horizontal" (ngSubmit)="uploadExcel(formData)" #uf="ngForm" enctype='multipart/form-data' novalidate>
@@ -129,7 +138,7 @@
                   </div>
                 </div>
                 <div class="col-sm-2">
-                  <button type="submit" class="btn btn-primary" [disabled]="uf.invalid" i18n="@@unitsExcelUploadUpload">Upload</button>
+                  <button type="submit" class="btn btn-primary" [disabled]="uf.invalid || flagUpload" i18n="@@unitsExcelUploadUpload">Upload</button>
                 </div>
               </div>
 
@@ -223,7 +232,7 @@
                     </div>
                   </div>
 
-                  <table class="table table-bordered landTable bg-white table-responsive d-table" *ngIf="filterResponse()?.length > 0">
+                  <table style="table-layout: fixed;" class="table table-bordered landTable bg-white table-responsive d-table" *ngIf="filterResponse()?.length > 0">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
@@ -253,7 +262,11 @@
                         <td>{{ item_detail?.meterTotalActualArea }}</td>
                         <td>{{ item_detail?.meterNetActualArea }}</td>
 
-                        <td>{{ item_detail?.sitePlan }}</td>
+                        <td> 
+                          <a *ngIf="item_detail?.sitePlan" href="{{item_detail?.sitePlan}}" target="_blank">    <i style="color: #000;" class="fa fa-check"></i></a>
+                          <a *ngIf="! item_detail?.sitePlan" href="{{item_detail?.sitePlan}}" target="_blank">    <i style="color: #000;" class="fa fa-times"></i></a>
+
+                        </td>
                         <td>{{ item_detail?.paymentPercentage }}</td>
 
                         <td>{{ item_detail?.unitUse }}</td>

@@ -48,6 +48,8 @@ export class UnitsExcelUploadComponent implements OnInit {
   unitTypesOptions: any;
   myDialog :any; 
   resMsg :any;
+  resErrors :any;
+  flagUpload :any;
   @ViewChild('controlLabel') controlLabel: ElementRef;
   constructor(
     private route: ActivatedRoute,
@@ -65,6 +67,27 @@ export class UnitsExcelUploadComponent implements OnInit {
     this.loadProjectsOptions();
     this.loadUnitTypesOptions()
     this.myDialog = document.querySelector('#my-dialog');
+    this.flagUpload = false;
+    // this.resErrors =[
+    //   {
+    //     unitNumber :12,
+    //   errors :[
+    //     "error 1",
+    //     "error 2",
+    //     "error 3",
+    //     "error 4",
+    //   ]
+    //   },
+    //   {
+    //     unitNumber :15,
+    //   errors :[
+    //     "error 1",
+    //     "error 2",
+    //     "error 3",
+    //     "error 4",
+    //   ]
+    //   }
+    // ]
   }
 
   searchData(formData: any) {
@@ -88,6 +111,8 @@ export class UnitsExcelUploadComponent implements OnInit {
   }
 
   uploadExcel(uploadData: any) {
+    this.resErrors= null;
+    this.flagUpload =true;
     let fd = new FormData();
     fd.append("projectId",uploadData.projectId)
     fd.append('units', this.uploadedFile);
@@ -97,14 +122,31 @@ export class UnitsExcelUploadComponent implements OnInit {
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/DMS/editUnitsSubmit`, fd)
       .subscribe(async (data: any) => {
         if (data.status == 'success') {
-          this.resetUploadControl();
-          this.toastr.success(JSON.stringify(data.data), 'Success')
+          // this.resetUploadControl();
+          this.toastr.success(JSON.stringify(data.data), 'Success');
+          this.resMsg = data.message;
+          if (data.errors != null) {
+            this.resErrors =data.errors;
+          }
+          this.myDialog.showModal();
+          this.flagUpload =false;
+          this.formData.projectId =null;
+          this.formData.developerId =null;
+          this.developerOptions =null;
+          this.loadDeveloperOptions();
+          this.projectsOptions =null;
+          this.loadProjectsOptions();
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error');
           this.resMsg = data.message;
+          if (data.errors != null) {
+            this.resErrors =data.errors;
+          }
           this.myDialog.showModal();
+          this.flagUpload =false;
 
+       
         }
       }, (error) => {
         this.toastr.error('Something went Wrong', 'Error');
