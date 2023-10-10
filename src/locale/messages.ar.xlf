@@ -6005,6 +6005,12 @@
         <source>Price</source>
         <target>السعر</target>
       </trans-unit>
+        <trans-unit id="ok" datatype="html">
+      <source>OK</source>
+        <target>موافق</target>
+      </trans-unit>
+      
+      
     </body>
   </file>
 </xliff>
