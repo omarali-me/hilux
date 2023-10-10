@@ -50,6 +50,7 @@ export class UnitsExcelUploadComponent implements OnInit {
   resMsg :any;
   resErrors :any;
   flagUpload :any;
+  flagRes :any;
   @ViewChild('controlLabel') controlLabel: ElementRef;
   constructor(
     private route: ActivatedRoute,
@@ -66,6 +67,7 @@ export class UnitsExcelUploadComponent implements OnInit {
     this.loadDeveloperOptions();
     this.loadProjectsOptions();
     this.loadUnitTypesOptions()
+    this.flagRes =false;
     this.myDialog = document.querySelector('#my-dialog');
     this.flagUpload = false;
     // this.resErrors =[
@@ -91,6 +93,7 @@ export class UnitsExcelUploadComponent implements OnInit {
   }
 
   searchData(formData: any) {
+    this.flagRes =true;
     let fd = new FormData();
     fd.append('data', JSON.stringify(_.omit(formData, 'developerId')));
 
@@ -100,6 +103,7 @@ export class UnitsExcelUploadComponent implements OnInit {
           this.response = data.data;
           this.prepareUnitNumberOptions(this.response);
           this.prepareMeterTotalSoldAreaOptions(this.response);
+          this.flagRes = false;
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error');

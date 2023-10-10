@@ -263,8 +263,8 @@
                         <td>{{ item_detail?.meterNetActualArea }}</td>
 
                         <td> 
-                          <a *ngIf="item_detail?.sitePlan" href="{{item_detail?.sitePlan}}" target="_blank">    <i style="color: #000;" class="fa fa-check"></i></a>
-                          <a *ngIf="! item_detail?.sitePlan" href="{{item_detail?.sitePlan}}" target="_blank">    <i style="color: #000;" class="fa fa-times"></i></a>
+                          <span *ngIf="item_detail?.sitePlan =='yes' " >    <i style="color: #000;" class="fa fa-check"></i></span>
+                          <span *ngIf="item_detail?.sitePlan == 'no'">    <i style="color: #000;" class="fa fa-times"></i></span>
 
                         </td>
                         <td>{{ item_detail?.paymentPercentage }}</td>
@@ -284,6 +284,8 @@
             <div class="col-sm-12 text-center">
               <h4>No Unit data available</h4>
             </div>
+          </div>
+          <div *ngIf="flagRes" class="loader">
           </div>
         </div>
         <!-- /.card-body -->
