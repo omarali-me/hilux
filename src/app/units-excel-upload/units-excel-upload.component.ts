@@ -313,4 +313,7 @@ export class UnitsExcelUploadComponent implements OnInit {
   getExcelLink() {
     return `${environment.apiHost}/units.xlsx`;
   }
+  getLookupUnitsLink() {
+    return `${environment.apiHost}/unit-types-and-uses.xlsx`;
+  }
 }
