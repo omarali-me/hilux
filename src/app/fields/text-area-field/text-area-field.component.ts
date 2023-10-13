@@ -11,6 +11,9 @@ import { FieldsService } from '../../shared/fields.service';
 })
 export class TextAreaFieldComponent implements OnInit {
 
+  isEditRemarks: boolean = false;
+  isRejectRemarks: boolean = false;
+
   @Input() field: Field;
 
   @Input() customClass: string;
@@ -30,6 +33,8 @@ export class TextAreaFieldComponent implements OnInit {
   constructor(private service: FieldsService) { }
 
   ngOnInit(): void {
+    this.isEditRemarks = (this.field.fieldID == 'editRemarks');
+    this.isRejectRemarks = (this.field.fieldID == 'rejectRemarks');
     this.getDefaultValue(this.field.fieldID);
   }
 
@@ -51,6 +56,13 @@ export class TextAreaFieldComponent implements OnInit {
 
   getDefaultValue(field_name: any) {
     this.formData[this.field.fieldID] = this.service.getDefaultValue(field_name, this.defaultValues, this.index);
+    if (this.isEditRemarks) {
+      this.service.setEditRemarksField(field_name);
+    }
+
+    if (this.isRejectRemarks) {
+      this.service.setRejectRemarksField(field_name);
+    }
   }
 
   isRequired() {
@@ -58,6 +70,10 @@ export class TextAreaFieldComponent implements OnInit {
   }
 
   isActiveEditStep() {
-    return this.service.isEditStep && (this.service.editStepField != this.field.fieldID);
+    return this.isEditRemarks ? false : this.service.isEditStep && this.service.editStepField != this.field.fieldID;
+  }
+
+  isActiveRejectStep() {
+    return this.isRejectRemarks ? false : (this.service.isRejectStep && this.service.rejectRemarksField != this.field.fieldID);
   }
 }

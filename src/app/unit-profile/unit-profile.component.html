@@ -23,7 +23,7 @@
             <section class="content" *ngIf="formData && !formData.id">
               <div class="container-fluid">
                 <app-alerts [errors]="formErrors"></app-alerts>
-                <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data' novalidate>
+                <!-- <form class="form-horizontal" (ngSubmit)="searchResourceData(searchData)" #sf="ngForm" enctype='multipart/form-data' novalidate>
                   <div class="card-body">
                     <div class="form-group row">
                       <div class="col-sm-6">
@@ -115,7 +115,7 @@
                     <button type="submit" class="btn btn-primary" [disabled]="sf.invalid" i18n="@@unitProfileSearchButton">Search</button>
                   </div>
                 </form>
-            
+             -->
                 <hr/>
 
                 <form class="form-horizontal" (ngSubmit)="saveData(formData)" #f="ngForm" enctype='multipart/form-data' novalidate>
@@ -257,7 +257,7 @@
                             <span>*</span>
                           </label>
                           <div class="col-sm-9">
-                            <input type="text" name="floorNumber" required="true" class="form-control" [(ngModel)]="formData.floorNumber" #floorNumber="ngModel" numbersOnly precision="0" pattern="[0-9]*" >
+                            <input type="text" name="floorNumber" required="true" class="form-control" [(ngModel)]="formData.floorNumber" #floorNumber="ngModel" >
                             <div *ngIf="floorNumber.invalid && (floorNumber.dirty || floorNumber.touched)" class="alert alert-danger">
                               <div *ngIf="floorNumber.errors?.required">
                                 Floor Number can not be blank
@@ -275,9 +275,9 @@
                           <label class="col-sm-3 col-form-label" i18n="@@unitProfileLand">Land
                           </label>
                           <div class="col-sm-9">
-                            <ng-select
+                            <!-- <ng-select
                               class="rtl"
-                              required="true"
+                              required="false"
                               [items]="landsoptions | async"
                               name="land" [hideSelected]="true"
                               [(ngModel)]="formData.landId" [typeahead]="landSearchInput$"
@@ -285,14 +285,15 @@
                               bindValue="key" [loading]="landDataOptionsLoading"
                               notFoundText="لا يوجد نتائج للبحث" typeToSearchText="Please enter 4 or more characters"
                               [disabled]="isUnitVilla()"
-                              #land="ngModel"
+                              #landId="ngModel"
                             >
-                            </ng-select>
-                            <div *ngIf="land.invalid && (land.dirty || land.touched)" class="alert alert-danger">
+                            </ng-select> -->
+                            <input type="text" minlength="9" maxlength="9" name="landId" required="false" class="form-control" [(ngModel)]="formData.landId" #landId="ngModel" numbersOnly precision="0"/>
+                            <!-- <div *ngIf="land.invalid && (land.dirty || land.touched)" class="alert alert-danger">
                               <div *ngIf="land.errors?.required">
                                 Land can not be blank
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                         </div>
                       </div>

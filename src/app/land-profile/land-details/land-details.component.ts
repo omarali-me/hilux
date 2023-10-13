@@ -35,6 +35,8 @@ export class LandDetailsComponent implements OnInit {
   searchOldLandOptions: Observable<any>;
   searchOldLandIdInput$ = new Subject<string>();
   searchOldLandOptionsLoading = false;
+  distructsTypesOptions: any;
+  flagwithdrawData :any;
 
   constructor(
     private route: ActivatedRoute,
@@ -56,7 +58,8 @@ export class LandDetailsComponent implements OnInit {
     this.loadPropertyTypesOptions();
     this.loadLandNameOptions();
     this.loadSearchOldLandIdOptions();
-
+    this.loadDistructsTypesOptions();
+    this.flagwithdrawData =true;
     this.profile$ = this.route.data.pipe(pluck('profile'));
     this.profile$.subscribe((profile: any) => {
       if (profile && profile.id) {
@@ -72,7 +75,71 @@ export class LandDetailsComponent implements OnInit {
       }
     });
   }
-
+  withdrawData (){
+    this.flagwithdrawData =false;
+    this.http.get(`${environment.apiHost}/AjmanLandProperty/index.php/lands/getLandDataFromAM/${this.formData.id}`)
+    .subscribe((data: any) => {
+        this.formData = data;
+        this.toastr.success("", 'Success');
+        this.flagwithdrawData =true;
+        this.router.navigate(['land/profile/', this.formData.id, 'edit'])
+        .then(() => {
+          window.location.reload();
+        });
+    }, (error) => {
+      this.flagwithdrawData = true;
+      this.toastr.error('Something went Wrong', 'Error');
+      // this.router.navigate(['error']);
+    });
+  }
+  loadDistructsTypesOptions() {
+    this.lookupsService.loadSectionsOptions()
+    .subscribe((data) => {
+      this.distructsTypesOptions = data;
+    })
+  }
+ prepareEstablishmentContractFileField() {
+    return {
+      fieldID: "districtImage",
+      fieldType: "fileupload",
+      required: true,
+      fieldName: {
+        "ar": "districtImage",
+        "en": "districtImage"
+      },
+      auxInfo: {
+        multiple: true
+      }
+    }
+  }
+  prepareEstablishmentContractFileField2() {
+    return {
+      fieldID: "sectorImage",
+      fieldType: "fileupload",
+      required: true,
+      fieldName: {
+        "ar": "sectorImage",
+        "en": "sectorImage"
+      },
+      auxInfo: {
+        multiple: true
+      }
+    }
+  }
+  prepareEstablishmentContractFileField3() {
+    return {
+      fieldID: "parcelImage",
+      fieldType: "fileupload",
+      required: true,
+      fieldName: {
+        "ar": "parcelImage",
+        "en": "parcelImage"
+      },
+      auxInfo: {
+        multiple: true
+      }
+    }
+  }
   updateData(formData: any) {
     let fd = new FormData();
     fd.append('land', JSON.stringify(formData));
@@ -80,6 +147,13 @@ export class LandDetailsComponent implements OnInit {
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
+          setTimeout(() => {
+            this.router.navigate(['land/profile/' + formData.id + '/view'])
+            .then(() => {
+              window.location.reload();
+            });
+          }, 500);
+        
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -266,7 +340,10 @@ export class LandDetailsComponent implements OnInit {
 
   searchResourceData(data: any) {
     let value = !!data.term ? data.term : data.searchOldLandId;
-    this.router.navigate(['land/profile/', value, 'edit']);
+    this.router.navigate(['land/profile/', value, 'edit'])
+    .then(() => {
+      window.location.reload();
+    });
   }
 
   loadLandNameOptions() {

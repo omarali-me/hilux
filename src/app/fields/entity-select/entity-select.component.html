@@ -18,7 +18,7 @@
                 [value]="field_detail.entityID"
                 (change)="handleChange($event)"
                 [checked]="isChecked(field_detail.entityID)"
-                [disabled]="isActiveEditStep()"
+                [disabled]="isActiveEditStep() || isActiveRejectStep()"
               />
             </div>
           </div>

@@ -9,24 +9,24 @@
               <label class="col-sm-3 col-form-label" i18n="@@customerProfileSearchName">Name</label>
               <div class="col-sm-9">
                 <ng-select
-                  class="rtl"
-                  [items]="ownerNameOptions | async"
-                  name="ownerNameSearch"
-                  [hideSelected]="true"
-                  [minTermLength]="1"
-                  [(ngModel)]="searchData.term"
-                  [loading]="ownerNameOptionsLoading"
-                  bindLabel="value.ar"
-                  bindValue="value.entityId"
-                  typeToSearchText="Please enter 1 or more characters"
-                  notFoundText="لا يوجد نتائج للبحث"
-                  [typeahead]="searchOwnerNameInput$"
-                  (keyup)="setSearchType('term', $event)"
-                  [disabled]="isSearchBy('uniqueId')"
-                  (blur)="checkTypeAndValues('term')"
-                  #ownerNameSearch="ngModel"
-                >
-                </ng-select>
+                class="rtl"
+                [items]="ownerNameOptions | async"
+                name="term"
+                [hideSelected]="true"
+                [minTermLength]="1"
+                [(ngModel)]="searchData.term"
+                [loading]="ownerNameOptionsLoading"
+                bindLabel="value.ar"
+                bindValue="key"
+                typeToSearchText="Please enter 1 or more characters"
+                notFoundText="لا يوجد نتائج للبحث"
+                [typeahead]="searchOwnerNameInput$"
+                (keyup)="setSearchType('term', $event)"
+                [disabled]="isSearchBy('uniqueId')"
+                (blur)="checkTypeAndValues('term')"
+                #term="ngModel"
+              >
+              </ng-select>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
           </div>
         </div>
       </div>
-
+ 
       <div class="card-footer text-center">
         <button type="submit" class="btn btn-primary" [disabled]="isSearchFormValid()" i18n="@@customerProfileSearchButton">Search</button>
       </div>
@@ -76,9 +76,7 @@
           </div>
           <div class="text-center col-sm-2 gallery-wrapper profile-user-img img-fluid img-circle">
             <app-media-gallery [medias]="getAttachments()"></app-media-gallery>
-            <!-- <img class="profile-user-img img-fluid img-circle"
-                src="assets/images/user4-128x128.jpg"
-                alt="User profile picture"> -->
+
           </div>
         </div>
         <div class="form-group row">
@@ -253,14 +251,14 @@
           <div class="col-sm-6">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" i18n="@@customerProfilePassportnumberissuancedate">Passport number issuance date
-                <span>*</span>
+                <span></span>
               </label>
               <div class="col-sm-9">
                 <input type="text"
                   class="form-control"
                   name="passportIssueDate"
                   (dateTimeChange)="formatDate('passportIssueDate')"
-                  required="true"
+                  required="false"
                   [(ngModel)]="formData.passportIssueDate"
                   [max]="minDate"
                   [owlDateTime]="dt5"

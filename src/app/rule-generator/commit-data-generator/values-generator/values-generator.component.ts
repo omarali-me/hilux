@@ -28,7 +28,6 @@ export class ValuesGeneratorComponent implements OnInit {
   addRow() {
     if (this.formData.values) {
       if (!this.isEnumerator(this.formData.values)) {
-        console.log('here in sife the add row', this.formData.values);
         this.formData.values = [this.formData.values];
       }
 

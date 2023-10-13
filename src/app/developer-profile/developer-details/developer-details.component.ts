@@ -281,7 +281,10 @@ export class DeveloperDetailsComponent implements OnInit {
 
   searchResourceData(data: any) {
     if (!!data.term) {
-      this.router.navigate(['developer/profile/', data.term, 'edit']);
+      this.router.navigate(['developer/profile/', data.term, 'edit'])
+      .then(() => {
+        window.location.reload();
+      });
     }
   }
 

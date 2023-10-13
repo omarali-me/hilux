@@ -64,20 +64,20 @@ export class ApplicationSearchComponent implements OnInit {
     this.loadLandsoptions();
     this.loadOldLandsoptions();
     this.loadOwnersOptions();
-    this.loadServiceNamesOptions()
+    this.loadServiceNamesOptionsByUser()
 
     this.applicationSourceOptions = [
       {
         key: "hilux",
-        value: { en: 'Hilux', ar: 'hilux' }
+        value: { en: 'Hilux', ar: 'النظام الداخلي' }
       },
       {
-        key: "web",
-        value: { en: 'Web', ar: 'Web' }
+        key: "eserviceportal",
+        value: { en: 'Web', ar: 'البوابة الاكترونية' }
       },
       {
         key: "mobile",
-        value: { en: 'mobile', ar: 'Mobile' }
+        value: { en: 'mobile', ar: 'موبايل' }
       }
     ]
   }
@@ -130,10 +130,21 @@ export class ApplicationSearchComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.projectDataOptionsLoading = true),
         switchMap(term => {
-          return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
-            catchError(() => of([])), // empty list on error
-            tap(() => this.projectDataOptionsLoading = false)
-          )
+          if(this.formData.developerId)
+          {
+            return this.lookupsService.loadAllProjects({ term, developerId: this.formData.developerId }).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.projectDataOptionsLoading = false)
+            )
+          }
+          else
+          {
+            return this.lookupsService.loadAllProjects({ term}).pipe(
+              catchError(() => of([])), // empty list on error
+              tap(() => this.projectDataOptionsLoading = false)
+            )
+          }
+
         })
       )
     );
@@ -187,8 +198,8 @@ export class ApplicationSearchComponent implements OnInit {
     );
   }
 
-  loadServiceNamesOptions() {
-    this.lookupsService.loadServiceNamesOptions()
+  loadServiceNamesOptionsByUser() {
+    this.lookupsService.loadServiceNamesOptionsByUser()
       .subscribe((data) => {
         this.serviceNameOptions = data;
       })
@@ -271,7 +282,7 @@ export class ApplicationSearchComponent implements OnInit {
       this.setSearchByandTypeValues(val, field_name);
     } else if (this.isSearchByUnit()) {
       //check all are empty then reset types
-      if (this.isEmpty('developerId') && this.isEmpty('projectId') && this.isEmpty('unitId')) {
+      if ( this.isEmpty('projectId') && this.isEmpty('unitId')) {
         this.setSearchByandTypeValues(val, null);
       }
     }
@@ -379,7 +390,7 @@ export class ApplicationSearchComponent implements OnInit {
 
   prepareProjectValueOptions(params: any) {
     if(!!params.projectId) {
-      this.lookupsService.loadProjects({ id: params.projectId })
+      this.lookupsService.loadAllProjects({ id: params.projectId })
       .subscribe((option)=> {
         this.projectsSearchInput$.next(option.value && option.value.ar);
       })
@@ -465,6 +476,7 @@ export class ApplicationSearchComponent implements OnInit {
   }
 
   isFormInValid(form_invalid: boolean, formData: any) {
+    
     if (form_invalid) {
       return form_invalid && (
         (!formData.owner) &&
@@ -473,6 +485,27 @@ export class ApplicationSearchComponent implements OnInit {
       )
     } else {
       return form_invalid
+    }
+  }
+
+  getInvoiceStatusClass(item: any) {
+    switch (item.invoiceStatus.toLowerCase()) {
+      case 'notpaid':
+        return 'badge-danger';
+      case 'paid':
+        return 'badge-success';
+      default:
+        return 'text-info';
+    }
+  }
+  getInvoiceStatusText(item: any) {
+    switch (item.invoiceStatus.toLowerCase()) {
+      case 'notpaid':
+        return 'غير مدفوع';
+      case 'paid':
+        return 'مدفوع';
+      default:
+        return '';
     }
   }
 
