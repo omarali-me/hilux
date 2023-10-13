@@ -52,7 +52,7 @@ export class UnitDetailsComponent implements OnInit {
     this.minDate = new Date();
     this.loadDeveloperOptions();
     this.loadProjectsOptions();
-    this.loadLandsoptions();
+    // this.loadLandsoptions();
     this.loadUnitsTypesOptions();
     this.loadunitsUsageTypesOptions();
     this.loadDeveloperNameOptions();
@@ -74,11 +74,21 @@ export class UnitDetailsComponent implements OnInit {
 
   updateData(formData: any) {
     let fd = new FormData();
+    if (formData.sitePLAN && formData.sitePLAN.length) {
+      formData.sitePlan = formData.sitePLAN[0];
+      delete formData.sitePLAN;
+    }
     fd.append('unit', JSON.stringify(formData));
     this.http.post(`${environment.apiHost}/AjmanLandProperty/index.php/units/update/${formData.id}`, fd)
       .subscribe((data: any) => {
         if (data.status == 'success') {
           this.toastr.success(data.message, 'Success');
+          setTimeout(() => {
+            this.router.navigate(['unit/profile/' + formData.id + '/view'])
+            .then(() => {
+              window.location.reload();
+            });
+          }, 500);
         } else {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
@@ -88,6 +98,21 @@ export class UnitDetailsComponent implements OnInit {
       this.router.navigate(['error'])
     })
   }
+   prepareGalleryField() {
+    return {
+      fieldID: "sitePLAN",
+      fieldType: "fileupload",
+      // required: this.flagUpload,
+      fieldName: {
+        "ar": "sitePLAN",
+        "en": "sitePLAN"
+      },
+      auxInfo: {
+        multiple: false
+      }
+    }
+  }
+
 
   loadDeveloperOptions() {
     this.developerOptions = concat(
@@ -142,7 +167,7 @@ export class UnitDetailsComponent implements OnInit {
   }
 
   loadunitsUsageTypesOptions() {
-    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/unitsUsageTypes`)
+    this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/ListOfUnitsUses`)
     .subscribe((data) => {
       this.unitsUsageTypesOptions = data;
     })
@@ -246,10 +271,19 @@ export class UnitDetailsComponent implements OnInit {
       })
     }
   }
+  isSearchFormValid() {
+    return  !this.searchData.developerNameSearch && !this.searchData.projectNameSearch && !this.searchData.searchUnitNumber;
+  }
 
   searchResourceData(data: any) {
     if (!!data.searchUnitNumber) {
-      this.router.navigate(['unit/profile/', data.searchUnitNumber, 'edit']);
+      this.router.navigate(['unit/profile/', data.searchUnitNumber, 'edit'])
+      .then(() => {
+        window.location.reload();
+      });
+      this.searchData.searchDeveloperId =null;
+      this.searchData.searchProjectId =null;
+      this.searchData.searchUnitNumber =null;
     }
   }
 
@@ -275,7 +309,7 @@ export class UnitDetailsComponent implements OnInit {
           distinctUntilChanged(),
           tap(() => this.projectNameOptionsLoading = true),
           switchMap(term => {
-            return this.lookupsService.loadProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
+            return this.lookupsService.loadAllProjects({ term, developerId: this.searchData.searchDeveloperId }).pipe(
               catchError(() => of([])), // empty list on error
               tap(() => this.projectNameOptionsLoading = false)
           )})
@@ -284,7 +318,7 @@ export class UnitDetailsComponent implements OnInit {
   }
 
   loadUnitNumberOptions() {
-    this.lookupsService.loadUnitsOptions({ projectId: this.searchData.searchProjectId })
+    this.lookupsService.loadUnitsByUnitIDOptions({ projectId: this.searchData.searchProjectId })
       .subscribe((data) => {
         this.unitNumberOptions = data;
       })

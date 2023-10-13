@@ -36,7 +36,6 @@ export class RuleGeneratorComponent implements OnInit {
 
   saveData(formData) {
     this.showResult = true;
-    console.log('data received is', formData);
   }
 
   blankStep() {

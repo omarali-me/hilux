@@ -105,7 +105,7 @@ export class SingleApplicationSearchComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.projectDataOptionsLoading = true),
         switchMap(term => {
-          return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
+          return this.lookupsService.loadAllProjects({ term, developerId: this.formData.developerId }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.projectDataOptionsLoading = false)
           )
@@ -162,9 +162,9 @@ export class SingleApplicationSearchComponent implements OnInit {
     );
   }
 
-  loadServiceNamesOptions() {
+  loadServiceNamesOptionsByUser() {
 
-    this.lookupsService.loadServiceNamesOptions()
+    this.lookupsService.loadServiceNamesOptionsByUser()
       .subscribe((data) => {
         this.serviceNameOptions = data;
       })
@@ -355,7 +355,7 @@ export class SingleApplicationSearchComponent implements OnInit {
 
   prepareProjectValueOptions(params: any) {
     if(!!params.projectId) {
-      this.lookupsService.loadProjects({ id: params.projectId })
+      this.lookupsService.loadAllProjects({ id: params.projectId })
       .subscribe((option)=> {
         this.projectsSearchInput$.next(option.value && option.value.ar);
       })
@@ -457,6 +457,32 @@ export class SingleApplicationSearchComponent implements OnInit {
       return JSON.stringify(value);
     } else {
       return value;
+    }
+  }
+
+  getStepStatusClass(item: any) {
+    switch (item.toLowerCase()) {
+      case 'pending':
+        return 'badge-danger';
+      case 'completed':
+        return 'badge-success';
+      case 'locked':
+        return 'badge-warning';
+      default:
+        return 'text-info';
+    }
+  }
+
+  getStepStatusText(item: any) {
+    switch (item.toLowerCase()) {
+      case 'قيد الانتظار':
+        return 'badge-danger';
+      case 'completed':
+        return 'مكتملة';
+      case 'locked':
+        return 'محجوزة';
+      default:
+        return item;
     }
   }
 }

@@ -24,14 +24,16 @@
             <div class="searchApplications">
               <div class="row">
                 <div class="col-sm-6">
-                  <label i18n="@@singleApplicationServiceNameLabel">Service Name: </label><span>{{response.serviceName?.ar}}</span>
+                  <label i18n="@@singleApplicationServiceNameLabel">Service Name:
+                  </label><span>{{response.serviceName?.ar}}</span>
                 </div>
                 <div class="col-sm-6">
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  <label i18n="@@singleApplicationApplicationIdLabel">Application ID: </label><span>{{ applicationID }}</span>
+                  <label i18n="@@singleApplicationApplicationIdLabel">Application ID: </label><span>{{ applicationID
+                    }}</span>
                 </div>
                 <div class="col-sm-6">
                   <label i18n="@@singleApplicationChannelLabel">Channel: </label><span>{{response.channel}}</span>
@@ -41,29 +43,62 @@
                 <div class="card-header border-0">
                   <div class="card-tools">
                     <button type="button" class="btn btn-sm" data-card-widget="collapse">
-                        <i class="fas fa-minus"></i>
+                      <i class="fas fa-minus"></i>
                     </button>
                   </div>
-                  <h3 class="card-title float-right font-weight-bold"><span i18n="@@singleApplicationStepStatusLabel">Step Status:</span> {{application_step.status}}</h3>
+                  <h3 class="card-title float-right font-weight-bold"><span
+                      i18n="@@singleApplicationStepStatusLabel">Step Status: </span> {{application_step.stepName}}</h3>
+                      <span style="float: left;" class="float-left font-weight-bold">
+                        الحالة
+                        <span class="badge" [ngClass]="getStepStatusClass(application_step.status)" style="margin: 0px 5px;">{{getStepStatusText(application_step.status)}}</span>
+                      </span>
                 </div>
                 <div class="card-body custom-table-class">
-                  <table class="table table-bordered landTable bg-white table-responsive d-table">
-                    <thead>
-                      <tr class="bg-grey">
-                        <th>#</th>
-                        <th i18n="@@singleApplicationSearchFieldname">Field name</th>
-                        <th i18n="@@singleApplicationSearchFieldValue">Field Value</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let field of application_step.dataIn | keyvalue; let j = index">
-                        <td>{{ j + 1}}</td>
-                        <td>{{ field.key }}</td>
-                        <td>
-                          <pre class="custom-direction" [innerHtml]="renderFieldValue(field.value) | prettyjson:4"></pre></td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <div *ngIf="application_step.dataIn.length > 0">
+                    <h4>البيانات المدخلة في المعاملة</h4>
+                    <table class="table table-bordered landTable bg-white table-responsive d-table">
+                      <thead>
+                        <tr class="bg-grey">
+                          <th>#</th>
+                          <th i18n="@@singleApplicationSearchFieldname">Field name</th>
+                          <th i18n="@@singleApplicationSearchFieldValue">Field Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let field of application_step.dataIn | keyvalue; let j = index">
+                          <td>{{ j + 1}}</td>
+                          <td>{{ field.value.key }}</td>
+                          <td>
+                            <pre class="custom-direction"
+                              [innerHtml]="renderFieldValue(field.value.value) | prettyjson:4"></pre>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div *ngIf="application_step.displayData.length > 0">
+                    <h4>البيانات المعروضة في المعاملة</h4>
+                    <table class="table table-bordered landTable bg-white table-responsive d-table">
+                      <thead>
+                        <tr class="bg-grey">
+                          <th>#</th>
+                          <th i18n="@@singleApplicationSearchFieldname">Field name</th>
+                          <th i18n="@@singleApplicationSearchFieldValue">Field Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let field of application_step.displayData | keyvalue; let j = index">
+                          <td>{{ j + 1}}</td>
+                          <td>{{ field.value.key }}</td>
+                          <td>
+                            <pre class="custom-direction"
+                              [innerHtml]="renderFieldValue(field.value.value) | prettyjson:4"></pre>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
 

@@ -35,17 +35,36 @@ export class LookupsService {
   loadUnitsOptions(params: any = {}) {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/units`, params);
   }
+  loadUnitsByUnitIDOptions(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/unitsByUnitID`, params);
+  }
 
   loadServiceNamesOptions(params: any = {}) {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/listOfServices`, params);
   }
 
+  loadServiceNamesOptionsByUser(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/ServiceCategories/listOfServicesByUser`, params);
+  }
+
   loadProjects(params: any = {}) {
-    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projects`, params);
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/projectsUnactiveSH`, params);
+  }
+  loadAllProjects(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/allProjects`, params);
+  }
+  loadApartments(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/unitsTypesForTathmeen`, params);
+  }
+  loadNewProjects(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/newProjects`, params);
   }
 
   loadDevelopers(params: any = {}) {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/developers`, params);
+  }
+  loaddevelopersStatusTypes(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/Lookups/developersStatusTypes`, params);
   }
 
   loadLands(params: any = {}) {
@@ -58,6 +77,13 @@ export class LookupsService {
 
   loadOwners(params: any = {}) {
     return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/owners`, params);
+  }
+  loadOwners3(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/owners3`, params);
+  }
+
+  loadCustomers(params: any = {}) {
+    return this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/lookups/customers`, params);
   }
 
   loadContactPerferencesOptions(params: any = {}) {

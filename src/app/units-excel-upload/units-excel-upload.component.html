@@ -79,7 +79,6 @@
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
               <div class="col-sm-12">
@@ -93,8 +92,24 @@
           </div>
 
           <hr/>
+          <dialog id="my-dialog">
+            <div style="width: 800px;min-height: 100px;">
+            <h3 style="text-align: center;">{{resMsg}}</h3>
+            <div *ngIf="resErrors && resErrors.length > 0">
+              <h5 style="direction: rtl;margin-right: 10px;" *ngFor="let item of resErrors let i = index">
+               * {{item.unitNumber}}
+                <p style="direction: rtl;margin-right: 15px;" *ngFor="let err of item.errors let i = index">
+                 - {{err}}
+                </p>
+              </h5>
+            </div>
+            <form method="dialog" style="text-align: center;margin-top: 20px;">
+              <button type="buttons" style="text-align: center;" (click)="closeDialog()" class="btn btn-primary"  i18n="@@ok">OK</button>
+            </form>
+            </div>
+          </dialog>
 
-          <form class="form-horizontal" (ngSubmit)="uploadExcel(formData)" #uf="ngForm" enctype='multipart/form-data' novalidate>
+          <form  *ngIf="response?.length > 0" class="form-horizontal" (ngSubmit)="uploadExcel(formData)" #uf="ngForm" enctype='multipart/form-data' novalidate>
             <div class="col-sm-12 mt-3">
               <div class="row">
                 <div class="col-sm-10">
@@ -123,12 +138,15 @@
                   </div>
                 </div>
                 <div class="col-sm-2">
-                  <button type="submit" class="btn btn-primary" [disabled]="uf.invalid" i18n="@@unitsExcelUploadUpload">Upload</button>
+                  <button type="submit" class="btn btn-primary" [disabled]="uf.invalid || flagUpload" i18n="@@unitsExcelUploadUpload">Upload</button>
                 </div>
               </div>
 
               <div class="row">
                 <a [href]="getExcelLink()" target="_blank">units.xlsx</a>
+              </div>
+              <div class="row">
+                <a [href]="getLookupUnitsLink()" target="_blank">قوائم نوع الوحدة وأستخدام الوحدة</a>
               </div>
             </div>
           </form>
@@ -217,20 +235,22 @@
                     </div>
                   </div>
 
-                  <table class="table table-bordered landTable bg-white table-responsive d-table" *ngIf="filterResponse()?.length > 0">
+                  <table style="table-layout: fixed;" class="table table-bordered landTable bg-white table-responsive d-table" *ngIf="filterResponse()?.length > 0">
                     <thead>
                       <tr class="bg-grey">
                         <th>#</th>
                         <th i18n="@@unitsExcelUploadTableUnitNumber">Unit Number</th>
                         <th i18n="@@unitsExcelUploadTableOwnerName">Owner Name</th>
-                        <th i18n="@@unitsExcelUploadTableMeterTotalSoldArea">Meter Total Sold Area</th>
+                        <!-- <th i18n="@@unitsExcelUploadTableMeterTotalSoldArea">Meter Total Sold Area</th> -->
                         <th i18n="@@unitsExcelUploadTableMeterNetSoldArea">Meter Net Sold Area</th>
-                        <th i18n="@@unitsExcelUploadTableMeterTotalActualArea">Meter Total Actual Area</th>
                         <th i18n="@@unitsExcelUploadTableMeterNetActualArea">Meter Net Actual Area</th>
+                        <th i18n="@@unitsExcelUploadTableMeterTotalActualArea">Meter Total Actual Area</th>
+                        <th i18n="@@meterJoinActualArea">Meter Join Actual Area</th>
                         <th i18n="@@unitsExcelUploadTableSitePlan">Site Plan</th>
                         <th i18n="@@unitsExcelUploadTablePaymentPercentage">Payment Percentage</th>
                         <th i18n="@@unitsExcelUploadTableUnitUse">Unit Use</th>
                         <th i18n="@@unitsExcelUploadTableUnitType">Unit Type</th>
+                        <th i18n="@@roomsCount">Rooms Count</th>
                         <th i18n="@@unitsExcelUploadTableRegistrationStatus">Registration Status</th>
                       </tr>
                     </thead>
@@ -241,17 +261,23 @@
 
                         <td>{{ getOwnersName(item_detail?.owners) }}</td>
 
-                        <td>{{ item_detail?.meterTotalSoldArea }}</td>
+                        <!-- <td>{{ item_detail?.meterTotalSoldArea }}</td> -->
                         <td>{{ item_detail?.meterNetSoldArea }}</td>
 
-                        <td>{{ item_detail?.meterTotalActualArea }}</td>
                         <td>{{ item_detail?.meterNetActualArea }}</td>
+                        <td>{{ item_detail?.meterTotalActualArea }}</td>
+                        <td>{{ item_detail?.meterJointActualArea }}</td>
 
-                        <td>{{ item_detail?.sitePlan }}</td>
+                        <td> 
+                          <span *ngIf="item_detail?.sitePlan =='yes' " >    <i style="color: #000;" class="fa fa-check"></i></span>
+                          <span *ngIf="item_detail?.sitePlan == 'no'">    <i style="color: #000;" class="fa fa-times"></i></span>
+
+                        </td>
                         <td>{{ item_detail?.paymentPercentage }}</td>
 
                         <td>{{ item_detail?.unitUse }}</td>
                         <td>{{ item_detail?.unitType }}</td>
+                        <td>{{ item_detail?.roomsCount }}</td>
                         <td>{{ item_detail?.registrationStatus }}</td>
                       </tr>
                     </tbody>
@@ -265,6 +291,8 @@
             <div class="col-sm-12 text-center">
               <h4>No Unit data available</h4>
             </div>
+          </div>
+          <div *ngIf="flagRes" class="loader">
           </div>
         </div>
         <!-- /.card-body -->

@@ -50,6 +50,9 @@ export class SearchPageComponent implements OnInit {
   blockageEntityOptionsLoading = false;
   currentlyOwnedPropertiesByOwner: any = [];
   hideAttachmentsControl;
+  roles$: object;
+  userRole: any;
+
 
   searchby: any;
 
@@ -73,6 +76,12 @@ export class SearchPageComponent implements OnInit {
     this.loadOldLandsoptions();
     this.loadBlockageEntities();
 
+    this.roles$ = this.fieldsService.getUrl(`${environment.apiHost}/AjmanLandProperty/index.php/applications/getUserRights`)
+      .subscribe((res) => {
+        this.userRole = res;
+      });
+
+
     this.route.queryParams.subscribe(async (params) => {
       if (!_.isEqual(params, {})) {
         _.keys(params).forEach(key => {
@@ -86,6 +95,9 @@ export class SearchPageComponent implements OnInit {
     });
   }
 
+  getRole(data: any, permission: string) {
+    return Object.keys(data).includes(permission,);
+  }
   searchData(formData: any) {
     let prepapedData = this.prepareFormData(formData)
     let fd = new FormData();
@@ -151,7 +163,7 @@ export class SearchPageComponent implements OnInit {
         distinctUntilChanged(),
         tap(() => this.projectDataOptionsLoading = true),
         switchMap(term => {
-          return this.lookupsService.loadProjects({ term, developerId: this.formData.developerId }).pipe(
+          return this.lookupsService.loadAllProjects({ term, developerId: this.formData.developerId }).pipe(
             catchError(() => of([])), // empty list on error
             tap(() => this.projectDataOptionsLoading = false)
           )
@@ -222,6 +234,9 @@ export class SearchPageComponent implements OnInit {
 
   setSearchType(field_name: string, event: any) {
     var val = event.target.value.trim();
+    this.setSearchByandTypeValues(val, field_name)
+  }
+  testEnter(field_name: string, val: any) {
     this.setSearchByandTypeValues(val, field_name)
   }
 
@@ -379,7 +394,11 @@ export class SearchPageComponent implements OnInit {
   }
 
   getViewResourceUrl(resourceId: any, resourceType: any) {
-    return `/${resourceType}/profile/${resourceId}/edit`;
+    if (resourceType == "owner") {
+      return `/${resourceType}/profile/${resourceId}/edit`;
+    } else {
+      return `/${resourceType}/profile/${resourceId}/view`;
+    }
   }
 
   getViewLegalBlocks(propertyId: any, resourceType: any = 'propertyId') {
@@ -408,10 +427,10 @@ export class SearchPageComponent implements OnInit {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
         }
-    }, (error) => {
-      this.toastr.error('Something went Wrong', 'Error')
-      this.router.navigate(['error'])
-    })
+      }, (error) => {
+        this.toastr.error('Something went Wrong', 'Error')
+        this.router.navigate(['error'])
+      })
   }
 
   resetAddBlockToOwnerPropertiesModal() {
@@ -470,10 +489,10 @@ export class SearchPageComponent implements OnInit {
           this.formErrors = data.data;
           this.toastr.error(JSON.stringify(data.message), 'Error')
         }
-    }, (error) => {
-      this.toastr.error('Something went Wrong', 'Error')
-      this.router.navigate(['error'])
-    })
+      }, (error) => {
+        this.toastr.error('Something went Wrong', 'Error')
+        this.router.navigate(['error'])
+      })
   }
 
   getActiveLandDetails(land: any) {

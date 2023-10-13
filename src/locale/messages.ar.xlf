@@ -143,8 +143,16 @@
         </context-group>
       </trans-unit>
       <trans-unit id="loginPageLoginLabel" datatype="html">
-        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Hilux<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>Login</source>
-        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Hilux<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>Login Arabic</target>
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Hilux<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>Reset Password</source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Hilux<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>تغيير كلمة السر</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResetPassword/ResetPassword.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="resetPasswordHeader" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Hilux<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>Reset Password</source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Hilux<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login.component.html</context>
           <context context-type="linenumber">4</context>
@@ -182,6 +190,22 @@
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="remarks" datatype="html">
+        <source>Remarks</source>
+        <target> ملاحظات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+        <trans-unit id="forgetpasswordRepeatLabel" datatype="html">
+        <source>Confirm Password</source>
+        <target>آعادة كلمه السر</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResetPassword/ResetPassword.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="checkMeOut" datatype="html">
         <source>Check me out</source>
         <target>تفقدني</target>
@@ -199,6 +223,24 @@
         </context-group>
         <note priority="1" from="description">=&quot;</note>
       </trans-unit>
+      <trans-unit id="forgetPassword" datatype="html">
+        <source>Forget Password</source>
+        <target>نسيت كلمة السر</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">=&quot;</note>
+      </trans-unit>
+      <trans-unit id="resetPassword" datatype="html">
+        <source>Reset Password</source>
+        <target>تغيير كلمة السر</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ResetPassword/ResetPassword.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">=&quot;</note>
+      </trans-unit>
       <trans-unit id="formHelpText" datatype="html">
         <source>Fields marked with &apos;*&apos; are mandatory fields.</source>
         <target>Fields marked with &apos;*&apos; are mandatory fields Arabic.</target>
@@ -206,6 +248,34 @@
           <context context-type="sourcefile">src/app/form/form.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
+      </trans-unit>
+       <trans-unit id="addNew" datatype="html">
+      <source>+ Add New </source>
+        <target>+ آضافة جديد </target>
+        <!-- <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form/form.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group> -->
+      </trans-unit>
+       <trans-unit id="changeLandNumber" datatype="html">
+      <source>+ Change Land Number </source>
+        <target> + تحويل رقم الأرض</target>
+      </trans-unit>
+       <trans-unit id="newLandIdRequid" datatype="html">
+      <source> New Land Id Can't be blank </source>
+        <target> لا يمكن أن يكون معرّف الأرض الجديد فارغًا</target>
+      </trans-unit>
+       <trans-unit id="remarksRequid" datatype="html">
+      <source> Remarks Can't be blank </source>
+        <target>لا يمكن ترك الملاحظات فارغة</target>
+      </trans-unit>
+       <trans-unit id="edit" datatype="html">
+      <source>Edit </source>
+        <target>تعديل </target>
+        <!-- <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form/form.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group> -->
       </trans-unit>
       <trans-unit id="formSubmitLabel" datatype="html">
         <source>Submit</source>
@@ -449,10 +519,10 @@
       <trans-unit id="customerProfilePassportnumberissuancedate" datatype="html">
         <source>
                                                         Passport number issuance date
-                                                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                                                        <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                                                     </source>
         <target>تاريخ اصدار  جواز السفر
-                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                              <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
                             </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/customer-profile/customer-profile.component.html</context>
@@ -1312,10 +1382,10 @@
       </trans-unit>
       <trans-unit id="projectProfileConsultant" datatype="html">
         <source>Consultant
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            <!-- <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> -->
                           </source>
         <target>الاستشاري
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            <!-- <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> -->
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -1342,10 +1412,10 @@
       </trans-unit>
       <trans-unit id="projectProfileContractor" datatype="html">
         <source>Contractor
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            <!-- <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> -->
                           </source>
         <target>المقاول
-                            <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>
+                            <!-- <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>*<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> -->
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/project-profile/project-profile.component.html</context>
@@ -2318,6 +2388,20 @@
         <source>Old Land ID
                           </source>
         <target>رقم الارض القديم
+                          </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/land-profile/land-details/land-details.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="landProfileNewLandID" datatype="html">
+        <source>New Land ID
+                          </source>
+        <target>رقم الارض الجديد
                           </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/land-profile/land-profile.component.html</context>
@@ -4835,7 +4919,7 @@
           <context context-type="linenumber">83</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="applicationSearchToDate" datatype="html">
+      <trans-unit id="applicationSearchToDate" datatype="html"> 
         <source>To Date</source>
         <target>إلى</target>
         <context-group purpose="location">
@@ -5030,6 +5114,14 @@
       <trans-unit id="applicationSearchTableLandId" datatype="html">
         <source>Land ID</source>
         <target>رقم الأرض</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
+          <context context-type="linenumber">415</context>
+        </context-group>
+      </trans-unit>
+            <trans-unit id="applicationSearchTableDetails" datatype="html">
+        <source>Application Details</source>
+        <target>تفاصيل المعاملة</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/application-search/application-search.component.html</context>
           <context context-type="linenumber">415</context>
@@ -5675,6 +5767,244 @@
           <context context-type="linenumber">591</context>
         </context-group>
       </trans-unit>
+       <trans-unit id="previousLandId" datatype="html">
+        <source>Previous Land Id</source>
+        <target>الرقم السابق للأرض</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="convertedTo" datatype="html">
+        <source>Converted To</source>
+        <target>تم تحويله إلى</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="convertedBy" datatype="html">
+        <source>Converted By</source>
+        <target>تم تحويلها بواسطة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="convertedAt" datatype="html">
+        <source>Converted At</source>
+        <target>تم تحويله في</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="historyOfConversionOfLandId" datatype="html">
+        <source>History Of Conversion Of Land Id</source>
+        <target>تاريخ تحويل معرف الأرض</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="sortAndMerge" datatype="html">
+        <source>Sort And Merge</source>
+        <target>الفرز والدمج</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="Operation" datatype="html">
+        <source>Operation</source>
+        <target>عملية</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="landId" datatype="html">
+        <source>land Id</source>
+        <target>رقم الأرض</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="no" datatype="html">
+        <source>#</source>
+        <target>#</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="projectName" datatype="html">
+        <source>Project Name</source>
+        <target>أسم المشروع</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+         <trans-unit id="Rating" datatype="html">
+        <source>
+                    <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>
+                    Rating
+                </source>
+        <target>
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> تقييم
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layouts/header/header.component.html</context>
+          <context context-type="linenumber">143</context>
+        </context-group>
+      </trans-unit>
+        
+       <trans-unit id="apartmentType" datatype="html">
+    <source>Apartment Type</source>
+        <target>نوع الشقة </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context     context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+        <trans-unit id="servicesFees" datatype="html">
+    <source>Services Fees</source>
+        <target>رسوم الخدمات</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="ratingLabel" datatype="html">
+    <source>Rating</source>
+        <target>التقييم</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+       <trans-unit id="status" datatype="html">
+    <source>Status</source>
+        <target>الحالة</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/units-valuation/units-valuation.component.html</context>
+          <context context-type="linenumber">591</context>
+        </context-group>
+      </trans-unit>
+        <trans-unit id="projectIdRequid" datatype="html">
+      <source> Project Name Can't be blank </source>
+        <target> لا يمكن أن يكون اسم المشروع فارغًا</target>
+      </trans-unit>
+        <trans-unit id="apartmentTypeRequid" datatype="html">
+      <source>Apartment Type Can't be blank </source>
+        <target> لا يمكن أن يكون نوع الشقة فارغًا</target>
+      </trans-unit>
+        <trans-unit id="ratingRequid" datatype="html">
+      <source>Rating Can't be blank </source>
+        <target> لا يمكن أن يكون التقييم فارغًا</target>
+      </trans-unit>
+         <trans-unit id="servicesFeesRequid" datatype="html">
+      <source>Services Fees Can't be blank </source>
+        <target> لا يمكن أن يكون رسوم الخدمات فارغًا</target>
+      </trans-unit>
+         <trans-unit id="totalEvaluatedUnits" datatype="html">
+      <source>total Evaluated Units</source>
+        <target>إجمالي الوحدات المقيمة</target>
+      </trans-unit>
+        <trans-unit id="totalNonEvaluatedUnits" datatype="html">
+      <source>total Non Evaluated Units</source>
+        <target>إجمالي الوحدات  غير مقيمة</target>
+      </trans-unit>
+       <trans-unit id="numberOfRoom" datatype="html">
+      <source>Number Of Room</source>
+        <target>عدد الغرف</target>
+      </trans-unit>
+       <trans-unit id="active" datatype="html">
+      <source>Active</source>
+        <target> نشط</target>
+      </trans-unit>
+       <trans-unit id="deactive" datatype="html">
+      <source>Deactive</source>
+        <target>غير نشط </target>
+      </trans-unit>
+        <trans-unit id="pricePerMeter" datatype="html">
+      <source>Price Per Meter</source>
+        <target>سعر المتر</target>
+      </trans-unit>
+       <trans-unit id="servicePerMeter" datatype="html">
+      <source>Service Per Meter</source>
+        <target>تكلفة الخدمة بالمتر</target>
+      </trans-unit>
+      <trans-unit id="back" datatype="html">
+      <source>Back</source>
+        <target>الرجوع</target>
+      </trans-unit>
+        <trans-unit id="source" datatype="html">
+      <source>Source</source>
+        <target>المصدر</target>
+      </trans-unit>
+       <trans-unit id="request" datatype="html">
+      <source>Request</source>
+        <target>الطلب</target>
+      </trans-unit>
+        <trans-unit id="details" datatype="html">
+      <source>Details</source>
+        <target>تفاصيل</target>
+      </trans-unit>
+       <trans-unit id="receipt" datatype="html">
+      <source>Receipt</source>
+        <target>الايصال</target>
+      </trans-unit>
+        <trans-unit id="time" datatype="html">
+      <source>Time</source>
+        <target>الوقت</target>
+              </trans-unit> 
+       <trans-unit id="noData" datatype="html">
+      <source>Not Found Data</source>
+        <target>لا يوجد بيانات</target>
+      </trans-unit>
+       <trans-unit id="withdrawDataFromMunicipality" datatype="html">
+      <source>Withdraw Data from municipality</source>
+        <target>سحب البيانات من البلدية</target>
+      </trans-unit>
+       <trans-unit id="city" datatype="html">
+      <source>City</source>
+        <target>المدينة</target>
+      </trans-unit>
+       <trans-unit id="Sector" datatype="html">
+      <source>Sector</source>
+        <target>القطاع</target>
+      </trans-unit>
+        <trans-unit id="District" datatype="html">
+      <source>District</source>
+        <target>الحي</target>
+      </trans-unit>
+        <trans-unit id="Plot" datatype="html">
+      <source>Plot</source>
+        <target>القطعة</target>
+      </trans-unit>
+        <trans-unit id="withdrawDataFromMunicipalityLoadingTxt" datatype="html">
+      <source>Land data is being withdraw from the municipality 
+       Please wait a few time</source>
+        <target>يتم سحب بيانات الأراضي من البلدية 
+         يرجى الانتظار بعض الوقت</target>
+      </trans-unit>
+        <trans-unit id="ok" datatype="html">
+      <source>OK</source>
+        <target>موافق</target>
+      </trans-unit>
+       <trans-unit id="roomsCount" datatype="html">
+      <source>Rooms Count</source>
+        <target>عدد الغرف</target>
+      </trans-unit>
+       <trans-unit id="meterJoinActualArea" datatype="html">
+      <source>Meter Join Actual Area</source>
+        <target>المساحة المشتركة الفعلية</target>
+      </trans-unit>
+      
+      
     </body>
   </file>
 </xliff>
